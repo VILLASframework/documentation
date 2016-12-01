@@ -51,10 +51,15 @@ The backend for the website based on NodeJS and express.
  - `git clone -b develop git@git.rwth-aachen.de:VILLASframework/VILLASweb-backend.git` to copy the project on your computer
  - `cd VILLASweb-backend`
  - `npm install`
- - `docker build -t acs/villasweb-backend .``
+
+### Development
+ 
+ - Run a MongoDB server and change endpoint in config.json (e.g. with Docker)
+ - `npm start` to run NodeJS locally
 
 ### Running
 
+ - `docker build -t acs/villasweb-backend .``
  - `docker-compose up -d`
 
 This runs the backend on your local computer with the required MongoDB server.
