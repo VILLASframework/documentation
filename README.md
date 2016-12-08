@@ -2,6 +2,14 @@
 
 ## Web-Interface
 
+- Simulation settings storage and editor?
+- Storage of multiple Results per simulation
+    - Multiple time series per result
+    - Export
+    - Visualization of results
+- Plots/Graphs (Improvements)
+- Buttons, Sliders, Single value inputs
+- Copy/Paste Function (Project, Simulation, Simulation settings, Visualization)
 
 # Required Functions
 
@@ -24,4 +32,4 @@
                     - Live-Output: Plots/Graphs (Improvements), Tables, Labels, Single value displays
                     - Live-Input: Buttons, Sliders, Single value inputs
             - Live Data
-- Copy/Paste Function (Project, Simulation, Simulation settings, Visualization)?
+- Copy/Paste Function (Project, Simulation, Simulation settings, Visualization)
