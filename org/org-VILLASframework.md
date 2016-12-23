@@ -10,7 +10,8 @@ Num | Deadline | Objective
 --- | --- | ---
 Milestone 1 | End of February | VILLAS ready for internal testing
 Milestone 2 | End of March | VILLAS ready to be shared with partners
-Milestone 3 | End of April | VILLAS ready for public release
+Milestone 3 | End of April | VILLAS functionalies ready for public release
+Milestone 4 | End of May | VILLAS doc ready for public release
 
 ### Main responsibilities:
 
@@ -24,7 +25,7 @@ Markus G.:
 - up to date live image for VILLASnode
 
 Markus M.:
-- scripts for automated testing
+- scripts for automated testing (CI tests)
 
 Marija:
 - List with description and config files for test cases of VILLAS framework
@@ -35,17 +36,22 @@ Marija:
 ### List of requirements and tasks
 
 Requirements:
-- make sure that VILLASweb and VILLASnode support FIWARE OCB
+- make sure that old VILLASweb and VILLASnode support FIWARE OCB
 - a stable version of all components in VILLAS framework is needed
 - GTNET SKT
   - include GTSYNC in testing
-- Steffens thesis
-- multiple websocket clients and websocket client on VILLASnode
+- Steffens thesis (VILLASfpga)
+- multiple websocket clients connected to websocket server (works in the recent version, Markus G. to test) 
+- websocket client on VILLASnode (Steffen)
+    - Setting up new architecture with VILLAShub / central VILLASnode (Markus G.)
+- Data structure for websockets (simulator ID...)
+- Control of VILLASnodes / Simulation Manager
+    - Functionalities in VILLASnode and VILLASweb
 - LabMashup visualisation based on new VILLASweb
   - Adding figures
-  - Charts
-  - Interaction?
-    - Load a file
+  - Charts with option to select the signal (like in old LabMashup)
+  - Interaction (Markus G. to start from March)
+    - Load(before sim)/download(after simulation) a file
     - Add a reference value
 
 Other tasks:
@@ -61,8 +67,12 @@ Org for testing branch, logs for manual testing…
 ### VILLASweb for Gridhound (Artur)
 - Create a mockup of what we want to have in VILLASweb (Marija and Markus)
   - We need to monitor also infrastructure, are simulators up, delays...
-  - Meeters, buttons...
+  - Meters, buttons...
 - Getting VILLASweb ready to be shared with Artur
+- User Guide 
+    - Documentation of general purpose and overview of VILLASweb for Artur  
+    - Description of entities and general functionalities of VILLASweb   
 - Plan support from our side for VILLASweb
+- Testing of Gridhound VILLASweb on OpenStack and with real VILLASnodes
 
 ## Future development
