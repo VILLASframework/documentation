@@ -34,9 +34,8 @@
             - Multiple simulators per simulation
         - Multiple Visualizations per project
             - WYSIWYG Dashboard Editor
-                - Widgets
-                    - Live-Output: Plots/Graphs (Improvements), Tables, Labels, Single value displays
-                    - Live-Input: Buttons, Sliders, Single value inputs
-                    - Multiple data streams can be plotted either in a single diagram
+                - Live-Output: Plots/Graphs (Improvements), Tables, Labels, Single value displays
+                - Live-Input: Buttons, Sliders, Single value inputs
+                - Multiple data streams can be plotted either in a single diagram
             - Live Data
 - Copy/Paste Function (Project, Simulation, Simulation settings, Visualization)
