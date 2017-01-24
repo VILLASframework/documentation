@@ -36,5 +36,8 @@
             - Live-Output: Plots/Graphs (Improvements), Tables, Labels, Single value displays
             - Live-Input: Buttons, Sliders, Single value inputs
             - Multiple data streams can be plotted either in a single diagram
+            - Grid visualization where you can click and show current data at each node, plots of the node are shown in a graph next to the grid
+            - Different levels of detail for the visualization, for example to hide national grid data
+            - Simplified grids could be shown on a geographical map
         - Live Data
 - Copy/Paste Function (Project, Simulation, Simulation settings, Visualization)
