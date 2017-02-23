@@ -1,5 +1,9 @@
-# Set up of VILLASnode at INL
+# Notes on small tasks - Markus Grigull
 
-# Identify villas-node that works with OCB (current version without websockets)
+## Set up of VILLASnode at INL
+- No Internet connection
+- USB not allowed (just for temporary data transfer)
 
-# Diagrams of VILLASframework architecture now and future plan (msv to do for RT-Super lab restrictions)
+## Identify villas-node that works with OCB (current version without websockets?)
+
+## Diagrams of VILLASframework architecture now and future plan (msv to do for RT-Super lab restrictions)
