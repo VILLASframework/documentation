@@ -10,7 +10,7 @@ Three integration layers are foreseen based on the diversity of the facilities a
 - Soft Real-Time Integration Layer (S-RTIL)
 - Offline Integration Layer (O-IL)
 
-[![VILLASarchitecture](figures/Generic_VILLAS_Architecture_mapping.svg)]
+![VILLASarchitecture](figures/Generic_VILLAS_Architecture_mapping.png)
 
 **_Hard Real-Time Integration Layer (H-RTIL)_**
 - Integrates digital real-time simulators, actual hardware devices and test benches into a joint experiment
