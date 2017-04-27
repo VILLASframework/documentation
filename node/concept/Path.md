@@ -1,1 +1,1 @@
-#Paths {#path}
+# Paths {#concept-path}

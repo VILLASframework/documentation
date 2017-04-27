@@ -1,4 +1,4 @@
-# Concept
+# Concept {#node-concept}
 
 VILLASnode is designed around the concept of _nodes_, _super-nodes_ and _paths_.
 It's the task of the server to forward real-time simulation data between multiple parties.
@@ -6,9 +6,9 @@ In doing so, the server has to perform simple checks and collects statistics.
 From the viewpoint of the communication parters the server is nearly transparent.
 Hence, it's cruical to keep the added overhead as low as possible (in terms of latency).
 
-## @subpage supernode
+## @subpage concept-supernode
 
-## @subpage node
+## @subpage concept-node
 
 All communication partners are represented by nodes.
 
@@ -21,7 +21,7 @@ Possible types of nodes are:
 
 @see node for implementation details.
 
-## @subpage path
+## @subpage concept-path
 
 A path is a **uni-directional** connection between incoming and outgoing nodes.
 
@@ -38,7 +38,7 @@ However every path supports optional hook/callback functions which allow user-de
 
 @see path for implementation details.
 
-## @subpage hook
+## @subpage concept-hook
 
 ## Interface
 

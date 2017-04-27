@@ -1,4 +1,4 @@
-# Getting started
+# Getting started guide {#node-guide}
 
 ## Installation
 
@@ -27,5 +27,9 @@ $ docker run rwth-acs/villas-node --help
 
 @todo Add a ASCIIcinema screencast here
 
-## Guide
+<!--
+@htmlonly
+<script type="text/javascript" src="https://asciinema.org/a/5w2rcwbg7h94zcq6ha7agigtn.js" id="asciicast-5w2rcwbg7h94zcq6ha7agigtn" async></script>
+@endhtmlonly
+-->
 

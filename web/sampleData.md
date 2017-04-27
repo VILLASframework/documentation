@@ -1,4 +1,4 @@
-# Setup sample data
+# Setup sample data {#web-sampledata}
 
 ## Description
 

@@ -1,4 +1,4 @@
-# Web-Interface
+# Planning - VILLASweb {#org-web}
 
 ## Implemented features
 - User accounts with different roles (admin, operator, guest etc.)

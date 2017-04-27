@@ -1,9 +1,12 @@
-# Development
+# Development {#node-dev}
 
 Developement is currently coordinated by Steffen Vogel <stvogel@eonerc.rwth-aachen.de> using [GitLab](http://git.rwth-aachen.de/VILLASframework/VILLASnode).
 Please feel free to submit pull requests or bug reports.
 
 @todo Add link to contribution guidelines
+
+- @subpage node-dev-api
+- @subpage node-dev-advio
 
 ## Programming Paradigm
 

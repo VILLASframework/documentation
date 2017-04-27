@@ -1,4 +1,4 @@
-# VILLASfpga {#villasfpga}
+# VILLASfpga {#fpga-type}
 
 __This documentation is outdated!__
 

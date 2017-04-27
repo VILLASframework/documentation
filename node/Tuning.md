@@ -1,4 +1,4 @@
-# Tuning {#tuning}
+# Tuning {#node-tuning}
 
 This page is not directly related to VILLASnode.
 It describes several ways to optimize the host system for running real-time applications like VILLASnode.

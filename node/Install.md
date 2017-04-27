@@ -1,4 +1,4 @@
-# Setup
+# Installation {#node-installation}
 
 VILLASnode can be installed in multiple ways:
 

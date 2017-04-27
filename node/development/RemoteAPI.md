@@ -1,4 +1,4 @@
-#Remote Application Programming Interface (API) {#API}
+# Remote Application Programming Interface (API) {#node-dev-api}
 
 VILLASnode can be controlled remotely with an Application Programming Interface (API).
 

@@ -1,4 +1,4 @@
-# Design Goals {#designgoals}
+# Design Goals {#node-designgoals}
 
 VILLASnode ...
 

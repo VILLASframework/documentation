@@ -1,12 +1,11 @@
-# Usage {#usage}
+# Tools {#node-usage}
 
-# `villas signal` 
-
-# `villas pipe`
+VILLASnode comes with a couple of tools to test and debug connectivity and configurations.
+All VILLASnode tools are available as subcommands to the `villas` wrapper:
  
-# `villas hook`
+### `villas node`
 
-## `villas node`
+Starts the simulator to simulator server. The server acts as a central gateway to forward simulation data.
 
 The core of VILLASnode is the `villas-node` daemon.
 The folling usage information is provided when called like `villas-node --help`;
@@ -42,10 +41,6 @@ Supported API commands:
  - nodes       : retrieve list of all known nodes
  - config      : retrieve current VILLASnode configuration
  - reload      : restart VILLASnode with new configuration
-
-VILLASnode v0.7-0.2-646-g59756e7-dirty-debug (built on Mar 12 2017 21:37:40)
- copyright 2014-2016, Institute for Automation of Complex Power Systems, EONERC
- Steffen Vogel <StVogel@eonerc.rwth-aachen.de>
 ```
 
 The server requires root privileges for:
@@ -54,3 +49,65 @@ The server requires root privileges for:
  - Increase the task priority
  - Configure the network emulator (netem)
  - Change the SMP affinity of threads and network interrupts
+
+### `villas pipe`
+
+The `pipe` subcommand allows to read and write samples to `stdin` / `stdout`.
+
+    Usage: villas-pipe CONFIG [-r] NODE
+      CONFIG  path to a configuration file
+      NODE    the name of the node to which samples are sent and received from
+      -r      swap read / write endpoints)
+
+### `villas signal`
+
+The `signal` subcommand is a signal generator which writes samples to `stdout`.
+This command can be combined with the `pipe` subcommand.
+
+    Usage: villas-signal SIGNAL [OPTIONS]
+      SIGNAL   is on of: 'mixed', 'random', 'sine', 'triangle', 'square', 'ramp'
+      -v NUM   specifies how many values a message should contain
+      -r HZ    how many messages per second
+      -f HZ    the frequency of the signal
+      -a FLT   the amplitude
+      -d FLT   the standard deviation for 'random' signals
+      -l NUM   only send LIMIT messages and stop
+
+### `villas test`
+
+    Usage: villas-test CONFIG TEST NODE [ARGS]
+      CONFIG  path to a configuration file
+      TEST    the name of the test to execute: 'rtt'
+      NODE    name of the node which shoud be used
+ 
+### `villas fpga`
+
+    Usage: ./fpga CONFIGFILE CMD [OPTIONS]
+       Commands:
+          tests      Test functionality of VILLASfpga card
+          benchmarks Do benchmarks
+    
+       Options:
+          -d    Set log level
+
+## Examples
+
+ 1. Start server:
+
+    $ villas node etc/example.conf
+
+ 2. Receive/dump data to file
+
+    $ villas pipe etc/example.conf node_name > dump.csv
+
+ 3. Replay recorded data:
+
+    $ villas pipe etc/example.conf -r node_name < dump.csv
+
+ 4. Send random generated values:
+
+    $ villas signal random 4 100 | villas pipe etc/example.conf destination_node
+
+ 5. Test ping/pong latency:
+
+    $ villas test latency etc/example.conf test_node

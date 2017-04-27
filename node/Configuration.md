@@ -1,4 +1,4 @@
-# Configuration
+# Configuration {#node-configuration}
 
 The VILLASnode configuration is completly contained in a single file.
 Take a look at the example configuration: `server/etc/example.conf`.
