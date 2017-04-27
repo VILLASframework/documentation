@@ -1,0 +1,36 @@
+variables:
+  GIT_STRATEGY: fetch
+  GIT_SUBMODULE_STRATEGY: recursive
+  RSYNC_OPTS: --recursive --ignore-missing-args --chown $DEPLOY_USER:$DEPLOY_USER
+
+stages:
+  - build
+  - deploy
+
+# Stage: build
+##############################################################################
+
+build:
+  stage: build
+  artifacts:
+    name: "${CI_PROJECT_NAME}-doc-${CI_BUILD_REF}"
+    paths:
+      - html/
+  script:
+    - doxygen
+  tags:
+    - shell
+
+# Stage: deploy
+##############################################################################
+
+upload:
+  stage: deploy
+  script:
+    - rsync $RSYNC_OPTS html/ $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/doc/
+  dependencies:
+    - docs
+  only:
+    - master
+  tags:
+    - shell
