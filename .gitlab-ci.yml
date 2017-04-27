@@ -27,9 +27,9 @@ build:
 upload:
   stage: deploy
   script:
-    - rsync $RSYNC_OPTS html/ $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/doc/
+    - rsync $RSYNC_OPTS html/ $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH
   dependencies:
-    - docs
+    - build
   only:
     - master
   tags:
