@@ -21,7 +21,7 @@ We prepared a image which you can download and run out of the box:
 3. Start the latest VILLASnode container by running:
 
 ```
-$ docker run villas/node --help
+$ docker run villas/node node --help
 ```
 
 @htmlonly
