@@ -1,7 +1,5 @@
 # VILLASframework
 
-**V**irtually **I**nterconnected **L**aboratories for **LA**rge systems **S**imulation/emulation
-
 ## Components
 
 - @subpage node
