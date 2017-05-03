@@ -8,6 +8,7 @@
 - @subpage web
 - @subpage controller
 - @subpage fpga
+- @subpage liveusb
 
 ## High-level VILLAS Architecture
 
