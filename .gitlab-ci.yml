@@ -1,7 +1,7 @@
 variables:
   GIT_STRATEGY: fetch
   GIT_SUBMODULE_STRATEGY: recursive
-  RSYNC_OPTS: --recursive --ignore-missing-args --chown $DEPLOY_USER:$DEPLOY_USER
+  RSYNC_OPTS: --recursive --ignore-missing-args --copy-links --chown $DEPLOY_USER:$DEPLOY_USER
 
 stages:
   - build
