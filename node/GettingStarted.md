@@ -1,8 +1,10 @@
 # Getting started guide {#node-guide}
 
-## Installation
+[TOC]
 
 We put some effort in getting you started as smooth as possible.
+
+# Installation {#installation}
 
 For first tests and development you can use the Docker platform to bootstrap your environment.
 Docker is a software to run containers (a.k.a images in Docker's terminology) on a Linux machine.
@@ -51,20 +53,19 @@ We prepared a image which you can download and run out of the box:
 
 **Please note:** the rest of this guide can be completed in this interactive shell.
 
-## VILLASnode
+# VILLASnode {#node2}
 
 VILLASnode is a central component in the VILLASframework.
 Its main purpose is the routing of simulation data.
 More precisely, we will use the term _sample_ to describe an array of values with an associated timestamp.
 
-### Basics
+## Basics {#node-basics}
 
+## Tools {#node-tools}
 
-### Tools @section tools Tools
+See @ref node-usage for a complete reference.
 
-[Usage](node/Usage.md)
-
-#### Signal generation: `villas signal`
+### Signal generation: `villas signal`
 
 The first and simplest utility of the VILLASnode toolbox is a signal generator.
 Rarely used in a real simulation, this tool can be handy for testing and understanding other commands of VILLASnode.
@@ -88,7 +89,7 @@ If you add the `-n` (non real-time mode) switch the data will be printed immeadi
 
 @htmlonly <asciinema-player poster="npt:0:1"  src="recordings/villas_signal_nrt.json"> @endhtmlonly
 
-#### Read / Write data from stdio: `villas pipe`
+### Read / Write data from stdio: `villas pipe`
 
 Send random data to a simulator:
 
@@ -108,8 +109,7 @@ Send samples from file `dump.dat` to `node1`:
 $ villas pipe etc/example.conf node1 < dump.dat
 ```
 
-
-#### Process data with hook functions: `villas hook`
+### Process data with hook functions: `villas hook`
 
 Skip first 10 seconds of a sample stream:
 
@@ -117,12 +117,12 @@ Skip first 10 seconds of a sample stream:
 $ villas signal sine | villas hook skip_first seconds=10
 ```
 
-#### The daemon: `villas node`
+### The daemon: `villas node`
 
 ```
 $ villas node etc/example.conf
 ```
 
-## VILLASweb
+# VILLASweb {#web}
 
-## An example setup
+# An example setup {#example}
