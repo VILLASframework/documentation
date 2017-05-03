@@ -21,6 +21,7 @@ On older versions (S2SS):
  - An USB drive with at least 4 GB capacity (the content on the drive will be erased, backup before if there are any important files stored!)
  - A computer running Windows, Mac OS X or Linux
  - A keyboard and display attached to the server
+ - The live image ISO file `.iso`
 
 ## Setup
 1. Getting the image onto the USB drive (Simply copying the image onto the drive **does not work**):
