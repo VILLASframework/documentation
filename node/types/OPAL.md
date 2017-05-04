@@ -17,11 +17,11 @@ The following description applies only to the `opal` node-type:
 
 Every `opal` node supports the following special settings:
 
-## `send_id` *(integer)* {#node-config-opal-send_id}
+## send_id (integer) {#node-config-opal-send_id}
 
-#### `recv_id` *(integer)* {#node-config-opal-recv_id}
+## recv_id (integer) {#node-config-opal-recv_id}
 
-#### `reply` *(boolean)* {#node-config-opal-reply}
+## reply (boolean) {#node-config-opal-reply}
 
 ## Example
 

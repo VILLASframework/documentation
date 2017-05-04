@@ -6,30 +6,30 @@ The `shmem` node-type can be used to quickly exchange samples with a process on 
 
 The only required configuration option is the `name` option; all others are optional with reasonable defaults.
 
-## `name` *(string)* {#node-config-shmem-name}
+## name (string) {#node-config-shmem-name}
 
 Name of the POSIX shared memory object. Must start with a forward slash (`/`).
 The same name should be passed to the external program somehow in its
 configuration or command-line arguments.
 
-## `queuelen` *(int)* {#node-config-shmem-queuelen}
+## queuelen (int) {#node-config-shmem-queuelen}
 
 Length of the input and output queues in elements. Defaults to `DEFAULT_SHMEM_QUEUELEN`,
 a compile-time constant.
 
-## `samplelen` *(int)* {#node-config-shmem-samplelen}
+## samplelen (int) {#node-config-shmem-samplelen}
 
 Maximum number of data elements in a single `struct sample` for the samples handled
 by this node. Defaults to `DEFAULT_SHMEM_SAMPLELEN`, a compile-time constant.
 
-## `polling` *(boolean)* {#node-config-shmem-polling}
+## polling (boolean) {#node-config-shmem-polling}
 
 If set to false, POSIX condition variables are used to signal writes between processes.
 If set to true, no CV's are used, meaning that blocking writes have to be
 implemented using polling, leading to performance improvements at a cost of
 unnecessary CPU usage. Defaults to false.
 
-## `exec` *(array of strings)* {#node-config-shmem-exec}
+## exec (array of strings) {#node-config-shmem-exec}
 
 Optional name and command-line arguments (as passed to `execve`) of a command
 to be executed during node startup. This can be used to start the external

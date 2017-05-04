@@ -12,17 +12,17 @@ You can use the `vectorize` setting to send multiple samples in a vector.
 
 Every `ngsi` node supports the following special settings:
 
-## `endpoint` *(string: URL)* {#node-config-ngsi-endpoint}
+## endpoint (string: uri) {#node-config-ngsi-endpoint}
 
-## `entity_id` *(string)* {#node-config-ngsi-entity_id}
+## entity_id (string) {#node-config-ngsi-entity_id}
 
-## `entity_type` *(string)* {#node-config-ngsi-entity_type}
+## entity_type (string) {#node-config-ngsi-entity_type}
 
-## `ssl_verify` *(boolean)* {#node-config-ngsi-ssl_verify}
+## ssl_verify (boolean) {#node-config-ngsi-ssl_verify}
 
-## `timeout` *(float: seconds)* {#node-config-ngsi-timeout}
+## timeout (float: seconds) {#node-config-ngsi-timeout}
 
-## `mapping` *(array of strings)* {#node-config-ngsi-mapping}
+## mapping (array of strings) {#node-config-ngsi-mapping}
 
 Example: `AttributeName(AttributeType) MetadataName1(MetadataType1)=MetadataValue1 MetadataName2(MetadataType2)=MetadataValue2 ...`
 

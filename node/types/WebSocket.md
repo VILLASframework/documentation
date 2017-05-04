@@ -4,7 +4,7 @@ The `websocket` node type send and receives simulation data via binary WebSocket
 
 # Configuration {#node-config-websocket}
 
-## `destinations` *(array of URIs)* {#node-config-websocket-destinations}
+## destinations (array of URIs) {#node-config-websocket-destinations}
 
 During startup connect to those websocket servers as a client. 
 

@@ -37,7 +37,7 @@
     1. Open /etc/default/grub and ensure the line 'GRUB_DEFAULT=saved' exists and 'GRUB_SAVEDEFAULT=false' does not exist.  
     2. Update the grub config file with `$ grub2-mkconfig -o /boot/grub2/grub.cfg`.  
     3. Get the menu entry names with `$ grep -P "submenu|^menuentry" /boot/grub2/grub.cfg | cut -d "'" -f2`.  
-    4. Set the default kernel with `$ grub2-set-default "<name>"` where `<name>` is the line with the realtime kernel printed earlier (e.g. "Fedora (4.4.4-301.rt11.1.fc23.ccrma.x86_64+rt) 23 (Twenty Three)").  
+    4. Set the default kernel with `$ grub2-set-default <name>` where `<name>` is the line with the realtime kernel printed earlier (e.g. "Fedora (4.4.4-301.rt11.1.fc23.ccrma.x86_64+rt) 23 (Twenty Three)").  
 3. Install tuned with realtime profile (https://fedorahosted.org/tuned/).  
   1. Install the program with `$ dnf install tuned tuned-profiles-realtime`.  
   2. Start the service with `$ systemctl start tuned.service`.  

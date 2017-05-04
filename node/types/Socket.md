@@ -17,11 +17,11 @@ The implementation supports multiple protocols / OSI layers:
 
 Every `socket` node supports the following special settings:
 
-## `local` *("ip:port" | "mac:protocol")* {#node-config-socket-local}
+## local ("ip:port" | "mac:protocol") {#node-config-socket-local}
 
-## `remote` *("ip:port" | "mac:protocol")* {#node-config-socket-remote}
+## remote ("ip:port" | "mac:protocol") {#node-config-socket-remote}
 
-## `netem` *(dictionary)* {#node-config-socket-netem}
+## netem (dictionary) {#node-config-socket-netem}
 
 Enables and configures the network emulation qeueing discipline.
 See below for a more detailed description of this feature.
@@ -36,11 +36,11 @@ See below for a more detailed description of this feature.
 		corrupt 	= 10		# Corruption in percent
 	}
 
-## `layer` *("udp" | "ip" | "eth")* {#node-config-socket-layer}
+## layer ("udp" | "ip" | "eth") {#node-config-socket-layer}
 
 Select the network layer which should be used for the socket. Please note that `eth` can only be used locally in a LAN as it contains no routing information for the internet.
 
-## `header` *("default" | "none" | "fake")* {#node-config-socket-header}
+## header ("default" | "none" | "fake") {#node-config-socket-header}
 
 The socket node-type supports multiple protocols:
 

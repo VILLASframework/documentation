@@ -7,7 +7,7 @@ The `file` node-type can be used to log or replay samples to / from disk.
 Every `file` node can be configured to only read or write or to do both at the same time.
 The node configuration is divided into two sub-groups: `in` and `out`.
 
-## `uri` *(string: libcurl URI)* {#node-config-file-uri}
+## uri (string: uri) {#node-config-file-uri}
 
 Specifies the URI to a file from which is written to or read from depending in which group (`in`or `out`) is used.
 
@@ -29,13 +29,13 @@ will create a file called:
 
 See below for a description of the file format.
 
-## `mode` *(string)* {#node-config-file-mode}
+## mode (string: "a" | "w" | "a+" | "w+" | "r") {#node-config-file-mode}
 
 Specifies the mode which should be used to open the output file.
 See [open(2)](http://man7.org/linux/man-pages/man2/open.2.html) for an explanation of allowed values.
 The default value is `w+` which will start writing at the beginning of the file and create it in case it does not exist yet.
 
-## `epoch_mode` *("direct" | "wait" | "relative" | "absolute")* {#node-config-file-epoch_mode}
+## epoch_mode ("direct" | "wait" | "relative" | "absolute") {#node-config-file-epoch_mode}
 
 The *epoch* describes the point in time when the first message will be read from the file.
 This setting allows to select the behaviour of the following `epoch` setting.
@@ -62,7 +62,7 @@ The supported values for `epoch_mode`:
 | `absolute` 	| `epoch - first` 	| `epoch` |
 | `original` 	| `0` 			| immeadiatly |
 
-## `rate` *(float)* {#node-config-file-rate}
+## rate (float) {#node-config-file-rate}
 
 By default `send_rate` has the value `0` which means that the time between consecutive samples is the same as in the `in` file based on the timestamps in the first column. 
 
