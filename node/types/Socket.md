@@ -1,4 +1,4 @@
-# Berkely BSD Sockets {#socket}
+# Berkely BSD Sockets {#node-type-socket}
 
 The socket node-type is the most comprehensive and complex one.
 It allows to send and receive simulation data over the network.
@@ -13,15 +13,15 @@ The implementation supports multiple protocols / OSI layers:
  - Layer 2: Raw IP (internet / VPN routing possible)
  - Layer 3: UDP encapsulation
 
-## Configuration
+# Configuration {#node-config-socket}
 
 Every `socket` node supports the following special settings:
 
-#### `local` *("ip:port" | "mac:protocol")*
+## `local` *("ip:port" | "mac:protocol")* {#node-config-socket-local}
 
-#### `remote` *("ip:port" | "mac:protocol")*
+## `remote` *("ip:port" | "mac:protocol")* {#node-config-socket-remote}
 
-#### `netem` *(dictionary)*
+## `netem` *(dictionary)* {#node-config-socket-netem}
 
 Enables and configures the network emulation qeueing discipline.
 See below for a more detailed description of this feature.
@@ -36,11 +36,11 @@ See below for a more detailed description of this feature.
 		corrupt 	= 10		# Corruption in percent
 	}
 
-#### `layer` *("udp" | "ip" | "eth")*
+## `layer` *("udp" | "ip" | "eth")* {#node-config-socket-layer}
 
 Select the network layer which should be used for the socket. Please note that `eth` can only be used locally in a LAN as it contains no routing information for the internet.
 
-#### `header` *("default" | "none" | "fake")*
+## `header` *("default" | "none" | "fake")* {#node-config-socket-header}
 
 The socket node-type supports multiple protocols:
 
@@ -51,12 +51,12 @@ The socket node-type supports multiple protocols:
    - Timestamp seconds (Unix epoch, `uint32_t`)
    - Timestamp nano-seconds  (Unix epoch, `uint32_t`)
 
-####  `endian` *("big" | "network" | "little")*
+##  `endian` *("big" | "network" | "little")* {#node-config-socket-endian}
 
 This setting is only valid for the `none` and `fake` protocols.
 It select the endianes which is used for outgoing and incoming data.
 
-### Example
+## Example
 
 	nodes = {
 		udp_node = {					# The dictionary is indexed by the name of the node.
@@ -88,9 +88,9 @@ It select the endianes which is used for outgoing and incoming data.
 		}
 	}
 
-## Packet Format
+# Packet Format {#node-type-socket-format}
 
-The on-wire format of the network packets is not subject to a standardization process.
+The on-wire format of the network datagrams is not subject to a standardization process.
 It's a very simple packet-based format which includes:
 
  - 32bit floating-point or integer values
@@ -120,11 +120,11 @@ This allows us to reduce the amount of conversions during one transfer.
 
 @see msg for implementation details.
 
-### Example
+## Example
 
 @todo add screenshot of wireshark dump
 
-## Network Emulation
+# Network Emulation {#node-type-socket-netem}
 
 VILLASnode supports the emulation of wide-area network characterisics.
 
@@ -139,7 +139,7 @@ For this the iproute2 software package (`ip` & `tc` commands) must be installed.
 The configuration is done via the config file.
 Look at `etc/example.conf` for a section called `netem` or `tc-netem(8)` for more details.
 
-### Custom delay distribution
+## Custom delay distribution
 
 Netem supports loading custom delay distributions.
 
@@ -150,23 +150,7 @@ Netem supports loading custom delay distributions.
 3. Put the generated distrubtion with the suffix `.dist` in the `tc` lib directory:  `/usr/lib/tc/`.
 4. Load the distribution specifying the basename in the server config.
 
-### Further information
+## Further information
 
  - https://git.kernel.org/cgit/linux/kernel/git/shemminger/iproute2.git/tree/README.iproute2+tc
  - https://github.com/stv0g/netem
-
-## GTNETv2 card with SKT protocol
-
-The GTNETv2 card can be upgraded with SKT firmware to send/receive UDP and TCP packets over Ethernet.
-The card operates the data in big endian format. Related draft files to run the tests are in the "clients/rtds/GTNETv2_SKT/" directory.
-The data can be exchanged with VILLASnode using two methods. These are implemented as part of the socket node:
- - Without a header: Only data values are sent without any header information. It can be used using header = "gtnet-skt:fake" in config file.
- - With a header: First 3 values are sequence, timestamp sec and timesatmp nanosec. Timestamp can be added using GTSYNC card (GPS source) in the draft file or if no timestamp is present (value set to 0), VILLASnode will add its own timestamp (NTP source) replacing the 0 value.
- 
-### Common Problems
-Problems faced during setting up of GT-SKT card with GTSYNC card are:
- - The GT-SKT card was not detected in the RSCAD config manager because the GPC processor port was faulty. Shifting the GT-SKT card to another port solved the issue. Also check the fiber cable if that is faulty.
- - The GT-SKT display should display the correct processor number and the protocol version. Use the SEL button to toggle between processor and protocol display. The processor value should be of the form i.e. 3.1 (processor 3 GT port 1) and the protocol should be 15 which is GT-SKT. If the protocol is 16 there is an error. Also processor number 0.0 means the GT-SKT card can’t detect the processor.
- - Check that GTWIF Firmware version is 4.104 build 7 or higher and RSCAD version is 4.003.1 or higher.
- - In case the GT-SKT can’t detect the processor, restart the rack after repeating step 1. In case GT-SKT can’t detect a correct protocol, telnet (login: rtds, password: commcard) into the card and run the command “status” to see which protocol version the card has. If the card doesn’t display the correct protocol in the telnet but the “Firmware Upgrade” in RSCAD shows the correct version, downgrade the version in Firmware upgrade and then upgrade it to the desired version.
- - In case the draft file gives an error “Timing source not synced”, the GTSYNC card is not connected to GPS source.

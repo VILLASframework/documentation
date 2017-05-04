@@ -1,4 +1,4 @@
-# OMA Next Generation Services Interface {#ngsi}
+# OMA Next Generation Services Interface {#node-type-ngsi}
 
 The `ngsi` node type implements an interface to FIWARE context brokers following the NGSI 10 RESTful HTTP API.
 
@@ -6,27 +6,27 @@ This implementation if currently limited to the `updateContext` operation.
 Therefore only publishing updates is supported. Subscribtion or polling of events is planned for later versions.
 It's using `libcurl` and `libjansson` to communicate with the context broker over JSON.
 
-## Configuration
+# Configuration {#node-config-ngsi}
 
 You can use the `vectorize` setting to send multiple samples in a vector.
 
 Every `ngsi` node supports the following special settings:
 
-#### `endpoint` *(string: URL)*
+## `endpoint` *(string: URL)* {#node-config-ngsi-endpoint}
 
-#### `entity_id` *(string)*
+## `entity_id` *(string)* {#node-config-ngsi-entity_id}
 
-#### `entity_type` *(string)*
+## `entity_type` *(string)* {#node-config-ngsi-entity_type}
 
-#### `ssl_verify` *(boolean)*
+## `ssl_verify` *(boolean)* {#node-config-ngsi-ssl_verify}
 
-#### `timeout` *(float: seconds)*
+## `timeout` *(float: seconds)* {#node-config-ngsi-timeout}
 
-#### `mapping` *(array of strings)*
+## `mapping` *(array of strings)* {#node-config-ngsi-mapping}
 
 Example: `AttributeName(AttributeType) MetadataName1(MetadataType1)=MetadataValue1 MetadataName2(MetadataType2)=MetadataValue2 ...`
 
-### Example
+## Example
 
 	nodes = {
 		ngsi_node = {
@@ -50,7 +50,7 @@ Example: `AttributeName(AttributeType) MetadataName1(MetadataType1)=MetadataValu
 		}
 	}
 
-## Further reading
+# Further reading
 
 This standard was specified by the Open Mobile Alliance (OMA).
 

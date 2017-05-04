@@ -1,13 +1,13 @@
-# File {#file}
+# File {#node-type-file}
 
 The `file` node-type can be used to log or replay samples to / from disk.
 
-## Configuration
+# Configuration {#node-config-file}
 
 Every `file` node can be configured to only read or write or to do both at the same time.
 The node configuration is divided into two sub-groups: `in` and `out`.
 
-#### `uri` *(string: libcurl URI)*
+## `uri` *(string: libcurl URI)* {#node-config-file-uri}
 
 Specifies the URI to a file from which is written to or read from depending in which group (`in`or `out`) is used.
 
@@ -17,21 +17,25 @@ See [strftime(3)](http://man7.org/linux/man-pages/man3/strftime.3.html) for a li
 
 **Example**:
 
-    uri = "logs/measurements_%Y-%m-%d_%H-%M-%S.log"
+```
+uri = "logs/measurements_%Y-%m-%d_%H-%M-%S.log"
+```
 
 will create a file called:
 
-    ./logs/measurements_2015-08-09_22-20-50.log
+```
+./logs/measurements_2015-08-09_22-20-50.log
+```
 
 See below for a description of the file format.
 
-#### `mode` *(string)*
+## `mode` *(string)* {#node-config-file-mode}
 
 Specifies the mode which should be used to open the output file.
 See [open(2)](http://man7.org/linux/man-pages/man2/open.2.html) for an explanation of allowed values.
 The default value is `w+` which will start writing at the beginning of the file and create it in case it does not exist yet.
 
-#### `epoch_mode` *("direct" | "wait" | "relative" | "absolute")*
+## `epoch_mode` *("direct" | "wait" | "relative" | "absolute")* {#node-config-file-epoch_mode}
 
 The *epoch* describes the point in time when the first message will be read from the file.
 This setting allows to select the behaviour of the following `epoch` setting.
@@ -50,48 +54,50 @@ Those variables will also been displayed during the startup phase of the server 
 
 The supported values for `epoch_mode`:
  
-| `epoch_mode` | `offset`              | `start = first + offset` |
-| -----------: | :-------------------: | :----------------------: |
-| `direct`     | `now - first + epoch` | `now + epoch`            |
-| `wait`       | `now + epoch`         | `now + first`            | 
-| `relative`   | `epoch`               | `first + epoch`          |
-| `absolute`   | `epoch - first`       | `epoch`                  |
-| `original`   | `0` | immeadiatly |
+| `epoch_mode` 	| `offset` 		| `start = first + offset` |
+| :--		| :--			| :-- |
+| `direct`  	| `now - first + epoch` 	| `now + epoch` |
+| `wait`  	| `now + epoch` 		| `now + first` | 
+| `relative` 	| `epoch` 		| `first + epoch` |
+| `absolute` 	| `epoch - first` 	| `epoch` |
+| `original` 	| `0` 			| immeadiatly |
 
-#### `rate` *(float)*
+## `rate` *(float)* {#node-config-file-rate}
 
 By default `send_rate` has the value `0` which means that the time between consecutive samples is the same as in the `in` file based on the timestamps in the first column. 
 
 If this setting has a non-zero value, the default behaviour is overwritten with a fixed rate.
 
-### Example
+## Example
 
-	nodes = {
-		file_node = {
-			type	= "file",
-		
-		### The following settings are specific to the file node-type!! ###
+```
+nodes = {
+	file_node = {
+		type	= "file",
 	
-			in = {
-				uri = "logs/input.log",	# These options specify the URI where the the files are stored
-				mode = "w+",			# The mode in which files should be opened (see open(2))
-							
-				epoch_mode = "direct"		# One of: direct (default), wait, relative, absolute
-				epoch = 10			# The interpretation of this value depends on epoch_mode (default is 0).
-								# Consult the documentation of a full explanation
-	
-				rate = 2.0			# A constant rate at which the lines of the input files should be read
-								# A missing or zero value will use the timestamp in the first column
-								# of the file to determine the pause between consecutive lines.
-			},
-			out = {
-				uri = "logs/output_%F_%T.log"	# The output URI accepts all format tokens of (see strftime(3))
-				mode = "a+"			# You might want to use "a+" to append to a file
-			}
+	### The following settings are specific to the file node-type!! ###
+
+		in = {
+			uri = "logs/input.log",	# These options specify the URI where the the files are stored
+			mode = "w+",			# The mode in which files should be opened (see open(2))
+						
+			epoch_mode = "direct"		# One of: direct (default), wait, relative, absolute
+			epoch = 10			# The interpretation of this value depends on epoch_mode (default is 0).
+							# Consult the documentation of a full explanation
+
+			rate = 2.0			# A constant rate at which the lines of the input files should be read
+							# A missing or zero value will use the timestamp in the first column
+							# of the file to determine the pause between consecutive lines.
+		},
+		out = {
+			uri = "logs/output_%F_%T.log"	# The output URI accepts all format tokens of (see strftime(3))
+			mode = "a+"			# You might want to use "a+" to append to a file
 		}
 	}
+}
+```
 
-## File Format
+# File Format {#node-type-file-format}
 
 This node-type uses a simple human-readable format to save samples to disk:
 The format is similiar to a conventional CSV (comma seperated values) file.

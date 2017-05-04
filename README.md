@@ -1,35 +1,46 @@
 # VILLASframework
 
-## Components
+<img src="images/logos/villas_framework.svg" align="right" width="150px" >
+
+@subpage framework-architecture
+
+# Components
 
 - @subpage node
 - @subpage web
 - @subpage controller
 - @subpage fpga
+
+# Download
+
+The source code of all open source components is available over the [RWTH GitLab](https://git.rwth-aachen.de).
+
+**Note:** You need a Github.com account to access the repositories.
+
 - @subpage liveusb
 
-## High-level VILLAS Architecture
+# Copyright
 
-Design objective for VILLAS framework: a holistic framework with modular and generic architecture
+2017, Institute for Automation of Complex Power Systems, EONERC
 
-Three integration layers are foreseen based on the diversity of the facilities and applications:
-- Hard Real-Time Integration Layer (H-RTIL)
-- Soft Real-Time Integration Layer (S-RTIL)
-- Offline Integration Layer (O-IL)
+# Licensing
 
-<img alt="VILLASarchitecture" src="Generic_VILLAS_Architecture_mapping.png" width="100%" />
+<img alt="GPLv3 logo" src="images/logos/gplv3.png" width="120" align="right"> 
 
-### Hard Real-Time Integration Layer (H-RTIL)
-- Integrates digital real-time simulators, actual hardware devices and test benches into a joint experiment
-- H-RTIL requires interfaces that provide deterministic and synchronized data exchange between laboratories
-- Real-time protocols and physical point-to-point connections should be used
+__VILLASnode__, __VILLASweb__ and __VILLAScontroller__ are released as open source software under the [GPLv3 license](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
-### Soft Real-Time Integration Layer (S-RTIL)
-- Integration of tools and applications with less critical timing requirements (inaccurate timing or time-varying delays are acceptable to some extent)
-- User interaction via web-based access
-- High-level tools, system level control, optimization applications
+__VILLASfpga__ is currently closed-source due to propietary firmware components which we can not share.
+Please contact [Steffen Vogel](mailto:stvogel@eoenrc.rwth-aachen.de) for details.
 
-### Offline Integration Layer (O-IL)
-- Integration of domain-specific analyses that are performed at pre-experiment and post-experiment phases
-- An interface to adapt parameters or models of experiments in a pre-experiment phase
-- Non-real-time tasks during the experiment, such as data logging for Data as a Service
+Other licensing options available upon request.
+Please contact [Prof. Antonello Monti](mailto:amonti@eonerc.rwth-aachen.de) for further details.
+
+# Contact
+
+<img alt="EONERC ACS Logo" src="images/logos/eonerc_logo.png" align="right" />
+
+- Steffen Vogel <stvogel@eonerc.rwth-aachen.de>
+
+[Institute for Automation of Complex Power Systems (ACS)](http://www.acs.eonerc.rwth-aachen.de)
+[EON Energy Research Center (EONERC)](http://www.eonerc.rwth-aachen.de)
+[RWTH University Aachen, Germany](http://www.rwth-aachen.de) 

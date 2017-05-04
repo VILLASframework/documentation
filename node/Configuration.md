@@ -1,21 +1,15 @@
-# Configuration {#node-configuration}
+# Configuration {#node-config}
 
 The VILLASnode configuration is completly contained in a single file.
 Take a look at the example configuration: `server/etc/example.conf`.
 
 The configuration file consists of three sections:
 
-## Global
+# Global {#node-config-global}
 
 The global section consists of some global configuration parameters:
 
-#### `debug` *(integer)*
-
-`debug` expects an integer number (0-10) which determines the verbosity of debug messages during the execution of the server.
-Use this with care! Producing a lot of IO might decrease the performance of the server.
-Omitting this setting or setting it to zero will disable debug messages completely.
-
-#### `stats` *(float)*
+## `stats` *(float)* {#node-config-stats}
 
 `stats` specifies the rate in which statistics about the actives paths will be printed to the screen.
 Setting this value to 5, will print 5 lines per second.
@@ -25,35 +19,62 @@ A line of includes information such as:
   - Messages sent
   - Messaged dropped
 
-#### `affinity` *(integer)*
+## `affinity` *(integer)* {#node-config-affinity}
 
 The `affinity` setting allows to restrict the exeuction of the daemon to certain CPU cores.
 This technique, also called 'pinning', improves the determinism of the server by isolating the daemon processes on exclusive cores.
 
-#### `priority` *(integer)*
+## `priority` *(integer)* {#node-config-priority}
 
 The `priority` setting allows to adjust the scheduling priority of the deamon processes.
 By default, the daemon uses a real-time optimized FIFO scheduling algorithm.
 
-#### `name` *(string)*
+## `hugepages` *(integer)* {#node-config-hugepages}
+
+The number of hugepages which will be reservered by the system.
+
+See: <https://www.kernel.org/doc/Documentation/vm/hugetlbpage.txt>
+
+## `name` *(string)* = _hostname_ {#node-config-name}
 
 By default the `name` of a VILLASnode instance is equalt to the hostname of the machine it is running on.
 Some node types are using this name to identify themselves agains their remotes.
 An example is the `ngsi` node type which adds a metadata attribute `source` to its updates.
 
-## Log
+# Log {#node-config-log}
 
 ```
 log = {
 	file = "/var/log/villas-node.log";
 	level = 5;
 	facilities = "socket,log,mem";	// log socket node-type, log and memory sub-system
-	facilities = "nodes,!websocket";	// log all node-type but not the websocket node-type
-	//facilities = "all,!nodes";	// log everything but not the node-types
 }
 ```
 
-#### Available logging facilities
+## `log.level` *(integer)* {#node-config-log-level}
+
+`log.level` expects a positive integer number which adjusts the verbosity of debug messages.
+Use this with care! Producing a lot of IO might decrease the performance of the server.
+Omitting this setting or setting it to zero will disable debug messages completely.
+
+## `log.file` *(path)* {#node-config-log-file}
+
+Write all log messages to a file.
+
+## `log.facilities` *(string)* = `all` {#node-config-log-facilities}
+
+`log.facilities` is a comma-separated expression which selects the active logging facilities.
+Each of the facilities can be prefixed with an exclamation mark in order to exclude it.
+
+Examples:
+
+```
+facilities = "nodes,!websocket";	// log all node-type but not the websocket node-type
+facilities = "all,!nodes";	// log everything but not the node-types
+facilities = "socket,log,mem";	// log socket node-type, log and memory sub-system
+```
+
+The following logging facilities are available:
 
 | Facility		| Description |
 |:-		|:- |
@@ -79,9 +100,30 @@ log = {
 | `websocket` 	| WebSocket node-type |
 | `opal` 		| OPAL-RT node-type |
 
-## Web
+# HTTP / WebSocket server {#node-config-http}
 
-## Nodes
+```
+http = {
+	enabled = true,					# Do not listen on a port if true
+	
+	htdocs = "/villas/web/socket/",			# Root directory of internal webserver
+	port = 80					# Port for HTTP connections
+}
+```
+
+## `http.enabled` *(boolean)* = `true` {#node-config-http-enabled}
+
+When set to `false` the VILLASnode daemon will not listen on a port for servering HTTP and WebSocket requests.
+
+## `http.htdocs` *(string: path)* = `/usr/share/villas/node/web`  {#node-config-http-htdocs}
+
+The location of of static files served by the HTTP / WebSocket server.
+
+## `http.port` *(integer)*  = `80` {#node-config-http-port}
+
+The TCP port number on which HTTP / WebSocket server.
+
+# Nodes {#node-config-node}
 
 The node section is a **directory** of nodes (clients) which are connected to the VILLASnode instance.
 The directory is indexed by the name of the node:
@@ -97,54 +139,16 @@ nodes = {
 
 There are multiple diffrent type of nodes. But all types have the following settings in common:
 
-#### `type` *("socket" | "gtfpga" | "file" | "ngsi")*
+## `type` *("socket" | "fpga" | "file" | "ngsi" | "websocket" | "shmem")* {#node-config-node-type}
 
-`type` sets the type of the node. This should be one of:
-  - `socket` which refers to a [Socket](socket) node.
-  - `gtfpga` which refers to a [GTFPGA](gtfpga) node.
-  - `opal` which refers to a [OPAL Asynchronous Process](opal) node.
-  - `file` which refers to a [File](file) node.
+`type` specifies the type of the node.
 
-The remaining settings per node a depending on `type`.
-Take a look a the specific pages for details.
+For a complete list of supported node-types run `villas node --help`.
 
-## Paths
+In addition to the node settings described in this section, every node type has its own specific settings.
+Take a look at the @ref node-types page for details.
 
-The path section consists of a **list** of paths:
-
-    paths = [
-        {
-            in = "rtds",
-            out = "broker",
-            reverse = false,
-            poolsize = 32,
-            msgsize = 16,
-            vectorize = 4,
-            hook = [ "print", "ts" ]
-        }
-    ]
-
-Every path is allowed to have the following settings:
-
-##### `in` & `out` *(string)*
-
-The `in` and `out` settings expect the name of the source and destination node.
-
-The `out` setting itself is allowed to be list of nodes.
-This enables 1-to-n distribution of simulation data.
-
-##### `enabled` *(boolean)*
-
-The optional `enabled` setting can be used to temporarily disable a path.
-If omitted, the path is enabled by default.
-
-##### `reverse` *(boolean)*
-
-By default, the path is unidirectional. Meaning, that it only forwards samples from the source to the destination.
-Sometimes a bidirectional path is needed.
-This can be accomplished by setting `reverse` to `true`.
-
-##### `vectorize` *(integer)*
+## `vectorize` *(integer)* = 1 {#node-config-node-vectorize}
 
 This setting allows to send multiple samples in a single message to the destination nodes. Currently this is only supported by the `file` and `socket` node-types.
 
@@ -152,7 +156,47 @@ The value of this setting determines how many samples will be combined into one 
 
 **Important:** Please make sure that the value of this setting is smaller or equal to the `poolsize` setting of this path.
 
-##### `rate` *(float)*
+# Paths {#node-config-path}
+
+The path section consists of a **list** of paths:
+
+```
+paths = [
+    {
+        in = "rtds",
+        out = "broker",
+        reverse = false,
+        poolsize = 32,
+        msgsize = 16,
+        vectorize = 4,
+        hook = [ "print", "ts" ]
+    }
+]
+```
+
+Every path is allowed to have the following settings:
+
+## `in` & `out` *(string)* {#node-config-path-in-out}
+
+The `in` and `out` settings expect the name of the source and destination node.
+
+The `out` setting itself is allowed to be list of nodes.
+This enables 1-to-n distribution of simulation data.
+
+## `enabled` *(boolean)* {#node-config-path-enabled}
+
+The optional `enabled` setting can be used to temporarily disable a path.
+If omitted, the path is enabled by default.
+
+## `reverse` *(boolean)* {#node-config-path-reverse}
+
+By default, the path is unidirectional. Meaning, that it only forwards samples from the source to the destination.
+Sometimes a bidirectional path is needed.
+This can be accomplished by setting `reverse` to `true`.
+
+## `rate` *(float)* {#node-config-path-rate}
+
+**Important:** This feature is currently not working!
 
 A non-zero value for this setting will change this path to an asynchronous mode.
 In this mode VILLASnode will send with a fixed rate to all destination nodes.
@@ -161,13 +205,13 @@ If `vectorize` is larger than 1, it will send the last `vectorize` samples at on
 
 **Important:** Please note that there is no correlation between the time of arrival and time of departure in this mode. It might increase the latency of this path by up to `1 / rate` seconds!
 
-##### `poolsize` *(integer)*
+## `poolsize` *(integer)* {#node-config-path-poolsize}
 
 Every path manages a circular buffer to keep a history of past samples. This setting specifies the size of this circular buffer.
 
 **Important:** There are some hook functions (or the `vectorize` setting) which require a minimum poolsize (for example the finite-impulse-response `fir` hook).
 
-##### `hook` *(list of strings)*
+## `hook` *(list of strings)* {#node-config-path-hook}
 
 A list of hook functions which will be executed for this path.
 

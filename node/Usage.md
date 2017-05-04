@@ -1,4 +1,4 @@
-# Tools {#node-usage}
+# Usage {#node-usage}
 
 VILLASnode comes with a couple of tools to test and debug connectivity and configurations.
 

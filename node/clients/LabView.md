@@ -1,4 +1,4 @@
-# LabView {#labview}
+# LabView {#node-client-labview}
 
 We build an example LabView model which is using the UDP message format of the `socket` node-type to communicate with VILLASnode.
 

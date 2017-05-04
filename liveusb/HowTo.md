@@ -30,14 +30,14 @@
   3. Reboot into the new realtime kernel (you may have to select it in grub) and verify the new kernel is running with `$ uname -r` (The release should have '+rt' in the name).  
   4. Remove unneeded kernels (**Hint:** You should leave one non-realtime kernel installed).  
     1. List all installed kernels with `$ dnf info kernel`. (To list all realtime kernels replace 'kernel' with 'kernel-rt').  
-    2. Remove unneeded kernels with `$ dnf remove kernel-<version>` where <verison> is the kernel version to remove.  
+    2. Remove unneeded kernels with `$ dnf remove kernel-<version>` where `<verison>` is the kernel version to remove.  
     3. Goto '/boot' and list all files.  
     2. Remove all files regarding the previous uninstalled kernel versions.  
   5. Change grub to boot by default into the realtime kernel.  
     1. Open /etc/default/grub and ensure the line 'GRUB_DEFAULT=saved' exists and 'GRUB_SAVEDEFAULT=false' does not exist.  
     2. Update the grub config file with `$ grub2-mkconfig -o /boot/grub2/grub.cfg`.  
     3. Get the menu entry names with `$ grep -P "submenu|^menuentry" /boot/grub2/grub.cfg | cut -d "'" -f2`.  
-    4. Set the default kernel with `$ grub2-set-default "<name>"` where <name> is the line with the realtime kernel printed earlier (e.g. "Fedora (4.4.4-301.rt11.1.fc23.ccrma.x86_64+rt) 23 (Twenty Three)").  
+    4. Set the default kernel with `$ grub2-set-default "<name>"` where `<name>` is the line with the realtime kernel printed earlier (e.g. "Fedora (4.4.4-301.rt11.1.fc23.ccrma.x86_64+rt) 23 (Twenty Three)").  
 3. Install tuned with realtime profile (https://fedorahosted.org/tuned/).  
   1. Install the program with `$ dnf install tuned tuned-profiles-realtime`.  
   2. Start the service with `$ systemctl start tuned.service`.  
@@ -52,9 +52,9 @@
   6. Ensure tinc VPN is installed with `$ tinc --version`.  
 5. Copy S2SS image files from the InetDistSim repository, liveusb/files directory (https://github.com/RWTH-ACS/InetDistSim/tree/master/liveusb).  
   1. Copy from the 'etc' directory 'motd', 'hostname', 'hosts', 'image-release' files and 'image', 'modprobe.d', 'sysconfig' and 'systemd' directories into /etc with `$ scp -r <path> root@<ip>:/etc` where
-        <path> is the path the file or directory on your locale machine and ip the address to the virtual machine (You may also copy the whole InetDistSim repository into the virtual machine and
+        `<path>` is the path the file or directory on your locale machine and ip the address to the virtual machine (You may also copy the whole InetDistSim repository into the virtual machine and
         copy the files locally).  
-  2. Copy the '.ssh' directory in '/root' onto the virtual machine with `$ scp -r <path> root@<ip>:/root` where <path> is the path to the '.ssh' directory.  
+  2. Copy the '.ssh' directory in '/root' onto the virtual machine with `$ scp -r <path> root@<ip>:/root` where `<path>` is the path to the '.ssh' directory.  
   3. **Important:** Protect ssh keys otherwise they are not used `$ chmod 600 ~/.ssh/id_rsa_*`.
   4. Install needed packages with `$ dnf install traceroute lshw ssmtp bind-utils`.  
   5. Configure SSMTP to use tunneled mailserver.
@@ -62,19 +62,19 @@
   6. Enable the setup.sh script on boot with `$ systemctl enable setup`.
 6. Remove unwanted packages.
   1. List all installed packages with `$ dnf list installed`.
-  2. Remove packages with `$ dnf remove <name>` where <name> is the name of unwanted packages.
+  2. Remove packages with `$ dnf remove <name>` where `<name>` is the name of unwanted packages.
 7. Prepare the virtual disk for compression.  
-  1. Write a file zero file to disk with `$ dd if=/dev/zero of=large bs=1G count=<X>` where <X> is the number of gigabytes of the virtual disk.  
+  1. Write a file zero file to disk with `$ dd if=/dev/zero of=large bs=1G count=<X>` where `<X>` is the number of gigabytes of the virtual disk.  
   2. Sync the file to be written to the virtual disk with `$ sync`.  
   3. Delete the file with `rm large`.  
 8. Convert the virtual disk to raw image.  
   1. Shutdown the virtual machine.  
   2. Goto the directory containing the '.vdi' file.  
-  3. Convert the virtual disk with `$ VBoxManage internalcommands converttoraw <image.vdi> image.raw` where <image.vdi> is the name of the '.vdi' file.  
+  3. Convert the virtual disk with `$ VBoxManage internalcommands converttoraw <image.vdi> image.raw` where `<image.vdi>` is the name of the '.vdi' file.  
   4. Compress the file and upload.  
 9. Copy the raw image to physical disk (The physical disk must have at least the size of the virtual disk).  
   1. Locate and unmount the disk.  
-  2. Copy the image to disk with `sudo dd bs=10m if=image.raw of=/dev/<sdX>` where <sdX> is the unmounted disk.  
+  2. Copy the image to disk with `sudo dd bs=10m if=image.raw of=/dev/<sdX>` where `<sdX>` is the unmounted disk.  
 
 
 ### Troubleshoot

@@ -1,4 +1,4 @@
-# Hooks {#concept-hook}
+# Hooks {#node-concept-hook}
 
 Hooks are simple callback functions which are called whenever a message is processed by a path.
 

@@ -1,6 +1,6 @@
 # Production {#web-production}
 
-For setup instructions see development.md
+For setup instructions see @ref web-development.
 
 ## Frontend
 

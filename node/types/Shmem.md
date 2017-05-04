@@ -1,41 +1,41 @@
-# Shared memory {#shmem}
+# Shared memory {#node-type-shmem}
 
 The `shmem` node-type can be used to quickly exchange samples with a process on the same host using a POSIX shared memory object.
 
-## Configuration
+# Configuration {#node-config-shmem}
 
 The only required configuration option is the `name` option; all others are optional with reasonable defaults.
 
-#### `name` (string)
+## `name` *(string)* {#node-config-shmem-name}
 
 Name of the POSIX shared memory object. Must start with a forward slash (`/`).
 The same name should be passed to the external program somehow in its
 configuration or command-line arguments.
 
-#### `queuelen` (int)
+## `queuelen` *(int)* {#node-config-shmem-queuelen}
 
 Length of the input and output queues in elements. Defaults to `DEFAULT_SHMEM_QUEUELEN`,
 a compile-time constant.
 
-#### `samplelen` (int)
+## `samplelen` *(int)* {#node-config-shmem-samplelen}
 
 Maximum number of data elements in a single `struct sample` for the samples handled
 by this node. Defaults to `DEFAULT_SHMEM_SAMPLELEN`, a compile-time constant.
 
-#### `polling` (boolean)
+## `polling` *(boolean)* {#node-config-shmem-polling}
 
 If set to false, POSIX condition variables are used to signal writes between processes.
 If set to true, no CV's are used, meaning that blocking writes have to be
 implemented using polling, leading to performance improvements at a cost of
 unnecessary CPU usage. Defaults to false.
 
-#### `exec` (array of strings)
+## `exec` *(array of strings)* {#node-config-shmem-exec}
 
 Optional name and command-line arguments (as passed to `execve`) of a command
 to be executed during node startup. This can be used to start the external
 program directly from VILLASNode. If unset, no command is executed.
 
-## API for external programs
+# API for external programs {#node-type-shmem-api}
 
 The actual sharing of data is implemented by putting two shared `struct queue`s
 (one per direction) and an associated `struct pool` in the shared memory region.
@@ -51,5 +51,6 @@ configuration file), samples can be read from and written to VILLASNode using
 `shmem_shared_read` and `shmem_shared_write`, respectively. Samples written to
 the node must be allocated by `sample_alloc` from the shared pool; samples read
 from the node should be freed with `sample_put` after they have been processed.
+
 See the [example client](test-shmem_8c_source.html) and the [API
 documentation](group__shmem.html) for more details.

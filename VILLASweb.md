@@ -1,6 +1,6 @@
 # VILLASweb {#web}
 
-<img src="villas_web.png" width="100" align="right" />
+<img src="images/logos/villas_web.svg" width="115px" align="right" />
 
 VILLASweb is a web interface for planning, preparing, executing and analyzing distributed simulations.
 
@@ -8,3 +8,4 @@ VILLASweb is a web interface for planning, preparing, executing and analyzing di
 - @subpage web-requirements
 - @subpage web-production
 - @subpage web-sampledata
+- @subpage web-screenshots

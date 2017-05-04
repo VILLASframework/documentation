@@ -14,3 +14,13 @@
 	right: 0;
 	top: 0;
 }
+
+asciinema-split > asciinema-player:first-child > div {
+	float: left;
+}
+
+asciinema-split > asciinema-player > div {
+	text-align: left !important;
+	margin-right: 1em;
+	margin-bottom: 1em;
+}

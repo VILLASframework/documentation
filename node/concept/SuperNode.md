@@ -1,1 +1,1 @@
-# Super Nodes {#concept-supernode}
+# Super Nodes {#node-concept-supernode}
