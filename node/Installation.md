@@ -137,6 +137,7 @@ We prepared a image which you can download and run out of the box:
     ![Install Docker Toolbox 2](docker_toolbox_installer_2.png)
     ![Install Docker Toolbox 3](docker_toolbox_installer_3.png)
     ![Install Docker Toolbox 4](docker_toolbox_installer_4.png)
+    ![Install Docker Toolbox 4 - On Windows 10 make sure to install VB with NDIS5 driver](docker_toolbox_installer_4_Win10.png)
     ![Install Docker Toolbox 5](docker_toolbox_installer_5.png)
     ![Install Docker Toolbox 6](docker_toolbox_installer_6.png)
     ![Install Docker Toolbox 7](docker_toolbox_installer_7.png)
