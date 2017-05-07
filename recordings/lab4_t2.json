@@ -1,0 +1,334 @@
+{
+  "title": null,
+  "stdout": [
+    [
+      0.031203,
+      "\u001b]0;@5b190630cbf7:/villas\u0007"
+    ],
+    [
+      0.001291,
+      "[root@5b190630cbf7 villas]# "
+    ],
+    [
+      0.623943,
+      "v"
+    ],
+    [
+      0.143825,
+      "i"
+    ],
+    [
+      0.367891,
+      "l"
+    ],
+    [
+      0.15977,
+      "l"
+    ],
+    [
+      0.152493,
+      "a"
+    ],
+    [
+      0.094628,
+      "s"
+    ],
+    [
+      0.360929,
+      " "
+    ],
+    [
+      0.152031,
+      "p"
+    ],
+    [
+      0.144059,
+      "i"
+    ],
+    [
+      0.120405,
+      "p"
+    ],
+    [
+      0.15955,
+      "e"
+    ],
+    [
+      0.272207,
+      " "
+    ],
+    [
+      0.631817,
+      "l"
+    ],
+    [
+      0.159798,
+      "a"
+    ],
+    [
+      0.136309,
+      "b"
+    ],
+    [
+      0.471911,
+      "3"
+    ],
+    [
+      0.198579,
+      ".conf "
+    ],
+    [
+      1.953879,
+      "u"
+    ],
+    [
+      0.119718,
+      "d"
+    ],
+    [
+      0.151914,
+      "p"
+    ],
+    [
+      1.040526,
+      "_"
+    ],
+    [
+      0.3836,
+      "n"
+    ],
+    [
+      0.079814,
+      "o"
+    ],
+    [
+      0.031683,
+      "d"
+    ],
+    [
+      0.080584,
+      "e"
+    ],
+    [
+      0.471684,
+      "1"
+    ],
+    [
+      0.343982,
+      " "
+    ],
+    [
+      0.096036,
+      "-"
+    ],
+    [
+      0.136581,
+      "x"
+    ],
+    [
+      0.839896,
+      "\r\n"
+    ],
+    [
+      0.056507,
+      "     0.000 \u001b[37mInfo \u001b[0m \u001b(0t\u001b(B Initialize API sub-system"
+    ],
+    [
+      0.000349,
+      "\r\n"
+    ],
+    [
+      0.000761,
+      "     0.001 \u001b[37mInfo \u001b[0m \u001b(0x\u001b(B \u001b(0t\u001b(B Reading configuration from local file: lab3.conf"
+    ],
+    [
+      0.00024,
+      "\r\n"
+    ],
+    [
+      0.000829,
+      "     0.002 \u001b[37mInfo \u001b[0m \u001b(0t\u001b(B Initialize memory sub-system"
+    ],
+    [
+      0.000226,
+      "\r\n"
+    ],
+    [
+      0.00034,
+      "     0.003 \u001b[30mDebug\u001b[0m \u001b(0x\u001b(B \u001b(0t\u001b(B Increased ressource limit of locked memory to 209715200 bytes"
+    ],
+    [
+      0.000565,
+      "\r\n"
+    ],
+    [
+      0.000251,
+      "     0.004 \u001b[37mInfo \u001b[0m \u001b(0t\u001b(B Initialize signals"
+    ],
+    [
+      6.7e-05,
+      "\r\n"
+    ],
+    [
+      0.000465,
+      "     0.004 \u001b[37mInfo \u001b[0m \u001b(0t\u001b(B Initialize real-time sub-system"
+    ],
+    [
+      0.000353,
+      "\r\n"
+    ],
+    [
+      0.000487,
+      "     0.005 \u001b[33mWarn \u001b[0m \u001b(0x\u001b(B \u001b(0t\u001b(B We recommend to use an PREEMPT_RT patched kernel!"
+    ],
+    [
+      0.000122,
+      "\r\n"
+    ],
+    [
+      0.000303,
+      "     0.005 \u001b[33mWarn \u001b[0m \u001b(0x\u001b(B \u001b(0t\u001b(B You might want to use the 'priority' setting to increase VILLASnode's process priority"
+    ],
+    [
+      0.000242,
+      "\r\n"
+    ],
+    [
+      0.000287,
+      "     0.006 \u001b[33mWarn \u001b[0m \u001b(0x\u001b(B \u001b(0t\u001b(B You should use the 'affinity' setting to pin VILLASnode to dedicate CPU cores"
+    ],
+    [
+      0.000253,
+      "\r\n"
+    ],
+    [
+      0.000307,
+      "     0.006 \u001b[37mInfo \u001b[0m \u001b(0t\u001b(B Initializing \u001b[33msocket\u001b[0m node type which is used by 1 nodes"
+    ],
+    [
+      0.000243,
+      "\r\n"
+    ],
+    [
+      0.001034,
+      "     0.007 \u001b[33mWarn \u001b[0m \u001b(0x\u001b(B \u001b(0t\u001b(B Did not found any interrupts for interface 'lo'"
+    ],
+    [
+      0.000125,
+      "\r\n"
+    ],
+    [
+      0.000308,
+      "     0.008 \u001b[37mInfo \u001b[0m \u001b(0x\u001b(B \u001b(0t\u001b(B Starting interface 'lo' which is used by 1 sockets"
+    ],
+    [
+      0.000453,
+      "\r\n"
+    ],
+    [
+      0.000145,
+      "     0.009 \u001b[37mInfo \u001b[0m \u001b(0t\u001b(B Starting node \u001b[31mudp_node1\u001b[0m(\u001b[33msocket\u001b[0m): vectorize=1, layer=udp, header=default, endian=auto, local=127.0.0.1:12001, remote=0.0.0.0:12000"
+    ],
+    [
+      0.000206,
+      "\r\n"
+    ],
+    [
+      0.001628,
+      "# sec.nsec+offset     "
+    ],
+    [
+      0.00029,
+      "\t"
+    ],
+    [
+      0.000234,
+      "\t"
+    ],
+    [
+      0.000286,
+      "data[]"
+    ],
+    [
+      0.000186,
+      "\r\n"
+    ],
+    [
+      2.483758,
+      "1"
+    ],
+    [
+      1.119982,
+      "."
+    ],
+    [
+      0.13612,
+      "1"
+    ],
+    [
+      0.871833,
+      "("
+    ],
+    [
+      0.192029,
+      "1"
+    ],
+    [
+      0.248007,
+      ")"
+    ],
+    [
+      1.040008,
+      " "
+    ],
+    [
+      0.191843,
+      "1"
+    ],
+    [
+      0.160389,
+      " "
+    ],
+    [
+      0.183774,
+      "2"
+    ],
+    [
+      0.119175,
+      " "
+    ],
+    [
+      0.232787,
+      "3"
+    ],
+    [
+      0.128356,
+      " "
+    ],
+    [
+      0.223643,
+      "4"
+    ],
+    [
+      0.664346,
+      "\r\n"
+    ],
+    [
+      3.0,
+      "2.000000002+1.494159e+09(0)\t3.000000\t4.000000\t5.000000\t6.000000\t7.000000\r\n"
+    ],
+    [
+      3.0,
+      "    26.656 \u001b[37mInfo \u001b[0m \u001b(0t\u001b(B Reached end-of-file. Terminating...\r\n    26.656 \u001b[37mInfo \u001b[0m \u001b(0t\u001b(B Stopping paths\r\n    26.656 \u001b[37mInfo \u001b[0m \u001b(0t\u001b(B Stopping nodes\r\n    26.656 \u001b[37mInfo \u001b[0m \u001b(0x\u001b(B \u001b(0t\u001b(B Stopping node \u001b[31mudp_node1\u001b[0m(\u001b[33msocket\u001b[0m)\r\n    26.656 \u001b[37mInfo \u001b[0m \u001b(0t\u001b(B Stopping node types\r\n    26.656 \u001b[37mInfo \u001b[0m \u001b(0x\u001b(B \u001b(0t\u001b(B De-initializing \u001b[33msocket\u001b[0m node type\r\n    26.656 \u001b[37mInfo \u001b[0m \u001b(0x\u001b(B \u001b(0x\u001b(B \u001b(0t\u001b(B Stopping interface 'lo'\r\n    26.656 \u001b[37mInfo \u001b[0m \u001b(0t\u001b(B Stopping Web sub-system\r\n\u001b]0;@5b190630cbf7:/villas\u0007[root@5b190630cbf7 villas]# "
+    ]
+  ],
+  "command": null,
+  "height": 86,
+  "env": {
+    "SHELL": "bash",
+    "TERM": "xterm"
+  },
+  "duration": 24.176852,
+  "width": 244,
+  "version": 1
+}

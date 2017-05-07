@@ -1,3 +1,3 @@
 # Timing {#node-timing}
 
-@diafile timing.dia
+@image html timing.svg

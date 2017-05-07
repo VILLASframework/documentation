@@ -159,7 +159,7 @@ We prepared a image which you can download and run out of the box:
 
    ![Running VILLASnode Docker image.](docker_run.png)
 
-7. Enter an interactive VILLASnode shell by running: ``$ docker run --tty --interactive --entrypoint bash villas/node``
+7. Enter an interactive VILLASnode shell by running: `$ docker run --tty --interactive --entrypoint bash villas/node`
 
     ![Docker run VILLASnode interactively](docker_run_interactive.png)
 

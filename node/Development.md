@@ -18,7 +18,7 @@ Main _classes_ in VILLASnode are struct node, struct path, struct hook and struc
 In order to track the life cycle of those objects, each of them has an enum state member.
 The following figure illustrates the state machine which is used:
 
-@diafile states.dia
+@image html states.svg Common states of objects in VILLASnode width=60%
 
 ## Shared library: libvillas
 

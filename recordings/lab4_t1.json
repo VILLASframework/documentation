@@ -1,0 +1,358 @@
+{
+  "duration": 23.897151,
+  "width": 244,
+  "version": 1,
+  "command": null,
+  "height": 86,
+  "stdout": [
+    [
+      0.031934,
+      "\u001b]0;@5b190630cbf7:/villas\u0007"
+    ],
+    [
+      0.000391,
+      "[root@5b190630cbf7 villas]# "
+    ],
+    [
+      1.00717,
+      "v"
+    ],
+    [
+      0.247865,
+      "i"
+    ],
+    [
+      0.272173,
+      "l"
+    ],
+    [
+      0.111864,
+      "l"
+    ],
+    [
+      0.176548,
+      "a"
+    ],
+    [
+      0.079574,
+      "s"
+    ],
+    [
+      0.151418,
+      " "
+    ],
+    [
+      0.512285,
+      "p"
+    ],
+    [
+      0.200219,
+      "i"
+    ],
+    [
+      0.143976,
+      "p"
+    ],
+    [
+      0.191888,
+      "e"
+    ],
+    [
+      0.191931,
+      " "
+    ],
+    [
+      0.784356,
+      "l"
+    ],
+    [
+      0.095847,
+      "a"
+    ],
+    [
+      0.151803,
+      "b"
+    ],
+    [
+      0.359956,
+      "3"
+    ],
+    [
+      0.319094,
+      ".conf "
+    ],
+    [
+      1.449695,
+      "u"
+    ],
+    [
+      0.11988,
+      "d"
+    ],
+    [
+      0.119741,
+      "p"
+    ],
+    [
+      0.335864,
+      "_"
+    ],
+    [
+      0.343178,
+      "n"
+    ],
+    [
+      0.361012,
+      "o"
+    ],
+    [
+      0.103889,
+      "d"
+    ],
+    [
+      0.039943,
+      "e"
+    ],
+    [
+      1.264169,
+      "1"
+    ],
+    [
+      1.168031,
+      "\r\n"
+    ],
+    [
+      0.057333,
+      "     0.000 \u001b[37mInfo \u001b[0m \u001b(0t\u001b(B Initialize API sub-system"
+    ],
+    [
+      0.000575,
+      "\r\n"
+    ],
+    [
+      0.000566,
+      "     0.001 \u001b[37mInfo \u001b[0m \u001b(0x\u001b(B \u001b(0t\u001b(B Reading configuration from local file: lab3.conf"
+    ],
+    [
+      0.000262,
+      "\r\n"
+    ],
+    [
+      0.001065,
+      "     0.003 \u001b[37mInfo \u001b[0m \u001b(0t\u001b(B Initialize memory sub-system"
+    ],
+    [
+      0.000231,
+      "\r\n"
+    ],
+    [
+      0.000688,
+      "     0.004 \u001b[30mDebug\u001b[0m \u001b(0x\u001b(B \u001b(0t\u001b(B Increased ressource limit of locked memory to 209715200 bytes"
+    ],
+    [
+      0.000199,
+      "\r\n"
+    ],
+    [
+      0.000419,
+      "     0.004 \u001b[37mInfo \u001b[0m \u001b(0t\u001b(B Initialize signals"
+    ],
+    [
+      0.000183,
+      "\r\n"
+    ],
+    [
+      0.000261,
+      "     0.004 \u001b[37mInfo \u001b[0m \u001b(0t\u001b(B Initialize real-time sub-system"
+    ],
+    [
+      9e-05,
+      "\r\n"
+    ],
+    [
+      0.000227,
+      "     0.005 \u001b[33mWarn \u001b[0m \u001b(0x\u001b(B \u001b(0t\u001b(B We recommend to use an PREEMPT_RT patched kernel!"
+    ],
+    [
+      0.000336,
+      "\r\n"
+    ],
+    [
+      0.000225,
+      "     0.005 \u001b[33mWarn \u001b[0m \u001b(0x\u001b(B \u001b(0t\u001b(B You might want to use the 'priority' setting to increase VILLASnode's process priority"
+    ],
+    [
+      0.000264,
+      "\r\n"
+    ],
+    [
+      0.000209,
+      "     0.006 \u001b[33mWarn \u001b[0m \u001b(0x\u001b(B \u001b(0t\u001b(B You should use the 'affinity' setting to pin VILLASnode to dedicate CPU cores"
+    ],
+    [
+      0.000277,
+      "\r\n"
+    ],
+    [
+      0.000228,
+      "     0.006 \u001b[37mInfo \u001b[0m \u001b(0t\u001b(B Initializing \u001b[33msocket\u001b[0m node type which is used by 1 nodes"
+    ],
+    [
+      0.000312,
+      "\r\n"
+    ],
+    [
+      0.000521,
+      "     0.007 \u001b[33mWarn \u001b[0m \u001b(0x\u001b(B \u001b(0t\u001b(B Did not found any interrupts for interface 'lo'"
+    ],
+    [
+      0.000174,
+      "\r\n"
+    ],
+    [
+      0.00023,
+      "     0.008 \u001b[37mInfo \u001b[0m \u001b(0x\u001b(B \u001b(0t\u001b(B Starting interface 'lo' which is used by 1 sockets"
+    ],
+    [
+      9.1e-05,
+      "\r\n"
+    ],
+    [
+      9.9e-05,
+      "     0.008 \u001b[37mInfo \u001b[0m \u001b(0t\u001b(B Starting node \u001b[31mudp_node1\u001b[0m(\u001b[33msocket\u001b[0m): vectorize=1, layer=udp, header=default, endian=auto, local=0.0.0.0:12000, remote=127.0.0.1:12001"
+    ],
+    [
+      3.2e-05,
+      "\r\n"
+    ],
+    [
+      0.001676,
+      "# sec.nsec+offset     "
+    ],
+    [
+      0.00028,
+      "\t"
+    ],
+    [
+      0.000314,
+      "\t"
+    ],
+    [
+      0.000264,
+      "data[]"
+    ],
+    [
+      0.000282,
+      "\r\n"
+    ],
+    [
+      3.0,
+      "1.000000001+1.494159e+09(1)\t1.000000\t2.000000\t3.000000\t4.000000\r\n"
+    ],
+    [
+      3.0,
+      "2"
+    ],
+    [
+      0.152194,
+      "."
+    ],
+    [
+      0.223984,
+      "2"
+    ],
+    [
+      0.343883,
+      " "
+    ],
+    [
+      1.77601,
+      "3"
+    ],
+    [
+      0.20826,
+      " "
+    ],
+    [
+      0.247825,
+      "4"
+    ],
+    [
+      0.143998,
+      " "
+    ],
+    [
+      0.176164,
+      "5"
+    ],
+    [
+      0.200277,
+      " "
+    ],
+    [
+      0.191616,
+      "6"
+    ],
+    [
+      0.270267,
+      " "
+    ],
+    [
+      0.057262,
+      "7"
+    ],
+    [
+      0.496613,
+      "\r\n"
+    ],
+    [
+      3.0,
+      "    52.368 \u001b[37mInfo \u001b[0m \u001b(0t\u001b(B Reached end-of-file. Terminating...\r\n"
+    ],
+    [
+      0.00105,
+      "    52.369 \u001b[37mInfo \u001b[0m \u001b(0t\u001b(B Stopping paths"
+    ],
+    [
+      0.000366,
+      "\r\n"
+    ],
+    [
+      0.000174,
+      "    52.370 \u001b[37mInfo \u001b[0m \u001b(0t\u001b(B Stopping nodes"
+    ],
+    [
+      0.000348,
+      "\r\n"
+    ],
+    [
+      0.000288,
+      "    52.370 \u001b[37mInfo \u001b[0m \u001b(0x\u001b(B \u001b(0t\u001b(B Stopping node \u001b[31mudp_node1\u001b[0m(\u001b[33msocket\u001b[0m)"
+    ],
+    [
+      0.000375,
+      "\r\n"
+    ],
+    [
+      0.000376,
+      "    52.371 \u001b[37mInfo \u001b[0m \u001b(0t\u001b(B Stopping node types"
+    ],
+    [
+      0.000591,
+      "\r\n    52.371 \u001b[37mInfo \u001b[0m \u001b(0x\u001b(B \u001b(0t\u001b(B De-initializing \u001b[33msocket\u001b[0m node type\r\n"
+    ],
+    [
+      0.000258,
+      "    52.372 \u001b[37mInfo \u001b[0m \u001b(0x\u001b(B \u001b(0x\u001b(B \u001b(0t\u001b(B Stopping interface 'lo'\r\n    52.372 \u001b[37mInfo \u001b[0m \u001b(0t\u001b(B Stopping Web sub-system"
+    ],
+    [
+      0.000908,
+      "\r\n\u001b]0;@5b190630cbf7:/villas\u0007[root@5b190630cbf7 villas]# "
+    ]
+  ],
+  "title": null,
+  "env": {
+    "TERM": "xterm",
+    "SHELL": "bash"
+  }
+}

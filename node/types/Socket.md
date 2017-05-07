@@ -19,41 +19,54 @@ Every `socket` node supports the following special settings:
 
 ## local ("ip:port" | "mac:protocol") {#node-config-socket-local}
 
-## remote ("ip:port" | "mac:protocol") {#node-config-socket-remote}
+The local address and port number this node should listen for incoming packets.
+
+Use `*` to listen on all interfaces: `local = "*:12000"`.
+
+## remote (string: "ip:port" | "mac:protocol") {#node-config-socket-remote}
+
+The address and port number of the remote endpoint of this node for outgoing packets.
 
 ## netem (dictionary) {#node-config-socket-netem}
 
 Enables and configures the network emulation qeueing discipline.
 See below for a more detailed description of this feature.
 
-	netem = {				# Network emulation settings
-						# Those settings can be specified for each node invidually!
-		delay		= 100000,	# Additional latency in microseconds
-		jitter		= 30000,	# Jitter in uS
-		distribution	= "normal",	# Distribution of delay: uniform, normal, pareto, paretonormal
-		loss		= 10		# Packet loss in percent
-		duplicate	= 10,		# Duplication in percent
-		corrupt 	= 10		# Corruption in percent
-	}
+```
+netem = {				# Network emulation settings
+					# Those settings can be specified for each node invidually!
+	delay		= 100000,	# Additional latency in microseconds
+	jitter		= 30000,	# Jitter in uS
+	distribution	= "normal",	# Distribution of delay: uniform, normal, pareto, paretonormal
+	loss		= 10		# Packet loss in percent
+	duplicate	= 10,		# Duplication in percent
+	corrupt 	= 10		# Corruption in percent
+}
+```
 
-## layer ("udp" | "ip" | "eth") {#node-config-socket-layer}
+## layer (string: "udp" | "ip" | "eth") {#node-config-socket-layer}
 
 Select the network layer which should be used for the socket. Please note that `eth` can only be used locally in a LAN as it contains no routing information for the internet.
 
-## header ("default" | "none" | "fake") {#node-config-socket-header}
+## header (string: "villas" | "default" | "gtnet-skt" | "none" | "gtnet-skt:fake" | "fake") = "villas" {#node-config-socket-header}
 
 The socket node-type supports multiple protocols:
 
-- The `default` VILLASnode header includes a couple of fields like the origin timestamp, number of values and the endianess of the transported data. The packet format is described in the following section called "Packet Format".
-- It is also possible to just send raw data by omitting the header completely (`none`). Each value is expected to take 4 bytes. It can be either a single precission floating point number (`float`) or a 32 bit unsigned integer (`uint32_t`). This protocol is used by RTDS' GTNET-SKT card.
-- The `fake` setting is very similar to the `none` setting. Only the first three values will have a special interpretation:
-   - Sequence no. (`uint32_t`)
-   - Timestamp seconds (Unix epoch, `uint32_t`)
-   - Timestamp nano-seconds  (Unix epoch, `uint32_t`)
+| Value			| Description |
+| :--			| :-- |
+| `villas`		| The standard VILLASnode header includes a couple of fields like the origin timestamp and the number of values of the transmitted data. The packet format is described in section @ref node-type-socket-format. |
+| `gtnet-skt` / `none`	| It is also possible to just send raw data by omitting the header completely (`none`). Each value is expected to take 4 bytes. It can be either a single precission floating point number (`float`) or a 32 bit unsigned integer (`uint32_t`). This protocol is used by @ref node-client-gtnet. |
+| `gtnet-skt:fake` / `fake`	| The `fake` setting is very similar to the `none` setting. See below for details. |
 
-##  `endian` *("big" | "network" | "little")* {#node-config-socket-endian}
+Only the first three values will have a special interpretation:
+   - Sequence no. (`uint32_t`)
+   - Timestamp seconds ([Unix time](https://en.wikipedia.org/wiki/Unix_time), `uint32_t`)
+   - Timestamp nano-seconds  ([Unix time](https://en.wikipedia.org/wiki/Unix_time), `uint32_t`)
+
+## endian ("big" | "network" | "little") = "big" {#node-config-socket-endian}
 
 This setting is only valid for the `none` and `fake` protocols.
+If setting @ref node-config-socket-header is set to `villas`, the data is always interpreted in network (big) endianess.
 It select the endianes which is used for outgoing and incoming data.
 
 ## Example
@@ -90,25 +103,23 @@ It select the endianes which is used for outgoing and incoming data.
 
 # Packet Format {#node-type-socket-format}
 
-The on-wire format of the network datagrams is not subject to a standardization process.
-It's a very simple packet-based format which includes:
-
- - 32bit floating-point or integer values
- - 32bit timestamp (integral seconds)
- - 32bit timestamp (integral nanoseconds)
- - 16bit sequence number
- - 4bit version identified
- - and several flags...
-
-## Message
-
-A message contains a variable number of values.
-Usually a a simulator sends one message per timestep.
-
-Simulation data is encapsulated in UDP packages in sent over IP networks like the internet.
+Simulation data is sent in UDP (or IP, or Ethernet) packets over standard IP / Ethernet networks.
 We designed a lightweight message format (or protocol) to facilitate a fast transmission.
+The on-wire format of the network datagrams is not subject to a standardization process.
 
-@diafile msg_format.dia
+Usually a a simulator sends one message per timestep.
+A message contains a variable number of values.
+Each message contains a header with the following fields:
+
+ - 32 bit floating-point or integer values
+ - 32 bit timestamp (integral seconds)
+ - 32 bit timestamp (integral nanoseconds)
+ - 16 bit sequence number
+ - 4 bit version identifier
+ 
+ Timestamps are represented in [Unix time](https://en.wikipedia.org/wiki/Unix_time).
+
+@image html msg_format.svg width=75%
 
 For now, only the first message type (`data`) is used.
 Therefore the complete protocol is **stateless**.

@@ -1,7 +1,11 @@
-# LabView {#node-client-labview}
+# NI LabView {#node-client-labview}
 
-We build an example LabView model which is using the UDP message format of the `socket` node-type to communicate with VILLASnode.
+**Source code:** <http://git.rwth-aachen.de/VILLASframework/VILLASnode/tree/develop/clients/labview>
 
-Have a look at the `clients/labview/` directory.
+We build an example LabView model which is using the UDP message format of the @ref node-type-socket node-type to communicate with VILLASnode.
 
 @todo Add screenshot
+
+## Contact
+
+Author: Eyke Liegmann <ELiegmann@eonerc.rwth-aachen.de>

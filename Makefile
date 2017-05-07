@@ -19,10 +19,12 @@ clean:
 deploy: all
 	rsync $(RSYNC_OPTS) html/ $(DEPLOY_USER)@$(DEPLOY_HOST):$(DEPLOY_PATH)
 
-html/index.html: $(INPUT)
+html/index.html: $(INPUT) Doxyfile
 	doxygen
 
 %.svg: %.dia
 	dia -n -l -t svg -e $@ $^
+	@# This fixes the location of inlined SVG images in DIA figures
+	sed -i'' -e "s|file://$$(pwd)/||" $@
 
 .PHONY: clean all deploy

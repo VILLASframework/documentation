@@ -11,6 +11,6 @@ By default, message contents are not altered.
 The server only performs checks for valid message headers (sequence number, cryptographic signature..).
 However every path supports optional hook/callback functions which allow user-defined operations on the message contents.
 
-@diafile path_simple.dia
+@image html path_simple.svg
 
 @see path for implementation details.

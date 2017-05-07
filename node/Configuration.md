@@ -12,9 +12,12 @@ The global section consists of some global configuration parameters:
 
 ## stats (float) {#node-config-stats}
 
-`stats` specifies the rate in which statistics about the actives paths will be printed to the screen.
+Specifies the rate in which statistics about the actives paths will be periodically printed to the screen.
+
 Setting this value to 5, will print 5 lines per second.
+
 A line of includes information such as:
+
   - Source and Destination of path
   - Messages received
   - Messages sent
@@ -22,12 +25,12 @@ A line of includes information such as:
 
 ## affinity (integer) {#node-config-affinity}
 
-The `affinity` setting allows to restrict the exeuction of the daemon to certain CPU cores.
+Restricts the exeuction of the daemon to certain CPU cores.
 This technique, also called 'pinning', improves the determinism of the server by isolating the daemon processes on exclusive cores.
 
 ## priority (integer) {#node-config-priority}
 
-The `priority` setting allows to adjust the scheduling priority of the deamon processes.
+Adjusts the scheduling priority of the deamon processes.
 By default, the daemon uses a real-time optimized FIFO scheduling algorithm.
 
 ## hugepages (integer) {#node-config-hugepages}
@@ -38,7 +41,7 @@ See: <https://www.kernel.org/doc/Documentation/vm/hugetlbpage.txt>
 
 ## name (string) = hostname {#node-config-name}
 
-By default the `name` of a VILLASnode instance is equalt to the hostname of the machine it is running on.
+By default the `name` of a VILLASnode instance is equal to the hostname of the machine it is running on.
 Some node types are using this name to identify themselves agains their remotes.
 An example is the `ngsi` node type which adds a metadata attribute `source` to its updates.
 
@@ -138,7 +141,7 @@ nodes = {
 }
 ```
 
-There are multiple diffrent type of nodes. But all types have the following settings in common:
+There are different type of nodes available. But all types have the following settings in common:
 
 ## type ("socket" | "fpga" | "file" | "ngsi" | "websocket" | "shmem") {#node-config-node-type}
 
@@ -151,7 +154,7 @@ Take a look at the @ref node-types page for details.
 
 ## vectorize (integer) = 1 {#node-config-node-vectorize}
 
-This setting allows to send multiple samples in a single message to the destination nodes. Currently this is only supported by the `file` and `socket` node-types.
+This setting allows to send multiple samples in a single message to the destination nodes.
 
 The value of this setting determines how many samples will be combined into one packet.
 
@@ -175,7 +178,7 @@ paths = [
 ]
 ```
 
-Every path is allowed to have the following settings:
+Every path can have the following settings:
 
 ## in, out (string: node-name) {#node-config-path-in-out}
 
