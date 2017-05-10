@@ -24,3 +24,17 @@ asciinema-split > asciinema-player > div {
 	margin-right: 1em;
 	margin-bottom: 1em;
 }
+
+#nav-path > ul > li.footer > span {
+	margin-right: 1em;
+	margin-left: 1em;
+}
+
+#nav-path > ul > li.footer > span > a {
+	text-decoration: underline;
+}
+
+#nav-path > ul > li.footer > span.vcs-edit > img {
+	vertical-align: middle;
+	margin-right: 5px;
+}

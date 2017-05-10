@@ -1,7 +1,8 @@
 DIA_FIGURES = $(wildcard figures/dia/*.dia)
 SVG_FIGURES = $(DIA_FIGURES:%.dia=%.svg)
 
-INPUT = $(shell find . -name "*.md")
+INPUT = $(shell find . -name "*.md") \
+	$(shell find node/labs/etc -name "*.conf")
 
 DEPLOY_USER ?= root
 DEPLOY_HOST ?= villas.fein-aachen.org
@@ -11,7 +12,7 @@ RSYNC_OPTS ?= --recursive --ignore-missing-args --copy-links --chown $(DEPLOY_US
 
 export LC_ALL = en_US.utf-8
 
-all: $(SVG_FIGURES) html/index.html
+all: html/index.html
 
 clean:
 	rm -f html/*.{png,js,html,svg,css,*.md5}
@@ -19,7 +20,7 @@ clean:
 deploy: all
 	rsync $(RSYNC_OPTS) html/ $(DEPLOY_USER)@$(DEPLOY_HOST):$(DEPLOY_PATH)
 
-html/index.html: $(INPUT) Doxyfile
+html/index.html: $(INPUT) $(SVG_FIGURES) Doxyfile
 	doxygen
 
 %.svg: %.dia
