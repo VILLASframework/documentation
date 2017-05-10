@@ -1,29 +1,19 @@
 # LiveUSB Image {#liveusb}
 
-This archive contains a disk image of a Fedora 23 installation which has been tuned for low latency and overall real-time performance. It facilitates the setup of a VILLASnode instances by partners of the Institute for Automation of Complex Power Systems (ACS), EON Research Center, RWTH Aachen University.
+- @subpage liveusb-build
+- @subpage liveusb-installation
 
-For direct support please contact [Steffen Vogel](stvogel@eonerc.rwth-aachen.de) or [Markus Grigull](mrigull@eonerc.rwth-aachen.de).
-
-## Default Login Credentials
-
-The default credentials are:
-
-- User: `root`
-- Password: `villas-admin`
-
-On older versions (S2SS):
-
-- User: `root`
-- Password: `s2ss-admin`
+This archive contains a disk image of a Fedora 25 installation which has been tuned for low latency and overall real-time performance. It facilitates the setup of a VILLASnode instances by partners of the Institute for Automation of Complex Power Systems (ACS), EON Research Center, RWTH Aachen University.
 
 ## What you need
 
  - An USB drive with at least 4 GB capacity (the content on the drive will be erased, backup before if there are any important files stored!)
  - A computer running Windows, Mac OS X or Linux
  - A keyboard and display attached to the server
- - The live image ISO file `.iso`
+ - The live image ISO file `.iso` which you can download here: <https://villas.fein-aachen.org/iso/>
 
 ## Setup
+
 1. Getting the image onto the USB drive (Simply copying the image onto the drive **does not work**):
   1. When the host system is running Windows:
     1. Download the _USB Image Tool_ from: <http://www.alexpage.de/usb-image-tool/download/>
@@ -48,4 +38,9 @@ On older versions (S2SS):
   2. Check the public IP address of the server with `curl canihazip.com/s`.
   3. Check if the network configurations are okay with `ip addr show`.
 
-@subpage liveusb-build
+# Contact
+
+For direct support please contact:
+
+- [Steffen Vogel](stvogel@eonerc.rwth-aachen.de)
+- [Markus Grigull](mrigull@eonerc.rwth-aachen.de).
