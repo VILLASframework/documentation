@@ -5,6 +5,8 @@
 We put some effort in getting you started as smooth as possible.
 This tutorial introduces the basic concepts and terminologies of VILLASnode and shows some examples.
 
+Please [look below](@ref node-guide-video) for a video recording of a webinar covering the topics of this guide.
+
 # Preperation {#node-guide-preperation}
 
 The @ref node-installation page lists several ways to install VILLASnode on your machine.
@@ -78,4 +80,14 @@ All configurations files are available here: <https://villas.fein-aachen.org/doc
 
 # Video {#node-guide-video}
 
-@todo A recording of the Webinar will be provided soon.
+This webinar was recorded during the preperation of the RT-SuperLab demonstration.
+
+- **Date:** 8th May 2017
+- **Versions:** VILLASnode v0.3
+- **Speaker:** [Steffen Vogel](mailto:stvogel@eonerc.rwth-aachen.de)
+
+@htmlonly
+<video controls width="100%" align="center">
+	<source src="recordings/video/VILLASnode_Webinar_2017_05_08.mp4" type="video/mp4">
+</video>
+@endhtmlonly
