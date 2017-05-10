@@ -85,7 +85,7 @@ $ echo "123.456(1) 1.2 3.4 5.6" | villas hook ts
 ```
 
 @htmlonly
-<asciinema-player rows="7" cols="500" poster="npt:0:1"  src="recordings/villas_hook_ts.json">
+<asciinema-player rows="7" cols="500" poster="npt:0:1"  src="recordings/terminal/villas_hook_ts.json">
 @endhtmlonly
 
 There is another related hook function called `fix_ts` which will only overwrite the the timestamp if the source has not provided one (timestamp must is `0.0`).
@@ -95,7 +95,7 @@ $ echo "0.0(1) 1.2 3.4 5.6" | villas hook fix_ts
 ```
 
 @htmlonly
-<asciinema-player rows="12" cols="500" poster="npt:0:1"  src="recordings/villas_hook_fix_ts.json">
+<asciinema-player rows="12" cols="500" poster="npt:0:1"  src="recordings/terminal/villas_hook_fix_ts.json">
 @endhtmlonly
 
 ## Reduce the rate by a factor (decimate)
@@ -108,7 +108,7 @@ $ villas signal sine -r 1000 | villas hook decimate rate=10
 ```
 
 @htmlonly
-<asciinema-player rows="25" cols="500" poster="npt:0:1"  src="recordings/villas_hook_decimate.json">
+<asciinema-player rows="25" cols="500" poster="npt:0:1"  src="recordings/terminal/villas_hook_decimate.json">
 @endhtmlonly
 
 ## Convert values between floating point / integer representation (convert)
@@ -134,7 +134,7 @@ $ villas signal sine -v 4 | villas hook map 'mapping=[ "data[3]", "data[2]", "da
 ```
 
 @htmlonly
-<asciinema-player rows="12" cols="500" poster="npt:0:1"  src="recordings/villas_hook_map.json">
+<asciinema-player rows="12" cols="500" poster="npt:0:1"  src="recordings/terminal/villas_hook_map.json">
 @endhtmlonly
 
 # Implement your own hook function

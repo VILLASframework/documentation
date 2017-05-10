@@ -9,5 +9,5 @@ $ villas pipe lab3.conf udp_node1 > file.dat
 ```
 
 @htmlonly
-<asciinema-player rows="25" cols="500" poster="npt:0:13"  src="recordings/lab6.json">
+<asciinema-player rows="25" cols="500" poster="npt:0:13"  src="recordings/terminal/lab6.json">
 @endhtmlonly

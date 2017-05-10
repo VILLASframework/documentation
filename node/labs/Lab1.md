@@ -21,7 +21,7 @@ The samples have the following characteristics:
 | `-v 1` 	| Sets the number of values which are generated |
 
 @htmlonly
-<asciinema-player rows="25" cols="500" poster="npt:0:1" src="recordings/villas_signal.json">
+<asciinema-player rows="25" cols="500" poster="npt:0:1" src="recordings/terminal/villas_signal.json">
 @endhtmlonly
 
 Every sample is printed in a single line consisting of several columns:
@@ -51,7 +51,7 @@ $ villas signal sine -l 10 -r 10 -f 3 -v 1 -n
 ```
 
 @htmlonly
-<asciinema-player rows="25" cols="500" poster="npt:0:1"  src="recordings/villas_signal_nrt.json">
+<asciinema-player rows="25" cols="500" poster="npt:0:1"  src="recordings/terminal/villas_signal_nrt.json">
 @endhtmlonly
 
 You can use [shell redirection](https://www.gnu.org/software/bash/manual/html_node/Redirections.html) to write those samples to a file:
@@ -62,5 +62,5 @@ $ cat file.dat
 ```
 
 @htmlonly
-<asciinema-player rows="25" cols="500" poster="npt:0:1"  src="recordings/villas_signal_file.json">
+<asciinema-player rows="25" cols="500" poster="npt:0:1"  src="recordings/terminal/villas_signal_file.json">
 @endhtmlonly

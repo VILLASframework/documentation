@@ -20,7 +20,7 @@ $ kill %1
 We can verify this by using Wireshark or `tcpdump`:
 
 @htmlonly
-<asciinema-player rows="25" cols="500" poster="npt:0:1"  src="recordings/villas_pipe_tcpdump.json">
+<asciinema-player rows="25" cols="500" poster="npt:0:1"  src="recordings/terminal/villas_pipe_tcpdump.json">
 @endhtmlonly
 
 @image html wireshark_udp.png Wireshark capture of UDP traffic width=50%

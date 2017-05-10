@@ -25,5 +25,5 @@ $ villas pipe lab7.conf file_node1 | villas pipe lab3.conf udp_node1 > file_recv
 ```
 
 @htmlonly
-<asciinema-player rows="25" cols="500" poster="npt:0:13"  src="recordings/villas_pipe_file.json">
+<asciinema-player rows="25" cols="500" poster="npt:0:13"  src="recordings/terminal/villas_pipe_file.json">
 @endhtmlonly
