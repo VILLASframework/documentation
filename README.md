@@ -4,6 +4,10 @@
 
 @subpage framework-architecture
 
+@htmlonly <div style="text-align: center; margin: 2em"><span style="font-size: 1.2em; font-weight: bold; padding: 1em; border: 5px solid #db3e34; border-radius: 20px;"> @endhtmlonly
+For starters we recommand to read the @ref node-guide!
+@htmlonly </span></div> @endhtmlonly
+
 # Components
 
 - @subpage node
@@ -15,7 +19,7 @@
 
 The source code of all open source components is available over the [RWTH GitLab](https://git.rwth-aachen.de).
 
-**Note:** You need a Github.com account to access the repositories.
+**Note:** You need a [Github](https://www.github.com) account to access the repositories.
 
 - @subpage liveusb
 

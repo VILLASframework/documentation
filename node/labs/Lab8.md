@@ -1,4 +1,4 @@
-# Lab 8: Use a hook function to filter data {#node-guide-lab8}
+# Lab 8: Use hook function to modify/filter the data {#node-guide-lab8}
 
 VILLASnode supports hook functions to filter or manipulate samples while their are forwarded.
 These functions are in C-code. A plugin mechanism makes it easy for the user to new hook functions.
@@ -52,19 +52,19 @@ $ villas hook fix_ts | villas hook skip_first samples=10
 
 # Examples
 
-## Skip the first 10 seconds
+## Skip the first 10 seconds (skip_first)
 
 ```bash
 $ villas signal sine | villas hook skip_first seconds=10
 ```
 
-## Skip the first 1000 samples
+## Skip the first 1000 samples (skip_first)
 
 ```bash
 $ villas signal sine | villas hook skip_first samples=1000
 ```
 
-## Shift the timestamps of all samples 10 seconds into the future
+## Shift the timestamps of all samples 10 seconds into the future (shift_ts)
 
 ```bash
 $ villas signal sine | villas hook shift_ts mode=origin offset=10.0
@@ -78,11 +78,15 @@ Every sample has three timestamps associated with it:
 
 Use the `mode` parameter to select the timestamp which should be shifted.
 
-## Override the timestamp with the current time
+## Override the timestamp with the current time (ts, fix_ts)
 
 ```bash
 $ echo "123.456(1) 1.2 3.4 5.6" | villas hook ts
 ```
+
+@htmlonly
+<asciinema-player rows="7" cols="500" poster="npt:0:1"  src="recordings/villas_hook_ts.json">
+@endhtmlonly
 
 There is another related hook function called `fix_ts` which will only overwrite the the timestamp if the source has not provided one (timestamp must is `0.0`).
 
@@ -90,7 +94,11 @@ There is another related hook function called `fix_ts` which will only overwrite
 $ echo "0.0(1) 1.2 3.4 5.6" | villas hook fix_ts
 ```
 
-## Reduce the rate by a factor
+@htmlonly
+<asciinema-player rows="12" cols="500" poster="npt:0:1"  src="recordings/villas_hook_fix_ts.json">
+@endhtmlonly
+
+## Reduce the rate by a factor (decimate)
 
 This invocation reduces the sending  rate by a factor of 10.
 The resulting rate is: `1000 / 10 = 100`.
@@ -99,7 +107,11 @@ The resulting rate is: `1000 / 10 = 100`.
 $ villas signal sine -r 1000 | villas hook decimate rate=10
 ```
 
-## Convert values between floating point / integer representation
+@htmlonly
+<asciinema-player rows="25" cols="500" poster="npt:0:1"  src="recordings/villas_hook_decimate.json">
+@endhtmlonly
+
+## Convert values between floating point / integer representation (convert)
 
 This invocation convertes values 5-8 to a integer number with a gain factor of 1000:
 
@@ -107,13 +119,23 @@ This invocation convertes values 5-8 to a integer number with a gain factor of 1
 $ villas signal sine | villas hook convert 'mode="fixed" mask=0xf0 scale=1000.0'
 ```
 
-## Print samples to the screen
+## Print samples to the screen (print)
 
 ```bash
 $ villas signal sine | villas hook print > /dev/null
 ```
 
 **Note:** `villas hook` by default prints the processed stream of samples already to the screen. Therefore, every sample appears now twice on the screen. This hook only makes sense when used together with `villas none`. 
+
+## Remap values and add special header fields as data (map)
+
+```bash
+$ villas signal sine -v 4 | villas hook map 'mapping=[ "data[3]", "data[2]", "data[1]", "data[0]", "hdr.sequence", "ts.origin" ]'
+```
+
+@htmlonly
+<asciinema-player rows="12" cols="500" poster="npt:0:1"  src="recordings/villas_hook_map.json">
+@endhtmlonly
 
 # Implement your own hook function
 

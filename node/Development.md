@@ -34,24 +34,26 @@ See `include/villas/plugin.h`
 
 See `lib/nodes/file.c`:
 
-	[...]
-	
-	static struct plugin p = {
-		.name		= "file",
-		.description	= "support for file log / replay node type",
-		.type		= PLUGIN_TYPE_NODE,
-		.node		= {
-			.vectorize	= 1,
-			.size		= sizeof(struct file),
-			.reverse	= file_reverse,
-			.parse		= file_parse,
-			.print		= file_print,
-			.start		= file_start,
-			.stop		= file_stop,
-			.read		= file_read,
-			.write		= file_write,
-			.instances	= LIST_INIT()
-		}
-	};
-	
-	REGISTER_PLUGIN(&p)
+```
+[...]
+
+static struct plugin p = {
+	.name		= "file",
+	.description	= "support for file log / replay node type",
+	.type		= PLUGIN_TYPE_NODE,
+	.node		= {
+		.vectorize	= 1,
+		.size		= sizeof(struct file),
+		.reverse	= file_reverse,
+		.parse		= file_parse,
+		.print		= file_print,
+		.start		= file_start,
+		.stop		= file_stop,
+		.read		= file_read,
+		.write		= file_write,
+		.instances	= LIST_INIT()
+	}
+};
+
+REGISTER_PLUGIN(&p)
+```

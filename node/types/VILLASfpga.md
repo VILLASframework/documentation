@@ -14,7 +14,16 @@ This node type uses the PCIexpress bus to communicate with the FPGA cards.
 
 Every `fpga` node support the following special settings:
 
-## `datamover`  {#node-config-fpga-datamover}
+## datamover (string: fpga-ip-name) {#node-config-fpga-datamover}
+
+This must be the name of a FPGA IP instance as defined in the `fpgas[].ips` section of the configuration file.
+
+This IP component is used to transfer samples between the FPGA and the main memory.
+
+Currently two datamovers are supported:
+
+- Direct Memory Access (DMA)
+- AXI-Stream FIFO
 
 ## Example
 

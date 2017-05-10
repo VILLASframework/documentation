@@ -16,15 +16,23 @@ The API is accessible via multiple transports:
 
 **HTTP Method:** POST only
 
+Example request with curl:
+
+```bash
+$ curl -X POST --data '{ "action" : "nodes", "id": "skjdhw325ih32"}' http://10.10.12.5:4000/api/v1
+```
+
 ### WebSockets
 
 **Protocol:** `api`
 
 **Endpoint:** `ws[s]://server:port/v1`
 
+For an example see: <https://git.rwth-aachen.de/VILLASframework/VILLASnode/blob/develop/web/socket/api.js>
+
 ### Unix socket
 
-_This transport is not implemented yet_
+**Note:** This transport is not implemented yet.
 
 ## Protocol
 
@@ -148,10 +156,10 @@ Get a list of supported node-types, hooks and API actions.
 
 Get a list of currently active paths.
 
-_This request is not implemented yet_
+**Note:** This transport is not implemented yet.
 
 ### `status`
 
 The the status of this VILLASnode instance.
 
-_This request is not implemented yet_
+**Note:** This transport is not implemented yet.

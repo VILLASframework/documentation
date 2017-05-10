@@ -92,12 +92,12 @@
         <dia:point val="-9,15"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="-9.98,14.6275;-8.02,15.3725"/>
+        <dia:rectangle val="-9.9925,14.5996;-7.98888,15.4004"/>
       </dia:attribute>
       <dia:attribute name="text">
         <dia:composite type="text">
           <dia:attribute name="string">
-            <dia:string>#STDIN#</dia:string>
+            <dia:string>#STDIO#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
             <dia:font family="sans" style="0" name="Helvetica"/>
@@ -106,7 +106,7 @@
             <dia:real val="0.80000000000000004"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="-9,15.2225"/>
+            <dia:point val="-9,15.2132"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -243,15 +243,15 @@
     </dia:group>
     <dia:object type="Standard - Text" version="1" id="O6">
       <dia:attribute name="obj_pos">
-        <dia:point val="-9,13"/>
+        <dia:point val="-5.10659,10.9619"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="-10.3262,12.6275;-7.67375,13.3725"/>
+        <dia:rectangle val="-6.09909,10.5894;-4.11409,11.3344"/>
       </dia:attribute>
       <dia:attribute name="text">
         <dia:composite type="text">
           <dia:attribute name="string">
-            <dia:string>#STDOUT#</dia:string>
+            <dia:string>#STDIO#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
             <dia:font family="sans" style="0" name="Helvetica"/>
@@ -260,7 +260,7 @@
             <dia:real val="0.80000000000000004"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="-9,13.2225"/>
+            <dia:point val="-5.10659,11.1844"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -495,6 +495,39 @@
       </dia:attribute>
       <dia:attribute name="end_arrow_width">
         <dia:real val="0.5"/>
+      </dia:attribute>
+    </dia:object>
+    <dia:object type="Standard - Text" version="1" id="O15">
+      <dia:attribute name="obj_pos">
+        <dia:point val="-1.51734,15.0735"/>
+      </dia:attribute>
+      <dia:attribute name="obj_bb">
+        <dia:rectangle val="-2.52847,14.6731;-0.524841,15.4739"/>
+      </dia:attribute>
+      <dia:attribute name="text">
+        <dia:composite type="text">
+          <dia:attribute name="string">
+            <dia:string>#STDIO#</dia:string>
+          </dia:attribute>
+          <dia:attribute name="font">
+            <dia:font family="sans" style="0" name="Helvetica"/>
+          </dia:attribute>
+          <dia:attribute name="height">
+            <dia:real val="0.80000000000000004"/>
+          </dia:attribute>
+          <dia:attribute name="pos">
+            <dia:point val="-1.51734,15.2867"/>
+          </dia:attribute>
+          <dia:attribute name="color">
+            <dia:color val="#000000"/>
+          </dia:attribute>
+          <dia:attribute name="alignment">
+            <dia:enum val="1"/>
+          </dia:attribute>
+        </dia:composite>
+      </dia:attribute>
+      <dia:attribute name="valign">
+        <dia:enum val="2"/>
       </dia:attribute>
     </dia:object>
   </dia:layer>

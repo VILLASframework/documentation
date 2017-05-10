@@ -1,3 +1,5 @@
 # Timing {#node-timing}
 
-@image html timing.svg
+**Note:** This information is outdated.
+
+@image html timing.svg width=100%

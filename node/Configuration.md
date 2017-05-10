@@ -2,9 +2,16 @@
 
 The VILLASnode configuration consists of a a single file.
 
-For an example please look at: `/etc/villas/node/example.conf`.
+For a collection of example configuration files see: <https://git.rwth-aachen.de/VILLASframework/VILLASnode/tree/develop/etc>.
 
-The configuration file consists of three sections:
+At the top level, the configuration file consists of these sections:
+
+- Global
+- Logging
+- WebServer
+- FPGAs
+- Nodes
+- Paths
 
 # Global {#node-config-global}
 
@@ -143,7 +150,7 @@ nodes = {
 
 There are different type of nodes available. But all types have the following settings in common:
 
-## type ("socket" | "fpga" | "file" | "ngsi" | "websocket" | "shmem") {#node-config-node-type}
+## type (string: "socket" | "fpga" | "file" | "ngsi" | "websocket" | "shmem") {#node-config-node-type}
 
 `type` specifies the type of the node.
 

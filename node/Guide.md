@@ -3,25 +3,25 @@
 [TOC]
 
 We put some effort in getting you started as smooth as possible.
-This tutorial introduces the basic concepts and terminologies of VILLASnode and shows some example use cases.
+This tutorial introduces the basic concepts and terminologies of VILLASnode and shows some examples.
 
 # Preperation {#node-guide-preperation}
 
-Several options to install VILLASnode are documented on the @ref node-installation page.
+The @ref node-installation page lists several ways to install VILLASnode on your machine.
 
 For this guide, we recommend to use the [VILLASnode Docker image](@ref node-installation-docker) on your workstation.
 
 To open an interactive terminal in the VILLASnode Docker container run:
 
 ```bash
-$ docker run --tty --interactive --entrypoint bash villas/node
+$ docker run --tty --interactive --entrypoint bash --volume C:\path\to\configs:/configs -p 80:80 villas/node
 ```
 
 For some @ref node-guide-labs two interactive shells are required. To open a second shell, run the following command:
 
 ```bash
-$ docker exec -it $(docker ps -qn1) bash
-````
+$ docker exec --tty --interactive $(docker ps -qn1) bash
+```
 
 # Terminology {#node-terminology}
 
@@ -32,6 +32,8 @@ Before we start to use the VILLASnode tools, we will introduce some terminology:
 - A _sample_ is an array of floating point or integer values with an associated timestamp and sequence number.
 - A _path_ connects one or more _nodes_ within a _super node_ and forwards _samples_ from one or more _source nodes_ to one or more _destination nodes_.
 - A _hook_ manipulates or filters _samples_ which are processed by a _path_.
+
+@image html VILLASnode_large.svg Two site scenario with VILLASfpga. width=70%
 
 # Tools {#node-tools}
 
@@ -46,7 +48,7 @@ In this guide we will show the following tools:
 
 | Tool			| Purpose |
 | :----			| :---- |
-| `villas signal`		| A signal generator for testing and training purposes. |
+| `villas signal`	| A signal generator for testing and training purposes. |
 | `villas pipe`		| Send / receive _samples_ to / from _nodes_ via [standard IO streams](https://en.wikipedia.org/wiki/Standard_streams). |
 | `villas hook`		| Filter or manipulate _samples_ provided via [standard IO streams](https://en.wikipedia.org/wiki/Standard_streams). |
 | `villas node`		| The VILLASnode deamon. |
@@ -58,6 +60,8 @@ A complete reference of all available options for those tools can be found at th
 
 To get you started quickly, we prepared a series of small demos which you can yourself.
 
+All configurations files are available here: <https://villas.fein-aachen.org/doc/etc/>
+
 - @subpage node-guide-lab1
 - @subpage node-guide-lab2
 - @subpage node-guide-lab3
@@ -68,6 +72,9 @@ To get you started quickly, we prepared a series of small demos which you can yo
 - @subpage node-guide-lab8
 - @subpage node-guide-lab9
 - @subpage node-guide-lab10
+- @subpage node-guide-lab11
+- @subpage node-guide-lab12
+- @subpage node-guide-lab13
 
 # Video {#node-guide-video}
 

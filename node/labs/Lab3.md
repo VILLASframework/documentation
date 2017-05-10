@@ -1,5 +1,7 @@
 # Lab 3: Sending data to node from standard input  {#node-guide-lab3}
 
+@image html villas_pipe1.svg height=150px
+
 The `villas pipe` tool can be used to send and receive sample to / from a node.
 
 The following command sends a single _sample_ to node `udp_node1`.
@@ -22,5 +24,3 @@ We can verify this by using Wireshark or `tcpdump`:
 @endhtmlonly
 
 @image html wireshark_udp.png Wireshark capture of UDP traffic width=50%
-
-@image html villas_pipe1.svg height=150px

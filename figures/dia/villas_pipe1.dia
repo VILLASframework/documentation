@@ -68,7 +68,7 @@
         <dia:point val="2,10"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="0.22625,9.38637;3.79238,11.7873"/>
+        <dia:rectangle val="0.22625,9.405;3.77375,11.75"/>
       </dia:attribute>
       <dia:attribute name="text">
         <dia:composite type="text">
@@ -394,12 +394,12 @@ udp_node1#</dia:string>
         <dia:point val="-2,6.5"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="-3.32625,6.1275;-0.67375,6.8725"/>
+        <dia:rectangle val="-2.9925,6.09956;-0.988875,6.90044"/>
       </dia:attribute>
       <dia:attribute name="text">
         <dia:composite type="text">
           <dia:attribute name="string">
-            <dia:string>#STDOUT#</dia:string>
+            <dia:string>#STDIO#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
             <dia:font family="sans" style="0" name="Helvetica"/>
@@ -408,7 +408,7 @@ udp_node1#</dia:string>
             <dia:real val="0.80000000000000004"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="-2,6.7225"/>
+            <dia:point val="-2,6.71319"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -427,12 +427,12 @@ udp_node1#</dia:string>
         <dia:point val="-2,8.5"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="-2.98,8.1275;-1.02,8.8725"/>
+        <dia:rectangle val="-2.9925,8.09956;-0.988875,8.90044"/>
       </dia:attribute>
       <dia:attribute name="text">
         <dia:composite type="text">
           <dia:attribute name="string">
-            <dia:string>#STDIN#</dia:string>
+            <dia:string>#STDIO#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
             <dia:font family="sans" style="0" name="Helvetica"/>
@@ -441,7 +441,7 @@ udp_node1#</dia:string>
             <dia:real val="0.80000000000000004"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="-2,8.7225"/>
+            <dia:point val="-2,8.71319"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>

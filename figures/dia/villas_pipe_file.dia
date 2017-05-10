@@ -127,12 +127,12 @@ udp_node1#</dia:string>
         <dia:point val="0,15"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="-1.32625,14.6275;1.32625,15.3725"/>
+        <dia:rectangle val="-0.9925,14.5996;1.01113,15.4004"/>
       </dia:attribute>
       <dia:attribute name="text">
         <dia:composite type="text">
           <dia:attribute name="string">
-            <dia:string>#STDOUT#</dia:string>
+            <dia:string>#STDIO#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
             <dia:font family="sans" style="0" name="Helvetica"/>
@@ -141,7 +141,7 @@ udp_node1#</dia:string>
             <dia:real val="0.80000000000000004"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="0,15.2225"/>
+            <dia:point val="0,15.2132"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -252,7 +252,7 @@ udp_node1#</dia:string>
         <dia:point val="5,16.5"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="3.88625,15.8864;6.13237,16.6872"/>
+        <dia:rectangle val="3.88625,15.905;6.11375,16.65"/>
       </dia:attribute>
       <dia:attribute name="text">
         <dia:composite type="text">

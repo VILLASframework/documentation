@@ -68,6 +68,11 @@ By default `send_rate` has the value `0` which means that the time between conse
 
 If this setting has a non-zero value, the default behaviour is overwritten with a fixed rate.
 
+## rewind (boolean) = true {#node-config-file-rewind}
+
+If this setting is `true` (default), the file is rewinded when it's end has been reached.
+Otherwise, the program will shutdown gracefully.
+
 ## Example
 
 ```

@@ -1,6 +1,6 @@
 # Lab 6: Write received sample data to a file {#node-guide-lab6}
 
-@image html villas_pipe_file.svg
+@image html villas_pipe_file.svg height=150px
 
 Receive data from node `udp_node1` and save to file `file.dat`:
 

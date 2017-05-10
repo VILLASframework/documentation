@@ -1,26 +1,38 @@
-# Lab 9: Use a hook function to collect statistics {#node-guide-lab9}
+# Lab 9: Network emulation and statistics {#node-guide-lab9}
+
+@image html villas_hook_stats.svg height=130px
+
+The `stats` hook can be used to collect statistics about the co-simulation interface like:
+
+- One way delay (OWD)
+- Packet loss
+- Packet reordering
+- Sending rate
 
 ```bash
-$ villas signal sine -r 1000 -l 10000 | villas hook stats verbose=true warmup=3000
+$ villas signal sine -r 1000 -l 10000 | villas hook stats verbose=true, warmup=3000
 ```
-
 
 ## With network emulation
 
+@image html villas_hook_stats_netem.svg height=150px
 
 @includelineno lab9_netem.conf
 
 In  the first terminal:
 
 ```bash
-$ villas signal sine -r 1000 -l 10000 | villas pipe etc/lab9_netem.conf udp_node1
+$ villas signal sine -r 1000 | villas pipe etc/lab9_netem.conf udp_node1
 ```
-
 
 In a second terminal:
 
 ```bash
-villas pipe etc/lab9_netem.conf udp_node1 -x | villas hook stats verbose=true warmup=3000
+$ villas pipe etc/lab9_netem.conf udp_node1 -x | villas hook stats verbose=true, warmup=3000
 ```
 
-**Note:** Press Ctrl-D to stop the statistics colleciton.
+**Note:** Press Ctrl-D to stop the statistics collection.
+
+@htmlonly
+<asciinema-player rows="30" cols="500" poster="npt:0:1"  src="recordings/villas_hook_stats.json">
+@endhtmlonly

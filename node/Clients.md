@@ -12,3 +12,7 @@ For details about the UDP packet format, please see @ref node-type-socket-format
 
 - @subpage node-client-gtnet
     Several example RSCAD drafts showing how to use GTSYNC and GTNET-SKT together with VILLASnode.
+
+- [**DPsim**](https://git.rwth-aachen.de/PowerSystemSimulation/DPsim) 
+    VILLAsnode can communicate via the @ref node-type-shmem with the dynamic phasor solver (DPsim) of the Institute for Automation of Complex Power Systems.
+    Please contact [Markus Mirz](mailto:mmirz@eonerc.rwth-aachen.de) for details.
