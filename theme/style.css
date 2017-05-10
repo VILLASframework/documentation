@@ -25,16 +25,14 @@ asciinema-split > asciinema-player > div {
 	margin-bottom: 1em;
 }
 
-#nav-path > ul > li.footer > span {
-	margin-right: 1em;
+li.footer > span {
 	margin-left: 1em;
 }
 
-#nav-path > ul > li.footer > span > a {
+li.footer > span > a {
 	text-decoration: underline;
 }
 
-#nav-path > ul > li.footer > span.vcs-edit > img {
-	vertical-align: middle;
-	margin-right: 5px;
+li.vcs-edit {
+	float: right;
 }
