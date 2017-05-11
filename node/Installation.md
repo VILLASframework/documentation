@@ -49,6 +49,8 @@ Is this ok [y/N]:
 
 # From source  {#node-installation-source}
 
+**Note:** To achieve the best performance of VILLASnode in real-time simulation setup, refer to the live image with the OS tuned for low latency and overall real-time performance.
+
 ## Prerequisites
 
 VILLASnode currently has the following list of dependencies:
