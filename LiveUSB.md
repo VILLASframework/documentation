@@ -35,6 +35,7 @@ Note: Simply copying the image onto the drive **does not work**)
 1. Shut down the server (and remove the old USB drive running an older version of VILLASnode, if there is any).
 2. Plug in the USB drive and start the server. If the server does not boot into the USB drive, you may need to restart and change the boot order by pressing DEL or F12 at the very beginning of the start up.
 3. When asked for user credentials, enter the default credentials: root (without password).    
+
 **Note:** For the persistent setup, install the image on your machine (see  Step 3). As soon as you reboot the system booted from the live USB image, all your changes, settings, files are deleted. 
 
 ### Step 3: Installing the system on the machine
