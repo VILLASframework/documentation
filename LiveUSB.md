@@ -31,23 +31,23 @@ Note: Simply copying the image onto the drive **does not work**)
   3. Run `sudo dd bs=1m if=VILLASnode.img of=/dev/diskX` where diskX is the drive you located in the list. This will take some time to finish.
   4. When the copying is finished, the drive will be reported as unreadable. This is intended, just eject the USB drive.
 
-### Step 2: Booting the system from the live USB image:
+### Step 2: Booting the system from the live USB image
 1. Shut down the server (and remove the old USB drive running an older version of VILLASnode, if there is any).
 2. Plug in the USB drive and start the server. If the server does not boot into the USB drive, you may need to restart and change the boot order by pressing DEL or F12 at the very beginning of the start up.
-3. When asked for user credentials, enter the default credentials: root (without password). 
+3. When asked for user credentials, enter the default credentials: root (without password).    
 **Note:** For the persistent setup, install the image on your machine (see  Step 3). As soon as you reboot the system booted from the live USB image, all your changes, settings, files are deleted. 
 
-### Step 3: Installing the system on the machine: 
-1. Start installation with `$ liveinst`
+### Step 3: Installing the system on the machine
+1. Start installation with `liveinst`
 2. Refer to the video @subpage liveusb-installation
 3. Shutdown the server and remove the USB drive 
 4. Start the server and test functionality (Step 4)
 
-### Step 4: Testing functionality:
-1. Check the name and information about the running kernel with `$ uname -a`
-2. Test installation of VILLASnode with `$ villas node --help`
+### Step 4: Testing functionality
+1. Check the name and information about the running kernel with `uname -a`
+2. Test installation of VILLASnode with `villas node --help`
 3. If available, check the Internet connectivity with `ping www.rwth-aachen.de`. If the request times out, the internet is most likly not reachable.
-4. If abailable, check the public IP address of the server with `curl canihazip.com/s`.
+4. If available, check the public IP address of the server with `curl canihazip.com/s`.
 5. Check the network configurations with `ip addr show`.
 
 # Contact
