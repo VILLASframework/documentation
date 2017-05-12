@@ -24,7 +24,7 @@ figures: $(SVG_FIGURES)
 clean:
 	rm -f html/*.{png,js,html,svg,css,*.md5}
 
-deploy: all
+deploy:
 	rsync $(RSYNC_OPTS) html/ $(DEPLOY_USER)@$(DEPLOY_HOST):$(DEPLOY_PATH)
 
 html/index.html: $(INPUT) $(SVG_FIGURES) Doxyfile
