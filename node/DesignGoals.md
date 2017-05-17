@@ -6,7 +6,7 @@ VILLASnode ...
 - is using features of the C11 standard
 - is using an object oriented programming paradigm
 - can be compiled with Clang / LLVM or GCC
-- is released under the LGPLv2 license
+- is released under the GPLv3 license
 - only relies on open source software libraries and the Linux kernel
 - is extensible with new node types & hooks
 - is heavily multi-threaded
