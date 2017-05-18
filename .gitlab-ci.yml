@@ -29,6 +29,8 @@ build:
     name: "${CI_PROJECT_NAME}-doc-${CI_BUILD_REF}"
     paths:
       - html/
+      - figures/dia/*.svg
+      - warnings.log
   script:
     - make
   tags:
