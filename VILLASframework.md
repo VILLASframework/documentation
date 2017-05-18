@@ -10,7 +10,7 @@ Three integration layers are foreseen based on the diversity of the facilities a
 - Soft Real-Time Integration Layer (S-RTIL)
 - Offline Integration Layer (O-IL)
 
-@image html Generic_VILLAS_Architecture_mapping.svg width=75%
+@image html Generic_VILLAS_Architecture_mapping.svg VILLAS integration layers. width=75%
 
 ## Hard Real-Time Integration Layer (H-RTIL)
 
