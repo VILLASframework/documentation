@@ -133,7 +133,7 @@ This allows us to reduce the amount of conversions during one transfer.
 
 ## Example
 
-@todo add screenshot of wireshark dump
+@image html wireshark_udp.png Wireshark capture of UDP traffic width=50%
 
 # Network Emulation {#node-type-socket-netem}
 
