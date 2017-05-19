@@ -11,19 +11,24 @@ VILLASnode can be installed in multiple ways:
 
 See: @ref liveusb
 
-# From RPM packages  {#node-installation-rpm}
+# From RPM packages {#node-installation-rpm}
+
+## With internet access by using VILLAS RPM repository
 
 Add VILLAS RPM repository to your system:
 
 ```
-$ sudo dnf config-manager --add-repo http://villas.fein-aachen.org/packages/villas.repo
-Adding repo from: http://acs:4csuperl4b@villas.fein-aachen.org/packages/villas.repo
+$ sudo dnf config-manager --add-repo https://acs:4csuperl4b@villas.fein-aachen.org/packages/villas.repo
+Adding repo from: https://acs:4csuperl4b@villas.fein-aachen.org/packages/villas.repo
 ```
 
 Install VILLASnode plus its dependencies:
 
 ```
 $ sudo dnf install villas-node
+```
+
+```
 Last metadata expiration check: 0:02:48 ago on Wed May  3 15:41:29 2017.
 Dependencies resolved.
 ====================================================================================
@@ -45,6 +50,24 @@ Installed size: 15 M
 Is this ok [y/N]:
 
 ...
+```
+
+## Without internet access
+
+If the Linux host has no internet access, RPM files must be transferred manually to the machine by using a flash drive.
+
+1. Download the latest .rpm files from: https://acs:4csuperl4b@villas.fein-aachen.org/packages/x86_64/
+2. Copy all files to a flash drive.
+3. Mount the flash drive on the Linux host: `$ mount /dev/sdXn /mnt`  
+    (Replace `sdXn` by using `lsblk` to get the correct device name)
+4. Install the .rpm files from the flash drive: `$ rpm -ivh /mnt/*.rpm`
+5. Unmount the flash drive: `$ umount /mnt`
+
+## Get the currently installed version
+
+```
+$ rpm -q villas-node
+villas-node-0.3-1.develop_release.20170507gite92f17d.fc25.x86_64
 ```
 
 # From source  {#node-installation-source}
