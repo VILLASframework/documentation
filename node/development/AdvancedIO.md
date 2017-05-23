@@ -51,4 +51,4 @@ The following functions have been added:
 VILLASnode uses ADVIO currently for:
 
 - Fetchting the configuration file. This means VILLASnode can be started like `villas-node http://server/config.conf`
-- As source and destination file for the `file` node-type. Please have a look at the example configuration file `etc/advio.conf`.
+- As source and destination file for the @ref node-type-file node-type. Please have a look at the example configuration file `etc/advio.conf`.
