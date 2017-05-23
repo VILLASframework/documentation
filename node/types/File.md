@@ -1,6 +1,6 @@
 # File {#node-type-file}
 
-The `file` node-type can be used to log or replay samples to / from disk.
+The @ref node-type-file node-type can be used to log or replay samples to / from disk.
 
 # Configuration {#node-config-file}
 
