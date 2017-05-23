@@ -79,13 +79,15 @@ villas-node-0.3-1.develop_release.20170507gite92f17d.fc25.x86_64
 VILLASnode currently has the following list of dependencies:
 
  - [libconfig](http://www.hyperrealm.com/libconfig/) for parsing the configuration file.
- - [libnl3](http://www.infradead.org/~tgr/libnl/) for the network communication & emulation support of the `socket` node-type.
+ - [libnl3](http://www.infradead.org/~tgr/libnl/) for the network communication & emulation support of the @ref node-type-socket node-type.
  - [libOpal{AsyncApi,Core,Utils}](https://git.rwth-aachen.de/VILLASframework/libopal) for running VILLASnode as an Asynchronous process inside your RT-LAB model.
- - [libjansson](http://www.digip.org/jansson/) JSON parser for `websocket` and `ngsi` node-types.
- - [libwebsockets](http://libwebsockets.org) for the `websocket` node-type.
- - [libcurl](https://curl.haxx.se/libcurl/) for HTTP REST requests by the `ngsi` node-type.
+ - [libjansson](http://www.digip.org/jansson/) JSON parser for @ref node-type-websocket and @ref node-type-ngsi node-types.
+ - [libwebsockets](http://libwebsockets.org) for the @ref node-type-websocket node-type.
+ - [libcurl](https://curl.haxx.se/libcurl/) for HTTP REST requests by the @ref node-type-ngsi node-type.
  - [openssl](https://www.openssl.org) for cryptographic hashing functions.
- 
+ - [libzmq](http://zeromq.org) for the @ref node-type-zeromq node-type.
+ - [nanomsg](http://nanomsg.org/) for the @ref node-type-nanomsg node-type.
+  
 There are two ways to install these dependencies:
 
 1. You can most of the dependencies using the package manger of your Linux distribution:
