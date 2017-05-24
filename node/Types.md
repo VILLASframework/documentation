@@ -11,3 +11,5 @@ Every node is an instance of a node-type. VILLASnode currently supports the foll
 - @subpage node-type-ngsi
 - @subpage node-type-cbuilder
 - @subpage node-type-shmem
+- @subpage node-type-zeromq
+- @subpage node-type-nanomsg
