@@ -19,8 +19,6 @@ For starters we recommand to read the @ref node-guide!
 
 The source code of all open source components is available over the [RWTH GitLab](https://git.rwth-aachen.de).
 
-**Note:** You need a [Github](https://www.github.com) account to access the repositories.
-
 - @subpage liveusb
 
 # Copyright
