@@ -27,23 +27,6 @@ Use `*` to listen on all interfaces: `local = "*:12000"`.
 
 The address and port number of the remote endpoint of this node for outgoing packets.
 
-## netem (dictionary) {#node-config-socket-netem}
-
-Enables and configures the network emulation qeueing discipline.
-See below for a more detailed description of this feature.
-
-```
-netem = {				# Network emulation settings
-					# Those settings can be specified for each node invidually!
-	delay		= 100000,	# Additional latency in microseconds
-	jitter		= 30000,	# Jitter in uS
-	distribution	= "normal",	# Distribution of delay: uniform, normal, pareto, paretonormal
-	loss		= 10		# Packet loss in percent
-	duplicate	= 10,		# Duplication in percent
-	corrupt 	= 10		# Corruption in percent
-}
-```
-
 ## layer (string: "udp" | "ip" | "eth") {#node-config-socket-layer}
 
 Select the network layer which should be used for the socket. Please note that `eth` can only be used locally in a LAN as it contains no routing information for the internet.
@@ -63,7 +46,7 @@ Only the first three values will have a special interpretation:
    - Timestamp seconds ([Unix time](https://en.wikipedia.org/wiki/Unix_time), `uint32_t`)
    - Timestamp nano-seconds  ([Unix time](https://en.wikipedia.org/wiki/Unix_time), `uint32_t`)
 
-## endian ("big" | "network" | "little") = "big" {#node-config-socket-endian}
+## endian (string: "big" | "network" | "little") = "big" {#node-config-socket-endian}
 
 This setting is only valid for the `none` and `fake` protocols.
 If setting @ref node-config-socket-header is set to `villas`, the data is always interpreted in network (big) endianess.
@@ -72,6 +55,23 @@ It select the endianes which is used for outgoing and incoming data.
 ## verify_source (boolean) = false {#node-config-socket-verify_source}
 
 Check if source address of incoming packets matches the remote address.
+
+## netem (dictionary) {#node-config-socket-netem}
+
+Enables and configures the network emulation qeueing discipline.
+See below for a more detailed description of this feature.
+
+```
+netem = {				# Network emulation settings
+					# Those settings can be specified for each node invidually!
+	delay		= 100000,	# Additional latency in microseconds
+	jitter		= 30000,	# Jitter in uS
+	distribution	= "normal",	# Distribution of delay: uniform, normal, pareto, paretonormal
+	loss		= 10		# Packet loss in percent
+	duplicate	= 10,		# Duplication in percent
+	corrupt 	= 10		# Corruption in percent
+}
+```
 
 ## Example
 
