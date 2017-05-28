@@ -69,6 +69,10 @@ This setting is only valid for the `none` and `fake` protocols.
 If setting @ref node-config-socket-header is set to `villas`, the data is always interpreted in network (big) endianess.
 It select the endianes which is used for outgoing and incoming data.
 
+## verify_source (boolean) = false {#node-config-socket-verify_source}
+
+Check if source address of incoming packets matches the remote address.
+
 ## Example
 
 ```
