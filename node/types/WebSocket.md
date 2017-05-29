@@ -2,6 +2,8 @@
 
 The `websocket` node type send and receives simulation data via binary WebSocket messages.
 
+[The message format](@ref node-type-socket-format) is the same as used by the @ref node-type-socket node-type.
+
 # Configuration {#node-config-websocket}
 
 ## destinations (array of URIs) {#node-config-websocket-destinations}
