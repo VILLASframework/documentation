@@ -115,7 +115,7 @@ The following logging facilities are available:
 
 ```
 http = {
-	enabled = true,					# Do not listen on a port if true
+	enabled = true,					# Do not listen on a port if false
 	
 	htdocs = "/villas/web/socket/",			# Root directory of internal webserver
 	port = 80					# Port for HTTP connections
