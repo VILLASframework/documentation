@@ -182,7 +182,7 @@ We prepared a image which you can download and run out of the box:
 
    ![Pulling VILLASnode Docker image.](docker_pull.png)
 
-6. Test VILLASnode image by running: `$ docker run villas/node node -h`
+6. Test VILLASnode image by running: `$ docker run --privilged villas/node node -h`
 
    ![Running VILLASnode Docker image.](docker_run.png)
 
