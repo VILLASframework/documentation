@@ -39,6 +39,9 @@ Note: Simply copying the image onto the drive **does not work**)
 **Note:** For the persistent setup, install the image on your machine (see  Step 3). As soon as you reboot the system booted from the live USB image, all your changes, settings, files are deleted. 
 
 ### Step 3: Installing the system on the machine
+
+**Warning:** This step will erase all files which have been previously on the internal harddisk of the machine!
+
 1. Start installation with `liveinst`
 2. Refer to the video @subpage liveusb-installation
 3. Shutdown the server and remove the USB drive 
