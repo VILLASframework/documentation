@@ -18,8 +18,8 @@ See: @ref liveusb
 Add VILLAS RPM repository to your system:
 
 ```
-$ sudo dnf config-manager --add-repo https://acs:4csuperl4b@villas.fein-aachen.org/packages/villas.repo
-Adding repo from: https://acs:4csuperl4b@villas.fein-aachen.org/packages/villas.repo
+$ sudo dnf config-manager --add-repo https://villas.fein-aachen.org/packages/villas.repo
+Adding repo from: https://villas.fein-aachen.org/packages/villas.repo
 ```
 
 Install VILLASnode plus its dependencies:
@@ -56,7 +56,7 @@ Is this ok [y/N]:
 
 If the Linux host has no internet access, RPM files must be transferred manually to the machine by using a flash drive.
 
-1. Download the latest .rpm files from: https://acs:4csuperl4b@villas.fein-aachen.org/packages/x86_64/
+1. Download the latest .rpm files from: https://villas.fein-aachen.org/packages/x86_64/
 2. Copy all files to a flash drive.
 3. Mount the flash drive on the Linux host: `$ mount /dev/sdXn /mnt`  
     (Replace `sdXn` by using `lsblk` to get the correct device name)
