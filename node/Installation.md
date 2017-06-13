@@ -63,6 +63,18 @@ If the Linux host has no internet access, RPM files must be transferred manually
 4. Install the .rpm files from the flash drive: `$ rpm -ivh /mnt/*.rpm`
 5. Unmount the flash drive: `$ umount /mnt`
 
+## With SSH proxy
+
+Sometimes only SSH connections are possible from the laboratory networks to the public internet.
+In this case the following proxy method can be used:
+
+1. Create a SSH SOCKS proxy by connecting to a machine which can reach the internet:  
+   `$ ssh -D 12345 root@acs-villas`
+2. Configure `dnf` [to use the proxy](https://www.cyberciti.biz/faq/how-to-use-dnf-command-with-a-proxy-server-on-fedora/) by adding the following line to `[main]` section of configuration file  `/etc/dnf/dnf.conf`:  
+   `proxy=http://localhost:12345`
+3. Update the dnf package chache and install updates:  
+   `$ dnf --refresh update`
+
 ## Get the currently installed version
 
 ```
