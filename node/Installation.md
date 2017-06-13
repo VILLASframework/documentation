@@ -13,7 +13,7 @@ See: @ref liveusb
 
 # From RPM packages {#node-installation-rpm}
 
-## With internet access by using VILLAS RPM repository
+## With internet access by using VILLAS RPM repository {#node-installation-rpm-offline}
 
 Add VILLAS RPM repository to your system:
 
@@ -52,7 +52,7 @@ Is this ok [y/N]:
 ...
 ```
 
-## Without internet access
+## Without internet access {#node-installation-rpm-online}
 
 If the Linux host has no internet access, RPM files must be transferred manually to the machine by using a flash drive.
 
@@ -63,7 +63,7 @@ If the Linux host has no internet access, RPM files must be transferred manually
 4. Install the .rpm files from the flash drive: `$ rpm -ivh /mnt/*.rpm`
 5. Unmount the flash drive: `$ umount /mnt`
 
-## With SSH proxy
+## With SSH proxy {#node-installation-rpm-rpxy}
 
 Sometimes only SSH connections are possible from the laboratory networks.
 In this case we can use `ssh` to connect to an external machine which will be used as a proxy.
