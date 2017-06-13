@@ -65,7 +65,7 @@ If the Linux host has no internet access, RPM files must be transferred manually
 
 ## With SSH proxy
 
-Sometimes only SSH connections are possible from the laboratory networks to the public internet.
+Sometimes only SSH connections are possible from the laboratory networks.
 In this case we can use `ssh` to connect to an external machine which will be used as a proxy.
 
 **Note:** The external machine requires access to the internet.
@@ -73,7 +73,7 @@ In this case we can use `ssh` to connect to an external machine which will be us
 1. Create a SSH SOCKS proxy by connecting to a machine which can reach the internet:  
    `$ ssh -fND 12345 user@external-machine`
 2. Configure `dnf` [to use the proxy](https://www.cyberciti.biz/faq/how-to-use-dnf-command-with-a-proxy-server-on-fedora/) by adding the following line to `[main]` section of configuration file  `/etc/dnf/dnf.conf`:  
-   `proxy=http://localhost:12345`
+   `proxy=socks5h://localhost:12345`
 3. Update the dnf package chache and install updates:  
    `$ dnf --refresh update`
 
