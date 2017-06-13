@@ -101,6 +101,7 @@ VILLASnode currently has the following list of dependencies:
  - [openssl](https://www.openssl.org) for cryptographic hashing functions.
  - [libzmq](http://zeromq.org) for the @ref node-type-zeromq node-type.
  - [nanomsg](http://nanomsg.org/) for the @ref node-type-nanomsg node-type.
+ - [libiec61850](http://libiec61850.com/libiec61850/) for the @ref node-type-iec61850-8-1 and @ref node-type-iec61850-0-2 node-types.
   
 There are two ways to install these dependencies:
 
@@ -109,13 +110,13 @@ There are two ways to install these dependencies:
 Use the following command to install the dependencies under Debian-based distributions:
 
 ```
-$ sudo apt-get install build-essential pkg-config wget tar cmake doxygen dia graphviz libconfig-dev libnl-3-dev libnl-route-3-dev libjansson-dev libcurl4-openssl-dev
+$ sudo apt-get install build-essential pkg-config wget tar cmake doxygen dia graphviz libconfig-dev libnl-3-dev libnl-route-3-dev libjansson-dev libcurl4-openssl-dev libzmq3-dev libnanomsg-dev
 ```
 
 or the following line for Fedora / CentOS / Redhat systems:
 
 ```
-$ sudo yum install gcc pkgconfig make wget tar cmake openssl-devel doxygen dia graphviz libconfig-devel libnl3-devel libcurl-devel jansson-devel
+$ sudo yum install gcc pkgconfig make wget tar cmake openssl-devel doxygen dia graphviz libconfig-devel libnl3-devel jansson-devel libcurl-devel zeromq-devel nanomsg-devel
 ```
 
  2. Alternatively, you can use the build system to download, compile and install all dependencies:
