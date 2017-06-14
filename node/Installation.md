@@ -128,9 +128,11 @@ $ make install-thirdparty
 ## Downloading from Git
 
 ```
-$ git clone --recursive git@git.rwth-aachen.de:VILLASframework/VILLASnode.git
+$ git -c submodule."thirdparty/libopal".update=none clone --recursive https://git.rwth-aachen.de/VILLASframework/VILLASnode.git
 $ cd VILLASnode
 ```
+
+**Note:** The libopal submodule contains software from OPAL-RT which we can not release. Therefore we do not try to clone it by default. Please contact [Steffen Vogel](mailto:svogel2@eonerc.rwth-aachen.de) to get access.
 
 ## Compilation
 
