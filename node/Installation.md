@@ -86,22 +86,23 @@ villas-node-0.3-1.develop_release.20170507gite92f17d.fc25.x86_64
 
 # From source  {#node-installation-source}
 
-**Note:** To achieve the best performance of VILLASnode in real-time simulation setup, refer to the live image with the OS tuned for low latency and overall real-time performance.
+VILLASnode can be compiled from source. This process has been tested with Fedora 25, Debian 8 (Jessie) and Ubuntu 16.04 (Xenial).
 
 ## Prerequisites
 
 VILLASnode currently has the following list of dependencies:
 
- - [libconfig](http://www.hyperrealm.com/libconfig/) for parsing the configuration file.
+ - [openssl](https://www.openssl.org) for cryptographic hashing functions (_required_).
+ - [libconfig](http://www.hyperrealm.com/libconfig/) for parsing the configuration file (_required_).
  - [libnl3](http://www.infradead.org/~tgr/libnl/) for the network communication & emulation support of the @ref node-type-socket node-type.
- - [libOpal{AsyncApi,Core,Utils}](https://git.rwth-aachen.de/VILLASframework/libopal) for running VILLASnode as an Asynchronous process inside your RT-LAB model.
- - [libjansson](http://www.digip.org/jansson/) JSON parser for @ref node-type-websocket and @ref node-type-ngsi node-types.
- - [libwebsockets](http://libwebsockets.org) for the @ref node-type-websocket node-type.
+ - [libjansson](http://www.digip.org/jansson/) JSON parser for @ref node-type-websocket and @ref node-type-ngsi node-types (_required_).
+ - [libwebsockets](http://libwebsockets.org) for the @ref node-type-websocket node-type (_required_).
  - [libcurl](https://curl.haxx.se/libcurl/) for HTTP REST requests by the @ref node-type-ngsi node-type.
- - [openssl](https://www.openssl.org) for cryptographic hashing functions.
  - [libzmq](http://zeromq.org) for the @ref node-type-zeromq node-type.
- - [nanomsg](http://nanomsg.org/) for the @ref node-type-nanomsg node-type.
+ - [libnanomsg](http://nanomsg.org/) for the @ref node-type-nanomsg node-type.
  - [libiec61850](http://libiec61850.com/libiec61850/) for the @ref node-type-iec61850-8-1 and @ref node-type-iec61850-0-2 node-types.
+ - [libOpal{AsyncApi,Core,Utils}](https://git.rwth-aachen.de/VILLASframework/libopal) for running VILLASnode as an Asynchronous process inside your RT-LAB model.
+ - [libxil](https://git.rwth-aachen.de/VILLASframework/libopal) for Xilinx drivers of the @ref node-type-fpga node-type.
   
 There are two ways to install these dependencies:
 
@@ -110,13 +111,43 @@ There are two ways to install these dependencies:
 Use the following command to install the dependencies under Debian-based distributions:
 
 ```
-$ sudo apt-get install build-essential pkg-config wget tar cmake doxygen dia graphviz libconfig-dev libnl-3-dev libnl-route-3-dev libjansson-dev libcurl4-openssl-dev libzmq3-dev libnanomsg-dev
+$ sudo apt-get install \
+    gcc g++ \
+	pkg-config make cmake \
+	autoconf automake autogen libtool \
+	flex bison \
+	texinfo git curl \
+    make cmake \
+    git curl tar \
+    doxygen dia \
+    graphviz \
+    libssl-dev \
+    libconfig-dev \
+    libnl-3-dev libnl-route-3-dev \
+    libjansson-dev \
+    libcurl4-openssl-dev \
+    libzmq3-dev \
+    libnanomsg-dev
 ```
 
 or the following line for Fedora / CentOS / Redhat systems:
 
 ```
-$ sudo yum install gcc pkgconfig make wget tar cmake openssl-devel doxygen dia graphviz libconfig-devel libnl3-devel jansson-devel libcurl-devel zeromq-devel nanomsg-devel
+$ sudo dnf install \
+    gcc gcc-c++ \
+	pkgconfig make cmake \
+	autoconf automake autogen libtool \
+	flex bison \
+	texinfo git curl tar \
+    doxygen dia \
+    graphviz \
+    openssl-devel \
+    libconfig-devel \
+    libnl3-devel \
+    jansson-devel \
+    libcurl-devel \
+    zeromq-devel \
+    nanomsg-devel
 ```
 
  2. Alternatively, you can use the build system to download, compile and install all dependencies:
