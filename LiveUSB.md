@@ -64,9 +64,10 @@ By default, the installed Linux system only accepts SSH and ICMP traffic.
 For using VILLASnode additional UDP ports must be opened manually.
 
 1. Create a new firewall zone for VILLASnode: `firewall-cmd --permanent --new-zone=villas`
-2. Allow UDP traffic on ports 12000 to 12010: `firewall-cmd --permanent --zone=villas --add-port=12000-12010/udp`
+2. Allow UDP traffic on ports 12000 to 12100: `firewall-cmd --permanent --zone=villas --add-port=12000-12100/udp`
 3. Add sources to zone: `firewall-cmd --permanent --zone=villas --add-source=10.10.15.0/24`
 4. Apply new configuration `firewall-cmd --reload`
+5. List all rules for the zone: `firewall-cmd --permanent --zone=villas --list-all`
 
 # Contact
 
