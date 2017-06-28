@@ -16,7 +16,7 @@ For this guide, we recommend to use the [VILLASnode Docker image](@ref node-inst
 To open an interactive terminal in the VILLASnode Docker container run:
 
 ```bash
-$ docker run --tty --interactive --entrypoint bash --volume C:\path\to\configs:/configs -p 80:80 villas/node
+$ docker run --privileged --tty --interactive --entrypoint bash --volume C:\path\to\configs:/configs -p 80:80 villas/node
 ```
 
 For some @ref node-guide-labs two interactive shells are required. To open a second shell, run the following command:

@@ -1,8 +1,8 @@
-# Berkely BSD Sockets {#node-type-socket}
+# BSD Sockets {#node-type-socket}
 
 The socket node-type is the most comprehensive and complex one.
 It allows to send and receive simulation data over the network.
-Internally it uses the well known BSD socket API.
+Internally it uses the well known [BSD socket API](https://en.wikipedia.org/wiki/Berkeley_sockets).
 
 Please note that only datagram / packet, connection-less based network protocols are supported.
 This means that there's currently no support for TCP!
@@ -151,7 +151,7 @@ Each message contains a header with the following fields:
  
  Timestamps are represented in [Unix time](https://en.wikipedia.org/wiki/Unix_time).
 
-@image html msg_format.svg width=75%
+@image html msg_format.svg width=60%
 
 For now, only the first message type (`data`) is used.
 Therefore the complete protocol is **stateless**.
