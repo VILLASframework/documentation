@@ -73,6 +73,23 @@ netem = {				# Network emulation settings
 }
 ```
 
+## multicast (dictionary) {#node-config-socket-multicast}
+
+The @ref node-type-socket support sending and receiving IP / UDP packets to and from multicast addresses.
+
+**Note:** Multicast is only supported by IPv4 addressing. Using these settings with `layer = eth` or IPv6 adresses will fail!
+
+```
+multicast = {				# IGMP multicast is only support for layer = (ip|udp)
+	enabled		= true,	
+	
+	group		= "224.1.2.3",	# The multicast group. Must be within 224.0.0.0/4
+	interface	= "1.2.3.4",	# The IP address of the interface which should receive multicast packets.
+	ttl		= 128,		# The time to live for outgoing multicast packets.
+	loop		= false,	# Whether or not to loopback outgoing multicast packets to the local host.
+}
+```
+
 ## Example
 
 ```
