@@ -121,6 +121,9 @@ $ sudo apt-get install \
     git curl tar \
     doxygen dia \
     graphviz \
+    makeinfo \
+    libsodium \
+    openpgm \
     libssl-dev \
     libconfig-dev \
     libnl-3-dev libnl-route-3-dev \
