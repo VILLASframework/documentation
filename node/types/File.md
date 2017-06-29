@@ -35,7 +35,7 @@ Specifies the mode which should be used to open the output file.
 See [open(2)](http://man7.org/linux/man-pages/man2/open.2.html) for an explanation of allowed values.
 The default value is `w+` which will start writing at the beginning of the file and create it in case it does not exist yet.
 
-## epoch_mode ("direct" | "wait" | "relative" | "absolute") {#node-config-file-epoch_mode}
+## in.epoch_mode ("direct" | "wait" | "relative" | "absolute") {#node-config-file-in.epoch_mode}
 
 The *epoch* describes the point in time when the first message will be read from the file.
 This setting allows to select the behaviour of the following `epoch` setting.
@@ -62,16 +62,19 @@ The supported values for `epoch_mode`:
 | `absolute` 	| `epoch - first` 	| `epoch` |
 | `original` 	| `0` 			| immeadiatly |
 
-## rate (float) {#node-config-file-rate}
+## in.rate (float) {#node-config-file-in.rate}
 
 By default `send_rate` has the value `0` which means that the time between consecutive samples is the same as in the `in` file based on the timestamps in the first column. 
 
 If this setting has a non-zero value, the default behaviour is overwritten with a fixed rate.
 
-## rewind (boolean) = true {#node-config-file-rewind}
+## in.eof (string: "rewind" | "exit" | "wait") = "exit" {#node-config-file-in.eof}
 
-If this setting is `true` (default), the file is rewinded when it's end has been reached.
-Otherwise, the program will shutdown gracefully.
+Defines the behaviour if the end of file of the input file is reached.
+
+ - `rewind` will rewind the file pointer and restart reading samples from the beginning of the file.
+ - `exit` will terminated the program.
+ - `wait` will periodically test if there are new samples which have been appended to the file.
 
 ## Example
 
@@ -93,6 +96,7 @@ nodes = {
 			rate = 2.0			# A constant rate at which the lines of the input files should be read
 							# A missing or zero value will use the timestamp in the first column
 							# of the file to determine the pause between consecutive lines.
+			eof = "rewind"	# Rewind the file and start from the beginning.
 		},
 		out = {
 			uri = "logs/output_%F_%T.log"	# The output URI accepts all format tokens of (see strftime(3))
