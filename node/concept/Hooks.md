@@ -45,7 +45,7 @@ paths = (
 - @subpage node-hook-convert
 - @subpage node-hook-map
 - @subpage node-hook-print
-- @subpage node-hook-stats
+- @subpage node-hook-stats_collect
 - @subpage node-hook-stats_send
 - @subpage node-hook-shift_ts
 - @subpage node-hook-shift_seq
