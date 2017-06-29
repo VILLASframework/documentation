@@ -230,11 +230,11 @@ We prepared a image which you can download and run out of the box:
 
    ![Pulling VILLASnode Docker image.](docker_pull.png)
 
-6. Test VILLASnode image by running: `$ docker run --privilged villas/node node -h`
+6. Test VILLASnode image by running: `$ docker run --privileged villas/node node -h`
 
    ![Running VILLASnode Docker image.](docker_run.png)
 
-7. Enter an interactive VILLASnode shell by running: `$ docker run --privilged --tty --interactive --entrypoint bash villas/node`
+7. Enter an interactive VILLASnode shell by running: `$ docker run --privileged --tty --interactive --entrypoint bash villas/node`
 
     ![Docker run VILLASnode interactively](docker_run_interactive.png)
 
