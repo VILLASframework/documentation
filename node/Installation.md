@@ -143,6 +143,8 @@ $ sudo dnf install \
 	texinfo git curl tar \
     doxygen dia \
     graphviz \
+    libsodium-devel \
+    openpgm-devel \
     openssl-devel \
     libconfig-devel \
     libnl3-devel \
