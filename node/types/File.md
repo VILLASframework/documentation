@@ -76,6 +76,15 @@ Defines the behaviour if the end of file of the input file is reached.
  - `exit` will terminated the program.
  - `wait` will periodically test if there are new samples which have been appended to the file.
 
+## out.flush (boolean) {#node-config-file.out.flush}
+
+With this setting enabled, the outgoing file is flushed whenever new samples have been written to it.
+For remote files this means that the new sample is appended to the remote file which involves network IO.
+
+**Note:** Not all network file protocols might support partial uploads.
+It's know that this feature works for local files but not for WebDav.
+Other protocols hav not been tested yet.
+
 ## Example
 
 ```
@@ -101,6 +110,7 @@ nodes = {
 		out = {
 			uri = "logs/output_%F_%T.log"	# The output URI accepts all format tokens of (see strftime(3))
 			mode = "a+"			# You might want to use "a+" to append to a file
+			flush = false	# Flush or upload contents of the file every time new samples are sent.
 		}
 	}
 }
