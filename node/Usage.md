@@ -14,7 +14,7 @@ Usage: villas [TOOL]
 For detailed documentation, please run 'villas node'
  and point your web browser to http://localhost:80
 
-VILLASnode v0.2-9821365-release (built on May  3 2017 14:42:59)
+VILLASnode v0.3.1-3b2d09c-release (built on Jul  2 2017 19:06:00)
  Copyright 2014-2017, Institute for Automation of Complex Power Systems, EONERC
  Steffen Vogel <StVogel@eonerc.rwth-aachen.de>
 ```
@@ -38,6 +38,8 @@ Supported node types:
  - cbuilder    : RTDS CBuilder model
  - shmem       : POSIX shared memory interface with external processes
  - socket      : BSD network sockets
+ - nanomsg     : scalability protocols library
+ - zeromq      : ZeroMQ Distributed Messaging
  - fpga        : VILLASfpga PCIe card (libxil)
  - ngsi        : OMA Next Generation Services Interface 10 (libcurl, libjansson)
  - websocket   : Send and receive samples of a WebSocket connection (libwebsockets)
@@ -61,9 +63,10 @@ Supported API commands:
  - capabilities: get capabiltities and details about this VILLASnode instance
  - nodes       : retrieve list of all known nodes
  - config      : retrieve current VILLASnode configuration
+ - paths       : retrieve list of all paths with details
  - restart     : restart VILLASnode with new configuration
 
-VILLASnode v0.2-9821365-release (built on May  3 2017 14:42:59)
+VILLASnode v0.3.1-3b2d09c-release (built on Jul  2 2017 19:06:00)
  Copyright 2014-2017, Institute for Automation of Complex Power Systems, EONERC
  Steffen Vogel <StVogel@eonerc.rwth-aachen.de>
 ```
@@ -77,7 +80,7 @@ The server requires root privileges for:
 
 ### `villas pipe` {#node-usage-pipe}
 
-The `pipe` sub-command allows to read and write samples to `stdin` / `stdout`.
+The `pipe` sub-command allows to read and write samples from `stdin` / `stdout` streams.
 
 ```
 $ villas pipe
@@ -90,8 +93,11 @@ Usage: villas-pipe CONFIG NODE [OPTIONS]
     -x      swap read / write endpoints
     -s      only read data from stdin and send it to node
     -r      only read data from node and write it to stdout
+    -t NUM  terminate after NUM seconds
+    -L NUM  terminate after NUM samples sent
+    -l NUM  terminate after NUM samples received
 
-VILLASnode v0.2-9821365-release (built on May  3 2017 14:42:59)
+VILLASnode v0.3.1-3b2d09c-release (built on Jul  2 2017 19:06:00)
  Copyright 2014-2017, Institute for Automation of Complex Power Systems, EONERC
  Steffen Vogel <StVogel@eonerc.rwth-aachen.de>
 ```
@@ -103,18 +109,26 @@ This command can be combined with the `pipe` sub-command.
 
 ```
 $ villas signal
-Usage: villas-signal SIGNAL [OPTIONS]
-  SIGNAL   is on of: 'mixed', 'random', 'sine', 'triangle', 'square', 'ramp'
-  -d LVL   set debug level
-  -v NUM   specifies how many values a message should contain
-  -r HZ    how many messages per second
-  -n       non real-time mode. do not throttle output.
-  -f HZ    the frequency of the signal
-  -a FLT   the amplitude
-  -D FLT   the standard deviation for 'random' signals
-  -l NUM   only send LIMIT messages and stop
+Usage: villas-signal [OPTIONS] SIGNAL
+  SIGNAL   is on of the following signal types:
+    mixed
+    random
+    sine
+    triangle
+    square
+    ramp
 
-VILLASnode v0.2-9821365-release (built on May  3 2017 14:42:59)
+  OPTIONS is one or more of the following options:
+    -d LVL   set debug level
+    -v NUM   specifies how many values a message should contain
+    -r HZ    how many messages per second
+    -n       non real-time mode. do not throttle output.
+    -f HZ    the frequency of the signal
+    -a FLT   the amplitude
+    -D FLT   the standard deviation for 'random' signals
+    -l NUM   only send LIMIT messages and stop
+
+VILLASnode v0.3.1-3b2d09c-release (built on Jul  2 2017 19:06:00)
  Copyright 2014-2017, Institute for Automation of Complex Power Systems, EONERC
  Steffen Vogel <StVogel@eonerc.rwth-aachen.de>
 ```
@@ -170,7 +184,7 @@ Usage: villas-test-rtt CONFIG NODE [ARGS]
    -r RES  bucket resolution for histogram
    -h      show this usage information
 
-VILLASnode v0.2-9821365-release (built on May  3 2017 14:42:59)
+VILLASnode v0.3.1-3b2d09c-release (built on Jul  2 2017 19:06:00)
  Copyright 2014-2017, Institute for Automation of Complex Power Systems, EONERC
  Steffen Vogel <StVogel@eonerc.rwth-aachen.de>
 ```
@@ -195,7 +209,7 @@ Return codes:
   4   number of values is not equal
   5   data is not equal
 
-VILLASnode v0.2-9821365-release (built on May  3 2017 14:42:59)
+VILLASnode v0.3.1-3b2d09c-release (built on Jul  2 2017 19:06:00)
  Copyright 2014-2017, Institute for Automation of Complex Power Systems, EONERC
  Steffen Vogel <StVogel@eonerc.rwth-aachen.de>
 ```
