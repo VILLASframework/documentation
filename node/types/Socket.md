@@ -182,6 +182,17 @@ For this the iproute2 software package (`ip` & `tc` commands) must be installed.
 The configuration is done via the config file.
 Look at `etc/example.conf` for a section called `netem` or `tc-netem(8)` for more details.
 
+## Fix for Fedora
+
+For some reason, Fedora installs the delay distribution profiles under `/usr/lib64/tc/`.
+But libnl3 only seraches `/usr/lib/tc/`. This results in the following error when using netem:
+
+```
+Invalid delay distribution 'normal' in netem config in 
+```
+
+To fix this error please add a symlink: `ln -s /usr/lib64/tc /usr/lib/tc`
+
 ## Custom delay distribution
 
 Netem supports loading custom delay distributions.
