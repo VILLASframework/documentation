@@ -100,7 +100,7 @@ VILLASnode currently has the following list of dependencies:
  - [libcurl](https://curl.haxx.se/libcurl/) for HTTP REST requests by the @ref node-type-ngsi node-type.
  - [libzmq](http://zeromq.org) for the @ref node-type-zeromq node-type.
  - [libnanomsg](http://nanomsg.org/) for the @ref node-type-nanomsg node-type.
- - [libiec61850](http://libiec61850.com/libiec61850/) for the @ref node-type-iec61850-8-1 and @ref node-type-iec61850-0-2 node-types.
+ - [libiec61850](http://libiec61850.com/libiec61850/) for the @ref node-type-iec61850-8-1 and @ref node-type-iec61850-9-2 node-types.
  - [libOpal{AsyncApi,Core,Utils}](https://git.rwth-aachen.de/VILLASframework/libopal) for running VILLASnode as an Asynchronous process inside your RT-LAB model.
  - [libxil](https://git.rwth-aachen.de/VILLASframework/libopal) for Xilinx drivers of the @ref node-type-fpga node-type.
   
