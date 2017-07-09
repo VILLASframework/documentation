@@ -16,11 +16,8 @@ Copy the following files to the _models_ folder of the RT-LAB project:
 
 The `.llm` file should contain the following lines:
 
-**Note:** path to libOpalAsyncApiCore.a depends on version of RT-Lab  
-
 ```
 [ExtraPutFilesComp]
-C:\OPAL-RT\RT-LAB\v10.7.7.506\common\lib\redhawk\libOpalAsyncApiCore.a=Binary
 include\config.h=Ascii
 include\msg.h=Ascii
 include\msg_format.h=Ascii
