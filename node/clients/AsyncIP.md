@@ -60,9 +60,8 @@ Kill running AsyncIP on OPAL:
 
 1. Start Putty.
 2. Connect to OPAL-RT target by using the existing profiles.
-3. make sure that you are in the proper folder by  running `$ ls -l`.
-4. Kill all running processes with name 'AsyncIP' by running `$ killall AsyncIP`.
-5. Logout from the OPAL-RT target by running `$ exit`.
+3. Kill all running processes with name 'AsyncIP' by running `$ killall AsyncIP`.
+4. Logout from the OPAL-RT target by running `$ exit`.
 
 ## Problem occurs when there are multiple subsystems (SM_, SS_, ...)
 
