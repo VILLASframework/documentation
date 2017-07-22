@@ -13,7 +13,6 @@ VILLASnode is a modular gateway for simulation data. It offers interfaces to sim
 - @subpage node-tuning
 
 - @subpage node-concept
-- @subpage node-designgoals
 - @subpage node-timing
 - @subpage node-dev
 
