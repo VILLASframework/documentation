@@ -13,13 +13,13 @@ See: @ref liveusb
 
 # From RPM packages {#node-installation-rpm}
 
-## With internet access by using VILLAS RPM repository
+## With internet access by using VILLAS RPM repository {#node-installation-rpm-offline}
 
 Add VILLAS RPM repository to your system:
 
 ```
-$ sudo dnf config-manager --add-repo https://acs:4csuperl4b@villas.fein-aachen.org/packages/villas.repo
-Adding repo from: https://acs:4csuperl4b@villas.fein-aachen.org/packages/villas.repo
+$ sudo dnf config-manager --add-repo https://villas.fein-aachen.org/packages/villas.repo
+Adding repo from: https://villas.fein-aachen.org/packages/villas.repo
 ```
 
 Install VILLASnode plus its dependencies:
@@ -52,16 +52,30 @@ Is this ok [y/N]:
 ...
 ```
 
-## Without internet access
+## Without internet access {#node-installation-rpm-online}
 
 If the Linux host has no internet access, RPM files must be transferred manually to the machine by using a flash drive.
 
-1. Download the latest .rpm files from: https://acs:4csuperl4b@villas.fein-aachen.org/packages/x86_64/
+1. Download the latest .rpm files from: https://villas.fein-aachen.org/packages/x86_64/
 2. Copy all files to a flash drive.
 3. Mount the flash drive on the Linux host: `$ mount /dev/sdXn /mnt`  
     (Replace `sdXn` by using `lsblk` to get the correct device name)
 4. Install the .rpm files from the flash drive: `$ rpm -ivh /mnt/*.rpm`
 5. Unmount the flash drive: `$ umount /mnt`
+
+## With SSH proxy {#node-installation-rpm-rpxy}
+
+Sometimes only SSH connections are possible from the laboratory networks.
+In this case we can use `ssh` to connect to an external machine which will be used as a proxy.
+
+**Note:** The external machine requires access to the internet.
+
+1. Create a SSH SOCKS proxy by connecting to a machine which can reach the internet:  
+   `$ ssh -fND 12345 user@external-machine`
+2. Configure `dnf` [to use the proxy](https://www.cyberciti.biz/faq/how-to-use-dnf-command-with-a-proxy-server-on-fedora/) by adding the following line to `[main]` section of configuration file  `/etc/dnf/dnf.conf`:  
+   `proxy=socks5h://localhost:12345`
+3. Update the dnf package chache and install updates:  
+   `$ dnf --refresh update`
 
 ## Get the currently installed version
 
@@ -72,21 +86,23 @@ villas-node-0.3-1.develop_release.20170507gite92f17d.fc25.x86_64
 
 # From source  {#node-installation-source}
 
-**Note:** To achieve the best performance of VILLASnode in real-time simulation setup, refer to the live image with the OS tuned for low latency and overall real-time performance.
+VILLASnode can be compiled from source. This process has been tested with Fedora 25, Debian 8 (Jessie) and Ubuntu 16.04 (Xenial).
 
 ## Prerequisites
 
 VILLASnode currently has the following list of dependencies:
 
- - [libconfig](http://www.hyperrealm.com/libconfig/) for parsing the configuration file.
+ - [openssl](https://www.openssl.org) for cryptographic hashing functions (_required_).
+ - [libconfig](http://www.hyperrealm.com/libconfig/) for parsing the configuration file (_required_).
  - [libnl3](http://www.infradead.org/~tgr/libnl/) for the network communication & emulation support of the @ref node-type-socket node-type.
- - [libOpal{AsyncApi,Core,Utils}](https://git.rwth-aachen.de/VILLASframework/libopal) for running VILLASnode as an Asynchronous process inside your RT-LAB model.
- - [libjansson](http://www.digip.org/jansson/) JSON parser for @ref node-type-websocket and @ref node-type-ngsi node-types.
- - [libwebsockets](http://libwebsockets.org) for the @ref node-type-websocket node-type.
+ - [libjansson](http://www.digip.org/jansson/) JSON parser for @ref node-type-websocket and @ref node-type-ngsi node-types (_required_).
+ - [libwebsockets](http://libwebsockets.org) for the @ref node-type-websocket node-type (_required_).
  - [libcurl](https://curl.haxx.se/libcurl/) for HTTP REST requests by the @ref node-type-ngsi node-type.
- - [openssl](https://www.openssl.org) for cryptographic hashing functions.
  - [libzmq](http://zeromq.org) for the @ref node-type-zeromq node-type.
- - [nanomsg](http://nanomsg.org/) for the @ref node-type-nanomsg node-type.
+ - [libnanomsg](http://nanomsg.org/) for the @ref node-type-nanomsg node-type.
+ - [libiec61850](http://libiec61850.com/libiec61850/) for the @ref node-type-iec61850-8-1 and @ref node-type-iec61850-9-2 node-types.
+ - [libOpal{AsyncApi,Core,Utils}](https://git.rwth-aachen.de/VILLASframework/libopal) for running VILLASnode as an Asynchronous process inside your RT-LAB model.
+ - [libxil](https://git.rwth-aachen.de/VILLASframework/libopal) for Xilinx drivers of the @ref node-type-fpga node-type.
   
 There are two ways to install these dependencies:
 
@@ -95,13 +111,47 @@ There are two ways to install these dependencies:
 Use the following command to install the dependencies under Debian-based distributions:
 
 ```
-$ sudo apt-get install build-essential pkg-config wget tar cmake doxygen dia graphviz libconfig-dev libnl-3-dev libnl-route-3-dev libjansson-dev libcurl4-openssl-dev
+$ sudo apt-get install \
+    gcc g++ \
+	pkg-config make cmake \
+	autoconf automake autogen libtool \
+	flex bison \
+	texinfo git curl \
+    make cmake \
+    git curl tar \
+    doxygen dia \
+    graphviz \
+    libsodium-dev \
+    libpgm-dev \
+    libssl-dev \
+    libconfig-dev \
+    libnl-3-dev libnl-route-3-dev \
+    libjansson-dev \
+    libcurl4-openssl-dev \
+    libzmq3-dev \
+    libnanomsg-dev
 ```
 
 or the following line for Fedora / CentOS / Redhat systems:
 
 ```
-$ sudo yum install gcc pkgconfig make wget tar cmake openssl-devel doxygen dia graphviz libconfig-devel libnl3-devel libcurl-devel jansson-devel
+$ sudo dnf install \
+    gcc gcc-c++ \
+	pkgconfig make cmake \
+	autoconf automake autogen libtool \
+	flex bison \
+	texinfo git curl tar \
+    doxygen dia \
+    graphviz \
+    libsodium-devel \
+    openpgm-devel \
+    openssl-devel \
+    libconfig-devel \
+    libnl3-devel \
+    jansson-devel \
+    libcurl-devel \
+    zeromq-devel \
+    nanomsg-devel
 ```
 
  2. Alternatively, you can use the build system to download, compile and install all dependencies:
@@ -113,9 +163,11 @@ $ make install-thirdparty
 ## Downloading from Git
 
 ```
-$ git clone --recursive git@git.rwth-aachen.de:VILLASframework/VILLASnode.git
+$ git -c submodule."thirdparty/libopal".update=none clone --recursive https://git.rwth-aachen.de/VILLASframework/VILLASnode.git
 $ cd VILLASnode
 ```
+
+**Note:** The libopal submodule contains software from OPAL-RT which we can not release. Therefore we do not try to clone it by default. Please contact [Steffen Vogel](mailto:svogel2@eonerc.rwth-aachen.de) to get access.
 
 ## Compilation
 
@@ -182,11 +234,11 @@ We prepared a image which you can download and run out of the box:
 
    ![Pulling VILLASnode Docker image.](docker_pull.png)
 
-6. Test VILLASnode image by running: `$ docker run villas/node node -h`
+6. Test VILLASnode image by running: `$ docker run --privileged villas/node node -h`
 
    ![Running VILLASnode Docker image.](docker_run.png)
 
-7. Enter an interactive VILLASnode shell by running: `$ docker run --tty --interactive --entrypoint bash villas/node`
+7. Enter an interactive VILLASnode shell by running: `$ docker run --privileged --tty --interactive --entrypoint bash villas/node`
 
     ![Docker run VILLASnode interactively](docker_run_interactive.png)
 

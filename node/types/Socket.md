@@ -1,8 +1,8 @@
-# Berkely BSD Sockets {#node-type-socket}
+# BSD Sockets {#node-type-socket}
 
 The socket node-type is the most comprehensive and complex one.
 It allows to send and receive simulation data over the network.
-Internally it uses the well known BSD socket API.
+Internally it uses the well known [BSD socket API](https://en.wikipedia.org/wiki/Berkeley_sockets).
 
 Please note that only datagram / packet, connection-less based network protocols are supported.
 This means that there's currently no support for TCP!
@@ -27,23 +27,6 @@ Use `*` to listen on all interfaces: `local = "*:12000"`.
 
 The address and port number of the remote endpoint of this node for outgoing packets.
 
-## netem (dictionary) {#node-config-socket-netem}
-
-Enables and configures the network emulation qeueing discipline.
-See below for a more detailed description of this feature.
-
-```
-netem = {				# Network emulation settings
-					# Those settings can be specified for each node invidually!
-	delay		= 100000,	# Additional latency in microseconds
-	jitter		= 30000,	# Jitter in uS
-	distribution	= "normal",	# Distribution of delay: uniform, normal, pareto, paretonormal
-	loss		= 10		# Packet loss in percent
-	duplicate	= 10,		# Duplication in percent
-	corrupt 	= 10		# Corruption in percent
-}
-```
-
 ## layer (string: "udp" | "ip" | "eth") {#node-config-socket-layer}
 
 Select the network layer which should be used for the socket. Please note that `eth` can only be used locally in a LAN as it contains no routing information for the internet.
@@ -63,44 +46,93 @@ Only the first three values will have a special interpretation:
    - Timestamp seconds ([Unix time](https://en.wikipedia.org/wiki/Unix_time), `uint32_t`)
    - Timestamp nano-seconds  ([Unix time](https://en.wikipedia.org/wiki/Unix_time), `uint32_t`)
 
-## endian ("big" | "network" | "little") = "big" {#node-config-socket-endian}
+## endian (string: "big" | "network" | "little") = "big" {#node-config-socket-endian}
 
 This setting is only valid for the `none` and `fake` protocols.
 If setting @ref node-config-socket-header is set to `villas`, the data is always interpreted in network (big) endianess.
 It select the endianes which is used for outgoing and incoming data.
 
+## verify_source (boolean) = false {#node-config-socket-verify_source}
+
+Check if source address of incoming packets matches the remote address.
+
+## netem (dictionary) {#node-config-socket-netem}
+
+Enables and configures the network emulation qeueing discipline.
+See below for a more detailed description of this feature.
+
+```
+netem = {				# Network emulation settings
+					# Those settings can be specified for each node invidually!
+	delay		= 100000,	# Additional latency in microseconds
+	jitter		= 30000,	# Jitter in uS
+	distribution	= "normal",	# Distribution of delay: uniform, normal, pareto, paretonormal
+	loss		= 10		# Packet loss in percent
+	duplicate	= 10,		# Duplication in percent
+	corrupt 	= 10		# Corruption in percent
+}
+```
+
+## multicast (dictionary) {#node-config-socket-multicast}
+
+The @ref node-type-socket support sending and receiving IP / UDP packets to and from multicast addresses.
+
+**Note:** Multicast is only supported by IPv4 addressing. Using these settings with `layer = eth` or IPv6 adresses will fail!
+
+```
+multicast = {				# IGMP multicast is only support for layer = (ip|udp)
+	enabled		= true,	
+	
+	group		= "224.1.2.3",	# The multicast group. Must be within 224.0.0.0/4
+	interface	= "1.2.3.4",	# The IP address of the interface which should receive multicast packets.
+	ttl		= 128,		# The time to live for outgoing multicast packets.
+	loop		= false,	# Whether or not to loopback outgoing multicast packets to the local host.
+}
+```
+
 ## Example
 
-	nodes = {
-		udp_node = {					# The dictionary is indexed by the name of the node.
-			type	= "socket",			# Type can be one of: socket, opal, file, gtfpga, ngsi
-								# Start the server without arguments for a list of supported node types.
-		
-		### The following settings are specific to the socket node-type!! ###
-	
-			layer	= "udp"				# Layer can be one of:
-								#   udp		Send / recv UDP packets
-								#   ip		Send / recv IP packets
-								#   eth		Send / recv raw Ethernet frames (IEEE802.3)
-	
-			header	= "gtnet-skt:fake",		# Header can be one of:
-								#   default | villas       Use VILLASnode protocol (see struct msg) (default)
-								#   none | gtnet-skt       Use no header, send raw data as used by RTDS GTNETv2-SKT
-								#   fake | gtnet-skt:fake  Same as 'none', but use first three data values as
-								#                             sequence, seconds & nanoseconds timestamp
-								#                             In this mode values are uint32_t not floats!
-								
-			endian = "network",			# Endianess of header and data:
-								#   big | network          Use big endianess. Also know as network byte order (default)
-								#   little                 Use little endianess.
-								
-			local	= "127.0.0.1:12001",		# This node only received messages on this IP:Port pair
-			remote	= "127.0.0.1:12000"		# This node sents outgoing messages to this IP:Port pair
-		
-			vectorize = 30				# Receive and sent 30 samples per message (multiplexing).
-		}
-	}
+```
+udp_node = {					# The dictionary is indexed by the name of the node.
+	type	= "socket",			# Type can be one of: socket, opal, file, gtfpga, ngsi
+						# Start the server without arguments for a list of supported node types.
 
+### The following settings are specific to the socket node-type!! ###
+
+	layer	= "udp",			# Layer can be one of:
+						#   udp                    Send / receive UDP packets
+						#   ip                     Send / receive IP packets
+						#   eth                    Send / receive raw Ethernet frames (IEEE802.3)
+
+	header	= "gtnet-skt:fake",		# Header can be one of:
+						#   default | villas       Use VILLASnode protocol (see struct msg) (default)
+						#   none | gtnet-skt       Use no header, send raw data as used by RTDS GTNETv2-SKT
+						#   fake | gtnet-skt:fake  Same as 'none', but use first three data values as
+						#                             sequence, seconds & nanoseconds timestamp
+						#                             In this mode values are uint32_t not floats!
+
+	endian = "network",			# Endianess of header and data:
+						#   big | network          Use big endianess. Also know as network byte order (default)
+						#   little                 Use little endianess.
+	
+	verify_source = true, 			# Check if source address of incoming packets matches the remote address.
+
+	local	= "127.0.0.1:12001",		# This node only received messages on this IP:Port pair
+	remote	= "127.0.0.1:12000",		# This node sents outgoing messages to this IP:Port pair
+
+	vectorize = 30,				# Receive and sent 30 samples per message (combining).
+	
+	netem = {				# Network emulation settings
+						# Those settings can be specified for each node invidually!
+		delay		= 100000,	# Additional latency in microseconds
+		jitter		= 30000,	# Jitter in uS
+		distribution	= "normal",	# Distribution of delay: uniform, normal, pareto, paretonormal
+		loss		= 10		# Packet loss in percent
+		duplicate	= 10,		# Duplication in percent
+		corrupt 	= 10		# Corruption in percent
+	}
+}
+```
 # Packet Format {#node-type-socket-format}
 
 Simulation data is sent in UDP (or IP, or Ethernet) packets over standard IP / Ethernet networks.
@@ -119,7 +151,7 @@ Each message contains a header with the following fields:
  
  Timestamps are represented in [Unix time](https://en.wikipedia.org/wiki/Unix_time).
 
-@image html msg_format.svg width=75%
+@image html msg_format.svg width=60%
 
 For now, only the first message type (`data`) is used.
 Therefore the complete protocol is **stateless**.
@@ -149,6 +181,17 @@ VILLASnode only takes care of setup and initalizing the netem queuing discipline
 For this the iproute2 software package (`ip` & `tc` commands) must be installed.
 The configuration is done via the config file.
 Look at `etc/example.conf` for a section called `netem` or `tc-netem(8)` for more details.
+
+## Fix for Fedora
+
+For some reason, Fedora installs the delay distribution profiles under `/usr/lib64/tc/`.
+But libnl3 only seraches `/usr/lib/tc/`. This results in the following error when using netem:
+
+```
+Invalid delay distribution 'normal' in netem config in 
+```
+
+To fix this error please add a symlink: `ln -s /usr/lib64/tc /usr/lib/tc`
 
 ## Custom delay distribution
 

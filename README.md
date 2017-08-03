@@ -19,8 +19,6 @@ For starters we recommand to read the @ref node-guide!
 
 The source code of all open source components is available over the [RWTH GitLab](https://git.rwth-aachen.de).
 
-**Note:** You need a [Github](https://www.github.com) account to access the repositories.
-
 - @subpage liveusb
 
 # Copyright
@@ -39,12 +37,15 @@ Please contact [Steffen Vogel](mailto:stvogel@eoenrc.rwth-aachen.de) for details
 Other licensing options available upon request.
 Please contact [Prof. Antonello Monti](mailto:amonti@eonerc.rwth-aachen.de) for further details.
 
-# Contact
+# Contact / Mailing list
+
+The project is using a public [mailing list)(https://mailman.rwth-aachen.de/mailman/listinfo/villas) for announcements and general discussions.
+Please click on the link above to subsribe.
+
+Steffen Vogel (<stvogel@eonerc.rwth-aachen.de>) is coordinating development of VILLASframework and its application in project at ACS.
 
 <img alt="EONERC ACS Logo" src="images/logos/eonerc_logo.png" align="right" />
 
-- Steffen Vogel <stvogel@eonerc.rwth-aachen.de>
-
-[Institute for Automation of Complex Power Systems (ACS)](http://www.acs.eonerc.rwth-aachen.de)
-[EON Energy Research Center (EONERC)](http://www.eonerc.rwth-aachen.de)
-[RWTH University Aachen, Germany](http://www.rwth-aachen.de) 
+[Institute for Automation of Complex Power Systems (ACS)](http://www.acs.eonerc.rwth-aachen.de)  
+[EON Energy Research Center (EONERC)](http://www.eonerc.rwth-aachen.de)  
+[RWTH University Aachen, Germany](http://www.rwth-aachen.de)  

@@ -2,11 +2,28 @@
 
 The `websocket` node type send and receives simulation data via binary WebSocket messages.
 
+[The message format](@ref node-type-socket-format) is the same as used by the @ref node-type-socket node-type.
+
 # Configuration {#node-config-websocket}
+
+By default the @ref node-usage-node daemon listens on @ref node-config-http-port for HTTP and WebSocket requests.
+This behaviour can be disabled by setting @ref node-config-http-enabled to `false`.
 
 ## destinations (array of URIs) {#node-config-websocket-destinations}
 
-During startup connect to those websocket servers as a client. 
+During startup connect to those WebSocket servers as a client.
+
+Each URI must use the following scheme:
+
+```
+protocol://host:port/nodename
+```
+
+It starts with a protocol which must be one of `ws` (unencrypted) or `wss` (SSL).
+The host name or IP address is separated by `://`.
+The optional port number is separated by a colon `:`.
+The node name is separated by a slash `/`.
+
 
 ## Example
 
