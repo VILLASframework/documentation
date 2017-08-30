@@ -13,6 +13,10 @@ See: @ref liveusb
 
 # From RPM packages {#node-installation-rpm}
 
+We offer pre-build RPM packages for Fedora / Redhat based distributions.
+
+**Note:** These packages have only been tested with Fedora 25. Other distributions or version might work as well but might have unresolvable dependencies.
+
 ## With internet access by using VILLAS RPM repository {#node-installation-rpm-offline}
 
 Add VILLAS RPM repository to your system:
@@ -86,7 +90,12 @@ villas-node-0.3-1.develop_release.20170507gite92f17d.fc25.x86_64
 
 # From source  {#node-installation-source}
 
-VILLASnode can be compiled from source. This process has been tested with Fedora 25, Debian 8 (Jessie) and Ubuntu 16.04 (Xenial).
+VILLASnode can be compiled from source. This process has been tested with the following distributions:
+
+ - Fedora 25
+ - Debian 8 (Jessie)
+ - Ubuntu 16.04 (Xenial)
+ - Centos 7
 
 ## Prerequisites
 
@@ -104,7 +113,7 @@ VILLASnode currently has the following list of dependencies:
  - [libOpal{AsyncApi,Core,Utils}](https://git.rwth-aachen.de/VILLASframework/libopal) for running VILLASnode as an Asynchronous process inside your RT-LAB model.
  - [libxil](https://git.rwth-aachen.de/VILLASframework/libopal) for Xilinx drivers of the @ref node-type-fpga node-type.
   
-There are two ways to install these dependencies:
+There are three ways to install these dependencies:
 
 1. You can most of the dependencies using the package manger of your Linux distribution:
  
@@ -159,7 +168,13 @@ $ sudo dnf install \
 ```
 $ make install-thirdparty
 ``` 
+
+ 3. We offer Dockerfiles for different distributions. These files show you how to setup you own development environment.
  
+ - Fedora: Dockerfile.dev
+ - Centos: Dockerfile.dev-centos
+ - Debian / Ubuntu: Dockerfile.dev-ubuntu
+
 ## Downloading from Git
 
 ```
