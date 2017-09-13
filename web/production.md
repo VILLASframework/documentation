@@ -2,12 +2,24 @@
 
 For setup instructions see @ref web-development.
 
+### Automated
+
+Build the images of the frontend and backend:
+ - `cd VILLASweb`
+ - `docker build -t villas-web .`
+ - `cd ..\VILLASweb-backend`
+ - `docker build -t villas-backend .`
+
+Run the producation docker-compose file:
+ - `docker-compose -f docker-compose-production.yml up -d`
+
+### Manual
+
 ## Frontend
 
- - `ember build -prod` Build the static website for production into dist/
+ - `npm run build` Build the static website for production into dist/
 
-All files in dist/ must be served by the NGinX webserver. The backend endpoint must be changed in config/environment.js (API_HOST) to match the
-production backend endpoint (which should be proxied through the webserver).
+All files in build/ must be served by the webserver. The backend endpoint must be available under /api (e.g. via a proxy).
 
 ## Backend
 

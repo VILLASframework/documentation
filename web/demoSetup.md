@@ -1,9 +1,8 @@
-# Setup sample data {#web-sampledata}
+# Setup demo {#web-demosetup}
 
 ## Description
 
-This document describes setting up sample data in VILLASweb to test it's features. It is assumed that the user is logged in with admin permissions.
-Also the VILLASweb-socket testing tool is assmued running on port 4000 on the local computer.
+This document describes setting up a demo in VILLASweb to test it's features. It is assumed that the docker-compose.yml file in VILLASweb repository is used (otherwise setup the website, backend with database and a villasnode which sends data).
 
 ## Instructions
 

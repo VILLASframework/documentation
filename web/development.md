@@ -2,36 +2,24 @@
 
 ## Frontend
 
-### Attention
-
-Due to legacy the development is done in the 'develop-villas' branch. The code in 'develop' and 'master' are from an old demo.
-It is planned to move the 'develop-villas' branch to 'develop' and use the 'master' branch for major versions once the old
-demo is not required to be changed.
-
 ### Description
 
-The website itself based on the EmberJS javascript framework.
+The website itself based on the react javascript framework.
 
 ### Required
  - NodeJS with npm
- - bower
- - EmberJS with ember-cli
- - PhantomJS (needed for testing)
 
 ### Setup
 
-(The steps are taken from the ember-cli README.md)
-
- - `git clone -b develop-villas git@git.rwth-aachen.de:VILLASframework/VILLASweb.git` to copy the project on your computer
+ - `git clone git@git.rwth-aachen.de:VILLASframework/VILLASweb.git` to copy the project on your computer
  - `cd VILLASweb`
  - `npm install`
- - `bower install`
 
 ### Running
 
- - `ember s` (short for `ember server`)
+ - `npm start`
 
-This runs a test webserver with the website on your local computer at port 4200.
+This runs the website on your local computer at port 3000.
 The backend must be running to make the website work.
 
 ## Backend
@@ -48,18 +36,18 @@ The backend for the website based on NodeJS and express.
 
 ### Setup
 
- - `git clone -b develop git@git.rwth-aachen.de:VILLASframework/VILLASweb-backend.git` to copy the project on your computer
+ - `git clone git@git.rwth-aachen.de:VILLASframework/VILLASweb-backend.git` to copy the project on your computer
  - `cd VILLASweb-backend`
  - `npm install`
 
 ### Development
  
- - Run a MongoDB server and change endpoint in config.json (e.g. with Docker)
+ - Run a MongoDB server and change endpoint in config.json (e.g. with Docker `docker run -d -p 27017:27017 -u mongodb mongo`)
  - `npm start` to run NodeJS locally
 
 ### Running
 
- - `docker build -t acs/villasweb-backend .``
+ - `docker build -t villasweb-backend .`
  - `docker-compose up -d`
 
 This runs the backend on your local computer with the required MongoDB server.
