@@ -153,17 +153,25 @@ The directory is indexed by the name of the node:
 ```
 nodes = {
 	"sintef_node" = {
-		type = "socket";
-		...
+		type = "socket",
+		vecotrize = 10,
+		hooks = (
+			{
+				type = "decimate",
+				ratio = 10
+			}
+		)
+		
+		# type specific settings follow here.
 	}
 }
 ```
 
 There are different type of nodes available. But all types have the following settings in common:
 
-## type (string: "socket" | "fpga" | "file" | "ngsi" | "websocket" | "shmem") {#node-config-node-type}
+## type (string: "socket" | "fpga" | ...) {#node-config-node-type}
 
-`type` specifies the type of the node.
+`type` specifies which interface should be used for this node.
 
 For a complete list of supported node-types run `villas node --help`.
 
@@ -176,7 +184,11 @@ This setting allows to send multiple samples in a single message to the destinat
 
 The value of this setting determines how many samples will be combined into one packet.
 
-**Important:** Please make sure that the value of this setting is smaller or equal to the `poolsize` setting of this path.
+## hooks (list of objects: hooks) {#node-config-node-hook}
+
+A list of hook functions which will be executed for each sample which is processed by this path.
+
+Please consult the @ref node-concept-hook chapter of this documentation for details.
 
 # Paths {#node-config-path}
 
@@ -185,20 +197,35 @@ The path section consists of a **list** of paths:
 ```
 paths = [
     {
-        in = "rtds",
-        out = "broker",
+        in = [
+			"rtds.data[0-5]",
+			"web.data[0-2]"
+		],
+        out = [
+			"broker",
+			"opal"
+		],
+		
         reverse = false,
-        poolsize = 32,
-        msgsize = 16,
-        vectorize = 4,
-        hook = [ "print", "ts" ]
+		mode = "any",
+		mask = [ "rtds" ],
+		rate = 100
+        
+        hooks = (
+			{
+				type = "print"
+			},
+			{
+				type = "ts"
+			}
+		)
     }
 ]
 ```
 
 Every path can have the following settings:
 
-## in, out (string: node-name) {#node-config-path-in-out}
+## in, out (list of strings: node-names) {#node-config-path-in-out}
 
 The `in` and `out` settings expect the name of the source and destination node.
 
@@ -216,25 +243,31 @@ By default, the path is unidirectional. Meaning, that it only forwards samples f
 Sometimes a bidirectional path is needed.
 This can be accomplished by setting `reverse` to `true`.
 
-## rate (float) {#node-config-path-rate}
+## mode (string) = "any" {#node-config-path-mode}
 
-**Important:** This feature is currently not working!
+The mode setting specifies under which condition a path is _triggered_.
+A triggered path will multiplex / merge samples from its input nodes and run the configured hook functions on them.
+Afterwards the processed and merged samples will be send to all output nodes.
 
-A non-zero value for this setting will change this path to an asynchronous mode.
-In this mode VILLASnode will send with a fixed rate to all destination nodes.
-It will always send the latest value it received, possible skipping values which have been received in between.
-If `vectorize` is larger than 1, it will send the last `vectorize` samples at once.
+Two modes are currently supported:
 
-**Important:** Please note that there is no correlation between the time of arrival and time of departure in this mode. It might increase the latency of this path by up to `1 / rate` seconds!
+- `any`: The path will trigger the path as soon as any of the masked (see @ref node-config-path-mask) input nodes received new samples.
+- `all`: The path will trigger the path as soon as all input nodes received at least one new sample.
 
-## poolsize (integer) {#node-config-path-poolsize}
+## mask (list of strings: node-names) = all nodes {#node-config-path-mask}
 
-Every path manages a circular buffer to keep a history of past samples. This setting specifies the size of this circular buffer.
+This setting allows masking the the input nodes which can trigger the path.
 
-**Important:** There are some hook functions (or the `vectorize` setting) which require a minimum poolsize (for example the finite-impulse-response `fir` hook).
+See also: @ref node-config-path-mode
 
-## hook (list of strings) {#node-config-path-hook}
+## rate (float) = 0 {#node-config-path-rate}
 
-A list of hook functions which will be executed for this path.
+A non-zero value will periodically trigger the path and resend the last sample again.
 
-Please consult the hook chapter of this documentation for more details.
+A value of zero will disable this feature. 
+
+## hooks (list of objects: hooks) {#node-config-path-hook}
+
+A list of hook functions which will be executed for each sample which is processed by this path.
+
+Please consult the @ref node-concept-hook chapter of this documentation for details.

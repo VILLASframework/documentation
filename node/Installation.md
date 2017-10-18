@@ -62,7 +62,7 @@ If the Linux host has no internet access, RPM files must be transferred manually
 
 1. Download the latest .rpm files from: https://villas.fein-aachen.org/packages/x86_64/
 2. Copy all files to a flash drive.
-3. Mount the flash drive on the Linux host: `$ mount /dev/sdXn /mnt`  
+3. Mount the flash drive on the Linux host: `$ mount /dev/sdXn /mnt`
     (Replace `sdXn` by using `lsblk` to get the correct device name)
 4. Install the .rpm files from the flash drive: `$ rpm -ivh /mnt/*.rpm`
 5. Unmount the flash drive: `$ umount /mnt`
@@ -74,11 +74,11 @@ In this case we can use `ssh` to connect to an external machine which will be us
 
 **Note:** The external machine requires access to the internet.
 
-1. Create a SSH SOCKS proxy by connecting to a machine which can reach the internet:  
+1. Create a SSH SOCKS proxy by connecting to a machine which can reach the internet:
    `$ ssh -fND 12345 user@external-machine`
-2. Configure `dnf` [to use the proxy](https://www.cyberciti.biz/faq/how-to-use-dnf-command-with-a-proxy-server-on-fedora/) by adding the following line to `[main]` section of configuration file  `/etc/dnf/dnf.conf`:  
+2. Configure `dnf` [to use the proxy](https://www.cyberciti.biz/faq/how-to-use-dnf-command-with-a-proxy-server-on-fedora/) by adding the following line to `[main]` section of configuration file  `/etc/dnf/dnf.conf`:
    `proxy=socks5h://localhost:12345`
-3. Update the dnf package chache and install updates:  
+3. Update the dnf package chache and install updates:
    `$ dnf --refresh update`
 
 ## Get the currently installed version
@@ -105,18 +105,18 @@ VILLASnode currently has the following list of dependencies:
  - [libconfig](http://www.hyperrealm.com/libconfig/) for parsing the configuration file (_required_).
  - [libnl3](http://www.infradead.org/~tgr/libnl/) for the network communication & emulation support of the @ref node-type-socket node-type.
  - [libjansson](http://www.digip.org/jansson/) JSON parser for @ref node-type-websocket and @ref node-type-ngsi node-types (_required_).
- - [libwebsockets](http://libwebsockets.org) for the @ref node-type-websocket node-type (_required_).
+ - [libwebsockets](http://libwebsockets.org) (>= 2.3.0) for the @ref node-type-websocket node-type (_required_).
  - [libcurl](https://curl.haxx.se/libcurl/) for HTTP REST requests by the @ref node-type-ngsi node-type.
  - [libzmq](http://zeromq.org) for the @ref node-type-zeromq node-type.
  - [libnanomsg](http://nanomsg.org/) for the @ref node-type-nanomsg node-type.
  - [libiec61850](http://libiec61850.com/libiec61850/) for the @ref node-type-iec61850-8-1 and @ref node-type-iec61850-9-2 node-types.
  - [libOpal{AsyncApi,Core,Utils}](https://git.rwth-aachen.de/VILLASframework/libopal) for running VILLASnode as an Asynchronous process inside your RT-LAB model.
  - [libxil](https://git.rwth-aachen.de/VILLASframework/libopal) for Xilinx drivers of the @ref node-type-fpga node-type.
-  
+
 There are three ways to install these dependencies:
 
 1. You can most of the dependencies using the package manger of your Linux distribution:
- 
+
 Use the following command to install the dependencies under Debian-based distributions:
 
 ```
@@ -164,13 +164,13 @@ $ sudo dnf install \
 ```
 
  2. Alternatively, you can use the build system to download, compile and install all dependencies:
- 
+
 ```
 $ make install-thirdparty
-``` 
+```
 
  3. We offer Dockerfiles for different distributions. These files show you how to setup you own development environment.
- 
+
  - Fedora: Dockerfile.dev
  - Centos: Dockerfile.dev-centos
  - Debian / Ubuntu: Dockerfile.dev-ubuntu
@@ -222,9 +222,9 @@ We prepared a image which you can download and run out of the box:
 1. Download the Docker toolbox: https://www.docker.com/docker-toolbox.
     This toolbox includes a virtual machine as well all the Docker tools you need to the Docker container which is provided by us.
      More instructions to get with can be found here: http://docs.docker.com/windows/started/
- 
+
     ![Download Docker Tollbox](docker_toolbox_download.png)
- 
+
 2. Install the Docker Toolbox by following the instructions of the installer:
 
     ![Install Docker Toolbox 1](docker_toolbox_installer_1.png)
@@ -236,16 +236,16 @@ We prepared a image which you can download and run out of the box:
     ![Install Docker Toolbox 6](docker_toolbox_installer_6.png)
     ![Install Docker Toolbox 7](docker_toolbox_installer_7.png)
 
-3. After the installation finished, open the "Docker Quickstart Terminal".  
+3. After the installation finished, open the "Docker Quickstart Terminal".
     During the first startup, Docker will provision a VirtualBox VM to run the VILLASnode Docker image:
 
    ![Provision of Docker Machine during first startup.](docker_machine_provisioning.png)
 
-4. One the provisioning completed, you will be greeted with a command line prompt:  
+4. One the provisioning completed, you will be greeted with a command line prompt:
 
     ![Docker Quickstart Terminal.](docker_terminal.png)
 
-5. Download the latest VILLASnode Docker image by runnning: `$ docker pull villas/node`  
+5. Download the latest VILLASnode Docker image by runnning: `$ docker pull villas/node`
 
    ![Pulling VILLASnode Docker image.](docker_pull.png)
 

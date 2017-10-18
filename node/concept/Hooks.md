@@ -1,14 +1,16 @@
 # Hooks {#node-concept-hook}
 
-**Note:** This information is outdated.
-
 Hooks are simple callback functions which are called whenever a message is processed by a path.
 
 There are several built-in hooks for:
   - collecting, show & reset statistics
   - drop reordered messages
-  - verify message headers
+  - verify message metadata
   - handle simulation restarts
+  - remapping values of a sample
+  - overwriting / updating timestamps
+  - converting data-types
+  - downsampling
 
 But main goal of this mechanism is to provide extensibility for the end user.
 Example applications for hooks might be:
@@ -20,18 +22,41 @@ Example applications for hooks might be:
 
 ## Configuration
 
-Each path is allowed to have multiple active hooks.
-Those can be configured in the path section using the `hooks` setting:
+Each path or node is allowed to have multiple attached hook functions.
+
+Those can be configured in the path and nodes sections using the `hooks` setting:
 
 ```
-paths = (
-	{
-		in = "input_node",
-		out = "output_node",
+nodes = {
+	input_node = {
+		type = "socket"
+
+		# Node settings here..
 
 		hooks = (
-			{ type = "print" },
-			{ type = "decimate", ratio = 10 }
+			{
+				type = "print"
+
+				# Type specific options follow here...
+			}
+		)
+	}
+}
+
+paths = (
+	{
+		in = [
+			"input_node"
+		],
+		out = [
+			"output_node"
+		],
+
+		hooks = (
+			{
+				type = "decimate",
+				ratio = 10
+			}
 		)
 	}
 )
@@ -50,3 +75,7 @@ paths = (
 - @subpage node-hook-shift_ts
 - @subpage node-hook-shift_seq
 - @subpage node-hook-skip_first
+
+## Writing custom hook functions
+
+@todo This still needs to be written.
