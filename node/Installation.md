@@ -22,8 +22,8 @@ We offer pre-build RPM packages for Fedora / Redhat based distributions.
 Add VILLAS RPM repository to your system:
 
 ```
-$ sudo dnf config-manager --add-repo https://villas.fein-aachen.org/packages/villas.repo
-Adding repo from: https://villas.fein-aachen.org/packages/villas.repo
+$ sudo dnf config-manager --add-repo https://packages.fein-aachen.org/redhat/villas.repo
+Adding repo from: https://packages.fein-aachen.org/redhat/villas.repo
 ```
 
 Install VILLASnode plus its dependencies:
@@ -60,7 +60,7 @@ Is this ok [y/N]:
 
 If the Linux host has no internet access, RPM files must be transferred manually to the machine by using a flash drive.
 
-1. Download the latest .rpm files from: https://villas.fein-aachen.org/packages/x86_64/
+1. Download the latest .rpm files from: https://packages.fein-aachen.org/redhat/x86_64/
 2. Copy all files to a flash drive.
 3. Mount the flash drive on the Linux host: `$ mount /dev/sdXn /mnt`
     (Replace `sdXn` by using `lsblk` to get the correct device name)
@@ -171,9 +171,9 @@ $ make install-thirdparty
 
  3. We offer Dockerfiles for different distributions. These files show you how to setup you own development environment.
 
- - Fedora: Dockerfile.dev
- - Centos: Dockerfile.dev-centos
- - Debian / Ubuntu: Dockerfile.dev-ubuntu
+ - Fedora: `Dockerfile.dev`
+ - Centos: `Dockerfile.dev-centos`
+ - Debian / Ubuntu: `Dockerfile.dev-ubuntu`
 
 ## Downloading from Git
 
