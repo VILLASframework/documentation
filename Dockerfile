@@ -20,11 +20,12 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###################################################################################
 
-FROM fedora:25
+FROM fedora:27
 MAINTAINER Steffen Vogel <stvogel@eonerc.rwth-aachen.de>
 
 RUN dnf -y install \
 	git \
 	doxygen \
 	dia \
-	graphviz
+	graphviz \
+	make
