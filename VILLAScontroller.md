@@ -4,4 +4,5 @@
 
 VILLAScontroller provides a unified API for controlling simulation equipment from different vendors (e.g. OPAL-RT, RTDS, Typhon, Simulink).
 
+ - @subpage controller-usage
  - @subpage controller-protocol
