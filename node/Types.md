@@ -20,4 +20,5 @@ Every node is an instance of a node-type. VILLASnode currently supports the foll
 | @subpage node-type-ngsi         | ?                | AIO   | yes  | yes   | unlimited | deprecated | Use WebSockets for Live data |
 | @subpage node-type-cbuilder     | ?                | AIO   | yes  | yes   | 1         | deprecated | |
 | @subpage node-type-amqp         | ?                | AIO   | yes  | yes   | unlimited | stable     | |
+| @subpage node-type-mqtt         | ?                | AIO   | yes  | yes   | unlimited | stable     | |
 | @subpage node-type-influxdb     | N/A              | N/A   | no   | yes   | unlimited | stable     | |
