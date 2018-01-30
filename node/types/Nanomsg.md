@@ -8,6 +8,10 @@ The @ref node-type-nanomsg node-type only implements the [publish-subscribe prot
 
 # Configuration {#node-config-nanomsg}
 
+## format (string) {#node-config-nanomsg-format}
+
+The payload format which is used to encode and decode exchanged messages.
+
 ## publish (string / array of strings: uri) {#node-config-nanomsg-publish}
 
 A single endpoint URI or list of URIs on which this node should listen for subscribers.
@@ -33,7 +37,7 @@ The @ref node-type-nanomsg supports several different transport mechanisms which
 nodes = {
 	nanomsg_node = {
 		type = "nanomsg",
-	
+
 		publish = [
 			"tcp://*:12000",		# TCP socket
 			"ipc:///tmp/test.ipc",		# Interprocess communication

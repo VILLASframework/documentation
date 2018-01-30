@@ -8,6 +8,10 @@ The @ref node-type-zeromq node-type implements the [publish/subscribe and radio/
 
 # Configuration {#node-config-zeromq}
 
+## format (string) {#node-config-zeromq-format}
+
+The payload format which is used to encode and decode exchanged messages.
+
 ## filter (string: "pubsub" | "radiodish") {#node-config-zeromq-pattern}
 
 ## publish (string: uri) {#node-config-zeromq-publish}
@@ -40,7 +44,7 @@ The private key of the server.
 nodes = {
 	zeromq_node = {
 		type = "zeromq",
-		
+
 		pattern = "pubsub",			# The ZeroMQ pattern. One of: 'pubsub', 'radiodish'
 		ipv6 = false,				# Enable IPv6 support
 		filter = "ab184",			# A filter which is prefix matched

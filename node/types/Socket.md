@@ -17,6 +17,10 @@ The implementation supports multiple protocols / OSI layers:
 
 Every `socket` node supports the following special settings:
 
+## format (string) {#node-config-socket-format}
+
+The payload format which is used to encode and decode exchanged messages.
+
 ## local ("ip:port" | "mac:protocol") {#node-config-socket-local}
 
 The local address and port number this node should listen for incoming packets.
@@ -81,8 +85,8 @@ The @ref node-type-socket support sending and receiving IP / UDP packets to and 
 
 ```
 multicast = {				# IGMP multicast is only support for layer = (ip|udp)
-	enabled		= true,	
-	
+	enabled		= true,
+
 	group		= "224.1.2.3",	# The multicast group. Must be within 224.0.0.0/4
 	interface	= "1.2.3.4",	# The IP address of the interface which should receive multicast packets.
 	ttl		= 128,		# The time to live for outgoing multicast packets.
@@ -114,14 +118,14 @@ udp_node = {					# The dictionary is indexed by the name of the node.
 	endian = "network",			# Endianess of header and data:
 						#   big | network          Use big endianess. Also know as network byte order (default)
 						#   little                 Use little endianess.
-	
+
 	verify_source = true, 			# Check if source address of incoming packets matches the remote address.
 
 	local	= "127.0.0.1:12001",		# This node only received messages on this IP:Port pair
 	remote	= "127.0.0.1:12000",		# This node sents outgoing messages to this IP:Port pair
 
 	vectorize = 30,				# Receive and sent 30 samples per message (combining).
-	
+
 	netem = {				# Network emulation settings
 						# Those settings can be specified for each node invidually!
 		delay		= 100000,	# Additional latency in microseconds
@@ -148,7 +152,7 @@ Each message contains a header with the following fields:
  - 32 bit timestamp (integral nanoseconds)
  - 16 bit sequence number
  - 4 bit version identifier
- 
+
  Timestamps are represented in [Unix time](https://en.wikipedia.org/wiki/Unix_time).
 
 @image html msg_format.svg width=60%
@@ -188,7 +192,7 @@ For some reason, Fedora installs the delay distribution profiles under `/usr/lib
 But libnl3 only seraches `/usr/lib/tc/`. This results in the following error when using netem:
 
 ```
-Invalid delay distribution 'normal' in netem config in 
+Invalid delay distribution 'normal' in netem config in
 ```
 
 To fix this error please add a symlink: `ln -s /usr/lib64/tc /usr/lib/tc`
