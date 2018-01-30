@@ -7,5 +7,5 @@ VILLASweb is a web interface for planning, preparing, executing and analyzing di
 - @subpage web-development
 - @subpage web-requirements
 - @subpage web-production
-- @subpage web-sampledata
 - @subpage web-screenshots
+- @subpage web-demosetup

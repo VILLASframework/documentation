@@ -1,4 +1,4 @@
-# Villas web data structure
+# VILLASweb data structure {#web-datastructure}
 
 ## Description
 
@@ -27,9 +27,9 @@ The easiest way to start from scratch is the following (assuming the simulators 
 
 ### (Villas-)Nodes
 
-In the simulator menu point, the user can view, create, edit and delete nodes to the system. Nodes are global at any time, which are shared with all users among Villas web. These nodes represent public villas-nodes, that are configured to stream live-data via websockets to the users. 
+In the simulator menu point, the user can view, create, edit and delete nodes to the system. Nodes are global at any time, which are shared with all users among Villas web. These nodes represent public villas-nodes, that are configured to stream live-data via websockets to the users.
 
-> Hint: At least *one* node is *required* to receive data in Villas web. 
+> Hint: At least *one* node is *required* to receive data in Villas web.
 
 Each node has simulators, which represent *one* (websocket-)node in the *villas-node configuration*. The simulator name **must** match the *websocket-node* in the *villas-node configuration* to connect to. If the names do not match, the *websocket-node* will not be fetched and data will not be received.
 

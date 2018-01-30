@@ -1,5 +1,7 @@
 # Development {#web-development}
 
+- @subpage web-datastructure
+
 ## Frontend
 
 ### Description
@@ -41,7 +43,7 @@ The backend for the website based on NodeJS and express.
  - `npm install`
 
 ### Development
- 
+
  - Run a MongoDB server and change endpoint in config.json (e.g. with Docker `docker run -d -p 27017:27017 -u mongodb mongo`)
  - `npm start` to run NodeJS locally
 
