@@ -16,6 +16,6 @@ For details about the UDP packet format, please see @ref node-type-socket-format
 - @subpage node-client-ml507-gtfpga
     An alternative to [GTNET cards](@ref node-client-gtnet) for interfacing RTDS via UDP.
 
-- [**DPsim**](https://git.rwth-aachen.de/PowerSystemSimulation/DPsim) 
+- [**DPsim**](https://git.rwth-aachen.de/acs/core/simulation/DPsim)
     VILLAsnode can communicate via the @ref node-type-shmem with the dynamic phasor solver (DPsim) of the Institute for Automation of Complex Power Systems.
     Please contact [Markus Mirz](mailto:mmirz@eonerc.rwth-aachen.de) for details.

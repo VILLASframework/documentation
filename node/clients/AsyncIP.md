@@ -1,6 +1,6 @@
 # OPAL-RT Asynchronous Process (AsyncIP) {#node-client-asyncip}
 
-**Source code:** <http://git.rwth-aachen.de/VILLASframework/VILLASnode/tree/develop/clients/opal>
+**Source code:** <http://git.rwth-aachen.de/acs/public/villas/VILLASnode/tree/develop/clients/opal>
 
 # Add AsyncIP to new project {#node-client-asyncip-new}
 

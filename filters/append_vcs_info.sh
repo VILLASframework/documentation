@@ -2,7 +2,7 @@
 
 FILENAME=${1##$(pwd)/}
 
-GITLAB_REPO="https://git.rwth-aachen.de/VILLASframework/Documentation"
+GITLAB_REPO="https://git.rwth-aachen.de/acs/public/villas/Documentation"
 
 GIT_LOG_FORMAT="Last updated on %ci by <a href=\"mailto:%aE\">%aN</a> (<a title=\"%s\" href=\"${GITLAB_REPO}/commit/%H\">%h</a>)"
 

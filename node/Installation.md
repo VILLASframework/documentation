@@ -110,8 +110,8 @@ VILLASnode currently has the following list of dependencies:
  - [libzmq](http://zeromq.org) for the @ref node-type-zeromq node-type.
  - [libnanomsg](http://nanomsg.org/) for the @ref node-type-nanomsg node-type.
  - [libiec61850](http://libiec61850.com/libiec61850/) for the @ref node-type-iec61850-8-1 and @ref node-type-iec61850-9-2 node-types.
- - [libOpal{AsyncApi,Core,Utils}](https://git.rwth-aachen.de/VILLASframework/libopal) for running VILLASnode as an Asynchronous process inside your RT-LAB model.
- - [libxil](https://git.rwth-aachen.de/VILLASframework/libopal) for Xilinx drivers of the @ref node-type-fpga node-type.
+ - [libOpal{AsyncApi,Core,Utils}](https://git.rwth-aachen.de/acs/public/villas/libopal) for running VILLASnode as an Asynchronous process inside your RT-LAB model.
+ - [libxil](https://git.rwth-aachen.de/acs/public/villas/libxil) for Xilinx drivers of the @ref node-type-fpga node-type.
 
 There are three ways to install these dependencies:
 
@@ -178,7 +178,7 @@ $ make install-thirdparty
 ## Downloading from Git
 
 ```
-$ git -c submodule."thirdparty/libopal".update=none clone --recursive https://git.rwth-aachen.de/VILLASframework/VILLASnode.git
+$ git -c submodule."thirdparty/libopal".update=none clone --recursive https://git.rwth-aachen.de/acs/public/villas/VILLASnode.git
 $ cd VILLASnode
 ```
 

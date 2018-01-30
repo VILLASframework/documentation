@@ -6,7 +6,7 @@
 
 # RSCAD
 
-**Source:** <https://git.rwth-aachen.de/VILLASframework/VILLASnode/tree/develop/clients/rtds/gtnet_skt/gtnet_skt_udp_loopback_rtt>
+**Source:** <https://git.rwth-aachen.de/acs/public/villas/VILLASnode/tree/develop/clients/rtds/gtnet_skt/gtnet_skt_udp_loopback_rtt>
 
 @image html rscad_gtnet_skt_udp_loopback_rtt_draft.png RSCAD draft for GTNET interface to VILLASnode. width=100%
 

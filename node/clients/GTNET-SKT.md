@@ -1,6 +1,6 @@
 # RTDS GTNET-SKT card {#node-client-gtnet}
 
-**Example drafts:** <https://git.rwth-aachen.de/VILLASframework/VILLASnode/tree/develop/clients/rtds/GTNETv2_SKT>
+**Example drafts:** <https://git.rwth-aachen.de/acs/public/villas/VILLASnode/tree/develop/clients/rtds/GTNETv2_SKT>
 
 The GTNETx2 card can be upgraded with SKT firmware to send/receive UDP and TCP packets over Ethernet.
 The card uses big endian byte order to send and receives data.
