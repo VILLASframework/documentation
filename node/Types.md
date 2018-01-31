@@ -22,6 +22,6 @@ Every node is an instance of a node-type. VILLASnode currently supports the foll
 | @subpage node-type-amqp         | ?                | AIO   | yes  | yes   | unlimited | stable     | |
 | @subpage node-type-mqtt         | ?                | AIO   | yes  | yes   | unlimited | stable     | |
 | @subpage node-type-influxdb     | N/A              | N/A   | no   | yes   | unlimited | stable     | |
-
+| @subpage node-type-test-rtt     | ?                | AIO   | yes  | yes   | unlimited | stable     | Virtual node-type |
 
 @image html VILLASnode_interfaces.svg width=100%
