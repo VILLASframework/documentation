@@ -129,21 +129,25 @@ Start the simulation at a specific point in time.
 {
 	"action" : "start",
 	"parameters" : {
-	    "model" : {
-	        /* Where to get the model from */
-	        "url" : "https://web.villas.fein-aachen.org/files/asfskdjfhslkdfsd.zip",
-	        "type" : "some-mime-type-here"
-	    },
-	    "results" : {
-	        /* Where to upload the results to */
-	        "url" : "file://opt/results/{{uuid}}.txt",
-	        "type" : "some-mime-type-here"
-	    }
 	    "timestep" : 50e-6,
 	    "duration" : 10,
 	    "domain" : "dp",
 	    "downsample" : 1
-	}
+	},
+	"model" : {
+	    // Where to get the model from
+	    "url" : "https://web.villas.fein-aachen.org/files/asfskdjfhslkdfsd.zip",
+	    
+	    // Type is optional if transport does not support Content-type header
+	    "type" : "some-mime-type-here"
+	},
+	"results" : {
+	    // Where to upload the results to
+	    "url" : "file://opt/results/{{uuid}}.txt",
+	    
+	    // Type is optional if transport does not support Content-type header
+	    "type" : "some-mime-type-here"
+	},
 	"when" : 1234567890.123
 }
 ```
