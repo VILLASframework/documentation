@@ -105,6 +105,10 @@ In addition to the message payload above, each message is sent with the `realm`,
 
 ## Simulators {#controller-protocol-category-simulator}
 
+## State Machine
+
+@image html uml/SimulatorStateDiagram.svg
+
 ### Status Response
 
 
