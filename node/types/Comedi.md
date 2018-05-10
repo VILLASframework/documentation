@@ -1,4 +1,4 @@
-# Comedi
+# Comedi {#node-type-comedi}
 
 ## Linux Control and measurement device interface
 
