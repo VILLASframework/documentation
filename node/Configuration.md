@@ -116,10 +116,10 @@ The following logging facilities are available:
 ```
 http = {
 	enabled = true,					# Do not listen on a port if false
-	
+
 	htdocs = "/villas/web/socket/",			# Root directory of internal webserver
 	port = 80					# Port for HTTP connections
-	
+
 	ssl_cert = "/etc/ssl/certs/mycert.pem";
 	ssl_private_key= "/etc/ssl/private/mykey.pem";
 }
@@ -154,14 +154,21 @@ The directory is indexed by the name of the node:
 nodes = {
 	"sintef_node" = {
 		type = "socket",
-		vecotrize = 10,
+		vectorize = 10,
 		hooks = (
 			{
 				type = "decimate",
 				ratio = 10
 			}
+		),
+		builtin = true,
+		samplelen = 64
+		signals = (
+			{ name = "Va", unit = "Volts" },
+			{ name = "Vb", unit = "Volts" },
+			{ name = "Vc", unit = "Volts" },
 		)
-		
+
 		# type specific settings follow here.
 	}
 }
@@ -190,6 +197,17 @@ A list of hook functions which will be executed for each sample which is process
 
 Please consult the @ref node-concept-hook chapter of this documentation for details.
 
+## builtin (boolean) = true {#node-config-node-builtin}
+
+By default, each node and paths has a couple of default hooks attached to them.
+With this setting the attachment of built-in hooks can be disabled.
+
+## samplelen (integer) = 64 {#node-config-node-samplelen}
+
+The maximum number of signals per sample which this node can receive or sent.
+
+## signals (list of objects: signals) = () {#node-config-node-signals}
+
 # Paths {#node-config-path}
 
 The path section consists of a **list** of paths:
@@ -205,12 +223,12 @@ paths = [
 			"broker",
 			"opal"
 		],
-		
+
         reverse = false,
 		mode = "any",
 		mask = [ "rtds" ],
 		rate = 100
-        
+
         hooks = (
 			{
 				type = "print"
@@ -264,7 +282,7 @@ See also: @ref node-config-path-mode
 
 A non-zero value will periodically trigger the path and resend the last sample again.
 
-A value of zero will disable this feature. 
+A value of zero will disable this feature.
 
 ## hooks (list of objects: hooks) {#node-config-path-hook}
 
