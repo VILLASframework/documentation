@@ -1,5 +1,13 @@
 # IO Formats {#node-formats}
 
+Some of the VILLASnode @ref node-types are transports which can exchange arbitrary payloads.
+Examples for these node-types are: @ref node-type-mqtt, @ref node-type-amqp and @ref node-type-socket.
+
+The format of the payload for these node-types is configurable.
+New formats can be added via plugins.
+
+Currently, the following formats are supported (or planned):
+
 | Type             | Description                                      | Status  | Specification |
 | :--              | :--                                              | :--     | |
 | `json`           | Javascript Object Notation                       | stable  | http://json.org |
