@@ -136,6 +136,19 @@ Start the simulation at a specific point in time.
 	    "domain" : "dp",
 	    "downsample" : 1
 	},
+// Example for generic simulator type
+//	"parameters" : {
+//	    "executable" : "ping",
+//      "working_directory" : "/tmp/simulationX",
+//      "shell" : false,
+//      "environemnt" : [
+//          "DEBUG" : "1"  
+//      ],
+//	    "argv" : [
+//	        "google.de",
+//	        "-c", "10"
+//	    ]
+//	},
 	"model" : {
 	    // Where to get the model from
 	    "url" : "https://web.villas.fein-aachen.org/files/asfskdjfhslkdfsd.zip",
