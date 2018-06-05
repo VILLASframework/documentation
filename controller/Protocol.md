@@ -13,11 +13,11 @@ The puporse of VILLAScontroller is the managemeng and control of simulators and 
 
 For the purpose of routing and grouping the entities, we introduce the following categories:
 
-- `simulator`
-- `simulation`
-- `interface`
-- `gateway`
-- `model`
+- `simulator` (_implemented_)
+- `simulation` (_planned_)
+- `interface` (_planned_)
+- `gateway` (_planned_)
+- `model` (_planned_)
 
 ## Exchange {#controller-protocol-amqp-exchange}
 
@@ -43,8 +43,9 @@ The following headers are used to identify and route messages to the receipients
 
 - `type` further defines the type/vendor of a device within its class.
   - Examples:
-    - `dummy`
-    - `dpsim`
+    - `dummy` (_implemented_)
+    - `generic` (_implemented_)
+    - `dpsim` (_WIP_)
     - `rtlab` (_planned_)
     - `rscad` (_planned_)
 
@@ -136,19 +137,6 @@ Start the simulation at a specific point in time.
 	    "domain" : "dp",
 	    "downsample" : 1
 	},
-// Example for generic simulator type
-//	"parameters" : {
-//	    "executable" : "ping",
-//      "working_directory" : "/tmp/simulationX",
-//      "shell" : false,
-//      "environemnt" : [
-//          "DEBUG" : "1"  
-//      ],
-//	    "argv" : [
-//	        "google.de",
-//	        "-c", "10"
-//	    ]
-//	},
 	"model" : {
 	    // Where to get the model from
 	    "url" : "https://web.villas.fein-aachen.org/files/asfskdjfhslkdfsd.zip",
@@ -164,6 +152,26 @@ Start the simulation at a specific point in time.
 	    "type" : "some-mime-type-here"
 	},
 	"when" : 1234567890.123
+}
+```
+
+Another example for `type = generic`:
+
+```json
+{
+	"action" : "start",
+    "parameters" : {
+        "executable" : "ping",
+        "argv" : [
+            "google.de",
+            "-c", "10"
+        ],
+        "working_directory" : "/tmp/simulationX",
+        "shell" : false,
+        "environemnt" : [
+            "DEBUG" : "1"  
+        ]
+    }
 }
 ```
 
