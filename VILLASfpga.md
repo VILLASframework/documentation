@@ -3,6 +3,7 @@
 <img src="images/logos/villas_fpga.svg" width="100" align="right" />
 
  - @ref fpga-config
+ - @ref fpga-brainstorming
 
 VILLASfpga is an extension build on top of VILLASnode for realizing hard real-time interfaces between simulators, converters and devices under test with guaranteed cycle times in the microsecond range.
 
