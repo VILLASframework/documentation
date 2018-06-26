@@ -5,8 +5,8 @@
  - @ref fpga-config
  - @ref fpga-brainstorming
 
-VILLASfpga is an extension build on top of VILLASnode for realizing hard real-time interfaces between simulators, converters and devices under test with guaranteed cycle times in the microsecond range.
-
+VILLASfpga interconnects simulators and devices under test (DUT) for hardware-in-the loop simulation using hard real-time capable interfaces.
+VILLASfpga can guarantee fixed latencies in the nanosecond range.
 VILLASfpga is using Xilinx' FPGA evaluation boards to interfaces such devices to each other and to the Linux host system via PCIexpress.
 
 It implements intellectual property (IP) cores for connecting:
@@ -17,8 +17,19 @@ It implements intellectual property (IP) cores for connecting:
  - FPGA models built with
    - Simulink by using [Xilinx' System Generator](https://www.xilinx.com/products/design-tools/vivado/integration/sysgen.html).
    - C / C++ by using [Xilinx' High Level Synthesis](https://www.xilinx.com/products/design-tools/vivado/integration/esl-design.html).
- - Commercial converters via [EtherCAT](https://en.wikipedia.org/wiki/EtherCAT) (planned)
+ - Commercial inverters and HIL amplifiers via [EtherCAT](https://en.wikipedia.org/wiki/EtherCAT) (planned)
 
-Like it's software counterpart, VILLASfpga can be configured to connect these interfaces in an arbitrary fashion without the need of generating a new bitstream. This is realized by using [a software configurable switch](https://www.xilinx.com/products/intellectual-property/axi4-stream_interconnect.html) in the FPGA fabric.
+VILLASfpga can be configured to connect these interfaces in an arbitrary fashion without the need of generating a new bitstream. This is realized by using [a software configurable switch](https://www.xilinx.com/products/intellectual-property/axi4-stream_interconnect.html) in the FPGA fabric.
 
 VILLASfpga is based on ARM's [AXI-4 Stream](http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ihi0051a/index.html) interfaces and therefore relying on Xilinx's Vivado toolchain. This limits the the range of supported FPGA families to Virtex 6, 7 and the newer Ultrascale devices.  Bitstreams for the [Xilinx VC707 FPGA evaluation board](https://www.xilinx.com/products/boards-and-kits/ek-v7-vc707-g.html) are available upon request.
+
+## Repositories
+
+The VILLASfpga project is splitted into two Git repositories:
+- [VILLASfpga](https://git.rwth-aachen.de/acs/public/villas/VILLASfpga) contains the C++ driver library and a few example applications
+- [VILLASfpga-hardware](https://git.rwth-aachen.de/acs/public/villas/VILLASfpga-hardware) contains the Xilinx FPGA design based on the Vivado
+ 
+
+## Available Bitstreams
+
+@todo Coming soon
