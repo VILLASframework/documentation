@@ -7,8 +7,8 @@ MP4_VIDEOS =  $(WEBM_VIDEOS:%.webm=%.mp4)
 INPUT = $(shell find . -name "*.md") \
 	$(shell find node/labs/etc -name "*.conf")
 
-DEPLOY_USER ?= root
-DEPLOY_HOST ?= villas.fein-aachen.org
+DEPLOY_USER ?= deploy
+DEPLOY_HOST ?= acs-os-fein-website
 DEPLOY_PATH ?= /var/www/villas/doc/
 
 RSYNC_OPTS ?= --recursive --ignore-missing-args --copy-links --chown $(DEPLOY_USER):$(DEPLOY_USER)
