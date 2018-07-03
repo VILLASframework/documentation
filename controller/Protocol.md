@@ -85,7 +85,7 @@ After receiving such a message, each entity shall send a status update message a
 
 ## State Machine
 
-@image html uml/SimulatorStateDiagram.svg
+@image html uml/SimulatorStatechartDiagram.svg
 
 ### Status Update
 
@@ -169,7 +169,7 @@ Another example for `type = generic`:
         "working_directory" : "/tmp/simulationX",
         "shell" : false,
         "environemnt" : [
-            "DEBUG" : "1"  
+            "DEBUG" : "1"
         ]
     }
 }

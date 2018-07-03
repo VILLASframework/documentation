@@ -3,22 +3,20 @@
 Developement is currently coordinated by Steffen Vogel <stvogel@eonerc.rwth-aachen.de> using [GitLab](http://git.rwth-aachen.de/acs/public/villas/VILLASnode).
 Please feel free to submit pull requests or bug reports.
 
-@todo Add link to contribution guidelines
+A [contribution guide](https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/CONTRIBUTING.md) is available in the [Git repository](https://git.rwth-aachen.de/acs/public/villas/VILLASnode/).
 
 - @subpage node-dev-api
 - @subpage node-dev-advio
 
 ## Programming Paradigm
 
-VILLASnode is currently written in C using the ISO C99 standard.
-Yet, it is heavily structured into modules / plugins and uses a C++-like object oriented style.
-In the future, VILLASnode might switch to lightweight C++.
+VILLASnode is currently written in C using the ISO C11 standard while following an object oriented programming paradigm.
 
-Main _classes_ in VILLASnode are struct node, struct path, struct hook and struct api_ressource.
-In order to track the life cycle of those objects, each of them has an enum state member.
+Main _classes_ in VILLASnode are `struct sample`, `struct node`, `struct path` and `struct hook`.
+In order to track the life cycle of those objects, each of them has an `enum state` member.
 The following figure illustrates the state machine which is used:
 
-@image html states.svg Common states of objects in VILLASnode width=60%
+@image html uml/NodeStatechartDiagram.svg Common states of objects in VILLASnode width=60%
 
 ## Shared library: libvillas
 
@@ -26,7 +24,13 @@ VILLASnode is split into a shared library called libvillas and a couple of execu
 
 ## Extensibilty / Plugins
 
-There are many places where VILLASnode can easily extended with plugins:
+There are many places where VILLASnode can easily extended with plugins.
+All node-types, hook functions or new IO formats are implemented via plugins.
+
+A plugin is usually implemented in a single C file containing only static functions and variables.
+All entrypoints of a plugin a provided via a `struct plugin` which is registered with the `REGISTER_PLUGIN()` macro.
+
+The `REGISTER_PLUGIN()` macro adds two hidden functions for loading and unloading the plugin which are automatically called by the system library loader.
 
 ### Example of new node type
 
