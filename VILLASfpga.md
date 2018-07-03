@@ -2,8 +2,8 @@
 
 <img src="images/logos/villas_fpga.svg" width="100" align="right" />
 
- - @ref fpga-config
- - @ref fpga-brainstorming
+ - @subpage fpga-config
+ - @subpage fpga-brainstorming
 
 VILLASfpga interconnects simulators and devices under test (DUT) for hardware-in-the loop simulation using hard real-time capable interfaces.
 VILLASfpga can guarantee fixed latencies in the nanosecond range.
@@ -28,7 +28,7 @@ VILLASfpga is based on ARM's [AXI-4 Stream](http://infocenter.arm.com/help/index
 The VILLASfpga project is splitted into two Git repositories:
 - [VILLASfpga](https://git.rwth-aachen.de/acs/public/villas/VILLASfpga) contains the C++ driver library and a few example applications
 - [VILLASfpga-hardware](https://git.rwth-aachen.de/acs/public/villas/VILLASfpga-hardware) contains the Xilinx FPGA design based on the Vivado
- 
+
 
 ## Available Bitstreams
 
