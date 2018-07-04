@@ -114,7 +114,7 @@ VILLASnode currently has the following list of dependencies:
  - [protobuf](https://github.com/google/protobuf) (>= 2.6.0) and [protobuf-c](https://github.com/protobuf-c/protobuf-c/) (>= 1.1.0) for the Protobuf @ref node-formats (_optional_).
  - [rabbitmq-c](https://github.com/alanxz/rabbitmq-c) (>= 0.8.0) for the @ref node-type-amqp node-type (_optional_).
  - [mosquitto](https://mosquitto.org) (>= 1.4.15) for the @ref node-type-mqtt node-type (_optional_).
- - [comedilib](http://comedi.org) (>= 0.8.1) for the @ref node-type-comedi node-type (_optional_).
+ - [comedilib](http://comedi.org) (>= 0.11.0) for the @ref node-type-comedi node-type (_optional_).
  - [libOpal{AsyncApi,Core,Utils}](https://git.rwth-aachen.de/acs/public/villas/libopal) for running VILLASnode as an Asynchronous process inside your RT-LAB model (_optional_).
  - [Criterion](https://github.com/Snaipe/Criterion) (>= 2.3.1) for running the unit tests (_optional_).
 
