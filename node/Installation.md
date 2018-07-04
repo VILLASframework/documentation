@@ -90,28 +90,33 @@ villas-node-0.3-1.develop_release.20170507gite92f17d.fc25.x86_64
 
 # From source  {#node-installation-source}
 
-VILLASnode can be compiled from source. This process has been tested with the following distributions:
+VILLASnode can be compiled from source using [CMake](http://cmake.org).
+This process has been tested with the following Linux distributions:
 
- - Fedora 25
- - Debian 8 (Jessie)
- - Ubuntu 16.04 (Xenial)
+ - Fedora 28
+ - Debian 9 (Stretch)
+ - Ubuntu 18.04 (Bionic Beaver)
  - Centos 7
 
 ## Prerequisites
 
 VILLASnode currently has the following list of dependencies:
 
- - [openssl](https://www.openssl.org) for cryptographic hashing functions (_required_).
- - [libconfig](http://www.hyperrealm.com/libconfig/) for parsing the configuration file (_required_).
- - [libnl3](http://www.infradead.org/~tgr/libnl/) for the network communication & emulation support of the @ref node-type-socket node-type.
- - [libjansson](http://www.digip.org/jansson/) JSON parser for @ref node-type-websocket and @ref node-type-ngsi node-types (_required_).
+ - [openssl](https://www.openssl.org) (>= 1.0.0) for cryptographic hashing functions (_required_).
+ - [libconfig](http://www.hyperrealm.com/libconfig/) (>= 1.4.9) for parsing the configuration file (_optional_).
+ - [libjansson](http://www.digip.org/jansson/) (>= 2.10) JSON parser for @ref node-type-websocket and @ref node-type-ngsi node-types (_required_).
  - [libwebsockets](http://libwebsockets.org) (>= 2.3.0) for the @ref node-type-websocket node-type (_required_).
- - [libcurl](https://curl.haxx.se/libcurl/) for HTTP REST requests by the @ref node-type-ngsi node-type.
- - [libzmq](http://zeromq.org) for the @ref node-type-zeromq node-type.
- - [libnanomsg](http://nanomsg.org/) for the @ref node-type-nanomsg node-type.
- - [libiec61850](http://libiec61850.com/libiec61850/) for the @ref node-type-iec61850-8-1 and @ref node-type-iec61850-9-2 node-types.
- - [libOpal{AsyncApi,Core,Utils}](https://git.rwth-aachen.de/acs/public/villas/libopal) for running VILLASnode as an Asynchronous process inside your RT-LAB model.
- - [libxil](https://git.rwth-aachen.de/acs/public/villas/libxil) for Xilinx drivers of the @ref node-type-fpga node-type.
+ - [libcurl](https://curl.haxx.se/libcurl/) (>= 7.29.0) for HTTP REST requests by the @ref node-type-ngsi node-type (_required_).
+ - [libnl3](http://www.infradead.org/~tgr/libnl/) (>= 3.2.28) for the network communication & emulation support of the @ref node-type-socket node-type (_optional_).
+ - [libzmq](http://zeromq.org) (>= 2.2.0) for the @ref node-type-zeromq node-type (_optional_).
+ - [libnanomsg](http://nanomsg.org/) (>= 1.0.0) for the @ref node-type-nanomsg node-type (_optional_).
+ - [libiec61850](http://libiec61850.com/libiec61850/) (>= 1.2.0) for the @ref node-type-iec61850-8-1 and @ref node-type-iec61850-9-2 node-types (_optional_).
+ - [protobuf](https://github.com/google/protobuf) (>= 2.6.0) and [protobuf-c](https://github.com/protobuf-c/protobuf-c/) (>= 1.1.0) for the Protobuf @ref node-formats (_optional_).
+ - [rabbitmq-c](https://github.com/alanxz/rabbitmq-c) (>= 0.8.0) for the @ref node-type-amqp node-type (_optional_).
+ - [mosquitto](https://mosquitto.org) (>= 1.4.15) for the @ref node-type-mqtt node-type (_optional_).
+ - [comedilib](http://comedi.org) (>= 0.8.1) for the @ref node-type-comedi node-type (_optional_).
+ - [libOpal{AsyncApi,Core,Utils}](https://git.rwth-aachen.de/acs/public/villas/libopal) for running VILLASnode as an Asynchronous process inside your RT-LAB model (_optional_).
+ - [Criterion](https://github.com/Snaipe/Criterion) (>= 2.3.1) for running the unit tests (_optional_).
 
 There are three ways to install these dependencies:
 
@@ -122,16 +127,9 @@ Use the following command to install the dependencies under Debian-based distrib
 ```
 $ sudo apt-get install \
     gcc g++ \
-	pkg-config make cmake \
-	autoconf automake autogen libtool \
-	flex bison \
-	texinfo git curl \
-    make cmake \
-    git curl tar \
-    doxygen dia \
-    graphviz \
-    libsodium-dev \
-    libpgm-dev \
+    pkg-config make cmake ninja-build \
+    texinfo git curl \
+    doxygen dia graphviz \
     libssl-dev \
     libconfig-dev \
     libnl-3-dev libnl-route-3-dev \
@@ -139,6 +137,11 @@ $ sudo apt-get install \
     libcurl4-openssl-dev \
     libzmq3-dev \
     libnanomsg-dev
+    libprotobuf-dev \
+    libprotobuf-c-dev \
+    librabbitmq-dev \
+    libmosquitto-dev \
+    libcomedi-dev
 ```
 
 or the following line for Fedora / CentOS / Redhat systems:
@@ -146,34 +149,35 @@ or the following line for Fedora / CentOS / Redhat systems:
 ```
 $ sudo dnf install \
     gcc gcc-c++ \
-	pkgconfig make cmake \
-	autoconf automake autogen libtool \
-	flex bison \
-	texinfo git curl tar \
-    doxygen dia \
-    graphviz \
-    libsodium-devel \
-    openpgm-devel \
+    pkgconfig make cmake ninja-build \
+    texinfo git curl tar \
+    doxygen dia graphviz \
     openssl-devel \
     libconfig-devel \
     libnl3-devel \
     jansson-devel \
     libcurl-devel \
     zeromq-devel \
-    nanomsg-devel
+    nanomsg-devel \
+    protobuf-devel \
+    protobuf-c-devel \
+    libiec61850-devel \
+    librabbitmq-devel \
+    mosquitto-devel
 ```
 
- 2. Alternatively, you can use the build system to download, compile and install all dependencies:
-
-```
-$ make install-thirdparty
-```
-
- 3. We offer Dockerfiles for different distributions. These files show you how to setup you own development environment.
+ 2. We offer Dockerfiles for different distributions. These files show you how to setup you own development environment.
 
  - Fedora: `Dockerfile.dev`
  - Centos: `Dockerfile.dev-centos`
  - Debian / Ubuntu: `Dockerfile.dev-ubuntu`
+
+For convinience simple make targets are availble:
+
+- `cmake .. && make docker`: Build Fedora-based Docker image with VILLASnode installed
+- `cmake .. && make run-docker-dev`: Start Docker container with Fedora development environment
+- `cmake .. && make run-docker-dev-centos`: Start Docker container with CentOS development environment
+- `cmake .. && make run-docker-dev-ubuntu`: Start Docker container with CentOS development environment
 
 ## Downloading from Git
 
@@ -186,17 +190,16 @@ $ cd VILLASnode
 
 ## Compilation
 
-Checkout the `Makefile` and `include/config.h` for some options which have to be specified at compile time.
-
-Afterwards, start the compilation with:
+Start the compilation with:
 
 ```
+$ mkdir build
+$ cd build
+$ cmake ..
 $ make
+$ make doc
 $ make run-tests
 ```
-
-Append `V=5` to `make` for a more verbose debugging output.
-Append `DEBUG=1` to `make` to add debug symbols.
 
 ## Installation
 
@@ -204,7 +207,6 @@ Install the files to your search path:
 
 ```
 $ make install
-$ make install-doc
 ```
 
 Append `PREFIX=/opt/local` to change the installation destination.
