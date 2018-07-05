@@ -104,10 +104,10 @@ VILLASnode currently has the following list of dependencies:
 
  - [openssl](https://www.openssl.org) (>= 1.0.0) for cryptographic hashing functions (_required_).
  - [libconfig](http://www.hyperrealm.com/libconfig/) (>= 1.4.9) for parsing the configuration file (_optional_).
- - [libjansson](http://www.digip.org/jansson/) (>= 2.10) JSON parser for @ref node-type-websocket and @ref node-type-ngsi node-types (_required_).
+ - [libjansson](http://www.digip.org/jansson/) (>= 2.7) JSON parser for @ref node-type-websocket and @ref node-type-ngsi node-types (_required_).
  - [libwebsockets](http://libwebsockets.org) (>= 2.3.0) for the @ref node-type-websocket node-type (_required_).
  - [libcurl](https://curl.haxx.se/libcurl/) (>= 7.29.0) for HTTP REST requests by the @ref node-type-ngsi node-type (_required_).
- - [libnl3](http://www.infradead.org/~tgr/libnl/) (>= 3.2.28) for the network communication & emulation support of the @ref node-type-socket node-type (_optional_).
+ - [libnl3](http://www.infradead.org/~tgr/libnl/) (>= 3.2.27) for the network communication & emulation support of the @ref node-type-socket node-type (_optional_).
  - [libzmq](http://zeromq.org) (>= 2.2.0) for the @ref node-type-zeromq node-type (_optional_).
  - [libnanomsg](http://nanomsg.org/) (>= 1.0.0) for the @ref node-type-nanomsg node-type (_optional_).
  - [libiec61850](http://libiec61850.com/libiec61850/) (>= 1.2.0) for the @ref node-type-iec61850-8-1 and @ref node-type-iec61850-9-2 node-types (_optional_).
