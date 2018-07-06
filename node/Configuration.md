@@ -55,7 +55,7 @@ An example is the `ngsi` node type which adds a metadata attribute `source` to i
 # Log {#node-config-log}
 
 ```
-log = {
+logging = {
 	file = "/var/log/villas-node.log";
 	level = 5;
 	facilities = "socket,log,mem";	// log socket node-type, log and memory sub-system
