@@ -54,7 +54,7 @@ rtt_node = {					# The "test_rtt" node-type runs a set of test cases for varying
 	prefix = "test_rtt",			# An optional prefix in the filename
 	output = "/tmp/results/testA",		# The output directory for all results
 						# The results of each test case will be written to a seperate file.
-	format = "villas-human",		# The output format of the result files.
+	format = "villas.human",		# The output format of the result files.
 
 	cases = (				# The list of test cases
 						# Each test case can specify a single or an array of rates and values
