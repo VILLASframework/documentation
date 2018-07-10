@@ -6,9 +6,9 @@ However, more complex scenaries are unmanagable with this approach.
 In this lab we introduce the VILLASnode daemon `villas node` which provides an easier way to setup complex scenarios.
 In addition, `villas node` benefits from lower latencies because we omit the standard input / output streams and the conversion of the samples in a human readable / line-based representation.
 
-**Note:** We recommend the usage of the daemon for all critical HIL simulations
+**Note:** We recommend the usage of the daemon for all real-time critical HIL simulations
 
-The invocation of the daemon os pretty simple.
+The invocation of the daemon is pretty simple.
 Just pass the path to the configuration file as a paramteter:
 
 ```bash
@@ -33,24 +33,35 @@ $ villas node sftp://user:passwd@example.com/etc/villas/node/lab3.conf
 
 ## Example configurations
 
-`lab10_nodes.conf`:
+All of the following examples use the same set of nodes, which we define in the file `lab10_nodes.conf`:
 
 @includelineno lab10_nodes.conf Nodes for the following examples.
 
-## A unidirectional path
+### A unidirectional path
 
-The configuration file `lab10_uni_path.conf` extends `lab3.conf` with a path section:
+The configuration file `lab10_uni_path.conf` extends `lab10_nodes.conf` with a path section.
+This example reads samples from node `rpi-1` and forwards them immediately to node `rtds-1`.
 
 @includelineno lab10_path_uni.conf
 
-## A path with multiple destinations
+### A path with multiple destinations
+
+A path can have multiple destinations by using an array for the `out` setting.
+This example reads samples from node `rtds-1`, duplicates them and forwards them immediately to nodes `rpi-1` and `rpi-2`.
 
 @includelineno lab10_path_multiple_destinations.conf
 
-## A path with a hook
+### A path with a hook
+
+Sometimes we want to filter and/or manipulate samples which are processes by a path.
+To do so, we can attach __hook__ functions to a path.
+These hook functions are called for every batch of samples which is processed by the pass.
+This examples uses the `print` hook to display all forwarded samples on `stdout` of the console.
 
 @includelineno lab10_path_hook.conf
 
-## A bidirectional path
+### A bidirectional path
+
+In a last example we demonstrate a bi-directional path by using multiple entries in the `paths` section.
 
 @includelineno lab10_path_bidir.conf
