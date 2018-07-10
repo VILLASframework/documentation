@@ -52,7 +52,7 @@ By default the `name` of a VILLASnode instance is equal to the hostname of the m
 Some node types are using this name to identify themselves agains their remotes.
 An example is the `ngsi` node type which adds a metadata attribute `source` to its updates.
 
-# Log {#node-config-log}
+# Logging {#node-config-logging}
 
 ```
 logging = {
@@ -62,17 +62,17 @@ logging = {
 }
 ```
 
-## log.level (integer) {#node-config-log-level}
+## logging.level (integer) {#node-config-logging-level}
 
 `log.level` expects a positive integer number which adjusts the verbosity of debug messages.
 Use this with care! Producing a lot of IO might decrease the performance of the server.
 Omitting this setting or setting it to zero will disable debug messages completely.
 
-## log.file (path) {#node-config-log-file}
+## logging.file (path) {#node-config-logging-file}
 
 Write all log messages to a file.
 
-## log.facilities (string) = "all" {#node-config-log-facilities}
+## logging.facilities (string) = "all" {#node-config-logging-facilities}
 
 `log.facilities` is a comma-separated expression which selects the active logging facilities.
 Each of the facilities can be prefixed with an exclamation mark in order to exclude it.
@@ -214,22 +214,22 @@ The path section consists of a **list** of paths:
 
 ```
 paths = [
-    {
-        in = [
+	{
+		in = [
 			"rtds.data[0-5]",
 			"web.data[0-2]"
 		],
-        out = [
+		out = [
 			"broker",
 			"opal"
 		],
 
-        reverse = false,
+		reverse = false,
 		mode = "any",
 		mask = [ "rtds" ],
 		rate = 100
 
-        hooks = (
+		hooks = (
 			{
 				type = "print"
 			},
@@ -237,18 +237,20 @@ paths = [
 				type = "ts"
 			}
 		)
-    }
+	}
 ]
 ```
 
 Every path can have the following settings:
 
-## in, out (list of strings: node-names) {#node-config-path-in-out}
+## in (list of strings: node-names | mapping expression) {#node-config-path-in}
 
-The `in` and `out` settings expect the name of the source and destination node.
+The `in` settings expects the name of one or more source nodes or mapping expressions.
 
-The `out` setting itself is allowed to be list of nodes.
-This enables 1-to-n distribution of simulation data.
+## out (list of strings: node-names) {#node-config-path-out}
+
+The `out` setting expects the name of one or more destination nodes.
+Each sample which is processed by the path will be sent to each of the destination nodes.
 
 ## enabled (boolean) {#node-config-path-enabled}
 
@@ -284,7 +286,7 @@ A non-zero value will periodically trigger the path and resend the last sample a
 
 A value of zero will disable this feature.
 
-## hooks (list of objects: hooks) {#node-config-path-hook}
+## hooks (list of objects: hooks) {#node-config-path-hooks}
 
 A list of hook functions which will be executed for each sample which is processed by this path.
 

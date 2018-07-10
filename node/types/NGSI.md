@@ -8,7 +8,7 @@ It's using `libcurl` and `libjansson` to communicate with the context broker ove
 
 # Configuration {#node-config-ngsi}
 
-You can use the `vectorize` setting to send multiple samples in a vector.
+You can use the @ref node-config-node-vectorize setting to send multiple samples in a vector.
 
 Every `ngsi` node supports the following special settings:
 
@@ -31,17 +31,17 @@ Example: `AttributeName(AttributeType) MetadataName1(MetadataType1)=MetadataValu
 	nodes = {
 		ngsi_node = {
 			type = "ngsi",
-		
+
 		### The following settings are specific to the ngsi node-type!! ###
-	
+
 			endpoint = "http://46.101.131.212:1026",# The HTTP REST API endpoint of the FIRWARE context broker
-		
-			entity_id = "S3_ElectricalGrid",	
+
+			entity_id = "S3_ElectricalGrid",
 			entity_type = "ElectricalGridMonitoring",
-		
+
 			timeout = 5,				# Timeout of HTTP request in seconds (default is 1)
 			verify_ssl = false,			# Verification of SSL server certificates (default is true)
-	
+
 			mapping = [
 				"PTotalLosses(MW)",
 				"QTotalLosses(Mvar)",
