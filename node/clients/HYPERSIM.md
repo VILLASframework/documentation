@@ -14,15 +14,19 @@
 
 3. Open the file in editor and copy paste the downloaded code from the VILLASnode Git repository[VILLASnode/clients/hypersim/model/ucm_node.def](https://git.rwth-aachen.de/acs/public/villas/VILLASnode/raw/develop/clients/hypersim/model/ucm_node.def)
 
-4. Right click and update the code
+4. Right click and update the code.
 	@image html hypersim_2.png width=100%
 
-5. Go to options and set for real time
+5. Within the opening window, adjust the user settings
+   - Destination Port number
+   - Destination IP address
+
+6. Go to options and set for real time
 	@image html hypersim_3.png width=100%
 
-6. Start simulation on HYPERSIM, and VILLASnode
+7. Start simulation on HYPERSIM, and VILLASnode
 
-7. The received data can be viewed on the ScopeView
+8. The received data can be viewed on the ScopeView
 	@image html hypersim_4.png width=100%
 
 ## Author
