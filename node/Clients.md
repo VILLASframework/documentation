@@ -4,6 +4,9 @@ In addition to the supported @ref node-types, VILLASnode comes with examples for
 These clients usually use the @ref node-type-socket node-type to exchange data with a VILLASnode instance via UDP packets.
 For details about the UDP packet format, please see @ref node-type-socket-format.
 
+- @subpage node-client-hypersim
+    A user code model for OPAL-RTs HYPERSIM digital real-time simulator using UDP sockets for interfacing to VILLASnode.
+
 - @subpage node-client-python
     A simple python client application communicating via local Unix sockets and Protobuf encoding
 
