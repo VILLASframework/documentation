@@ -6,6 +6,8 @@
 
 ## Interfacing VILLASnode and HYPERSIM
 
+**These instructions have been tested with HYPERSIM R6.1.3.o698.**
+
 1. Create a new UCM name “node” and save to the real-time simulator folder of HYPERSIM.
    Example: `C:\Users\auser\HYPERSIM\ucm`.
 	@image html hypersim_1.png width=100%
@@ -31,4 +33,9 @@
 
 ## Author
 
-- Anju Meghwani <ameghwani@gmail.com>
+- Anju Meghwani <meghwani@iitk.ac.in>
+
+Anju Meghwani is a Research Establishment Officer at Indian Institute of Kanpur, India and worked in Washington State University, Pullman as visiting scholar in Summer 2018.
+During her visit, she developed an interfacing framework for VILLASnode and HYPERSIM.
+This work was based on requirements of projects CREDC and UI-ASSIST.
+UI- ASSIST is a joint research project between India and the US.
