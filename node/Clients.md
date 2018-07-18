@@ -7,11 +7,11 @@ For details about the UDP packet format, please see @ref node-type-socket-format
 - @subpage node-client-hypersim
     A user code model for OPAL-RTs HYPERSIM digital real-time simulator using UDP sockets for interfacing to VILLASnode.
 
-- @subpage node-client-python
-    A simple python client application communicating via local Unix sockets and Protobuf encoding
-
 - @subpage node-client-asyncip
     Contains the implementation of an asynchronous process block for RT-LAB.
+
+- @subpage node-client-python
+    A simple python client application communicating via local Unix sockets and Protobuf encoding
 
 - @subpage node-client-labview
     This example model is using LabView standard UDP blocks to exchange sample values with VILLASnode via UDP packets.
