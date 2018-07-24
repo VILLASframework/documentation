@@ -64,7 +64,7 @@ in = {
 
 ## in.cq_size (int) {#node-config-infiniband-in-cq_size}
 
-This value defines the number of Work Completions the Completion Queue can hold. 
+This value defines the number of Work Completions the Completion Queue can hold.
 
 If a packet is received, the Queue Pair will write a Work Completion to the Completion Queue. The node polls this queue to process received packets. If the Completion Queue gets full, which is often caused by `cq_size` being to small, and thus the receive queue is not able to post Work Completions, the node will abort.
 
@@ -150,6 +150,8 @@ out = {
 
 ## out.max_wrs (int) {#node-config-infiniband-out-max_wrs}
 
+This is similar to @ref node-config-infiniband-in-max_wrs but for the send side of the Queue Pair. In contrast to the receive queue, there is no minimum amount of Work Requests in this queue and it can be filled up completely to `out.max_wrs`.
+
 **Default**:
 
 ```conf
@@ -159,6 +161,10 @@ out = {
 ```
 
 ## out.cq_size (int) {#node-config-infiniband-out-cq_size}
+
+This is similar to @ref node-config-infiniband-in-cq_size.
+
+An important side note for the receive completion queue was that it should be able to hold all Work Requests if the receive queue is flushed. Since no "preparatory" Work Requests are posted to the send queue and and thus all work requests are send out as soon as possible, there is no need for `out.cq_size` to be as big as `out.max_wrs`. 
 
 **Default**:
 
@@ -170,6 +176,10 @@ out = {
 
 ## out.send_inline (bool: 0 | 1) {#node-config-infiniband-out-send_inline} 
 
+It is possible that the CPU copies the data to be sent directly to the HCA. Then, the HCA can take the data from it's internal memory as soon as it is ready to send it. This has the advantage that the buffer can be returned immediately to the VILLAS Framework and that it increases performance.
+
+If this flag is set, the @ref node-type-infiniband node-type checks if a sample is small enough to be sent inline, and if this is the case sends it inline.
+
 **Default**:
 
 ```conf
@@ -178,19 +188,34 @@ out = {
 }
 ```
 
-## out.max_inline_data (int) (#node-config-infiniband-out-max_inline_data)
+## out.max_inline_data (int) {#node-config-infiniband-out-max_inline_data}
+
+This value represents the maximum number of bytes to be send inline. The maximum number of this value depends on the HCA. 
+
+*Important note*: The greater this value gets, the smaller `@ref node-config-infiniband-out-max_wrs` gets. If `out.max_inline_data` is too big for the number specified in `out.max_wrs`, the node will return an error that the Queue Pair could not be created. Since this is different for various HCAs, it is not possible for us to give more specified errors.
+
+**Example**:
+
+```conf
+out = {
+    send_inline = 1,
+    max_inline_data = 60
+}
+```
+
+Every sample which is smaller than 60 bytes will be send inline. All other samples will be sent normally.
 
 **Default**:
 
 ```conf
 out = {
-    max_inline_data = 60
+    max_inline_data = 0 //Many HCAs will automatically change 0 to 60
 }
 ```
 
 ## Example
 
-```
+```conf
 nodes = {
     ib_node_target = {
     type = "infiniband",
