@@ -2,11 +2,11 @@
 
 The @ref node-type-infiniband node-type implements node communication over the [Infiniband standard](http://www.infinibandta.org/content/pages.php?pg=about_us_infiniband).
 
-# Configuration {#node-config-file}
+# Configuration {#node-config-infiniband}
 
 Every `infiniband` node can be configured to only read or write or to do both at the same time. The node configuration is divided into two sub-groups: `in` and `out`.
 
-## rdma_port_space (string: "RDMA_PS_TCP" | "RDMA_PS_UDP") {#node-config-ib-port-space}
+## rdma_port_space (string: "RDMA_PS_TCP" | "RDMA_PS_UDP") {#node-config-infiniband-port-space}
 
 This specifies the type of connection the node will set up. 
 
@@ -25,7 +25,7 @@ rdma_port_space = "RDMA_PS_TCP"
 
 enables the node to establish and accept a reliable, connection-oriented, message based connection with another node.
 
-## in.address (string) {#node-config-ib-in.address}
+## in.address (string) {#node-config-infiniband-in.address}
 
 Connections between @ref node-type-infiniband nodes are established over IP over IB (IPoIP). To use this node, you have to make sure that the linux driver `ib_ipoib` is loaded. If it is not loaded, load it with `modprobe ib_ipoib`.
 
@@ -45,7 +45,7 @@ in = {
 binds the node to the local device which is bound to `10.0.0.1`. It will use port `1337` for communication related to the connection.
 
 
-## in.max_wrs (int) {#node-config-ib-in.max_wrs}
+## in.max_wrs (int) {#node-config-infiniband-in.max_wrs}
 
 This value sets the maximum number of receive Work Requests which can be posted to the receive queue of the Queue Pair. 
 
@@ -53,7 +53,7 @@ For higher throughputs, it is recommended to increase this value since it will s
 
 Default value: `128`
 
-## in.cq_size (int) {#node-config-ib-in.cq_size}
+## in.cq_size (int) {#node-config-infiniband-in.cq_size}
 
 This value defines the number of Work Completions the Completion Queue can hold. 
 
@@ -61,13 +61,13 @@ If a packet is received, the Queue Pair will write a Work Completion to the Comp
 
 If a connection is disconnected, all outstanding Work Requests—even is they are not used—are flushed to the Completion Queue. Here applies the same as mentioned above: if the Completion Queue has fewer space left than outstanding Work Requests are available, this will result in an error. 
 
-It is therefor recommended to set the value of `cq_size` to at least `@ref node-config-ib-in.max_wrs in.max_wrs - @ref node-config-ib-in.buffer_subtraction in.buffer_subtraction`.
+It is therefor recommended to set the value of `cq_size` to at least `@ref node-config-infiniband-in.max_wrs in.max_wrs - @ref node-config-infiniband-in.buffer_subtraction in.buffer_subtraction`.
 
 Default value: `128`
 
-## in.poll_mode (string: "BUSY" | "EVENT") {#node-config-ib-in.poll_mode}
+## in.poll_mode (string: "BUSY" | "EVENT") {#node-config-infiniband-in.poll_mode}
 
-## in.buffer_subtraction (int) {#node-config-ib-in.buffer_subtraction}
+## in.buffer_subtraction (int) {#node-config-infiniband-in.buffer_subtraction}
 
 ## Example
 
