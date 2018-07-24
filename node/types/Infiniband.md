@@ -98,7 +98,7 @@ in = {
 
 ## in.buffer_subtraction (int) {#node-config-infiniband-in-buffer_subtraction}
 
-As mentioned in @ref node-config-infiniband-in-max_wrs in.max_wrs, Work Requests have to be present in the receive queue, for it to be able to process received data. To take full advantage of the zero-copy capabilities of Infiniband this node-type directly posts addresses from the VILLAS Framework to the receive queue instead of copying all data over after receiving it.
+As mentioned in @ref node-config-infiniband-in-max_wrs, Work Requests have to be present in the receive queue, for it to be able to process received data. To take full advantage of the zero-copy capabilities of Infiniband this node-type directly posts addresses from the VILLAS Framework to the receive queue instead of copying all data over after receiving it.
 
 This technique relies on the exchange of addresses. This means that if an array of `in.vectorize` addresses is handed over to the node-type, max `release` <= `in.vectorize` addresses that point to received data can be returned.
 
@@ -124,7 +124,7 @@ in = {
 
 This value defines the IPoIB address of the remote node and is used to establish a connection to the remote host—in case of `RDMA_PS_TCP`—or to get the address handle of the remote host—in case of `RDMA_PS_UDP`. 
 
-This is similar to @ref node-config-infiniband-in-address in.address
+This is similar to @ref node-config-infiniband-in-address.
 
 `out.address` has no default value and if it is not defined the node will be set to listening mode and all `out` configuration will be ignored.
 

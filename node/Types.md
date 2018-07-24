@@ -18,6 +18,7 @@ Every node is an instance of a node-type. VILLASnode currently supports the foll
 | @subpage node-type-influxdb     | N/A              | N/A   | no   | yes   | unlimited | stable     | |
 | @subpage node-type-test-rtt     | ?                | AIO   | yes  | yes   | unlimited | stable     | Virtual node-type |
 | @subpage node-type-comedi       | ?                | Poll  | yes  | yes   | unlimited | beta       | Support for a wide range of Analog/Digital Input/Output cards |
+| @subpage node-type-infiniband   | ?                | ?     | yes  | yes   | unlimited | beta       | |
 | @subpage node-type-fpga         | ?                | ?     | yes  | yes   | ?         | beta       | |
 | @subpage node-type-iec61850-8-1 | ?                |       | yes  | yes   | 1         | alpha      | |
 | @subpage node-type-iec61850-9-2 | ?                |       | yes  | yes   | 1         | beta       | |
