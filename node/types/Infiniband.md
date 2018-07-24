@@ -24,8 +24,8 @@ rdma_port_space = "RDMA_PS_TCP"
 ```
 
 enables the node to establish and accept a reliable, connection-oriented, message based connection with another node.
-
-## in.address (string) {#node-config-infiniband-in.address}
+## in {#node-config-infiniband.in}
+### address (string) {#node-config-infiniband.in.address}
 
 Connections between @ref node-type-infiniband nodes are established over IP over IB (IPoIP). To use this node, you have to make sure that the linux driver `ib_ipoib` is loaded. If it is not loaded, load it with `modprobe ib_ipoib`.
 
