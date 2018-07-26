@@ -58,22 +58,22 @@ Those variables will also been displayed during the startup phase of the server 
 - `eta` the time to wait until the first message will be send (`start - now`)
 
 The supported values for `epoch_mode`:
- 
+
 | `epoch_mode` 	| `offset` 		| `start = first + offset` |
 | :--		| :--			| :-- |
 | `direct`  	| `now - first + epoch` 	| `now + epoch` |
-| `wait`  	| `now + epoch` 		| `now + first` | 
+| `wait`  	| `now + epoch` 		| `now + first` |
 | `relative` 	| `epoch` 		| `first + epoch` |
 | `absolute` 	| `epoch - first` 	| `epoch` |
 | `original` 	| `0` 			| immeadiatly |
 
-## in.rate (float) {#node-config-file-in.rate}
+## in.rate (float) {#node-config-file-in-rate}
 
-By default `send_rate` has the value `0` which means that the time between consecutive samples is the same as in the `in` file based on the timestamps in the first column. 
+By default `send_rate` has the value `0` which means that the time between consecutive samples is the same as in the `in` file based on the timestamps in the first column.
 
 If this setting has a non-zero value, the default behaviour is overwritten with a fixed rate.
 
-## in.eof (string: "rewind" | "exit" | "wait") = "exit" {#node-config-file-in.eof}
+## in.eof (string: "rewind" | "exit" | "wait") = "exit" {#node-config-file-in-eof}
 
 Defines the behaviour if the end of file of the input file is reached.
 
@@ -96,13 +96,13 @@ Other protocols hav not been tested yet.
 nodes = {
 	file_node = {
 		type	= "file",
-	
+
 	### The following settings are specific to the file node-type!! ###
 
 		in = {
 			uri = "logs/input.log",	# These options specify the URI where the the files are stored
 			mode = "w+",			# The mode in which files should be opened (see open(2))
-						
+
 			epoch_mode = "direct"		# One of: direct (default), wait, relative, absolute
 			epoch = 10			# The interpretation of this value depends on epoch_mode (default is 0).
 							# Consult the documentation of a full explanation
