@@ -11,7 +11,7 @@ Every `infiniband` node can be configured to only read or write or to do both at
 This specifies the type of connection the node will set up.
 
 * `RDMA_PS_TCP` provides reliable, connection-oriented, message based communication between the nodes. Packets are delivered in order. In this mode, one Queue Pair is connected to one othere Queue Pair.
-* `RDMA_PS_UDP` provides unreliable, connection less, datagram communication between nodes. Both ordering and delivery are not guaranteed in this mode.i
+* `RDMA_PS_UDP` provides unreliable, connection less, datagram communication between nodes. Both ordering and delivery are not guaranteed in this mode.
 
 `RDMA_PS_TCP` and `RDMA_PS_UDP` are mapped to the Queue Pair types as `IBV_QPT_RC`, `IBV_QPT_UD`, respectively. If two nodes should be connected, both should be set to the same `rdma_port_space`.
 
