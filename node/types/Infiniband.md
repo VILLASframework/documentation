@@ -6,7 +6,7 @@ The @ref node-type-infiniband node-type implements node communication over the [
 
 Every `infiniband` node can be configured to only read or write or to do both at the same time. The node configuration is divided into two sub-groups: `in` and `out`.
 
-## rdma_port_space (string: "RDMA_PS_TCP" | "RDMA_PS_UDP") {#node-config-infiniband-port-space}
+## rdma_port_space (string: "RDMA_PS_TCP" | "RDMA_PS_UDP") = "RDMA_PS_TCP" {#node-config-infiniband-port-space}
 
 This specifies the type of connection the node will set up.
 
@@ -16,16 +16,6 @@ This specifies the type of connection the node will set up.
 `RDMA_PS_TCP` and `RDMA_PS_UDP` are mapped to the Queue Pair types as `IBV_QPT_RC`, `IBV_QPT_UD`, respectively. If two nodes should be connected, both should be set to the same `rdma_port_space`.
 
 More information on these two modes can be found on the manual page for [`rdma_create_id()`](https://linux.die.net/man/3/rdma_create_id).
-
-Default value: `"RDMA_PS_TCP"`
-
-**Example**:
-
-```conf
-rdma_port_space = "RDMA_PS_TCP"
-```
-
-enables the node to establish and accept a reliable, connection-oriented, message based connection with another node.
 
 ## in.address (string) {#node-config-infiniband-in-address}
 
