@@ -146,6 +146,12 @@ out = {
 
 Every sample which is smaller than 60 bytes will be send inline. All other samples will be sent normally.
 
+## out.use_fallback (boolean) = true {#node-config-infiniband-out-use_fallback}
+
+If an out section with a valid remote entry is present in the configuration file, the node will first bind to the local host channel adapter and subsequentely try to connect to the remote host. If the latter fails (e.g., because the remote host was not reachable or rejected the connection), there are two possible outcomes: the node can throw an error and abort or it can show a warning and continue in listening mode. 
+
+If `use_fallback = true`, the node will fallback to listening mode if it is not able to connect to the remote host.
+
 ## Example
 
 ```conf
@@ -177,8 +183,10 @@ nodes = {
 
         vectorize = 1,
 
-        send_inline = 1,
+        send_inline = true,
         max_inline_data = 60,
+
+        use_fallback = true,
     }
 }
 ```
