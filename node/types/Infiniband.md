@@ -123,7 +123,7 @@ If this flag is set, the @ref node-type-infiniband node-type checks if a sample 
 This value represents the maximum number of bytes to be send inline. The maximum number of this value depends on the HCA.
 The settings defaults to zero. However, many HCAs will automatically adjust it to 60.
 
-*Important note*: The greater this value gets, the smaller `@ref node-config-infiniband-out-max_wrs` gets. If `out.max_inline_data` is too big for the number specified in `out.max_wrs`, the node will return an error that the Queue Pair could not be created. Since this is different for various HCAs, it is not possible for us to give more specified errors.
+*Important note*: The greater this value gets, the smaller @ref node-config-infiniband-out-max_wrs can be. If `out.max_inline_data` is too big for the number specified in `out.max_wrs`, the node will return an error that the Queue Pair could not be created. Since this is different for various HCAs, it is not possible for us to give more specified errors.
 
 **Example**:
 
