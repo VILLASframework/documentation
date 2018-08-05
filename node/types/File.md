@@ -38,6 +38,14 @@ Specifies the mode which should be used to open the output file.
 See [open(2)](http://man7.org/linux/man-pages/man2/open.2.html) for an explanation of allowed values.
 The default value is `w+` which will start writing at the beginning of the file and create it in case it does not exist yet.
 
+## buffer_size (unsigned) = 0 {#node-config-file-buffer_size}
+
+If this is set to a positive value `<X>`, the node will generate a full [stream buffer](https://linux.die.net/man/3/setvbuf) with a size of `<X>` bytes. On output, this means that the data is buffered and not written until the buffer is full or until the node is stopped.
+
+On input, this means that the data is loaded into the buffer before it is passed on to the node.
+
+If `buffer_size = 0`, no buffer will be generated.
+
 ## in.epoch (float) {#node-config-file-epoch}
 
 ## in.epoch_mode ("direct" | "wait" | "relative" | "absolute") {#node-config-file-in.epoch_mode}
@@ -98,6 +106,7 @@ nodes = {
 		type	= "file",
 
 	### The following settings are specific to the file node-type!! ###
+		buffer_size = 0				# Creates a stream buffer if value is positive
 
 		in = {
 			uri = "logs/input.log",	# These options specify the URI where the the files are stored
@@ -110,12 +119,12 @@ nodes = {
 			rate = 2.0			# A constant rate at which the lines of the input files should be read
 							# A missing or zero value will use the timestamp in the first column
 							# of the file to determine the pause between consecutive lines.
-			eof = "rewind"	# Rewind the file and start from the beginning.
+			eof = "rewind"			# Rewind the file and start from the beginning.
 		},
 		out = {
 			uri = "logs/output_%F_%T.log"	# The output URI accepts all format tokens of (see strftime(3))
 			mode = "a+"			# You might want to use "a+" to append to a file
-			flush = false	# Flush or upload contents of the file every time new samples are sent.
+			flush = false			# Flush or upload contents of the file every time new samples are sent.
 		}
 	}
 }
