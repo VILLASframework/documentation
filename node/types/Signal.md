@@ -54,6 +54,10 @@ A negative number disables the limitation.
 
 Wait `1 / rate` seconds between emitting each sample.
 
+## missed_steps (boolean) = true (#node-config-siganl-node_missed_steps)
+
+If `true`, the @ref node-type-signal node-type will count missed steps and warn the user during every iteration about missed steps. Especially at high rates, it can be beneficial for performance to set this flag to `false`. Warnings would namely cause system calls which will slow the node down even more, and thus cause even more missed steps.
+
 ## Example
 
 ```
@@ -62,14 +66,15 @@ nodes = {
 		type = "signal",
 
 		signal = "sine",		# One of "sine", "square", "ramp", "triangle", "random", "mixed"
-		values = 4,				# Number of values per sample
+		values = 4,			# Number of values per sample
 		amplitude = 2.3,		# Amplitude of generated signals
 		frequency = 10,			# Frequency of generated signals
-		stddev = 2,				# Standard deviation of random signals (normal distributed)
+		stddev = 2,			# Standard deviation of random signals (normal distributed)
 		rate = 10.0,			# Sample rate
-		offset = 1.0,           # Constant offset
-		realtime = true         # Wait between emitting each sample
-		limit = 1000            # Only emit 1000 samples, then stop
+		offset = 1.0,			# Constant offset
+		realtime = true,		# Wait between emitting each sample
+		limit = 1000,			# Only emit 1000 samples, then stop
+		monitor_missed = true		# Count and warn about missed steps
 	},
 }
 ```
