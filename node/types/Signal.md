@@ -54,7 +54,7 @@ A negative number disables the limitation.
 
 Wait `1 / rate` seconds between emitting each sample.
 
-## missed_steps (boolean) = true (#node-config-siganl-node_missed_steps)
+## missed_steps (boolean) = true {#node-config-siganl-node_missed_steps}
 
 If `true`, the @ref node-type-signal node-type will count missed steps and warn the user during every iteration about missed steps. Especially at high rates, it can be beneficial for performance to set this flag to `false`. Warnings would namely cause system calls which will slow the node down even more, and thus cause even more missed steps.
 
