@@ -109,7 +109,7 @@ nodes = {
 		buffer_size = 0				# Creates a stream buffer if value is positive
 
 		in = {
-			uri = "logs/input.log",	# These options specify the URI where the the files are stored
+			uri = "logs/input.log",		# These options specify the URI where the the files are stored
 			mode = "w+",			# The mode in which files should be opened (see open(2))
 
 			epoch_mode = "direct"		# One of: direct (default), wait, relative, absolute
