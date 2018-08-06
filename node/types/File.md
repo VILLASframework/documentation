@@ -38,17 +38,9 @@ Specifies the mode which should be used to open the output file.
 See [open(2)](http://man7.org/linux/man-pages/man2/open.2.html) for an explanation of allowed values.
 The default value is `w+` which will start writing at the beginning of the file and create it in case it does not exist yet.
 
-## buffer_size (unsigned) = 0 {#node-config-file-buffer_size}
-
-If this is set to a positive value `<X>`, the node will generate a full [stream buffer](https://linux.die.net/man/3/setvbuf) with a size of `<X>` bytes. On output, this means that the data is buffered and not written until the buffer is full or until the node is stopped.
-
-On input, this means that the data is loaded into the buffer before it is passed on to the node.
-
-If `buffer_size = 0`, no buffer will be generated.
-
 ## in.epoch (float) {#node-config-file-epoch}
 
-## in.epoch_mode ("direct" | "wait" | "relative" | "absolute") {#node-config-file-in.epoch_mode}
+## in.epoch_mode ("direct" | "wait" | "relative" | "absolute") {#node-config-file-in-epoch_mode}
 
 The *epoch* describes the point in time when the first message will be read from the file.
 This setting allows to select the behaviour of the following `epoch` setting.
@@ -89,7 +81,13 @@ Defines the behaviour if the end of file of the input file is reached.
  - `exit` will terminated the program.
  - `wait` will periodically test if there are new samples which have been appended to the file.
 
-## out.flush (boolean) {#node-config-file.out.flush}
+## in.buffer_size (unsigned) = 0 {#node-config-file-in-buffer_size}
+
+Similar to @ref node-config-file-out-buffer_size. This means that the data is loaded into the buffer before it is passed on to the node.
+
+If `in.buffer_size = 0`, no buffer will be generated.
+
+## out.flush (boolean) {#node-config-file-out-flush}
 
 With this setting enabled, the outgoing file is flushed whenever new samples have been written to it.
 For remote files this means that the new sample is appended to the remote file which involves network IO.
@@ -97,6 +95,12 @@ For remote files this means that the new sample is appended to the remote file w
 **Note:** Not all network file protocols might support partial uploads.
 It's know that this feature works for local files but not for WebDav.
 Other protocols hav not been tested yet.
+
+## out.buffer_size (unsigned) = 0 {#node-config-file-out-buffer_size}
+
+If this is set to a positive value `<X>`, the node will generate a full [stream buffer](https://linux.die.net/man/3/setvbuf) with a size of `<X>` bytes. This means that the data is buffered and not written until the buffer is full or until the node is stopped.
+
+If `out.buffer_size = 0`, no buffer will be generated.
 
 ## Example
 
