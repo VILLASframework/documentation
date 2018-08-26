@@ -29,8 +29,11 @@ build:
     name: "${CI_PROJECT_NAME}-doc-${CI_BUILD_REF}"
     paths:
       - html/
+      - xml/
       - figures/dia/*.svg
       - warnings.log
+      - doxysearch.db/
+      - searchdata.xml
   script:
     - make
   tags:
