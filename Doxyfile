@@ -1544,7 +1544,7 @@ SERVER_BASED_SEARCH    = YES
 # The default value is: NO.
 # This tag requires that the tag SEARCHENGINE is set to YES.
 
-EXTERNAL_SEARCH        = NO
+EXTERNAL_SEARCH        = YES
 
 # The SEARCHENGINE_URL should point to a search engine hosted by a web server
 # which will return the search results when EXTERNAL_SEARCH is enabled.

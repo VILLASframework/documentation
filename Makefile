@@ -15,7 +15,7 @@ RSYNC_OPTS ?= --recursive --ignore-missing-args --copy-links --chown $(DEPLOY_US
 
 export LC_ALL = en_US.utf-8
 
-all: html/index.html $(MP4_VIDEOS)
+all: html/index.html doxysearch.db $(MP4_VIDEOS)
 
 videos: $(MP4_VIDEOS)
 
@@ -24,11 +24,15 @@ figures: $(SVG_FIGURES)
 clean:
 	rm -f html/*.{png,js,html,svg,css,*.md5}
 
-deploy:
+deploy: html/index.html doxysearch.db
 	rsync $(RSYNC_OPTS) html/ $(DEPLOY_USER)@$(DEPLOY_HOST):$(DEPLOY_PATH)
+	rsync $(RSYNC_OPTS) doxysearch.db $(DEPLOY_USER)@$(DEPLOY_HOST):$(DEPLOY_PATH)
 
 html/index.html: $(INPUT) $(SVG_FIGURES) Doxyfile
 	doxygen
+
+doxysearch.db: searchdata.xml
+	doxyindexer $^
 
 %.svg: %.dia
 	dia -n -l -t svg -e $@ $^
