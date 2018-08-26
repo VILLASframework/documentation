@@ -40,7 +40,7 @@ The default value is `w+` which will start writing at the beginning of the file 
 
 ## in.epoch (float) {#node-config-file-epoch}
 
-## in.epoch_mode ("direct" | "wait" | "relative" | "absolute") {#node-config-file-in.epoch_mode}
+## in.epoch_mode ("direct" | "wait" | "relative" | "absolute") {#node-config-file-in-epoch_mode}
 
 The *epoch* describes the point in time when the first message will be read from the file.
 This setting allows to select the behaviour of the following `epoch` setting.
@@ -81,7 +81,13 @@ Defines the behaviour if the end of file of the input file is reached.
  - `exit` will terminated the program.
  - `wait` will periodically test if there are new samples which have been appended to the file.
 
-## out.flush (boolean) {#node-config-file.out.flush}
+## in.buffer_size (unsigned) = 0 {#node-config-file-in-buffer_size}
+
+Similar to @ref node-config-file-out-buffer_size. This means that the data is loaded into the buffer before it is passed on to the node.
+
+If `in.buffer_size = 0`, no buffer will be generated.
+
+## out.flush (boolean) {#node-config-file-out-flush}
 
 With this setting enabled, the outgoing file is flushed whenever new samples have been written to it.
 For remote files this means that the new sample is appended to the remote file which involves network IO.
@@ -89,6 +95,12 @@ For remote files this means that the new sample is appended to the remote file w
 **Note:** Not all network file protocols might support partial uploads.
 It's know that this feature works for local files but not for WebDav.
 Other protocols hav not been tested yet.
+
+## out.buffer_size (unsigned) = 0 {#node-config-file-out-buffer_size}
+
+If this is set to a positive value `<X>`, the node will generate a full [stream buffer](https://linux.die.net/man/3/setvbuf) with a size of `<X>` bytes. This means that the data is buffered and not written until the buffer is full or until the node is stopped.
+
+If `out.buffer_size = 0`, no buffer will be generated.
 
 ## Example
 
@@ -98,9 +110,10 @@ nodes = {
 		type	= "file",
 
 	### The following settings are specific to the file node-type!! ###
+		buffer_size = 0				# Creates a stream buffer if value is positive
 
 		in = {
-			uri = "logs/input.log",	# These options specify the URI where the the files are stored
+			uri = "logs/input.log",		# These options specify the URI where the the files are stored
 			mode = "w+",			# The mode in which files should be opened (see open(2))
 
 			epoch_mode = "direct"		# One of: direct (default), wait, relative, absolute
@@ -110,12 +123,12 @@ nodes = {
 			rate = 2.0			# A constant rate at which the lines of the input files should be read
 							# A missing or zero value will use the timestamp in the first column
 							# of the file to determine the pause between consecutive lines.
-			eof = "rewind"	# Rewind the file and start from the beginning.
+			eof = "rewind"			# Rewind the file and start from the beginning.
 		},
 		out = {
 			uri = "logs/output_%F_%T.log"	# The output URI accepts all format tokens of (see strftime(3))
 			mode = "a+"			# You might want to use "a+" to append to a file
-			flush = false	# Flush or upload contents of the file every time new samples are sent.
+			flush = false			# Flush or upload contents of the file every time new samples are sent.
 		}
 	}
 }

@@ -6,26 +6,16 @@ The @ref node-type-infiniband node-type implements node communication over the [
 
 Every `infiniband` node can be configured to only read or write or to do both at the same time. The node configuration is divided into two sub-groups: `in` and `out`.
 
-## rdma_port_space (string: "RDMA_PS_TCP" | "RDMA_PS_UDP") {#node-config-infiniband-port-space}
+## rdma_port_space (string: "RDMA_PS_TCP" | "RDMA_PS_UDP") = "RDMA_PS_TCP" {#node-config-infiniband-port-space}
 
 This specifies the type of connection the node will set up.
 
 * `RDMA_PS_TCP` provides reliable, connection-oriented, message based communication between the nodes. Packets are delivered in order. In this mode, one Queue Pair is connected to one othere Queue Pair.
-* `RDMA_PS_UDP` provides unreliable, connection less, datagram communication between nodes. Both ordering and delivery are not guaranteed in this mode.i
+* `RDMA_PS_UDP` provides unreliable, connection less, datagram communication between nodes. Both ordering and delivery are not guaranteed in this mode.
 
 `RDMA_PS_TCP` and `RDMA_PS_UDP` are mapped to the Queue Pair types as `IBV_QPT_RC`, `IBV_QPT_UD`, respectively. If two nodes should be connected, both should be set to the same `rdma_port_space`.
 
 More information on these two modes can be found on the manual page for [`rdma_create_id()`](https://linux.die.net/man/3/rdma_create_id).
-
-Default value: `"RDMA_PS_TCP"`
-
-**Example**:
-
-```conf
-rdma_port_space = "RDMA_PS_TCP"
-```
-
-enables the node to establish and accept a reliable, connection-oriented, message based connection with another node.
 
 ## in.address (string) {#node-config-infiniband-in-address}
 
@@ -133,7 +123,7 @@ If this flag is set, the @ref node-type-infiniband node-type checks if a sample 
 This value represents the maximum number of bytes to be send inline. The maximum number of this value depends on the HCA.
 The settings defaults to zero. However, many HCAs will automatically adjust it to 60.
 
-*Important note*: The greater this value gets, the smaller `@ref node-config-infiniband-out-max_wrs` gets. If `out.max_inline_data` is too big for the number specified in `out.max_wrs`, the node will return an error that the Queue Pair could not be created. Since this is different for various HCAs, it is not possible for us to give more specified errors.
+*Important note*: The greater this value gets, the smaller @ref node-config-infiniband-out-max_wrs can be. If `out.max_inline_data` is too big for the number specified in `out.max_wrs`, the node will return an error that the Queue Pair could not be created. Since this is different for various HCAs, it is not possible for us to give more specified errors.
 
 **Example**:
 
@@ -145,6 +135,12 @@ out = {
 ```
 
 Every sample which is smaller than 60 bytes will be send inline. All other samples will be sent normally.
+
+## out.use_fallback (boolean) = true {#node-config-infiniband-out-use_fallback}
+
+If an out section with a valid remote entry is present in the configuration file, the node will first bind to the local host channel adapter and subsequentely try to connect to the remote host. If the latter fails (e.g., because the remote host was not reachable or rejected the connection), there are two possible outcomes: the node can throw an error and abort or it can show a warning and continue in listening mode. 
+
+If `use_fallback = true`, the node will fallback to listening mode if it is not able to connect to the remote host.
 
 ## Example
 
@@ -177,8 +173,10 @@ nodes = {
 
         vectorize = 1,
 
-        send_inline = 1,
+        send_inline = true,
         max_inline_data = 60,
+
+        use_fallback = true,
     }
 }
 ```
