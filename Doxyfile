@@ -1555,7 +1555,7 @@ EXTERNAL_SEARCH        = YES
 # Searching" for details.
 # This tag requires that the tag SEARCHENGINE is set to YES.
 
-SEARCHENGINE_URL       = /cgi-bin/doxysearch.cgi
+SEARCHENGINE_URL       = /doc/cgi-bin/doxysearch.cgi
 
 # When SERVER_BASED_SEARCH and EXTERNAL_SEARCH are both enabled the unindexed
 # search data is written to a file for indexing by an external tool. With the
@@ -2059,7 +2059,7 @@ TAGFILES               =
 # tag file that is based on the input files it reads. See section "Linking to
 # external documentation" for more information about the usage of tag files.
 
-GENERATE_TAGFILE       =
+GENERATE_TAGFILE       = villas.tag
 
 # If the ALLEXTERNALS tag is set to YES, all external class will be listed in
 # the class index. If set to NO, only the inherited external classes will be

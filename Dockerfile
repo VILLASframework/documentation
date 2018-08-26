@@ -20,7 +20,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###################################################################################
 
-FROM fedora:27
+FROM fedora:28
 MAINTAINER Steffen Vogel <stvogel@eonerc.rwth-aachen.de>
 
 RUN dnf -y install \
@@ -28,4 +28,5 @@ RUN dnf -y install \
 	doxygen \
 	dia \
 	graphviz \
-	make
+	make \
+	libxslt

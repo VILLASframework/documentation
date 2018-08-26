@@ -26,6 +26,7 @@ clean:
 
 deploy: html/index.html
 	rsync $(RSYNC_OPTS) html/ $(DEPLOY_USER)@$(DEPLOY_HOST):$(DEPLOY_PATH)
+	rsync $(RSYNC_OPTS) tools/jump.cgi $(DEPLOY_USER)@$(DEPLOY_HOST):$(DEPLOY_PATH)/cgi-bin/
 	rsync $(RSYNC_OPTS) doxysearch.db/ $(DEPLOY_USER)@$(DEPLOY_HOST):$(DEPLOY_PATH)/doxysearch.db/
 
 html/index.html: $(INPUT) $(SVG_FIGURES) Doxyfile
@@ -33,7 +34,10 @@ html/index.html: $(INPUT) $(SVG_FIGURES) Doxyfile
 
 searchdata.xml: html/index.html
 
-doxysearch.db/: searchdata.xml
+searchdata-tagfile.xml: villas.tag
+	xsltproc tools/searchdata-tagfile.xslt $< > $@
+
+doxysearch.db/: searchdata.xml searchdata-tagfile.xml
 	doxyindexer $^
 
 %.svg: %.dia
