@@ -15,13 +15,11 @@ $ villas signal mixed -v 4 -r 1000 | villas pipe lab5.conf rtds_gtnet1
 $ villas signal sine -f 50 -r 10000 | villas pipe lab5.conf rtds_gtnet1
 ```
 
-
-
 As we can see in the diagram, the `villas pipe` tool also receives data which is sent by the simulator and prints it to the screen.
 
 # RSCAD
 
-**Source:** <https://git.rwth-aachen.de/acs/public/villas/VILLASnode/tree/develop/clients/rtds/gtnet_skt/gtnet_skt_2point_udp>
+**Source:** <https://git.rwth-aachen.de/acs/public/villas/VILLASnode/tree/develop/clients/rtds/gtnet_skt/gtnet_skt_udp_2point>
 
 @image html rscad_gtnet_skt_2point_udp_draft.png RSCAD draft for GTNET interface to VILLASnode. width=100%
 
