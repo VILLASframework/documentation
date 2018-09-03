@@ -22,7 +22,7 @@ The following figure illustrates the state machine which is used:
 
 VILLASnode is split into a shared library called libvillas and a couple of executables (`villas-node`, `villas-pipe`, `villas-test`, `villas-signal`, ...) which are linked against this library.
 
-## Extensibilty / Plugins
+## Plugins {#node-plugins}
 
 There are many places where VILLASnode can easily extended with plugins.
 All node-types, hook functions or new IO formats are implemented via plugins.

@@ -8,5 +8,3 @@ Possible types of nodes are:
   * Workstations (Simulink, Labview, ...)
   * Data Loggers
   * etc..
-
-@see node for implementation details.

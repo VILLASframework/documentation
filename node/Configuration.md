@@ -9,7 +9,6 @@ At the top level, the configuration file consists of these sections:
 - Global
 - Logging
 - WebServer
-- FPGAs
 - Nodes
 - Paths
 
@@ -87,29 +86,32 @@ facilities = "socket,log,mem";	// log socket node-type, log and memory sub-syste
 
 The following logging facilities are available:
 
-| Facility		| Description |
+| Facility	| Description |
 |:-		|:- |
-| `pool` 		| Memory Pool for fixed size allocations |
+| `pool` 	| Memory Pool for fixed size allocations |
 | `queue` 	| Multiple-producer / Multiple-consumer queue |
 | `config` 	| Configuration parser |
-| `hook` 		| Hook sub-system |
-| `path` 		| Send / Receive path |
-| `node` 		| Node-types |
-| `mem` 		| Memory management |
-| `web` 		| Web sub-system |
-| `api` 		| Remote API |
-| `log` 		| Logging sub-system |
-| `vfio` 		| Virtual Function Input/Output sub-system for access to PCI devices |
-| `pci` 		| PCI device detection |
-| `xil` 		| Xilinx drivers for FPGA components |
+| `hook` 	| Hook sub-system |
+| `path` 	| Send / Receive path |
+| `node` 	| Node-types |
+| `mem` 	| Memory management |
+| `web` 	| Web sub-system |
+| `api` 	| Remote API |
+| `log` 	| Logging sub-system |
+| `vfio` 	| Virtual Function Input/Output sub-system for access to PCI devices |
+| `pci` 	| PCI device detection |
+| `xil` 	| Xilinx drivers for FPGA components |
 | `tc` 		| Linux traffic control for network emulation |
 | `if` 		| Linux network interfaces |
+| `advio`	| Network IO |
+| `io`		| Standard IO Formats |
 | `socket` 	| BSD Socket node-type |
-| `file` 		| File node-type |
-| `fpga` 		| VILLASfpga node-type |
-| `ngsi` 		| FIWARE NGSI node-type |
+| `file` 	| File node-type |
+| `fpga` 	| VILLASfpga node-type |
+| `ngsi` 	| FIWARE NGSI node-type |
 | `websocket` 	| WebSocket node-type |
-| `opal` 		| OPAL-RT node-type |
+| `opal` 	| OPAL-RT node-type |
+| `ib`		| Infiniband node-type |
 
 # HTTP / WebSocket server {#node-config-http}
 
@@ -161,12 +163,14 @@ nodes = {
 				ratio = 10
 			}
 		),
+
 		builtin = true,
-		samplelen = 64
+		samplelen = 64,
+
 		signals = (
-			{ name = "Va", unit = "Volts" },
-			{ name = "Vb", unit = "Volts" },
-			{ name = "Vc", unit = "Volts" },
+			{ name = "Va", unit = "Volts", format = "float", enabled = true },
+			{ name = "Vb", unit = "Volts", format = "float", enabled = true },
+			{ name = "Vc", unit = "Volts", format = "float", enabled = true },
 		)
 
 		# type specific settings follow here.
@@ -207,6 +211,26 @@ With this setting the attachment of built-in hooks can be disabled.
 The maximum number of signals per sample which this node can receive or sent.
 
 ## signals (list of objects: signals) = () {#node-config-node-signals}
+
+Each node should define a list of signals which it **receives**.
+
+Each signal is described by the following settings:
+
+### signals[].name (string) = undefined {#node-config-node-signals-name}
+
+A name which describes the signal.
+
+### signals[].unit (string) = undefined {#node-config-node-signals-unit}
+
+The unit of the signal. E.g. `V`, `A`, `Rad`.
+
+### signals[].format (string: "float" | "integer" | "boolean" | "complex" | "auto") = auto {#node-config-node-signals-format}
+
+The data-type of the signal.
+
+### signals[].enabled (boolean) = true {#node-config-node-signals-enabled}
+
+Signals can be disabled which causes them to be ignored.
 
 # Paths {#node-config-path}
 
@@ -295,3 +319,7 @@ When this flag is set, the original sequence number from the source node will be
 A list of hook functions which will be executed for each sample which is processed by this path.
 
 Please consult the @ref node-concept-hook chapter of this documentation for details.
+
+### hooks[].type (string: "print" | "drop" | ...) {#node-config-hooks-type}
+
+### hooks[].enabled (boolean) = true {#node-config-hooks-enabled}

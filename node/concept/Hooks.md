@@ -35,7 +35,8 @@ nodes = {
 
 		hooks = (
 			{
-				type = "print"
+				type = "print",
+				enabled = true,
 
 				# Type specific options follow here...
 			}
@@ -68,7 +69,6 @@ paths = (
 - @subpage node-hook-fix_ts
 - @subpage node-hook-drop
 - @subpage node-hook-convert
-- @subpage node-hook-map
 - @subpage node-hook-print
 - @subpage node-hook-stats_collect
 - @subpage node-hook-stats_send

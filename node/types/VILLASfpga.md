@@ -1,5 +1,7 @@
 # VILLASfpga {#node-type-fpga}
 
+@todo This node-type is currently under development.
+
 VILLASfpga is an extension build on top of VILLASnode for realizing hard real-time interfaces between simulators, converters and devices under test with guaranteed cycle times in the microsecond range.
 
 Please look at the main page for details: @ref fpga.
