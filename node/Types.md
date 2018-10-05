@@ -24,6 +24,7 @@ Every node is an instance of a node-type. VILLASnode currently supports the foll
 | @subpage node-type-iec61850-9-2 | ?                |       | yes  | yes   | 1         | beta       | |
 | @subpage node-type-opal         | ?                | Poll  | yes  | yes   | 1         | deprecated | |
 | @subpage node-type-ngsi         | ?                | AIO   | yes  | yes   | unlimited | deprecated | Use WebSockets for Live data |
+| @subpage node-type-uldaq        | ?                | Poll  | yes  | no    | unlimited | stable     | |
 | @subpage node-type-cbuilder     | ?                | AIO   | yes  | yes   | 1         | deprecated | |
 
 @image html VILLASnode_interfaces.svg width=100%
