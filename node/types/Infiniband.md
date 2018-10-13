@@ -10,10 +10,11 @@ Every `infiniband` node can be configured to only read or write or to do both at
 
 This specifies the type of connection the node will set up.
 
-* `RDMA_PS_TCP` provides reliable, connection-oriented, message based communication between the nodes. Packets are delivered in order. In this mode, one Queue Pair is connected to one othere Queue Pair.
-* `RDMA_PS_UDP` provides unreliable, connection less, datagram communication between nodes. Both ordering and delivery are not guaranteed in this mode.
+* `RC` provides reliable, connection-oriented, message based communication between the nodes. Packets are delivered in order. In this mode, one Queue Pair is connected to one othere Queue Pair.
+* `UC` provides unreliable, connection-oriented, message based communication between the nodes. This service type is not officially supported by the RDMA communication manager and is implemented for scientific purposes in VILLASnode. [The InfiniBand node-type source code provides information on how to enable this service type.](https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/infiniband.c#L429)
+* `UD` provides unreliable, connectionless, datagram communication between nodes. Both ordering and delivery are not guaranteed in this mode.
 
-`RDMA_PS_TCP` and `RDMA_PS_UDP` are mapped to the Queue Pair types as `IBV_QPT_RC`, `IBV_QPT_UD`, respectively. If two nodes should be connected, both should be set to the same `rdma_port_space`.
+`RC`, `UC`, and `UD` are mapped to the Queue Pair types as `RDMA_PS_TCP`/`IBV_QPT_RC`, `RDMA_PS_IPOIB`/`IBV_QPT_UC`, and `RDMA_PS_UDP`/`IBV_QPT_UD`, respectively. If two nodes should be connected, both should be set to the same `rdma_port_space`.
 
 More information on these two modes can be found on the manual page for [`rdma_create_id()`](https://linux.die.net/man/3/rdma_create_id).
 
@@ -57,10 +58,6 @@ It is therefor recommended to set the value of `cq_size` to at least
 ```conf
 in.cq_size >= in.max_wrs - in.buffer_subtraction
 ```
-
-## in.poll_mode (string: "BUSY" | "EVENT") = "BUSY" {#node-config-infiniband-in-poll_mode}
-
-At the time of writing, this is not implemented yet.
 
 ## in.buffer_subtraction (integer) = 16 {#node-config-infiniband-in-buffer_subtraction}
 
@@ -159,7 +156,6 @@ nodes = {
 
         vectorize = 1,
 
-        poll_mode = "BUSY", //BUSY or EVENT
         buffer_subtraction = 128,
 
     },
