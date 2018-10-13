@@ -6,7 +6,7 @@ The @ref node-type-infiniband node-type implements node communication over the [
 
 Every `infiniband` node can be configured to only read or write or to do both at the same time. The node configuration is divided into two sub-groups: `in` and `out`.
 
-## rdma_port_space (string: "RDMA_PS_TCP" | "RDMA_PS_UDP") = "RDMA_PS_TCP" {#node-config-infiniband-port-space}
+## rdma_port_space (string: "RC" | "UC" | "UD") = "RC" {#node-config-infiniband-port-space}
 
 This specifies the type of connection the node will set up.
 
