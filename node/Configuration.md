@@ -227,7 +227,8 @@ paths = [
 		reverse = false,
 		mode = "any",
 		mask = [ "rtds" ],
-		rate = 100
+		rate = 100,
+        original_sequence_no = false,
 
 		hooks = (
 			{
@@ -285,6 +286,9 @@ See also: @ref node-config-path-mode
 A non-zero value will periodically trigger the path and resend the last sample again.
 
 A value of zero will disable this feature.
+
+## original_sequence_no (boolean) = false {#node-config-path-original_sequence_no}
+When this flag is set, the original sequence number from the source node will be used when multiplexing the nodes.
 
 ## hooks (list of objects: hooks) {#node-config-path-hooks}
 

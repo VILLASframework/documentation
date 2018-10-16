@@ -3,7 +3,8 @@
 - @subpage liveusb-build
 - @subpage liveusb-installation
 
-This archive contains a disk image of a Fedora 24 installation which has been tuned for low latency and overall real-time performance. It facilitates the setup of a VILLASnode instances by partners of the Institute for Automation of Complex Power Systems (ACS), EON Research Center, RWTH Aachen University.
+This archive contains a disk image of a Fedora 29 installation which has been tuned for low latency and overall real-time performance.
+It facilitates the setup of a VILLASnode instances by partners of the Institute for Automation of Complex Power Systems (ACS), EON Research Center, RWTH Aachen University.
 
 # What you need
 
@@ -16,22 +17,15 @@ This archive contains a disk image of a Fedora 24 installation which has been tu
 
 ## Step 1: Getting the image onto the USB drive {#liveusb-setup-prepare}
 
-Note: Simply copying the image onto the drive **does not work**!
+**Note:** Simply copying the image onto the drive **does not work**!
 
-1. When the host system is running Windows:
-  1. Download the _USB Image Tool_ from: <http://www.alexpage.de/usb-image-tool/download/>
-  1. Start the `USB Image Tool.exe` from the `usbit` folder.
-  2. In the top left corner select _Device mode_.
-  3. In the list on the left side select the USB drive.
-  4. Click on restore. In the file open dialog select the `villas-live-x.iso` image (enable `All files (*.*)` in the file type dropdown list).
-  5. Select `yes` to start copying the image onto the USB drive.
-  6. When the copying is finished, the drive will not be readable by Wndows. This is intended, just unplug the drive.
-2. When running Linux: `sudo dd bs=1m if=VILLASnode.img of=/dev/sdX`
-3. When running Mac OS X:
-  1. Open a terminal window and navigate (with `cd`) to the image location.
-  2. Run `diskutil list` to get the list of connected drives (named `/dev/disk1`, `/dev/disk2` etc.). You need to identify the USB drive in the list. If you are not sure which drive the USB is, disconnect the USB, run the command again and compare which drive is now missing in the list.
-  3. Run `sudo dd bs=1m if=VILLASnode.img of=/dev/diskX` where diskX is the drive you located in the list. This will take some time to finish.
-  4. When the copying is finished, the drive will be reported as unreadable. This is intended, just eject the USB drive.
+1. Plug in your USB drive
+2. Download, install and start the [_Fedora Media Writer_](https://getfedora.org/en/workstation/download/)
+3. Download the [VILLAS Live ISO file](https://villas.fein-aachen.org/iso/)
+4. Select "Custom image"
+5. Pick the downloaded ISO file
+6. Make sure that the correct USB drive is selected in the popup window
+7. Click on "Write to disk"
 
 ## Step 2: Booting the system from the live USB image {#liveusb-setup-boot}
 
@@ -76,4 +70,3 @@ For using VILLASnode additional UDP ports must be opened manually.
 For direct support please contact:
 
 - [Steffen Vogel](stvogel@eonerc.rwth-aachen.de)
-- [Markus Grigull](markus.grigull@rwth-aachen.de).
