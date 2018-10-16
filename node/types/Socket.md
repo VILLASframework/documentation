@@ -21,7 +21,7 @@ Every `socket` node supports the following special settings:
 
 The payload format which is used to encode and decode exchanged messages.
 
-## local ("ip:port" | "mac:protocol") {#node-config-socket-local}
+## local (string: "ip:port" | "mac:protocol") {#node-config-socket-local}
 
 The local address and port number this node should listen for incoming packets.
 

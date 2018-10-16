@@ -34,6 +34,7 @@ Weather or not to polling / interrupts to wait for new samples from the FPGA.
 
 ### Example
 
+```
 nodes = {
 	rtds = {
 		type = "fpga",

@@ -17,8 +17,8 @@ nodes = {
 
 		format = "protobuf",
 
-        username = "guest",
-        password = "guest",
+		username = "guest",
+		password = "guest",
 		host = "localhost",
 		port = 1883,
 
