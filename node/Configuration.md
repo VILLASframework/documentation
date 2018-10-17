@@ -214,6 +214,42 @@ The maximum number of signals per sample which this node can receive or sent.
 
 Each node should define a list of signals which it **receives**.
 
+There are two ways to specify the input signals of a node:
+
+### Simple
+
+The simple way just specifies the number of signals and their type:
+
+```
+nodes = {
+	test_node = {
+		in = {
+			signals = {
+				count = 12
+				type = "float"
+			}
+		}
+	}
+}
+```
+
+### List
+
+The list mode allows you to specify properties of each signal individually by providing a list of signal definitions:
+
+```
+nodes = {
+	test_node = {
+		in = {
+			signals = (
+				{ name = "signal1", type = "float" },
+				{ name = "signal2", type = "integer" }
+			)
+		}
+	}
+}
+```
+
 Each signal is described by the following settings:
 
 ### signals[].name (string) = undefined {#node-config-node-signals-name}
@@ -252,7 +288,7 @@ paths = [
 		mode = "any",
 		mask = [ "rtds" ],
 		rate = 100,
-        original_sequence_no = false,
+		original_sequence_no = false,
 
 		hooks = (
 			{
