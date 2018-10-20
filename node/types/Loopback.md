@@ -15,6 +15,10 @@ The queue length of the internal queue which buffers the samples.
 
 The number of values each buffered sample can store.
 
+## mode (string: "pthread" | "polling" | "pipe" | "eventfd" | "auto") = "auto" {#node-config-loopback-mode}
+
+Specify the synchronization mode of the internal queue.
+
 ## Example
 
 ```
@@ -25,6 +29,7 @@ nodes = {
 
 		queuelen = 1024		# The queue length of the internal queue which buffers the samples.
 		samplelen = 64		# Each buffered sample can contain up to 64 values.
+		mode = "polling"	# Use busy polling for synchronization of the read and write side of the queue
 	}
 }
 ```

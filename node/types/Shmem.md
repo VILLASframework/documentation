@@ -22,12 +22,12 @@ a compile-time constant.
 Maximum number of data elements in a single `struct sample` for the samples handled
 by this node. Defaults to `DEFAULT_SHMEM_SAMPLELEN`, a compile-time constant.
 
-## polling (boolean) {#node-config-shmem-polling}
+## mode (string: "pthread" | "polling") = "pthread" {#node-config-shmem-mode}
 
-If set to false, POSIX condition variables are used to signal writes between processes.
-If set to true, no CV's are used, meaning that blocking writes have to be
+If set to `pthread`, POSIX condition variables are used to signal writes between processes.
+If set to `polling`, no CV's are used, meaning that blocking writes have to be
 implemented using polling, leading to performance improvements at a cost of
-unnecessary CPU usage. Defaults to false.
+unnecessary CPU usage. Defaults to `pthread`.
 
 ## exec (array of strings) {#node-config-shmem-exec}
 
@@ -41,9 +41,8 @@ The actual sharing of data is implemented by putting two shared `struct queue`s
 (one per direction) and an associated `struct pool` in the shared memory region.
 Samples can be exchanged by simply writing to and reading from these queues.
 
-External programs that want to use this interface can link against
-`libvillas-ext.so`. This library provides a subset of the functions from
-`libvillas.so` that can be used to access and modify the shared data structures.
+External programs that want to use this interface must link against
+`libvillas.so`.
 
 The interface for external programs is very simple: after opening the shared
 memory object with `shmem_shared_open` (passing the object name from the
