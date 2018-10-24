@@ -22,8 +22,8 @@ We offer pre-build RPM packages for Fedora / Redhat based distributions.
 Add VILLAS RPM repository to your system:
 
 ```
-$ sudo dnf config-manager --add-repo https://packages.fein-aachen.org/redhat/villas.repo
-Adding repo from: https://packages.fein-aachen.org/redhat/villas.repo
+$ sudo dnf config-manager --add-repo https://packages.fein-aachen.org/fedora/fein.repo
+Adding repo from: https://packages.fein-aachen.org/fedora/fein.repo
 ```
 
 Install VILLASnode plus its dependencies:
