@@ -116,6 +116,7 @@ VILLASnode currently has the following list of dependencies:
  - [rabbitmq-c](https://github.com/alanxz/rabbitmq-c) (>= 0.8.0) for the @ref node-type-amqp node-type (_optional_).
  - [mosquitto](https://mosquitto.org) (>= 1.4.15) for the @ref node-type-mqtt node-type (_optional_).
  - [comedilib](http://comedi.org) (>= 0.11.0) for the @ref node-type-comedi node-type (_optional_).
+ - [libuldaq](https://github.com/mccdaq/uldaq) (>= 1.0.0) for the @ref node-type-uldaq node-tyle (_optional_)
  - [libOpal{AsyncApi,Core,Utils}](https://git.rwth-aachen.de/acs/public/villas/libopal) for running VILLASnode as an Asynchronous process inside your RT-LAB model (_optional_).
  - [Etherlab](http://etherlab.org) (>= 1.5.2) for the @ref node-type-ethercat node-tyle (_optional_)
  - [Criterion](https://github.com/Snaipe/Criterion) (>= 2.3.1) for running the unit tests (_optional_).
