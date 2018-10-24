@@ -15,7 +15,7 @@ See: @ref liveusb
 
 We offer pre-build RPM packages for Fedora / Redhat based distributions.
 
-**Note:** These packages have only been tested with Fedora 25. Other distributions or version might work as well but might have unresolvable dependencies.
+**Note:** These packages have only been tested with Fedora 29. Other distributions or version might work as well but might have unresolvable dependencies.
 
 ## With internet access by using VILLAS RPM repository {#node-installation-rpm-offline}
 
@@ -93,7 +93,7 @@ villas-node-0.3-1.develop_release.20170507gite92f17d.fc25.x86_64
 VILLASnode can be compiled from source using [CMake](http://cmake.org).
 This process has been tested with the following Linux distributions:
 
- - Fedora 28
+ - Fedora 29
  - Debian 9 (Stretch)
  - Ubuntu 18.04 (Bionic Beaver)
  - Centos 7
@@ -102,11 +102,12 @@ This process has been tested with the following Linux distributions:
 
 VILLASnode currently has the following list of dependencies:
 
- - [openssl](https://www.openssl.org) (>= 1.0.0) for cryptographic hashing functions (_required_).
- - [libconfig](http://www.hyperrealm.com/libconfig/) (>= 1.4.9) for parsing the configuration file (_optional_).
- - [libjansson](http://www.digip.org/jansson/) (>= 2.7) JSON parser for @ref node-type-websocket and @ref node-type-ngsi node-types (_required_).
  - [libwebsockets](http://libwebsockets.org) (>= 2.3.0) for the @ref node-type-websocket node-type (_required_).
+ - [libjansson](http://www.digip.org/jansson/) (>= 2.7) JSON parser for @ref node-type-websocket and @ref node-type-ngsi node-types (_required_).
+ - [openssl](https://www.openssl.org) (>= 1.0.0) for cryptographic hashing functions (_required_).
  - [libcurl](https://curl.haxx.se/libcurl/) (>= 7.29.0) for HTTP REST requests by the @ref node-type-ngsi node-type (_required_).
+ 
+ - [libconfig](http://www.hyperrealm.com/libconfig/) (>= 1.4.9) for parsing the configuration file (_optional_).
  - [libnl3](http://www.infradead.org/~tgr/libnl/) (>= 3.2.27) for the network communication & emulation support of the @ref node-type-socket node-type (_optional_).
  - [libzmq](http://zeromq.org) (>= 2.2.0) for the @ref node-type-zeromq node-type (_optional_).
  - [libnanomsg](http://nanomsg.org/) (>= 1.0.0) for the @ref node-type-nanomsg node-type (_optional_).
@@ -116,6 +117,7 @@ VILLASnode currently has the following list of dependencies:
  - [mosquitto](https://mosquitto.org) (>= 1.4.15) for the @ref node-type-mqtt node-type (_optional_).
  - [comedilib](http://comedi.org) (>= 0.11.0) for the @ref node-type-comedi node-type (_optional_).
  - [libOpal{AsyncApi,Core,Utils}](https://git.rwth-aachen.de/acs/public/villas/libopal) for running VILLASnode as an Asynchronous process inside your RT-LAB model (_optional_).
+ - [Etherlab](http://etherlab.org) (>= 1.5.2) for the @ref node-type-ethercat node-tyle (_optional_)
  - [Criterion](https://github.com/Snaipe/Criterion) (>= 2.3.1) for running the unit tests (_optional_).
 
 There are three ways to install these dependencies:
