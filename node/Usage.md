@@ -71,7 +71,7 @@ VILLASnode v0.3.1-3b2d09c-release (built on Jul  2 2017 19:06:00)
  Steffen Vogel <StVogel@eonerc.rwth-aachen.de>
 ```
 
-The server requires root privileges for:
+The server requires root privileges to:
 
  - Enable the realtime FIFO scheduler
  - Increase the task priority

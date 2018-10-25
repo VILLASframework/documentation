@@ -39,7 +39,7 @@ Before we start to use the VILLASnode tools, we will introduce some terminology:
 
 # Tools {#node-tools}
 
-VILLASnode is a collection of command line tools which follow the [Unix pholosophy](https://en.wikipedia.org/wiki/Unix_philosophy):
+VILLASnode is a collection of command line tools which follow the [Unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy):
 
 1. Make each program do one thing well. To do a new job, build afresh rather than complicate old programs by adding new "features".
 2. Expect the output of every program to become the input to another, as yet unknown, program. Don't clutter output with extraneous information. Avoid stringently columnar or binary input formats. Don't insist on interactive input.
@@ -56,11 +56,11 @@ In this guide we will show the following tools:
 | `villas node`		| The VILLASnode deamon. |
 | `villas test-cmp` 	| Compare _sample_ files. |
 
-A complete reference of all available options for those tools can be found at the @ref node-usage page.
+A complete reference of all available options for those tools can be found on the @ref node-usage page.
 
 # Lab assignments {#node-guide-labs}
 
-To get you started quickly, we prepared a series of small demos which you can yourself.
+To get you started quickly, we prepared a series of small demos which you can try yourself.
 
 All configurations files are available here: <https://villas.fein-aachen.org/doc/etc/>
 
@@ -80,7 +80,7 @@ All configurations files are available here: <https://villas.fein-aachen.org/doc
 
 # Video {#node-guide-video}
 
-This webinar was recorded during the preperation of the RT-SuperLab demonstration.
+This webinar was recorded during the preparation of the RT-SuperLab demonstration.
 
 - **Date:** 8th May 2017
 - **Versions:** VILLASnode v0.3

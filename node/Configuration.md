@@ -18,16 +18,16 @@ The global section consists of some global configuration parameters:
 
 ## stats (float) {#node-config-stats}
 
-Specifies the rate in which statistics about the actives paths will be periodically printed to the screen.
+Specifies the rate at which statistics about the active paths will be periodically printed to the screen.
 
 Setting this value to 5, will print 5 lines per second.
 
-A line of includes information such as:
+A line includes information such as:
 
   - Source and Destination of path
   - Messages received
   - Messages sent
-  - Messaged dropped
+  - Messages dropped
 
 ## affinity (integer) {#node-config-affinity}
 
@@ -87,7 +87,7 @@ facilities = "socket,log,mem";	// log socket node-type, log and memory sub-syste
 The following logging facilities are available:
 
 | Facility	| Description |
-|:-		|:- |
+|:-		    |:- |
 | `pool` 	| Memory Pool for fixed size allocations |
 | `queue` 	| Multiple-producer / Multiple-consumer queue |
 | `config` 	| Configuration parser |
