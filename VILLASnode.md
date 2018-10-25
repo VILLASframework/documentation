@@ -47,7 +47,7 @@ Furthermore, it collects statistics, monitors the quality of service and handles
 
 For optimal performance the server is implemented in low-level C and makes use of several Linux-specific realtime features.
 The primary design goal was to make the behaviour of the system as deterministic as possible.
-Therefore, it's advisable to run the server component on a [PREEMPT_RT](https://rt.wiki.kernel.org/index.php/CONFIG_PREEMPT_RT_Patch) patched version of Linux. In our environment, we use Fedora-based distribution which has been stripped to the bare minimum (no GUI, only a few background processes).
+Therefore, it's advisable to run the server component on a [PREEMPT_RT](https://rt.wiki.kernel.org/index.php/CONFIG_PREEMPT_RT_Patch) patched version of Linux. In our environment, we use a Fedora-based distribution which has been stripped to the bare minimum (no GUI, only a few background processes).
 Have a look at @ref node-tuning for ways to improve the real-time performance of your system.
 
 ### Clients
@@ -63,5 +63,5 @@ There are two types of interfaces to VILLASnode:
 2. An other way to connect simulation equipment is by using a client-application which itself sends the data over the network to VILLASnode.
     In this scenario, VILLASnode uses the @ref node-type-socket node-type to communicate with the client-application.
 
-Usually, new clients / equipemnt should be implemented as a new node-type as part of VILLASnode.
+Usually, new clients / equipment should be implemented as a new node-type as part of VILLASnode.
 Using a dedicated client-application which communicates via the 'socket' type is deprecated because it leads to code duplication.
