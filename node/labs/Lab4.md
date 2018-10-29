@@ -14,9 +14,9 @@ $ villas pipe lab3.conf udp_node1
 <asciinema-player rows="25" cols="500" poster="npt:0:1"  src="recordings/terminal/lab4_t2.json">
 @endhtmlonly
 
-In a second terminal, we append `-x` to swap the addresses:
+In a second terminal, we use `-x` to exchange input/output addresses:
 ```
-$ villas pipe lab3.conf udp_node1 -x
+$ villas pipe -x lab3.conf udp_node1
 ```
 
 @htmlonly

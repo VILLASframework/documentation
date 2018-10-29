@@ -10,7 +10,7 @@ The `stats` hook can be used to collect statistics about the co-simulation inter
 - Sending rate
 
 ```bash
-$ villas signal sine -r 1000 -l 10000 | villas hook stats verbose=true, warmup=3000
+$ villas signal -r 1000 -l 10000 sine | villas hook -o verbose=true -o warmup=3000 stats
 ```
 
 ## With network emulation
@@ -22,13 +22,13 @@ $ villas signal sine -r 1000 -l 10000 | villas hook stats verbose=true, warmup=3
 In  the first terminal:
 
 ```bash
-$ villas signal sine -r 1000 | villas pipe etc/lab9_netem.conf udp_node1
+$ villas signal -r 1000 sine | villas pipe etc/lab9_netem.conf udp_node1
 ```
 
 In a second terminal:
 
 ```bash
-$ villas pipe etc/lab9_netem.conf udp_node1 -x | villas hook stats verbose=true, warmup=3000
+$ villas pipe etc/lab9_netem.conf udp_node1 -x | villas hook -o verbose=true -o warmup=3000 stats
 ```
 
 **Note:** Press Ctrl-D to stop the statistics collection.

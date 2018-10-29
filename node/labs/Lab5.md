@@ -11,8 +11,8 @@ We use a slightly modified configuration file in order to change the UDP packet 
 @includelineno lab5.conf
 
 ```
-$ villas signal mixed -v 4 -r 1000 | villas pipe lab5.conf rtds_gtnet1
-$ villas signal sine -f 50 -r 10000 | villas pipe lab5.conf rtds_gtnet1
+$ villas signal -v 4 -r 1000 mixed | villas pipe lab5.conf rtds_gtnet1
+$ villas signal -f 50 -r 10000 sine | villas pipe lab5.conf rtds_gtnet1
 ```
 
 As we can see in the diagram, the `villas pipe` tool also receives data which is sent by the simulator and prints it to the screen.

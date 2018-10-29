@@ -11,7 +11,7 @@ $ # start tcpdump to capture traffic in background
 $ tcpdump -i lo -w example1.pcap udp port 12000 &
 
 $ # send 10 values to udp_node1
-$ villas signal mixed -v 3 -r 10 -l 10 | villas pipe lab3.conf udp_node1
+$ villas signal -v 3 -r 10 -l 10 mixed | villas pipe lab3.conf udp_node1
 
 $ # stop tcpdump
 $ kill %1

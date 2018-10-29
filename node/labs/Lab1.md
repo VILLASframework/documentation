@@ -8,7 +8,7 @@ Rarely used in a real simulation, this tool can be handy for testing and underst
 The following command emits a stream of samples to the [standard output](https://en.wikipedia.org/wiki/Standard_streams#Standard_output_.28stdout.29) of your terminal:
 
 ```
-$ villas signal sine -l 10 -r 10 -f 3 -v 1
+$ villas signal -l 10 -r 10 -f 3 -v 1 sine
 ```
 
 The samples have the following characteristics:
@@ -29,14 +29,14 @@ Every sample is printed in a single line consisting of several columns:
 ```
 # sec.nsec(seq)          data[]
 1493840575.228483413(0)  0.000000
-1493834176.992267295(1)  0.945584 
+1493834176.992267295(1)  0.945584
 1493834177.092542246(2) -0.605785
 1493834177.192117703(3) -0.576049
-1493834177.292412070(4)  0.957041 
+1493834177.292412070(4)  0.957041
 1493834177.391855814(5) -0.009495
 1493834177.492009272(6) -0.947156
-1493834177.592494371(7)  0.605067 
-1493834177.692448200(8)  0.570946 
+1493834177.592494371(7)  0.605067
+1493834177.692448200(8)  0.570946
 1493834177.791826929(9) -0.953784
 ```
 
@@ -47,7 +47,7 @@ The remaining columns contain the values of the sample.
 If you add the `-n` (non real-time mode) switch the data will be printed immeadiately to the screen:
 
 ```
-$ villas signal sine -l 10 -r 10 -f 3 -v 1 -n
+$ villas signal -l 10 -r 10 -f 3 -v 1 -n sine
 ```
 
 @htmlonly
@@ -57,7 +57,7 @@ $ villas signal sine -l 10 -r 10 -f 3 -v 1 -n
 You can use [shell redirection](https://www.gnu.org/software/bash/manual/html_node/Redirections.html) to write those samples to a file:
 
 ```
-$ villas signal sine -l 10 -r 10 -f 3 -v 1 -n > file.dat
+$ villas signal -l 10 -r 10 -f 3 -v 1 -n sine > file.dat
 $ cat file.dat
 ```
 

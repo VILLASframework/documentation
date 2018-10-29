@@ -104,7 +104,7 @@ This invocation reduces the sending  rate by a factor of 10.
 The resulting rate is: `1000 / 10 = 100`.
 
 ```bash
-$ villas signal sine -r 1000 | villas hook decimate rate=10
+$ villas signal -r 1000 sine | villas hook decimate rate=10
 ```
 
 @htmlonly
@@ -125,12 +125,12 @@ $ villas signal sine | villas hook convert 'mode="fixed" mask=0xf0 scale=1000.0'
 $ villas signal sine | villas hook print > /dev/null
 ```
 
-**Note:** `villas hook` by default prints the processed stream of samples already to the screen. Therefore, every sample appears now twice on the screen. This hook only makes sense when used together with `villas none`. 
+**Note:** `villas hook` by default prints the processed stream of samples already to the screen. Therefore, every sample appears now twice on the screen. This hook only makes sense when used together with `villas none`.
 
 ## Remap values and add special header fields as data (map)
 
 ```bash
-$ villas signal sine -v 4 | villas hook map 'mapping=[ "data[3]", "data[2]", "data[1]", "data[0]", "hdr.sequence", "ts.origin" ]'
+$ villas signal -v 4 sine | villas hook map 'mapping=[ "data[3]", "data[2]", "data[1]", "data[0]", "hdr.sequence", "ts.origin" ]'
 ```
 
 @htmlonly

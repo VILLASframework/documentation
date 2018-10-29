@@ -14,7 +14,7 @@ This technique is usefull for live monitoring and user interaction with simulati
 ## Start node and signal generator
 
 ```bash
-$ villas signal mixed -v 4 -r 120 | villas pipe lab3.conf udp_node1 -x &
+$ villas signal -v 4 -r 120 mixed | villas pipe -x lab3.conf udp_node1 &
 $ villas node lab12.conf
 ```
 
