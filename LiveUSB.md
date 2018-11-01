@@ -32,28 +32,23 @@ It facilitates the setup of a VILLASnode instances by partners of the Institute 
 
 1. Shut down the server (and remove the old USB drive running an older version of VILLASnode, if there is any).
 2. Plug in the USB drive and start the server. If the server does not boot into the USB drive, you may need to restart and change the boot order by pressing DEL or F12 at the very beginning of the start up.
-3. When asked for user credentials, enter the default credentials: root (without password).
+3. When asked for user credentials, enter the default credentials:
+   - **User**: root
+   - **Password:** villas-admin
 
 ## Step 3: Testing functionality {#liveusb-setup-test}
 
 1. Check the name and information about the running kernel with `uname -a`
-2. Test installation of VILLASnode with `villas node --help`
-3. If available, check the Internet connectivity with `ping www.rwth-aachen.de`. If the request times out, the internet is most likly not reachable.
-4. If available, check the public IP address of the server with `curl canihazip.com/s`.
-5. Check the network configurations with `ip addr show`.
+2. If available, check the Internet connectivity with `ping www.rwth-aachen.de`. If the request times out, the internet is most likly not reachable.
+3. If available, check the public IP address of the server with `curl canihazip.com/s`.
+4. Check the network configurations with `ip addr show`.
+5. Test installation of VILLASnode with `villas node --help`
 
-## Step 4: Configure Firewall {#liveusb-setup-firewall}
+## Step 4: Securing the system (options) {#liveusb-setup-security}
 
-By default, the installed Linux system only accepts SSH and ICMP traffic.
-For using VILLASnode additional UDP ports must be opened manually.
-
-1. Create a new firewall zone for VILLASnode: `firewall-cmd --permanent --new-zone=villas`
-2. Allow UDP traffic on ports 12000 to 12100: `firewall-cmd --permanent --zone=villas --add-port=12000-12100/udp`
-3. Add sources to zone:
-  - For a subnet: `firewall-cmd --permanent --zone=villas --add-source=10.10.15.0/24`
-  - For a single machine: `firewall-cmd --permanent --zone=villas --add-source=10.10.15.1/32`
-4. Apply new configuration `firewall-cmd --reload`
-5. List all rules for the zone: `firewall-cmd --permanent --zone=villas --list-all`
+1. Change the default password: `passwd`.
+2. Update the system regulary: `dnf update`
+3. Setup a firewall: https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7
 
 # Contact
 
