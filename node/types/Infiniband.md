@@ -139,6 +139,11 @@ If an out section with a valid remote entry is present in the configuration file
 
 If `use_fallback = true`, the node will fallback to listening mode if it is not able to connect to the remote host.
 
+## out.periodic_signaling (int) = out.max_wrs / 2 {#node-config-infiniband-out-periodic_signaling}
+If a sample is sent inline, no Completion Queue Entry (CQE) is generated. However, once a while, a CQE must be generated to prevent the Send Queue from overflowing. Therefore, every `out.periodic_signaling`th sample will be sent normally with signaling.
+
+It turns out that the ideal value in most cases is `out.max_wrs / 2`. Hence, usually, it is not necessary to explicitly set this value.
+
 ## Example
 
 ```conf
@@ -146,7 +151,7 @@ nodes = {
     ib_node_target = {
     type = "infiniband",
 
-    rdma_port_space = "RDMA_PS_TCP", //RDMA_PS_TCP or RDMA_PS_UDP
+    rdma_port_space = "RC",
 
    in = {
         address = "10.0.0.1:1337",
@@ -164,13 +169,14 @@ nodes = {
         address = "10.0.0.2:1337",
         resolution_timeout = 1000,
 
-        max_wrs = 8192,
+        max_wrs = 4096,
         cq_size = 256,
+        periodic_signaling = 2048,
 
         vectorize = 1,
 
         send_inline = true,
-        max_inline_data = 60,
+        max_inline_data = 128,
 
         use_fallback = true,
     }
