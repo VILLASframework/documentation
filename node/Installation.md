@@ -164,9 +164,9 @@ $ sudo dnf install \
     nanomsg-devel \
     protobuf-devel \
     protobuf-c-devel \
-    libiec61850-devel \
     librabbitmq-devel \
-    mosquitto-devel
+    mosquitto-devel \
+    libiec61850
 ```
 
  2. We offer Dockerfiles for different distributions. These files show you how to setup you own development environment.
