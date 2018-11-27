@@ -2,18 +2,21 @@
 
 - @subpage web-datastructure
 
+In order to get started with the VILLASframework web-interface, you might also want to check our our [demo project](https://git.rwth-aachen.de/acs/public/villas/Demo) which is simple to setup using Docker Compose.
+
 ## Frontend
 
 ### Description
 
-The website itself based on the react javascript framework.
+The website itself based on the React JavaScript framework.
 
 ### Required
+
  - NodeJS with npm
 
 ### Setup
 
- - `git clone git@git.rwth-aachen.de:VILLASframework/VILLASweb.git` to copy the project on your computer
+ - `git clone git@git.rwth-aachen.de:acs/public/villas/VILLASweb.git` to copy the project on your computer
  - `cd VILLASweb`
  - `npm install`
 
@@ -38,7 +41,7 @@ The backend for the website based on NodeJS and express.
 
 ### Setup
 
- - `git clone git@git.rwth-aachen.de:VILLASframework/VILLASweb-backend.git` to copy the project on your computer
+ - `git clone git@git.rwth-aachen.de:acs/public/villas/VILLASweb-backend.git` to copy the project on your computer
  - `cd VILLASweb-backend`
  - `npm install`
 
