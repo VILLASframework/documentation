@@ -2,7 +2,9 @@
 
 ## Architecture
 
-// TODO: add figure
+![](figures/VILLAS_Standard_Setup.svg)
+
+**TODO:** Describe role of components in a few sentences.
 
 ## Installation Steps
 
