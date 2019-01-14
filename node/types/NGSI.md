@@ -1,10 +1,17 @@
 # OMA Next Generation Services Interface {#node-type-ngsi}
 
-The `ngsi` node type implements an interface to FIWARE context brokers following the NGSI 10 RESTful HTTP API.
+The `ngsi` node type implements an interface to FIWARE context brokers.
+Currently version 1 of the RESTful HTTP API is implemented and using NGSI10 for the context management interface.
 
 This implementation if currently limited to the `updateContext` operation.
 Therefore only publishing updates is supported. Subscribtion or polling of events is planned for later versions.
-It's using `libcurl` and `libjansson` to communicate with the context broker over JSON.
+
+# Prerequisites {#node-prereq-ngsi}
+
+This node-type requires to following libraries to communicate with the context broker over JSON:
+
+ - [libjansson](http://www.digip.org/jansson/) (>= 2.7)
+ - [libcurl](https://curl.haxx.se/libcurl/) (>= 7.29.0)
 
 # Implementation {#node-implementation-ngsi}
 

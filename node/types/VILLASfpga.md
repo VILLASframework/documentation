@@ -6,6 +6,10 @@ VILLASfpga is an extension build on top of VILLASnode for realizing hard real-ti
 
 Please look at the main page for details: @ref fpga.
 
+# Prerequisites {#node-prereq-fpga}
+
+# Implementation {#node-implementation-fpga}
+
 # Configuration {#node-config-fpga}
 
 The node configuration is used to define interfaces between the FPGA and Linux host system by means of so called datamover.

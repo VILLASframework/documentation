@@ -2,6 +2,10 @@
 
 The @ref node-type-file node-type can be used to log or replay samples to / from disk.
 
+# Prerequisites {#node-prereq-file}
+
+This node-type does not have any special library dependencies.
+
 # Implementation {#node-implementation-file}
 
 The source code of the node-type is available here:

@@ -1,10 +1,13 @@
 # Real-Time Protocol (RTP & RTCP) {#node-type-rtp}
 
+# Prerequisites {#node-prereq-rtp}
+
+This node-type requires [libre](http://www.creytiv.com/re.html) (>= 0.6.0).
+
 # Implementation {#node-implementation-rtp}
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/rtp.c
-
 
 # Configuration {#node-config-rtp}
 

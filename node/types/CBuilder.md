@@ -11,6 +11,10 @@ The user only has to obey to the specifc structure of CBuilder code.
 
 The file `plugins/simple_circuit.c` is an example for this structure.
 
+# Prerequisites {#node-prereq-cbuilder}
+
+This node-type does not have any special library dependencies. It is always available.
+
 # Implementation {#node-implementation-cbuilder}
 
 The source code of the node-type is available here:

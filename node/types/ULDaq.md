@@ -4,10 +4,9 @@ Interface to [DAQ devices](https://www.mccdaq.com/PDFs/Manuals/Linux-hw.pdf) fro
 
 This interface has been tested with the [MCC USB-200 Series](https://www.mccdaq.com/usb-data-acquisition/USB-200-Series.aspx) as used in RWTH-ACS's Low-Cost PMU.
 
-# Prerequisites
+# Prerequisites {#node-prereq-uldaq}
 
-In order to compile VILLASnode with support for the MCC DAQ Devices, the [libuldaq library](https://github.com/mccdaq/uldaq.gitignore) must be installed in the the system.
-This library is currently not available in common Linux distributions and must be therefore installed from source.
+This node-type requires [libuldaq](https://github.com/mccdaq/uldaq.gitignore) (>= 1.0.0).
 
 # Implementation {#node-implementation-uldaq}
 

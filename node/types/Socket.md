@@ -13,6 +13,12 @@ The implementation supports multiple protocols / OSI layers:
  - Layer 2: Raw IP (internet / VPN routing possible)
  - Layer 3: UDP encapsulation
 
+# Prerequisites {#node-prereq-socket}
+
+This node-type does not have any special library dependencies. It is always available.
+
+Optionally, [libnl3](http://www.infradead.org/~tgr/libnl/) is used to setup network emulation as described in section @ref node-type-socket-netem.
+
 # Implementation {#node-implementation-socket}
 
 The source code of the node-type is available here:

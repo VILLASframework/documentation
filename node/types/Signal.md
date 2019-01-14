@@ -6,7 +6,11 @@ Most commonly it is used for testing when no real simulation data is available.
 
 **Note:** There is also the `villas-signal` tool which has a similar purpose.
 
-# Implementation {#node-implementation-signal-generator}
+# Prerequisites {#node-prereq-signal}
+
+This node-type does not have any special library dependencies. It is always available.
+
+# Implementation {#node-implementation-signal}
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/signal_generator.c

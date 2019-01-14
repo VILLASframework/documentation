@@ -1,5 +1,9 @@
 # Comedi {#node-type-comedi}
 
+# Prerequisites {#node-prereq-comedi}
+
+This node-type requires [comedilib](http://comedi.org) (>= 0.11.0).
+
 # Implementation {#node-implementation-comedi}
 
 The source code of the node-type is available here:

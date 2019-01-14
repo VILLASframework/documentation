@@ -4,6 +4,10 @@ The `websocket` node type send and receives simulation data via binary WebSocket
 
 [The message format](@ref node-type-socket-format) is the same as used by the @ref node-type-socket node-type.
 
+# Prerequisites {#node-prereq-websocket}
+
+This node-type requires [libwebsockets](http://libwebsockets.org) (>= 2.3.0).
+
 # Implementation {#node-implementation-websocket}
 
 The source code of the node-type is available here:
@@ -36,7 +40,7 @@ The node name is separated by a slash `/`.
 nodes = {
 	ws = {
 		type = "websocket"
-		
+
 		destinations = [
 			"ws://someserver:8080/somenode"
 		]

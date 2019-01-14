@@ -2,6 +2,10 @@
 
 The @ref node-type-infiniband node-type implements node communication over the [Infiniband standard](http://www.infinibandta.org/content/pages.php?pg=about_us_infiniband).
 
+# Prerequisites {#node-prereq-infiniband}
+
+This node-type requires [libibverbs](https://github.com/linux-rdma/rdma-core) (>= 16.2) and [librdmacm](https://github.com/linux-rdma/rdma-core) (>= 16.2).
+
 # Implementation {#node-implementation-infiniband}
 
 The source code of the node-type is available here:
@@ -140,7 +144,7 @@ Every sample which is smaller than 60 bytes will be send inline. All other sampl
 
 ## out.use_fallback (boolean) = true {#node-config-infiniband-out-use_fallback}
 
-If an out section with a valid remote entry is present in the configuration file, the node will first bind to the local host channel adapter and subsequentely try to connect to the remote host. If the latter fails (e.g., because the remote host was not reachable or rejected the connection), there are two possible outcomes: the node can throw an error and abort or it can show a warning and continue in listening mode. 
+If an out section with a valid remote entry is present in the configuration file, the node will first bind to the local host channel adapter and subsequentely try to connect to the remote host. If the latter fails (e.g., because the remote host was not reachable or rejected the connection), there are two possible outcomes: the node can throw an error and abort or it can show a warning and continue in listening mode.
 
 If `use_fallback = true`, the node will fallback to listening mode if it is not able to connect to the remote host.
 

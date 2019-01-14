@@ -5,6 +5,10 @@ Internally it is implemented by a FIFO queue.
 
 It can be used to **chain multiple** @ref node-concept-path together by using the same @ref node-type-loopback node as an output node in the first path and as a source in the second path.
 
+# Prerequisites {#node-prereq-loopback}
+
+This node-type does not have any special library dependencies. It is always available.
+
 # Implementation {#node-implementation-loopback}
 
 The source code of the node-type is available here:

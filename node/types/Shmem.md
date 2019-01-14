@@ -2,6 +2,10 @@
 
 The @ref node-type-shmem node-type can be used to quickly exchange samples with a process on the same host using a POSIX shared memory object.
 
+# Prerequisites {#node-prereq-shmem}
+
+This node-type does not have any special library dependencies. It is always available.
+
 # Implementation {#node-implementation-shmem}
 
 The source code of the node-type is available here:

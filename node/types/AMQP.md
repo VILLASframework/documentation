@@ -5,6 +5,10 @@ The @ref node-type-amqp node-type exchanges messages over the AMQP protocol with
 A typical publish/subscribe pattern is used:
 The node automatically declares a _direct_ exchange and dedicated queues for each subscriber.
 
+# Prerequisites {#node-prereq-amqp}
+
+This node-type requires [rabbitmq-c](https://github.com/alanxz/rabbitmq-c) (>= 0.8.0).
+
 # Implementation {#node-implementation-amqp}
 
 The source code of the node-type is available here:
