@@ -1,21 +1,34 @@
-# Guide {#guide}
+# Getting Started {#guide}
 
-## Architecture
+**Important:** This guide is currently under development.
+
+# Abstract
+
+In this document, the user will be guided through the usual process of installing and configuring VILLASframwork.
+The focus of this guide is to highlight the integration of VILLASframework components and to explain their interactions.
+
+Please also have a look at the detailed guides for each component:
+
+- [VILLASnode](@ref node-guide)
+
+# Architecture
 
 ![](figures/VILLAS_Standard_Setup.svg)
 
 **TODO:** Describe role of components in a few sentences.
 
-## Installation Steps
+# Installation Steps
 
----- On Simulation Node -----
+**TODO** Add example configurations and screenshots.
+
+## On Simulation Node
 
 1. Install your favourite Simulation Tool
   - [DPsim](https://git.rwth-aachen.de/acs/public/simulation/dpsim), OPAL-RT, RTDS, ...
 2. Install VILLASnode as Gateway for Simulation Data
 3. Configure VILLASnode to relay data between Simulator and MQTT Broker
 
----- On Cloud Server -----
+## On Cloud Server
 
 1. Install VILLASweb for Visualization / Control / Management
    - Use the [Demo Repo](https://git.rwth-aachen.de/acs/public/villas/Demo) includes for a Docker setup including:

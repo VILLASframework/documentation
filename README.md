@@ -5,7 +5,7 @@
 @subpage framework-architecture
 
 @htmlonly <div style="text-align: center; margin: 2em"><span style="font-size: 1.2em; font-weight: bold; padding: 1em; border: 5px solid #db3e34; border-radius: 20px;"> @endhtmlonly
-For starters we recommand to read the @ref node-guide!
+For starters we recommand to read the @ref guide!
 @htmlonly </span></div> @endhtmlonly
 
 # Components
@@ -27,7 +27,7 @@ The source code of all open source components is available over the [RWTH GitLab
 
 # Licensing
 
-<img alt="GPLv3 logo" src="images/logos/gplv3.png" width="120" align="right"> 
+<img alt="GPLv3 logo" src="images/logos/gplv3.png" width="120" align="right">
 
 __VILLASnode__, __VILLASweb__ and __VILLAScontroller__ are released as open source software under the [GPLv3 license](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
@@ -46,6 +46,6 @@ Steffen Vogel (<stvogel@eonerc.rwth-aachen.de>) is coordinating development of V
 
 <img alt="EONERC ACS Logo" src="images/logos/eonerc_logo.png" align="right" />
 
-[Institute for Automation of Complex Power Systems (ACS)](http://www.acs.eonerc.rwth-aachen.de)  
-[EON Energy Research Center (EONERC)](http://www.eonerc.rwth-aachen.de)  
-[RWTH University Aachen, Germany](http://www.rwth-aachen.de)  
+[Institute for Automation of Complex Power Systems (ACS)](http://www.acs.eonerc.rwth-aachen.de)
+[EON Energy Research Center (EONERC)](http://www.eonerc.rwth-aachen.de)
+[RWTH University Aachen, Germany](http://www.rwth-aachen.de)
