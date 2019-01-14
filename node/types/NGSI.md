@@ -6,6 +6,11 @@ This implementation if currently limited to the `updateContext` operation.
 Therefore only publishing updates is supported. Subscribtion or polling of events is planned for later versions.
 It's using `libcurl` and `libjansson` to communicate with the context broker over JSON.
 
+# Implementation {#node-implementation-ngsi}
+
+The source code of the node-type is available here:
+https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/ngsi.c
+
 # Configuration {#node-config-ngsi}
 
 You can use the @ref node-config-node-vectorize setting to send multiple samples in a vector.

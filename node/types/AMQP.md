@@ -5,6 +5,11 @@ The @ref node-type-amqp node-type exchanges messages over the AMQP protocol with
 A typical publish/subscribe pattern is used:
 The node automatically declares a _direct_ exchange and dedicated queues for each subscriber.
 
+# Implementation {#node-implementation-amqp}
+
+The source code of the node-type is available here:
+https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/amqp.c
+
 # Configuration {#node-config-amqp}
 
 ## format (string) {#node-config-amqp-format}

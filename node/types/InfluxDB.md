@@ -2,6 +2,11 @@
 
 The @ref node-type-influxdb node-type streams simulation data in real-time to a [InfluxDB](https://www.influxdata.com/time-series-platform/influxdb/) time-series database using an [UDP service](https://docs.influxdata.com/influxdb/v0.9/write_protocols/udp/) and a plain text [line protocol]().
 
+# Implementation {#node-implementation-influxdb}
+
+The source code of the node-type is available here:
+https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/influxdb.c
+
 # Configuration {#node-config-influxdb}
 
 ## server (string) {#node-config-influxdb-server}

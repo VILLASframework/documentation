@@ -6,6 +6,11 @@ The @ref node-type-zeromq node-type uses [libzmq] to exchange messages via the [
 
 The @ref node-type-zeromq node-type implements the [publish/subscribe and radio/dish protocols](http://api.zeromq.org/4-2:zmq-socket) provided by libzmq.
 
+# Implementation {#node-implementation-zeromq}
+
+The source code of the node-type is available here:
+https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/zeromq.c
+
 # Configuration {#node-config-zeromq}
 
 ## format (string) {#node-config-zeromq-format}

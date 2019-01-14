@@ -4,6 +4,11 @@ The `websocket` node type send and receives simulation data via binary WebSocket
 
 [The message format](@ref node-type-socket-format) is the same as used by the @ref node-type-socket node-type.
 
+# Implementation {#node-implementation-websocket}
+
+The source code of the node-type is available here:
+https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/websocket.c
+
 # Configuration {#node-config-websocket}
 
 By default the @ref node-usage-node daemon listens on @ref node-config-http-port for HTTP and WebSocket requests.

@@ -2,6 +2,12 @@
 
 The @ref node-type-shmem node-type can be used to quickly exchange samples with a process on the same host using a POSIX shared memory object.
 
+# Implementation {#node-implementation-shmem}
+
+The source code of the node-type is available here:
+https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/shmem.c
+
+
 # Configuration {#node-config-shmem}
 
 The only required configuration option is the `name` option; all others are optional with reasonable defaults.

@@ -10,3 +10,8 @@ This enables easy cross-compilation of CBuilder code for VILLASnode.
 The user only has to obey to the specifc structure of CBuilder code.
 
 The file `plugins/simple_circuit.c` is an example for this structure.
+
+# Implementation {#node-implementation-cbuilder}
+
+The source code of the node-type is available here:
+https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/cbuilder.c

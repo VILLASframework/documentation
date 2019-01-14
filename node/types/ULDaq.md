@@ -9,8 +9,12 @@ This interface has been tested with the [MCC USB-200 Series](https://www.mccdaq.
 In order to compile VILLASnode with support for the MCC DAQ Devices, the [libuldaq library](https://github.com/mccdaq/uldaq.gitignore) must be installed in the the system.
 This library is currently not available in common Linux distributions and must be therefore installed from source.
 
+# Implementation {#node-implementation-uldaq}
 
-# Configuration
+The source code of the node-type is available here:
+https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/uldaq.c
+
+# Configuration {#node-config-uldaq}
 
 ## device_id (string) ${node-config-uldaq-device_id}
 

@@ -2,6 +2,11 @@
 
 The @ref node-type-infiniband node-type implements node communication over the [Infiniband standard](http://www.infinibandta.org/content/pages.php?pg=about_us_infiniband).
 
+# Implementation {#node-implementation-infiniband}
+
+The source code of the node-type is available here:
+https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/infiniband.c
+
 # Configuration {#node-config-infiniband}
 
 Every `infiniband` node can be configured to only read or write or to do both at the same time. The node configuration is divided into two sub-groups: `in` and `out`.

@@ -5,6 +5,11 @@ Internally it is implemented by a FIFO queue.
 
 It can be used to **chain multiple** @ref node-concept-path together by using the same @ref node-type-loopback node as an output node in the first path and as a source in the second path.
 
+# Implementation {#node-implementation-loopback}
+
+The source code of the node-type is available here:
+https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/loopback.c
+
 # Configuration {#node-config-loopback}
 
 ## queuelen (integer) {#node-config-loopback-queuelen}

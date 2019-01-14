@@ -2,6 +2,11 @@
 
 The @ref node-type-mqtt node-type uses [libmosquitto] to publish and subscribe messages via the [MQTT](http://mqtt.org) protocol. It is similiar to the @ref node-type-amqp node-type.
 
+# Implementation {#node-implementation-mqtt}
+
+The source code of the node-type is available here:
+https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/mqtt.c
+
 # Configuration {#node-config-mqtt}
 
 ## format (string) {#node-config-mqtt-format}

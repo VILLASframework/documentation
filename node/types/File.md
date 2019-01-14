@@ -2,6 +2,11 @@
 
 The @ref node-type-file node-type can be used to log or replay samples to / from disk.
 
+# Implementation {#node-implementation-file}
+
+The source code of the node-type is available here:
+https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/file.c
+
 # Configuration {#node-config-file}
 
 Every `file` node can be configured to only read or write or to do both at the same time.

@@ -13,6 +13,11 @@ The implementation supports multiple protocols / OSI layers:
  - Layer 2: Raw IP (internet / VPN routing possible)
  - Layer 3: UDP encapsulation
 
+# Implementation {#node-implementation-socket}
+
+The source code of the node-type is available here:
+https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/socket.c
+
 # Configuration {#node-config-socket}
 
 Every `socket` node supports the following special settings:

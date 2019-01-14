@@ -3,6 +3,14 @@
 The @ref node-type-test-rtt node-type is a virtual node-type which can be used to measure round-trip time to other nodes.
 The `test_rtt` nodes periodically generate probes which must be looped back via a second node:
 
+# Implementation {#node-implementation-test-rtt}
+
+The source code of the node-type is available here:
+https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/test_rtt.c
+
+
+# Configuration {#node-config-test-rtt}
+
 ```conf
 stats = 1
 
