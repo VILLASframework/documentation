@@ -4,7 +4,7 @@ The @ref node-type-file node-type can be used to log or replay samples to / from
 
 # Prerequisites {#node-prereq-file}
 
-This node-type does not have any special library dependencies.
+This node-type does not have any special library dependencies. It is always available.
 
 # Implementation {#node-implementation-file}
 
