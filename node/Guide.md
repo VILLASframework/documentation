@@ -1,4 +1,4 @@
-# Getting started guide {#node-guide}
+# Getting Started with VILLASnode {#node-guide}
 
 [TOC]
 
