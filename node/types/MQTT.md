@@ -35,8 +35,12 @@ nodes = {
 		retain = false,
 		qos = 0,
 
-		publish = "test-topic",
-		subscribe = "test-topic",
+        out = {
+		    publish = "test-topic"
+		},
+        in = {
+            subscribe = "test-topic"
+        },
 
 		ssl = {
 			enabled = false,
