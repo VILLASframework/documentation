@@ -117,7 +117,7 @@ VILLASnode currently has the following list of dependencies:
  - [mosquitto](https://mosquitto.org) (>= 1.4.15) for the @ref node-type-mqtt node-type (_optional_).
  - [comedilib](http://comedi.org) (>= 0.11.0) for the @ref node-type-comedi node-type (_optional_).
  - [libuldaq](https://github.com/mccdaq/uldaq) (>= 1.0.0) for the @ref node-type-uldaq node-type (_optional_)
- - [libre](http://www.creytiv.com/re.html) (>= 0.6.0) for the @ref node-type-rtp node-type (_optional_)
+ - [libre](http://www.creytiv.com/re.html) (>= 0.5.6) for the @ref node-type-rtp node-type (_optional_)
  - [libibverbs](https://github.com/linux-rdma/rdma-core) (>= 16.2) and [librdmacm](https://github.com/linux-rdma/rdma-core) (>= 16.2) for the @ref node-type-infiniband node-type (_optional_)
  - [libOpal{AsyncApi,Core,Utils}](https://git.rwth-aachen.de/acs/public/villas/libopal) for running VILLASnode as an Asynchronous process inside your RT-LAB model with @ref node-type-opal node-type (_optional_).
  - [Etherlab](http://etherlab.org) (>= 1.5.2) for the @ref node-type-ethercat node-type (_optional_)
