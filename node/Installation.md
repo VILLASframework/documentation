@@ -135,6 +135,7 @@ Use the following command to install the dependencies under Debian/Ubuntu-based 
 $ sudo apt-get install \
     gcc g++ \
     pkg-config make cmake ninja-build \
+    protobuf-compiler protobuf-c-compiler
     texinfo git curl \
     doxygen dia graphviz \
     libssl-dev \
@@ -162,27 +163,28 @@ $ sudo dnf config-manager --add-repo https://packages.fein-aachen.org/fedora/fei
 $ sudo dnf install \
     gcc gcc-c++ \
     pkgconfig make cmake ninja-build \
+    protobuf-compiler protobuf-c-compiler
     texinfo git curl tar \
     doxygen dia graphviz \
     openssl-devel \
-	protobuf-devel \
-	protobuf-c-devel \
-	libuuid-devel \
-	libconfig-devel \
-	libnl3-devel \
-	libcurl-devel \
-	jansson-devel \
-	libwebsockets-devel \
-	zeromq-devel \
-	nanomsg \
-	libiec61850 \
-	librabbitmq-devel \
-	mosquitto-devel \
-	comedilib-devel \
-	libibverbs-devel \
-	librdmacm-devel \
-	re-devel \
-	uldaq-devel
+    protobuf-devel \
+    protobuf-c-devel \
+    libuuid-devel \
+    libconfig-devel \
+    libnl3-devel \
+    libcurl-devel \
+    jansson-devel \
+    libwebsockets-devel \
+    zeromq-devel \
+    nanomsg \
+    libiec61850 \
+    librabbitmq-devel \
+    mosquitto-devel \
+    comedilib-devel \
+    libibverbs-devel \
+    librdmacm-devel \
+    re-devel \
+    uldaq-devel
 ```
 
  2. We offer Dockerfiles for different distributions. These files show you how to setup you own development environment.
