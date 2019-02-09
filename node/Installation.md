@@ -224,6 +224,7 @@ Install the files to your search path:
 
 ```
 $ sudo make install
+$ sudo ldconfig
 ```
 
 Append `PREFIX=/opt/local` to change the installation destination.
