@@ -139,20 +139,20 @@ $ sudo apt-get install \
     doxygen dia graphviz \
     libssl-dev \
     libprotobuf-dev \
-	libprotobuf-c-dev \
-	uuid-dev \
-	libconfig-dev \
-	libnl-3-dev libnl-route-3-dev \
-	libcurl4-openssl-dev \
-	libjansson-dev \
-	libzmq3-dev \
-	libnanomsg-dev \
-	librabbitmq-dev \
-	libmosquitto-dev \
-	libcomedi-dev \
-	libibverbs-dev \
-	librdmacm-dev \
-	libre-dev
+    libprotobuf-c-dev \
+    uuid-dev \
+    libconfig-dev \
+    libnl-3-dev libnl-route-3-dev \
+    libcurl4-openssl-dev \
+    libjansson-dev \
+    libzmq3-dev \
+    libnanomsg-dev \
+    librabbitmq-dev \
+    libmosquitto-dev \
+    libcomedi-dev \
+    libibverbs-dev \
+    librdmacm-dev \
+    libre-dev
 ```
 
 or the following line for Fedora/CentOS/Redhat systems:
