@@ -137,7 +137,7 @@ $ sudo apt-get install \
     pkg-config make cmake ninja-build \
     texinfo git curl \
     doxygen dia graphviz \
-    ibssl-dev \
+    libssl-dev \
 	libprotobuf-dev \
 	libprotobuf-c-dev \
 	uuid-dev \
