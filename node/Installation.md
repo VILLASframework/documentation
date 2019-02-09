@@ -138,7 +138,7 @@ $ sudo apt-get install \
     texinfo git curl \
     doxygen dia graphviz \
     libssl-dev \
-	libprotobuf-dev \
+    libprotobuf-dev \
 	libprotobuf-c-dev \
 	uuid-dev \
 	libconfig-dev \
