@@ -135,7 +135,7 @@ Use the following command to install the dependencies under Debian/Ubuntu-based 
 $ sudo apt-get install \
     gcc g++ \
     pkg-config make cmake ninja-build \
-    protobuf-compiler protobuf-c-compiler
+    protobuf-compiler protobuf-c-compiler \
     texinfo git curl \
     doxygen dia graphviz \
     libssl-dev \
@@ -163,7 +163,7 @@ $ sudo dnf config-manager --add-repo https://packages.fein-aachen.org/fedora/fei
 $ sudo dnf install \
     gcc gcc-c++ \
     pkgconfig make cmake ninja-build \
-    protobuf-compiler protobuf-c-compiler
+    protobuf-compiler protobuf-c-compiler \
     texinfo git curl tar \
     doxygen dia graphviz \
     openssl-devel \
