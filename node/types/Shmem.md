@@ -16,7 +16,9 @@ https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/s
 
 The only required configuration option is the `name` option; all others are optional with reasonable defaults.
 
-## name (string) {#node-config-shmem-name}
+## in.name (string) {#node-config-shmem-in-name}
+
+## out.name (string) {#node-config-shmem-out-name}
 
 Name of the POSIX shared memory object. Must start with a forward slash (`/`).
 The same name should be passed to the external program somehow in its

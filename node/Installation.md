@@ -13,7 +13,7 @@ See: @ref liveusb
 
 # From RPM packages {#node-installation-rpm}
 
-We offer pre-build RPM packages for Fedora / Redhat based distributions.
+We offer pre-build RPM packages for Fedora/Redhat based distributions.
 
 **Note:** These packages have only been tested with Fedora 29. Other distributions or version might work as well but might have unresolvable dependencies.
 
@@ -52,7 +52,6 @@ Install  3 Packages
 Total download size: 4 M
 Installed size: 15 M
 Is this ok [y/N]:
-
 ...
 ```
 
@@ -96,11 +95,14 @@ This process has been tested with the following Linux distributions:
  - Fedora 29
  - Debian 9 (Stretch)
  - Ubuntu 18.04 (Bionic Beaver)
+   - **Note:** libwebsockets needs to be installed from source. Packaged version is outdated.
  - Centos 7
 
 ## Prerequisites
 
 VILLASnode currently has the following list of dependencies:
+
+ - [CMake](http://cmake.org/) (>= 3.9) for generating the build-system (_required_).
 
  - [libwebsockets](http://libwebsockets.org) (>= 2.3.0) for the @ref node-type-websocket node-type (_required_).
  - [libjansson](http://www.digip.org/jansson/) (>= 2.7) JSON parser for @ref node-type-websocket and @ref node-type-ngsi node-types (_required_).
@@ -117,9 +119,9 @@ VILLASnode currently has the following list of dependencies:
  - [mosquitto](https://mosquitto.org) (>= 1.4.15) for the @ref node-type-mqtt node-type (_optional_).
  - [comedilib](http://comedi.org) (>= 0.11.0) for the @ref node-type-comedi node-type (_optional_).
  - [libuldaq](https://github.com/mccdaq/uldaq) (>= 1.0.0) for the @ref node-type-uldaq node-type (_optional_)
- - [libre](http://www.creytiv.com/re.html) (>= 0.6.0) for the @ref node-type-rtp node-type (_optional_)
+ - [libre](http://www.creytiv.com/re.html) (>= 0.5.6) for the @ref node-type-rtp node-type (_optional_)
  - [libibverbs](https://github.com/linux-rdma/rdma-core) (>= 16.2) and [librdmacm](https://github.com/linux-rdma/rdma-core) (>= 16.2) for the @ref node-type-infiniband node-type (_optional_)
- - [libOpal{AsyncApi,Core,Utils}](https://git.rwth-aachen.de/acs/public/villas/libopal) for running VILLASnode as an Asynchronous process inside your RT-LAB model (_optional_).
+ - [libOpal{AsyncApi,Core,Utils}](https://git.rwth-aachen.de/acs/public/villas/libopal) for running VILLASnode as an Asynchronous process inside your RT-LAB model with @ref node-type-opal node-type (_optional_).
  - [Etherlab](http://etherlab.org) (>= 1.5.2) for the @ref node-type-ethercat node-type (_optional_)
  - [Criterion](https://github.com/Snaipe/Criterion) (>= 2.3.1) for running the unit tests (_optional_).
 
@@ -127,71 +129,83 @@ There are three ways to install these dependencies:
 
 1. You can install most of the dependencies using the package manger of your Linux distribution:
 
-Use the following command to install the dependencies under Debian-based distributions:
+Use the following command to install the dependencies under Debian/Ubuntu-based distributions:
 
 ```
 $ sudo apt-get install \
     gcc g++ \
     pkg-config make cmake ninja-build \
+    protobuf-compiler protobuf-c-compiler \
     texinfo git curl \
     doxygen dia graphviz \
     libssl-dev \
-    libconfig-dev \
-    libnl-3-dev libnl-route-3-dev \
-    libjansson-dev \
-    libcurl4-openssl-dev \
-    libzmq3-dev \
-    libnanomsg-dev
     libprotobuf-dev \
     libprotobuf-c-dev \
+    uuid-dev \
+    libconfig-dev \
+    libnl-3-dev libnl-route-3-dev \
+    libcurl4-openssl-dev \
+    libjansson-dev \
+    libzmq3-dev \
+    libnanomsg-dev \
     librabbitmq-dev \
     libmosquitto-dev \
-    libcomedi-dev
+    libcomedi-dev \
+    libibverbs-dev \
+    librdmacm-dev \
+    libre-dev
 ```
 
-or the following line for Fedora / CentOS / Redhat systems:
+or the following line for Fedora/CentOS/Redhat systems:
 
 ```
+$ sudo dnf config-manager --add-repo https://packages.fein-aachen.org/fedora/fein.repo
 $ sudo dnf install \
     gcc gcc-c++ \
     pkgconfig make cmake ninja-build \
+    protobuf-compiler protobuf-c-compiler \
     texinfo git curl tar \
     doxygen dia graphviz \
     openssl-devel \
-    libconfig-devel \
-    libnl3-devel \
-    jansson-devel \
-    libcurl-devel \
-    zeromq-devel \
-    nanomsg-devel \
     protobuf-devel \
     protobuf-c-devel \
+    libuuid-devel \
+    libconfig-devel \
+    libnl3-devel \
+    libcurl-devel \
+    jansson-devel \
+    libwebsockets-devel \
+    zeromq-devel \
+    nanomsg \
+    libiec61850 \
     librabbitmq-devel \
     mosquitto-devel \
-    libiec61850
+    comedilib-devel \
+    libibverbs-devel \
+    librdmacm-devel \
+    re-devel \
+    uldaq-devel
 ```
 
  2. We offer Dockerfiles for different distributions. These files show you how to setup you own development environment.
 
  - Fedora: `Dockerfile.dev`
  - Centos: `Dockerfile.dev-centos`
- - Debian / Ubuntu: `Dockerfile.dev-ubuntu`
+ - Debian/Ubuntu: `Dockerfile.dev-ubuntu`
 
 For convinience simple make targets are availble:
 
-- `cmake .. && make docker`: Build Fedora-based Docker image with VILLASnode installed
 - `cmake .. && make run-docker-dev`: Start Docker container with Fedora development environment
 - `cmake .. && make run-docker-dev-centos`: Start Docker container with CentOS development environment
 - `cmake .. && make run-docker-dev-ubuntu`: Start Docker container with CentOS development environment
+- `cmake .. && make docker`: Build Fedora-based Docker image with VILLASnode installed
 
 ## Downloading from Git
 
 ```
-$ git -c submodule."thirdparty/libopal".update=none clone --recursive https://git.rwth-aachen.de/acs/public/villas/VILLASnode.git
+$ git clone --recursive https://git.rwth-aachen.de/acs/public/villas/VILLASnode.git
 $ cd VILLASnode
 ```
-
-**Note:** The libopal submodule contains software from OPAL-RT which we can not release. Therefore we do not try to clone it by default. Please contact [Steffen Vogel](mailto:svogel2@eonerc.rwth-aachen.de) to get access.
 
 ## Compilation
 
@@ -201,9 +215,7 @@ Start the compilation with:
 $ mkdir build
 $ cd build
 $ cmake ..
-$ make
-$ make doc
-$ make run-tests
+$ make -j$(nproc)
 ```
 
 ## Installation
@@ -211,7 +223,8 @@ $ make run-tests
 Install the files to your search path:
 
 ```
-$ make install
+$ sudo make install
+$ sudo ldconfig
 ```
 
 Append `PREFIX=/opt/local` to change the installation destination.

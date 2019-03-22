@@ -23,7 +23,7 @@ Every node is an instance of a node-type. VILLASnode currently supports the foll
 | @subpage node-type-iec61850-8-1 | ?                |       | yes  | yes   | 1         | alpha      | |
 | @subpage node-type-iec61850-9-2 | ?                |       | yes  | yes   | 1         | beta       | |
 | @subpage node-type-opal         | ?                | Poll  | yes  | yes   | 1         | deprecated | |
-| @subpage node-type-ngsi         | ?                | AIO   | yes  | yes   | unlimited | deprecated | Use WebSockets for Live data |
+| @subpage node-type-ngsi         | ?                | AIO   | yes  | yes   | unlimited | stable | Use WebSockets for Live data |
 | @subpage node-type-uldaq        | ?                | Poll  | yes  | no    | unlimited | stable     | |
 | @subpage node-type-rtp          | ?                | Poll  | yes  | yes   | ?         | beta       | |
 | @subpage node-type-ethercat     | ?                | Poll  | yes  | yes   | ?         | alpha      | |
