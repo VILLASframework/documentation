@@ -1,0 +1,3 @@
+[submodule "node/external-code"]
+	path = node/external-code
+	url = https://git.rwth-aachen.de/acs/public/villas/VILLASnode.git
