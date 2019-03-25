@@ -1,4 +1,7 @@
 html/
+xml/
+searchdata.xml
+villas.tag
 figures/dia/*.svg
 doxygen_sqlite3.db
 warnings.log
