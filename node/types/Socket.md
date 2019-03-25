@@ -76,17 +76,33 @@ Check if source address of incoming packets matches the remote address.
 Enables and configures the network emulation qeueing discipline.
 See below for a more detailed description of this feature.
 
-```
-netem = {				# Network emulation settings
-					# Those settings can be specified for each node invidually!
-	delay		= 100000,	# Additional latency in microseconds
-	jitter		= 30000,	# Jitter in uS
-	distribution	= "normal",	# Distribution of delay: uniform, normal, pareto, paretonormal
-	loss		= 10		# Packet loss in percent
-	duplicate	= 10,		# Duplication in percent
-	corrupt 	= 10		# Corruption in percent
-}
-```
+## netem.enabled (boolean) = true {#node-config-node-socket-netem-enabled}
+
+Weather or not network emulation is active.
+
+## netem.delay (integer) {#node-config-node-socket-netem-delay}
+
+Additional latency in micro seconds.
+
+## netem.jitter (integer) {#node-config-node-socket-netem-jitter}
+
+Packet delay jitter in micro seconds.
+
+## netem.distribution (string: "normal" | "uniform" | "pareto" | "paretonormal") {#node-config-node-socket-netem-distribution}
+
+Distribution of delay: uniform, normal, pareto, paretonormal
+
+## netem.loss (integer) {#node-config-node-socket-netem-loss}
+
+Packet loss in percent.
+
+## netem.duplicate (integer) {#node-config-node-socket-netem-duplicate}
+
+Packet duplication in percent.
+
+## netem.corrupt (integer) {#node-config-node-socket-netem-corrupt}
+
+Packet corruption in percent.
 
 ## multicast (dictionary) {#node-config-node-socket-multicast}
 
@@ -94,16 +110,24 @@ The @ref node-type-socket support sending and receiving IP / UDP packets to and 
 
 **Note:** Multicast is only supported by IPv4 addressing. Using these settings with `layer = eth` or IPv6 adresses will fail!
 
-```
-multicast = {				# IGMP multicast is only support for layer = (ip|udp)
-	enabled		= true,
+## multicast.enabled (boolean) = true {#node-config-node-socket-multicast-enabled}
 
-	group		= "224.1.2.3",	# The multicast group. Must be within 224.0.0.0/4
-	interface	= "1.2.3.4",	# The IP address of the interface which should receive multicast packets.
-	ttl		= 128,		# The time to live for outgoing multicast packets.
-	loop		= false,	# Whether or not to loopback outgoing multicast packets to the local host.
-}
-```
+Weather or not multicast group subscription is active.
+
+## multicast.group (string: IPv4 Address) {#node-config-node-socket-multicast-group}
+
+The multicast group. Must be within 224.0.0.0/4
+
+## multicast.interface (string: IPv4 Address) {#node-config-node-socket-multicast-interface}
+
+The IP address of the interface which should receive multicast packets.
+
+## multicast.ttl (integer) {#node-config-node-socket-multicast-ttl}
+
+The time to live for outgoing multicast packets.
+
+## multicast.loop (boolean) {#node-config-node-socket-multicast-loop}
+
 
 ## Example
 
