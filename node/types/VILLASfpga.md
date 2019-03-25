@@ -40,14 +40,3 @@ Weather or not to polling / interrupts to wait for new samples from the FPGA.
 
 ### Example
 
-```
-nodes = {
-	rtds = {
-		type = "fpga",
-
-		card = "vc707",
-		datamover = "dma_0",
-		use_irqs = false
-	}
-}
-```

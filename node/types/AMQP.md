@@ -38,26 +38,4 @@ The routing key of published messages as well as the routing key which is used t
 
 ## Example
 
-```
-nodes = {
-	amqp_node = {
-		type = "amqp",
-		format = "json",
-
-		# Use 'amqps://' to enable SSL/TLS
-		uri = "amqp://username:password@hostname:port/vhost",
-
-		exchange = "mytestexchange",
-		routing_key = "abc",
-
-		ssl = {
-			verify_hostname = true,
-			verify_peer = true,
-
-			ca_cert = "/path/to/ca.crt",
-			client_cert = "/path/to/client.crt",
-			client_key = "/path/to/client.key"
-		}
-	}
-}
-```
+@include node/nodes/amqp.conf

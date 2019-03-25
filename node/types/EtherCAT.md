@@ -12,3 +12,7 @@ The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/ethercat.c
 
 # Configuration {#node-config-node-ethercat}
+
+## Example
+
+@include node/nodes/ethercat.conf

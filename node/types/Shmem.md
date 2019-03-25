@@ -47,6 +47,10 @@ Optional name and command-line arguments (as passed to `execve`) of a command
 to be executed during node startup. This can be used to start the external
 program directly from VILLASNode. If unset, no command is executed.
 
+## Example
+
+@include node/nodes/shmem.conf
+
 # API for external programs {#node-type-shmem-api}
 
 The actual sharing of data is implemented by putting two shared `struct queue`s

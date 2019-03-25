@@ -30,15 +30,4 @@ Specify the synchronization mode of the internal queue.
 
 ## Example
 
-```
-nodes = {
-	loopback_node = {
-		type = "loopback",	# A loopback node will receive exactly the same data which has been sent to it.
-					# The internal implementation is based on queue.
-
-		queuelen = 1024		# The queue length of the internal queue which buffers the samples.
-		samplelen = 64		# Each buffered sample can contain up to 64 values.
-		mode = "polling"	# Use busy polling for synchronization of the read and write side of the queue
-	}
-}
-```
+@include node/nodes/loopback.conf

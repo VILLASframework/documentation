@@ -42,21 +42,5 @@ The @ref node-type-nanomsg supports several different transport mechanisms which
 
 ## Example
 
-```
-nodes = {
-	nanomsg_node = {
-		type = "nanomsg",
+@include node/nodes/nanomsg.conf
 
-		publish = [
-			"tcp://*:12000",		# TCP socket
-			"ipc:///tmp/test.ipc",		# Interprocess communication
-			"inproc://test"			# Inprocess communication
-		],
-		subscribe = [
-			"tcp://127.0.0.1:12000",
-			"ipc:///tmp/test.ipc",
-			"inproc://test"
-		]
-	},
-}
-```

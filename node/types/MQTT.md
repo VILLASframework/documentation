@@ -42,36 +42,4 @@ The port number of the MQTT broker.
 
 ## Example
 
-```
-nodes = {
-	mqtt_node = {
-		type = "mqtt",
-
-		format = "protobuf",
-
-		username = "guest",
-		password = "guest",
-		host = "localhost",
-		port = 1883,
-
-		keepalive = 5,
-		retain = false,
-		qos = 0,
-
-        out = {
-		    publish = "test-topic"
-		},
-        in = {
-            subscribe = "test-topic"
-        },
-
-		ssl = {
-			enabled = false,
-			insecure = true,
-			cafile = "/etc/ssl/certs/ca-bundle.crt",
-			certfile = "/etc/ssl/certs/my.crt",
-			keyfile = "/etc/ssl/keys/my.key"
-		}
-	}
-}
-```
+@include node/nodes/mqtt.conf

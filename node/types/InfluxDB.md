@@ -32,16 +32,4 @@ See also: [InfluxDB documentation](https://docs.influxdata.com/influxdb/v0.9/wri
 
 ## Example
 
-```
-nodes = {
-	influxdb_node = {
-		type = "influxdb",
-
-		server = "localhost:8089",
-		key = "villas",
-		fields = [
-			"a", "b", "c"
-		]
-	}
-}
-```
+@include node/nodes/influxdb.conf

@@ -79,21 +79,4 @@ https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/u
 
 # Example
 
-```
-	ul201 = {
-		type = "uldaq"
-
-		interface_type = "usb"
-
-		in = {
-			range = "bipolar-10",
-			input_mode = "single-ended"
-			signals = (
-				{ name = "ch0", type = "float", channel = 0 }
-			)
-
-			sample_rate = 5000,
-			vectorize = 100
-		}
-	},
-```
+@include node/nodes/uldaq.conf

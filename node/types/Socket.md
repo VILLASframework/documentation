@@ -107,47 +107,18 @@ multicast = {				# IGMP multicast is only support for layer = (ip|udp)
 
 ## Example
 
-```
-udp_node = {					# The dictionary is indexed by the name of the node.
-	type	= "socket",			# Type can be one of: socket, opal, file, gtfpga, ngsi
-						# Start the server without arguments for a list of supported node types.
+### UDP layer
+@include node/nodes/udp.conf
 
-### The following settings are specific to the socket node-type!! ###
+### Ethernet layer
+@include node/nodes/ethernet.conf
 
-	layer	= "udp",			# Layer can be one of:
-						#   udp                    Send / receive UDP packets
-						#   ip                     Send / receive IP packets
-						#   eth                    Send / receive raw Ethernet frames (IEEE802.3)
+### Network Emulation (netem)
+@include node/nodes/netem.conf
 
-	header	= "gtnet-skt:fake",		# Header can be one of:
-						#   default | villas       Use VILLASnode protocol (see struct msg) (default)
-						#   none | gtnet-skt       Use no header, send raw data as used by RTDS GTNETv2-SKT
-						#   fake | gtnet-skt:fake  Same as 'none', but use first three data values as
-						#                             sequence, seconds & nanoseconds timestamp
-						#                             In this mode values are uint32_t not floats!
+### Receive multicast traffic
+@include node/nodes/multicast.conf
 
-	endian = "network",			# Endianess of header and data:
-						#   big | network          Use big endianess. Also know as network byte order (default)
-						#   little                 Use little endianess.
-
-	verify_source = true, 			# Check if source address of incoming packets matches the remote address.
-
-	local	= "127.0.0.1:12001",		# This node only received messages on this IP:Port pair
-	remote	= "127.0.0.1:12000",		# This node sents outgoing messages to this IP:Port pair
-
-	vectorize = 30,				# Receive and sent 30 samples per message (combining).
-
-	netem = {				# Network emulation settings
-						# Those settings can be specified for each node invidually!
-		delay		= 100000,	# Additional latency in microseconds
-		jitter		= 30000,	# Jitter in uS
-		distribution	= "normal",	# Distribution of delay: uniform, normal, pareto, paretonormal
-		loss		= 10		# Packet loss in percent
-		duplicate	= 10,		# Duplication in percent
-		corrupt 	= 10		# Corruption in percent
-	}
-}
-```
 # Packet Format {#node-type-socket-format}
 
 Simulation data is sent in UDP (or IP, or Ethernet) packets over standard IP / Ethernet networks.

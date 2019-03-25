@@ -4,6 +4,12 @@
 
 This node-type requires [comedilib](http://comedi.org) (>= 0.11.0).
 
+# Configuration {#node-config-node-comedi}
+
+## Example
+
+@include node/nodes/comedi.conf
+
 # Implementation {#node-implementation-comedi}
 
 The source code of the node-type is available here:

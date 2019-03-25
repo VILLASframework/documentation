@@ -13,6 +13,8 @@ https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/r
 
 ## Example
 
+@include node/nodes/rtp.conf
+
 # Further reading
 
 - https://en.wikipedia.org/wiki/Real-time_Transport_Protocol
