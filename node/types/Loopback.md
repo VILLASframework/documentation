@@ -14,17 +14,17 @@ This node-type does not have any special library dependencies. It is always avai
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/loopback.c
 
-# Configuration {#node-config-loopback}
+# Configuration {#node-config-node-loopback}
 
-## queuelen (integer) {#node-config-loopback-queuelen}
+## queuelen (integer) {#node-config-node-loopback-queuelen}
 
 The queue length of the internal queue which buffers the samples.
 
-## samplelen (integer) {#node-config-loopback-samplelen}
+## samplelen (integer) {#node-config-node-loopback-samplelen}
 
 The number of values each buffered sample can store.
 
-## mode (string: "pthread" | "polling" | "pipe" | "eventfd" | "auto") = "auto" {#node-config-loopback-mode}
+## mode (string: "pthread" | "polling" | "pipe" | "eventfd" | "auto") = "auto" {#node-config-node-loopback-mode}
 
 Specify the synchronization mode of the internal queue.
 

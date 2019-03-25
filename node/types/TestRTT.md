@@ -12,7 +12,7 @@ This node-type does not have any special library dependencies. It is always avai
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/test_rtt.c
 
-# Configuration {#node-config-test-rtt}
+# Configuration {#node-config-node-test-rtt}
 
 ```conf
 stats = 1
@@ -53,7 +53,7 @@ paths = (
 )
 ```
 
-# Configuration {#node-config-test-rtt}
+# Configuration {#node-config-node-test-rtt}
 
 ## Example
 

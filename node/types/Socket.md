@@ -24,29 +24,29 @@ Optionally, [libnl3](http://www.infradead.org/~tgr/libnl/) is used to setup netw
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/socket.c
 
-# Configuration {#node-config-socket}
+# Configuration {#node-config-node-socket}
 
 Every `socket` node supports the following special settings:
 
-## format (string) {#node-config-socket-format}
+## format (string) {#node-config-node-socket-format}
 
 The payload format which is used to encode and decode exchanged messages.
 
-## local (string: "ip:port" | "mac:protocol") {#node-config-socket-local}
+## local (string: "ip:port" | "mac:protocol") {#node-config-node-socket-local}
 
 The local address and port number this node should listen for incoming packets.
 
 Use `*` to listen on all interfaces: `local = "*:12000"`.
 
-## remote (string: "ip:port" | "mac:protocol") {#node-config-socket-remote}
+## remote (string: "ip:port" | "mac:protocol") {#node-config-node-socket-remote}
 
 The address and port number of the remote endpoint of this node for outgoing packets.
 
-## layer (string: "udp" | "ip" | "eth") {#node-config-socket-layer}
+## layer (string: "udp" | "ip" | "eth") {#node-config-node-socket-layer}
 
 Select the network layer which should be used for the socket. Please note that `eth` can only be used locally in a LAN as it contains no routing information for the internet.
 
-## header (string: "villas" | "default" | "gtnet-skt" | "none" | "gtnet-skt:fake" | "fake") = "villas" {#node-config-socket-header}
+## header (string: "villas" | "default" | "gtnet-skt" | "none" | "gtnet-skt:fake" | "fake") = "villas" {#node-config-node-socket-header}
 
 The socket node-type supports multiple protocols:
 
@@ -61,17 +61,17 @@ Only the first three values will have a special interpretation:
    - Timestamp seconds ([Unix time](https://en.wikipedia.org/wiki/Unix_time), `uint32_t`)
    - Timestamp nano-seconds  ([Unix time](https://en.wikipedia.org/wiki/Unix_time), `uint32_t`)
 
-## endian (string: "big" | "network" | "little") = "big" {#node-config-socket-endian}
+## endian (string: "big" | "network" | "little") = "big" {#node-config-node-socket-endian}
 
 This setting is only valid for the `none` and `fake` protocols.
-If setting @ref node-config-socket-header is set to `villas`, the data is always interpreted in network (big) endianess.
+If setting @ref node-config-node-socket-header is set to `villas`, the data is always interpreted in network (big) endianess.
 It select the endianes which is used for outgoing and incoming data.
 
-## verify_source (boolean) = false {#node-config-socket-verify_source}
+## verify_source (boolean) = false {#node-config-node-socket-verify_source}
 
 Check if source address of incoming packets matches the remote address.
 
-## netem (dictionary) {#node-config-socket-netem}
+## netem (dictionary) {#node-config-node-socket-netem}
 
 Enables and configures the network emulation qeueing discipline.
 See below for a more detailed description of this feature.
@@ -88,7 +88,7 @@ netem = {				# Network emulation settings
 }
 ```
 
-## multicast (dictionary) {#node-config-socket-multicast}
+## multicast (dictionary) {#node-config-node-socket-multicast}
 
 The @ref node-type-socket support sending and receiving IP / UDP packets to and from multicast addresses.
 

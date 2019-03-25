@@ -16,19 +16,19 @@ This node-type requires [libzmq](http://zeromq.org) (>= 2.2.0).
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/zeromq.c
 
-# Configuration {#node-config-zeromq}
+# Configuration {#node-config-node-zeromq}
 
-## format (string) {#node-config-zeromq-format}
+## format (string) {#node-config-node-zeromq-format}
 
 The payload format which is used to encode and decode exchanged messages.
 
-## filter (string: "pubsub" | "radiodish") {#node-config-zeromq-pattern}
+## filter (string: "pubsub" | "radiodish") {#node-config-node-zeromq-pattern}
 
-## publish (string: uri) {#node-config-zeromq-publish}
+## publish (string: uri) {#node-config-node-zeromq-publish}
 
-## subscribe (string / array of strings: uri) {#node-config-zeromq-subscribe}
+## subscribe (string / array of strings: uri) {#node-config-node-zeromq-subscribe}
 
-## ipv6 (bool) = false {#node-config-zeromq-ipv6}
+## ipv6 (bool) = false {#node-config-node-zeromq-ipv6}
 
 ## CurveZMQ cryptography
 
@@ -36,15 +36,15 @@ The payload format which is used to encode and decode exchanged messages.
 
 You can use the `zmq-keygen` tool to create a new keypair for the following configuration options:
 
-### curve.enabled (bool) = true {#node-config-zeromq-ipv6}
+### curve.enabled (bool) = true {#node-config-node-zeromq-ipv6}
 
 Whether or not the encryption is enabled.
 
-### curve.public_key (string: Z85 encoded) {#node-config-zeromq-curve-public_key}
+### curve.public_key (string: Z85 encoded) {#node-config-node-zeromq-curve-public_key}
 
 The public key of the server.
 
-### curve.private_key (string: Z85 encoded) {#node-config-zeromq-curve-public_key}
+### curve.private_key (string: Z85 encoded) {#node-config-node-zeromq-curve-public_key}
 
 The private key of the server.
 

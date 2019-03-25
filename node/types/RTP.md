@@ -9,7 +9,7 @@ This node-type requires [libre](http://www.creytiv.com/re.html) (>= 0.6.0).
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/rtp.c
 
-# Configuration {#node-config-rtp}
+# Configuration {#node-config-node-rtp}
 
 ## Example
 

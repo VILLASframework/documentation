@@ -12,36 +12,36 @@ The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/shmem.c
 
 
-# Configuration {#node-config-shmem}
+# Configuration {#node-config-node-shmem}
 
 The only required configuration option is the `name` option; all others are optional with reasonable defaults.
 
-## in.name (string) {#node-config-shmem-in-name}
+## in.name (string) {#node-config-node-shmem-in-name}
 
-## out.name (string) {#node-config-shmem-out-name}
+## out.name (string) {#node-config-node-shmem-out-name}
 
 Name of the POSIX shared memory object. Must start with a forward slash (`/`).
 The same name should be passed to the external program somehow in its
 configuration or command-line arguments.
 
-## queuelen (int) {#node-config-shmem-queuelen}
+## queuelen (int) {#node-config-node-shmem-queuelen}
 
 Length of the input and output queues in elements. Defaults to `DEFAULT_SHMEM_QUEUELEN`,
 a compile-time constant.
 
-## samplelen (int) {#node-config-shmem-samplelen}
+## samplelen (int) {#node-config-node-shmem-samplelen}
 
 Maximum number of data elements in a single `struct sample` for the samples handled
 by this node. Defaults to `DEFAULT_SHMEM_SAMPLELEN`, a compile-time constant.
 
-## mode (string: "pthread" | "polling") = "pthread" {#node-config-shmem-mode}
+## mode (string: "pthread" | "polling") = "pthread" {#node-config-node-shmem-mode}
 
 If set to `pthread`, POSIX condition variables are used to signal writes between processes.
 If set to `polling`, no CV's are used, meaning that blocking writes have to be
 implemented using polling, leading to performance improvements at a cost of
 unnecessary CPU usage. Defaults to `pthread`.
 
-## exec (array of strings) {#node-config-shmem-exec}
+## exec (array of strings) {#node-config-node-shmem-exec}
 
 Optional name and command-line arguments (as passed to `execve`) of a command
 to be executed during node startup. This can be used to start the external

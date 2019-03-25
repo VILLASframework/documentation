@@ -15,17 +15,17 @@ This node-type requires [libnanomsg](http://nanomsg.org/) (>= 1.0.0).
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/nanomsg.c
 
-# Configuration {#node-config-nanomsg}
+# Configuration {#node-config-node-nanomsg}
 
-## format (string) {#node-config-nanomsg-format}
+## format (string) {#node-config-node-nanomsg-format}
 
 The payload format which is used to encode and decode exchanged messages.
 
-## publish (string / array of strings: uri) {#node-config-nanomsg-publish}
+## publish (string / array of strings: uri) {#node-config-node-nanomsg-publish}
 
 A single endpoint URI or list of URIs on which this node should listen for subscribers.
 
-## subscribe (string / array of strings: uri) {#node-config-nanomsg-subscribe}
+## subscribe (string / array of strings: uri) {#node-config-node-nanomsg-subscribe}
 
 A single endpoint URI or list of URIs pointing to which this node should connect to as a subscriber.
 

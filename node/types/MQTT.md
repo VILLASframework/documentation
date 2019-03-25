@@ -11,34 +11,34 @@ This node-type requires [mosquitto](https://mosquitto.org) (>= 1.4.15).
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/mqtt.c
 
-# Configuration {#node-config-mqtt}
+# Configuration {#node-config-node-mqtt}
 
-## format (string) {#node-config-mqtt-format}
+## format (string) {#node-config-node-mqtt-format}
 
 The payload format which is used to encode and decode exchanged messages.
 
-## username (string) {#node-config-mqtt-username}
+## username (string) {#node-config-node-mqtt-username}
 
 The username which is used for authentication with the MQTT broker.
 
-## password (string) {#node-config-mqtt-password}
+## password (string) {#node-config-node-mqtt-password}
 
 The password which is used for authentication with the MQTT broker.
 
-## host (string) {#node-config-mqtt-host}
+## host (string) {#node-config-node-mqtt-host}
 
 The hostname of the MQTT broker.
 
-## port (integer) = 1883 {#node-config-mqtt-port}
+## port (integer) = 1883 {#node-config-node-mqtt-port}
 
 The port number of the MQTT broker.
 
 
-## retain (boolean) = false {#node-config-mqtt-retain}
+## retain (boolean) = false {#node-config-node-mqtt-retain}
 
-## keepalive (integer) = 1 {#node-config-mqtt-keepalive}
+## keepalive (integer) = 1 {#node-config-node-mqtt-keepalive}
 
-## qos (integer) = 0 {#node-config-mqtt-qos}
+## qos (integer) = 0 {#node-config-node-mqtt-qos}
 
 ## Example
 

@@ -13,11 +13,11 @@ This node-type requires [libuldaq](https://github.com/mccdaq/uldaq.gitignore) (>
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/uldaq.c
 
-# Configuration {#node-config-uldaq}
+# Configuration {#node-config-node-uldaq}
 
 ## device_id (string) ${node-config-uldaq-device_id}
 
-## interface_type (string: "usb" | "bluetooth" | "ethernet" | "any" ) = "any" {#node-config-uldaq-in-interface_type}
+## interface_type (string: "usb" | "bluetooth" | "ethernet" | "any" ) = "any" {#node-config-node-uldaq-in-interface_type}
 
 ## in.range (string)
 
@@ -69,13 +69,13 @@ https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/u
 | `unipolar-0.01`  |  0.0    | +0.01  |
 | `unipolar-0.005` |  0.0    | +0.00  |
 
-## in.input_mode (string: "single-ended" | "differential" | "pseudo-differential") {#node-config-uldaq-in-input_mode}
+## in.input_mode (string: "single-ended" | "differential" | "pseudo-differential") {#node-config-node-uldaq-in-input_mode}
 
-## in.signals (list of objects: signals) = () {#node-config-uldaq-in-signals}
+## in.signals (list of objects: signals) = () {#node-config-node-uldaq-in-signals}
 
-## in.sample_rate (float) {#node-config-uldaq-in-sample_rate}
+## in.sample_rate (float) {#node-config-node-uldaq-in-sample_rate}
 
-## in.vectorize (integer) {#node-config-uldaq-in-vectorize}
+## in.vectorize (integer) {#node-config-node-uldaq-in-vectorize}
 
 # Example
 

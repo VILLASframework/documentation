@@ -1,5 +1,7 @@
 # Configuration {#fpga-config}
 
+**Warning:** Section is outdated
+
 VILLASfpga is configured via the standard VILLASnode configuration file.
 Unlike the other node-types, the `fpga` node-type requires settings in two places:
 

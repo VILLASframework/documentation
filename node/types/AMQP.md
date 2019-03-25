@@ -14,27 +14,27 @@ This node-type requires [rabbitmq-c](https://github.com/alanxz/rabbitmq-c) (>= 0
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/amqp.c
 
-# Configuration {#node-config-amqp}
+# Configuration {#node-config-node-amqp}
 
-## format (string) {#node-config-amqp-format}
+## format (string) {#node-config-node-amqp-format}
 
 The payload format which is used to encode and decode exchanged messages.
 
-## uri (string) {#node-config-amqp-uri}
+## uri (string) {#node-config-node-amqp-uri}
 
 See also: https://www.rabbitmq.com/uri-spec.html
 
-## exchange (string) {#node-config-amqp-exchange}
+## exchange (string) {#node-config-node-amqp-exchange}
 
 The name of the AMQP exchange the node will publish the messages to.
 
-## routing_key (string) {#node-config-amqp-routing_key}
+## routing_key (string) {#node-config-node-amqp-routing_key}
 
 The routing key of published messages as well as the routing key which is used to bind the subcriber queue.
 
-## ssl (object) {#node-config-amqp-ssl}
+## ssl (object) {#node-config-node-amqp-ssl}
 
-**Note:** These settings are only used if the @ref node-config-amqp-uri setting is using the `amqps://` schema.
+**Note:** These settings are only used if the @ref node-config-node-amqp-uri setting is using the `amqps://` schema.
 
 ## Example
 

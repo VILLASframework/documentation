@@ -21,15 +21,15 @@ This node-type requires [libOpal{AsyncApi,Core,Utils}](https://git.rwth-aachen.d
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/opal.c
 
-# Configuration {#node-config-opal}
+# Configuration {#node-config-node-opal}
 
 Every `opal` node supports the following special settings:
 
-## send_id (integer) {#node-config-opal-send_id}
+## send_id (integer) {#node-config-node-opal-send_id}
 
-## recv_id (integer) {#node-config-opal-recv_id}
+## recv_id (integer) {#node-config-node-opal-recv_id}
 
-## reply (boolean) {#node-config-opal-reply}
+## reply (boolean) {#node-config-node-opal-reply}
 
 ## Example
 

@@ -8,7 +8,7 @@ The card uses big endian byte order to send and receives data.
 There are two ways to exchange data with VILLASnode which are implemented by the @ref node-type-socket node-type.
 
  - **Without a header:** Only data values are sent without any header information like sequence number or timestamps.
-    This option is configured by setting @ref node-config-socket-header to `gtnet-skt:fake` in tge configuration file.
+    This option is configured by setting @ref node-config-node-socket-header to `gtnet-skt:fake` in tge configuration file.
  - **With a header:** First 3 values are interpreted as sequence no, timestamp seconds and timestamp nanoseconds.
     A timestamp can be added by using the GTSYNC card with a GPS source in the draft file.
     Alternatively, if no timestamp is provided (value set to 0), VILLASnode will add a timestamp and thereby overriding replacing the 0 value.

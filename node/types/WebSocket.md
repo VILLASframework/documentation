@@ -13,12 +13,12 @@ This node-type requires [libwebsockets](http://libwebsockets.org) (>= 2.3.0).
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/websocket.c
 
-# Configuration {#node-config-websocket}
+# Configuration {#node-config-node-websocket}
 
 By default the @ref node-usage-node daemon listens on @ref node-config-http-port for HTTP and WebSocket requests.
 This behaviour can be disabled by setting @ref node-config-http-enabled to `false`.
 
-## destinations (array of URIs) {#node-config-websocket-destinations}
+## destinations (array of URIs) {#node-config-node-websocket-destinations}
 
 During startup connect to those WebSocket servers as a client.
 

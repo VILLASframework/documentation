@@ -10,7 +10,7 @@ Please look at the main page for details: @ref fpga.
 
 # Implementation {#node-implementation-fpga}
 
-# Configuration {#node-config-fpga}
+# Configuration {#node-config-node-fpga}
 
 The node configuration is used to define interfaces between the FPGA and Linux host system by means of so called datamover.
 A datamover is a special IP core within the FPGA which handles data exchange between the FPGA's AXI4-Stream fabric and the main memory of the host system.
@@ -24,17 +24,17 @@ Currently, two types of data movers are supported:
 
 Every `fpga` node support the following special settings:
 
-## datamover (string: fpga-ip-name) {#node-config-fpga-datamover}
+## datamover (string: fpga-ip-name) {#node-config-node-fpga-datamover}
 
 The must be the name of a FPGA IP core as defined in @ref fpga-config-ip .
 
 This IP component is used to transfer samples between the FPGA and the main memory.
 
-### card (string> fpga-card-name) {#node-config-fpga-card}
+### card (string> fpga-card-name) {#node-config-node-fpga-card}
 
 The name of the FPGA card as configured by @ref fpga-config-card.
 
-### user_irqs (boolean) {#node-config-fpga-use_irqs}
+### user_irqs (boolean) {#node-config-node-fpga-use_irqs}
 
 Weather or not to polling / interrupts to wait for new samples from the FPGA.
 
