@@ -34,7 +34,6 @@ build:
       - warnings.log
       - doxysearch.db/
       - searchdata.xml
-      - anchors.txt
   script:
     - make
   tags:
