@@ -27,6 +27,6 @@ Every node is an instance of a node-type. VILLASnode currently supports the foll
 | @subpage node-type-uldaq        | ?                | Poll  | yes  | no    | unlimited | stable     | |
 | @subpage node-type-rtp          | ?                | Poll  | yes  | yes   | ?         | beta       | |
 | @subpage node-type-ethercat     | ?                | Poll  | yes  | yes   | ?         | alpha      | |
-| @subpage node-type-cbuilder     | ?                | AIO   | yes  | yes   | 1         | deprecated | |
+| @subpage node-type-stats        | ?                | Poll  | yes  | no    | 1         | stable     | |
 
 @image html VILLASnode_interfaces.svg width=100%
