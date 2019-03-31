@@ -1,54 +1,49 @@
-# Statistic collection {#node-hook-stats_collect}
+# Statistic collection {#node-hook-stats}
 
-@todo Complete documentation
+The `stats` hook collects statistics about nodes.
+Currently the following metrics are collected:
 
-# Collection
+| Identifier             | Unit    | Description                                               |
+| :--                    | :--     | :--                                                       |
+| `skipped`              | samples | Skipped samples and the distance between them             |
+| `reordered`            | samples | Reordered samples and the distance between them           |
+| `gap_sent`             | seconds | Inter-message timestamps (as sent by remote)              |
+| `gap_received`         | seconds | Inter-message arrival time (as received by this instance) |
+| `owd`                  | seconds | One-way-delay (OWD) of received messages                  |
 
-## format (string: "json" | "matlab" | "human") {#node-config-hook-stats-format}
+If the node to which this hook is attached is of type @ref node-type-rtp, the following additional statistics are collected from the RTP receiption reports.
+The contains details about the quality of service as seen be the receiver.
 
-## buckets (integer) {#node-config-hook-stats-buckets}
+| Identifier             | Unit    | Description                                               |
+| :--                    | :--     | :--                                                       |
+| `rtp.loss_fraction`    | percent | Fraction lost since last RTP SR/RR.                       |
+| `rtp.pkts_lost`        | packets | Cumulative number of packtes lost.                        |
+| `rtp.jitter`           | seconds?| Interarrival jitter                                       |
 
-## warmup (integer) {#node-config-hook-stats-warmup}
 
-## verbose (boolean) {#node-config-hook-stats-verbose}
+# Configuration {#node-config-hook-stats}
+
+## format (string: "json" | "matlab" | "human") = "human" {#node-config-hook-stats-format}
+
+The output format used to print the statistics at shutdown.
+
+## buckets (integer) = 20 {#node-config-hook-stats-buckets}
+
+The number of buckets which should be used for the underlying histograms.
+
+## warmup (integer) = 500 {#node-config-hook-stats-warmup}
+
+Use the first `warmup` samples to estimate the bucket range of the underlying histograms.
+
+## verbose (boolean) = false {#node-config-hook-stats-verbose}
+
+Include full dumps of the histogram buckets into the output.
 
 ## output (string: uri) {#node-config-hook-stats-output}
 
-# Sending
+The file where you want to write the report to.
+If omitted, stdout (the terminal) will be used.
 
-## destination (string: node name) {#node-config-hook-stats_send-destination}
+## Example
 
-## decimation (integer) {#node-config-hook-stats_send-decimation}
-
-## mode (string: "periodic" | "read") {#node-config-hook-stats_send-mode}
-
-# Example
-
-```
-paths (
-	{
-		...
-		hooks = (
-			{
-				type = "stats"
-				
-				warmup = 1000,				# Skip the first 1000 samples for statistics
-				buckets = 100,				# Create histograms with 100 buckets
-				verbose = true,				# Generate more verbose statistic reports
-				format = "json",			# The format for the statistic report
-				
-				# The file where you want to write the report to.
-				# If omitted, stdout (the terminal) will be used.
-				output = "/villas/results/statistics_of_path.json"
-			},
-			{
-				type = "stats_send",
-
-				destination = "some_node",	# The name of the node to which the statistics should be send
-				mode = "periodic",
-				decimation = 10
-			}
-		)
-	}
-)
-```
+@include node/hooks/stats.conf
