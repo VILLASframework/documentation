@@ -1,0 +1,10 @@
+Usage: villas-test-config [OPTIONS] CONFIG
+  CONFIG is the path to an optional configuration file
+  OPTIONS is one or more of the following options:
+    -d LVL  set debug level
+    -V        show version and exit
+    -h        show usage and exit
+
+ [34mv0.7.3-fdcd4ff-debug[0m (built on [35mMar 31 2019[0m [35m11:04:24[0m)
+ Copyright 2014-2017, Institute for Automation of Complex Power Systems, EONERC
+ Steffen Vogel <StVogel@eonerc.rwth-aachen.de>

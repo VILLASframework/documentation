@@ -1,0 +1,26 @@
+Usage: villas-signal [OPTIONS] SIGNAL
+  SIGNAL   is on of the following signal types:
+    mixed
+    random
+    sine
+    triangle
+    square
+    ramp
+    constants
+    counter
+
+  OPTIONS is one or more of the following options:
+    -d LVL  set debug level
+    -f FMT  set the format
+    -v NUM  specifies how many values a message should contain
+    -r HZ   how many messages per second
+    -n      non real-time mode. do not throttle output.
+    -F HZ   the frequency of the signal
+    -a FLT  the amplitude
+    -D FLT  the standard deviation for 'random' signals
+    -o OFF  the DC bias
+    -l NUM  only send LIMIT messages and stop
+
+ [34mv0.7.3-fdcd4ff-debug[0m (built on [35mMar 31 2019[0m [35m11:04:24[0m)
+ Copyright 2014-2017, Institute for Automation of Complex Power Systems, EONERC
+ Steffen Vogel <StVogel@eonerc.rwth-aachen.de>

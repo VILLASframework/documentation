@@ -1,0 +1,87 @@
+Usage: villas-node [OPTIONS] [CONFIG]
+  OPTIONS is one or more of the following options:
+    -h      show this usage information
+    -d LVL  set logging level
+    -V      show the version of the tool
+
+  CONFIG is the path to an optional configuration file
+         if omitted, VILLASnode will start without a configuration
+         and wait for provisioning over the web interface.
+
+Supported node-types:
+ - influxdb     : Write results to InfluxDB
+ - stats        : Send statistics to another node
+ - signal       : Signal generator
+ - loopback     : Loopback to connect multiple paths
+ - test_rtt     : Test round-trip time with loopback
+ - file         : support for file log / replay node type
+ - socket       : BSD network sockets for Ethernet / IP / UDP (libnl3, netem support)
+ - uldaq        : Measurement Computing DAQ devices like UL201 (libuldaq)
+ - shmem        : POSIX shared memory interface with external processes
+ - iec61850-9-2 : IEC 61850-9-2 (Sampled Values)
+ - nanomsg      : scalability protocols library (libnanomsg)
+ - zeromq       : ZeroMQ Distributed Messaging (libzmq)
+ - ngsi         : OMA Next Generation Services Interface 10 (libcurl, libjansson)
+ - websocket    : Send and receive samples of a WebSocket connection (libwebsockets)
+ - amqp         : Advanced Message Queueing Protoocl (rabbitmq-c)
+ - mqtt         : Message Queuing Telemetry Transport (libmosquitto)
+ - comedi       : Comedi-compatible DAQ/ADC cards
+ - infiniband   : Infiniband interface (libibverbs, librdmacm)
+ - rtp          : real-time transport protocol (libre, libnl3 netem support)
+ - rtp          : real-time transport protocol (libre, libnl3 netem support)
+
+Supported hooks:
+ - average: Calculate average over some signals
+ - cast: Cast signals types
+ - decimate: Downsamping by integer factor
+ - dp: Transform to/from dynamic phasor domain
+ - drop: Drop messages with reordered sequence numbers
+ - dump: Dump data to stdout
+ - ebm: Energy-based Metric
+ - fix: Fix received data by adding missing fields
+ - jitter_calc: Calc jitter, mean and variance of GPS vs NTP TS
+ - limit_rate: Limit sending rate
+ - restart: Call restart hooks for current node
+ - scale: Scale signals by a factor and add offset
+ - shift_seq: Shift sequence number of samples
+ - shift_ts: Shift timestamps of samples
+ - skip_first: Skip the first samples
+ - stats: Collect statistics for the current path
+ - ts: Overwrite origin timestamp of samples with receive timestamp
+ - print: Print the message to stdout
+
+Supported API commands:
+ - capabilities: get capabiltities and details about this VILLASnode instance
+ - shutdown: quit VILLASnode
+ - config: get configuration of this VILLASnode instance
+ - nodes: retrieve list of all known nodes
+ - paths: retrieve list of all paths with details
+ - restart: restart VILLASnode with new configuration
+ - node.start: start a node
+ - node.stop: stop a node
+ - node.pause: pause a node
+ - node.resume: resume a node
+ - node.restart: restart a node
+
+Supported IO formats:
+ - protobuf     : Google Protobuf
+ - json         : Javascript Object Notation
+ - json.reserve : RESERVE JSON format
+ - villas.binary: VILLAS binary network format
+ - villas.web   : VILLAS binary network format for WebSockets
+ - villas.human : VILLAS human readable format
+ - tsv          : Tabulator-separated values
+ - csv          : Comma-separated values
+ - raw.8        : Raw  8 bit
+ - raw.16.be    : Raw 16 bit, big endian byte-order
+ - raw.32.be    : Raw 32 bit, big endian byte-order
+ - raw.64.be    : Raw 64 bit, big endian byte-order
+ - raw.16.le    : Raw 16 bit, little endian byte-order
+ - raw.32.le    : Raw 32 bit, little endian byte-order
+ - raw.64.le    : Raw 64 bit, little endian byte-order
+ - gtnet        : RTDS GTNET
+ - gtnet.fake   : RTDS GTNET with fake header
+
+ [34mv0.7.3-fdcd4ff-debug[0m (built on [35mMar 31 2019[0m [35m11:04:24[0m)
+ Copyright 2014-2017, Institute for Automation of Complex Power Systems, EONERC
+ Steffen Vogel <StVogel@eonerc.rwth-aachen.de>
