@@ -1,6 +1,7 @@
 html/
 xml/
 searchdata.xml
+searchdata-tagfile.xml
 villas.tag
 figures/dia/*.svg
 doxygen_sqlite3.db
