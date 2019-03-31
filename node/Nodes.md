@@ -1,7 +1,9 @@
 # Node-types {#node-types}
 
-Every server needs clients which act as sinks / sources for simulation data. In case of VILLASnode these clients are called _nodes_.
-Every node is an instance of a node-type. VILLASnode currently supports the following node-types:
+Every server needs clients which act as sinks / sources for simulation data.
+In case of VILLASnode these clients are called _nodes_.
+Every node is an instance of a node-type.
+VILLASnode currently supports the following node-types:
 
 | Type                            | Loopback Latency | Sync  | Read | Write | Vectorize | State      | Comments |
 | :--                             | :--              | :--   | :--  | :--   | :--       | :--        | :-- |
