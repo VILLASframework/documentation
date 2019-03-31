@@ -5,7 +5,8 @@ Please feel free to submit pull requests or bug reports.
 
 A [contribution guide](https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/CONTRIBUTING.md) is available in the [Git repository](https://git.rwth-aachen.de/acs/public/villas/VILLASnode/).
 
-- @subpage node-dev-api
+- @subpage node-dev-api-node
+- @subpage node-dev-api-relay
 - @subpage node-dev-advio
 
 ## Programming Paradigm
