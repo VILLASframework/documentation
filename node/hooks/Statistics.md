@@ -1,4 +1,4 @@
-# Statistic collection {#node-hook-stats}
+# Statistic collection {#hook-type-stats}
 
 The `stats` hook collects statistics about nodes.
 Currently the following metrics are collected:
