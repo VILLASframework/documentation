@@ -7,7 +7,7 @@ This tutorial introduces the basic concepts and terminologies of VILLASnode and 
 
 Please [look below](@ref node-guide-video) for a video recording of a webinar covering the topics of this guide.
 
-# Preperation {#node-guide-preperation}
+# Preparation {#node-guide-preparation}
 
 The @ref node-installation page lists several ways to install VILLASnode on your machine.
 
@@ -62,7 +62,7 @@ A complete reference of all available options for those tools can be found on th
 
 To get you started quickly, we prepared a series of small demos which you can try yourself.
 
-All configurations files are available here: <https://villas.fein-aachen.org/doc/etc/>
+__All configurations files are available here: <https://git.rwth-aachen.de/acs/public/villas/VILLASnode/tree/develop/etc/labs>__
 
 - @subpage node-guide-lab1
 - @subpage node-guide-lab2
