@@ -1,4 +1,4 @@
-# BSD Sockets {#node-type-socket}
+# Sockets {#node-type-socket}
 
 The socket node-type is the most comprehensive and complex one.
 It allows to send and receive simulation data over the network.
@@ -28,9 +28,11 @@ https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/s
 
 Every `socket` node supports the following special settings:
 
-## format (string) {#node-config-node-socket-format}
+## format (string: "csv" | "json" | "villas.human" | "raw" | ...) {#node-config-node-socket-format}
 
 The payload format which is used to encode and decode exchanged messages.
+
+See: @ref node-formats
 
 ## local (string: "ip:port" | "mac:protocol") {#node-config-node-socket-local}
 
@@ -45,27 +47,6 @@ The address and port number of the remote endpoint of this node for outgoing pac
 ## layer (string: "udp" | "ip" | "eth") {#node-config-node-socket-layer}
 
 Select the network layer which should be used for the socket. Please note that `eth` can only be used locally in a LAN as it contains no routing information for the internet.
-
-## header (string: "villas" | "default" | "gtnet-skt" | "none" | "gtnet-skt:fake" | "fake") = "villas" {#node-config-node-socket-header}
-
-The socket node-type supports multiple protocols:
-
-| Value			| Description |
-| :--			| :-- |
-| `villas`		| The standard VILLASnode header includes a couple of fields like the origin timestamp and the number of values of the transmitted data. The packet format is described in section @ref node-type-socket-format. |
-| `gtnet-skt` / `none`	| It is also possible to just send raw data by omitting the header completely (`none`). Each value is expected to take 4 bytes. It can be either a single precission floating point number (`float`) or a 32 bit unsigned integer (`uint32_t`). This protocol is used by @ref node-client-gtnet. |
-| `gtnet-skt:fake` / `fake`	| The `fake` setting is very similar to the `none` setting. See below for details. |
-
-Only the first three values will have a special interpretation:
-   - Sequence no. (`uint32_t`)
-   - Timestamp seconds ([Unix time](https://en.wikipedia.org/wiki/Unix_time), `uint32_t`)
-   - Timestamp nano-seconds  ([Unix time](https://en.wikipedia.org/wiki/Unix_time), `uint32_t`)
-
-## endian (string: "big" | "network" | "little") = "big" {#node-config-node-socket-endian}
-
-This setting is only valid for the `none` and `fake` protocols.
-If setting @ref node-config-node-socket-header is set to `villas`, the data is always interpreted in network (big) endianess.
-It select the endianes which is used for outgoing and incoming data.
 
 ## verify_source (boolean) = false {#node-config-node-socket-verify_source}
 
