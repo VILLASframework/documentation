@@ -124,6 +124,7 @@ VILLASnode currently has the following list of dependencies:
  - [libOpal{AsyncApi,Core,Utils}](https://git.rwth-aachen.de/acs/public/villas/libopal) for running VILLASnode as an Asynchronous process inside your RT-LAB model with @ref node-type-opal node-type (_optional_).
  - [Etherlab](http://etherlab.org) (>= 1.5.2) for the @ref node-type-ethercat node-type (_optional_)
  - [Criterion](https://github.com/Snaipe/Criterion) (>= 2.3.1) for running the unit tests (_optional_).
+ - [libuuid](https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git) (>= 2.31).
 
 There are three ways to install these dependencies:
 
