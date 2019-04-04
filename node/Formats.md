@@ -13,6 +13,8 @@ Currently, the following formats are supported (or planned):
 | `json`           | Javascript Object Notation                       | stable  | http://json.org |
 | `csv`            | Comma/Tabulator-separated values                 | stable  | |
 | `raw`            | RAW/Binary data                                  | stable  | |
+| `gtnet`          | RTDS GTNET-SKT                                   | stable  | |
+| `gtnet.fake`     | RTDS GTNET-SKT (using the first three value as header) | stable  | |
 | `villas.human`   | Custom human-readable format for VILLASframework | stable  | |
 | `villas.binary`  | Custom binary format for VILLASframework         | stable  | |
 | `protobuf`       | Googles Protobuf                                 | stable  | https://developers.google.com/protocol-buffers |
