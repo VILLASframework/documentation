@@ -301,7 +301,7 @@ Signals can be disabled which causes them to be ignored.
 The path section consists of a **list** of paths:
 
 ```
-paths = [
+paths = (
 	{
 		in = [
 			"rtds.data[0-5]",
@@ -327,7 +327,7 @@ paths = [
 			}
 		)
 	}
-]
+)
 ```
 
 Every path can have the following settings:
