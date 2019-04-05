@@ -227,7 +227,7 @@ This setting allows to send multiple samples in a single message to the destinat
 
 The value of this setting determines how many samples will be combined into one packet.
 
-## hooks (list of objects: hooks) {#node-config-node-hook}
+## in.hooks (list of objects: hooks) {#node-config-node-hook}
 
 A list of hook functions which will be executed for each sample which is processed by this path.
 
@@ -238,11 +238,7 @@ Please consult the @ref node-concept-hook chapter of this documentation for deta
 By default, each node and paths has a couple of default hooks attached to them.
 With this setting the attachment of built-in hooks can be disabled.
 
-## samplelen (integer) = 64 {#node-config-node-samplelen}
-
-The maximum number of signals per sample which this node can receive or sent.
-
-## signals (list of objects: signals) = () {#node-config-node-signals}
+## in.signals (list of objects: signals) = () {#node-config-node-signals}
 
 Each node should define a list of signals which it **receives**.
 
@@ -284,19 +280,19 @@ nodes = {
 
 Each signal is described by the following settings:
 
-### signals[].name (string) = undefined {#node-config-node-signals-name}
+### in.signals[].name (string) = undefined {#node-config-node-signals-name}
 
 A name which describes the signal.
 
-### signals[].unit (string) = undefined {#node-config-node-signals-unit}
+### in.signals[].unit (string) = undefined {#node-config-node-signals-unit}
 
 The unit of the signal. E.g. `V`, `A`, `Rad`.
 
-### signals[].format (string: "float" | "integer" | "boolean" | "complex" | "auto") = auto {#node-config-node-signals-format}
+### in.signals[].format (string: "float" | "integer" | "boolean" | "complex" | "auto") = auto {#node-config-node-signals-format}
 
 The data-type of the signal.
 
-### signals[].enabled (boolean) = true {#node-config-node-signals-enabled}
+### in.signals[].enabled (boolean) = true {#node-config-node-signals-enabled}
 
 Signals can be disabled which causes them to be ignored.
 
