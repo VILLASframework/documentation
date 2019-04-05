@@ -177,7 +177,7 @@ $ sudo dnf install \
     jansson-devel \
     libwebsockets-devel \
     zeromq-devel \
-    nanomsg \
+    nanomsg-devel \
     libiec61850 \
     librabbitmq-devel \
     mosquitto-devel \
