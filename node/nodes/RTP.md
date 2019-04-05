@@ -11,6 +11,12 @@ https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/r
 
 # Configuration {#node-config-node-rtp}
 
+## netem (dictionary) {#node-config-node-rtp-netem}
+
+Enables and configures the network emulation qeueing discipline.
+
+See: @ref node-config-node-netem
+
 ## Example
 
 @include node/nodes/rtp.conf

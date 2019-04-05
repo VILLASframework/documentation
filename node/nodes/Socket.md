@@ -55,35 +55,8 @@ Check if source address of incoming packets matches the remote address.
 ## netem (dictionary) {#node-config-node-socket-netem}
 
 Enables and configures the network emulation qeueing discipline.
-See below for a more detailed description of this feature.
 
-## netem.enabled (boolean) = true {#node-config-node-socket-netem-enabled}
-
-Weather or not network emulation is active.
-
-## netem.delay (integer) {#node-config-node-socket-netem-delay}
-
-Additional latency in micro seconds.
-
-## netem.jitter (integer) {#node-config-node-socket-netem-jitter}
-
-Packet delay jitter in micro seconds.
-
-## netem.distribution (string: "normal" | "uniform" | "pareto" | "paretonormal") {#node-config-node-socket-netem-distribution}
-
-Distribution of delay: uniform, normal, pareto, paretonormal
-
-## netem.loss (integer) {#node-config-node-socket-netem-loss}
-
-Packet loss in percent.
-
-## netem.duplicate (integer) {#node-config-node-socket-netem-duplicate}
-
-Packet duplication in percent.
-
-## netem.corrupt (integer) {#node-config-node-socket-netem-corrupt}
-
-Packet corruption in percent.
+See: @ref node-config-node-netem
 
 ## multicast (dictionary) {#node-config-node-socket-multicast}
 

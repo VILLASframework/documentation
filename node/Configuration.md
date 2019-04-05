@@ -189,7 +189,39 @@ For a complete list of supported node-types run `villas node --help`.
 In addition to the node settings described in this section, every node type has its own specific settings.
 Take a look at the @ref node-types page for details.
 
-## vectorize (integer) = 1 {#node-config-node-vectorize}
+## out.netem (directory) {#node-config-node-netem}
+
+Some socket based node-types support network emulation.
+
+### out.netem.enabled (boolean) = true {#node-config-node-socket-netem-enabled}
+
+Weather or not network emulation is active.
+
+### out.netem.delay (integer) {#node-config-node-socket-netem-delay}
+
+Additional latency in micro seconds.
+
+### out.netem.jitter (integer) {#node-config-node-socket-netem-jitter}
+
+Packet delay jitter in micro seconds.
+
+### out.netem.distribution (string: "normal" | "uniform" | "pareto" | "paretonormal") {#node-config-node-socket-netem-distribution}
+
+Distribution of delay: uniform, normal, pareto, paretonormal
+
+### out.netem.loss (integer) {#node-config-node-socket-netem-loss}
+
+Packet loss in percent.
+
+### out.netem.duplicate (integer) {#node-config-node-socket-netem-duplicate}
+
+Packet duplication in percent.
+
+### out.netem.corrupt (integer) {#node-config-node-socket-netem-corrupt}
+
+Packet corruption in percent.
+
+## in.vectorize (integer) = 1 {#node-config-node-vectorize}
 
 This setting allows to send multiple samples in a single message to the destination nodes.
 
