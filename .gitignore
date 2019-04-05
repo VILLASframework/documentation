@@ -6,3 +6,4 @@ villas.tag
 figures/dia/*.svg
 doxygen_sqlite3.db
 warnings.log
+.vscode/
