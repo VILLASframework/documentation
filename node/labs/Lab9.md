@@ -36,3 +36,5 @@ $ villas pipe etc/lab9_netem.conf udp_node1 -x | villas hook -o verbose=true -o 
 @htmlonly
 <asciinema-player rows="30" cols="500" poster="npt:0:1"  src="recordings/terminal/villas_hook_stats.json">
 @endhtmlonly
+
+For more details see @ref node-netem
