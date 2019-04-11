@@ -34,15 +34,15 @@ The payload format which is used to encode and decode exchanged messages.
 
 See: @ref node-formats
 
-## local (string: "ip:port" | "mac:protocol") {#node-config-node-socket-local}
+## in.address (string: "ip:port" | "mac:protocol") {#node-config-node-socket-in-address}
 
 The local address and port number this node should listen for incoming packets.
 
 Use `*` to listen on all interfaces: `local = "*:12000"`.
 
-## remote (string: "ip:port" | "mac:protocol") {#node-config-node-socket-remote}
+## out.address (string: "ip:port" | "mac:protocol") {#node-config-node-socket-out-address}
 
-The address and port number of the remote endpoint of this node for outgoing packets.
+The remote address and port number to which this node will send data.
 
 ## layer (string: "udp" | "ip" | "eth") {#node-config-node-socket-layer}
 
@@ -52,36 +52,35 @@ Select the network layer which should be used for the socket. Please note that `
 
 Check if source address of incoming packets matches the remote address.
 
-## netem (dictionary) {#node-config-node-socket-netem}
+## out.netem (dictionary) {#node-config-node-socket-out-netem}
 
 Enables and configures the network emulation qeueing discipline.
 
 For information see also: @ref node-netem
 
-## multicast (dictionary) {#node-config-node-socket-multicast}
+## in.multicast (dictionary) {#node-config-node-socket-in-multicast}
 
 The @ref node-type-socket support sending and receiving IP / UDP packets to and from multicast addresses.
 
 **Note:** Multicast is only supported by IPv4 addressing. Using these settings with `layer = eth` or IPv6 adresses will fail!
 
-## multicast.enabled (boolean) = true {#node-config-node-socket-multicast-enabled}
+## in.multicast.enabled (boolean) = true {#node-config-node-socket-multicast-enabled}
 
 Weather or not multicast group subscription is active.
 
-## multicast.group (string: IPv4 Address) {#node-config-node-socket-multicast-group}
+## in.multicast.group (string: IPv4 Address) {#node-config-node-socket-multicast-group}
 
 The multicast group. Must be within 224.0.0.0/4
 
-## multicast.interface (string: IPv4 Address) {#node-config-node-socket-multicast-interface}
+## in.multicast.interface (string: IPv4 Address) {#node-config-node-socket-multicast-interface}
 
 The IP address of the interface which should receive multicast packets.
 
-## multicast.ttl (integer) {#node-config-node-socket-multicast-ttl}
+## in.multicast.ttl (integer) {#node-config-node-socket-multicast-ttl}
 
 The time to live for outgoing multicast packets.
 
-## multicast.loop (boolean) {#node-config-node-socket-multicast-loop}
-
+## in.multicast.loop (boolean) {#node-config-node-socket-multicast-loop}
 
 ## Example
 
