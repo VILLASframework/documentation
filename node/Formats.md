@@ -10,8 +10,8 @@ Currently, the following formats are supported (or planned):
 
 | Type             | Description                                      | Status  | Specification |
 | :--              | :--                                              | :--     | |
-| `villas.human`   | @ref node-format-villas-human                    | stable  | |
-| `villas.binary`  | @ref node-format-villas-binary                   | stable  | |
+| `villas.human`   | @subpage node-format-villas-human                | stable  | |
+| `villas.binary`  | @subpage node-format-villas-binary               | stable  | |
 | `json`           | Javascript Object Notation                       | stable  | http://json.org |
 | `csv`            | Comma/Tabulator-separated values                 | stable  | |
 | `raw`            | RAW/Binary data                                  | stable  | |
