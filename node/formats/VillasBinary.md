@@ -1,7 +1,6 @@
 # Custom VILLAS Binary {#node-format-villas-binary}
 
-Simulation data is sent in UDP (or IP, or Ethernet) packets over standard IP / Ethernet networks.
-We designed a lightweight message format (or protocol) to facilitate a fast transmission.
+We designed a lightweight message format (or protocol) to facilitate a fast transmission with minimal (de-)serialization overhead.
 The on-wire format of the network datagrams is not subject to a standardization process.
 
 In constrast to the @ref node-format-villas-human format, this binary format is space efficient and commonly used for network communication.
@@ -16,7 +15,12 @@ Each message contains a header with the following fields:
  - 16 bit sequence number
  - 4 bit version identifier
 
- Timestamps are represented in [Unix time](https://en.wikipedia.org/wiki/Unix_time).
+Timestamps are represented in [Unix time](https://en.wikipedia.org/wiki/Unix_time).
+
+The format of the packets is described by the following code:
+
+ - Datastructure: [struct msg](https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/include/villas/formats/msg_format.h)
+ - Code: [villas_binary_*()](https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/formats/villas_binary.cpp) Functions
 
 @image html msg_format.svg width=60%
 

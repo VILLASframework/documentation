@@ -1,4 +1,4 @@
-# Custom VILLAS human readable {#node-format-villas-human}
+# Custom VILLAS Human Readable {#node-format-villas-human}
 
 This is a simple human-readable format commonly used for logging or debugging:
 The format is similiar to a conventional CSV (comma seperated values) file.
@@ -24,6 +24,7 @@ The columns are defined as follows:
 
 This example shows a dump with three values per sample:
 
+    # seconds.nanoseconds(sequence)	signal0 signal1 signal2
     1438959964.162102394(6)	3.489760	-1.882725	0.860070
     1438959964.261677582(7)	2.375948	-2.204084	0.907518
     1438959964.361622787(8)	3.620115	-1.359236	-0.622333
