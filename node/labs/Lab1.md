@@ -8,7 +8,7 @@ Rarely used in a real simulation, this tool can be handy for testing and underst
 The following command emits a stream of samples to the [standard output](https://en.wikipedia.org/wiki/Standard_streams#Standard_output_.28stdout.29) of your terminal:
 
 ```
-$ villas signal -l 10 -r 10 -f 3 -v 1 sine
+$ villas signal -l 10 -r 10 -F 3 -v 1 sine
 ```
 
 The samples have the following characteristics:
@@ -17,7 +17,7 @@ The samples have the following characteristics:
 | :---	| :--- |
 | `-l 10` | Limits the output to 10 samples |
 | `-r 10` | Samples the signal with a rate of 10 Hz |
-| `-f 3` 	| Sets the frequency of the generated signal to 3 Hz |
+| `-F 3` 	| Sets the frequency of the generated signal to 3 Hz |
 | `-v 1` 	| Sets the number of values which are generated |
 
 @htmlonly
@@ -47,7 +47,7 @@ The remaining columns contain the values of the sample.
 If you add the `-n` (non real-time mode) switch the data will be printed immeadiately to the screen:
 
 ```
-$ villas signal -l 10 -r 10 -f 3 -v 1 -n sine
+$ villas signal -l 10 -r 10 -F 3 -v 1 -n sine
 ```
 
 @htmlonly
@@ -57,7 +57,7 @@ $ villas signal -l 10 -r 10 -f 3 -v 1 -n sine
 You can use [shell redirection](https://www.gnu.org/software/bash/manual/html_node/Redirections.html) to write those samples to a file:
 
 ```
-$ villas signal -l 10 -r 10 -f 3 -v 1 -n sine > file.dat
+$ villas signal -l 10 -r 10 -F 3 -v 1 -n sine > file.dat
 $ cat file.dat
 ```
 
