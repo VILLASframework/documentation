@@ -15,7 +15,7 @@ https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/r
 
 Enables and configures the network emulation qeueing discipline.
 
-See: @ref node-config-node-netem
+For more information see also: @ref node-netem
 
 ## Example
 
