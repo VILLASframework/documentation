@@ -40,7 +40,7 @@ Netem supports loading custom delay distributions.
  - https://git.kernel.org/cgit/linux/kernel/git/shemminger/iproute2.git/tree/README.iproute2+tc
  - https://github.com/stv0g/netem
 
-# Configuration {#node-config-netem}
+## Configuration {#node-config-netem}
 
 ### out.netem.enabled (boolean) = true {#node-config-netem-enabled}
 
