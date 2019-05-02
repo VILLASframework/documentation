@@ -8,15 +8,15 @@ New formats can be added via plugins.
 
 Currently, the following formats are supported (or planned):
 
-| Type             | Description                                      | Status  | Specification |
-| :--              | :--                                              | :--     | |
-| `villas.human`   | @subpage node-format-villas-human                | stable  | |
-| `villas.binary`  | @subpage node-format-villas-binary               | stable  | |
-| `json`           | @subpage node-format-json                        | stable  | http://json.org |
-| `csv`            | Comma/Tabulator-separated values                 | stable  | |
-| `raw`            | RAW/Binary data                                  | stable  | |
-| `gtnet`          | RTDS GTNET-SKT                                   | stable  | |
-| `gtnet.fake`     | RTDS GTNET-SKT (using the first three value as header) | stable  | |
-| `protobuf`       | @subpage node-format-protobuf                    | stable  | https://developers.google.com/protocol-buffers |
-| `hdf5`           | Hierarchical Data Format                         | [planned](https://git.rwth-aachen.de/acs/public/villas/VILLASnode/tree/format-h5pt) | http://hdfgroup.org |
-| `bson`           | Binary Javascript Object Notation                | [planned](https://git.rwth-aachen.de/acs/public/villas/VILLASnode/tree/format-bson) | http://bsonspec.org |
+| Type             | Description                                      | Status |
+| :--              | :--                                              | :--    |
+| `villas.human`   | @subpage node-format-villas-human                | stable |
+| `villas.binary`  | @subpage node-format-villas-binary               | stable |
+| `json`           | @subpage node-format-json                        | stable |
+| `csv`            | Comma/Tabulator-separated values                 | stable |
+| `raw`            | RAW/Binary data                                  | stable |
+| `gtnet`          | RTDS GTNET-SKT                                   | stable |
+| `gtnet.fake`     | RTDS GTNET-SKT (using the first three value as header) | stable |
+| `protobuf`       | @subpage node-format-protobuf                    | stable |
+| `hdf5`           | @subpage node-format-hdf                         | [planned](https://git.rwth-aachen.de/acs/public/villas/VILLASnode/tree/format-h5pt) |
+| `bson`           | @subpage node-format-bson                        | [planned](https://git.rwth-aachen.de/acs/public/villas/VILLASnode/tree/format-bson) |

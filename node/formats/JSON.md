@@ -1,5 +1,7 @@
 # Javascript Object Notation {#node-format-json}
 
+**Specification:** http://json.org
+
 ## Example
 
 The structure of the JSON format is closely aligned with VILLASnode's internal data representation.
