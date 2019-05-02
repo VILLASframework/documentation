@@ -1,8 +1,9 @@
 # Node-types {#node-types}
 
-Every server needs clients which act as sinks / sources for simulation data.
-In case of VILLASnode these clients are called _nodes_.
-Every node is an instance of a node-type.
+All communication partners which are interfaced by the VILLASnode gateway are represented by nodes.
+These nodes act as sinks / sources for simulation data.
+Every node is an instance of a node-type. In a single VILLASnode instance, multiples instances of the same node-type can be created at the same time.
+
 VILLASnode currently supports the following node-types:
 
 | Type                            | Network Emulation | Sync  | Read | Write | Vectorize | State      | Comments |

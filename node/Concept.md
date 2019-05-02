@@ -7,8 +7,8 @@ From the viewpoint of the communication parters the server is nearly transparent
 Hence, it's cruical to keep the added overhead as low as possible (in terms of latency).
 
 - @subpage node-concept-supernode
-- @subpage node-concept-node
+- @subpage node-types
+- @subpage hook-types
 - @subpage node-concept-path
-- @subpage node-concept-signals
-- @subpage node-concept-hook
 - @subpage node-concept-sample
+- @subpage node-concept-signals
