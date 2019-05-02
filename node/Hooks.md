@@ -2,6 +2,25 @@
 
 Sometimes forwarded sample data shall be modified or filtered.
 VILLASnode supports _hooks_ for this purpose.
+Hooks are simple callback functions which are called whenever a message is processed by a path.
+
+There are several built-in hooks for:
+  - collecting, show & reset statistics
+  - drop reordered messages
+  - verify message metadata
+  - handle simulation restarts
+  - remapping values of a sample
+  - overwriting / updating timestamps
+  - converting data-types
+  - downsampling
+
+But main goal of this mechanism is to provide extensibility for the end user.
+Example applications for hooks might be:
+
+ 1. Filter sample values
+ 2. Manipulate sample values: FIR
+ 3. Transform sample values: FFT, DCT
+ 4. Update network emulation settings based on sample values
 
 Hooks can be added to the processing pipeline in three places:
 
@@ -34,3 +53,7 @@ Currently, the following _hook-types_ are supported:
 | @subpage hook-type-stats        |           | yes       |            |      | stable     | Collect statistics for the current path |
 | @subpage hook-type-ts           |           | yes       | yes        | yes  | stable     | Overwrite origin timestamp of samples with receive timestamp |
 | @subpage hook-type-print        |           | yes       | yes        | yes  | stable     | Print the message to stdout |
+
+## Writing custom hook functions
+
+@todo This still needs to be written.

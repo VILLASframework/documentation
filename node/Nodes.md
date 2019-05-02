@@ -6,7 +6,7 @@ Every node is an instance of a node-type. In a single VILLASnode instance, multi
 
 VILLASnode currently supports the following node-types:
 
-| Type                            | Network Emulation | Sync  | Read | Write | Vectorize | State      | Comments |
+| Type                            | Network Emulation | Sync  | Read | Write | Vectorize | Status      | Comments |
 | :--                             | :-- | :--   | :--  | :--   | :--       | :--        | :-- |
 | @subpage node-type-signal       | no  | AIO   | yes  | no    | 1         | stable     | |
 | @subpage node-type-loopback     | no  | AIO   | yes  | yes   | unlimited | stable     | |
