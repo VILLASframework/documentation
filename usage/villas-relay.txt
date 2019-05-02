@@ -7,6 +7,6 @@ Usage: villas-relay [OPTIONS]
     -V        show version and exit
     -h        show usage and exit
 
- [34mv0.7.3-fdcd4ff-debug[0m (built on [35mMar 31 2019[0m [35m11:04:24[0m)
+ [34mv0.7.3-d8eb2f9-debug[0m (built on [35mMay  2 2019[0m [35m08:49:59[0m)
  Copyright 2014-2017, Institute for Automation of Complex Power Systems, EONERC
  Steffen Vogel <StVogel@eonerc.rwth-aachen.de>

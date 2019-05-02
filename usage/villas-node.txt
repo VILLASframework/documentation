@@ -14,8 +14,8 @@ Supported node-types:
  - signal       : Signal generator
  - loopback     : Loopback to connect multiple paths
  - test_rtt     : Test round-trip time with loopback
- - file         : support for file log / replay node type
  - socket       : BSD network sockets for Ethernet / IP / UDP (libnl3, netem support)
+ - file         : support for file log / replay node type
  - uldaq        : Measurement Computing DAQ devices like UL201 (libuldaq)
  - shmem        : POSIX shared memory interface with external processes
  - iec61850-9-2 : IEC 61850-9-2 (Sampled Values)
@@ -27,7 +27,6 @@ Supported node-types:
  - mqtt         : Message Queuing Telemetry Transport (libmosquitto)
  - comedi       : Comedi-compatible DAQ/ADC cards
  - infiniband   : Infiniband interface (libibverbs, librdmacm)
- - rtp          : real-time transport protocol (libre, libnl3 netem support)
  - rtp          : real-time transport protocol (libre, libnl3 netem support)
 
 Supported hooks:
@@ -62,6 +61,7 @@ Supported API commands:
  - node.pause: pause a node
  - node.resume: resume a node
  - node.restart: restart a node
+ - stats: get or reset internal statistics counters
 
 Supported IO formats:
  - protobuf     : Google Protobuf
@@ -82,6 +82,6 @@ Supported IO formats:
  - gtnet        : RTDS GTNET
  - gtnet.fake   : RTDS GTNET with fake header
 
- [34mv0.7.3-fdcd4ff-debug[0m (built on [35mMar 31 2019[0m [35m11:04:24[0m)
+ [34mv0.7.3-d8eb2f9-debug[0m (built on [35mMay  2 2019[0m [35m08:49:59[0m)
  Copyright 2014-2017, Institute for Automation of Complex Power Systems, EONERC
  Steffen Vogel <StVogel@eonerc.rwth-aachen.de>

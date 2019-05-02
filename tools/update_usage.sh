@@ -1,14 +1,8 @@
 #!/bin/bash
 
-TOOLS = villas \
-    villas-node \
-    villas-pipe \
-    villas-signal \
-    villas-hook \
-    villas-relay \
-    villas-test-cmp \
-    villas-test-rtt \
-    villas-test-config
+PREFIX=villas
+
+TOOLS=$(compgen -c | egrep "^${PREFIX}-" | sort -u)
 
 for TOOL in ${TOOLS}; do
     ${TOOL} -h > ${TOOL}.txt

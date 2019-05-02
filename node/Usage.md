@@ -43,6 +43,12 @@ The `hook` sub-command can be used to test filter / process hook functions.
 
 @include usage/villas-hook.txt
 
+### `villas convert` {#node-usage-convert}
+
+The `convert` sub-command can be used to convert between different @ref node-formats.
+
+@include usage/villas-convert.txt
+
 ### `villas test-rtt` {#node-usage-test-rtt}
 
 @include usage/villas-test-rtt.txt
@@ -64,3 +70,9 @@ Based on the URL which clients use for their connection, seperate sessions can b
 The relay does not require configuration.
 
 @include usage/villas-relay.txt
+
+### `villas shmem` {#node-usage-shmem}
+
+The `villas shmem` is a simple example tool to test the @ref node-type-shmem node-type for inter process communication.
+
+@include usage/villas-shmem.txt
