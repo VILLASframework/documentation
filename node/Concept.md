@@ -11,3 +11,4 @@ Hence, it's cruical to keep the added overhead as low as possible (in terms of l
 - @subpage node-concept-path
 - @subpage node-concept-signals
 - @subpage node-concept-hook
+- @subpage node-concept-sample
