@@ -1,4 +1,4 @@
-# IO Formats {#node-formats}
+# Format-types {#node-formats}
 
 Some of the VILLASnode @ref node-types are transports which can exchange arbitrary payloads.
 Examples for these node-types are: @ref node-type-mqtt, @ref node-type-amqp and @ref node-type-socket.
