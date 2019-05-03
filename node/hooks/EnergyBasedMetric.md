@@ -4,4 +4,4 @@
 
 ## Example
 
-@include node/hooks/ebm.conf
+@include node/etc/examples/hooks/ebm.conf

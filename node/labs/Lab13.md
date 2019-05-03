@@ -2,7 +2,7 @@
 
 # Configuration
 
-@includelineno lab13.conf
+@includelineno node/etc/labs/lab13.conf
 
 # RSCAD
 

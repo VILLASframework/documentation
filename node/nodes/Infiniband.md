@@ -155,4 +155,4 @@ It turns out that the ideal value in most cases is `out.max_wrs / 2`. Hence, usu
 
 ## Example
 
-@include node/nodes/infiniband.conf
+@include node/etc/examples/nodes/infiniband.conf

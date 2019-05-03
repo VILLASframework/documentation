@@ -8,4 +8,4 @@ The `dump` hook has no configurable options.
 
 ## Example
 
-@include node/hooks/dump.conf
+@include node/etc/examples/hooks/dump.conf

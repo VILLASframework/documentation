@@ -6,4 +6,4 @@ The `fix` hook checks each sample and adds missing metadata such as timestamps o
 
 ## Example
 
-@include node/hooks/fix.conf
+@include node/etc/examples/hooks/fix.conf

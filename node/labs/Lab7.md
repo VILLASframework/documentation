@@ -14,7 +14,7 @@ We will show later how to stream the samples _in real-time_ to a destination nod
 
 ## Better way (real-time)
 
-@includelineno lab7.conf
+@includelineno node/etc/labs/lab7.conf
 
 In order to stream the samples in real-time from a file, we will use the @ref node-type-file node-type with the following configuration file (`lab7.conf`):
 

@@ -30,4 +30,4 @@ Specify the synchronization mode of the internal queue.
 
 ## Example
 
-@include node/nodes/loopback.conf
+@include node/etc/examples/nodes/loopback.conf

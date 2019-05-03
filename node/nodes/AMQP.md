@@ -38,4 +38,4 @@ The routing key of published messages as well as the routing key which is used t
 
 ## Example
 
-@include node/nodes/amqp.conf
+@include node/etc/examples/nodes/amqp.conf

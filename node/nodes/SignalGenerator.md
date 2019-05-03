@@ -70,4 +70,4 @@ If `true`, the @ref node-type-signal node-type will count missed steps and warn 
 
 ## Example
 
-@include node/nodes/signal_generator.conf
+@include node/etc/examples/nodes/signal_generator.conf

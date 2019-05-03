@@ -8,7 +8,7 @@ This node-type requires [comedilib](http://comedi.org) (>= 0.11.0).
 
 ## Example
 
-@include node/nodes/comedi.conf
+@include node/etc/examples/nodes/comedi.conf
 
 # Implementation {#node-implementation-comedi}
 

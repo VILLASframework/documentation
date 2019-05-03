@@ -13,4 +13,4 @@ The configuration consists of two options which are exclusive:
 
 ## Example
 
-@include node/hooks/average.conf
+@include node/etc/examples/hooks/average.conf

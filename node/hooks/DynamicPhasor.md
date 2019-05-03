@@ -4,4 +4,4 @@
 
 ## Example
 
-@include node/hooks/dp.conf
+@include node/etc/examples/hooks/dp.conf

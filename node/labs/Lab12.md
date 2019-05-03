@@ -9,7 +9,7 @@ This technique is usefull for live monitoring and user interaction with simulati
 
 ## The configuration file
 
-@includelineno lab12.conf
+@includelineno node/etc/labs/lab12.conf
 
 ## Start node and signal generator
 

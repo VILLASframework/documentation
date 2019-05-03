@@ -40,7 +40,7 @@ Example: `AttributeName(AttributeType) MetadataName1(MetadataType1)=MetadataValu
 
 ## Example
 
-@include node/nodes/ngsi.conf
+@include node/etc/examples/nodes/ngsi.conf
 
 # Further reading
 

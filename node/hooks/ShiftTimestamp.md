@@ -8,4 +8,4 @@
 
 ## Example
 
-@include node/hooks/shift_ts.conf
+@include node/etc/examples/hooks/hooksshift_ts.conf

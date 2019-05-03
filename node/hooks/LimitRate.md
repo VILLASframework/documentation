@@ -9,4 +9,4 @@ The decission whether a sample is discarded or not is based on its timestamp.
 
 ## Example
 
-@include node/hooks/limit_rate.conf
+@include node/etc/examples/hooks/hookslimit_rate.conf

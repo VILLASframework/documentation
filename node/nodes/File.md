@@ -114,7 +114,7 @@ If `out.buffer_size = 0`, no buffer will be generated.
 ## Example
 
 ### Using local files
-@include node/nodes/file.conf
+@include node/etc/examples/nodes/file.conf
 
 ### Using remote files
-@include node/nodes/advio.conf
+@include node/etc/examples/nodes/advio.conf

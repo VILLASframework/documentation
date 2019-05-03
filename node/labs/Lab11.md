@@ -34,7 +34,7 @@ VILLASnode supports demultiplexing by using __mapping__ expressions in the @ref 
 
 ## Configuration file
 
-@includelineno lab11.conf
+@includelineno node/etc/labs/lab11.conf
 
 ## The register modes
 

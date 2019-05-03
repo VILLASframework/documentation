@@ -19,4 +19,4 @@ https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/t
 
 ## Example
 
-@include node/nodes/test_rtt.conf
+@include node/etc/examples/nodes/test_rtt.conf

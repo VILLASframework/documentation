@@ -42,5 +42,5 @@ The @ref node-type-nanomsg supports several different transport mechanisms which
 
 ## Example
 
-@include node/nodes/nanomsg.conf
+@include node/etc/examples/nodes/nanomsg.conf
 

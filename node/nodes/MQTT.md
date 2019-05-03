@@ -42,4 +42,4 @@ The port number of the MQTT broker.
 
 ## Example
 
-@include node/nodes/mqtt.conf
+@include node/etc/examples/nodes/mqtt.conf

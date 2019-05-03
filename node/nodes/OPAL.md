@@ -33,7 +33,7 @@ Every `opal` node supports the following special settings:
 
 ## Example
 
-@include node/nodes/opal.conf
+@include node/etc/examples/nodes/opal.conf
 
 # Arguments for OPAL-RT block
 

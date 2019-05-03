@@ -14,4 +14,4 @@ Due to its easy readability, we will use the [libconfig](http://www.hyperrealm.c
 For the next couple labs, we will use the following simple configuration file named `lab3.conf`.
 It only contains a single node named `udp_node1` which sends / receives samples via IP / UDP on port 12000.
 
-@includelineno lab3.conf
+@includelineno node/etc/labs/lab3.conf

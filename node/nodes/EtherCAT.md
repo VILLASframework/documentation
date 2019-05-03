@@ -15,4 +15,4 @@ https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/e
 
 ## Example
 
-@include node/nodes/ethercat.conf
+@include node/etc/examples/nodes/ethercat.conf

@@ -14,4 +14,4 @@ It can also optionally prefix each line of output with a user definable prefix i
 
 ## Example
 
-@include node/hooks/print.conf
+@include node/etc/examples/hooks/print.conf

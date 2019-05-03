@@ -71,4 +71,4 @@ Packet duplication in percent.
 Packet corruption in percent.
 
 # Example
-@include node/nodes/netem.conf
+@include node/etc/examples/nodes/netem.conf

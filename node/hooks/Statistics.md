@@ -46,4 +46,4 @@ If omitted, stdout (the terminal) will be used.
 
 ## Example
 
-@include node/hooks/stats.conf
+@include node/etc/examples/hooks/stats.conf

@@ -10,4 +10,4 @@ The decimation ratio. A value of 4 will skip every, but the 4th sample in a row.
 
 ## Example
 
-@include node/hooks/decimate.conf
+@include node/etc/examples/hooks/decimate.conf

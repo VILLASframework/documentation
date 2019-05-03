@@ -19,7 +19,7 @@ For more information see also: @ref node-netem
 
 ## Example
 
-@include node/nodes/rtp.conf
+@include node/etc/examples/nodes/rtp.conf
 
 # Further reading
 

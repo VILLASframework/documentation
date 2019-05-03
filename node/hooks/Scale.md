@@ -15,4 +15,4 @@ The gain which is mulitplied to the signal before the offset is added.
 
 ## Example
 
-@include node/hooks/scale.conf
+@include node/etc/examples/hooks/scale.conf

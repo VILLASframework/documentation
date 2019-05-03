@@ -6,4 +6,4 @@ The "stats" node-type receives statistics of a node or path.
 
 ## Example
 
-@include node/nodes/stats.conf
+@include node/etc/examples/nodes/stats.conf

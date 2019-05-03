@@ -12,4 +12,4 @@ The signal offset at which the average signal should be inserted.
 
 ## Example
 
-@include node/hooks/average.conf
+@include node/etc/examples/hooks/average.conf

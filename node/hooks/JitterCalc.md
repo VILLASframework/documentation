@@ -4,4 +4,4 @@
 
 ## Example
 
-@include node/hooks/jitter_calc.conf
+@include node/etc/examples/hooks/hooksjitter_calc.conf

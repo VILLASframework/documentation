@@ -16,4 +16,4 @@ The the type of the casted signal.
 
 ## Example
 
-@include node/hooks/cast.conf
+@include node/etc/examples/hooks/cast.conf

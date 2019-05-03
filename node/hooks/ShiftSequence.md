@@ -8,4 +8,4 @@ The offset which is added to the sequence number of each processed sample.
 
 ## Example
 
-@include node/hooks/shift_seq.conf
+@include node/etc/examples/hooks/hooksshift_seq.conf

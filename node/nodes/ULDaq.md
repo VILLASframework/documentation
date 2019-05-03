@@ -79,4 +79,4 @@ https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/u
 
 # Example
 
-@include node/nodes/uldaq.conf
+@include node/etc/examples/nodes/uldaq.conf

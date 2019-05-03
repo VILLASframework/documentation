@@ -32,4 +32,4 @@ See also: [InfluxDB documentation](https://docs.influxdata.com/influxdb/v0.9/wri
 
 ## Example
 
-@include node/nodes/influxdb.conf
+@include node/etc/examples/nodes/influxdb.conf

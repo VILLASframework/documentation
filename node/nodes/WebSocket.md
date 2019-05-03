@@ -36,4 +36,4 @@ The node name is separated by a slash `/`.
 
 ## Example
 
-@include node/nodes/websocket.conf
+@include node/etc/examples/nodes/websocket.conf

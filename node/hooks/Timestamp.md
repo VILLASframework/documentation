@@ -8,4 +8,4 @@ The `ts` hook has no configurable options.
 
 ## Example
 
-@include node/hooks/ts.conf
+@include node/etc/examples/hooks/ts.conf

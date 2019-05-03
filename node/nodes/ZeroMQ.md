@@ -50,4 +50,4 @@ The private key of the server.
 
 ## Example
 
-@include node/nodes/zeromq.conf
+@include node/etc/examples/nodes/zeromq.conf

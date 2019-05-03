@@ -49,7 +49,7 @@ program directly from VILLASNode. If unset, no command is executed.
 
 ## Example
 
-@include node/nodes/shmem.conf
+@include node/etc/examples/nodes/shmem.conf
 
 # API for external programs {#node-type-shmem-api}
 

@@ -17,7 +17,7 @@ $ villas signal -r 1000 -l 10000 sine | villas hook -o verbose=true -o warmup=30
 
 @image html villas_hook_stats_netem.svg height=150px
 
-@includelineno lab9_netem.conf
+@includelineno node/etc/labs/lab9_netem.conf
 
 In  the first terminal:
 

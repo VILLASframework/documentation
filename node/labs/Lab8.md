@@ -38,7 +38,7 @@ $ villas hook [hook_name] [parameter1] [parameter2] ... [parameterN]
 
 When used with `villas node` the hook is configured as part of a path:
 
-@includelineno lab8.conf
+@includelineno node/etc/labs/lab8.conf
 
 ## Chaining
 
