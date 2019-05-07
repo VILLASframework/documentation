@@ -55,13 +55,13 @@ $ villas hook fix_ts | villas hook skip_first samples=10
 ## Skip the first 10 seconds (skip_first)
 
 ```bash
-$ villas signal sine | villas hook skip_first seconds=10
+$ villas signal sine | villas hook skip_first -o seconds=10
 ```
 
 ## Skip the first 1000 samples (skip_first)
 
 ```bash
-$ villas signal sine | villas hook skip_first samples=1000
+$ villas signal sine | villas hook skip_first -o samples=1000
 ```
 
 ## Shift the timestamps of all samples 10 seconds into the future (shift_ts)
