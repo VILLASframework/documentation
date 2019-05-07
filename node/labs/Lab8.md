@@ -104,7 +104,7 @@ This invocation reduces the sending  rate by a factor of 10.
 The resulting rate is: `1000 / 10 = 100`.
 
 ```bash
-$ villas signal -r 1000 sine | villas hook decimate rate=10
+$ villas signal -r 1000 sine | villas hook decimate -o ratio=10
 ```
 
 @htmlonly
