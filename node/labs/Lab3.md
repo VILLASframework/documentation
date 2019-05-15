@@ -8,7 +8,7 @@ The following command sends a single _sample_ to node `udp_node1`.
 
 ```
 $ # start tcpdump to capture traffic in background
-$ tcpdump -i lo -w example1.pcap udp port 12000 &
+$ tcpdump -i lo udp port 12001
 
 $ # send 10 values to udp_node1
 $ villas signal -v 3 -r 10 -l 10 mixed | villas pipe lab3.conf udp_node1
