@@ -7,6 +7,7 @@ During this lab we will use the following hook functions:
 
 | Name		| Description |
 | :--		| :-- |
+| `average` 	| Calculates average over some signals. |
 | `restart` 	| Call restart hooks for current path. |
 | `ts` 		| Overwrite origin timestamp of samples with receive timestamp. |
 | `stats` 	| Collect statistics for the current path. |
@@ -55,13 +56,18 @@ $ villas hook fix_ts | villas hook skip_first samples=10
 ## Skip the first 10 seconds (skip_first)
 
 ```bash
-$ villas signal sine | villas hook skip_first seconds=10
+$ villas signal sine | villas hook skip_first -o seconds=10
 ```
 
 ## Skip the first 1000 samples (skip_first)
 
 ```bash
-$ villas signal sine | villas hook skip_first samples=1000
+$ villas signal sine | villas hook skip_first -o samples=1000
+```
+## Calculate average over first five signals (average)
+
+```bash
+$ villas signal sine | villas hook average -o offset=0 -o signals=0,1,2,3,4
 ```
 
 ## Shift the timestamps of all samples 10 seconds into the future (shift_ts)
@@ -104,7 +110,7 @@ This invocation reduces the sending  rate by a factor of 10.
 The resulting rate is: `1000 / 10 = 100`.
 
 ```bash
-$ villas signal -r 1000 sine | villas hook decimate rate=10
+$ villas signal -r 1000 sine | villas hook decimate -o ratio=10
 ```
 
 @htmlonly
