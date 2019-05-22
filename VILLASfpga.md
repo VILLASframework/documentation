@@ -30,6 +30,22 @@ The VILLASfpga project is splitted into two Git repositories:
 - [VILLASfpga-hardware](https://git.rwth-aachen.de/acs/public/villas/VILLASfpga-hardware) contains the Xilinx FPGA design based on the Vivado
 
 
+## Building
+
+```bash
+git clone  https://git.rwth-aachen.de/acs/public/villas/VILLASfpga
+pushd VILLASfpga
+git submodule update --init --recursive
+mkdir -p thirdparty/libxil/build
+pushd thirdparty/libxil/build
+cmake ..
+sudo make -j$(nproc) install
+popd
+mkdir build
+cmake ..
+sudo make -j$(nproc) install
+```
+
 ## Available Bitstreams
 
 @todo Coming soon
