@@ -45,7 +45,26 @@ popd
 mkdir build
 cmake ..
 sudo make -j$(nproc) install
+ldconfig
 ```
+
+## Running loopback test
+
+Check that system is booted with IOMMU support:
+
+```
+find /sys | grep dmar
+```
+
+If not add `intel_iommu=on` to the kernel commandline and reboot.
+
+```bash
+sudo modprobe vfio
+sudo modprobe vfio_pci
+
+sudo VILLASfpga/build/src/villas-fpga-pipe 
+```
+
 
 ## Available Bitstreams
 
