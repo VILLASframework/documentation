@@ -33,6 +33,7 @@ The VILLASfpga project is splitted into two Git repositories:
 ## Building
 
 ```bash
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 git clone  https://git.rwth-aachen.de/acs/public/villas/VILLASfpga
 pushd VILLASfpga
 git submodule update --init --recursive
