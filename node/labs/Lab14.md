@@ -7,7 +7,7 @@ The following command can be used to compare a list of files:
 ```
 $ villas-test-cmp [OPTIONS] FILE1 FILE2 ... FILEn
 ```
-where options refers to one of the following: 
+where options refers to one or more of the following: 
 
 | Option	| Description |
 | :---	| :--- |
