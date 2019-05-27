@@ -1,6 +1,6 @@
 # Lab 14: File comparison 
 
-VILLASnode toolbox can be used for the comparison of a list of files
+One of the important uses of the VILLASnode toolbox is the comparison of a list of files.
 
 The following command can be used to compare a list of files:
 
@@ -37,7 +37,7 @@ Now run the following command to compare the two files. He we ignore the timesta
 $ villas test-cmp -T file_send.dat file_receive.dat
 ```
 
-Following result is obtained based on the similarity between the two files:
+Following return codes are obtained based on the similarity between the two files:
 
 ```
 Return codes:
