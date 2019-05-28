@@ -30,6 +30,42 @@ The VILLASfpga project is splitted into two Git repositories:
 - [VILLASfpga-hardware](https://git.rwth-aachen.de/acs/public/villas/VILLASfpga-hardware) contains the Xilinx FPGA design based on the Vivado
 
 
+## Building
+
+```bash
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+git clone  https://git.rwth-aachen.de/acs/public/villas/VILLASfpga
+pushd VILLASfpga
+git submodule update --init --recursive
+mkdir -p thirdparty/libxil/build
+pushd thirdparty/libxil/build
+cmake ..
+sudo make -j$(nproc) install
+popd
+mkdir build
+cmake ..
+sudo make -j$(nproc) install
+ldconfig
+```
+
+## Running loopback test
+
+Check that system is booted with IOMMU support:
+
+```
+find /sys | grep dmar
+```
+
+If not add `intel_iommu=on` to the kernel commandline and reboot.
+
+```bash
+sudo modprobe vfio
+sudo modprobe vfio_pci
+
+sudo VILLASfpga/build/src/villas-fpga-pipe 
+```
+
+
 ## Available Bitstreams
 
 @todo Coming soon
