@@ -2,7 +2,7 @@
 
 One of the important uses of the VILLASnode toolbox is the comparison of a list of files.
 
-The following command can be used to compare a list of files:
+The following command can be used to compare the files:
 
 ```
 $ villas-test-cmp [OPTIONS] FILE1 FILE2 ... FILEn
