@@ -1,4 +1,4 @@
-# Lab 14: File comparison 
+# Lab 14: File comparison {#node-guide-lab14}
 
 One of the important uses of the VILLASnode toolbox is the comparison of a list of files.
 
