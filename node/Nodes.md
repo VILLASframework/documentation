@@ -10,7 +10,7 @@ VILLASnode currently supports the following node-types:
 | :--                             | :-- | :--   | :--  | :--   | :--       | :--        | :-- |
 | @subpage node-type-signal       | no  | AIO   | yes  | no    | 1         | stable     | |
 | @subpage node-type-loopback     | no  | AIO   | yes  | yes   | unlimited | stable     | |
-| @subpage node-type-exex         | no  | AIO   | yes  | yes   | unlimited | stable     | |
+| @subpage node-type-exec         | no  | AIO   | yes  | yes   | unlimited | stable     | |
 | @subpage node-type-file         | no  | AIO   | yes  | yes   | unlimited | stable     | |
 | @subpage node-type-socket       | yes | AIO   | yes  | yes   | unlimited | stable     | |
 | @subpage node-type-websocket    | no  | AIO   | yes  | yes   | unlimited | stable     | |
