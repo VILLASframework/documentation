@@ -18,7 +18,7 @@ https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/s
 
 # Configuration {#node-config-node-signal}
 
-## signal (string: "random" | "sine" | "square" | "triangle" | "ramp" | "counter" | "contant" | "mixed") {#node-config-node-signal-signal}
+## signal (string: "random" | "sine" | "square" | "triangle" | "ramp" | "counter" | "constant" | "mixed") {#node-config-node-signal-signal}
 
 The type of signal which should be generated:
 
