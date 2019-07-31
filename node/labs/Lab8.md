@@ -179,9 +179,9 @@ $ villas hook gate -o signal=0 -o mode=above -o threshold=0.5 < gate_in.dat > ga
 $ villas hook gate -o signal=0 -o mode=below -o threshold=0.5 < gate_in.dat > gate_out_below.dat
 ```
 
-@image html plots/gate_in.svg height=150px
-@image html plots/gate_out_above.svg height=150px
-@image html plots/gate_out_below.svg height=150px
+@image html plots/gate_in.svg
+@image html plots/gate_out_above.svg
+@image html plots/gate_out_below.svg
 
 The modes rising edge and falling edge allow signal values to pass on rising edge and falling edge respectively. It is demonstrated by the examples and waveforms below: 
 
@@ -191,9 +191,9 @@ $ villas hook gate -o signal=0 -o mode=rising_edge < gate_in.dat > gate_out_re.d
 $ villas hook gate -o signal=0 -o mode=falling_edge < gate_in.dat > gate_out_re.dat
 ```
 
-@image html plots/gate_in.svg height=150px
-@image html plots/gate_out_re.svg height=150px
-@image html plots/gate_out_fe.svg height=150px
+@image html plots/gate_in.svg
+@image html plots/gate_out_re.svg
+@image html plots/gate_out_fe.svg
 
 ## Convert values between floating point / integer representation (convert)
 
