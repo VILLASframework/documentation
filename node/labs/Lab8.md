@@ -5,30 +5,30 @@ These functions are in C-code. A plugin mechanism makes it easy for the user to 
 
 During this lab we will use the following hook functions:
 
-| Name		| Description |
-| :--		| :-- |
-| `average` 	| Calculates average over some signals. |
-| `cast` 	| Cast signal types. |
-| `restart` 	| Call restart hooks for current path. |
-| `ts` 		| Overwrite origin timestamp of samples with receive timestamp. |
-| `stats` 	| Collect statistics for the current path. |
-| `decimate` 	| Downsamping by integer factor. |
-| `dp` 	| Transform to/from dynamic phasor. |
-| `ebm` 	| Energy based metric. |
-| `fix` 	| Fix received data by adding missing fields. |
-| `fix_ts` 	| Update timestamps of sample if not set. |
-| `gate` 	| Skip samples only if an enable signal is under a specified threshold. |
-| `jitter` 	| Hook to calculate jitter between GTNET-SKT GPS timestamp and Villas node NTP timestamp. |
-| `limit_rate` 	| Limits the rate of sending signals. |
-| `skip_first` 	| Skip the first samples. |
-| `stats_send` 	| Send path statistics to another node. |
-| `drop` 		| Drop messages with reordered sequence numbers. |
-| `convert` 	| Convert message from / to floating-point / integer. |
-| `scale` 	| Scale signals by a factor and add offset. |
-| `shift_seq` 	| Shift sequence number of samples. |
-| `map` 		| Remap values and / or add header, timestamp values to the sample. |
-| `print` 	| Print the message to stdout. |
-| `shift_ts` 	| Shift timestamps of samples. |
+| Name          | Description |
+| :--           | :-- |
+| `average`     | Calculates average over some signals. |
+| `cast`        | Cast signal types. |
+| `restart`     | Call restart hooks for current path. |
+| `ts`          | Overwrite origin timestamp of samples with receive timestamp. |
+| `stats`       | Collect statistics for the current path. |
+| `decimate`    | Downsamping by integer factor. |
+| `dp`          | Transform to/from dynamic phasor. |
+| `ebm`         | Energy based metric. |
+| `fix`         | Fix received data by adding missing fields. |
+| `fix_ts`      | Update timestamps of sample if not set. |
+| `gate`        | Skip samples only if an enable signal is under a specified threshold. |
+| `jitter`      | Hook to calculate jitter between GTNET-SKT GPS timestamp and Villas node NTP timestamp. |
+| `limit_rate`  | Limits the rate of sending signals. |
+| `skip_first`  | Skip the first samples. |
+| `stats_send`  | Send path statistics to another node. |
+| `drop`        | Drop messages with reordered sequence numbers. |
+| `convert`     | Convert message from / to floating-point / integer. |
+| `scale`       | Scale signals by a factor and add offset. |
+| `shift_seq`   | Shift sequence number of samples. |
+| `map`         | Remap values and / or add header, timestamp values to the sample. |
+| `print`       | Print the message to stdout. |
+| `shift_ts`    | Shift timestamps of samples. |
 
 # How to configure a hook function
 
@@ -174,9 +174,9 @@ $ villas hook gate -o signal=0 -o mode=above -o threshold=0.5 < gate_in.dat > ga
 $ villas hook gate -o signal=0 -o mode=below -o threshold=0.5 < gate_in.dat > gate_out_below.dat
 ```
 
-@image html Plots/gate_in.svg height=150px
-@image html Plots/gate_out_above.svg height=150px
-@image html Plots/gate_out_below.svg height=150px
+@image html plots/gate_in.svg height=150px
+@image html plots/gate_out_above.svg height=150px
+@image html plots/gate_out_below.svg height=150px
 
 The modes rising edge and falling edge allow signal values to pass on rising edge and falling edge respectively. It is demonstrated by the examples and waveforms below: 
 
@@ -186,9 +186,9 @@ $ villas hook gate -o signal=0 -o mode=rising_edge < gate_in.dat > gate_out_re.d
 $ villas hook gate -o signal=0 -o mode=falling_edge < gate_in.dat > gate_out_re.dat
 ```
 
-@image html Plots/gate_in.svg height=150px
-@image html Plots/gate_out_re.svg height=150px
-@image html Plots/gate_out_fe.svg height=150px
+@image html plots/gate_in.svg height=150px
+@image html plots/gate_out_re.svg height=150px
+@image html plots/gate_out_fe.svg height=150px
 
 
 @htmlonly
