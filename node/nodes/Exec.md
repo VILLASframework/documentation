@@ -14,15 +14,31 @@ A IO format identifier selecting the file format which is used for reading and w
 
 See @ref node-formats for a complete list of supported formats.
 
-## exec (string) {#node-config-node-exec-exec}
+## shell (boolean) = false {#node-config-node-exec-shell}
+
+If set, the @node-config-node-exec-exec setting gets passed the shell (`/usr/bin`). 
+In this case the `exec` setting must be given as a string.
+
+If not set, we will directly execute the sub-process via `execvpe(2)`.
+In this case the `exec` setting must be given as an array (`argv[]`).
+
+## exec (string|array) {#node-config-node-exec-exec}
 
 The program which should be execed in the sub-process.
 
 The options is passed to the system shell for execution.
 
-## flush (boolean) = false {#node-config-node-exec-flush}
+## flush (boolean) = true {#node-config-node-exec-flush}
 
-Flush the stream after every access.
+Flush stream every time VILLASnode passes data the sub-process.
+
+## working_directory (string: path) {#node-config-node-exec-working_directory}
+
+If set, the working directory for the sub-process will be changed.
+
+## environment (object) {#node-config-node-exec-environent}
+
+A object of key/value pairs of environemnt variables which should be passed to the sub-process **in addition** to the parent environment.
 
 ## Example
 
