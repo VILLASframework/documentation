@@ -30,6 +30,8 @@ During this lab we will use the following hook functions:
 | `print`       | Print the message to stdout. |
 | `shift_ts`    | Shift timestamps of samples. |
 
+A full list of supported hook functions is documented here: @ref hook-types
+
 # How to configure a hook function
 
 A hook function can be used in two ways:
@@ -156,6 +158,9 @@ The resulting rate is: `1000 / 10 = 100`.
 $ villas signal -r 1000 sine | villas hook decimate -o ratio=10
 ```
 
+@htmlonly
+<asciinema-player rows="25" cols="500" poster="npt:0:1"  src="recordings/terminal/villas_hook_decimate.json">
+@endhtmlonly
 
 ## Skip sample values based on the enable signal (gate)
 
@@ -189,11 +194,6 @@ $ villas hook gate -o signal=0 -o mode=falling_edge < gate_in.dat > gate_out_re.
 @image html plots/gate_in.svg height=150px
 @image html plots/gate_out_re.svg height=150px
 @image html plots/gate_out_fe.svg height=150px
-
-
-@htmlonly
-<asciinema-player rows="25" cols="500" poster="npt:0:1"  src="recordings/terminal/villas_hook_decimate.json">
-@endhtmlonly
 
 ## Convert values between floating point / integer representation (convert)
 
