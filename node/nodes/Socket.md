@@ -44,7 +44,7 @@ Use `*` to listen on all interfaces: `local = "*:12000"`.
 
 The remote address and port number to which this node will send data.
 
-## layer (string: "udp" | "ip" | "eth") {#node-config-node-socket-layer}
+## layer (string: "udp" | "ip" | "eth") = "udp" {#node-config-node-socket-layer}
 
 Select the network layer which should be used for the socket. Please note that `eth` can only be used locally in a LAN as it contains no routing information for the internet.
 
