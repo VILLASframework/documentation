@@ -28,9 +28,7 @@ For now, only the first message type (`data`) is used.
 Therefore the complete protocol is **stateless**.
 Later we might want to support more complex simulation scenarios which require some kind of controlling.
 
-Except for the simulation data, all values are sent in **network byte order** (big endian)!
-The endianess of the simulation data is indicated by a single bit in the message header.
-This allows us to reduce the amount of conversions during one transfer.
+All values are sent in **network byte order** (big endian)!
 
 @see msg for implementation details.
 
