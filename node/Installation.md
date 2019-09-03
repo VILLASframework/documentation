@@ -109,7 +109,8 @@ VILLASnode currently has the following list of dependencies:
  - [libjansson](http://www.digip.org/jansson/) (>= 2.7) JSON parser for @ref node-type-websocket and @ref node-type-ngsi node-types (_required_).
  - [openssl](https://www.openssl.org) (>= 1.0.0) for cryptographic hashing functions (_required_).
  - [libcurl](https://curl.haxx.se/libcurl/) (>= 7.29.0) for HTTP REST requests by the @ref node-type-ngsi node-type (_required_).
- - [spdlog](https://github.com/gabime/spdlog) for logging (_required_).
+ - [spdlog](https://github.com/gabime/spdlog) (>= 1.3.1) for logging (_required_).
+ - [fmtlib](https://github.com/fmtlib/fmt) (>= 5.2.0) for string formatting (_required_).
 
  - [libconfig](http://www.hyperrealm.com/libconfig/) (>= 1.4.9) for parsing the configuration file (_optional_).
  - [libnl3](http://www.infradead.org/~tgr/libnl/) (>= 3.2.27) for the network communication & emulation support of the @ref node-type-socket node-type (_optional_).
