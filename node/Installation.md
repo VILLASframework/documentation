@@ -93,10 +93,11 @@ VILLASnode can be compiled from source using [CMake](http://cmake.org).
 This process has been tested with the following Linux distributions:
 
  - Fedora 29
- - Debian 9 (Stretch)
+ - Debian 10 (Buster)
  - Ubuntu 18.04 (Bionic Beaver)
    - **Note:** libwebsockets needs to be installed from source. Packaged version is outdated.
  - Centos 7
+ - Raspbian (Debian Buster)
 
 ## Prerequisites
 
