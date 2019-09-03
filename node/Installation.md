@@ -157,7 +157,8 @@ $ sudo apt-get install \
     libibverbs-dev \
     librdmacm-dev \
     libre-dev \
-    libspdlog-dev
+    libspdlog-dev \
+    libfmt-dev
 ```
 
 or the following line for Fedora/CentOS/Redhat systems:
