@@ -16,7 +16,7 @@ Currently, the following formats are supported (or planned):
 | `csv`            | Comma/Tabulator-separated values                 | stable |
 | `raw`            | RAW/Binary data                                  | stable |
 | `gtnet`          | RTDS GTNET-SKT                                   | stable |
-| `gtnet.fake`     | RTDS GTNET-SKT (using the first three value as header) | stable |
+| `gtnet.fake`     | RTDS GTNET-SKT (using the first three value as header values: sequence, timestamp seconds, timestamp nanoseconds) | stable |
 | `protobuf`       | @subpage node-format-protobuf                    | stable |
 | `hdf5`           | @subpage node-format-hdf                         | [planned](https://git.rwth-aachen.de/acs/public/villas/VILLASnode/tree/format-h5pt) |
 | `bson`           | @subpage node-format-bson                        | [planned](https://git.rwth-aachen.de/acs/public/villas/VILLASnode/tree/format-bson) |
