@@ -20,3 +20,25 @@ Currently, the following formats are supported (or planned):
 | `protobuf`       | @subpage node-format-protobuf                    | stable |
 | `hdf5`           | @subpage node-format-hdf                         | [planned](https://git.rwth-aachen.de/acs/public/villas/VILLASnode/tree/format-h5pt) |
 | `bson`           | @subpage node-format-bson                        | [planned](https://git.rwth-aachen.de/acs/public/villas/VILLASnode/tree/format-bson) |
+
+## Configuration
+
+To use one of the format-types above, a setting named `format` must be present in the configuration of the respective node instance.
+The value of the `format` setting must match one of the values from the type column of the table above.
+
+Please note, that depending on you system configuration not all format-types might be available.
+Use the following command to get a list of all available types on your system: `villas node -h`.
+
+#### Example
+
+```
+nodes = {
+    udp_json_node = {
+        type = "socket"
+        layer = "udp"
+        format = "json"
+        
+        ...
+    }
+}
+```
