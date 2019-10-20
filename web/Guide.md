@@ -1,16 +1,45 @@
-# Setup demo {#web-demosetup}
-
-## Description
+# Getting Started with VILLASweb {#web-guide}
 
 This document describes setting up a demo in VILLASweb to test it's features. It is assumed that the docker-compose.yml file in VILLASweb repository is used (otherwise setup the website, backend with database and a villasnode which sends data).
 
-## Instructions
+## Configure VILLASnode
+
+### Install VILLASnode
+
+See: @ref node-installation
+
+### Create a new dummy data source
+
+1. Create a new empty configuration file with the following contents:
+
+@includelineno node/etc/examples/villas-web.conf
+
+**Note:** Please exchange the node name `test_node_1` to something unique in order to avoid conflicts with other users.
+
+### Start the VILLASnode gateway
+
+1. Run the following command:
+
+```bash
+villas node /opt/VILLASnode/etc/examples/villas-web.conf
+```
+
+**Note:** Change to path to the configuration file accordingly.
+
+## Configure VILLASweb
+
+1. Access the public VILLASweb demo instance at: https://web.villas.fein-aachen.org
+
+### Create a new Simulator
 
 1. Go to 'Simulators' in the main menu.
   1. Add a new simulator by clicking on 'New Simulator'
-    1. Enter any name for the simulator, set the simulator ID to '1' and the endpoint to 'localhost:4000'.
+    1. Enter any name for the simulator, set the simulator ID to '1' and the endpoint to '/ws/relay/test_node_1'.
     2. Click on 'Create'.
-2. Go to 'Simulations' in the main menu.
+
+### Create a new Simulation
+
+1. Go to 'Simulations' in the main menu.
   1. Add a new simulation by clicking on 'New Simulation'.
     1. Enter any name for the simulation and click on 'Create'.
     2. Click on 'Running' in the table view beside the new simulation.
@@ -22,7 +51,10 @@ This document describes setting up a demo in VILLASweb to test it's features. It
       2. Click on 'Create'.
       3. Click on the created model in the table view.
       4. Enter any names for the signals in the simulation model (optional).
-3. Go to 'Projects' in the main menu.
+
+### Create a new Project
+
+1. Go to 'Projects' in the main menu.
   1. Add a new project by clicking on 'New Project'.
     1. Enter any name and select the simulation used by this project in the drop-down menu.
     2. Click on 'Create' and afterwards on the created project in the table view.
