@@ -4,14 +4,11 @@ SVG_FIGURES = $(DIA_FIGURES:%.dia=%.svg)
 WEBM_VIDEOS = $(wildcard recordings/video/*.webm)
 MP4_VIDEOS =  $(WEBM_VIDEOS:%.webm=%.mp4)
 
-INPUT = $(shell find . -name "*.md") \
+INPUT = $(shell find doc/ -name "*.md") \
 	$(shell find node/labs/etc -name "*.conf")
 
-DEPLOY_USER ?= deploy
-DEPLOY_HOST ?= acs-os-fein-website
-DEPLOY_PATH ?= /var/www/villas/doc/
-
-RSYNC_OPTS ?= --recursive --ignore-missing-args --copy-links --chown $(DEPLOY_USER):$(DEPLOY_USER)
+DOCKER_IMAGE ?= registry.git.rwth-aachen.de/acs/public/villas/documentation
+DOCKER_TAG ?= $(shell git rev-parse --abbrev-ref HEAD)
 
 export LC_ALL = en_US.utf-8
 
@@ -23,11 +20,6 @@ figures: $(SVG_FIGURES)
 
 clean:
 	rm -f html/*.{png,js,html,svg,css,*.md5}
-
-deploy: html/index.html
-	rsync $(RSYNC_OPTS) html/ $(DEPLOY_USER)@$(DEPLOY_HOST):$(DEPLOY_PATH)
-	rsync $(RSYNC_OPTS) tools/jump.cgi $(DEPLOY_USER)@$(DEPLOY_HOST):$(DEPLOY_PATH)/cgi-bin/
-	rsync $(RSYNC_OPTS) doxysearch.db/ $(DEPLOY_USER)@$(DEPLOY_HOST):$(DEPLOY_PATH)/doxysearch.db/
 
 html/index.html: $(INPUT) $(SVG_FIGURES) Doxyfile
 	doxygen
@@ -48,4 +40,15 @@ doxysearch.db/: searchdata.xml searchdata-tagfile.xml
 %.mp4: %.webm
 	ffmpeg -i $^ $@
 
-.PHONY: clean all deploy videos figures
+image:
+	docker build \
+		--tag $(DOCKER_IMAGE):$(DOCKER_TAG) \
+		--tag $(DOCKER_IMAGE):latest .
+
+upload: image
+	docker push $(DOCKER_IMAGE):$(DOCKER_TAG)
+
+run: image
+	docker run -p 8080:80 $(DOCKER_IMAGE):$(DOCKER_TAG)
+
+.PHONY: clean all deploy videos figures image upload run

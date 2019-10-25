@@ -20,13 +20,61 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###################################################################################
 
-FROM fedora:28
-MAINTAINER Steffen Vogel <stvogel@eonerc.rwth-aachen.de>
+FROM debian:buster AS builder
 
-RUN dnf -y install \
-	git \
-	doxygen \
-	dia \
-	graphviz \
-	make \
-	libxslt
+ENV DEBIAN_FRONTEND=noninteractive
+ENV LANG en_US.UTF-8
+
+RUN apt-get update && \
+	apt-get -y install \
+		git \
+		doxygen \
+		dia \
+		graphviz \
+		make \
+		xsltproc \
+		findutils \
+		locales
+
+RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
+	dpkg-reconfigure --frontend=noninteractive locales && \
+	update-locale LANG=en_US.UTF-8
+
+RUN mkdir /doc
+WORKDIR /doc
+COPY doc 		/doc/doc
+COPY figures	/doc/figures
+COPY filters	/doc/filters
+COPY images		/doc/images
+COPY theme		/doc/theme
+COPY usage		/doc/usage
+COPY tools/searchdata-tagfile.xslt		/doc/tools/searchdata-tagfile.xslt
+COPY Doxyfile	/doc/
+COPY Makefile 	/doc/
+
+RUN ls -l && make
+
+FROM nginx:1.17.4
+
+RUN apt-get update && \
+	apt-get install -y \
+		uwsgi \
+		libxapian30 \
+		supervisor
+
+RUN mkdir /usr/share/nginx/cgi-bin
+
+RUN adduser --disabled-password --gecos '' uwsgi
+
+COPY tools/nginx.conf /etc/nginx/nginx.conf
+COPY tools/supervisord.conf /etc/supervisor/supervisord.conf
+COPY tools/uwsgi.ini /etc/uwsgi/uwsgi.ini
+COPY tools/jump.cgi /usr/share/nginx/cgi-bin/
+
+COPY --from=builder /usr/bin/doxysearch.cgi /usr/share/nginx/cgi-bin/doxysearch.cgi
+COPY --from=builder /doc/doxysearch.db/ /usr/share/nginx/cgi-bin/doxysearch.db/
+COPY --from=builder /doc/html /usr/share/nginx/html/doc
+COPY --from=builder /doc/images /usr/share/nginx/html/doc/images
+COPY recordings/terminal /usr/share/nginx/html/doc/recordings/terminal
+
+CMD [ "/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf" ]
