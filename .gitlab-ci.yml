@@ -1,55 +1,35 @@
 variables:
   GIT_STRATEGY: fetch
   GIT_SUBMODULE_STRATEGY: recursive
-  RSYNC_OPTS: --recursive --ignore-missing-args --copy-links --verbose --chown $DEPLOY_USER:$DEPLOY_USER
 
 stages:
-  - prepare
   - build
   - deploy
-
-# Stage: prepare
-##############################################################################
-
-# Build docker image which is used to build & test VILLASnode
-docker:
-  stage: prepare
-  script:
-    - docker build -t villas/documentation-creator .
-  tags:
-    - shell
-    - linux
 
 # Stage: build
 ##############################################################################
 
-build:
+image:
   stage: build
-  artifacts:
-    name: "${CI_PROJECT_NAME}-doc-${CI_BUILD_REF}"
-    paths:
-      - html/
-      - xml/
-      - figures/dia/*.svg
-      - warnings.log
-      - doxysearch.db/
-      - searchdata.xml
   script:
-    - make
+    - make upload
   tags:
-    - docker
-  image: villas/documentation-creator
+    - shell
+    - linux
 
 # Stage: deploy
 ##############################################################################
 
-upload:
+deploy:kubernetes:
   stage: deploy
+  variables:
+    KUBECONFIG: /root/.kube/config
+  image: registry.git.rwth-aachen.de/acs/cloud/kubernetes/deployment
+  before_script:
+    - mkdir -p $(dirname ${KUBECONFIG})
+    - echo "${KUBECONFIG_ENCODED}" | base64 -d > ${KUBECONFIG}
+    - kubectl version
   script:
     - make deploy
-  dependencies:
-    - build
-  only:
-    - master
   tags:
-    - shell
+    - docker

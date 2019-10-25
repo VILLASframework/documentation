@@ -51,4 +51,8 @@ upload: image
 run: image
 	docker run -p 8080:80 $(DOCKER_IMAGE):$(DOCKER_TAG)
 
-.PHONY: clean all deploy videos figures image upload run
+deploy:
+	kubectl apply -f deployment.yaml
+	kubectl -n fein rollout restart deployment villas-doc
+
+.PHONY: clean all deploy videos figures image upload run deploy
