@@ -47,6 +47,7 @@ image:
 
 upload: image
 	docker push $(DOCKER_IMAGE):$(DOCKER_TAG)
+	docker push $(DOCKER_IMAGE):latest
 
 run: image
 	docker run -p 8080:80 $(DOCKER_IMAGE):$(DOCKER_TAG)

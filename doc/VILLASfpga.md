@@ -2,6 +2,7 @@
 
 <img src="images/logos/villas_fpga.svg" width="100" align="right" />
 
+ - @subpage fpga-setup
  - @subpage fpga-config
  - @subpage fpga-brainstorming
 

@@ -42,6 +42,7 @@ RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
 
 RUN mkdir /doc
 WORKDIR /doc
+COPY .git		/doc/.git
 COPY doc 		/doc/doc
 COPY figures	/doc/figures
 COPY filters	/doc/filters
@@ -51,6 +52,7 @@ COPY usage		/doc/usage
 COPY tools/searchdata-tagfile.xslt		/doc/tools/searchdata-tagfile.xslt
 COPY Doxyfile	/doc/
 COPY Makefile 	/doc/
+COPY README.md	/doc/doc/README.md
 
 RUN ls -l && make
 
