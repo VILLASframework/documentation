@@ -272,15 +272,15 @@ We prepared a image which you can download and run out of the box:
 
     ![Docker Quickstart Terminal.](docker_terminal.png)
 
-5. Download the latest VILLASnode Docker image by runnning: `$ docker pull villas/node`
+5. Download the latest VILLASnode Docker image by runnning: `$ docker pull registry.git.rwth-aachen.de/acs/public/villas/node`
 
    ![Pulling VILLASnode Docker image.](docker_pull.png)
 
-6. Test VILLASnode image by running: `$ docker run --privileged villas/node node -h`
+6. Test VILLASnode image by running: `$ docker run --privileged registry.git.rwth-aachen.de/acs/public/villas/node node -h`
 
    ![Running VILLASnode Docker image.](docker_run.png)
 
-7. Enter an interactive VILLASnode shell by running: `$ docker run --privileged --tty --interactive --entrypoint bash villas/node`
+7. Enter an interactive VILLASnode shell by running: `$ docker run --privileged --tty --interactive --entrypoint bash registry.git.rwth-aachen.de/acs/public/villas/node`
 
     ![Docker run VILLASnode interactively](docker_run_interactive.png)
 
