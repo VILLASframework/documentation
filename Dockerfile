@@ -46,6 +46,7 @@ COPY .git		/doc/.git
 COPY doc 		/doc/doc
 COPY figures	/doc/figures
 COPY filters	/doc/filters
+COPY examples	/doc/examples
 COPY images		/doc/images
 COPY theme		/doc/theme
 COPY usage		/doc/usage
