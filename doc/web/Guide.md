@@ -34,7 +34,7 @@ villas node /opt/VILLASnode/etc/examples/villas-web.conf
 
 1. Go to 'Simulators' in the main menu.
   1. Add a new simulator by clicking on 'New Simulator'
-    1. Enter any name for the simulator, set the simulator ID to '1' and the endpoint to '/ws/relay/test_node_1'.
+    1. Enter any name for the simulator, set the simulator ID to '1' and the endpoint to `/ws/relay/test_node_1`.
     2. Click on 'Create'.
 
 ### Create a new Simulation
