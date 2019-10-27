@@ -31,7 +31,7 @@ Please also have a look at the detailed guides for each component:
 ## On Cloud Server
 
 1. Install VILLASweb for Visualization / Control / Management
-   - Use the [Demo Repo](https://git.rwth-aachen.de/acs/public/villas/Demo) includes for a Docker setup including:
+   - Use the [Demo Repo](https://git.rwth-aachen.de/acs/public/villas/demo) includes for a Docker setup including:
      - VILLASnode
      - VILLASweb
      - MongoDB as Database

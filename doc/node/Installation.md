@@ -210,7 +210,7 @@ For convinience simple make targets are availble:
 ## Downloading from Git
 
 ```
-$ git clone --recursive https://git.rwth-aachen.de/acs/public/villas/VILLASnode.git
+$ git clone --recursive https://git.rwth-aachen.de/acs/public/villas/node.git
 $ cd VILLASnode
 ```
 

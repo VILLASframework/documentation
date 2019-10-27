@@ -13,7 +13,7 @@ This node-type requires [comedilib](http://comedi.org) (>= 0.11.0).
 # Implementation {#node-implementation-comedi}
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/comedi.c
+https://git.rwth-aachen.de/acs/public/villas/node/blob/develop/lib/nodes/comedi.c
 
 # Further reading
 

@@ -16,7 +16,7 @@ The website itself based on the React JavaScript framework.
 
 ### Setup
 
- - `git clone git@git.rwth-aachen.de:acs/public/villas/VILLASweb.git` to copy the project on your computer
+ - `git clone git@git.rwth-aachen.de:acs/public/villas/web.git` to copy the project on your computer
  - `cd VILLASweb`
  - `npm install`
 
@@ -41,7 +41,7 @@ The backend for the website based on NodeJS and express.
 
 ### Setup
 
- - `git clone git@git.rwth-aachen.de:acs/public/villas/VILLASweb-backend.git` to copy the project on your computer
+ - `git clone git@git.rwth-aachen.de:acs/public/villas/web-backend.git` to copy the project on your computer
  - `cd VILLASweb-backend`
  - `npm install`
 

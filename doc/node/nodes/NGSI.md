@@ -16,7 +16,7 @@ This node-type requires to following libraries to communicate with the context b
 # Implementation {#node-implementation-ngsi}
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/ngsi.c
+https://git.rwth-aachen.de/acs/public/villas/node/blob/develop/lib/nodes/ngsi.c
 
 # Configuration {#node-config-node-ngsi}
 

@@ -12,7 +12,7 @@ Both parts are accessible from the `villas-ctl` command.
 1. Install VILLAScontroller
 
 ```bash
-$ git clone git@git.rwth-aachen.de:acs/public/villas/VILLAScontroller.git
+$ git clone git@git.rwth-aachen.de:acs/public/villas/controller.git
 $ sudo python3 setup.py install
 ```
 

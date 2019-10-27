@@ -14,7 +14,7 @@
 
 2. This will create a file name ucm_node.def
 
-3. Open the file in editor and copy paste the downloaded code from the VILLASnode Git repository[VILLASnode/clients/hypersim/model/ucm_node.def](https://git.rwth-aachen.de/acs/public/villas/VILLASnode/raw/develop/clients/hypersim/model/ucm_node.def)
+3. Open the file in editor and copy paste the downloaded code from the VILLASnode Git repository[VILLASnode/clients/hypersim/model/ucm_node.def](https://git.rwth-aachen.de/acs/public/villas/node/raw/develop/clients/hypersim/model/ucm_node.def)
 
 4. Right click and update the code.
 	@image html hypersim_2.png width=100%

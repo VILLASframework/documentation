@@ -13,7 +13,7 @@ This node-type requires [libnanomsg](http://nanomsg.org/) (>= 1.0.0).
 # Implementation {#node-implementation-nanomsg}
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/nanomsg.c
+https://git.rwth-aachen.de/acs/public/villas/node/blob/develop/lib/nodes/nanomsg.c
 
 # Configuration {#node-config-node-nanomsg}
 

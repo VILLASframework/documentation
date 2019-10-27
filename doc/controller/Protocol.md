@@ -5,7 +5,7 @@ The protocol uses AMQP to transport JSON encoded objects which are specified in 
 
 VILLAScontroller is implemented in Python and using the [Kombo messaging package](https://kombu.readthedocs.io).
 
-The Git repository is available at: http://git.rwth-aachen.de/acs/public/villas/VILLAScontroller
+The Git repository is available at: http://git.rwth-aachen.de/acs/public/villas/controller
 
 ## Entities {#controller-protocol-entities}
 

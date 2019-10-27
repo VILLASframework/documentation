@@ -9,7 +9,7 @@ This node-type requires [libibverbs](https://github.com/linux-rdma/rdma-core) (>
 # Implementation {#node-implementation-infiniband}
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/infiniband.c
+https://git.rwth-aachen.de/acs/public/villas/node/blob/develop/lib/nodes/infiniband.c
 
 # Configuration {#node-config-node-infiniband}
 
@@ -20,7 +20,7 @@ Every `infiniband` node can be configured to only read or write or to do both at
 This specifies the type of connection the node will set up.
 
 * `RC` provides reliable, connection-oriented, message based communication between the nodes. Packets are delivered in order. In this mode, one Queue Pair is connected to one othere Queue Pair.
-* `UC` provides unreliable, connection-oriented, message based communication between the nodes. This service type is not officially supported by the RDMA communication manager and is implemented for scientific purposes in VILLASnode. [The InfiniBand node-type source code provides information on how to enable this service type.](https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/infiniband.c#L429)
+* `UC` provides unreliable, connection-oriented, message based communication between the nodes. This service type is not officially supported by the RDMA communication manager and is implemented for scientific purposes in VILLASnode. [The InfiniBand node-type source code provides information on how to enable this service type.](https://git.rwth-aachen.de/acs/public/villas/node/blob/develop/lib/nodes/infiniband.c#L429)
 * `UD` provides unreliable, connectionless, datagram communication between nodes. Both ordering and delivery are not guaranteed in this mode.
 
 `RC`, `UC`, and `UD` are mapped to the Queue Pair types as `RDMA_PS_TCP`/`IBV_QPT_RC`, `RDMA_PS_IPOIB`/`IBV_QPT_UC`, and `RDMA_PS_UDP`/`IBV_QPT_UD`, respectively. If two nodes should be connected, both should be set to the same `rdma_port_space`.

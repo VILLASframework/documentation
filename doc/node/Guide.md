@@ -62,7 +62,7 @@ A complete reference of all available options for those tools can be found on th
 
 To get you started quickly, we prepared a series of small demos which you can try yourself.
 
-__All configurations files are available here: <https://git.rwth-aachen.de/acs/public/villas/VILLASnode/tree/develop/etc/labs>__
+__All configurations files are available here: <https://git.rwth-aachen.de/acs/public/villas/node/tree/develop/etc/labs>__
 
 - @subpage node-guide-lab1
 - @subpage node-guide-lab2

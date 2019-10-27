@@ -28,7 +28,7 @@ $ curl -X POST --data '{ "action" : "nodes", "id": "skjdhw325ih32"}' http://10.1
 
 **Endpoint:** `ws[s]://server:port/v1`
 
-For an example see: <https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/web/socket/api.js>
+For an example see: <https://git.rwth-aachen.de/acs/public/villas/node/blob/develop/web/socket/api.js>
 
 ### Unix socket
 

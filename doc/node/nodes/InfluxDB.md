@@ -9,7 +9,7 @@ This node-type does not have any special library dependencies.
 # Implementation {#node-implementation-influxdb}
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/VILLASnode/blob/develop/lib/nodes/influxdb.c
+https://git.rwth-aachen.de/acs/public/villas/node/blob/develop/lib/nodes/influxdb.c
 
 # Configuration {#node-config-node-influxdb}
 

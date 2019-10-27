@@ -9,7 +9,7 @@ The Instrument Control Toolbox provides a [`udp()` function](https://de.mathwork
 
 ## Example
 
-Please have a look at the [`clients/matlab/`](https://git.rwth-aachen.de/acs/public/villas/VILLASnode/tree/develop/clients/matlab) directory for an exemplary VILLASnode configuration file and MATLAB code.
+Please have a look at the [`clients/matlab/`](https://git.rwth-aachen.de/acs/public/villas/node/tree/develop/clients/matlab) directory for an exemplary VILLASnode configuration file and MATLAB code.
 
 You can run this example by execution this `receiver` script in your MATLAB prompt and starting VILLASnode by running the follwing command in your shell:
 
