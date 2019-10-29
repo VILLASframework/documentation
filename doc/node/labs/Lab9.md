@@ -28,10 +28,14 @@ $ villas signal -r 1000 sine | villas pipe etc/lab9_netem.conf udp_node1
 In a second terminal:
 
 ```bash
-$ villas pipe etc/lab9_netem.conf udp_node1 -x | villas hook -o verbose=true -o warmup=3000 stats
+$ villas pipe etc/lab9_netem.conf udp_node1 -x > delayed_data.dat
 ```
 
-**Note:** Press Ctrl-D to stop the statistics collection.
+After a few seconds, press Ctrl-C to stop the processing. Now we can analyze the delay distribution of the received data:
+
+```bash
+$ villas hook -o verbose=true -o warmup=1000 stats < delayed_data.dat > /dev/null
+```
 
 @htmlonly
 <asciinema-player rows="30" cols="500" poster="npt:0:1"  src="recordings/terminal/villas_hook_stats.json">
