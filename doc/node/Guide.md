@@ -89,6 +89,6 @@ This webinar was recorded during the preparation of the RT-SuperLab demonstratio
 
 @htmlonly
 <video controls width="100%" align="center">
-	<source src="recordings/video/VILLASnode_Webinar_2017_05_08.mp4" type="video/mp4">
+	<source src="https://videos.fein-aachen.org/VILLASnode_Webinar_2017_05_08.mp4" type="video/mp4">
 </video>
 @endhtmlonly

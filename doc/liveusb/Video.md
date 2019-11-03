@@ -10,6 +10,6 @@ The following video shows the installation of the VILLAS live image on a [Virtua
 
 @htmlonly
 <video controls width="100%" align="center">
-	<source src="recordings/video/VILLASlive_Installation_0.8.2.mp4" type="video/mp4">
+	<source src="https://videos.fein-aachen.org/VILLASlive_Installation_0.8.2.mp4" type="video/mp4">
 </video>
 @endhtmlonly
