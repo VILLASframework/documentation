@@ -1,5 +1,7 @@
 # OPAL-RT HYPERSIM {#node-client-hypersim}
 
+**Source code:** <http://git.rwth-aachen.de/acs/public/villas/node/tree/master/clients/hypersim>
+
 [HYPERSIM](https://www.opal-rt.com/systems-hypersim/) is a digital real-time power system simulator developed by [OPAL-RT](http://opal-rt.com) and [Hydro Quebec](http://www.hydroquebec.com/international/en/technology/grid-simulation.html).
 
 > HYPERSIM is a top-performance, fully digital simulator designed for in depth analysis of transient electromagnetic and electromechanical phenomena. It is used to analyze and validate power system control and protection circuits. HYPERSIM runs on SGI parallel supercomputers.

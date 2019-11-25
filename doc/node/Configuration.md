@@ -2,7 +2,7 @@
 
 The VILLASnode configuration consists of a a single file.
 
-For a collection of example configuration files see: <https://git.rwth-aachen.de/acs/public/villas/node/tree/develop/etc>.
+For a collection of example configuration files see: <https://git.rwth-aachen.de/acs/public/villas/node/tree/master/etc>.
 
 At the top level, the configuration file consists of these sections:
 
