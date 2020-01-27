@@ -8,10 +8,15 @@ https://www.etherlab.org/en/what.php
 The IgH EtherCAT Master also provides command-line tools for the users to get information about the configuration, Slaves, Process Data Objects (PDOs) and Service Data Objects (SDOs) of the devices connected on EtherCAT chain. In this Lab we will experiment with some of the 
 
 
+
+```
+$ /usr/local/bin/ethercat master
+```
+
 The following command can be used to find out the number of slaves in the EtherCAT chain: 
 
 ```
-$ /opt/etherlab/bin/ethercat slave
+$ /usr/local/bin/ethercat slave
 ```
 The output with the current configuration as shown in the figure looks as follows: 
 
@@ -34,16 +39,16 @@ The information transferred from Slaves to Masters are called Process Data Objec
 The following command can be used to output the PDO information in C language: 
 
 ```
-$ /opt/etherlab/bin/ethercat cstruct
+$ /usr/local/bin/ethercat cstruct
 ```
 The following command can be used to display the process data:
 
 ```
-$ /opt/etherlab/bin/ethercat data
+$ /usr/local/bin/ethercat data
 ```
 The following command can be used to display the ethernet over EtherCAT statistics. The TxRate and RxRate are displayed in Bytes/s.
 
 ```
-$ /opt/etherlab/bin/ethercat eoe
+$ /usr/local/bin/ethercat eoe
 ```
 
