@@ -51,4 +51,14 @@ The following command can be used to display the ethernet over EtherCAT statisti
 ```
 $ /usr/local/bin/ethercat eoe
 ```
+After having a look at the command line tools, we will now look into the EtherCAT node in more detail. 
+The following code code sends a single sample to 'ethercat_node'.
 
+@image html villas_pipe1.svg height=150px
+
+The `villas pipe` tool can be used to send and receive sample to / from a node.
+
+```
+$ # send 10 values to udp_node1
+$ villas signal -v 3 -r 10 -l 10 mixed | villas pipe lab15.conf ethercat_node
+```
