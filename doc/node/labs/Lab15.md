@@ -5,9 +5,22 @@ Etherlab technology is used to combine the software and hardware parts to get th
 More information about Etherlab can be found in the link below: 
 https://www.etherlab.org/en/what.php
 
-The IgH EtherCAT Master also provides command-line tools for the users to get information about the configuration, Slaves, Process Data Objects (PDOs) and Service Data Objects (SDOs) of the devices connected on EtherCAT chain. In this Lab we will experiment with some of the 
+## Hardware Setup
 
+This lab requires the following EtherCAT hardware from Beckhoff:
 
+- [EK1100 EtherCAT Coupler (2A E-Bus)](https://www.beckhoff.com/english.asp?ethercat/ek1100.htm)
+- [EL4038 8 Channel Analog Output +/-10V, 12bit](https://www.beckhoff.com/english.asp?ethercat/el4038.htm)
+- [EL3008 8 Channel Analog Input  +/-10V](https://www.beckhoff.com/english.asp?ethercat/el3008.htm)
+
+All EtherCAT slaves are connected to the same bus coupler. All channels of the analog outputs are looped backed to their respective analog input channel:
+
+@image html beckhoff_ethercat_1.jpeg width=45%
+@image html beckhoff_ethercat_2.jpeg width=45%
+
+## Command Line Tools
+
+The IgH EtherCAT Master also provides command-line tools for the users to get information about the configuration, Slaves, Process Data Objects (PDOs) and Service Data Objects (SDOs) of the devices connected on EtherCAT chain. In this Lab we will experiment with some of the command line utilties shipped with the IgH EtherCAT master.
 
 ```
 $ /usr/local/bin/ethercat master
