@@ -10,7 +10,7 @@ Available pluggable (de-)serializers documented at: @ref node-formats
 
 ## Data Structure
 
-The data-structure used by VILLASnode is defined by the [`struct sample`](https://git.rwth-aachen.de/acs/public/villas/node/blob/develop/include/villas/sample.h).
+The data-structure used by VILLASnode is defined by the [`struct sample`](https://git.rwth-aachen.de/acs/public/villas/node/blob/master/include/villas/sample.h).
 
 ### Sequence Number
 

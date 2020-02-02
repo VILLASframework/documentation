@@ -11,7 +11,7 @@ This node-type requires [libuldaq](https://github.com/mccdaq/uldaq.gitignore) (>
 # Implementation {#node-implementation-uldaq}
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/develop/lib/nodes/uldaq.c
+https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/uldaq.c
 
 # Configuration {#node-config-node-uldaq}
 

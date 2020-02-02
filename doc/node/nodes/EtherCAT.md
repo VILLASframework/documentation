@@ -4,12 +4,12 @@
 
 # Prerequisites {#node-prereq-ethercat}
 
-This node-type requires [Etherlab](http://etherlab.org) (>= 1.5.2).
+This node-type requires the [IgH EtherCAT Master](http://etherlab.org) (>= 1.5.2).
 
 # Implementation {#node-implementation-ethercat}
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/develop/lib/nodes/ethercat.c
+https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/ethercat.cpp
 
 # Configuration {#node-config-node-ethercat}
 

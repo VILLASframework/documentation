@@ -6,4 +6,4 @@
 
 The `.proto` Protocol Buffers Version Language Specification of the payload used by VILLASnode is available in the Git repository:
 
-https://git.rwth-aachen.de/acs/public/villas/node/blob/develop/lib/formats/villas.proto
+https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/formats/villas.proto

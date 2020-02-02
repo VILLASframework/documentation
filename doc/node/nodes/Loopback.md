@@ -12,7 +12,7 @@ This node-type does not have any special library dependencies. It is always avai
 # Implementation {#node-implementation-loopback}
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/develop/lib/nodes/loopback.c
+https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/loopback.c
 
 # Configuration {#node-config-node-loopback}
 

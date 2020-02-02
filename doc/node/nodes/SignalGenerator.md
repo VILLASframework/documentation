@@ -13,7 +13,7 @@ This node-type does not have any special library dependencies. It is always avai
 # Implementation {#node-implementation-signal}
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/develop/lib/nodes/signal_generator.c
+https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/signal_generator.c
 
 
 # Configuration {#node-config-node-signal}

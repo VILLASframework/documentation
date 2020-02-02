@@ -19,7 +19,7 @@ This node-type requires [libOpal{AsyncApi,Core,Utils}](https://git.rwth-aachen.d
 # Implementation {#node-implementation-opal}
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/develop/lib/nodes/opal.c
+https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/opal.c
 
 # Configuration {#node-config-node-opal}
 

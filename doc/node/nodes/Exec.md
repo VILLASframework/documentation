@@ -47,4 +47,4 @@ A object of key/value pairs of environemnt variables which should be passed to t
 # Implementation {#node-implementation-exec}
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/develop/lib/nodes/exec.c
+https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/exec.c

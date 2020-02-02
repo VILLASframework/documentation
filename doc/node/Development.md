@@ -3,7 +3,7 @@
 Developement is currently coordinated by Steffen Vogel <stvogel@eonerc.rwth-aachen.de> using [GitLab](http://git.rwth-aachen.de/acs/public/villas/node).
 Please feel free to submit pull requests or bug reports.
 
-A [contribution guide](https://git.rwth-aachen.de/acs/public/villas/node/blob/develop/CONTRIBUTING.md) is available in the [Git repository](https://git.rwth-aachen.de/acs/public/villas/node/).
+A [contribution guide](https://git.rwth-aachen.de/acs/public/villas/node/blob/master/CONTRIBUTING.md) is available in the [Git repository](https://git.rwth-aachen.de/acs/public/villas/node/).
 
 - @subpage node-dev-api-node
 - @subpage node-dev-api-relay

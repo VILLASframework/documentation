@@ -19,8 +19,8 @@ Timestamps are represented in [Unix time](https://en.wikipedia.org/wiki/Unix_tim
 
 The format of the packets is described by the following code:
 
- - Datastructure: [struct msg](https://git.rwth-aachen.de/acs/public/villas/node/blob/develop/include/villas/formats/msg_format.h)
- - Code: [villas_binary_*()](https://git.rwth-aachen.de/acs/public/villas/node/blob/develop/lib/formats/villas_binary.cpp) Functions
+ - Datastructure: [struct msg](https://git.rwth-aachen.de/acs/public/villas/node/blob/master/include/villas/formats/msg_format.h)
+ - Code: [villas_binary_*()](https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/formats/villas_binary.cpp) Functions
 
 @image html msg_format.svg width=60%
 

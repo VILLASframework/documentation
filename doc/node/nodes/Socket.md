@@ -22,7 +22,7 @@ Optionally, [libnl3](http://www.infradead.org/~tgr/libnl/) is used to setup netw
 # Implementation {#node-implementation-socket}
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/develop/lib/nodes/socket.c
+https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/socket.c
 
 # Configuration {#node-config-node-socket}
 
