@@ -51,12 +51,12 @@ Add a new dashboard to Grafana by importing the following file: [VILLAS test das
 
 ### influxdb.conf
 
-@include node/etc/examples/nodes/influxdb.conf
+@include node/etc/examples/nodes/grafana-influxdb/villas.conf
 
 ### Steps
 
-1. Add the following lines to a new file name `influxdb.conf`.
-2. Run to following command to generate test data which VILLAsnode will store in the InfluxDB database: `villas-signal mixed -v6 -r 50 | villas-pipe -s influxdb.conf influxdb_node`
+1. Add the following lines to a new file name `villas.conf`.
+2. Run to following command to generate test data which VILLAsnode will store in the InfluxDB database: `villas-node villas.conf`
 3. Return to Grafana to inspect the data
 
 ### Screenshot
