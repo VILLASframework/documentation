@@ -49,7 +49,7 @@ Add a new dashboard to Grafana by importing the following file: [VILLAS test das
 
 ## 3. Run dummy simulation to fill InfluxDB with test data
 
-### influxdb.conf
+### `villas.conf`
 
 @include node/grafana-influxdb/villas.conf
 
