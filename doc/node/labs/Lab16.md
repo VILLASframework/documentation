@@ -25,7 +25,7 @@ For this task we use Docker containers and the following `docker-compose.yml` fi
 
 ### `docker-compose.yml`
 
-@include node/etc/examples/nodes/grafana-influxdb/docker-compose.yml
+@include node/grafana-influxdb/docker-compose.yml
 
 ### Steps
 
@@ -51,7 +51,7 @@ Add a new dashboard to Grafana by importing the following file: [VILLAS test das
 
 ### influxdb.conf
 
-@include node/etc/examples/nodes/grafana-influxdb/villas.conf
+@include node/grafana-influxdb/villas.conf
 
 ### Steps
 
