@@ -7,8 +7,8 @@ This node-type streams the simulation data via UDP to an InfluxDB database using
 
 ## Further information
 
-- https://docs.influxdata.com/influxdb/v1.7/supported_protocols/udp/
-- https://docs.influxdata.com/influxdb/v1.7/write_protocols/line_protocol_tutorial/
+- [InfluxDB UDP Protocol](https://docs.influxdata.com/influxdb/v1.7/supported_protocols/udp/)
+- [InfluxDB Line Protocol Tutorial](https://docs.influxdata.com/influxdb/v1.7/write_protocols/line_protocol_tutorial/)
 
 ## Prerequisites
 
@@ -25,35 +25,7 @@ For this task we use Docker containers and the following `docker-compose.yml` fi
 
 ### `docker-compose.yml`
 
-```yml
-influxdb:
-  image: influxdb:1.7.10
-  container_name: influxdb
-  ports:
-    - "8083:8083"
-    - "8086:8086"
-    - "8090:8090"
-    - "8089:8089/udp"
-  environment:
-    - INFLUXDB_DATA_ENGINE=tsm1
-    - INFLUXDB_REPORTING_DISABLED=false
-    - INFLUXDB_DB=villas
-    - INFLUXDB_ADMIN_USER=admin
-    - INFLUXDB_ADMIN_PASSWORD=admin
-    - INFLUXDB_UDP_ENABLED=true
-    - INFLUXDB_UDP_DATABASE=villas
-
-grafana:
-  image: grafana/grafana:6.6.2
-  container_name: grafana
-  ports:
-    - "3000:3000"
-  environment:
-    - GF_SECURITY_ADMIN_USER=admin
-    - GF_SECURITY_ADMIN_PASSWORD=admin
-  links:
-    - influxdb
-```
+@include node/etc/examples/nodes/grafana-influxdb/docker-compose.yml
 
 ### Steps
 
@@ -72,6 +44,8 @@ grafana:
   - **Admin:** admin
 
 ## 2. Import Demo Dashboard into Grafana
+
+Add a new dashboard to Grafana by importing the following file: [VILLAS test dashboard](https://git.rwth-aachen.de/acs/public/villas/documentation/-/raw/master/examples/node/grafana-influxdb/dashboard.json)
 
 ## 3. Run dummy simulation to fill InfluxDB with test data
 
