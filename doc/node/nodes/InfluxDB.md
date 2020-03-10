@@ -1,6 +1,10 @@
 # InfluxDB {#node-type-influxdb}
 
-The @ref node-type-influxdb node-type streams simulation data in real-time to a [InfluxDB](https://www.influxdata.com/time-series-platform/influxdb/) time-series database using an [UDP service](https://docs.influxdata.com/influxdb/v0.9/write_protocols/udp/) and a plain text [line protocol]().
+The @ref node-type-influxdb node-type streams simulation data in real-time to a [InfluxDB](https://www.influxdata.com/time-series-platform/influxdb/) time-series database using an [UDP service](https://docs.influxdata.com/influxdb/v0.9/write_protocols/udp/) and a plain text [line protocol](https://docs.influxdata.com/influxdb/v1.7/write_protocols/line_protocol_reference/).
+
+Each signal of a sample is mapped to one field. VILLASnode maps the signal names of the data source to InfluxDB fields.
+
+See also: [InfluxDB documentation](https://docs.influxdata.com/influxdb/v0.9/write_protocols/line/#fields)
 
 # Prerequisites {#node-prereq-influxdb}
 
@@ -22,13 +26,6 @@ A hostname/port combination of the InfluxDB database server.
 The key is the measurement name and any optional tags separated by commas.
 
 See also: [InfluxDB documentation](https://docs.influxdata.com/influxdb/v0.9/write_protocols/line/#key)
-
-## fields (array of strings) {#node-config-node-influxdb-fields}
-
-Each signal of a sample is mapped to one field.
-This array of strings is used to map the signal indices to field names.
-
-See also: [InfluxDB documentation](https://docs.influxdata.com/influxdb/v0.9/write_protocols/line/#fields)
 
 ## Example
 
