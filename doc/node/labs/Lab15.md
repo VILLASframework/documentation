@@ -1,4 +1,4 @@
-# Lab 14: Working with EtherCAT
+# Lab 15: Working with EtherCAT
 
 EtherCAT is one of the nodes communicating in the network with the VILLAS node gateway. EhterCAT uses Ethernet wiring but has a specialized protocol which enables high synchronization between nodes. EtherCAT is based on a Master-Slave configuration. Contrary to the standard Ethernet, the frames in EtherCAT are processed on the fly which requires use of specific hardware integrated in the Slaves. In VILLAS we use Beckhoff automation technology.  
 Etherlab technology is used to combine the software and hardware parts to get the communication running. IgH EtherCAT Master by Etherlab acts as the real time kernel module loaded within the Linux Operating System.
