@@ -12,15 +12,18 @@
       }
     ]
   },
+  "description": "https://villas.fein-aachen.org/doc/node-guide-lab16.html",
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
   "id": 1,
-  "iteration": 1583876503957,
+  "iteration": 1583878469869,
   "links": [],
   "panels": [
     {
-      "aliasColors": {},
+      "aliasColors": {
+        "ramp": "orange"
+      },
       "bars": false,
       "dashLength": 10,
       "dashes": false,
@@ -179,7 +182,7 @@
       "steppedLine": true,
       "targets": [
         {
-          "alias": "$signal",
+          "alias": "Random",
           "groupBy": [
             {
               "params": [
@@ -203,7 +206,7 @@
             [
               {
                 "params": [
-                  "signal0"
+                  "random"
                 ],
                 "type": "field"
               },
@@ -327,7 +330,7 @@
             [
               {
                 "params": [
-                  "signal1"
+                  "sine"
                 ],
                 "type": "field"
               },
@@ -452,7 +455,7 @@
             [
               {
                 "params": [
-                  "signal2"
+                  "square"
                 ],
                 "type": "field"
               },
@@ -578,7 +581,7 @@
             [
               {
                 "params": [
-                  "signal3"
+                  "triangle"
                 ],
                 "type": "field"
               },
@@ -643,8 +646,8 @@
         "allValue": null,
         "current": {
           "selected": true,
-          "text": "signal1",
-          "value": "signal1"
+          "text": "ramp",
+          "value": "ramp"
         },
         "datasource": "villas",
         "definition": "SHOW FIELD KEYS ON villas",
@@ -668,11 +671,12 @@
     ]
   },
   "time": {
-    "from": "2020-03-10T21:48:09.620Z",
-    "to": "2020-03-10T21:48:20.462Z"
+    "from": "2020-03-10T22:37:54.268Z",
+    "to": "2020-03-10T22:38:18.801Z"
   },
   "timepicker": {
     "refresh_intervals": [
+      "1s",
       "5s",
       "10s",
       "30s",
@@ -686,7 +690,7 @@
     ]
   },
   "timezone": "",
-  "title": "villas test",
+  "title": "VILLASnode InfluxDB example",
   "uid": "jiU9rnXWk",
-  "version": 9
+  "version": 11
 }
