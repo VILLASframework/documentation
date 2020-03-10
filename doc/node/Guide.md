@@ -77,7 +77,9 @@ __All configurations files are available here: <https://git.rwth-aachen.de/acs/p
 - @subpage node-guide-lab11
 - @subpage node-guide-lab12
 - @subpage node-guide-lab13
-- @subpage node-guide-lab14 
+- @subpage node-guide-lab14
+- @subpage node-guide-lab15
+- @subpage node-guide-lab16
 
 # Video {#node-guide-video}
 
