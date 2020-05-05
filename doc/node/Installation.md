@@ -173,7 +173,7 @@ $ sudo dnf install \
     pkgconfig make cmake ninja-build \
     protobuf-compiler protobuf-c-compiler \
     texinfo git mercurial curl tar \
-    flex bison rpmbuild \
+    flex bison rpmdevtools \
     doxygen dia graphviz \
     openssl-devel \
     protobuf-devel \
