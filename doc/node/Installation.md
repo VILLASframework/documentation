@@ -141,6 +141,7 @@ $ sudo apt-get install \
     pkg-config make cmake ninja-build \
     protobuf-compiler protobuf-c-compiler \
     texinfo git mercurial curl \
+    flex bison \
     doxygen dia graphviz \
     libssl-dev \
     libprotobuf-dev \
@@ -172,6 +173,7 @@ $ sudo dnf install \
     pkgconfig make cmake ninja-build \
     protobuf-compiler protobuf-c-compiler \
     texinfo git mercurial curl tar \
+    flex bison \
     doxygen dia graphviz \
     openssl-devel \
     protobuf-devel \
