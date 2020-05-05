@@ -141,7 +141,7 @@ $ sudo apt-get install \
     pkg-config make cmake ninja-build \
     protobuf-compiler protobuf-c-compiler \
     texinfo git mercurial curl \
-    flex bison \
+    flex bison xmlto \
     doxygen dia graphviz \
     libssl-dev \
     libprotobuf-dev \
