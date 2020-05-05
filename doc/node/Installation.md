@@ -159,7 +159,8 @@ $ sudo apt-get install \
     librdmacm-dev \
     libre-dev \
     libspdlog-dev \
-    libfmt-dev
+    libfmt-dev \
+    libusb-1.0-0-dev
 ```
 
 or the following line for Fedora/CentOS/Redhat systems:
@@ -191,7 +192,8 @@ $ sudo dnf install \
     librdmacm-devel \
     re-devel \
     uldaq-devel \
-    spdlog-devel
+    spdlog-devel \
+    libusb-devel
 ```
 
  2. We offer Dockerfiles for different distributions. These files show you how to setup you own development environment.
