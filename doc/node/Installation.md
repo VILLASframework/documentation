@@ -140,7 +140,7 @@ $ sudo apt-get install \
     gcc g++ \
     pkg-config make cmake ninja-build \
     protobuf-compiler protobuf-c-compiler \
-    texinfo git curl \
+    texinfo git mercurial curl \
     doxygen dia graphviz \
     libssl-dev \
     libprotobuf-dev \
@@ -170,7 +170,7 @@ $ sudo dnf install \
     gcc gcc-c++ \
     pkgconfig make cmake ninja-build \
     protobuf-compiler protobuf-c-compiler \
-    texinfo git curl tar \
+    texinfo git mercurial curl tar \
     doxygen dia graphviz \
     openssl-devel \
     protobuf-devel \
