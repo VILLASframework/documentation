@@ -214,8 +214,17 @@ For convinience simple make targets are availble:
 ## Downloading from Git
 
 ```
-$ git clone --recursive https://git.rwth-aachen.de/acs/public/villas/node.git
+$ git clone --recursive https://git.rwth-aachen.de/acs/public/villas/node.git VILLASnode
 $ cd VILLASnode
+```
+
+## Install unpackaged dependencies
+
+VILLASnode requires several external libraries which are not packaged by common Linux distributions (see above).
+Please consult the list above to install at least the mandatory dependencies by hand or use the following script:
+
+```
+$ bash packaging/deps.sh
 ```
 
 ## Compilation
