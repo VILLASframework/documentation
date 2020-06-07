@@ -1,8 +1,12 @@
 # OPAL-RT Asynchronous Process (AsyncIP) {#node-client-asyncip}
 
+# Simple OPAL-RT project with AsyncIP    
+
 **Source code:** <http://git.rwth-aachen.de/acs/public/villas/node/tree/master/clients/opal>
 
-# Add AsyncIP to new project {#node-client-asyncip-new}
+# Add AsyncIP to the existing project {#node-client-asyncip-new}
+
+Follow the steps below to add AsyncIP to the existing OPAL-RT project:   
 
 ## Step 1
 
@@ -75,7 +79,7 @@ Workaround for now: place fake OpAsyncIPCtrl in each subsystem.
 
 Additional problem: After Load, only AsyncIP in master subsystem (`sm_`) is started.
 
-Zapravo: this helps that you do not need fake blocks:
+Actually: this helps that you do not need fake blocks:
 
 .llm file should contain the following:
 
