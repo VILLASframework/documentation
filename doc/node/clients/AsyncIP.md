@@ -51,8 +51,10 @@ In RT-LAB model settings: Development tab -> Compiler -> Compiler Command (makef
 
 Maximum number of values in UDP packets:
 
-There’s a `#define` inside the implementation which must be changed accordingly.
+There is a `#define` inside the implementation which must be changed accordingly.
 The #define is in file: `model_directory/include/config.h` There you will find a directive called MAX_VALUES.
+
+It is recommended to keep this value below 300 to ensure that all values are transferred within a single UDP packet. 
 
 # Troubleshooting {#node-client-asyncip-troubleshooting}
 
