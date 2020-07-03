@@ -11,7 +11,7 @@ $ villas pipe lab3.conf udp_node1
 ```
 
 @htmlonly
-<asciinema-player rows="25" cols="500" poster="npt:0:1"  src="recordings/terminal/lab4_t2.json">
+<asciinema-player rows="25" cols="500" poster="npt:0:1"  src="recordings/terminal/lab4_t1.json">
 @endhtmlonly
 
 In a second terminal, we use `-x` to exchange input/output addresses:
@@ -20,7 +20,7 @@ $ villas pipe -x lab3.conf udp_node1
 ```
 
 @htmlonly
-<asciinema-player rows="25" cols="500" poster="npt:0:1"  src="recordings/terminal/lab4_t1.json">
+<asciinema-player rows="25" cols="500" poster="npt:0:1"  src="recordings/terminal/lab4_t2.json">
 @endhtmlonly
 
 # Stopping `villas pipe` {#node-guide-lab4-stopping}
