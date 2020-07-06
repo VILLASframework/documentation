@@ -168,9 +168,9 @@ nodes = {
 		samplelen = 64,
 
 		signals = (
-			{ name = "Va", unit = "Volts", format = "float", enabled = true },
-			{ name = "Vb", unit = "Volts", format = "float", enabled = true },
-			{ name = "Vc", unit = "Volts", format = "float", enabled = true },
+			{ name = "Va", unit = "Volts", type = "float", enabled = true },
+			{ name = "Vb", unit = "Volts", type = "float", enabled = true },
+			{ name = "Vc", unit = "Volts", type = "float", enabled = true },
 		)
 
 		# type specific settings follow here.
