@@ -41,12 +41,6 @@ A IO format identifier selecting the file format which is used for reading and w
 
 See @ref node-formats for a complete list of supported formats.
 
-## mode (string: "a" | "w" | "a+" | "w+" | "r") {#node-config-node-file-mode}
-
-Specifies the mode which should be used to open the output file.
-See [open(2)](http://man7.org/linux/man-pages/man2/open.2.html) for an explanation of allowed values.
-The default value is `w+` which will start writing at the beginning of the file and create it in case it does not exist yet.
-
 ## in.epoch (float) {#node-config-node-file-epoch}
 
 ## in.epoch_mode ("direct" | "wait" | "relative" | "absolute") {#node-config-node-file-in-epoch_mode}
