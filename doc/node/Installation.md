@@ -140,6 +140,7 @@ $ sudo apt-get install \
     gcc g++ \
     pkg-config make cmake ninja-build \
     protobuf-compiler protobuf-c-compiler \
+    autoconf automake libtool \
     texinfo git mercurial curl \
     flex bison xmlto \
     doxygen dia graphviz \
@@ -172,6 +173,7 @@ $ sudo dnf install \
     gcc gcc-c++ \
     pkgconfig make cmake ninja-build \
     protobuf-compiler protobuf-c-compiler \
+    autoconf automake libtool \
     texinfo git mercurial curl tar \
     flex bison rpmdevtools \
     doxygen dia graphviz \
