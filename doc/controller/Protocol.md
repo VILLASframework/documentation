@@ -1,6 +1,6 @@
 # Protocol {#controller-protocol}
 
-This page documents the data model/protocol used by VILLAScontroller to control and monitor simulators.
+This page documents the data model/protocol used by VILLAScontroller to control and monitor infrastructure components (IC).
 The protocol uses AMQP to transport JSON encoded objects which are specified in the following document.
 
 VILLAScontroller is implemented in Python and using the [Kombo messaging package](https://kombu.readthedocs.io).
@@ -9,9 +9,14 @@ The Git repository is available at: http://git.rwth-aachen.de/acs/public/villas/
 
 ## Entities {#controller-protocol-entities}
 
-The puporse of VILLAScontroller is the managemeng and control of simulators and other related entities.
+The puporse of VILLAScontroller is the orchestration of IC in distributed lab setups.
+This includes the following tasks:
 
-For the purpose of routing and grouping the entities, we introduce the following categories:
+- managment: instantiation, deletion & discovery
+- monitoring: status?
+- control: start, stop, pause, reset, resume, shutdown
+
+For the purpose of routing and grouping the IC, we introduce the following categories:
 
 - `simulator` (_implemented_)
 - `simulation` (_planned_)
@@ -38,16 +43,33 @@ The following headers are used to identify and route messages to the receipients
 - `category` describes the classes of equipment.
   - Examples:
     - `simulator`
-    - `gateway` (_planned_)
-    - `interface` (_planned_)
+	- `controller` (manages ICs, e.g. Kubernetes)
+	- `service` (virtual SW, e.g. energy management system)
+    - `gateway` (e.g. VILLASnode, e.g. VILLASrelay)
+    - `equipment` (e.g. HIL Interfaces: Chroma, Fleps, PGS; DuT: Battery, PV-Inverter, Lab-equipment: Programmable supplies and loads)
 
 - `type` further defines the type/vendor of a device within its class.
-  - Examples:
+  - For `simulator`:
     - `dummy` (_implemented_)
     - `generic` (_implemented_)
     - `dpsim` (_WIP_)
     - `rtlab` (_planned_)
     - `rscad` (_planned_)
+  - For `gateway`:
+    - `villas-node` (_implemented_)
+    - `villas-relay` (_implemented_)
+  - For `controller`:
+    - `kubernetes`
+    - `villas-controller`
+  - For `service`:
+	- `ems`
+	- `custom`?
+  - For `equipment`:
+	- `chroma-emulator`
+	- `chroma-loads`
+	- `sma-sunnyboy`
+	- `fleps`
+	- `sonnenbatterie`
 
 - `uuid` is a globally unique identifier
   - Examples:
@@ -64,7 +86,13 @@ Example of a message header:
 }
 ```
 
-## Discovery
+## State Machine
+
+@image html uml/SimulatorStatechartDiagram.svg
+
+## Management
+
+### Discovery
 
 In a messaging protocol like AMQP, brokers do not store message contents in a persistant way.
 They only temporarily queue messages until they have been delivered.
@@ -81,32 +109,68 @@ Each entity must react on `action = ping` messages and respond immediatly with a
 
 After receiving such a message, each entity shall send a status update message as decribed below.
 
-## Simulators {#controller-protocol-category-simulator}
-
-## State Machine
-
-@image html uml/SimulatorStatechartDiagram.svg
-
 ### Status Update
 
 ```json
 {
 	"status" : {
 		"version" : "0.1.0",
-		"kernel" : "2.6.18-274.7.1.el5PAE",
 		"state" : "idle",
-		"simulation" : "id-of-the-current-simulation",
+		"run-id" : "run-id",
 		"name" : "OP5600",
 		"description" : "some optional description",
 		"location" : "OPAL-RT Rack, ACS Real-time Lab, EONERC, RWTH",
 		"owner" : "stvogel@eonerc.rwth-aachen.de",
-		"uptime" : 123124
+		"uptime" : 123124.0 /* in seconds since initialization (float) */,
+		"ws_url" : "https://villas-new.k8s.eonerc.rwth-aachen.de/ws/relay/node_1",
+		"api_url" : "https://villas-new.k8s.eonerc.rwth-aachen.de/ws/relay/api/node_1"
 	},
-	"when" : 1234567890.123
+	"time" : 1234567890.123 /* timestamp in seconds (UTC / Unix epoch / since 1970-01-01) (float) */
 }
 ```
 
-### Reset Simulator
+Used values for `state`:
+
+- `gone` (issued once after `action = delete`)
+- `error`
+- `idle`
+- `starting`
+- `running`
+- `pausing`
+- `paused`
+- `resuming`
+- `stopping`
+- `resetting`
+- `shuttingdown`
+- `shutdown`
+
+## Management
+
+### Instantiation
+
+```json
+{
+	"action": "create",
+	"when": 1234567890.123,
+	"parameters": {
+		"key": "value",
+		"key2": { }
+	}
+}
+```
+
+### Deletion
+
+```json
+{
+	"action": "delete",
+	"when": 1234567890.123,
+}
+```
+
+## Control
+
+### Reset
 
 ```json
 {
@@ -115,7 +179,7 @@ After receiving such a message, each entity shall send a status update message a
 }
 ```
 
-### Shutdown Simulator
+### Shutdown
 
 ```json
 {
@@ -124,7 +188,7 @@ After receiving such a message, each entity shall send a status update message a
 }
 ```
 
-### Start Simulation
+### Start
 
 Start the simulation at a specific point in time.
 
@@ -171,11 +235,12 @@ Another example for `type = generic`:
         "environemnt" : [
             "DEBUG" : "1"
         ]
-    }
+    },
+	"when" : 1234567890.123
 }
 ```
 
-### Stop Simulation
+### Stop
 
 Stop the simulation at a specific point in time.
 
@@ -186,7 +251,7 @@ Stop the simulation at a specific point in time.
 }
 ```
 
-### Pause Simulation
+### Pause
 
 Pause the simulation at a specific point in time.
 
@@ -197,7 +262,7 @@ Pause the simulation at a specific point in time.
 }
 ```
 
-### Resume Simulation
+### Resume
 
 Resume the simulation at a specific point in time.
 
