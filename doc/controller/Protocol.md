@@ -201,19 +201,15 @@ Start the simulation at a specific point in time.
 	    "domain" : "dp",
 	    "downsample" : 1
 	},
-	"model" : {
-	    // Where to get the model from
-	    "url" : "https://web.villas.fein-aachen.org/files/asfskdjfhslkdfsd.zip",
-
-	    // Type is optional if transport does not support Content-type header
-	    "type" : "some-mime-type-here"
+	"model" : { // HTTP GET for model download
+		"type": "url",
+		"url" : "https://villas.k8s.eonerc.rwth-aachen.de/api/v2/files/123421",
+		"token": "Xwlsjkdlfksjhdfglskdfg"
 	},
-	"results" : {
-	    // Where to upload the results to
-	    "url" : "file://opt/results/{{uuid}}.txt",
-
-	    // Type is optional if transport does not support Content-type header
-	    "type" : "some-mime-type-here"
+	"results" : { // HTTP POST for results upload
+	    "type" : "url"
+	    "url" : "https://villas.k8s.eonerc.rwth-aachen.de/api/v2/runs/3452345234/results"
+		"token": "Xwlsjkdlfksjhdfglskdfg"
 	},
 	"when" : 1234567890.123
 }
