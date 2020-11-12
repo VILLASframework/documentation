@@ -5,16 +5,15 @@ Please feel free to submit pull requests or bug reports.
 
 A [contribution guide](https://git.rwth-aachen.de/acs/public/villas/node/blob/master/CONTRIBUTING.md) is available in the [Git repository](https://git.rwth-aachen.de/acs/public/villas/node/).
 
-- @subpage node-dev-api-node
-- @subpage node-dev-api-relay
+- @subpage node-dev-api
 - @subpage node-dev-advio
 
 ## Programming Paradigm
 
-VILLASnode is currently written in C using the ISO C11 standard while following an object oriented programming paradigm.
+VILLASnode is currently written in C/C++ using the ISO C11 and C++14 standards while following an object oriented programming paradigm.
 
-Main _classes_ in VILLASnode are `struct sample`, `struct node`, `struct path` and `struct hook`.
-In order to track the life cycle of those objects, each of them has an `enum state` member.
+Main _classes_ in VILLASnode are `struct sample`, `struct vnode`, `struct vpath` and `class villas::node::Hook`.
+In order to track the life cycle of those objects, each of them has an `enum State` member.
 The following figure illustrates the state machine which is used:
 
 @image html uml/NodeStatechartDiagram.svg Common states of objects in VILLASnode width=60%
