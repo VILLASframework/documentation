@@ -5,9 +5,9 @@ VILLAScontroller consist of two parts:
  - A daemon which listens for control commands from an AMQP broker and controls the simulator.
  - A CLI tool for sending commands to the broker
 
-Both parts are accessible from the `villas-ctl` command.
+Both parts are accessible from the `villas-controller` command.
 
-# Quickstart
+## Quickstart
 
 1. Install VILLAScontroller
 
@@ -29,11 +29,7 @@ $ docker run -p 5672:5672 -p 15672:15672 -d rabbitmq:management
 	"broker" : {
 		"url" : "amqp://guest:guest@localhost/%2F"
 	},
-	"directories" : {
-		"results" : "/var/lib/villas/results",
-		"models" : "/var/lib/villas/models"
-	},
-	"simulators" : [
+	"components" : [
 		{
 			"name" : "Dummy Simulator #1",
 			"type" : "dummy",
@@ -57,13 +53,13 @@ $ docker run -p 5672:5672 -p 15672:15672 -d rabbitmq:management
 4. Start VILLAScontroller daemon:
 
 ```bash
-$ villas-ctl --config config.json daemon
+$ villas-controller --config config.json daemon
 ```
 
 5. Start monitor:
 
 ```bash
-$ villas-ctl monitor
+$ villas-controller monitor
 ```
 
 **Note:** If you have `jq` installed, you might want to add `| jq .` to the end for pretty printing the JSON messages.
@@ -71,7 +67,7 @@ $ villas-ctl monitor
 5. Discover / ping simulators:
 
 ```bash
-$ villas-ctl simulator ping
+$ villas-controller simulator ping
 ```
 
 6. Send commands to VILLAScontroller daemon:
@@ -79,8 +75,8 @@ $ villas-ctl simulator ping
 **Note:** Take the UUID from step 5.
 
 ```bash
-$ villas-ctl simulator --uuid ef6f6e46-044e-11e8-812f-17b6617a2f37 start
-$ villas-ctl simulator --uuid ef6f6e46-044e-11e8-812f-17b6617a2f37 pause
-$ villas-ctl simulator --uuid ef6f6e46-044e-11e8-812f-17b6617a2f37 resume
-$ villas-ctl simulator --uuid ef6f6e46-044e-11e8-812f-17b6617a2f37 stop
+$ villas-controller simulator --uuid ef6f6e46-044e-11e8-812f-17b6617a2f37 start
+$ villas-controller simulator --uuid ef6f6e46-044e-11e8-812f-17b6617a2f37 pause
+$ villas-controller simulator --uuid ef6f6e46-044e-11e8-812f-17b6617a2f37 resume
+$ villas-controller simulator --uuid ef6f6e46-044e-11e8-812f-17b6617a2f37 stop
 ```
