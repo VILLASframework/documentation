@@ -1,165 +1,24 @@
 # VILLASnode API {#node-dev-api-node}
 
 VILLASnode can be controlled remotely with an Application Programming Interface (API).
+Using this API VILLASnode can be completly remote controlled.
 
-## Transports
+## Security
 
-The API is accessible via multiple transports:
+**IMPORTANT NOTICE:** The VILLASnode API currently has no support for authentication an authorization.
 
-- HTTP POST requests
-- WebSockets
-- Unix Domain sockets (planned)
+Do not expose the API endpoint unprotected to untrusted users or the public internet as attackers can exploit the API to gain access to the system running VILLASnode by crafting malicious configurations.
 
-### HTTP REST
+We recommend to hide the VILLASnode API behind an [API gateway](https://www.nginx.com/learn/api-gateway/) or authentication reverse proxy like [OAuth Proxy 2](https://oauth2-proxy.github.io/oauth2-proxy/).
 
-**Endpoint URL:** `http[s]://server:port/api/v1`
+## API specification
 
-**HTTP Method:** POST only
+- [OpenAPI 3.0 Specification](https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/doc/openapi.yaml)
+- Python Wrapper: [Source](https://git.rwth-aachen.de/acs/public/villas/node/-/tree/master/python), 
+   - Install it via: `pip install villas-node`
 
-Example request with curl:
+## CURL Example
 
-```bash
-$ curl -X POST --data '{ "action" : "nodes", "id": "skjdhw325ih32"}' http://10.10.12.5:4000/api/v1
 ```
-
-### WebSockets
-
-**Protocol:** `api`
-
-**Endpoint:** `ws[s]://server:port/v1`
-
-For an example see: <https://git.rwth-aachen.de/acs/public/villas/node/blob/master/web/socket/api.js>
-
-### Unix socket
-
-**Note:** This transport is not implemented yet.
-
-## Protocol
-
-All transports use the same JSON-based protocol to encode API requests and responses.
-Both requests and responses are JSON objects with the fields described below.
-Per API session multiple requests can be sent to the node.
-The order of the respective responses does not necessarily match the order of the requests.
-Requests and responses can be interleaved.
-The client must check the `id` field in order to find the matching response to a request.
-
-#### Request
-
-| Field		| Description	|
-|:------------------------ |:---------------------- |
-| `action`	| The API action which is requested. See next section. |
-| `id`		| A unique string which identifies the request. The same id will be used for the response. | 
-| `request`	| Any JSON data-type which will be passed as an argument to the respective API action. |
-
-#### Response
-
-The response is similar to the request object.
-The `id` field of the request will be copied to allow
-
-| Field		| Description	|
-|:------------------------ |:---------------------- |
-| `action`	| The API action which is requested. See next section. |
-| `id`		| A unique string which identifies the request. The same id will be used for the response. | 
-| `response`	| Any JSON data-type which can be returned. |
-
-## Actions
-
-### `restart`
-
-Restart VILLASnode with a new configuration file.
-
-**Request:** _application/json_
-
-	{
-		"action": "restart",
-		"id": "66675eb4-6a0b-49e6-8e82-64d2b2504e7a"
-		"request" : {
-			"configuration": "smb://MY-WINDOWS-HOST/SHARE1/path/to/config.conf"
-		}
-	}
-
-**Response:** _application/json_
-
-	{
-		"action": "reload",
-		"id": "66675eb4-6a0b-49e6-8e82-64d2b2504e7a"
-		"response" : "success"
-	}
-
-### `config`
-
-Retrieve the contents of the current configuration.
-
-**Request:** _application/json_
-
-	{
-		"action": "config",
-		"id": "66675eb4-6a0b-49e6-8e82-64d2b2504e7a"
-	}
-
-**Response:** _application/json_
-
-	{
-		"action": "config",
-		"id": "66675eb4-6a0b-49e6-8e82-64d2b2504e7a",
-		"response" : {
-			"nodes" : {
-				"socket_node" : {
-					"type": "socket",
-					"layer": "udp",
-					...
-				} 
-			},
-			"paths" : [
-				{
-					"in": "socket_node",
-					"out": "socket_node"
-				}
-			]
-		}
-	}
-
-### `nodes`
-
-Get a list of currently active nodes.
-
-**Request:** _application/json_
-
-	{
-		"action": "nodes",
-		"id": "5a786626-fbc6-4c04-98c2-48027e68c2fa"
-	}
-
-**Response:** _application/json_
-
-	{
-		"action": "nodes",
-		"response": [
-			{
-				"name": "ws",
-				"state": 4,
-				"vectorize": 1,
-				"affinity": 0,
-				"id": 0,
-				"type": "websocket",
-				"description": "Demo Channel"
-			}
-		],
-		"id": "5a786626-fbc6-4c04-98c2-48027e68c2fa"
-	}
-
-### `capabilities`
-
-Get a list of supported node-types, hooks and API actions.
-
-### `paths`
-
-Get a list of currently active paths.
-
-**Note:** This transport is not implemented yet.
-
-### `status`
-
-The the status of this VILLASnode instance.
-
-**Note:** This transport is not implemented yet.
+curl http://localhost:8080/api/v2/status
+```
