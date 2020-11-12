@@ -80,6 +80,7 @@ __All configurations files are available here: <https://git.rwth-aachen.de/acs/p
 - @subpage node-guide-lab14
 - @subpage node-guide-lab15
 - @subpage node-guide-lab16
+- @subpage node-guide-lab17
 
 # Video {#node-guide-video}
 
