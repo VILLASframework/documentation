@@ -18,6 +18,20 @@ The following figure illustrates the state machine which is used:
 
 @image html uml/NodeStatechartDiagram.svg Common states of objects in VILLASnode width=60%
 
+<div class="mermaid">
+stateDiagram-v2
+    [*] --> initialized: _init()
+    initialized --> parsed: _parse()
+    initialized --> destroyed: _destroy()
+    parsed --> destroyed: _destroy()
+    parsed --> checked: _check()
+    checked --> started: _start()
+    checked --> destroyed: _destroy()
+    started --> stopped: _stop()
+    stopped --> destroyed: _destroy()
+    destroyed --> [*]
+</div>
+
 ## Shared library: libvillas
 
 VILLASnode is split into a shared library called libvillas and a couple of executables (`villas-node`, `villas-pipe`, `villas-test`, `villas-signal`, ...) which are linked against this library.
