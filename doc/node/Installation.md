@@ -2,14 +2,34 @@
 
 VILLASnode can be installed in multiple ways:
 
-- Using a pre-build Docker image
-- Using pre-build RPM packages for Redhat based Linux distributions
-- Using a bootable Linux live image
+- [Docker image](https://git.rwth-aachen.de/acs/public/villas/node/container_registry)
+- [Helm chart](https://git.rwth-aachen.de/acs/public/catalogue)
+- RPM packages for Redhat based Linux distributions
+- [Bootable Linux live image](@ref liveusb)
 - or from source
 
-# Bootable Linux live image  {#node-installation-live}
+# Docker images
 
-See: @ref liveusb
+There exists a set of Docker images for running and developing VILLASnode.
+
+With a working Docker daemon, you can run it like this:
+
+
+```bash
+$ docker run --privileged registry.git.rwth-aachen.de/acs/public/villas/node
+```
+
+To start the main daemon, you can pass a configuration file via a volume mount:
+
+```bash
+$ docker run --volume /path/to/my/local.conf:/config.conf --privileged registry.git.rwth-aachen.de/acs/public/villas/node node /config.con
+```
+
+# Helm chart
+
+You can run the full set of VILLASframework components pre-configured in a Kubernetes cluster using Helm.
+
+Please consult [the charts README file](https://git.rwth-aachen.de/acs/public/catalogue/-/blob/master/charts/villas/README.md) for details.
 
 # From RPM packages {#node-installation-rpm}
 
@@ -20,43 +40,20 @@ Other distributions or version might work as well but might have unresolvable de
 
 Add VILLAS RPM repository to your system:
 
-```
+```bash
 $ sudo dnf config-manager --add-repo https://packages.fein-aachen.org/fedora/fein.repo
 Adding repo from: https://packages.fein-aachen.org/fedora/fein.repo
 ```
 
 Install VILLASnode plus its dependencies:
 
-```
+```bash
 $ sudo dnf install villas-node
-```
-
-```
-Last metadata expiration check: 0:02:48 ago on Wed May  3 15:41:29 2017.
-Dependencies resolved.
-====================================================================================
- Package              Arch   Version                                  Repository
-                                                                               Size
-====================================================================================
-Installing:
- libwebsockets        x86_64 2.2.0-1.fc25                             villas  2.8 M
- libxil               x86_64 0.1-1.fc25                               villas   31 k
- villas-node          x86_64 0.2-1.develop_release.20170427git9b1e6a3.fc25
-                                                                      villas  929 k
-
-Transaction Summary
-====================================================================================
-Install  3 Packages
-
-Total download size: 4 M
-Installed size: 15 M
-Is this ok [y/N]:
-...
 ```
 
 ## Get the currently installed version
 
-```
+```bash
 $ rpm -q villas-node
 villas-node-0.3-1.develop_release.20170507gite92f17d.fc25.x86_64
 ```
@@ -109,7 +106,7 @@ There are three ways to install these dependencies:
 
 Use the following command to install the dependencies under Debian/Ubuntu-based distributions:
 
-```
+```bash
 $ sudo apt-get install \
     gcc g++ \
     pkg-config make cmake ninja-build \
@@ -141,7 +138,7 @@ $ sudo apt-get install \
 
 or the following line for Fedora/CentOS/Redhat systems:
 
-```
+```bash
 $ sudo dnf config-manager --add-repo https://packages.fein-aachen.org/fedora/fein.repo
 $ sudo dnf install \
     gcc gcc-c++ \
@@ -175,22 +172,9 @@ $ sudo dnf install \
     libusb-devel
 ```
 
- 2. We offer Dockerfiles for different distributions. These files show you how to setup you own development environment.
-
- - Fedora: `Dockerfile.dev`
- - Centos: `Dockerfile.dev-centos`
- - Debian/Ubuntu: `Dockerfile.dev-ubuntu`
-
-For convinience simple make targets are availble:
-
-- `cmake .. && make run-docker-dev`: Start Docker container with Fedora development environment
-- `cmake .. && make run-docker-dev-centos`: Start Docker container with CentOS development environment
-- `cmake .. && make run-docker-dev-ubuntu`: Start Docker container with CentOS development environment
-- `cmake .. && make docker`: Build Fedora-based Docker image with VILLASnode installed
-
 ## Downloading from Git
 
-```
+```bash
 $ git clone --recursive https://git.rwth-aachen.de/acs/public/villas/node.git VILLASnode
 $ cd VILLASnode
 ```
@@ -200,7 +184,7 @@ $ cd VILLASnode
 VILLASnode requires several external libraries which are not packaged by common Linux distributions (see above).
 Please consult the list above to install at least the mandatory dependencies by hand or use the following script:
 
-```
+```bash
 $ bash packaging/deps.sh
 ```
 
@@ -208,7 +192,7 @@ $ bash packaging/deps.sh
 
 Start the compilation with:
 
-```
+```bash
 $ mkdir build
 $ cd build
 $ cmake ..
@@ -219,7 +203,7 @@ $ make -j$(nproc)
 
 Install the files to your search path:
 
-```
+```bash
 $ sudo make install
 $ sudo ldconfig
 ```
@@ -230,7 +214,7 @@ Append `PREFIX=/opt/local` to change the installation destination.
 
 Verify everything is working and required node-types are compiled-in:
 
-```
+```bash
 $ villas node --help
 ```
 
