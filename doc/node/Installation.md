@@ -15,9 +15,8 @@ See: @ref liveusb
 
 We offer pre-build RPM packages for Fedora/Redhat based distributions.
 
-**Note:** These packages have only been tested with Fedora 29. Other distributions or version might work as well but might have unresolvable dependencies.
-
-## With internet access by using VILLAS RPM repository {#node-installation-rpm-offline}
+**Note:** These packages have only been tested with **Fedora 29**.
+Other distributions or version might work as well but might have unresolvable dependencies.
 
 Add VILLAS RPM repository to your system:
 
@@ -55,31 +54,6 @@ Is this ok [y/N]:
 ...
 ```
 
-## Without internet access {#node-installation-rpm-online}
-
-If the Linux host has no internet access, RPM files must be transferred manually to the machine by using a flash drive.
-
-1. Download the latest .rpm files from: https://packages.fein-aachen.org/redhat/x86_64/
-2. Copy all files to a flash drive.
-3. Mount the flash drive on the Linux host: `$ mount /dev/sdXn /mnt`
-    (Replace `sdXn` by using `lsblk` to get the correct device name)
-4. Install the .rpm files from the flash drive: `$ rpm -ivh /mnt/*.rpm`
-5. Unmount the flash drive: `$ umount /mnt`
-
-## With SSH proxy {#node-installation-rpm-rpxy}
-
-Sometimes only SSH connections are possible from the laboratory networks.
-In this case we can use `ssh` to connect to an external machine which will be used as a proxy.
-
-**Note:** The external machine requires access to the internet.
-
-1. Create a SSH SOCKS proxy by connecting to a machine which can reach the internet:
-   `$ ssh -fND 12345 user@external-machine`
-2. Configure `dnf` [to use the proxy](https://www.cyberciti.biz/faq/how-to-use-dnf-command-with-a-proxy-server-on-fedora/) by adding the following line to `[main]` section of configuration file  `/etc/dnf/dnf.conf`:
-   `proxy=socks5h://localhost:12345`
-3. Update the dnf package chache and install updates:
-   `$ dnf --refresh update`
-
 ## Get the currently installed version
 
 ```
@@ -92,12 +66,11 @@ villas-node-0.3-1.develop_release.20170507gite92f17d.fc25.x86_64
 VILLASnode can be compiled from source using [CMake](http://cmake.org).
 This process has been tested with the following Linux distributions:
 
- - Fedora 29
+ - Fedora 33
  - Debian 10 (Buster)
- - Ubuntu 18.04 (Bionic Beaver)
-   - **Note:** libwebsockets needs to be installed from source. Packaged version is outdated.
- - Centos 7
- - Raspbian (Debian Buster)
+ - Ubuntu 20.04 (Bionic Beaver)
+ - Centos 8
+ - Alpine Edge
 
 ## Prerequisites
 
