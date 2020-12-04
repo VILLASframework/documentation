@@ -109,8 +109,8 @@ VILLASnode currently has the following list of dependencies:
  - [libjansson](http://www.digip.org/jansson/) (>= 2.7) JSON parser for @ref node-type-websocket and @ref node-type-ngsi node-types (_required_).
  - [openssl](https://www.openssl.org) (>= 1.0.0) for cryptographic hashing functions (_required_).
  - [libcurl](https://curl.haxx.se/libcurl/) (>= 7.29.0) for HTTP REST requests by the @ref node-type-ngsi node-type (_required_).
- - [spdlog](https://github.com/gabime/spdlog) (>= 1.3.1) for logging (_required_).
- - [fmtlib](https://github.com/fmtlib/fmt) (>= 5.2.0) for string formatting (_required_).
+ - [spdlog](https://github.com/gabime/spdlog) (>= 1.5.0) for logging (_required_).
+ - [fmtlib](https://github.com/fmtlib/fmt) (>= 6.1.2) for string formatting (_required_).
 
  - [libconfig](http://www.hyperrealm.com/libconfig/) (>= 1.4.9) for parsing the configuration file (_optional_).
  - [libnl3](http://www.infradead.org/~tgr/libnl/) (>= 3.2.27) for the network communication & emulation support of the @ref node-type-socket node-type (_optional_).
@@ -128,6 +128,7 @@ VILLASnode currently has the following list of dependencies:
  - [Etherlab](http://etherlab.org) (>= 1.5.2) for the @ref node-type-ethercat node-type (_optional_)
  - [Criterion](https://github.com/Snaipe/Criterion) (>= 2.3.1) for running the unit tests (_optional_).
  - [libuuid](https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git) (>= 2.29).
+ - [libxil](https://git.rwth-aachen.de/acs/public/villas/fpga/libxil) (>= 1.0.0) for the @ref node-type-fpga node-type (_optional_).
 
 There are three ways to install these dependencies:
 
@@ -185,6 +186,8 @@ $ sudo dnf install \
     libnl3-devel \
     libcurl-devel \
     jansson-devel \
+    spdlog-devel \
+	fmt-devel \
     libwebsockets-devel \
     zeromq-devel \
     nanomsg-devel \
@@ -196,7 +199,6 @@ $ sudo dnf install \
     librdmacm-devel \
     re-devel \
     uldaq-devel \
-    spdlog-devel \
     libusb-devel
 ```
 
