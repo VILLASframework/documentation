@@ -172,6 +172,37 @@ $ sudo dnf install \
     libusb-devel
 ```
 
+or for Alpine:
+
+```bash
+$ echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+$ apk update
+$ apk add gcc g++ \
+	pkgconf cmake make \
+	autoconf automake libtool \
+	git mercurial \
+	flex bison \
+	protobuf \
+	file
+	openssl-dev \
+	ossp-uuid-dev@testing \
+	libconfig-dev \
+	libwebsockets-dev \
+	curl-dev \
+	jansson-dev \
+	spdlog-dev \
+	fmt-dev \
+	libnl3-dev \
+	graphviz-dev \
+	protobuf-dev \
+	protobuf-c-dev \
+	zeromq-dev \
+	nanomsg-dev@testing \
+	rabbitmq-c-dev \
+	mosquitto-dev \
+	libusb-dev
+```
+
 ## Downloading from Git
 
 ```bash
