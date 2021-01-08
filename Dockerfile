@@ -63,7 +63,8 @@ RUN apt-get update && \
 	apt-get install -y \
 		uwsgi \
 		libxapian30 \
-		supervisor
+		supervisor \
+		jq
 
 RUN mkdir /usr/share/nginx/cgi-bin
 

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+PATH=$PATH:/usr/share/nginx/cgi-bin/
 PREFIX="/doc"
 ANCHOR=${QUERY_STRING}
 

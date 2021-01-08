@@ -19,17 +19,17 @@ The following figure illustrates the state machine which is used:
 @image html uml/NodeStatechartDiagram.svg Common states of objects in VILLASnode width=60%
 
 <div class="mermaid">
-stateDiagram-v2
-    [*] --> initialized: _init()
-    initialized --> parsed: _parse()
-    initialized --> destroyed: _destroy()
-    parsed --> destroyed: _destroy()
-    parsed --> checked: _check()
-    checked --> started: _start()
-    checked --> destroyed: _destroy()
-    started --> stopped: _stop()
-    stopped --> destroyed: _destroy()
-    destroyed --> [*]
+    stateDiagram-v2
+        [*] --> initialized: _init()
+        initialized --> parsed: _parse()
+        initialized --> destroyed: _destroy()
+        parsed --> destroyed: _destroy()
+        parsed --> checked: _check()
+        checked --> started: _start()
+        checked --> destroyed: _destroy()
+        started --> stopped: _stop()
+        stopped --> destroyed: _destroy()
+        destroyed --> [*]
 </div>
 
 ## Shared library: libvillas
