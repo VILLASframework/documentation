@@ -18,6 +18,7 @@ The following figure illustrates the state machine which is used:
 
 @image html uml/NodeStatechartDiagram.svg Common states of objects in VILLASnode width=60%
 
+@htmlonly
 <div class="mermaid">
     stateDiagram-v2
         [*] --> initialized: _init()
@@ -31,6 +32,7 @@ The following figure illustrates the state machine which is used:
         stopped --> destroyed: _destroy()
         destroyed --> [*]
 </div>
+@endhtmlonly
 
 ## Shared library: libvillas
 
