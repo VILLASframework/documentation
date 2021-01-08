@@ -24,8 +24,9 @@ The following figure illustrates the state machine which is used:
         initialized --> destroyed: _destroy()
         parsed --> destroyed: _destroy()
         parsed --> checked: _check()
-        checked --> started: _start()
         checked --> destroyed: _destroy()
+        checked --> prepared: _prepare()
+        prepared --> started: _start()
         started --> stopped: _stop()
         stopped --> destroyed: _destroy()
         destroyed --> [*]
