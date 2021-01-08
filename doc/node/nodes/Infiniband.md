@@ -156,3 +156,30 @@ It turns out that the ideal value in most cases is `out.max_wrs / 2`. Hence, usu
 ## Example
 
 @include node/etc/examples/nodes/infiniband.conf
+
+
+## State diagram
+
+@htmlonly
+<div class="mermaid">
+stateDiagram-v2
+    initialized: <b>initialized</b><br>(from Node)
+    parsed: <b>parsed</b><br>(from Node)
+    destroyed: <b>destroyed</b><br>(from Node)
+    checked: <b>checked</b><br>(from Node)
+    stopped: <b>stopped</b><br>(from Node)
+    started: <b>started</b><br>(from Node)
+    [*] --> initialized
+    initialized --> parsed: _init()
+    parsed --> destroyed: _destroy()
+    parsed --> checked: _check()
+    checked --> started: _start()
+    started --> connected
+    connected --> started
+    connected --> stopped
+    stopped --> destroyed: _destroy()
+    started --> stopped: _stop()
+    stopped --> started: _start
+    checked --> destroyed: _destroy()
+</div>
+@endhtmlonly

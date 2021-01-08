@@ -16,8 +16,6 @@ Main _classes_ in VILLASnode are `struct sample`, `struct vnode`, `struct vpath`
 In order to track the life cycle of those objects, each of them has an `enum State` member.
 The following figure illustrates the state machine which is used:
 
-@image html uml/NodeStatechartDiagram.svg Common states of objects in VILLASnode width=60%
-
 @htmlonly
 <div class="mermaid">
     stateDiagram-v2

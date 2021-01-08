@@ -88,7 +88,30 @@ Example of a message header:
 
 ## State Machine
 
-@image html uml/SimulatorStatechartDiagram.svg
+@htmlonly
+<div class="mermaid">
+stateDiagram-v2
+    [*] --> State1
+    state State1 {
+      [*] --> idle
+      idle --> starting: start
+      starting --> running
+      running --> stopping: stop
+      stopping --> stopped
+      running --> pausing: pause
+      pausing --> paused
+      paused --> stopping: stop
+      paused --> resuming: resume
+      resuming --> running
+    }
+    State1 --> resetting: reset
+    resetting --> State1
+    State1 --> shuttingdown: shutdown
+    shuttingdown --> [*]
+    State1 --> error: exception
+    error --> resetting: reset
+</div>
+@endhtmlonly
 
 ## Management
 
