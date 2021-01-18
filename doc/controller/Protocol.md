@@ -137,18 +137,33 @@ After receiving such a message, each entity shall send a status update message a
 ```json
 {
 	"status" : {
-		"version" : "0.1.0",
-		"state" : "idle",
-		"run-id" : "run-id",
+		/* Generic state */
+		"state" : "running",
+		"version" : "0.1.0",                /* VILLAScontroller version */
+		"uptime" : 123124.0,                /* in seconds since initialization (float) */
+		"result": "XXXXXXX"                 /* only if state == "running" */
+		"error": "This is an error message" /* only if state == "error" */
+
+		/* Custom state (depending on IC type) */
+		"villas_node_version": "v0.11.0",
+		"kernel": ["Linux", "villas-node-594f8c7bff-wmznc", "5.0.0-29-generic", "#31~18.04.1-Ubuntu SMP Thu Sep 12 18:29:21 UTC 2019", "x86_64"],
+		"host": "villas-node-594f8c7bff-wmznc"
+	},
+	"properties": { /* fixed configuration of IC as provided by user */
+
+		/* Generic properties */
 		"name" : "OP5600",
 		"description" : "some optional description",
 		"location" : "OPAL-RT Rack, ACS Real-time Lab, EONERC, RWTH",
 		"owner" : "stvogel@eonerc.rwth-aachen.de",
-		"uptime" : 123124.0 /* in seconds since initialization (float) */,
+
 		"ws_url" : "https://villas-new.k8s.eonerc.rwth-aachen.de/ws/relay/node_1",
-		"api_url" : "https://villas-new.k8s.eonerc.rwth-aachen.de/ws/relay/api/node_1"
+		"api_url" : "https://villas-new.k8s.eonerc.rwth-aachen.de/ws/relay/api/node_1",
+
+		/* Custom properties (depending on IC type) */
+		"opal_hostname": "opal-op5600.acs-lab.eonerc.rwth-aachen.de"
 	},
-	"time" : 1234567890.123 /* timestamp in seconds (UTC / Unix epoch / since 1970-01-01) (float) */
+	"when" : 1234567890 /* timestamp in seconds (UTC / Unix epoch / since 1970-01-01) (float) */
 }
 ```
 
