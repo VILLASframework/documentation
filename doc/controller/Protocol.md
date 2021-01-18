@@ -174,7 +174,7 @@ Used values for `state`:
 ```json
 {
 	"action": "create",
-	"when": 1234567890.123,
+	"when": 1234567890,
 	"parameters": {
 		"key": "value",
 		"key2": { }
@@ -187,7 +187,7 @@ Used values for `state`:
 ```json
 {
 	"action": "delete",
-	"when": 1234567890.123,
+	"when": 1234567890,
 }
 ```
 
@@ -198,7 +198,7 @@ Used values for `state`:
 ```json
 {
 	"action" : "reset",
-	"when" : 1234567890.123
+	"when" : 1234567890
 }
 ```
 
@@ -207,7 +207,7 @@ Used values for `state`:
 ```json
 {
 	"action" : "shutdown",
-	"when" : 1234567890.123
+	"when" : 1234567890
 }
 ```
 
@@ -234,7 +234,7 @@ Start the simulation at a specific point in time.
 	    "url" : "https://villas.k8s.eonerc.rwth-aachen.de/api/v2/runs/3452345234/results"
 		"token": "Xwlsjkdlfksjhdfglskdfg"
 	},
-	"when" : 1234567890.123
+	"when" : 1234567890
 }
 ```
 
@@ -255,7 +255,7 @@ Another example for `type = generic`:
             "DEBUG" : "1"
         ]
     },
-	"when" : 1234567890.123
+	"when" : 1234567890
 }
 ```
 
@@ -266,7 +266,7 @@ Stop the simulation at a specific point in time.
 ```json
 {
 	"action" : "stop",
-	"when" : 1234567890.123
+	"when" : 1234567890
 }
 ```
 
@@ -277,7 +277,7 @@ Pause the simulation at a specific point in time.
 ```json
 {
 	"action" : "pause",
-	"when" : 1234567890.123
+	"when" : 1234567890
 }
 ```
 
@@ -288,6 +288,6 @@ Resume the simulation at a specific point in time.
 ```json
 {
 	"action" : "resume",
-	"when" : 1234567890.123
+	"when" : 1234567890
 }
 ```
