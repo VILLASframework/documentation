@@ -19,9 +19,7 @@ For small tests and beginners we recommend a local Minikube setup.
 2. [Install Helm](https://helm.sh/docs/intro/quickstart/)
 3. Enable the Ingress controller in your minikube cluster:
 
-	```bash
 	minikube addons enable ingress
-	```
 
 ## Helm chart
 

@@ -1,8 +1,6 @@
-# VILLASweb data structure {#web-datastructure}
+# Data Model {#web-data-model}
 
 This document describes how data (scenarios, infrastructure components, users etc., not only live data) is structured in VILLASweb.
-
-## Data model
 
 <!-- https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram -->
 @htmlonly
@@ -27,7 +25,8 @@ VILLASweb features the following data classes:
  - Scenarios
     * Component Configurations and Signals
     * Dashboards and Widgets
-    * Files 
+    * Files
+    * Results
 
 ### Users
 - You need a username and a password to authenticate in VILLASweb

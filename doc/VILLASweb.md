@@ -2,11 +2,19 @@
 
 <img src="images/logos/villas_web.svg" width="115px" align="right" />
 
-VILLASweb is a web interface for planning, preparing, executing and analyzing distributed simulations.
+VILLASweb is a tool to configure real-time co-simulations and display simulation real-time data in the web browser.
+The term **frontend** refers to this project, the actual website.
+The frontend connects to **two** backends:
+- [VILLASweb-backend-go](https://git.rwth-aachen.de/acs/public/villas/web-backend-go)
+- [VILLASnode](https://git.rwth-aachen.de/acs/public/villas/node)
 
-- @subpage web-guide
+_VILLASnode_ provides actual simulation data via websockets.
+_VILLASweb-backend-go_ provides any other data such as user accounts, infrastructure components and configurations, dashboards etc.
+For more information on the backends see their repositories.
+
+- @subpage web-screenshots
+- @subpage web-data-model
 - @subpage web-development
   - @subpage web-authentication
-- @subpage web-requirements
-- @subpage web-production
-- @subpage web-screenshots
+  - @subpage web-development-backend
+  - @subpage web-development-frontend
