@@ -1,5 +1,13 @@
 # Getting Started with VILLASweb {#web-guide}
 
+@htmlonly
+<div style="text-align: center; margin: 2em">
+	<span style="font-size: 1.2em; font-weight: bold; padding: 0.5em; border: 3px solid #db3e34; border-radius: 10px;">
+		<b>Warning:</b> This information is outdated!
+	</span>
+</div>
+@endhtmlonly
+
 This document describes setting up a demo in VILLASweb to test it's features. It is assumed that the docker-compose.yml file in VILLASweb repository is used (otherwise setup the website, backend with database and a villasnode which sends data).
 
 ## Configure VILLASnode

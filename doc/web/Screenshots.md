@@ -1,5 +1,13 @@
 # Screenshots {#web-screenshots}
 
+@htmlonly
+<div style="text-align: center; margin: 2em">
+	<span style="font-size: 1.2em; font-weight: bold; padding: 0.5em; border: 3px solid #db3e34; border-radius: 10px;">
+		<b>Warning:</b> This information is outdated!
+	</span>
+</div>
+@endhtmlonly
+
 ## Login / User Management
 
 @image html VILLASweb_login.png Login Page width=75%

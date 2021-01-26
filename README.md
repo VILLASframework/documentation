@@ -4,9 +4,13 @@
 
 @subpage framework-architecture
 
-@htmlonly <div style="text-align: center; margin: 2em"><span style="font-size: 1.2em; font-weight: bold; padding: 1em; border: 5px solid #db3e34; border-radius: 20px;"> @endhtmlonly
-For starters we recommand to read the @ref guide!
-@htmlonly </span></div> @endhtmlonly
+@htmlonly
+<div style="text-align: center; margin: 2em">
+	<span style="font-size: 1.2em; font-weight: bold; padding: 1em; border: 5px solid #db3e34; border-radius: 20px;">
+		For starters we recommand to read the @endhtmlonly @ref @htmlonly guide!
+	</span>
+</div>
+@endhtmlonly
 
 # Components
 

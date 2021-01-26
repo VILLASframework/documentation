@@ -18,7 +18,6 @@ Clone the [frontend](https://git.rwth-aachen.de/acs/public/villas/web) and [back
 Run the production docker-compose file:
  - `docker-compose -f docker-compose-production.yml up -d`
 
-
 ## Configure VILLASnode to get data into VILLASweb
 
 ### Install VILLASnode
