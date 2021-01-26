@@ -6,6 +6,7 @@ VILLASweb is a web interface for planning, preparing, executing and analyzing di
 
 - @subpage web-guide
 - @subpage web-development
+  - @subpage web-authentication
 - @subpage web-requirements
 - @subpage web-production
 - @subpage web-screenshots
