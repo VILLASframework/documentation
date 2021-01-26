@@ -12,6 +12,10 @@
 </div>
 @endhtmlonly
 
+# Installation
+
+- @subpage installation
+
 # Components
 
 - @subpage node

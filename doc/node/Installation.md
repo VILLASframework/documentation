@@ -3,7 +3,7 @@
 VILLASnode can be installed in multiple ways:
 
 - [Docker image](https://git.rwth-aachen.de/acs/public/villas/node/container_registry)
-- [Helm chart](https://git.rwth-aachen.de/acs/public/catalogue)
+- [Kubernetes (Helm chart)](@ref installation)
 - RPM packages for Redhat based Linux distributions
 - [Bootable Linux live image](@ref liveusb)
 - or from source
@@ -24,12 +24,6 @@ To start the main daemon, you can pass a configuration file via a volume mount:
 ```bash
 $ docker run --volume /path/to/my/local.conf:/config.conf --privileged registry.git.rwth-aachen.de/acs/public/villas/node node /config.con
 ```
-
-# Helm chart
-
-You can run the full set of VILLASframework components pre-configured in a Kubernetes cluster using Helm.
-
-Please consult [the charts README file](https://git.rwth-aachen.de/acs/public/catalogue/-/blob/master/charts/villas/README.md) for details.
 
 # From RPM packages {#node-installation-rpm}
 

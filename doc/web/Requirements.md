@@ -1,5 +1,7 @@
 # Requirements {#web-requirements}
 
+To get started quickly, we recommend to run VILLASweb in a small Kubernetes setup using our [Helm chart](@ref installation).
+
 ## Services and tools required for development
  - [NodeJS with npm](https://nodejs.org/en/): Runs VILLASweb frontend
  - [Go](https://golang.org/): Runs VILLASweb backend
