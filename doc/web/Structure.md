@@ -1,54 +1,93 @@
 # VILLASweb data structure {#web-datastructure}
 
-## Description
+This document describes how data (scenarios, infrastructure components, users etc., not only live data) is structured in VILLASweb.
 
-This document describes how data (simulators, projecs etc. not only live data) is structured in Villas web.
+## Data model
 
-## Main data classes
+<!-- https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram -->
+@htmlonly
+<div class="mermaid">
+erDiagram
+    User }|--|{ Scenario: "can access"
+    Scenario }|--|| Dashboard: ""
+    Scenario }o--|| File: ""
+    Scenario }o--|| Result: ""
+    Result }o--|| File: ""
+    Dashboard }o--|| Widget: ""
+    Scenario }o--|| ComponentConfiguration: ""
+    ComponentConfiguration ||--|{ InfrastructureComponent: ""
+    ComponentConfiguration }|--|| Signal: ""
+</div>
+@endhtmlonly
 
-Villas web features 5 main data classes:
+VILLASweb features the following data classes:
 
- - (Villas-)Nodes
- - Simulations
- - Projects
- - Visualizations
  - Users
+ - Infrastructure Components
+ - Scenarios
+    * Component Configurations and Signals
+    * Dashboards and Widgets
+    * Files 
 
-Some of this data classes contain additional other data classes.
+### Users
+- You need a username and a password to authenticate in VILLASweb
+- There exist three categories of users: Guest, User, and Admin
+- Guests have only read access and cannot modify anything
+- Users are normal users, they have access to their scenarios, can see available infrastructure components, and modify their accounts (except for their role)
+- Admin users have full access to everything, they are the only users that can create new users or change the role of existing users. Only admin users can add or modify infrastructure components. 
 
-### Setup strategy
+### Infrastructure Components
+- Components of research infrastructure
+- Category: for example simulator, gateway, amplifier, database, etc.
+- Type: for example RTDS, OpalRT, VILLASnode, Cassandra
+- Can only be added/ modified by admin users
 
-The easiest way to start from scratch is the following (assuming the simulators and villas-node are already configured):
+### Scenarios
+- A collection of component configurations, dashboards, and files for a specific experiment
+- Users can have access to multiple scenarios
+- Users can be added to and removed from scenarios
 
-1. Create a new node with at least one simulator.
-2. Create a new simulation with the desired simulation models.
-3. Create a new project with the simulation selected.
-4. Create a new visualization and add widgets as desired.
+### Component Configurations and Signals
+- Configure an infrastructure component for the use in a specific scenario
+- Input signals: Signals that can be modified in VILLASweb
+- Output signals: Signals that can be visualized on dashboards of VILLASweb
+- Parameters: Additional configuration parameters of the infrastructure component
+- Signals are the actual live data that is displayed or modified through VILLASweb dashboards 
 
-### (Villas-)Nodes
+### Dashboards and Widgets
+- Visualize ongoing experiments in real-time
+- Interact with ongoing experiments in real-time
+- Use widgets to design the dashboard according to the needs
 
-In the simulator menu point, the user can view, create, edit and delete nodes to the system. Nodes are global at any time, which are shared with all users among Villas web. These nodes represent public villas-nodes, that are configured to stream live-data via websockets to the users.
+### Files
+- Files can be added to scenarios optionally
+- Can be images, model files, CIM xml files
+- Can be used in widgets or component configurations 
 
-> Hint: At least *one* node is *required* to receive data in Villas web.
+## Setup strategy
 
-Each node has simulators, which represent *one* (websocket-)node in the *villas-node configuration*. The simulator name **must** match the *websocket-node* in the *villas-node configuration* to connect to. If the names do not match, the *websocket-node* will not be fetched and data will not be received.
+The easiest way to start from scratch is the following (assuming the infrastructure components are already configured by an admin user, see below):
 
-> Hint: At least one simulator is required to receive data in Villas web.
+1. Create a new scenario.
+2. Create and configure a new component configuration and link it with an available infrastructure component.
+3. Configure the input and output signals of the component configuration according to the signals provided by the selected infrastructure component. The number of signals and their order (index starting at 1) must match.
+4. Create a new dashboard and add widgets as desired. Configure the widgets by right-clicking to open the edit menu
+5. If needed, files can be added to the scenario and used by component configurations or widgets (models, images, CIM-files, etc.)
+6. For collaboration with other users, users can be added to a scenario
 
-### Simulations
+### Setup of infrastructure components
 
-A simulation represents a *group* of *simulators* running specific *simulation models*, thus the same configuration of simulators can be shared with different projects. If you want to create a different group of simulators, create a new simulation.
+In the "Infrastructure Components" menu point admin users can create and edit components to be used in experiments. Normal uses can view the available components, but not edit them.
+The components are global at any time and are shared among all users of VILLASweb. 
 
-To add a simulator to a simulation, add a new *simulation model* to the simulation, which represents the simulator connected a (villas-)node and the simulation model running on this simulator by setting the required signal count and mapping. The mapping must not be changed, but helps a lot to know which signal represents which live data.
+To create a new infrastructure component, you need to provide:
+- Name
+- Category (see above for examples)
+- Type (see above for examples)
+- Location
+- Host (network address of the component)
 
-> Hint: To be able to create a project, at least one simulation must be available.
+At the moment, you need to know the input and output signals of the infrastructure component a priori to be able to create compatible component configurations by hand.
+An auto-detection mechanism for signals is planned for future releases.
 
-### Projects
-
-Projects represent the user's own usage of a simulation. To be able to use a simulation, create a new project and select the simulation you want to use.
-
-> Hint: At the moment a project may only use one simulation, but this will change in future.
-
-### Visualizations
-
-Visualizations are the main part of Villas web. They represent the live data. Visualizations are added to a project and can show the data for the simulation that is assigned to this project. To view data, edit the visualization and add widgets to it. Different widgets are available to represent the data in the different ways. In the widget options you can select from which simulator the widgets should fetch their data (individual for each widget).
+> Hint: At least one infrastructure component is required to receive data in VILLASweb.
