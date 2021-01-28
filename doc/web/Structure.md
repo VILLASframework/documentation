@@ -10,7 +10,6 @@ erDiagram
     Scenario }|--|| Dashboard: ""
     Scenario }o--|| File: ""
     Scenario }o--|| Result: ""
-    Result }o--|| File: ""
     Dashboard }o--|| Widget: ""
     Scenario }o--|| ComponentConfiguration: ""
     ComponentConfiguration ||--|{ InfrastructureComponent: ""
