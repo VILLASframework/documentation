@@ -72,10 +72,8 @@ The following headers are used to identify and route messages to the receipients
 - `category` describes the classes of equipment.
   - Examples:
     - `simulator`
-	- `controller` (manages ICs, e.g. Kubernetes)
-	- `service` (virtual SW, e.g. energy management system)
+	- `manager` (manages ICs, e.g. Kubernetes Jobs, VILLAS WebSocket endpoints)
     - `gateway` (e.g. VILLASnode, e.g. VILLASrelay)
-    - `equipment` (e.g. HIL Interfaces: Chroma, Fleps, PGS; DuT: Battery, PV-Inverter, Lab-equipment: Programmable supplies and loads)
 
 - `type` further defines the type/vendor of a device within its class.
   - For `simulator`:
