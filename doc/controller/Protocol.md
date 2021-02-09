@@ -75,7 +75,7 @@ The following headers are used to identify and route messages to the receipients
   - Examples:
     - `56babc1e-0476-11e8-9375-471525328a77`
 
-Example of a message header:
+Example of an application header:
 
 ```json
 {
@@ -85,6 +85,10 @@ Example of a message header:
 	"uuid" : "56babc1e-0476-11e8-9375-471525328a77"
 }
 ```
+
+**Important:** Note that at least one of the headers must be provided. Otherwise no component will receive it.
+
+It is also valid to just provide a single header (e.g. `uuid` to address a specific component or `type` to adress a class of components).
 
 ## State Machine
 
@@ -184,24 +188,37 @@ Used values for `state`:
 
 ## Management
 
-### Instantiation
+### Creation of new components
+
+**Important:** This action type must be directed at a component of category `manager`!
 
 ```json
 {
 	"action": "create",
 	"when": 1234567890,
 	"parameters": {
-		"key": "value",
-		"key2": { }
+		"name": "DPsim simulator",
+		"location": "ACS lab",
+		"realm": "de.rwth-aachen.eonerc.acs",
+		"category": "simulator",
+		"type": "dpsim"
+		"uuid": "c487a470-6af6-11eb-beee-7fa268050404"
 	}
 }
 ```
 
-### Deletion
+The `uuid` parameter is optional. If not provided, the managing component will generate a random one.
+
+### Deletion of components
+
+**Important:** This action type must be directed at a component of category `manager`!
 
 ```json
 {
 	"action": "delete",
+	"parameters": {
+		"uuid": "c487a470-6af6-11eb-beee-7fa268050404"
+	}
 	"when": 1234567890,
 }
 ```
