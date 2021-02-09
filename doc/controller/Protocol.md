@@ -7,8 +7,6 @@ VILLAScontroller is implemented in Python and using the [Kombo messaging package
 
 The Git repository is available at: http://git.rwth-aachen.de/acs/public/villas/controller
 
-## Entities {#controller-protocol-entities}
-
 The puporse of VILLAScontroller is the orchestration of IC in distributed lab setups.
 This includes the following tasks:
 
@@ -16,17 +14,48 @@ This includes the following tasks:
 - monitoring: status?
 - control: start, stop, pause, reset, resume, shutdown
 
-For the purpose of routing and grouping the IC, we introduce the following categories:
+## Entities {#controller-protocol-entities}
 
-- `simulator` (_implemented_)
-- `simulation` (_planned_)
-- `interface` (_planned_)
-- `gateway` (_planned_)
-- `model` (_planned_)
+For the purpose of addressing the ICs, we introduce the following categories (1st level) and types (2nd level): 
+
+- `simulator`
+  - `dpsim`
+  - `generic`
+  - `rtlab`
+  - `rtds`
+  - `dummy`
+  - `job` (a [Kubernetes Job](https://kubernetes.io/docs/concepts/workloads/controllers/job/))
+- `gateway`
+  - `node`
+  - `relay`
+- `manager`
+  - `node`
+  - `relay`
+  - `kubernetes`
+
+These component types are implemented by the following class hierachy in VILLAScontroller's Python code:
+
+```mermaid
+classDiagram
+      Component <-- Manager
+      Component <-- Gateway
+      Component <-- Simulator
+      Simulator <-- DPsimSimulator
+      Simulator <-- RTlabSimulator
+      Simulator <-- DummySimulator
+      Simulator <-- DummySimulator
+      Simulator <-- KubernetesJob
+      Manager <-- GenericManager
+      Manager <-- VILLASnodeManager
+      Manager <-- VILLASrelayManager
+      Manager <-- KubernetesManager
+      Gateway <-- VILLASnodeInterface
+      Gateway <-- VILLASrelaySession
+```
 
 ## Exchange {#controller-protocol-amqp-exchange}
 
-Almost all messages processed by VILLAScontroller are sent via an AMQP `headers` exchange.
+All messages processed by VILLAScontroller are sent via an AMQP `headers` exchange.
 
 The exchange is named `villas`.
 
