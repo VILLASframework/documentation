@@ -93,6 +93,7 @@ VILLASnode currently has the following list of dependencies:
  - [Criterion](https://github.com/Snaipe/Criterion) (>= 2.3.1) for running the unit tests (_optional_).
  - [libuuid](https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git) (>= 2.29).
  - [libxil](https://git.rwth-aachen.de/acs/public/villas/fpga/libxil) (>= 1.0.0) for the @ref node-type-fpga node-type (_optional_).
+ - [Lua](http://www.lua.org/) (>= 5.1) for the @ref hook-type-lua hook (_optional_).
 
 There are three ways to install these dependencies:
 
@@ -127,7 +128,8 @@ $ sudo apt-get install \
     libre-dev \
     libspdlog-dev \
     libfmt-dev \
-    libusb-1.0-0-dev
+    libusb-1.0-0-dev \
+    liblua5.3-dev
 ```
 
 or the following line for Fedora/CentOS/Redhat systems:
@@ -163,7 +165,8 @@ $ sudo dnf install \
     librdmacm-devel \
     re-devel \
     uldaq-devel \
-    libusb-devel
+    libusb-devel \
+    lua-devel
 ```
 
 or for Alpine:
@@ -194,14 +197,16 @@ $ apk add gcc g++ \
 	nanomsg-dev@testing \
 	rabbitmq-c-dev \
 	mosquitto-dev \
-	libusb-dev
+	libusb-dev \
+    lua-dev
 ```
 
 ## Downloading from Git
 
 ```bash
-$ git clone --recursive https://git.rwth-aachen.de/acs/public/villas/node.git VILLASnode
+$ git clone https://git.rwth-aachen.de/acs/public/villas/node.git VILLASnode
 $ cd VILLASnode
+$ git submodule update --init common
 ```
 
 ## Install unpackaged dependencies
