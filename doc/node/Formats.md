@@ -14,7 +14,7 @@ Currently, the following formats are supported (or planned):
 | `villas.binary`  | @subpage node-format-villas-binary               | stable |
 | `json`           | @subpage node-format-json                        | stable |
 | `csv`            | Comma/Tabulator-separated values                 | stable |
-| `raw`            | RAW/Binary data                                  | stable |
+| `raw`            | @subpage node-format-raw                         | stable |
 | `gtnet`          | RTDS GTNET-SKT                                   | stable |
 | `gtnet.fake`     | RTDS GTNET-SKT (using the first three value as header values: sequence, timestamp seconds, timestamp nanoseconds) | stable |
 | `protobuf`       | @subpage node-format-protobuf                    | stable |
