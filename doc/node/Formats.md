@@ -15,10 +15,12 @@ Currently, the following formats are supported (or planned):
 | `json`           | @subpage node-format-json                        | stable |
 | `csv`            | Comma/Tabulator-separated values                 | stable |
 | `raw`            | @subpage node-format-raw                         | stable |
-| `gtnet`          | RTDS GTNET-SKT                                   | stable |
-| `gtnet.fake`     | RTDS GTNET-SKT (using the first three value as header values: sequence, timestamp seconds, timestamp nanoseconds) | stable |
+| `gtnet`          | @subpage node-format-raw                         | stable |
+| `gtnet.fake`     | @subpage node-format-raw                         | stable |
 | `protobuf`       | @subpage node-format-protobuf                    | stable |
 | `hdf5`           | @subpage node-format-hdf                         | [planned](https://git.rwth-aachen.de/acs/public/villas/node/tree/format-h5pt) |
+| `iotagent-ul`    | @subpage node-format-fiware-iotagent-ul          | stable |
+| `value`          | @subpage node-format-fiware-iotagent-ul          | stable |
 
 ## Configuration
 

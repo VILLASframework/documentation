@@ -32,6 +32,11 @@ All values are sent in **network byte order** (big endian)!
 
 @see msg for implementation details.
 
-## Example
+# Example
 
 @image html wireshark_udp.png Wireshark capture of UDP traffic width=50%
+
+# Implementation
+
+The source code of the format-type is available here:
+https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/villas_binary.cpp

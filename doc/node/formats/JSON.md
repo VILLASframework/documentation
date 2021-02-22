@@ -2,7 +2,7 @@
 
 **Specification:** http://json.org
 
-## Example
+# Example
 
 The structure of the JSON format is closely aligned with VILLASnode's internal data representation.
 See @ref node-concept-sample for details.
@@ -27,3 +27,8 @@ See @ref node-concept-sample for details.
   ]
 }
 ```
+
+# Implementation
+
+The source code of the format-type is available here:
+https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/json.cpp
