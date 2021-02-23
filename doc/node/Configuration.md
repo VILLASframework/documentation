@@ -11,6 +11,8 @@ VILLASnode currently supports two config file formats:
 - [JSON](https://www.json.org/) (recommended)
 - [libconfig](http://hyperrealm.github.io/libconfig/libconfig_manual.html#Configuration-Files)
 
+**Note:** Consider using the @ref node-usage-conf2json command to migrate your old configurations to JSON.
+
 # Structure
 
 At the top level, the configuration file consists of these sections:
