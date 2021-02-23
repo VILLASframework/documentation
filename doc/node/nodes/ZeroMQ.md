@@ -34,7 +34,7 @@ The payload format which is used to encode and decode exchanged messages.
 
 **Note:** This feature is currently broken.
 
-You can use the `zmq-keygen` tool to create a new keypair for the following configuration options:
+You can use the @ref node-usage-zmq-keygen command to create a new keypair for the following configuration options:
 
 ### curve.enabled (bool) = true {#node-config-node-zeromq-ipv6}
 

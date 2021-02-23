@@ -15,6 +15,6 @@ Usage: villas-pipe [OPTIONS] CONFIG NODE
     -d               set logging level
     -V               show the version of the tool
 
- [34mv0.7.3-d8eb2f9-debug[0m (built on [35mMay  2 2019[0m [35m08:49:59[0m)
+ v0.11.0-5c666fb-debug (built on Feb 23 2021 02:34:46)
  Copyright 2014-2017, Institute for Automation of Complex Power Systems, EONERC
  Steffen Vogel <StVogel@eonerc.rwth-aachen.de>

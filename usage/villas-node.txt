@@ -9,6 +9,7 @@ Usage: villas-node [OPTIONS] [CONFIG]
          and wait for provisioning over the web interface.
 
 Supported node-types:
+ - loopback_internal: internal loopback to connect multiple paths
  - influxdb     : Write results to InfluxDB
  - stats        : Send statistics to another node
  - signal       : Signal generator
@@ -16,56 +17,20 @@ Supported node-types:
  - test_rtt     : Test round-trip time with loopback
  - socket       : BSD network sockets for Ethernet / IP / UDP (libnl3, netem support)
  - file         : support for file log / replay node type
- - uldaq        : Measurement Computing DAQ devices like UL201 (libuldaq)
+ - exec         : run subprocesses with stdin/stdout communication
  - shmem        : POSIX shared memory interface with external processes
- - iec61850-9-2 : IEC 61850-9-2 (Sampled Values)
- - nanomsg      : scalability protocols library (libnanomsg)
  - zeromq       : ZeroMQ Distributed Messaging (libzmq)
  - ngsi         : OMA Next Generation Services Interface 10 (libcurl, libjansson)
  - websocket    : Send and receive samples of a WebSocket connection (libwebsockets)
  - amqp         : Advanced Message Queueing Protoocl (rabbitmq-c)
  - mqtt         : Message Queuing Telemetry Transport (libmosquitto)
- - comedi       : Comedi-compatible DAQ/ADC cards
- - infiniband   : Infiniband interface (libibverbs, librdmacm)
- - rtp          : real-time transport protocol (libre, libnl3 netem support)
-
-Supported hooks:
- - average: Calculate average over some signals
- - cast: Cast signals types
- - decimate: Downsamping by integer factor
- - dp: Transform to/from dynamic phasor domain
- - drop: Drop messages with reordered sequence numbers
- - dump: Dump data to stdout
- - ebm: Energy-based Metric
- - fix: Fix received data by adding missing fields
- - jitter_calc: Calc jitter, mean and variance of GPS vs NTP TS
- - limit_rate: Limit sending rate
- - restart: Call restart hooks for current node
- - scale: Scale signals by a factor and add offset
- - shift_seq: Shift sequence number of samples
- - shift_ts: Shift timestamps of samples
- - skip_first: Skip the first samples
- - stats: Collect statistics for the current path
- - ts: Overwrite origin timestamp of samples with receive timestamp
- - print: Print the message to stdout
-
-Supported API commands:
- - capabilities: get capabiltities and details about this VILLASnode instance
- - shutdown: quit VILLASnode
- - config: get configuration of this VILLASnode instance
- - nodes: retrieve list of all known nodes
- - paths: retrieve list of all paths with details
- - restart: restart VILLASnode with new configuration
- - node.start: start a node
- - node.stop: stop a node
- - node.pause: pause a node
- - node.resume: resume a node
- - node.restart: restart a node
- - stats: get or reset internal statistics counters
+ - can          : Receive CAN messages using the socketCAN driver
+ - example      : An example for staring new node-type implementations
+ - ethercat     : Send and receive samples of an ethercat connection
 
 Supported IO formats:
- - protobuf     : Google Protobuf
  - json         : Javascript Object Notation
+ - iotagent_ul  : FIWARE IotAgent UltraLight format
  - json.reserve : RESERVE JSON format
  - villas.binary: VILLAS binary network format
  - villas.web   : VILLAS binary network format for WebSockets
@@ -81,7 +46,55 @@ Supported IO formats:
  - raw.64.le    : Raw 64 bit, little endian byte-order
  - gtnet        : RTDS GTNET
  - gtnet.fake   : RTDS GTNET with fake header
+ - value        : A bare text value without any headers
 
- [34mv0.7.3-d8eb2f9-debug[0m (built on [35mMay  2 2019[0m [35m08:49:59[0m)
+Supported hooks:
+ - average: Calculate average over some signals
+ - cast: Cast signals types
+ - decimate: Downsamping by integer factor
+ - dft: This hook calculates the  dft on a window
+ - dp: Transform to/from dynamic phasor domain
+ - drop: Drop messages with reordered sequence numbers
+ - dump: Dump data to stdout
+ - ebm: Energy-based Metric
+ - fix: Fix received data by adding missing fields
+ - gate: Skip samples only if an enable signal is under a specified threshold
+ - jitter_calc: Calc jitter, mean and variance of GPS vs NTP TS
+ - limit_rate: Limit sending rate
+ - average: Calculate average over some signals
+ - restart: Call restart hooks for current node
+ - scale: Scale signals by a factor and add offset
+ - shift_seq: Shift sequence number of samples
+ - shift_ts: Shift timestamps of samples
+ - skip_first: Skip the first samples
+ - stats: Collect statistics for the current path
+ - ts: Overwrite origin timestamp of samples with receive timestamp
+ - pps_ts: Timestamp samples based GPS PPS signal
+ - print: Print the message to stdout
+ - lua: Implement hook in Lua
+
+Supported API commands:
+ - status: get status and statistics of web server
+ - capabilities: get capabiltities and details about this VILLASnode instance
+ - config: get configuration of this VILLASnode instance
+ - shutdown: quit VILLASnode
+ - restart: restart VILLASnode with new configuration
+ - nodes: retrieve list of all known nodes
+ - node: retrieve info of a node
+ - node/start: start a node
+ - node/stop: stop a node
+ - node/pause: pause a node
+ - node/resume: resume a node
+ - node/restart: restart a node
+ - node/stats: get internal statistics counters
+ - node/stats/reset: reset internal statistics counters
+ - node/file: control instances of 'file' node-type
+ - paths: retrieve list of all paths with details
+ - path: retrieve info of a path
+ - path/start: start a path
+ - path/stop: stop a path
+ - graph: get graph representation of configuration
+
+ v0.11.0-5c666fb-debug (built on Feb 23 2021 02:34:46)
  Copyright 2014-2017, Institute for Automation of Complex Power Systems, EONERC
  Steffen Vogel <StVogel@eonerc.rwth-aachen.de>
