@@ -20,7 +20,7 @@ Currently, the following formats are supported (or planned):
 | `protobuf`       | @subpage node-format-protobuf                    | stable |
 | `hdf5`           | @subpage node-format-hdf                         | [planned](https://git.rwth-aachen.de/acs/public/villas/node/tree/format-h5pt) |
 | `iotagent-ul`    | @subpage node-format-fiware-iotagent-ul          | stable |
-| `value`          | @subpage node-format-fiware-iotagent-ul          | stable |
+| `value`          | @subpage node-format-value                       | stable |
 
 ## Configuration
 
