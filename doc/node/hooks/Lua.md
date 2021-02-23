@@ -78,3 +78,7 @@ So you can add arbitrary settings here which are then consumed by the Lua script
 ## Example
 
 @include node/etc/examples/hooks/lua.conf
+
+# Example Lua script
+
+@include node/lua/hooks/test.lua
