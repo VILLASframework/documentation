@@ -3,7 +3,7 @@
 One of the main design decissions while developing VILLASnode gateway was the choice of a simple and common data structure for simulation data.
 
 In VILLAS terminology, we refer to this as a _sample_. A sample is a set of signals which have been generated, simulated or measured at the same sampling time instant. Each node-type needs to convert its own data format into the common intermediate data structure.
-This enables VILLASnode to interface each of the available node-types with each other.
+This enables VILLASnode to interface each of the available @ref node-types with each other.
 
 Some node-types have support for different data formats. E.g. the @ref node-type-mqtt node-type can transport its payloads in varying formats.
 Available pluggable (de-)serializers documented at: @ref node-formats
@@ -46,7 +46,10 @@ struct sample {
 ```
 
 Metadata such as signal names, units, data-types etc. which dot not change between samples are not part of `struct sample`.
-They are rather stored in a list of `struct signal` defintions.
+They are rather stored in a separate list of `struct signal` defintions.
+The design of VILLASnode assumes that the these signal definitions remain static over the runtime of VILLASnode,
 
 Each sample contains a pointer to this list of signal definitions.
 The indices of signal data coressponds to the index within the list of signal definitions.
+
+See @node-concept-signal for more details.
