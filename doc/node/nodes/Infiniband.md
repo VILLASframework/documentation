@@ -9,7 +9,7 @@ This node-type requires [libibverbs](https://github.com/linux-rdma/rdma-core) (>
 # Implementation {#node-implementation-infiniband}
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/infiniband.c
+https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/infiniband.cpp
 
 # Configuration {#node-config-node-infiniband}
 

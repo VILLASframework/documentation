@@ -11,7 +11,7 @@ This node-type requires [libwebsockets](http://libwebsockets.org) (>= 2.3.0).
 # Implementation {#node-implementation-websocket}
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/websocket.c
+https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/websocket.cpp
 
 # Configuration {#node-config-node-websocket}
 

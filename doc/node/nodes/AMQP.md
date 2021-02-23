@@ -12,7 +12,7 @@ This node-type requires [rabbitmq-c](https://github.com/alanxz/rabbitmq-c) (>= 0
 # Implementation {#node-implementation-amqp}
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/amqp.c
+https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/amqp.cpp
 
 # Configuration {#node-config-node-amqp}
 

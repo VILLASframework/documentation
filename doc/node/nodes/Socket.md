@@ -9,9 +9,9 @@ This means that there's currently no support for TCP!
 
 The implementation supports multiple protocols / OSI layers:
 
- - Layer 1: Raw Ethernet Frames (no routing!)
- - Layer 2: Raw IP (internet / VPN routing possible)
- - Layer 3: UDP encapsulation
+ - **Layer 1:** Raw Ethernet Frames (no routing!)
+ - **Layer 2:** Raw IP (internet / VPN routing possible)
+ - **Layer 3:** UDP encapsulation
 
 # Prerequisites {#node-prereq-socket}
 
@@ -22,7 +22,7 @@ Optionally, [libnl3](http://www.infradead.org/~tgr/libnl/) is used to setup netw
 # Implementation {#node-implementation-socket}
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/socket.c
+https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/socket.cpp
 
 # Configuration {#node-config-node-socket}
 

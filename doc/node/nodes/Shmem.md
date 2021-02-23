@@ -9,7 +9,7 @@ This node-type does not have any special library dependencies. It is always avai
 # Implementation {#node-implementation-shmem}
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/shmem.c
+https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/shmem.cpp
 
 
 # Configuration {#node-config-node-shmem}

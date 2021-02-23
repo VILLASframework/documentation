@@ -6,9 +6,14 @@ VILLASfpga is an extension build on top of VILLASnode for realizing hard real-ti
 
 Please look at the main page for details: @ref fpga.
 
-# Prerequisites {#node-prereq-fpga}
+# Prerequisites {#node-prereq-zeromq}
 
-# Implementation {#node-implementation-fpga}
+This node-type requires the [VILLASfpga](https://git.rwth-aachen.de/acs/public/villas/fpga/fpga) library.
+
+# Implementation {#node-implementation-zeromq}
+
+The source code of the node-type is available here:
+https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/fpga.cpp
 
 # Configuration {#node-config-node-fpga}
 
