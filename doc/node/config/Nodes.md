@@ -63,7 +63,7 @@ Please consult the @ref node-concept-hook chapter of this documentation for deta
 By default, each node and paths has a couple of default hooks attached to them.
 With this setting the attachment of built-in hooks can be disabled.
 
-## in.signals (list of objects: signals) = () {#node-config-node-signals}
+## in.signals (list of objects: signals) = "64f" {#node-config-node-signals}
 
 Each node should define a list of signals which it **receives**.
 
@@ -96,9 +96,13 @@ A name which describes the signal.
 
 The unit of the signal. E.g. `V`, `A`, `Rad`.
 
-#### in.signals[].format (string: "float" | "integer" | "boolean" | "complex" | "auto") = auto {#node-config-node-signals-format}
+#### in.signals[].type (string: "float" | "integer" | "boolean" | "complex" | "auto") = auto {#node-config-node-signals-type}
 
 The data-type of the signal.
+
+#### in.signals[].init (float | integer | boolean | complex) {#node-config-node-signals-init}
+
+The initial value of the signal.
 
 #### in.signals[].enabled (boolean) = true {#node-config-node-signals-enabled}
 

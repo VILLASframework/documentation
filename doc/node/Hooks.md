@@ -45,6 +45,7 @@ Currently, the following _hook-types_ are supported:
 | @subpage hook-type-fix          | yes       | yes       |            |      | stable     | Fix received data by adding missing fields |
 | @subpage hook-type-jitter_calc  |           | yes       |            |      | stable     | Calc jitter, mean and variance of GPS vs NTP TS |
 | @subpage hook-type-limit_rate   |           | yes       | yes        | yes  | stable     | Limit sending rate |
+| @subpage hook-type-lua          |           | yes       | yes        | yes  | stable     | Lua scripting support |
 | @subpage hook-type-restart      | yes       | yes       |            |      | stable     | Call restart hooks for current node |
 | @subpage hook-type-scale        |           | yes       | yes        | yes  | stable     | Scale signals by a factor and add offset |
 | @subpage hook-type-shift_seq    |           | yes       | yes        |      | stable     | Shift sequence number of samples |
@@ -53,6 +54,7 @@ Currently, the following _hook-types_ are supported:
 | @subpage hook-type-stats        |           | yes       |            |      | stable     | Collect statistics for the current path |
 | @subpage hook-type-ts           |           | yes       | yes        | yes  | stable     | Overwrite origin timestamp of samples with receive timestamp |
 | @subpage hook-type-print        |           | yes       | yes        | yes  | stable     | Print the message to stdout |
+
 
 ## Writing custom hook functions
 
