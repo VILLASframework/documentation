@@ -3,8 +3,8 @@ variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
 stages:
-  - build
-  - deploy
+- build
+- deploy
 
 # Stage: build
 ##############################################################################
@@ -12,12 +12,12 @@ stages:
 build:image:
   stage: build
   before_script:
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
+  - apk add make git
   script:
-    - make upload
+  - make upload
   tags:
-    - shell
-    - linux
+  - docker
 
 # Stage: deploy
 ##############################################################################
@@ -28,10 +28,10 @@ deploy:kubernetes:
     KUBECONFIG: /root/.kube/config
   image: registry.git.rwth-aachen.de/acs/cloud/kubernetes/deployment
   before_script:
-    - mkdir -p $(dirname ${KUBECONFIG})
-    - echo "${KUBECONFIG_ENCODED}" | base64 -d > ${KUBECONFIG}
-    - kubectl version
+  - mkdir -p $(dirname ${KUBECONFIG})
+  - echo "${KUBECONFIG_ENCODED}" | base64 -d > ${KUBECONFIG}
+  - kubectl version
   script:
-    - make deploy
+  - make deploy
   tags:
-    - docker
+  - docker
