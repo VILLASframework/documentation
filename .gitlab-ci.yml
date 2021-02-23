@@ -26,7 +26,7 @@ deploy:kubernetes:
   stage: deploy
   variables:
     KUBECONFIG: /root/.kube/config
-  image: registry.git.rwth-aachen.de/acs/cloud/kubernetes/deployment
+  image: registry.git.rwth-aachen.de/acs/internal/cloud/kubernetes/deployment
   before_script:
   - mkdir -p $(dirname ${KUBECONFIG})
   - echo "${KUBECONFIG_ENCODED}" | base64 -d > ${KUBECONFIG}
