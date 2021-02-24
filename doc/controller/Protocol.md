@@ -284,8 +284,11 @@ Start the simulation at a specific point in time.
 	    "downsample" : 1
 	},
 	"model" : { // HTTP GET for model download
-		"type": "url",
-		"url" : "https://villas.k8s.eonerc.rwth-aachen.de/api/v2/files/123421",
+		"type": "url-list",
+		"url" : [
+			"https://villas.k8s.eonerc.rwth-aachen.de/api/v2/files/123421",
+			"https://villas.k8s.eonerc.rwth-aachen.de/api/v2/files/123422"
+		],
 		"token": "Xwlsjkdlfksjhdfglskdfg"
 	},
 	"results" : { // HTTP POST for results upload
