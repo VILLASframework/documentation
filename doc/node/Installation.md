@@ -14,7 +14,6 @@ There exists a set of Docker images for running and developing VILLASnode.
 
 With a working Docker daemon, you can run it like this:
 
-
 ```bash
 $ docker run --privileged registry.git.rwth-aachen.de/acs/public/villas/node
 ```
@@ -23,33 +22,6 @@ To start the main daemon, you can pass a configuration file via a volume mount:
 
 ```bash
 $ docker run --volume /path/to/my/local.conf:/config.conf --privileged registry.git.rwth-aachen.de/acs/public/villas/node node /config.con
-```
-
-# From RPM packages {#node-installation-rpm}
-
-We offer pre-build RPM packages for Fedora/Redhat based distributions.
-
-**Note:** These packages have only been tested with **Fedora 29**.
-Other distributions or version might work as well but might have unresolvable dependencies.
-
-Add VILLAS RPM repository to your system:
-
-```bash
-$ sudo dnf config-manager --add-repo https://packages.fein-aachen.org/fedora/fein.repo
-Adding repo from: https://packages.fein-aachen.org/fedora/fein.repo
-```
-
-Install VILLASnode plus its dependencies:
-
-```bash
-$ sudo dnf install villas-node
-```
-
-## Get the currently installed version
-
-```bash
-$ rpm -q villas-node
-villas-node-0.3-1.develop_release.20170507gite92f17d.fc25.x86_64
 ```
 
 # From source  {#node-installation-source}
