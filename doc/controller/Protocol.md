@@ -232,7 +232,10 @@ Used values for `state`:
 		"realm": "de.rwth-aachen.eonerc.acs",
 		"category": "simulator",
 		"type": "dpsim"
-		"uuid": "c487a470-6af6-11eb-beee-7fa268050404"
+		"uuid": "c487a470-6af6-11eb-beee-7fa268050404",
+		"properties": {
+			"myproperty": 1234
+		}
 	}
 }
 ```
