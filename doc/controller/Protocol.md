@@ -24,13 +24,14 @@ For the purpose of addressing the ICs, we introduce the following categories (1s
   - `rtlab`
   - `rtds`
   - `dummy`
-  - `job` (a [Kubernetes Job](https://kubernetes.io/docs/concepts/workloads/controllers/job/))
+  - `kubernetes` (a [Kubernetes Job](https://kubernetes.io/docs/concepts/workloads/controllers/job/))
 - `gateway`
-  - `node`
-  - `relay`
+  - `villas-node`
+  - `villas-relay`
 - `manager`
-  - `node`
-  - `relay`
+  - `villas-node`
+  - `villas-relay`
+  - `generic`
   - `kubernetes`
 
 These component types are implemented by the following class hierachy in VILLAScontroller's Python code:
