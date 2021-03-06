@@ -170,10 +170,12 @@ After receiving such a message, each entity shall send a status update message a
 	"status" : {
 		/* Generic state */
 		"state" : "running",
-		"version" : "0.1.0",                /* VILLAScontroller version */
-		"uptime" : 123124.0,                /* in seconds since initialization (float) */
-		"result": "XXXXXXX"                 /* only if state == "running" */
-		"error": "This is an error message" /* only if state == "error" */
+		"version" : "0.1.0",                 /* VILLAScontroller version */
+		"uptime" : 123124.0,                 /* in seconds since initialization (float) */
+		"result": "XXXXXXX"                  /* only if state == "running" */
+		"error": "This is an error message", /* only if state == "error" */
+
+		"managed_by": "4af1cf3a-7e80-11eb-a7f4-b700f4a4f18d", /* link to managing IC of category 'manager' */
 
 		/* Custom state (depending on IC type) */
 		"villas_node_version": "v0.11.0",
