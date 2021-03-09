@@ -8,6 +8,8 @@ The `.proto` Protocol Buffers Version Language Specification of the payload used
 
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/formats/villas.proto
 
+@include node/lib/formats/villas.proto
+
 # Implementation
 
 The source code of the format-type is available here:
