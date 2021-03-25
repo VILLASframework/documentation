@@ -5,7 +5,7 @@
 * template - can be used for new brand creation
 
 ## How to create a new brand
-1. create a new folder for the new brand inside the `branding` folder
+1. create a new folder for the new brand inside the `branding` folder - !needs to be written in the same way as the branding environment variable `REACT_APP_BRAND=<brandname>`!
 2. add files inside the folder of your brand 
     - `functions` (HTML-code for welcome page, home page, app footer)
     - `values` file definitions
