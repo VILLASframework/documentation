@@ -14,6 +14,7 @@ Both parts are accessible from the `villas-controller` command.
 ```bash
 $ git clone git@git.rwth-aachen.de:acs/public/villas/controller.git
 $ sudo python3 setup.py install
+$ pip3 install .
 ```
 
 2. Start RabbitMQ broker
