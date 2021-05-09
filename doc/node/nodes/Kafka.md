@@ -21,7 +21,7 @@ The payload format which is used to encode and decode exchanged messages.
 
 The bootstrap server {ip}:{port} of the Kafka message brokers cluster.
 
-## protocol (string: "SASL_PLAINTEXT" | "SASL_SSL" | "SSL") {#node-config-node-kafka-protocol}
+## protocol (string: "PLAINTEXT" | "SASL_PLAINTEXT" | "SASL_SSL" | "SSL") {#node-config-node-kafka-protocol}
 
 The [security protocol](https://kafka.apache.org/24/javadoc/org/apache/kafka/common/security/auth/SecurityProtocol.html) which is used for authentication with the Kafka cluster.
 
