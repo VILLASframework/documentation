@@ -57,4 +57,4 @@ A timeout in seconds for the broker connection.
 
 ## Example
 
-@include node/etc/examples/nodes/kafka.conf
+@include node/etc/examples/node/nodes/kafka.conf
