@@ -19,6 +19,7 @@ VILLASnode currently supports the following node-types:
 | @subpage node-type-iec61850-9-2 | no                |       | yes  | yes   | 1         | beta        | |
 | @subpage node-type-infiniband   | no                | ?     | yes  | yes   | unlimited | beta        | |
 | @subpage node-type-influxdb     | no                | N/A   | no   | yes   | unlimited | stable      | |
+| @subpage node-type-kafka        | yes               | AIO   | yes  | yes   | unlimited | stable      | |
 | @subpage node-type-loopback     | no                | AIO   | yes  | yes   | unlimited | stable      | |
 | @subpage node-type-mqtt         | no                | AIO   | yes  | yes   | unlimited | stable      | |
 | @subpage node-type-nanomsg      | yes               | AIO   | yes  | yes   | unlimited | stable      | |
@@ -33,6 +34,5 @@ VILLASnode currently supports the following node-types:
 | @subpage node-type-uldaq        | no                | Poll  | yes  | no    | unlimited | stable      | |
 | @subpage node-type-websocket    | no                | AIO   | yes  | yes   | unlimited | stable      | |
 | @subpage node-type-zeromq       | yes               | AIO   | yes  | yes   | unlimited | stable      | |
-| @subpage node-type-kafka        | yes               | AIO   | yes  | yes   | unlimited | stable      | |
 
 @image html VILLASnode_interfaces.svg width=100%
