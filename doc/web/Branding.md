@@ -1,4 +1,4 @@
-# VillasWeb branding
+# Branding {#web-branding}
 ## Existing brands
 * VillasWeb - classic branding
 * SLEW - Second Life for Energiewende, RWTH education project
