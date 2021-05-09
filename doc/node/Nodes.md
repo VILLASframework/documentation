@@ -33,5 +33,6 @@ VILLASnode currently supports the following node-types:
 | @subpage node-type-uldaq        | no                | Poll  | yes  | no    | unlimited | stable      | |
 | @subpage node-type-websocket    | no                | AIO   | yes  | yes   | unlimited | stable      | |
 | @subpage node-type-zeromq       | yes               | AIO   | yes  | yes   | unlimited | stable      | |
+| @subpage node-type-kafka        | yes               | AIO   | yes  | yes   | unlimited | stable      | |
 
 @image html VILLASnode_interfaces.svg width=100%

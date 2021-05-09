@@ -66,6 +66,7 @@ VILLASnode currently has the following list of dependencies:
  - [libuuid](https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git) (>= 2.29).
  - [libxil](https://git.rwth-aachen.de/acs/public/villas/fpga/libxil) (>= 1.0.0) for the @ref node-type-fpga node-type (_optional_).
  - [Lua](http://www.lua.org/) (>= 5.1) for the @ref hook-type-lua hook (_optional_).
+ - [rdkafka](https://github.com/edenhill/librdkafka) (>= 1.5.0) for the @ref node-type-kafka node-type (_optional_)
 
 There are three ways to install these dependencies:
 
