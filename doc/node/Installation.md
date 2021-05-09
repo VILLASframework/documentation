@@ -102,7 +102,8 @@ $ sudo apt-get install \
     libspdlog-dev \
     libfmt-dev \
     libusb-1.0-0-dev \
-    liblua5.3-dev
+    liblua5.3-dev \
+    librdkafka-dev
 ```
 
 or the following line for Fedora/CentOS/Redhat systems:
@@ -139,7 +140,8 @@ $ sudo dnf install \
     re-devel \
     uldaq-devel \
     libusb-devel \
-    lua-devel
+    lua-devel \
+    librdkafka-devel
 ```
 
 or for Alpine:
@@ -171,7 +173,8 @@ $ apk add gcc g++ \
     rabbitmq-c-dev \
     mosquitto-dev \
     libusb-dev \
-    lua-dev
+    lua-dev \
+    librdkafka-dev
 ```
 
 ## Downloading from Git
