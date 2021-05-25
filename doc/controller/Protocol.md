@@ -204,7 +204,7 @@ After receiving such a message, each entity shall send a status update message a
 		"create": {
 			/* JSON-Schma describing properties of new ICs created via create action (targeted at ICs of category=manager). */
 		}
-	}
+	},
 	"when" : 1234567890 /* timestamp in seconds (UTC / Unix epoch / since 1970-01-01) (float) */
 }
 ```
