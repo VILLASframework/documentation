@@ -54,7 +54,7 @@ By default, the path is unidirectional. Meaning, that it only forwards samples f
 Sometimes a bidirectional path is needed.
 This can be accomplished by setting `reverse` to `true`.
 
-## mode (string) = "any" {#node-config-path-mode}
+## mode (string: "all" | "any") = "any" {#node-config-path-mode}
 
 The mode setting specifies under which condition a path is _triggered_.
 A triggered path will multiplex / merge samples from its input nodes and run the configured hook functions on them.
