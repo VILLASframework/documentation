@@ -14,6 +14,8 @@ For more information on the backends see their repositories.
 
 - @subpage web-screenshots
 - @subpage web-data-model
+- Usage
+  - @subpage web-usage-backend
 - @subpage web-development
   - @subpage web-branding
   - @subpage web-authentication
