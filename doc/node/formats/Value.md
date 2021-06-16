@@ -4,6 +4,10 @@ The `value` format-type encodes a single sample value in a human readable repres
 
 **Note:** It currently only supports encoding of samples with a single signal!
 
+# Configuration
+
+The @ref node-format-value format-type supports all [generic format options](@ref node-config-format).
+
 # Implementation
 
 The source code of the format-type is available here:

@@ -20,6 +20,12 @@ The columns are defined as follows:
 
  2. Maximum `MSG_VALUES` floating point values per sample. The values are seperated by whitespaces as well.
 
+# Configuration
+
+## header (boolean) = true {#node-config-format-line-header}
+
+If set a header will be printed before the forst line of data.
+
 # Example
 
 This example shows a dump with three values per sample:
