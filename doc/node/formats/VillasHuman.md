@@ -22,22 +22,32 @@ The columns are defined as follows:
 
 # Configuration
 
+The @ref node-format-villas-human format-type supports all [generic format options](@ref node-config-format) plus the following:
+
 ## header (boolean) = true {#node-config-format-line-header}
 
 If set a header will be printed before the forst line of data.
 
-# Example
+# Example Configuration
+
+```json
+{
+  "type": "villas.human",
+
+  "header": false,
+  "delimiter": "\n",
+}
+```
+
+
+# Example Payload
 
 This example shows a dump with three values per sample:
 
-    # seconds.nanoseconds(sequence)	signal0 signal1 signal2
-    1438959964.162102394(6)	3.489760	-1.882725	0.860070
-    1438959964.261677582(7)	2.375948	-2.204084	0.907518
-    1438959964.361622787(8)	3.620115	-1.359236	-0.622333
-    1438959964.461907066(9)	5.844254	-0.966527	-0.628751
-    1438959964.561499526(10)	6.317059	-1.716363	0.351925
-    1438959964.661578339(11)	6.471288	-0.159862	0.123948
-    1438959964.761956859(12)	7.365932	-1.488268	-0.780568
+```
+# seconds.nanoseconds(sequence)	signal0 signal1 signal2
+1438959964.162102394(6)	3.489760	-1.882725	0.860070
+```
 
 # Implementation
 

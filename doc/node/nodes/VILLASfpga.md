@@ -35,13 +35,13 @@ The must be the name of a FPGA IP core as defined in @ref fpga-config-ip .
 
 This IP component is used to transfer samples between the FPGA and the main memory.
 
-### card (string> fpga-card-name) {#node-config-node-fpga-card}
+## card (string: fpga-card-name) {#node-config-node-fpga-card}
 
 The name of the FPGA card as configured by @ref fpga-config-card.
 
-### user_irqs (boolean) {#node-config-node-fpga-use_irqs}
+## user_irqs (boolean) {#node-config-node-fpga-use_irqs}
 
 Weather or not to polling / interrupts to wait for new samples from the FPGA.
 
-### Example
+# Example
 

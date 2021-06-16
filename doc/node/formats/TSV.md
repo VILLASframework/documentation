@@ -18,11 +18,12 @@ If set a header will be printed before the forst line of data.
 
 The line delimiter. Only single character delimiters are supported at the moment.
 
-# Example configuration
+# Example Configuration
 
 ```json
 {
   "type": "tsv",
+
   "separator": ",",
   "delimiter": "\n",
 }

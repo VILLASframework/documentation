@@ -32,7 +32,11 @@ All values are sent in **network byte order** (big endian)!
 
 @see msg for implementation details.
 
-# Example
+# Configuration
+
+The @ref node-format-villas-binary format-type supports all [generic format options](@ref node-config-format).
+
+# Example Payload
 
 @image html wireshark_udp.png Wireshark capture of UDP traffic width=50%
 

@@ -27,12 +27,26 @@ Currently, the following formats are supported (or planned):
 # Configuration {#node-config-format}
 
 To use one of the format-types above, a setting named `format` must be present in the configuration of the respective node instance.
-The value of the `format` setting must match one of the values from the type column of the table above.
+The value of the `format` setting can be eiter a simple string identifying one of the available format-types from the table above.
+Alternatively, a JSON dictionary can be used to provide additional configuration settings to the payload format.
+Please see below for examples of both approaches.
+
+If the format-type is provided as an argument to a VILLASnode command-line tool (see @ref node-usage), also both variants are supported:
+
+```bash
+# Simple
+villas signal -f json -v 5 sine
+
+# Advanced
+villas signal -f '{ "type": "json", "indent": 4, "precision": 4 }' -v 5 sine
+```
 
 Please note, that depending on you system configuration not all format-types might be available.
 Use the following command to get a list of all available types on your system: `villas node -h`.
 
-## precision (integer) = 17 {#node-config-format-precision}
+All format-types support the following generic options:
+
+## real_precision (integer) = 17 {#node-config-format-precision}
 
 Output all real numbers with at most n digits of precision. The valid range for this setting is between 0 and 31 (inclusive), and other values result in an undefined behavior.
 
@@ -53,14 +67,38 @@ If set, include the data in the output.
 
 If set, include the offset between origin and received timestamp in the output.
 
-#### Example
+# Example
+
+## Simple
+
 
 ```
 nodes = {
     udp_json_node = {
         type = "socket"
         layer = "udp"
+
         format = "json"
+        
+        ...
+    }
+}
+```
+
+## Advanced
+
+
+```
+nodes = {
+    udp_json_node = {
+        type = "socket"
+        layer = "udp"
+        format = {
+            "type": "json",
+
+            "precision": 4,
+            "indent": 4
+        }
         
         ...
     }

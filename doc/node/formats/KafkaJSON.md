@@ -2,14 +2,16 @@
 
 # Configuration
 
-The @ref node-format-json-kafka format-type supports all configuration options of the @ref node-format-json format-type plus the following
+The @ref node-format-json-kafka format-type supports all configuration options of the @ref node-format-json format-type plus the following:
 
 ## schema (object) {#node-config-format-json-kafka-schema}
 
-## Configuration Example
+# Example Configuration
 
 ```json
 {
+  "type": "json.kafka",
+
   "indent": 2,
 
   "schema": {
@@ -19,9 +21,7 @@ The @ref node-format-json-kafka format-type supports all configuration options o
 }
 ```
 
-# Payload Example
-
-## Example
+# Example Payload
 
 ```json
 {
