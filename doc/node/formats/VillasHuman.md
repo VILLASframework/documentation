@@ -22,11 +22,9 @@ The columns are defined as follows:
 
 # Configuration
 
-The @ref node-format-villas-human format-type supports all [generic format options](@ref node-config-format) plus the following:
-
-## header (boolean) = true {#node-config-format-line-header}
-
-If set a header will be printed before the forst line of data.
+The @ref node-format-villas-human format-type supports the options documented on the following pages:
+- [generic format options](@ref node-config-format)
+- [line format options](@ref node-config-format-line)
 
 # Example Configuration
 
@@ -38,7 +36,6 @@ If set a header will be printed before the forst line of data.
   "delimiter": "\n",
 }
 ```
-
 
 # Example Payload
 

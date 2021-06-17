@@ -10,19 +10,17 @@ Currently, the following formats are supported (or planned):
 
 | Type             | Description                                      | Status |
 | :--              | :--                                              | :--    |
-| `villas.human`   | @subpage node-format-villas-human                | stable |
-| `villas.binary`  | @subpage node-format-villas-binary               | stable |
-| `json`           | @subpage node-format-json                        | stable |
-| `json.kakfa`     | @subpage node-format-json-kafka                  | stable |
 | `csv`            | @subpage node-format-csv                         | stable |
-| `tsv`            | @subpage node-format-tsv                         | stable |
-| `raw`            | @subpage node-format-raw                         | stable |
 | `gtnet`          | @subpage node-format-raw                         | stable |
-| `gtnet.fake`     | @subpage node-format-raw                         | stable |
-| `protobuf`       | @subpage node-format-protobuf                    | stable |
-| `hdf5`           | @subpage node-format-hdf                         | [planned](https://git.rwth-aachen.de/acs/public/villas/node/tree/format-h5pt) |
 | `iotagent-ul`    | @subpage node-format-fiware-iotagent-ul          | stable |
+| `json.kakfa`     | @subpage node-format-json-kafka                  | stable |
+| `json`           | @subpage node-format-json                        | stable |
+| `protobuf`       | @subpage node-format-protobuf                    | stable |
+| `raw`            | @subpage node-format-raw                         | stable |
+| `tsv`            | @subpage node-format-tsv                         | stable |
 | `value`          | @subpage node-format-value                       | stable |
+| `villas.binary`  | @subpage node-format-villas-binary               | stable |
+| `villas.human`   | @subpage node-format-villas-human                | stable |
 
 # Configuration {#node-config-format}
 
@@ -71,7 +69,6 @@ If set, include the offset between origin and received timestamp in the output.
 
 ## Simple
 
-
 ```
 nodes = {
     udp_json_node = {
@@ -86,7 +83,6 @@ nodes = {
 ```
 
 ## Advanced
-
 
 ```
 nodes = {
@@ -104,3 +100,9 @@ nodes = {
     }
 }
 ```
+
+
+# Abstract format-types
+
+- @subpage node-format-line
+  - @subpage node-format-column

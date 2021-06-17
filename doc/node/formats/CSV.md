@@ -4,19 +4,10 @@ See also https://en.wikipedia.org/wiki/Comma-separated_values
 
 # Configuration
 
-The @ref node-format-csv format-type supports all [generic format options](@ref node-config-format) plus the following:
-
-## separator (string) = "," {#node-config-format-column-separator}
-
-The column separator. Only single character separators are supported at the moment.
-
-## header (boolean) = true {#node-config-format-line-header}
-
-If set a header will be printed before the forst line of data.
-
-## delimiter (string) = "\n" {#node-config-format-line-delimiter}
-
-The line delimiter. Only single character delimiters are supported at the moment.
+The @ref node-format-csv format-type supports the options documented on the following pages:
+- [generic format options](@ref node-config-format)
+- [line format options](@ref node-config-format-line)
+- [column format options](@ref node-config-format-column)
 
 # Example Configuration
 
