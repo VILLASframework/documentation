@@ -37,10 +37,9 @@ The source code of all open source components is available over the [RWTH GitLab
 
 <img alt="GPLv3 logo" src="images/logos/gplv3.png" width="120" align="right">
 
-__VILLASnode__, __VILLASweb__ and __VILLAScontroller__ are released as open source software under the [GPLv3 license](https://www.gnu.org/licenses/gpl-3.0.en.html).
+__VILLASnode__, __VILLASfpga__, __VILLAScontroller__ and __VILLASweb__ are released as open source software under the [GPLv3 license](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
-__VILLASfpga__ is currently closed-source due to propietary firmware components which we can not share.
-Please contact [Steffen Vogel](mailto:stvogel@eoenrc.rwth-aachen.de) for details.
+__VILLASdataprocessing__ is released as open source software under the [Apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0).
 
 Other licensing options available upon request.
 Please contact [Prof. Antonello Monti](mailto:amonti@eonerc.rwth-aachen.de) for further details.
