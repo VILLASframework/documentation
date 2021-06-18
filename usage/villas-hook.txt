@@ -1,4 +1,4 @@
-Usage: villas-hook [OPTIONS] NAME [[PARAM1] [PARAM2] ...]
+Usage: villas-hook [OPTIONS] NAME
   NAME      the name of the hook function
   PARAM*    a string of configuration settings for the hook
   OPTIONS is one or more of the following options:
@@ -6,6 +6,7 @@ Usage: villas-hook [OPTIONS] NAME [[PARAM1] [PARAM2] ...]
     -t DT   the data-type format string
     -d LVL  set debug level to LVL
     -v CNT  process CNT smps at once
+    -o PARAM=VALUE  provide parameters for hook configuration
     -h      show this help
     -V      show the version of the tool
 
