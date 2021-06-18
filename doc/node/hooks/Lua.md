@@ -5,6 +5,10 @@ The `lua` hook allows for the evaluation arbitrary Lua expressions.
 Take a look at some example Lua scripts used by this hook here:
 https://git.rwth-aachen.de/acs/public/villas/node/-/tree/master/lua/hooks
 
+# Prerequisites {#node-prereq-node-lua}
+
+This hook requires [Lua](https://www.lua.org/) (>= 5.1).
+
 # Configuration {#node-config-hook-lua}
 
 ## use_names (boolean) = true {#node-config-hook-lua-use-names}
