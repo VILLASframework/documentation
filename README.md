@@ -7,7 +7,7 @@
 @htmlonly
 <div style="text-align: center; margin: 2em">
 	<span style="font-size: 1.2em; font-weight: bold; padding: 1em; border: 5px solid #db3e34; border-radius: 20px;">
-		For starters we recommand to read the @endhtmlonly @ref @htmlonly guide!
+		For starters we recommand to read the @endhtmlonly @ref guide @htmlonly guide!
 	</span>
 </div>
 @endhtmlonly
