@@ -5,6 +5,10 @@ First the original signal value is multiplied by the gain, then the offset is ad
 
 # Configuration {#node-config-hook-scale}
 
+## signal (string) {#node-config-hook-scale-signal}
+
+The name of the signal which should be scaled.
+
 ## offset (float) = 0.0 {#node-config-hook-scale-offset}
 
 The offset which is added to the signal after gain.
