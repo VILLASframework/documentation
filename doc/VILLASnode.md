@@ -29,18 +29,17 @@ The project consists of a server daemon and several client modules which are doc
 - Wide selection of [interface types](@ref node-types)
 - Statistic collection quality of service of the interfaces
 - Web interface for live monitoring and control using WebSocket streams
-- [Remote API](@ref node-dev-api) for control via HTTP or WebSockets
+- [Remote API](@ref node-dev-api) for control via HTTP
+- Lua scriptable hook functions
 - Network emulation using the Linux's [netem queuing discipline](https://wiki.linuxfoundation.org/networking/netem)
 - Multicast addressing for @ref node-type-socket node-type
-- Deterministic and low jitter due to low level C implementation
-  - Using the latest C11 standard
-  - Easily extensible with new interface types or callbacks (hook functions)
+- Deterministic and low jitter due to low level C/C++ implementation
+  - Using the latest C11/C++17 standards
+  - Easily extensible with new interface types, hook functions and payload formats
 - Released as open source software under the GPLv3 license
 - Easily deployable via [ISO installer](@ref liveusb), [Docker image](@ref node-installation-docker), [RPM packages](@ref node-installation-rpm) or from [source](@ref node-installation-source)
 - Only relies on open source software libraries and the Linux kernel
 - Follows the Unix philosophy by providing a set of smaller command line tools
-- Remote configuration by loading configurations files via HTTP, FTP or SSH
-- Result and data profile upload / download via HTTP, FTP or SSH
 
 ### Daemon
 
