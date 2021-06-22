@@ -2,7 +2,12 @@
 
 **Specification:** http://json.org
 
-# Configuration
+# Implementation
+
+The source code of the format-type is available here:
+https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/json.cpp
+
+# Configuration {#node-config-format-json}
 
 The @ref node-format-json format-type supports all [generic format options](@ref node-config-format) plus the following:
 
@@ -64,8 +69,3 @@ See @ref node-concept-sample for details.
   ]
 }
 ```
-
-# Implementation
-
-The source code of the format-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/json.cpp

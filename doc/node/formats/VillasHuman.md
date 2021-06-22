@@ -20,7 +20,12 @@ The columns are defined as follows:
 
  2. Maximum `MSG_VALUES` floating point values per sample. The values are seperated by whitespaces as well.
 
-# Configuration
+# Implementation
+
+The source code of the format-type is available here:
+https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/villas_human.cpp
+
+# Configuration {#node-config-format-villas-human}
 
 The @ref node-format-villas-human format-type supports the options documented on the following pages:
 - [generic format options](@ref node-config-format)
@@ -45,8 +50,3 @@ This example shows a dump with three values per sample:
 # seconds.nanoseconds(sequence)	signal0 signal1 signal2
 1438959964.162102394(6)	3.489760	-1.882725	0.860070
 ```
-
-# Implementation
-
-The source code of the format-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/villas_human.cpp

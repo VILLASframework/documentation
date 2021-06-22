@@ -1,6 +1,11 @@
 # Kafka Schema/Payload Javascript Object Notation {#node-format-json-kafka}
 
-# Configuration
+# Implementation
+
+The source code of the format-type is available here:
+https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/json_kafka.cpp
+
+# Configuration {#node-config-format-json-kafka}
 
 The @ref node-format-json-kafka format-type supports all configuration options of the @ref node-format-json format-type plus the following:
 
@@ -53,8 +58,3 @@ The @ref node-format-json-kafka format-type supports all configuration options o
   }
 }
 ```
-
-# Implementation
-
-The source code of the format-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/json_kafka.cpp

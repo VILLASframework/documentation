@@ -3,6 +3,11 @@
 - @subpage node-format-villas-human
 - @subpage node-format-column
 
+# Implementation
+
+The source code of the format-type is available here:
+https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/line.cpp
+
 # Configuration {#node-config-format-line}
 
 ## comment (string) = "#" {#node-config-format-line-comment}
@@ -21,8 +26,3 @@ The line delimiter. Only single character delimiters are supported at the moment
 
 Whether or not the first line of input should be discarded.
 E.g. when its used for a header.
-
-# Implementation
-
-The source code of the format-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/line.cpp

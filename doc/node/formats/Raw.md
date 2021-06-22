@@ -4,7 +4,12 @@ VILLASnode supports sending samples formated as raw binary data.
 
 Signal values are encoded according to their configured data-type in either integer or IEEE-754 floating point values.
 
-# Configuration
+# Implementation
+
+The source code of the format-type is available here:
+https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/raw.cpp
+
+# Configuration {#node-config-format-raw}
 
 The @ref node-format-raw format-type supports all [generic format options](@ref node-config-format) plus the following:
 
@@ -34,8 +39,3 @@ If enabled, the fake header mode VILLASnode uses the first three raw values in e
 - The `raw` format-type does not support vectors. Only a single sample can be encoded per payload as there is no way to identify sample boundaries in the raw format.
 - Complex sample values are supported and are encoded by real and imaginary parts with half of the precission as noted in the "Floating-point Precission" column above. E.g. in 64 bit mode real and imaginary components are encoded as two single-precission values encoded right after each other.
 - Support for 128-bit wide values depends on you compiler support.
-
-# Implementation
-
-The source code of the format-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/raw.cpp
