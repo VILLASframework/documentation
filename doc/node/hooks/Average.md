@@ -2,6 +2,11 @@
 
 The `average` hook calculates arithmetic mean over a set of signals and insert it as a new value to the samples.
 
+# Implementation
+
+The source code of the hook is available here:
+https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/average.cpp
+
 # Configuration {#node-config-hook-average}
 
 ## signals (list of signal names or signal indices) {#node-config-hook-average-signals}

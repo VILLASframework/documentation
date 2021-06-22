@@ -3,6 +3,11 @@
 The `scale` hook modifies sample signals by a gain factor and optionally ads an offset.
 First the original signal value is multiplied by the gain, then the offset is added.
 
+# Implementation
+
+The source code of the hook is available here:
+https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/scale.cpp
+
 # Configuration {#node-config-hook-scale}
 
 ## signal (string) {#node-config-hook-scale-signal}

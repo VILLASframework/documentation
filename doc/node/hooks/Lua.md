@@ -9,6 +9,11 @@ https://git.rwth-aachen.de/acs/public/villas/node/-/tree/master/lua/hooks
 
 This hook requires [Lua](https://www.lua.org/) (>= 5.1).
 
+# Implementation
+
+The source code of the hook is available here:
+https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/lua.cpp
+
 # Configuration {#node-config-hook-lua}
 
 ## use_names (boolean) = true {#node-config-hook-lua-use-names}
@@ -72,7 +77,6 @@ Here a list of signal definitions like @ref node-config-node-signals is excpecte
 An arbitrary Lua expression which will be evaluated and used for the value of the signal.
 
 Note you can access the current sample using the global Lua variable `smp`.
-
 
 ### Arbitrary additional options {#node-config-hook-lua-arbitrary}
 

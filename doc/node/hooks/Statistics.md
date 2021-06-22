@@ -20,6 +20,11 @@ The contains details about the quality of service as seen be the receiver.
 | `rtp.pkts_lost`        | packets | Cumulative number of packtes lost.                        |
 | `rtp.jitter`           | seconds?| Interarrival jitter                                       |
 
+# Implementation
+
+The source code of the hook is available here:
+https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/stats.cpp
+
 
 # Configuration {#node-config-hook-stats}
 

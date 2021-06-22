@@ -1,5 +1,10 @@
 # Shift sequence numbers {#hook-type-shift_seq}
 
+# Implementation
+
+The source code of the hook is available here:
+https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/shift_seq.cpp
+
 # Configuration {#node-config-hook-shift_seq}
 
 ## offset (integer) {#node-config-hook-shift_seq-offset}
