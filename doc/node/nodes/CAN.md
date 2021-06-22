@@ -11,10 +11,10 @@ This node-type does not have any special library dependencies. It is always avai
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/can.cpp
 
-# Configuration {#node-config-node-amqp}
+# Configuration {#node-config-node-can}
 
 @todo Finish CAN node-type documentation
 
 ## Example
 
-@include node/etc/examples/nodes/amqp.conf
+@include node/etc/examples/nodes/can.conf
