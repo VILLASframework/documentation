@@ -6,11 +6,11 @@ The @ref node-type-nanomsg node-type uses [libzmq] to exchange messages via the 
 
 The @ref node-type-nanomsg node-type only implements the [publish-subscribe protocol](http://nanomsg.org/v1.0.0/nn_pubsub.7.html) provided by nanomsg.
 
-# Prerequisites {#node-prereq-nanomsg}
+# Prerequisites {#node-type-nanomsg-prereq}
 
 This node-type requires [libnanomsg](http://nanomsg.org/) (>= 1.0.0).
 
-# Implementation {#node-implementation-nanomsg}
+# Implementation {#node-type-nanomsg-implementation}
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/nanomsg.cpp

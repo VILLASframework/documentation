@@ -4,11 +4,11 @@ Interface to [DAQ devices](https://www.mccdaq.com/PDFs/Manuals/Linux-hw.pdf) fro
 
 This interface has been tested with the [MCC USB-200 Series](https://www.mccdaq.com/usb-data-acquisition/USB-200-Series.aspx) as used in RWTH-ACS's Low-Cost PMU.
 
-# Prerequisites {#node-prereq-uldaq}
+# Prerequisites {#node-type-uldaq-prereq}
 
 This node-type requires [libuldaq](https://github.com/mccdaq/uldaq.gitignore) (>= 1.0.0).
 
-# Implementation {#node-implementation-uldaq}
+# Implementation {#node-type-uldaq-implementation}
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/uldaq.cpp

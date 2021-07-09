@@ -2,11 +2,11 @@
 
 The @ref node-type-infiniband node-type implements node communication over the [Infiniband standard](http://www.infinibandta.org/content/pages.php?pg=about_us_infiniband).
 
-# Prerequisites {#node-prereq-infiniband}
+# Prerequisites {#node-type-infiniband-prereq}
 
 This node-type requires [libibverbs](https://github.com/linux-rdma/rdma-core) (>= 16.2) and [librdmacm](https://github.com/linux-rdma/rdma-core) (>= 16.2).
 
-# Implementation {#node-implementation-infiniband}
+# Implementation {#node-type-infiniband-implementation}
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/infiniband.cpp

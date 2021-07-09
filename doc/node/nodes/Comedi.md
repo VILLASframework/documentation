@@ -1,10 +1,10 @@
 # Comedi {#node-type-comedi}
 
-# Prerequisites {#node-prereq-comedi}
+# Prerequisites {#node-type-comedi-prereq}
 
 This node-type requires [comedilib](http://comedi.org) (>= 0.11.0).
 
-# Implementation {#node-implementation-comedi}
+# Implementation {#node-type-comedi-implementation}
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/comedi.cpp

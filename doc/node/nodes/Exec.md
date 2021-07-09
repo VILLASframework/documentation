@@ -2,7 +2,7 @@
 
 The `exec` node-type spawns a new subprocess and exchanges sample data via `stdin` and `stdout`.
 
-# Prerequisites {#node-prereq-exec}
+# Prerequisites {#node-type-exec-prereq}
 
 This node-type does not have any special library dependencies. It is always available.
 
@@ -44,7 +44,7 @@ A object of key/value pairs of environemnt variables which should be passed to t
 
 @include node/etc/examples/nodes/exec.conf
 
-# Implementation {#node-implementation-exec}
+# Implementation {#node-type-exec-implementation}
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/exec.cpp

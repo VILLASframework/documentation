@@ -6,14 +6,14 @@ Currently version 1 of the RESTful HTTP API is implemented and using NGSI10 for 
 This implementation if currently limited to the `updateContext` operation.
 Therefore only publishing updates is supported. Subscribtion or polling of events is planned for later versions.
 
-# Prerequisites {#node-prereq-ngsi}
+# Prerequisites {#node-type-ngsi-prereq}
 
 This node-type requires to following libraries to communicate with the context broker over JSON:
 
  - [libjansson](http://www.digip.org/jansson/) (>= 2.7)
  - [libcurl](https://curl.haxx.se/libcurl/) (>= 7.29.0)
 
-# Implementation {#node-implementation-ngsi}
+# Implementation {#node-type-ngsi-implementation}
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/ngsi.cpp

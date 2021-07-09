@@ -13,13 +13,13 @@ The implementation supports multiple protocols / OSI layers:
  - **Layer 2:** Raw IP (internet / VPN routing possible)
  - **Layer 3:** UDP encapsulation
 
-# Prerequisites {#node-prereq-socket}
+# Prerequisites {#node-type-socket-prereq}
 
 This node-type does not have any special library dependencies. It is always available.
 
 Optionally, [libnl3](http://www.infradead.org/~tgr/libnl/) is used to setup network emulation as described in section @ref node-type-socket-netem.
 
-# Implementation {#node-implementation-socket}
+# Implementation {#node-type-socket-implementation}
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/socket.cpp

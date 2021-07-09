@@ -2,11 +2,11 @@
 
 The @ref node-type-kafka node-type uses [librdkafka](https://github.com/edenhill/librdkafka) to produce and consume event stream messages to/from kafka message brokers cluster.
 
-# Prerequisites {#node-prereq-kafka}
+# Prerequisites {#node-type-kafka-prereq}
 
 This node-type requires [rdkafka](https://github.com/edenhill/librdkafka) (>= 1.5.0).
 
-# Implementation {#node-implementation-kafka}
+# Implementation {#node-type-kafka-implementation}
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/kafka.cpp

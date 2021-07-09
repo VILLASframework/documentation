@@ -6,11 +6,11 @@ Each signal of a sample is mapped to one field. VILLASnode maps the signal names
 
 See also: [InfluxDB documentation](https://docs.influxdata.com/influxdb/v0.9/write_protocols/line/#fields)
 
-# Prerequisites {#node-prereq-influxdb}
+# Prerequisites {#node-type-influxdb-prereq}
 
 This node-type does not have any special library dependencies.
 
-# Implementation {#node-implementation-influxdb}
+# Implementation {#node-type-influxdb-implementation}
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/influxdb.cpp

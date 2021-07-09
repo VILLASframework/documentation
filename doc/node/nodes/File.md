@@ -2,11 +2,11 @@
 
 The @ref node-type-file node-type can be used to log or replay samples to / from disk.
 
-# Prerequisites {#node-prereq-file}
+# Prerequisites {#node-type-file-prereq}
 
 This node-type does not have any special library dependencies. It is always available.
 
-# Implementation {#node-implementation-file}
+# Implementation {#node-type-file-implementation}
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/file.cpp

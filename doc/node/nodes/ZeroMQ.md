@@ -7,11 +7,11 @@ It is similiar to the @ref node-type-nanomsg node-type.
 
 The @ref node-type-zeromq node-type implements the [publish/subscribe and radio/dish protocols](http://api.zeromq.org/4-2:zmq-socket).
 
-# Prerequisites {#node-prereq-zeromq}
+# Prerequisites {#node-type-zeromq-prereq}
 
 This node-type requires [libzmq](http://zeromq.org) (>= 2.2.0).
 
-# Implementation {#node-implementation-zeromq}
+# Implementation {#node-type-zeromq-implementation}
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/zeromq.cpp

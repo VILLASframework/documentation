@@ -4,11 +4,11 @@ The `websocket` node type send and receives simulation data via binary WebSocket
 
 [The message format](@ref node-type-socket-format) is the same as used by the @ref node-type-socket node-type.
 
-# Prerequisites {#node-prereq-websocket}
+# Prerequisites {#node-type-websocket-prereq}
 
 This node-type requires [libwebsockets](http://libwebsockets.org) (>= 2.3.0).
 
-# Implementation {#node-implementation-websocket}
+# Implementation {#node-type-websocket-implementation}
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/websocket.cpp

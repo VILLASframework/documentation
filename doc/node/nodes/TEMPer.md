@@ -9,11 +9,11 @@ The implementation is tested against the following products:
 - TEMPerV1.4 (VID/PID `0x0c45`/`0x7401`)
 - TEMPerHUM (VID/PID `0x0c45`/`0x7402`)
 
-# Prerequisites {#node-prereq-temper}
+# Prerequisites {#node-type-temper-prereq}
 
 This node-type requires [libusb](https://libusb.info/) (>= 1.0.23).
 
-# Implementation {#node-implementation-temper}
+# Implementation {#node-type-temper-implementation}
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/temper.cpp

@@ -12,11 +12,11 @@ There are two ways to exchange sample values with an OPAL-RT simulator:
     It requires a 32-bit version of the `villas-node`. Data exchange is then handled using OPAL-RT's libOpalAsyncApi.
     This settings of this node-type a described on this page.
 
-# Prerequisites {#node-prereq-opal}
+# Prerequisites {#node-type-opal-prereq}
 
 This node-type requires [libOpal{AsyncApi,Core,Utils}](https://git.rwth-aachen.de/acs/public/villas/libopal).
 
-# Implementation {#node-implementation-opal}
+# Implementation {#node-type-opal-implementation}
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/opal.cpp

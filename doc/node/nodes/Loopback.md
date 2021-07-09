@@ -5,11 +5,11 @@ Internally it is implemented by a FIFO queue.
 
 It can be used to **chain multiple** @ref node-concept-path together by using the same @ref node-type-loopback node as an output node in the first path and as a source in the second path.
 
-# Prerequisites {#node-prereq-loopback}
+# Prerequisites {#node-type-loopback-prereq}
 
 This node-type does not have any special library dependencies. It is always available.
 
-# Implementation {#node-implementation-loopback}
+# Implementation {#node-type-loopback-implementation}
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/loopback.cpp
