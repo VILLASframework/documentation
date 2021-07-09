@@ -1,6 +1,6 @@
-# Format-types {#node-formats}
+# Format-types {#node-format-types}
 
-Some of the VILLASnode @ref node-types are transports which can exchange arbitrary payloads.
+Some of the VILLASnode @ref node-node-types are transports which can exchange arbitrary payloads.
 Examples for these node-types are: @ref node-type-mqtt, @ref node-type-amqp and @ref node-type-socket.
 
 The format of the payload for these node-types is configurable.

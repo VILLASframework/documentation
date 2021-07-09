@@ -1,6 +1,6 @@
 # Clients {#node-clients}
 
-In addition to the supported @ref node-types, VILLASnode comes with examples for client applications / and model blocks.
+In addition to the supported @ref node-node-types, VILLASnode comes with examples for client applications / and model blocks.
 These clients usually use the @ref node-type-socket node-type to exchange data with a VILLASnode instance via UDP packets.
 For details about the UDP packet format, please see @ref node-type-socket-format.
 

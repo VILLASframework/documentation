@@ -39,7 +39,7 @@ will create a file called:
 
 A IO format identifier selecting the file format which is used for reading and writing from the file.
 
-See @ref node-formats for a complete list of supported formats.
+See @ref node-format-types for a complete list of supported formats.
 
 ## in.epoch (float) {#node-config-node-file-epoch}
 

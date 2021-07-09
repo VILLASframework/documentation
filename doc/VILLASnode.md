@@ -7,11 +7,11 @@ VILLASnode is a modular gateway for simulation data. It offers interfaces to sim
 - @subpage node-guide
 - @subpage node-concept
 - @subpage node-installation
-- @subpage node-config
-- @subpage node-types
-- @subpage node-hook-types
-- @subpage node-formats
 - @subpage node-usage
+- @subpage node-config
+- @subpage node-node-types
+- @subpage node-hook-types
+- @subpage node-format-types
 - @subpage node-clients
 - @subpage node-tuning
 - @subpage node-netem
@@ -25,7 +25,7 @@ The project consists of a server daemon and several client modules which are doc
 
 ## Features {#node-overview-features}
 
-- Wide selection of [interface types](@ref node-types)
+- Wide selection of [interface types](@ref node-node-types)
 - Statistic collection quality of service of the interfaces
 - Web interface for live monitoring and control using WebSocket streams
 - [Remote API](@ref node-dev-api) for control via HTTP

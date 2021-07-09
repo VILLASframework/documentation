@@ -42,7 +42,7 @@ There are different type of nodes available. But all types have the following se
 For a complete list of supported node-types run `villas node --help`.
 
 In addition to the node settings described in this section, every node type has its own specific settings.
-Take a look at the @ref node-types page for details.
+Take a look at the @ref node-node-types page for details.
 
 ## out.netem (directory) {#node-config-node-netem}
 

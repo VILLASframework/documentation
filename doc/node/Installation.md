@@ -53,7 +53,7 @@ VILLASnode currently has the following list of dependencies:
  - [libzmq](http://zeromq.org) (>= 2.2.0) for the @ref node-type-zeromq node-type (_optional_).
  - [libnanomsg](http://nanomsg.org/) (>= 1.0.0) for the @ref node-type-nanomsg node-type (_optional_).
  - [libiec61850](http://libiec61850.com/libiec61850/) (>= 1.3.1) for the @ref node-type-iec61850-8-1 and @ref node-type-iec61850-9-2 node-types (_optional_).
- - [protobuf](https://github.com/google/protobuf) (>= 2.6.0) and [protobuf-c](https://github.com/protobuf-c/protobuf-c/) (>= 1.1.0) for the Protobuf @ref node-formats (_optional_).
+ - [protobuf](https://github.com/google/protobuf) (>= 2.6.0) and [protobuf-c](https://github.com/protobuf-c/protobuf-c/) (>= 1.1.0) for the Protobuf @ref node-format-types (_optional_).
  - [rabbitmq-c](https://github.com/alanxz/rabbitmq-c) (>= 0.8.0) for the @ref node-type-amqp node-type (_optional_).
  - [mosquitto](https://mosquitto.org) (>= 1.4.15) for the @ref node-type-mqtt node-type (_optional_).
  - [comedilib](http://comedi.org) (>= 0.11.0) for the @ref node-type-comedi node-type (_optional_).

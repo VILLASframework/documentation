@@ -3,10 +3,10 @@
 One of the main design decissions while developing VILLASnode gateway was the choice of a simple and common data structure for simulation data.
 
 In VILLAS terminology, we refer to this as a _sample_. A sample is a set of signals which have been generated, simulated or measured at the same sampling time instant. Each node-type needs to convert its own data format into the common intermediate data structure.
-This enables VILLASnode to interface each of the available @ref node-types with each other.
+This enables VILLASnode to interface each of the available @ref node-node-types with each other.
 
 Some node-types have support for different data formats. E.g. the @ref node-type-mqtt node-type can transport its payloads in varying formats.
-Available pluggable (de-)serializers documented at: @ref node-formats
+Available pluggable (de-)serializers documented at: @ref node-format-types
 
 ## Data Structure
 

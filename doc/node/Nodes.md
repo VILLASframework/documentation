@@ -1,4 +1,4 @@
-# Node-types {#node-types}
+# Node-types {#node-node-types}
 
 All communication partners which are interfaced by the VILLASnode gateway are represented by nodes.
 These nodes act as sinks / sources for simulation data.

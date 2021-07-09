@@ -14,7 +14,7 @@ It implements intellectual property (IP) cores for connecting:
 
  - RTDS racks via their proprietary [GTFPGA](https://www.rtds.com/the-simulator/our-hardware/gtfpga-unit/) (aka `RTDS_InterfaceModule`)
  - OPAL-RT simulators and AixControl DSP racks via [Xilinx' Aurora](https://www.xilinx.com/products/intellectual-property/aurora8b10b.html).
- - Integration with all VILLASnode @ref node-types via PCIexpress and DMA transfers.
+ - Integration with all VILLASnode @ref node-node-types via PCIexpress and DMA transfers.
  - FPGA models built with
    - Simulink by using [Xilinx' System Generator](https://www.xilinx.com/products/design-tools/vivado/integration/sysgen.html).
    - C / C++ by using [Xilinx' High Level Synthesis](https://www.xilinx.com/products/design-tools/vivado/integration/esl-design.html).

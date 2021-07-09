@@ -32,7 +32,7 @@ Every `socket` node supports the following special settings:
 
 The payload format which is used to encode and decode exchanged messages.
 
-See: @ref node-formats
+See: @ref node-format-types
 
 ## in.address (string: "ip:port" | "mac:protocol") {#node-config-node-socket-in-address}
 
