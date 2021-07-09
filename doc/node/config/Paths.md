@@ -48,7 +48,7 @@ Each sample which is processed by the path will be sent to each of the destinati
 The optional `enabled` setting can be used to temporarily disable a path.
 If omitted, the path is enabled by default.
 
-## reverse (boolean) {#node-config-path-reverse}
+## reverse (boolean) = false {#node-config-path-reverse}
 
 By default, the path is unidirectional. Meaning, that it only forwards samples from the source to the destination.
 Sometimes a bidirectional path is needed.
@@ -65,7 +65,7 @@ Two modes are currently supported:
 - `any`: The path will trigger the path as soon as any of the masked (see @ref node-config-path-mask) input nodes received new samples.
 - `all`: The path will trigger the path as soon as all input nodes received at least one new sample.
 
-## mask (list of strings: node-names) = all nodes {#node-config-path-mask}
+## mask (list of strings: node-names) = _all input nodes_ {#node-config-path-mask}
 
 This setting allows masking the the input nodes which can trigger the path.
 
@@ -78,6 +78,7 @@ A non-zero value will periodically trigger the path and resend the last sample a
 A value of zero will disable this feature.
 
 ## original_sequence_no (boolean) = false {#node-config-path-original_sequence_no}
+
 When this flag is set, the original sequence number from the source node will be used when multiplexing the nodes.
 
 ## hooks (list of objects: hooks) {#node-config-path-hooks}
