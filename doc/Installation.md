@@ -4,14 +4,14 @@ To get started quickly, we recommend to run VILLAS in a small Kubernetes cluster
 
 You can run the full set of VILLASframework components pre-configured in a Kubernetes cluster using the [Helm chart](https://git.rwth-aachen.de/acs/public/catalogue/-/blob/master/charts/villas/).
 
-## Requirements
+# Requirements {#installation-prereq}
 
 - Linux (recommended), Windows or macOS system
 - [Kubernetes](https://kubernetes.io) >= v1.18 (tested)
 - [Helm (v3)](https://helm.sh/)
 - [Ingress Controller](https://kubernetes.github.io/ingress-nginx/deploy/)
 
-## Minikube
+# Minikube {#installation-minikube}
 
 For small tests and beginners we recommend a local Minikube setup.
 
@@ -21,7 +21,7 @@ For small tests and beginners we recommend a local Minikube setup.
 
 	minikube addons enable ingress
 
-## Helm chart
+# Helm chart {#installation-helm}
 
 To deloy the Helm chart you must first add the FEIN e.V. chart repository:
 
@@ -36,13 +36,13 @@ After adjusting your configuration settings (see next section) you can deploy th
 helm install -f values.yaml villas fein/villas
 ```
 
-## Configuration
+# Configuration {#installation-config}
 
 Please have a look at the charts [default values](https://git.rwth-aachen.de/acs/public/catalogue/-/blob/master/charts/villas/values.yaml).
 
 Also have a look at the [Helm charts Git repo](https://git.rwth-aachen.de/acs/public/catalogue) for more details.
 
-## Admin Password
+# Admin Password {#installation-admin-pass}
 
 Run the following kubectl commands to retrieve the initial admin credentials:
 
@@ -51,6 +51,6 @@ echo ADMIN_USER: admin
 echo ADMIN_PASS: $(kubectl get secret --namespace villas villas-web -o jsonpath="{.data.password}" | base64 --decode)
 ```
 
-## Access the application
+# Access the application {#installation-access}
 
 @todo Add explanation how to access Ingress
