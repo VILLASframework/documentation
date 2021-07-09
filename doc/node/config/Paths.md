@@ -1,6 +1,8 @@
 # Paths {#node-config-paths}
 
-The path section consists of a **list** of paths:
+The path section consists of a **list** of paths objects.
+
+# Example {#node-config-paths-example}
 
 ```
 paths = (
@@ -32,7 +34,9 @@ paths = (
 )
 ```
 
-Every path can have the following settings:
+# Configuration {#node-config-path}
+
+Every path object is configured by the following settings:
 
 ## in (list of strings: node-names | mapping expression) {#node-config-path-in}
 

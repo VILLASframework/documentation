@@ -4,7 +4,7 @@ The VILLASnode configuration consists of a a single file.
 
 For a collection of example configuration files see: <https://git.rwth-aachen.de/acs/public/villas/node/tree/master/etc>.
 
-# File format
+# File format {#node-config-format}
 
 VILLASnode currently supports two config file formats:
 
@@ -13,7 +13,7 @@ VILLASnode currently supports two config file formats:
 
 **Note:** Consider using the @ref node-usage-conf2json command to migrate your old configurations to JSON.
 
-# Structure
+# Structure {#node-config-structure}
 
 At the top level, the configuration file consists of these sections:
 
@@ -23,7 +23,7 @@ At the top level, the configuration file consists of these sections:
 - @subpage node-config-nodes
 - @subpage node-config-paths
 
-# Examples
+# Examples {#node-config-examples}
 
 VILLASnode comes with a lot of existing configurations which can be used for inspiration:
 https://git.rwth-aachen.de/acs/public/villas/node/-/tree/master/etc
@@ -64,9 +64,9 @@ paths = (
 )
 ```
 
-# Tips & Tricks
+# Tips & Tricks {#node-config-tips}
 
-## Use environment variables in your configuration
+## Use environment variables in your configuration {#node-config-envvars}
 
 VILLASnode substitutes any environment variables in you JSON and libconfig configuration files.
 
@@ -79,12 +79,12 @@ To replace environment variables you must use the following syntax within any st
 ```
 nodes = {
 	file_node = {
-		uri = "${FILE_PATH}
+		uri = "${FILE_PATH}"
 	}
 }
 ```
 
-## Include other files into your configuration
+## Include other files into your configuration  {#node-config-include}
 
 VILLASnode can include other files into you configuration.
 This allows you to better structure and reuse parts of your configuration (e.g. the node definitions).
@@ -96,7 +96,7 @@ The value of this key must point to an existing file on your file system.
 
 ### Example
 
-#### params.json
+#### `params.json`
 
 ```json
 {
@@ -105,7 +105,7 @@ The value of this key must point to an existing file on your file system.
 }
 ```
 
-#### nodes.json
+#### `nodes.json`
 
 ```json
 {
@@ -133,7 +133,7 @@ The value of this key must point to an existing file on your file system.
 }
 ```
 
-#### experiment1.conf
+#### `experiment1.conf`
 
 ```json
 {

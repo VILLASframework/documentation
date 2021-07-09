@@ -1,5 +1,7 @@
 # HTTP / WebSocket server {#node-config-http}
 
+# Example {#node-config-http-example}
+
 ```
 http = {
 	enabled = true,					# Do not listen on a port if false
@@ -11,6 +13,8 @@ http = {
 	ssl_private_key= "/etc/ssl/private/mykey.pem";
 }
 ```
+
+# Configuration
 
 ### http.enabled (boolean) = true {#node-config-http-enabled}
 

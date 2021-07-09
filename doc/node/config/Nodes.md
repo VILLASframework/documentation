@@ -1,7 +1,9 @@
 # Nodes {#node-config-nodes}
 
 The node section is a **directory** of nodes (clients) which are connected to the VILLASnode instance.
-The directory is indexed by the name of the node:
+The directory is indexed by the name of the node
+
+# Example {#node-config-nodes-example}
 
 ```
 nodes = {
@@ -28,6 +30,8 @@ nodes = {
 	}
 }
 ```
+
+# Configuration {#node-config-node}
 
 There are different type of nodes available. But all types have the following settings in common:
 

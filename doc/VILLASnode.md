@@ -18,13 +18,13 @@ VILLASnode is a modular gateway for simulation data. It offers interfaces to sim
 - @subpage node-netem
 - @subpage node-dev
 
-## Overview
+# Overview {#node-overview}
 
 The project consists of a server daemon and several client modules which are documented here.
 
 [TOC]
 
-### Features
+## Features {#node-overview-features}
 
 - Wide selection of [interface types](@ref node-types)
 - Statistic collection quality of service of the interfaces
@@ -41,7 +41,7 @@ The project consists of a server daemon and several client modules which are doc
 - Only relies on open source software libraries and the Linux kernel
 - Follows the Unix philosophy by providing a set of smaller command line tools
 
-### Daemon
+## Daemon {#node-overview-daemon}
 
 The server simply acts as a gateway to forward simulation data from one client to another.
 Furthermore, it collects statistics, monitors the quality of service and handles encryption or tunneling through VPNs.
@@ -51,7 +51,7 @@ The primary design goal was to make the behaviour of the system as deterministic
 Therefore, it's advisable to run the server component on a [PREEMPT_RT](https://rt.wiki.kernel.org/index.php/CONFIG_PREEMPT_RT_Patch) patched version of Linux. In our environment, we use a Fedora-based distribution which has been stripped to the bare minimum (no GUI, only a few background processes).
 Have a look at @ref node-tuning for ways to improve the real-time performance of your system.
 
-### Clients
+## Clients {#node-overview-clients}
 
 There are two types of interfaces to VILLASnode:
 
