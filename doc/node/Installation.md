@@ -8,9 +8,11 @@ VILLASnode can be installed in multiple ways:
 - [Bootable Linux live image](@ref liveusb)
 - or from source
 
-# Docker images
+# Docker images {#node-installation-docker}
 
 There exists a set of Docker images for running and developing VILLASnode.
+Docker images are available for x86_64/amd64, armhf and arm64 architectures it you can run it also on a Raspberry Pi or other embedded platforms.
+We use Alpinelinux-based images to keep the size of the image below 100MB.
 
 With a working Docker daemon, you can run it like this:
 
@@ -21,7 +23,7 @@ $ docker run --privileged registry.git.rwth-aachen.de/acs/public/villas/node
 To start the main daemon, you can pass a configuration file via a volume mount:
 
 ```bash
-$ docker run --volume /path/to/my/local.conf:/config.conf --privileged registry.git.rwth-aachen.de/acs/public/villas/node node /config.con
+$ docker run --volume /path/to/my/local.conf:/config.conf --privileged registry.git.rwth-aachen.de/acs/public/villas/node node /config.conf
 ```
 
 # From source  {#node-installation-source}

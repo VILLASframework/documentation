@@ -11,7 +11,7 @@ Unlike the other node-types, the `fpga` node-type requires settings in two place
 ## FPGA Card {#fpga-config-card}
 
 This section is a group (like `nodes`) which allows the user to use multiple FPGA devices at the same time.
-Like @ref node-concept-node, each FPGA has it's own name / identifier:
+Like nodes, each FPGA has it's own name:
 
 ### id (string: "vendor:product") {#fpga-config-card-id}
 
