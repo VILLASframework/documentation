@@ -1,6 +1,19 @@
 # Paths {#node-config-paths}
 
-The path section consists of a **list** of paths objects.
+A path is a **uni-directional** connection between incoming and outgoing nodes.
+
+It forwards messages from one or more incoming nodes to one or more outgoing nodes.
+Therefore it represents a n-to-n relation between nodes.
+
+For bidirectional communication a corresponding path in the reverse direction must be added.
+ 
+By default, message contents are not altered.
+The server only performs checks for valid message headers (sequence number, cryptographic signature..).
+However, every path supports optional [hook functions](@ref node-hook-types) which allow user-defined operations on the samples.
+
+@image html VILLASnode_paths.svg
+
+The path section in the configuration file consists of a **list** of one or more paths objects.
 
 # Example {#node-config-paths-example}
 
@@ -91,7 +104,7 @@ When this flag is set, the original sequence number from the source node will be
 
 A list of hook functions which will be executed for each sample which is processed by this path.
 
-Please consult the @ref node-concept-hook chapter of this documentation for details.
+See @ref node-hook-types chapter of this documentation for details.
 
 ### hooks[].type (string: "print" | "drop" | ...) {#node-config-hooks-type}
 

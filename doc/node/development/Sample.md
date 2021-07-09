@@ -1,4 +1,4 @@
-# Sample {#node-concept-sample}
+# Sample {#node-dev-sample}
 
 One of the main design decissions while developing VILLASnode gateway was the choice of a simple and common data structure for simulation data.
 
@@ -52,4 +52,4 @@ The design of VILLASnode assumes that the these signal definitions remain static
 Each sample contains a pointer to this list of signal definitions.
 The indices of signal data coressponds to the index within the list of signal definitions.
 
-See @node-concept-signal for more details.
+See @node-dev-signal for more details.

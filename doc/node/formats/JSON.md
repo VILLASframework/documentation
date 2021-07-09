@@ -47,7 +47,6 @@ Escape the `/` characters in strings with `\/`.
 # Example Payload
 
 The structure of the JSON format is closely aligned with VILLASnode's internal data representation.
-See @ref node-concept-sample for details.
 
 ```json
 {

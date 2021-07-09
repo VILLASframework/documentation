@@ -60,7 +60,7 @@ The value of this setting determines how many samples will be combined into one 
 
 A list of hook functions which will be executed for each sample which is processed by this path.
 
-Please consult the @ref node-concept-hook chapter of this documentation for details.
+See @ref node-hook-types chapter of this documentation for details.
 
 ## builtin (boolean) = true {#node-config-node-builtin}
 
