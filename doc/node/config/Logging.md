@@ -32,7 +32,7 @@ Write all log messages to a file.
 
 If enabled VILLASnode will log to the [system log](https://en.wikipedia.org/wiki/Syslog).
 
-## logging.expressions (list of objects) {#node-config-logging-expressions}
+## logging.expressions (list of objects) = () {#node-config-logging-expressions}
 
 The logging expression allow for a fine grained control of log levels per individual logger instance.
 Expressions are provided as a list of logger name pattern and the desired level.
