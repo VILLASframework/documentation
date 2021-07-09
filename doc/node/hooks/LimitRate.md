@@ -1,4 +1,4 @@
-# Limit rate {#hook-type-limit_rate}
+# Limit rate {#node-hook-type-limit_rate}
 
 The `limit_rate` hook discards samples in order to limit the sample rate to a certain rate.
 The decission whether a sample is discarded or not is based on its timestamp.

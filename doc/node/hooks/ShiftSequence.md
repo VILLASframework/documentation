@@ -1,4 +1,4 @@
-# Shift sequence numbers {#hook-type-shift_seq}
+# Shift sequence numbers {#node-hook-type-shift_seq}
 
 # Implementation
 

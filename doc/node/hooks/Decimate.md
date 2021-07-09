@@ -1,4 +1,4 @@
-# Decimate sample rate {#hook-type-decimate}
+# Decimate sample rate {#node-hook-type-decimate}
 
 The `decimate` hook reduces the sampling rate by periodically discarding samples.
 

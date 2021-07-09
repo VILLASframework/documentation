@@ -1,4 +1,4 @@
-# Print sample data {#hook-type-print}
+# Print sample data {#node-hook-type-print}
 
 The `print` hook prints processed samples to the standard output or into a file.
 While doing so, it supports all the formats described here: @ref node-formats .

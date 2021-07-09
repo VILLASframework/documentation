@@ -1,4 +1,4 @@
-# Scale and offset signals {#hook-type-scale}
+# Scale and offset signals {#node-hook-type-scale}
 
 The `scale` hook modifies sample signals by a gain factor and optionally ads an offset.
 First the original signal value is multiplied by the gain, then the offset is added.

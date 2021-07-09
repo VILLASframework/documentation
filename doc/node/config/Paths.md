@@ -140,8 +140,8 @@ The last way of configuring signals for a path is by using more complex signal m
 This allows you to select individual signals from one or multiple source nodes as well as other metadata such as:
 
 - Statistics
-  - **Note:** This requires @ref hook-type-stats hook activated for the respective node)
-  - See @ref hook-type-stats for a list of all supported statistics
+  - **Note:** This requires @ref node-hook-type-stats hook activated for the respective node)
+  - See @ref node-hook-type-stats for a list of all supported statistics
 - Header fields
   - Sample sequence number
   - Sample signal count (length)

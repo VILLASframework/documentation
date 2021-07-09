@@ -1,4 +1,4 @@
-# Dynamic Phasor calculation / DFT {#hook-type-dp}
+# Dynamic Phasor calculation / DFT {#node-hook-type-dp}
 
 # Implementation
 

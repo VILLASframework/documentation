@@ -1,4 +1,4 @@
-# Timestamp {#hook-type-ts}
+# Timestamp {#node-hook-type-ts}
 
 The `ts` hook overwrite the origin timestamp field of each sample with the current system time.
 

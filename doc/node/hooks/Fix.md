@@ -1,4 +1,4 @@
-# Fix missing metadata {#hook-type-fix}
+# Fix missing metadata {#node-hook-type-fix}
 
 The `fix` hook checks each sample and adds missing metadata such as timestamps or sequence numbers.
 

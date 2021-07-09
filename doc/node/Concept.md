@@ -8,7 +8,7 @@ Hence, it's cruical to keep the added overhead as low as possible (in terms of l
 
 - @subpage node-concept-supernode
 - @subpage node-types
-- @subpage hook-types
+- @subpage node-hook-types
 - @subpage node-concept-path
 - @subpage node-concept-sample
 - @subpage node-concept-signals

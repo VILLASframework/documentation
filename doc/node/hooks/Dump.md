@@ -1,4 +1,4 @@
-# Dump sample data {#hook-type-dump}
+# Dump sample data {#node-hook-type-dump}
 
 The `dump` hook will print a detailed dump of each processes samples to the standard output.
 

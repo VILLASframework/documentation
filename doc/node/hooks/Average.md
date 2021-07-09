@@ -1,4 +1,4 @@
-# Average signal values {#hook-type-average}
+# Average signal values {#node-hook-type-average}
 
 The `average` hook calculates arithmetic mean over a set of signals and insert it as a new value to the samples.
 

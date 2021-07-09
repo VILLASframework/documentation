@@ -1,4 +1,4 @@
-# Drop reordered samples {#hook-type-drop}
+# Drop reordered samples {#node-hook-type-drop}
 
 The `drop` hook will discard samples which a received with repeating or reordered sequence numbers.
 

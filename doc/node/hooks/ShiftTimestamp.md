@@ -1,4 +1,4 @@
-# Shift timestamps {#hook-type-shift_ts}
+# Shift timestamps {#node-hook-type-shift_ts}
 
 # Implementation
 

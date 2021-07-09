@@ -1,4 +1,4 @@
-# Cast signal values {#hook-type-cast}
+# Cast signal values {#node-hook-type-cast}
 
 The `cast` hook casts the data-type of signals and can set a new name and unit to the casted signal.
 

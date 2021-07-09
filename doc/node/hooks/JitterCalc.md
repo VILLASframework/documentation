@@ -1,4 +1,4 @@
-# Calculate Jitter {#hook-type-jitter_calc}
+# Calculate Jitter {#node-hook-type-jitter_calc}
 
 # Implementation
 

@@ -1,4 +1,4 @@
-# Lua scripting {#hook-type-lua}
+# Lua scripting {#node-hook-type-lua}
 
 The `lua` hook allows for the evaluation arbitrary Lua expressions.
 

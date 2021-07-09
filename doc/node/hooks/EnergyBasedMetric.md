@@ -1,4 +1,4 @@
-# Energy Based Metric calculation {#hook-type-ebm}
+# Energy Based Metric calculation {#node-hook-type-ebm}
 
 # Implementation
 

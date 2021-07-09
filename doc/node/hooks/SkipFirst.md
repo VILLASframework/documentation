@@ -1,4 +1,4 @@
-# Skip First Samples {#hook-type-skip_first}
+# Skip First Samples {#node-hook-type-skip_first}
 
 The `skip_first` hook discards the first samples of a simulation case.
 It can either drop the first `n` samples or drop the first `n` seconds of a case.
