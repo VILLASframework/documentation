@@ -5,11 +5,11 @@ The `lua` hook allows for the evaluation arbitrary Lua expressions.
 Take a look at some example Lua scripts used by this hook here:
 https://git.rwth-aachen.de/acs/public/villas/node/-/tree/master/lua/hooks
 
-# Prerequisites {#node-prereq-node-lua}
+# Prerequisites {#node-hook-type-lua-prereq}
 
 This hook requires [Lua](https://www.lua.org/) (>= 5.1).
 
-# Implementation
+# Implementation {#node-hook-type-lua-implementation}
 
 The source code of the hook is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/lua.cpp
@@ -83,10 +83,10 @@ Note you can access the current sample using the global Lua variable `smp`.
 The Lua hook will pass the complete hook configuration to the `prepare()` Lua function.
 So you can add arbitrary settings here which are then consumed by the Lua script.
 
-## Example
+# Example {#node-hook-type-lua-example}
 
 @include node/etc/examples/hooks/lua.conf
 
-# Example Lua script
+# Example Lua script {#node-hook-type-lua-example-script}
 
 @include node/lua/hooks/test.lua

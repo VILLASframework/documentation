@@ -4,13 +4,13 @@
 
 ### Bitstreams
 
-@todo: Create a list of available bitstreams
+@todo Create a list of available bitstreams
 
-@todo: Add instructions on how to flash a bitstream.
+@todo Add instructions on how to flash a bitstream.
 
 ### Indentify PCIexpress device
 
-@todo: Describe the usage of `lspci`
+@todo Describe the usage of `lspci`
 
 ## Kernel
 
@@ -18,7 +18,7 @@
 
 VILLASfpga requires a recent Linux kernel with version > 4.x.x
 
-@todo: Find the lowest supported kernel version.
+@todo Find the lowest supported kernel version.
 
 ### Command Line
 
@@ -26,7 +26,7 @@ VILLASfpga uses the VFIO subsystem to access the FPGA hardware.
 
 VFIO requires an IOMMU.
 
-@todo: Describe the necessary changes to the bootloader/Grub.
+@todo Describe the necessary changes to the bootloader/Grub.
 
 ### Modules
 

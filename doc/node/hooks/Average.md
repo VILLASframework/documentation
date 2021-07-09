@@ -2,7 +2,7 @@
 
 The `average` hook calculates arithmetic mean over a set of signals and insert it as a new value to the samples.
 
-# Implementation
+# Implementation {#node-hook-type-average-implementation}
 
 The source code of the hook is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/average.cpp
@@ -15,6 +15,6 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/average.
 
 The signal offset at which the average signal should be inserted.
 
-## Example
+# Example {#node-hook-type-average-example}
 
 @include node/etc/examples/hooks/average.conf

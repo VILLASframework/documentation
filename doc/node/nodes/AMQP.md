@@ -36,6 +36,6 @@ The routing key of published messages as well as the routing key which is used t
 
 **Note:** These settings are only used if the @ref node-config-node-amqp-uri setting is using the `amqps://` schema.
 
-## Example
+# Example {#node-type-amqp-example}
 
 @include node/etc/examples/nodes/amqp.conf

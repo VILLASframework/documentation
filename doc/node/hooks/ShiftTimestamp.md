@@ -1,6 +1,6 @@
 # Shift timestamps {#node-hook-type-shift_ts}
 
-# Implementation
+# Implementation {#node-hook-type-shift_ts-implementation}
 
 The source code of the hook is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/shift_ts.cpp
@@ -11,6 +11,6 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/shift_ts
 
 ## offset (float) {#node-config-hook-shift_ts-offset}
 
-## Example
+# Example {#node-hook-type-shift_ts-example}
 
 @include node/etc/examples/hooks/shift_ts.conf

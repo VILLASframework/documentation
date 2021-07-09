@@ -28,6 +28,6 @@ The number of values each buffered sample can store.
 
 Specify the synchronization mode of the internal queue.
 
-## Example
+# Example {#node-type-loopback-example}
 
 @include node/etc/examples/nodes/loopback.conf

@@ -6,6 +6,11 @@ The `exec` node-type spawns a new subprocess and exchanges sample data via `stdi
 
 This node-type does not have any special library dependencies. It is always available.
 
+# Implementation {#node-type-exec-implementation}
+
+The source code of the node-type is available here:
+https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/exec.cpp
+
 # Configuration {#node-config-node-exec}
 
 ## format (string: format-id) = "villas.human" {#node-config-node-file-format}
@@ -40,11 +45,6 @@ If set, the working directory for the sub-process will be changed.
 
 A object of key/value pairs of environemnt variables which should be passed to the sub-process **in addition** to the parent environment.
 
-## Example
+# Example {#node-type-exec-example}
 
 @include node/etc/examples/nodes/exec.conf
-
-# Implementation {#node-type-exec-implementation}
-
-The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/exec.cpp

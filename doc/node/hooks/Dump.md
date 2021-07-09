@@ -2,7 +2,7 @@
 
 The `dump` hook will print a detailed dump of each processes samples to the standard output.
 
-# Implementation
+# Implementation {#node-hook-type-dump-implementation}
 
 The source code of the hook is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/dump.cpp
@@ -11,6 +11,6 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/dump.cpp
 
 The `dump` hook has no configurable options.
 
-## Example
+# Example {#node-hook-type-dump-example}
 
 @include node/etc/examples/hooks/dump.conf

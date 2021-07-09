@@ -2,7 +2,7 @@
 
 The `cast` hook casts the data-type of signals and can set a new name and unit to the casted signal.
 
-# Implementation
+# Implementation {#node-hook-type-cast-implementation}
 
 The source code of the hook is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/cast.cpp
@@ -19,6 +19,6 @@ The the type of the casted signal.
 
 ## new_type (string) {#node-config-hook-cast-new_type}
 
-## Example
+# Example {#node-hook-type-cast-implementation}
 
 @include node/etc/examples/hooks/cast.conf

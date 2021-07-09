@@ -15,7 +15,6 @@ This node-type does not have any special library dependencies. It is always avai
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/signal_generator.cpp
 
-
 # Configuration {#node-config-node-signal}
 
 ## signal (string: "random" | "sine" | "square" | "triangle" | "ramp" | "counter" | "constant" | "mixed" | "pulse") {#node-config-node-signal-signal}
@@ -52,15 +51,15 @@ The frequency of the signal when @ref node-config-node-signal-signal is one of `
 
 Tha pase of the signal when @ref node-config-node-signal-signal is one of `sine` or `pulse`.
 
-## pulse_width (float) = 1.0 {#node-config-node-signal-pulse_width}
+## pulse_width (float) = 1.0 {#node-config-node-signal-pulse-width}
 
 The width of the pulse, with respect to the rate
 
-## pulse_low (float) = 0.0 {#node-config-node-signal-pulse_low}
+## pulse_low (float) = 0.0 {#node-config-node-signal-pulse-low}
 
 The low value of the pulse signal.
 
-## pulse_high (float) = 1.0 {#node-config-node-signal-pulse_high}
+## pulse_high (float) = 1.0 {#node-config-node-signal-pulse-high}
 
 The high value of the pulse signal.
 
@@ -81,10 +80,10 @@ A negative number disables the limitation.
 
 Wait `1 / rate` seconds between emitting each sample.
 
-## monitor_missed (boolean) = true {#node-config-node-siganl-node_missed_steps}
+## monitor_missed (boolean) = true {#node-config-node-signal-monitor-missed}
 
 If `true`, the @ref node-type-signal node-type will count missed steps and warn the user during every iteration about missed steps. Especially at high rates, it can be beneficial for performance to set this flag to `false`. Warnings would namely cause system calls which will slow the node down even more, and thus cause even more missed steps.
 
-## Example
+# Example {#node-type-signal-example}
 
 @include node/etc/examples/nodes/signal_generator.conf

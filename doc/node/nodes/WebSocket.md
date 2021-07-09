@@ -33,7 +33,6 @@ The host name or IP address is separated by `://`.
 The optional port number is separated by a colon `:`.
 The node name is separated by a slash `/`.
 
-
-## Example
+# Example {#node-type-websocket-example}
 
 @include node/etc/examples/nodes/websocket.conf

@@ -11,7 +11,9 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/comedi.c
 
 # Configuration {#node-config-node-comedi}
 
-## Example
+@todo Document config options for Comedi node-type
+
+# Example {#node-type-comedi-example}
 
 @include node/etc/examples/nodes/comedi.conf
 

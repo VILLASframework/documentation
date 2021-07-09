@@ -105,10 +105,6 @@ If this is set to a positive value `<X>`, the node will generate a full [stream 
 
 If `out.buffer_size = 0`, no buffer will be generated.
 
-## Example
+# Example {#node-type-file-example}
 
-### Using local files
 @include node/etc/examples/nodes/file.conf
-
-### Using remote files
-@include node/etc/examples/nodes/advio.conf

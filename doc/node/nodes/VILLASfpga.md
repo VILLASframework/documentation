@@ -31,7 +31,7 @@ Every `fpga` node support the following special settings:
 
 ## datamover (string: fpga-ip-name) {#node-config-node-fpga-datamover}
 
-The must be the name of a FPGA IP core as defined in @ref fpga-config-ip .
+The must be the name of a FPGA IP core as defined in @ref fpga-config-ip.
 
 This IP component is used to transfer samples between the FPGA and the main memory.
 
@@ -43,5 +43,6 @@ The name of the FPGA card as configured by @ref fpga-config-card.
 
 Weather or not to polling / interrupts to wait for new samples from the FPGA.
 
-# Example
+# Example {#node-type-fpga-example}
 
+@todo Add example config

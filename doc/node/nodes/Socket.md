@@ -82,13 +82,16 @@ The time to live for outgoing multicast packets.
 
 ## in.multicast.loop (boolean) {#node-config-node-socket-multicast-loop}
 
-## Example
+# Example {#node-type-socket-example}
 
-### UDP layer
+## UDP layer
+
 @include node/etc/examples/node/nodes/udp.conf
 
-### Ethernet layer
+## Ethernet layer
+
 @include node/etc/examples/nodes/ethernet.conf
 
-### Receive multicast traffic
+## Receive multicast traffic
+
 @include node/etc/examples/nodes/multicast.conf

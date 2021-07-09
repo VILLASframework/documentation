@@ -17,7 +17,7 @@ Enables and configures the network emulation qeueing discipline.
 
 For more information see also: @ref node-netem
 
-## Example
+# Example {#node-type-rtp-example}
 
 @include node/etc/examples/nodes/rtp.conf
 

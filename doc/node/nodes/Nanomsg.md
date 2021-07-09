@@ -40,7 +40,6 @@ The @ref node-type-nanomsg supports several different transport mechanisms which
 | TCP transport | `tcp://1.1.1.1:456`	| [nn_tcp(7)](http://nanomsg.org/v1.0.0/nn_tcp.7.html) |
 | WebSocket transport | `ws://example.com:8080`| [nn_ws(7)](http://nanomsg.org/v1.0.0/nn_ws.7.html) |
 
-## Example
+# Example {#node-type-nanomsg-example}
 
 @include node/etc/examples/nodes/nanomsg.conf
-

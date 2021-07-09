@@ -36,6 +36,6 @@ A filter applied to the USB bus number for selecting a specific sensor if multip
 
 A filter applied to the USB port number for selecting a specific sensor if multiple are available.
 
-## Example
+# Example {#node-type-temper-example}
 
 @include node/etc/examples/nodes/temper.conf

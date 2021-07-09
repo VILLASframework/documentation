@@ -55,6 +55,6 @@ The Kafka topic to which this node-type will publish messages.
 
 A timeout in seconds for the broker connection.
 
-## Example
+# Example {#node-type-kafka-example}
 
 @include node/etc/examples/node/nodes/kafka.conf

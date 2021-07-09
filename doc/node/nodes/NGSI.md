@@ -38,7 +38,7 @@ Every `ngsi` node supports the following special settings:
 
 Example: `AttributeName(AttributeType) MetadataName1(MetadataType1)=MetadataValue1 MetadataName2(MetadataType2)=MetadataValue2 ...`
 
-## Example
+# Example {#node-type-ngsi-example}
 
 @include node/etc/examples/nodes/ngsi.conf
 

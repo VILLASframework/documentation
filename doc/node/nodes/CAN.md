@@ -15,6 +15,6 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/can.cpp
 
 @todo Finish CAN node-type documentation
 
-## Example
+# Example {#node-type-can-example}
 
 @include node/etc/examples/nodes/can.conf

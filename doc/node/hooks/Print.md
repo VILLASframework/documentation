@@ -17,6 +17,6 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/print.cp
 
 ## prefix (string) {#node-config-hook-print-prefix}
 
-## Example
+# Example {#node-hook-type-print-example}
 
 @include node/etc/examples/hooks/print.conf

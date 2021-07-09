@@ -51,7 +51,6 @@ echo ADMIN_USER: admin
 echo ADMIN_PASS: $(kubectl get secret --namespace villas villas-web -o jsonpath="{.data.password}" | base64 --decode)
 ```
 
-
 ## Access the application
 
-@todo: Add explanation how to access ingress
+@todo Add explanation how to access Ingress

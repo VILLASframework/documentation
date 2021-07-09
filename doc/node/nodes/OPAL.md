@@ -31,7 +31,7 @@ Every `opal` node supports the following special settings:
 
 ## reply (boolean) {#node-config-node-opal-reply}
 
-## Example
+# Example {#node-type-opal-example}
 
 @include node/etc/examples/nodes/opal.conf
 

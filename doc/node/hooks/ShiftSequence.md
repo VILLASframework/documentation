@@ -1,6 +1,6 @@
 # Shift sequence numbers {#node-hook-type-shift_seq}
 
-# Implementation
+# Implementation {#node-hook-type-shift_seq-implementation}
 
 The source code of the hook is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/shift_seq.cpp
@@ -11,6 +11,6 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/shift_se
 
 The offset which is added to the sequence number of each processed sample.
 
-## Example
+# Example {#node-hook-type-shift_seq-example}
 
 @include node/etc/examples/hooks/shift_seq.conf

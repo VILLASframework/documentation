@@ -48,6 +48,6 @@ The public key of the server.
 
 The private key of the server.
 
-## Example
+# Example {#node-type-zeromq-example}
 
 @include node/etc/examples/nodes/zeromq.conf

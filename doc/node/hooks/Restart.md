@@ -2,7 +2,7 @@
 
 The `restart` hook tries to detect starts/restarts of simulation cases by looking for wrap-arounds in sequence numbers.
 
-# Implementation
+# Implementation {#node-hook-type-restart-implementation}
 
 The source code of the hook is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/restart.cpp

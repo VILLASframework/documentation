@@ -34,7 +34,7 @@ For each of the metrics the following moments / attrbributes are collected:
 | `stddev`  | float   | The standard deviation across all collected values. |
 | `total`   | integer | The total number of collected values.               |
 
-# Implementation
+# Implementation {#node-hook-type-stats-implementation}
 
 The source code of the hook is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/stats.cpp
@@ -63,6 +63,6 @@ Include full dumps of the histogram buckets into the output.
 The file where you want to write the report to.
 If omitted, stdout (the terminal) will be used.
 
-## Example
+# Example {#node-hook-type-stats-example}
 
 @include node/etc/examples/hooks/stats.conf

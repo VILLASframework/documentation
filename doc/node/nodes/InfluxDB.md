@@ -27,6 +27,6 @@ The key is the measurement name and any optional tags separated by commas.
 
 See also: [InfluxDB documentation](https://docs.influxdata.com/influxdb/v0.9/write_protocols/line/#key)
 
-## Example
+# Example {#node-type-influxdb-example}
 
 @include node/etc/examples/nodes/influxdb.conf

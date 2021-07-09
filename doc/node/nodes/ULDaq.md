@@ -19,7 +19,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/uldaq.cp
 
 ## interface_type (string: "usb" | "bluetooth" | "ethernet" | "any" ) = "any" {#node-config-node-uldaq-in-interface_type}
 
-## in.range (string)
+## in.range (string) {#node-config-node-uldaq-in-range}
 
 ### Supported ranges
 
@@ -75,8 +75,6 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/uldaq.cp
 
 ## in.sample_rate (float) {#node-config-node-uldaq-in-sample_rate}
 
-## in.vectorize (integer) {#node-config-node-uldaq-in-vectorize}
-
-# Example
+# Example {#node-type-uldaq-example}
 
 @include node/etc/examples/nodes/uldaq.conf

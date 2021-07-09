@@ -33,13 +33,12 @@ The hostname of the MQTT broker.
 
 The port number of the MQTT broker.
 
-
 ## retain (boolean) = false {#node-config-node-mqtt-retain}
 
 ## keepalive (integer) = 1 {#node-config-node-mqtt-keepalive}
 
 ## qos (integer) = 0 {#node-config-node-mqtt-qos}
 
-## Example
+# Example {#node-type-mqtt-example}
 
 @include node/etc/examples/nodes/mqtt.conf

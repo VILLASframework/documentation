@@ -47,7 +47,7 @@ Optional name and command-line arguments (as passed to `execve`) of a command
 to be executed during node startup. This can be used to start the external
 program directly from VILLASNode. If unset, no command is executed.
 
-## Example
+# Example {#node-type-shmem-example}
 
 @include node/etc/examples/nodes/shmem.conf
 
