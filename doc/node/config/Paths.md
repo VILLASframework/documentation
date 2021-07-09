@@ -38,6 +38,8 @@ Every path can have the following settings:
 
 The `in` settings expects the name of one or more source nodes or mapping expressions.
 
+See @ref node-config-path-mapping
+
 ## out (list of strings: node-names) {#node-config-path-out}
 
 The `out` setting expects the name of one or more destination nodes.
@@ -90,3 +92,107 @@ Please consult the @ref node-concept-hook chapter of this documentation for deta
 ### hooks[].type (string: "print" | "drop" | ...) {#node-config-hooks-type}
 
 ### hooks[].enabled (boolean) = true {#node-config-hooks-enabled}
+
+# Input mapping {#node-config-path-mapping}
+
+The @ref node-config-path-in setting supports different ways of configuring and selecting the nodes from which the path sources its samples.
+
+## Simple
+
+### Single node
+
+The easiest way of configuring a path source is by providing a single name of a node.
+This will take all signals from this source node and forward it to the path destinations.
+
+```
+paths = (
+	{
+		in = "udp_node",
+		...
+	}
+)
+```
+
+### Multiple nodes
+
+Instead of a single node also multiple nodes can be provided in a list.
+In this configuration all signals from all listed nodes will be concatenated in the order in which the nodes are listed.
+
+```
+paths = (
+	{
+		in = [
+			"udp_node",
+			"udp_node2"
+		]
+		...
+	}
+)
+```
+
+## Complex signal mapping expressions
+
+The last way of configuring signals for a path is by using more complex signal mapping expressions.
+This allows you to select individual signals from one or multiple source nodes as well as other metadata such as:
+
+- Statistics
+  - **Note:** This requires @ref hook-type-stats hook activated for the respective node)
+  - See @ref hook-type-stats for a list of all supported statistics
+- Header fields
+  - Sample sequence number
+  - Sample signal count (length)
+  - Timestamps
+
+Se below for a few different examples using the signal mapping expressions
+
+```
+nodes = {
+	udp_node = {
+		...
+
+		in = {
+			signals = (
+				{ name = "bus88_V" },
+				{ name = "bus102_V" },
+				{ name = "bus72_V" },
+				{ name = "bus88_I" },
+				{ name = "bus102_I" },
+				{ name = "bus72_I" },
+			),
+
+			hooks = (
+				"stats"
+			)
+		}
+	}
+}
+
+paths = (
+	{
+		in = [
+			"udp_node.data.bus88_V",
+			"udp_node.data.bus102_V",
+			"udp_node.bus88_V"
+		],
+		...
+	},
+	{
+		in = [
+			"udp_node.data[0-1]",
+			"udp_node.data[bus88_V-bus102_V]"
+		],
+		...
+	},
+	{
+		in = [
+			"udp_node.hdr.sequence",
+			"udp_node.hdr.length",
+			"udp_node.ts.origin",
+			"udp_node.ts.received",
+			"udp_node.stats.owd.last",
+			"udp_node.stats.skipped.total",
+		],
+		...
+	}
+)
+```
