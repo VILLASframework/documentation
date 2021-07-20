@@ -133,7 +133,7 @@ The value of this key must point to an existing file on your file system.
 }
 ```
 
-#### `experiment1.conf`
+#### `experiment1.json`
 
 ```json
 {
