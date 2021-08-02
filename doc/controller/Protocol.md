@@ -198,7 +198,7 @@ After receiving such a message, each entity shall send a status update message a
 		"opal_hostname": "opal-op5600.acs-lab.eonerc.rwth-aachen.de"
 		"namespace": "villas"
 		"job_name": "My_Kubernetes_Simulator"
-		"pod_names": ["Job_number_1", "Job_number_2"]
+		"pod_names": ["pod_number_1", "pod_number_2"]
 	},
 	"schema": {
 		"start": {
