@@ -73,7 +73,7 @@ Each node should define a list of signals which it **receives**.
 
 There are three ways to specify the input signals of a node:
 
-### List (recommended)
+### List (recommended)  {#node-config-node-signals-list}
 
 The list mode allows you to specify properties of each signal individually by providing a list of signal definitions:
 
@@ -112,7 +112,7 @@ The initial value of the signal.
 
 Signals can be disabled which causes them to be ignored.
 
-### Format string
+### Format string  {#node-config-node-signals-fstring}
 
 The easiest way to specify the signals, is by using a format string.
 The format string consists of one ore more characters which define the type for the signal corresponding to the position of the character in the string.
@@ -138,7 +138,7 @@ nodes = {
 }
 ```
 
-### Simple
+### Simple  {#node-config-node-signals-simple}
 
 The simple way just specifies the number of signals and their type:
 
