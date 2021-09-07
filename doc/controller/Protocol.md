@@ -129,10 +129,10 @@ stateDiagram-v2
       idle --> starting: start
       starting --> running
       running --> stopping: stop
-      stopping --> stopped
       running --> pausing: pause
       pausing --> paused
       paused --> stopping: stop
+      stopping --> idle
       paused --> resuming: resume
       resuming --> running
     }
