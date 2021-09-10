@@ -48,13 +48,16 @@ VILLASnode is a collection of command line tools which follow the [Unix philosop
 
 In this guide we will show the following tools:
 
-| Tool			| Purpose |
-| :----			| :---- |
-| `villas signal`	| A signal generator for testing and training purposes. |
-| `villas pipe`		| Send / receive _samples_ to / from _nodes_ via [standard IO streams](https://en.wikipedia.org/wiki/Standard_streams). |
-| `villas hook`		| Filter or manipulate _samples_ provided via [standard IO streams](https://en.wikipedia.org/wiki/Standard_streams). |
-| `villas node`		| The VILLASnode deamon. |
-| `villas test-cmp` 	| Compare _sample_ files. |
+| Tool					| Purpose |
+| :----					| :---- |
+| `villas node`			| The main VILLASnode deamon. |
+| `villas signal`		| A signal generator for testing and training purposes. |
+| `villas pipe`			| Send / receive _samples_ to / from _nodes_ via [standard IO streams](https://en.wikipedia.org/wiki/Standard_streams). |
+| `villas hook`			| Filter or manipulate _samples_ provided via [standard IO streams](https://en.wikipedia.org/wiki/Standard_streams). |
+| `villas compare`		| Compare multiple files/streams containing sample data. | 
+| `villas conf2json`	| Convert [libconfig](http://hyperrealm.github.io/libconfig/)-style formatted configuration files to JSON format. | 
+| `villas convert`		| Convert sample data files/streams between different supported [formats](@ref node-format-types). | 
+| `villas graph`		| Generate a graphical representation of the VILLASnode configuration file with Graphviz. |   
 
 A complete reference of all available options for those tools can be found on the @ref node-usage page.
 
