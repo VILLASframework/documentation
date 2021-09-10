@@ -5,7 +5,7 @@ WEBM_VIDEOS = $(wildcard recordings/video/*.webm)
 MP4_VIDEOS =  $(WEBM_VIDEOS:%.webm=%.mp4)
 
 INPUT = $(shell find doc/ -name "*.md") \
-	$(shell find node/labs/etc -name "*.conf")
+	$(shell find examples/node/etc/labs -name "*.conf")
 
 DOCKER_IMAGE ?= registry.git.rwth-aachen.de/acs/public/villas/documentation
 DOCKER_TAG ?= $(shell git rev-parse --abbrev-ref HEAD)
