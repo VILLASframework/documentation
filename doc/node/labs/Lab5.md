@@ -24,3 +24,5 @@ As we can see in the diagram, the `villas pipe` tool also receives data which is
 @image html rscad_gtnet_skt_2point_udp_draft.png RSCAD draft for GTNET interface to VILLASnode. width=100%
 
 @image html rscad_gtnet_skt_2point_udp_runtime.png RSCAD runtime of GTNET interface to VILLASnode. width=100%
+
+**Go to [lab 6] =>(@ref node-lab-6)**

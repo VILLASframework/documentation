@@ -70,7 +70,6 @@ The setup requires the following components:
 
 ## Monitoring the simulation
 
-
 Signal list:
 
 https://git.rwth-aachen.de/acs/public/simulation/cosif/-/blob/master/DynamicPhasors/RTDS/SimplePowerSystem/SimplePowerSystem_Distributed_v18/ss1/monitoring_skt_to.txt

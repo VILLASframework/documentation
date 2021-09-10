@@ -62,3 +62,5 @@ Add a new dashboard to Grafana by importing the following file: [VILLAS test das
 ### Screenshot
 
 @image html grafana.png Grafana Dashboard width=100%
+
+**Go to [lab 17] =>(@ref node-lab-17)**

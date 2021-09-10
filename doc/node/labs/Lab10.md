@@ -67,3 +67,5 @@ This examples uses the `print` hook to display all forwarded samples on `stdout`
 In a last example we demonstrate a bi-directional path by using multiple entries in the `paths` section.
 
 @includelineno node/etc/labs/lab10_path_bidir.conf
+
+**Go to [lab 11] =>(@ref node-lab-11)**

@@ -39,3 +39,5 @@ VILLASnode supports demultiplexing by using __mapping__ expressions in the @ref 
 ## The register modes
 
 @image html register.svg The different register modes. width=60%
+
+**Go to [lab 12] =>(@ref node-lab-12)**

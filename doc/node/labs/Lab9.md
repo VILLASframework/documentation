@@ -42,3 +42,5 @@ $ villas hook -o verbose=true -o warmup=1000 stats < delayed_data.dat > /dev/nul
 @endhtmlonly
 
 For more details see @ref node-netem
+
+**Go to [lab 10] =>(@ref node-lab-10)**

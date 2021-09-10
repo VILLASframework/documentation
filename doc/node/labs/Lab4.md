@@ -35,3 +35,5 @@ Furthermore, the tool supports three more modes to terminate itself:
  - If called with the `-l NUM` switch, `villas pipe` terminates after `NUM` received samples.
  - If called with the `-L NUM` switch, `villas pipe` terminates after `NUM` sent samples.
  - If called witht the `-t NUM` switch, `villas pipe` terminates after `NUM` seconds of execution.
+
+**Go to [lab 5] =>(@ref node-lab-5)**

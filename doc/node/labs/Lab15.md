@@ -75,3 +75,5 @@ The `villas pipe` tool can be used to send and receive sample to / from a node.
 $ # send 10 values to udp_node1
 $ villas signal -v 3 -r 10 -l 10 mixed | villas pipe lab15.conf ethercat_node
 ```
+
+**Go to [lab 16] =>(@ref node-lab-16)**

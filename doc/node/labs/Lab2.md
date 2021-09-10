@@ -15,3 +15,5 @@ For the next couple labs, we will use the following simple configuration file na
 It only contains a single node named `udp_node1` which sends / receives samples via IP / UDP on port 12000.
 
 @includelineno node/etc/labs/lab3.conf
+
+**Go to [lab 3] =>(@ref node-lab-3)**

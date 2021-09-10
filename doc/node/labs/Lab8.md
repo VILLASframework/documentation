@@ -224,3 +224,5 @@ $ villas signal -v 4 sine | villas hook map 'mapping=[ "data[3]", "data[2]", "da
 # Implement your own hook function
 
 Have a look at the following skeleton code: <https://git.rwth-aachen.de/acs/public/villas/node/blob/master/plugins/example_hook.cpp>
+
+**Go to [lab 9] =>(@ref node-lab-9)**
