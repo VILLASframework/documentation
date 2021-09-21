@@ -84,14 +84,4 @@ The time to live for outgoing multicast packets.
 
 # Example {#node-type-socket-example}
 
-## UDP layer
-
-@include node/etc/examples/node/nodes/udp.conf
-
-## Ethernet layer
-
-@include node/etc/examples/nodes/ethernet.conf
-
-## Receive multicast traffic
-
-@include node/etc/examples/nodes/multicast.conf
+@include node/etc/examples/node/nodes/socket.conf
