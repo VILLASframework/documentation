@@ -134,14 +134,11 @@ $ sudo dnf install \
     libwebsockets-devel \
     zeromq-devel \
     nanomsg-devel \
-    libiec61850 \
     librabbitmq-devel \
     mosquitto-devel \
-    comedilib-devel \
     libibverbs-devel \
     librdmacm-devel \
     re-devel \
-    uldaq-devel \
     libusb-devel \
     lua-devel \
     librdkafka-devel
