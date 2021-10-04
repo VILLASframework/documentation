@@ -11,14 +11,19 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/redis.cp
 
 # Configuration {#node-config-node-redis}
 
-## mode (string: "getset" | "pubsub" | "streams") = "getset" {#node-config-node-redis-mode}
+## mode (string: "key" | "hash" | "channel") = "key" {#node-config-node-redis-mode}
 
-- [Get](https://redis.io/commands/get)/[Set](https://redis.io/commands/set)
-  - Side note: the implementation actually uses the Redis `MSET` and `MGET` commands.
-- [Publish/subscribe](https://redis.io/topics/pubsub)
-- [Streams](https://redis.io/topics/streams-intro)
+- `key`: [Get](https://redis.io/commands/get)/[Set](https://redis.io/commands/set) of [Redis strings](https://redis.io/topics/data-types#strings)
+  - The implementation uses the Redis `MSET` and `MGET` commands.
+- `hash`: Hashtables using [hash data-type](https://redis.io/topics/data-types#hashes)
+  - The implementation uses the Redis `HMSET` and `HGETALL` commands.
+- `channel`: [Publish/subscribe](https://redis.io/topics/pubsub)
+  - The implementation uses the Redis `PUBLISH` and `SUBSCRIBE` commands.
 
-**Note:** The `streams` option is currently not yet implemented.
+## uri (string: _Redis URI_) {#node-config-node-redis-uri}
+
+A Redis connection URI in the form of: `redis://<user>:<password>@<host>:<post>/<db>`.
+
 ## host (string) = "localhost" {#node-config-node-redis-host}
 
 The hostname or IP address of the Redis server.
@@ -62,23 +67,22 @@ The timeout in seconds for the initial connection establishment.
 
 The timeout in seconds for executing commands against the Redis server.
 
-## keepalive (boolean) = true {#node-config-node-redis-keepalive}
+## keepalive (boolean) = false {#node-config-node-redis-keepalive}
 
 Enable periodic keepalive packets. 
 
-## prefix (string) = _node-name_ (#node-config-node-redis-prefix)
+## key (string) = _node-name_ {#node-config-node-redis-key}
 
-## events (boolean) = true {#node-config-node-redis-events}
+The key which this node will use in the Redis keyspace.
 
-Use Redis keyspace events to listen for new updates.
-This setting is only used if @ref node-config-node-redis-mode is set to `setget`.
+## channel (string) = _node-name_  {#node-config-node-redis-channel}
 
-See: https://redis.io/topics/notifications
+The channel which this node will use in @ref node-config-node-redis-mode is `channel`.
 
-## signals (boolean) = true {#node-config-node-redis-signals}
+## notify (boolean) = true {#node-config-node-redis-events}
 
-If enabled (default) the node will set/publish to separate keys/channels for each signal of a sample.
-If disabled the node will set/publish to a single key/channel defined by @ref node-config-node-redis-prefix with a payload encoded by @ref node-config-node-redis-format.
+Use [Redis keyspace notifications](https://redis.io/topics/notifications) to listen for new updates.
+This setting is only used if @ref node-config-node-redis-mode is set to `key` or `hash`.
 
 ## ssl.enabled (boolean) = true {#node-config-node-redis-ssl-enabled}
 
