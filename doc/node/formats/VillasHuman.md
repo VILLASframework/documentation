@@ -31,18 +31,11 @@ The @ref node-format-villas-human format-type supports the options documented on
 - [generic format options](@ref node-config-format)
 - [line format options](@ref node-config-format-line)
 
-# Example Configuration
+# Example Configuration {#node-format-villas-human-example}
 
-```json
-{
-  "type": "villas.human",
+@include node/etc/examples/formats/villas-human.conf
 
-  "header": false,
-  "delimiter": "\n",
-}
-```
-
-# Example Payload
+# Example Payload {#node-format-villas-human-payload}
 
 This example shows a dump with three values per sample:
 

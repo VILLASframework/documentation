@@ -47,6 +47,10 @@ In addition the following settings are supported:
 
 Configures the source index field which is a 8bit field in the packet header.
 
-# Example Payload
+# Example Configuration {#node-format-villas-binary-example}
+
+@include node/etc/examples/formats/villas-binary.conf
+
+# Example Payload {#node-format-villas-binary-payload}
 
 @image html wireshark_udp.png Wireshark capture of UDP traffic width=50%

@@ -12,6 +12,10 @@ https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/iota
 
 The @ref node-format-iotagent-ul format-type supports all [generic format options](@ref node-config-format).
 
+# Example Configuration {#node-format-iotagent-ul-example}
+
+@include node/etc/examples/formats/iotagent_ul.conf
+
 # Further Documentation
 
 * https://fiware-iotagent-ul.readthedocs.io/

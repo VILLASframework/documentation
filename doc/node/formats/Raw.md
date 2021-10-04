@@ -33,6 +33,10 @@ If enabled, the fake header mode VILLASnode uses the first three raw values in e
 | `ts.origin.sec`  | Timestamp (in seconds) of sampling instant at origin            | integer   |
 | `ts.origin.nsec` | Timestamp (nano-seconds fraction) of sampling instant at origin | integer   |
 
+# Example Configuration {#node-format-raw-example}
+
+@include node/etc/examples/formats/raw.conf
+
 # Notes
 
 - Floating-point encoding is only supported for width larger or equal to 32 bit.

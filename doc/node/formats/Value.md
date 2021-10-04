@@ -12,3 +12,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/valu
 # Configuration {#node-config-format-value}
 
 The @ref node-format-value format-type supports all [generic format options](@ref node-config-format).
+
+# Example Configuration {#node-format-value-example}
+
+@include node/etc/examples/formats/value.conf

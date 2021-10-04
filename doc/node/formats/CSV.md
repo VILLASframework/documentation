@@ -13,18 +13,11 @@ The @ref node-format-csv format-type supports the options documented on the foll
 - [line format options](@ref node-config-format-line)
 - [column format options](@ref node-config-format-column)
 
-# Example Configuration
+# Example Configuration {#node-format-csv-example}
 
-```json
-{
-  "type": "csv",
+@include node/etc/examples/formats/csv.conf
 
-  "separator": ",",
-  "delimiter": "\n",
-}
-```
-
-# Example Payload
+# Example Payload {#node-format-csv-payload}
 
 ```
 secs,nsecs,sequence,random,sine,square,triangle,ramp

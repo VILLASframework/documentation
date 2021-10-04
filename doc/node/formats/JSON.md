@@ -30,21 +30,12 @@ If this flag is used, all the objects in output are sorted by key. This is usefu
 ## escape_slash (boolean) = false {#node-config-format-json-escape-slash}
 
 Escape the `/` characters in strings with `\/`.
-# Example Configuration
 
-```json
-{
-  "type": "json",
-  "real_precision": 5,
+# Example Configuration {#node-format-json-example}
 
-  "indent": 2,
-  "compact": false,
-  "sort_keys": true,
-  "escape_slash": false,
-  "ensure_ascii": true,
-}
-```
-# Example Payload
+@include node/etc/examples/formats/json.conf
+
+# Example Payload {#node-format-json-payload}
 
 The structure of the JSON format is closely aligned with VILLASnode's internal data representation.
 

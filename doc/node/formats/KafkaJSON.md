@@ -11,22 +11,11 @@ The @ref node-format-json-kafka format-type supports all configuration options o
 
 ## schema (object) {#node-config-format-json-kafka-schema}
 
-# Example Configuration
+# Example Configuration {#node-format-json-kafka-example}
 
-```json
-{
-  "type": "json.kafka",
+@include node/etc/examples/formats/json-kafka.conf
 
-  "indent": 2,
-
-  "schema": {
-    "type": "struct",
-    "name": "villas-node.Value",
-  }
-}
-```
-
-# Example Payload
+# Example Payload {#node-format-json-kafka-payload}
 
 ```json
 {

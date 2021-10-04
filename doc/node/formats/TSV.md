@@ -14,18 +14,11 @@ The @ref node-format-tsv format-type supports the options documented on the foll
 - [line format options](@ref node-config-format-line)
 - [column format options](@ref node-config-format-column)
 
-# Example Configuration
+# Example Configuration {#node-format-tsv-example}
 
-```json
-{
-  "type": "tsv",
+@include node/etc/examples/formats/tsw.conf
 
-  "separator": ",",
-  "delimiter": "\n",
-}
-```
-
-# Example Payload
+# Example Payload {#node-format-tsv-payload}
 
 ```
 secs	nsecs	sequence	random	sine	square	triangle	ramp

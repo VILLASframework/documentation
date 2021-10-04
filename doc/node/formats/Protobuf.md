@@ -17,3 +17,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/prot
 # Configuration {#node-config-format-value}
 
 The @ref node-format-value format-type supports all [generic format options](@ref node-config-format).
+
+# Example Configuration {#node-format-protobuf-example}
+
+@include node/etc/examples/formats/protobuf.conf
