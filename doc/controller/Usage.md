@@ -80,3 +80,23 @@ $ villas-controller simulator --uuid ef6f6e46-044e-11e8-812f-17b6617a2f37 pause
 $ villas-controller simulator --uuid ef6f6e46-044e-11e8-812f-17b6617a2f37 resume
 $ villas-controller simulator --uuid ef6f6e46-044e-11e8-812f-17b6617a2f37 stop
 ```
+
+
+## Example: Kubernetes
+
+```bash
+MANAGER_UUID=614dc3d3-6825-47d3-b991-05d082eb2494
+SIMULATOR_UUID=9afeebf4-825a-45cd-bd25-1b6c219ed72a
+```
+
+### Create simulator
+
+```bash
+$ villas-controller --config etc/config_k8s.yaml simulator --uuid ${MANAGER_UUID} create --parameters-file etc/params_k8s_create.yaml
+```
+
+### Start job/simulation
+
+```bash
+$ villas-controller --config etc/config_k8s.yaml simulator --uuid ${SIMULATOR_UUID} start
+```
