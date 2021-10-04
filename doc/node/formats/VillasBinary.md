@@ -41,6 +41,12 @@ https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/vill
 
 The @ref node-format-villas-binary format-type supports all [generic format options](@ref node-config-format).
 
+In addition the following settings are supported:
+
+## source_index (integer) = 0 {#node-config-format-villas-binary-source_index}
+
+Configures the source index field which is a 8bit field in the packet header.
+
 # Example Payload
 
 @image html wireshark_udp.png Wireshark capture of UDP traffic width=50%
