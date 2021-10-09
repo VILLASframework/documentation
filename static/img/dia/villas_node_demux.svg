@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="19cm" height="14cm" viewBox="-241 408 369 261" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <text font-size="12.8016" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-200" y="420">
+    <tspan x="-200" y="420">GTNET-SKT</tspan>
+    <tspan x="-200" y="436.002">rtds_gtnet1</tspan>
+  </text>
+  <text font-size="12.4178" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-60" y="600">
+    <tspan x="-60" y="600">villas-node</tspan>
+    <tspan x="-60" y="615.522">lab11.conf</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="-100" y="500" width="80" height="80"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-100" y="500" width="80" height="80"/>
+  </g>
+  <image x="-90" y="510" width="60" height="60" xlink:href="images/logos/villas_node.svg"/>
+  <g>
+    <g>
+      <rect style="fill: #ffffff" x="-240" y="450" width="80" height="80"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-240" y="450" width="80" height="80"/>
+    </g>
+    <image x="-235" y="470" width="70" height="36.6796" xlink:href="&lt;broken&gt;"/>
+  </g>
+  <g>
+    <text font-size="12.8016" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-200" y="650">
+      <tspan x="-200" y="650">GTNET-SKT</tspan>
+      <tspan x="-200" y="666.002">rtds_gtnet2</tspan>
+    </text>
+    <g>
+      <g>
+        <rect style="fill: #ffffff" x="-240" y="550" width="80" height="80"/>
+        <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-240" y="550" width="80" height="80"/>
+      </g>
+      <image x="-235" y="570" width="70" height="36.6796" xlink:href="&lt;broken&gt;"/>
+    </g>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="40" y="450" width="80" height="80"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="40" y="450" width="80" height="80"/>
+  </g>
+  <image x="54.5032" y="463.998" width="50.0389" height="50.0388" xlink:href="images/icons/file.svg"/>
+  <text font-size="12.8016" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="80" y="440">
+    <tspan x="80" y="440">monitoring_log</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="-20" y1="520" x2="30.2639" y2="520"/>
+    <polygon style="fill: #000000" points="37.7639,520 27.7639,525 30.2639,520 27.7639,515 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="37.7639,520 27.7639,525 30.2639,520 27.7639,515 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="40" y="550" width="80" height="80"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="40" y="550" width="80" height="80"/>
+  </g>
+  <image x="50" y="560" width="60" height="57.2932" xlink:href="&lt;broken&gt;"/>
+  <text font-size="12.4178" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="80" y="650">
+    <tspan x="80" y="650">WebBrowser</tspan>
+    <tspan x="80" y="665.522">with Mockup</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="-20" y1="560" x2="30.2639" y2="560"/>
+    <polygon style="fill: #000000" points="37.7639,560 27.7639,565 30.2639,560 27.7639,555 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="37.7639,560 27.7639,565 30.2639,560 27.7639,555 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-160,490 -130,490 -130,520 -109.736,520 "/>
+    <polygon style="fill: #000000" points="-102.236,520 -112.236,525 -109.736,520 -112.236,515 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-102.236,520 -112.236,525 -109.736,520 -112.236,515 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-160,590 -130,590 -130,560 -109.736,560 "/>
+    <polygon style="fill: #000000" points="-102.236,560 -112.236,565 -109.736,560 -112.236,555 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-102.236,560 -112.236,565 -109.736,560 -112.236,555 "/>
+  </g>
+</svg>

@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="47cm"
+   height="21cm"
+   viewBox="0 -6 921 407"
+   id="svg4376"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="msg_format_RESERVE.dia.svg"
+   inkscape:export-filename="/Users/stv0g/workspace/rwth/villas/documentation/figures/dia/msg_format_RESERVE.png"
+   inkscape:export-xdpi="100.00055"
+   inkscape:export-ydpi="100.00055">
+  <metadata
+     id="metadata4612">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs4610" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1413"
+     inkscape:window-height="828"
+     id="namedview4608"
+     showgrid="false"
+     inkscape:zoom="0.55265958"
+     inkscape:cx="832.11213"
+     inkscape:cy="370.38423"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg4376" />
+  <rect
+     style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+     x="100"
+     y="20"
+     width="640"
+     height="360"
+     id="rect4378" />
+  <line
+     style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 4; stroke: #b1b1b1"
+     x1="420"
+     y1="0"
+     x2="420"
+     y2="400"
+     id="line4380" />
+  <rect
+     id="rect4384"
+     height="40"
+     width="80"
+     y="20"
+     x="100"
+     style="fill:#00af30;fill-opacity:1" />
+  <rect
+     id="rect4386"
+     height="40"
+     width="80"
+     y="20"
+     x="100"
+     style="fill:#00af30;fill-opacity:1;stroke:#000000;stroke-width:2" />
+  <text
+     id="text4388"
+     y="43.900002"
+     x="140"
+     style="font-style:normal;font-weight:normal;font-size:12.80000019px;font-family:sans-serif;text-anchor:middle;fill:#00af30;fill-opacity:1"
+     font-size="12.8">
+    <tspan
+       style="fill:#00af30;fill-opacity:1"
+       id="tspan4390"
+       y="43.900002"
+       x="140" />
+  </text>
+  <text
+     font-size="12.8"
+     style="fill:#ffffff;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal;"
+     x="140"
+     y="36.425"
+     id="text4392">
+    <tspan
+       x="140"
+       y="36.425"
+       id="tspan4394"
+       style="fill:#ffffff;">version:</tspan>
+    <tspan
+       x="140"
+       y="52.425"
+       id="tspan4396"
+       style="fill:#ffffff;">1</tspan>
+  </text>
+  <rect
+     id="rect4400"
+     height="40"
+     width="640"
+     y="180"
+     x="100"
+     style="fill:#00255c;fill-opacity:1" />
+  <rect
+     id="rect4402"
+     height="40"
+     width="640"
+     y="180"
+     x="100"
+     style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2" />
+  <text
+     id="text4404"
+     y="203.89999"
+     x="420"
+     style="font-style:normal;font-weight:normal;font-size:12.80000019px;font-family:sans-serif;text-anchor:middle;fill:#ffffff;"
+     font-size="12.8">
+    <tspan
+       id="tspan4406"
+       y="203.89999"
+       x="420"
+       style="fill:#ffffff;font-size:16.59106317px">data[0]</tspan>
+  </text>
+  <rect
+     id="rect4410"
+     height="40"
+     width="640"
+     y="340"
+     x="100"
+     style="fill:#00255c;fill-opacity:1" />
+  <rect
+     id="rect4412"
+     height="40"
+     width="640"
+     y="340"
+     x="100"
+     style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2" />
+  <text
+     id="text4414"
+     y="363.89999"
+     x="420"
+     style="font-style:normal;font-weight:normal;font-size:12.80000019px;font-family:sans-serif;text-anchor:middle;fill:#ffffff;"
+     font-size="12.8">
+    <tspan
+       id="tspan4416"
+       y="363.89999"
+       x="420"
+       style="fill:#ffffff;font-size:16.59106317px">data[length-1]</tspan>
+  </text>
+  <text
+     font-size="12.8"
+     style="fill: #000000;text-anchor:end;font-family:sans-serif;font-style:normal;font-weight:normal"
+     x="90"
+     y="24.425"
+     id="text4418">
+    <tspan
+       x="90"
+       y="24.425"
+       id="tspan4420">0x00</tspan>
+  </text>
+  <text
+     font-size="12.8"
+     style="fill: #000000;text-anchor:end;font-family:sans-serif;font-style:normal;font-weight:normal"
+     x="90"
+     y="64.425"
+     id="text4422">
+    <tspan
+       x="90"
+       y="64.425"
+       id="tspan4424">0x04</tspan>
+  </text>
+  <text
+     font-size="12.8"
+     style="fill: #000000;text-anchor:end;font-family:sans-serif;font-style:normal;font-weight:normal"
+     x="88.508"
+     y="104.425"
+     id="text4426">
+    <tspan
+       x="88.508"
+       y="104.425"
+       id="tspan4428">0x08</tspan>
+  </text>
+  <text
+     font-size="12.8"
+     style="fill: #000000;text-anchor:end;font-family:sans-serif;font-style:normal;font-weight:normal"
+     x="86"
+     y="144.425"
+     id="text4430">
+    <tspan
+       x="86"
+       y="144.425"
+       id="tspan4432">0x0C</tspan>
+  </text>
+  <text
+     font-size="12.8"
+     style="fill: #000000;text-anchor:end;font-family:sans-serif;font-style:normal;font-weight:normal"
+     x="86"
+     y="184.425"
+     id="text4434">
+    <tspan
+       x="86"
+       y="184.425"
+       id="tspan4436">0x10</tspan>
+  </text>
+  <text
+     font-size="12.8"
+     style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+     x="100"
+     y="6.95"
+     id="text4438">
+    <tspan
+       x="100"
+       y="6.95"
+       id="tspan4440">0</tspan>
+  </text>
+  <text
+     font-size="12.8"
+     style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+     x="180"
+     y="6.95"
+     id="text4442">
+    <tspan
+       x="180"
+       y="6.95"
+       id="tspan4444">4</tspan>
+  </text>
+  <text
+     font-size="12.8"
+     style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+     x="260"
+     y="6.95"
+     id="text4446">
+    <tspan
+       x="260"
+       y="6.95"
+       id="tspan4448">8</tspan>
+  </text>
+  <text
+     font-size="12.8"
+     style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+     x="340"
+     y="6.95"
+     id="text4450">
+    <tspan
+       x="340"
+       y="6.95"
+       id="tspan4452">12</tspan>
+  </text>
+  <text
+     font-size="12.8"
+     style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+     x="420"
+     y="6.95"
+     id="text4454">
+    <tspan
+       x="420"
+       y="6.95"
+       id="tspan4456">16</tspan>
+  </text>
+  <text
+     font-size="12.8"
+     style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+     x="500"
+     y="6.95"
+     id="text4458">
+    <tspan
+       x="500"
+       y="6.95"
+       id="tspan4460">20</tspan>
+  </text>
+  <text
+     font-size="12.8"
+     style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+     x="580"
+     y="6.95"
+     id="text4462">
+    <tspan
+       x="580"
+       y="6.95"
+       id="tspan4464">24</tspan>
+  </text>
+  <text
+     font-size="12.8"
+     style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+     x="660"
+     y="6.95"
+     id="text4466">
+    <tspan
+       x="660"
+       y="6.95"
+       id="tspan4468">28</tspan>
+  </text>
+  <text
+     font-size="12.8"
+     style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal"
+     x="731.904"
+     y="6.5644"
+     id="text4470">
+    <tspan
+       x="731.904"
+       y="6.5644"
+       id="tspan4472">32 bits</tspan>
+  </text>
+  <text
+     font-size="12.8"
+     style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal"
+     x="800"
+     y="96.425"
+     id="text4474">
+    <tspan
+       x="800"
+       y="96.425"
+       id="tspan4476">fixed preamble</tspan>
+    <tspan
+       x="800"
+       y="112.425"
+       id="tspan4478">(4 DWORDS)</tspan>
+  </text>
+  <text
+     font-size="12.8"
+     style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal"
+     x="800"
+     y="276.425"
+     id="text4480">
+    <tspan
+       x="800"
+       y="276.425"
+       id="tspan4482">data</tspan>
+    <tspan
+       x="800"
+       y="292.425"
+       id="tspan4484">(length DWORDS)</tspan>
+  </text>
+  <rect
+     id="rect4488"
+     height="40"
+     width="640"
+     y="60"
+     x="100"
+     style="fill:#00af30;fill-opacity:1" />
+  <rect
+     id="rect4490"
+     height="40"
+     width="640"
+     y="60"
+     x="100"
+     style="fill:#00af30;fill-opacity:1;stroke:#000000;stroke-width:2" />
+  <text
+     id="text4492"
+     y="83.900002"
+     x="420"
+     style="font-style:normal;font-weight:normal;font-size:12.80000019px;font-family:sans-serif;text-anchor:middle;fill:#ffffff;fill-opacity:1;"
+     font-size="12.8">
+    <tspan
+       style="fill:#ffffff;fill-opacity:1;font-size:16.59106317px"
+       id="tspan4494"
+       y="83.900002"
+       x="420">sequence</tspan>
+  </text>
+  <line
+     style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #4d4d4d"
+     x1="740"
+     y1="180"
+     x2="920"
+     y2="180"
+     id="line4496" />
+  <line
+     style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #4d4d4d"
+     x1="740"
+     y1="20"
+     x2="920"
+     y2="20"
+     id="line4498" />
+  <path
+     style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+     d="M 750 180 C 770,180 750,280 780,280"
+     id="path4500" />
+  <line
+     style="fill: none; fill-opacity:0; stroke-width: 10; stroke-dasharray: 10; stroke: #000000"
+     x1="420"
+     y1="220"
+     x2="420"
+     y2="340"
+     id="line4502" />
+  <line
+     style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #4d4d4d"
+     x1="740"
+     y1="380"
+     x2="920"
+     y2="380"
+     id="line4504" />
+  <path
+     style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+     d="M 750 380 C 770,380 750,280 780,280"
+     id="path4506" />
+  <rect
+     id="rect4510"
+     height="40"
+     width="40"
+     y="20"
+     x="180"
+     style="fill:#00af30;fill-opacity:1" />
+  <rect
+     id="rect4512"
+     height="40"
+     width="40"
+     y="20"
+     x="180"
+     style="fill:#00af30;fill-opacity:1;stroke:#000000;stroke-width:2" />
+  <text
+     font-size="16.9333"
+     style="fill:#ffffff;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700;"
+     x="200"
+     y="45.875"
+     id="text4514">
+    <tspan
+       x="200"
+       y="45.875"
+       id="tspan4516"
+       style="fill:#ffffff;">0</tspan>
+  </text>
+  <rect
+     id="rect4520"
+     height="40"
+     width="320"
+     y="20"
+     x="420"
+     style="fill:#00af30;fill-opacity:1" />
+  <rect
+     id="rect4522"
+     height="40"
+     width="320"
+     y="20"
+     x="420"
+     style="fill:#00af30;fill-opacity:1;stroke:#000000;stroke-width:2" />
+  <text
+     id="text4524"
+     y="43.900002"
+     x="580"
+     style="font-style:normal;font-weight:normal;font-size:12.80000019px;font-family:sans-serif;text-anchor:middle;fill:#ffffff;fill-opacity:1;"
+     font-size="12.8">
+    <tspan
+       style="fill:#ffffff;fill-opacity:1;font-size:16.59106317px"
+       id="tspan4526"
+       y="43.900002"
+       x="580">length</tspan>
+  </text>
+  <text
+     font-size="12.8"
+     style="fill: #000000;text-anchor:end;font-family:sans-serif;font-style:normal;font-weight:normal"
+     x="84"
+     y="384.425"
+     id="text4528">
+    <tspan
+       x="84"
+       y="384.425"
+       id="tspan4530">4*(length+4)</tspan>
+  </text>
+  <rect
+     id="rect4534"
+     height="40"
+     width="640"
+     y="100"
+     x="100"
+     style="fill:#0075be;fill-opacity:1" />
+  <rect
+     id="rect4536"
+     height="40"
+     width="640"
+     y="100"
+     x="100"
+     style="fill:#0075be;fill-opacity:1;stroke:#000000;stroke-width:2" />
+  <text
+     id="text4538"
+     y="123.9"
+     x="420"
+     style="font-style:normal;font-weight:normal;font-size:12.80000019px;font-family:sans-serif;text-anchor:middle;fill:#ffffff;fill-opacity:1;"
+     font-size="12.8">
+    <tspan
+       style="fill:#ffffff;fill-opacity:1;font-size:16.59106317px"
+       id="tspan4540"
+       y="123.9"
+       x="420">timestamp.seconds</tspan>
+  </text>
+  <text
+     font-size="12.8"
+     style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal"
+     x="420"
+     y="120"
+     id="text4542">
+    <tspan
+       x="420"
+       y="120"
+       id="tspan4544" />
+  </text>
+  <text
+     font-size="12.8"
+     style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal"
+     x="420"
+     y="120"
+     id="text4546">
+    <tspan
+       x="420"
+       y="120"
+       id="tspan4548" />
+  </text>
+  <path
+     style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+     d="M 754 20 C 774,20 750,100 780,100"
+     id="path4550" />
+  <path
+     style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+     d="M 754 180 C 774,180 750,100 780,100"
+     id="path4552" />
+  <rect
+     id="rect4556"
+     height="40"
+     width="640"
+     y="140"
+     x="100"
+     style="fill:#0075be;fill-opacity:1" />
+  <rect
+     id="rect4558"
+     height="40"
+     width="640"
+     y="140"
+     x="100"
+     style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2" />
+  <text
+     id="text4560"
+     y="163.89999"
+     x="420"
+     style="font-style:normal;font-weight:normal;font-size:12.80000019px;font-family:sans-serif;text-anchor:middle;fill:#ffffff;"
+     font-size="12.8">
+    <tspan
+       id="tspan4562"
+       y="163.89999"
+       x="420"
+       style="fill:#ffffff;font-size:16.59106317px">timestamp.nanoseconds</tspan>
+  </text>
+  <rect
+     id="rect4566"
+     height="40"
+     width="160"
+     y="20"
+     x="260"
+     style="fill:#00af30;fill-opacity:1" />
+  <rect
+     id="rect4568"
+     height="40"
+     width="160"
+     y="20"
+     x="260"
+     style="fill:#00af30;fill-opacity:1;stroke:#000000;stroke-width:2" />
+  <text
+     id="text4570"
+     y="43.900002"
+     x="340"
+     style="font-style:normal;font-weight:normal;font-size:12.80000019px;font-family:sans-serif;text-anchor:middle;fill:#ffffff;fill-opacity:1;"
+     font-size="12.8">
+    <tspan
+       style="fill:#ffffff;fill-opacity:1;font-size:16.59106317px"
+       id="tspan4572"
+       y="43.900002"
+       x="340">node_id</tspan>
+  </text>
+  <g
+     id="g4574">
+    <rect
+       style="fill: #e5e5e5"
+       x="220"
+       y="20"
+       width="42"
+       height="40"
+       id="rect4576" />
+    <rect
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x="220"
+       y="20"
+       width="42"
+       height="40"
+       id="rect4578" />
+    <text
+       font-size="12.8"
+       style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+       x="241"
+       y="43.9"
+       id="text4580">
+      <tspan
+         x="241"
+         y="43.9"
+         id="tspan4582" />
+    </text>
+  </g>
+  <text
+     font-size="12.8"
+     style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal"
+     x="580"
+     y="40"
+     id="text4584">
+    <tspan
+       x="580"
+       y="40"
+       id="tspan4586" />
+  </text>
+  <text
+     font-size="10.5438"
+     style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+     x="241"
+     y="30.4702"
+     id="text4588">
+    <tspan
+       x="241"
+       y="30.4702"
+       id="tspan4590">R</tspan>
+    <tspan
+       x="241"
+       y="43.65"
+       id="tspan4592">E</tspan>
+    <tspan
+       x="241"
+       y="56.8298"
+       id="tspan4594">S</tspan>
+  </text>
+  <text
+     font-size="12.8"
+     style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal"
+     x="460"
+     y="276.425"
+     id="text4596">
+    <tspan
+       x="460"
+       y="276.425"
+       id="tspan4598">Data can be either float or uint32_t</tspan>
+    <tspan
+       x="460"
+       y="292.425"
+       id="tspan4600">Interpretation is up to the receiving side</tspan>
+  </text>
+  <text
+     font-size="12.8"
+     style="fill: #000000;text-anchor:end;font-family:sans-serif;font-style:normal;font-weight:normal"
+     x="380"
+     y="276.425"
+     id="text4602">
+    <tspan
+       x="380"
+       y="276.425"
+       id="tspan4604">All multi-byte fields are</tspan>
+    <tspan
+       x="380"
+       y="292.425"
+       id="tspan4606">in network byte-order (big endian)</tspan>
+  </text>
+</svg>

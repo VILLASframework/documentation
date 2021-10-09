@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="30cm" height="7cm" viewBox="250 298 591 135" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <text font-size="12.4178" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="460" y="400">
+    <tspan x="460" y="400">villas-pipe</tspan>
+    <tspan x="460" y="415.522">lab3.conf</tspan>
+    <tspan x="460" y="431.044">udp_node1</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="420" y1="320" x2="349.736" y2="320"/>
+    <polygon style="fill: #000000" points="342.236,320 352.236,315 349.736,320 352.236,325 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="342.236,320 352.236,315 349.736,320 352.236,325 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="340" y1="360" x2="410.264" y2="360"/>
+    <polygon style="fill: #000000" points="417.764,360 407.764,365 410.264,360 407.764,355 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="417.764,360 407.764,365 410.264,360 407.764,355 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="580" y1="320" x2="509.736" y2="320"/>
+    <polygon style="fill: #000000" points="502.236,320 512.236,315 509.736,320 512.236,325 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="502.236,320 512.236,315 509.736,320 512.236,325 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="500" y1="360" x2="570.264" y2="360"/>
+    <polygon style="fill: #000000" points="577.764,360 567.764,365 570.264,360 567.764,355 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="577.764,360 567.764,365 570.264,360 567.764,355 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="540" y="376.907">
+    <tspan x="540" y="376.907">UDP</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="540" y="336.907">
+    <tspan x="540" y="336.907">UDP</tspan>
+  </text>
+  <g>
+    <g>
+      <rect style="fill: #ffffff" x="420" y="300" width="80" height="80"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="420" y="300" width="80" height="80"/>
+    </g>
+    <image x="430" y="310" width="60" height="60" xlink:href="images/logos/villas_node.svg"/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="380" y="334.431">
+    <tspan x="380" y="334.431">STDIO</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="380" y="374.431">
+    <tspan x="380" y="374.431">STDIO</tspan>
+  </text>
+  <g>
+    <g>
+      <rect style="fill: #ffffff" x="580" y="300" width="80" height="80"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="580" y="300" width="80" height="80"/>
+    </g>
+    <image x="590" y="310" width="60" height="60" xlink:href="images/logos/villas_node.svg"/>
+  </g>
+  <text font-size="12.4178" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="620" y="400">
+    <tspan x="620" y="400">villas-node</tspan>
+    <tspan x="620" y="415.522">lab12.conf</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="760" y1="320" x2="669.736" y2="320"/>
+    <polygon style="fill: #000000" points="662.236,320 672.236,315 669.736,320 672.236,325 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="662.236,320 672.236,315 669.736,320 672.236,325 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="660" y1="360" x2="750.264" y2="360"/>
+    <polygon style="fill: #000000" points="757.764,360 747.764,365 750.264,360 747.764,355 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="757.764,360 747.764,365 750.264,360 747.764,355 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="712.226" y="375.967">
+    <tspan x="712.226" y="375.967">WebSockets</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="712.226" y="335.967">
+    <tspan x="712.226" y="335.967">WebSockets</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="760" y="300" width="80" height="80"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="760" y="300" width="80" height="80"/>
+  </g>
+  <image x="770" y="310" width="60" height="57.2932" xlink:href="&lt;broken&gt;"/>
+  <text font-size="12.4178" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="800" y="400">
+    <tspan x="800" y="400">WebBrowser</tspan>
+    <tspan x="800" y="415.522">with Mockup</tspan>
+  </text>
+  <text font-size="12.4178" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="300" y="400">
+    <tspan x="300" y="400">villas-signal</tspan>
+    <tspan x="300" y="415.522">mixed -v5 -r500</tspan>
+  </text>
+  <g>
+    <g>
+      <rect style="fill: #ffffff" x="260" y="300" width="80" height="80"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="260" y="300" width="80" height="80"/>
+    </g>
+    <image x="270" y="310" width="60" height="60" xlink:href="images/logos/villas_node.svg"/>
+  </g>
+</svg>

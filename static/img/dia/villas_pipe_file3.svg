@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="21cm" height="13cm" viewBox="-251 158 402 256" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="-170" y1="290" x2="-99.7361" y2="290"/>
+    <polygon style="fill: #000000" points="-92.2361,290 -102.236,295 -99.7361,290 -102.236,285 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-92.2361,290 -102.236,295 -99.7361,290 -102.236,285 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-134" y="306.931">
+    <tspan x="-134" y="306.931">STDIO</tspan>
+  </text>
+  <g>
+    <text font-size="12.4178" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-50" y="330">
+      <tspan x="-50" y="330">villas-pipe</tspan>
+      <tspan x="-50" y="345.522">lab3.conf</tspan>
+      <tspan x="-50" y="361.044">udp_node1</tspan>
+    </text>
+    <g>
+      <rect style="fill: #ffffff" x="-90" y="230" width="80" height="80"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-90" y="230" width="80" height="80"/>
+    </g>
+    <image x="-80" y="240" width="60" height="60" xlink:href="images/logos/villas_node.svg"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="-10" y1="290" x2="60.2639" y2="290"/>
+    <polygon style="fill: #000000" points="67.7639,290 57.7639,295 60.2639,290 57.7639,285 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="67.7639,290 57.7639,295 60.2639,290 57.7639,285 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="26" y="306.931">
+    <tspan x="26" y="306.931">UDP</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="-250" y="180" width="80" height="80"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-250" y="180" width="80" height="80"/>
+  </g>
+  <image x="-235.496" y="193.998" width="50.0389" height="50.0388" xlink:href="images/icons/file.svg"/>
+  <text font-size="12.8016" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-210" y="170">
+    <tspan x="-210" y="170">file_recv.dat</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="-90" y1="250" x2="-160.264" y2="250"/>
+    <polygon style="fill: #000000" points="-167.764,250 -157.764,245 -160.264,250 -157.764,255 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-167.764,250 -157.764,245 -160.264,250 -157.764,255 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-130" y="244.431">
+    <tspan x="-130" y="244.431">STDIO</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="70" y1="250" x2="-0.263932" y2="250"/>
+    <polygon style="fill: #000000" points="-7.76393,250 2.23607,245 -0.263932,250 2.23607,255 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-7.76393,250 2.23607,245 -0.263932,250 2.23607,255 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="30" y="264.431">
+    <tspan x="30" y="264.431">UDP</tspan>
+  </text>
+  <g>
+    <g>
+      <rect style="fill: #ffffff" x="70" y="230" width="80" height="80"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="70" y="230" width="80" height="80"/>
+    </g>
+    <image x="75" y="250" width="70" height="36.6796" xlink:href="&lt;broken&gt;"/>
+    <text font-size="12.8016" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="110" y="330">
+      <tspan x="110" y="330">GTNET-SKT</tspan>
+      <tspan x="110" y="346.002">card</tspan>
+    </text>
+  </g>
+  <text font-size="12.4178" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-210" y="380">
+    <tspan x="-210" y="380">villas-pipe</tspan>
+    <tspan x="-210" y="395.522">lab7.conf</tspan>
+    <tspan x="-210" y="411.044">file_node1</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="-250" y="280" width="80" height="80"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-250" y="280" width="80" height="80"/>
+  </g>
+  <image x="-240" y="290" width="60" height="60" xlink:href="images/logos/villas_node.svg"/>
+  <image x="-246" y="322.222" width="33.3166" height="33.3166" xlink:href="images/icons/file.svg"/>
+</svg>
