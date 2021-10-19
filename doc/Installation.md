@@ -19,7 +19,9 @@ For small tests and beginners we recommend a local Minikube setup.
 2. [Install Helm](https://helm.sh/docs/intro/quickstart/)
 3. Enable the Ingress controller in your minikube cluster:
 
-	minikube addons enable ingress
+```bash
+minikube addons enable ingress
+```
 
 # Helm chart {#installation-helm}
 
@@ -30,26 +32,34 @@ helm repo add fein https://packages.fein-aachen.org/helm/charts/
 helm repo update
 ```
 
-After adjusting your configuration settings (see next section) you can deploy the chart with the following command:
+Create a minimal chart configuration file named `values.yaml` with the following contents:
+Please have a look at the charts [default values](https://git.rwth-aachen.de/acs/public/catalogue/-/blob/master/charts/villas/values.yaml) for more details about the available configuration options.
+
+```yaml
+web:
+  admin:
+    mail: admin@example.com
+    username: admin
+    password: test
+
+ingress:
+  host: villas.test
+
+broker:
+  auth:
+    username: admin
+    password: test
+    erlangCookie: iKpbgHPsHAj8x58kzFWVT23xahSQ03Vw
+```
+
+Once the configuration file has been prepared, start the installation with the following command: 
 
 ```bash
 helm install -f values.yaml villas fein/villas
 ```
 
-# Configuration {#installation-config}
-
-Please have a look at the charts [default values](https://git.rwth-aachen.de/acs/public/catalogue/-/blob/master/charts/villas/values.yaml).
-
-Also have a look at the [Helm charts Git repo](https://git.rwth-aachen.de/acs/public/catalogue) for more details.
-
-# Admin Password {#installation-admin-pass}
-
-Run the following kubectl commands to retrieve the initial admin credentials:
-
-```
-echo ADMIN_USER: admin
-echo ADMIN_PASS: $(kubectl get secret --namespace villas villas-web -o jsonpath="{.data.password}" | base64 --decode)
-```
+Once the installation has completed, you can visit the VILLASweb interface at the following address: https://villas.test/
+Please use the username / password from above (`admin` / `test`)
 
 # Access the application {#installation-access}
 
