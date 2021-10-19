@@ -58,6 +58,15 @@ Once the configuration file has been prepared, start the installation with the f
 helm install -f values.yaml villas fein/villas
 ```
 
+As a last step we need to divert the DNS resolver to the correct IP address for the local `villas.test` domain.
+On Linux or macOS systems you can do so by simply running the following command:
+
+```bash
+minikube ip | sudo tee -a /etc/hosts
+```
+
+For other systems please follow this guide and use the output of the `minikube ip` command as the IP address and `villas.test` as the hostname which you want to overwrite.
+
 Once the installation has completed, you can visit the VILLASweb interface at the following address: https://villas.test/
 Please use the username / password from above (`admin` / `test`)
 
