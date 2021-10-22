@@ -17,7 +17,13 @@ For small tests and beginners we recommend a local Minikube setup.
 
 1. [Install Minikube](https://minikube.sigs.k8s.io/docs/start/)
 2. [Install Helm](https://helm.sh/docs/intro/quickstart/)
-3. Enable the Ingress controller in your minikube cluster:
+3. Start Minikube:
+
+```bash
+minikube start
+```
+
+4. Enable the Ingress controller in your minikube cluster:
 
 ```bash
 minikube addons enable ingress
@@ -67,9 +73,7 @@ minikube ip | sudo tee -a /etc/hosts
 
 For other systems please follow this guide and use the output of the `minikube ip` command as the IP address and `villas.test` as the hostname which you want to overwrite.
 
-Once the installation has completed, you can visit the VILLASweb interface at the following address: https://villas.test/
-Please use the username / password from above (`admin` / `test`)
-
 # Access the application {#installation-access}
 
-@todo Add explanation how to access Ingress
+Once the installation has completed, you can visit the VILLASweb interface at the following address: https://villas.test/
+Please use the username / password from above (`admin` / `test`)
