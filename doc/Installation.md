@@ -43,10 +43,11 @@ Please have a look at the charts [default values](https://git.rwth-aachen.de/acs
 
 ```yaml
 web:
-  admin:
-    mail: admin@example.com
-    username: admin
-    password: test
+  auth:
+    admin:
+      mail: admin@example.com
+      username: admin
+      password: test
 
 ingress:
   host: villas.test
@@ -71,7 +72,7 @@ On Linux or macOS systems you can do so by simply running the following command:
 minikube ip | sudo tee -a /etc/hosts
 ```
 
-For other systems please follow this guide and use the output of the `minikube ip` command as the IP address and `villas.test` as the hostname which you want to overwrite.
+For other systems please follow [this guide](https://docs.rackspace.com/support/how-to/modify-your-hosts-file/) and use the output of the `minikube ip` command as the IP address and `villas.test` as the hostname which you want to overwrite.
 
 # Access the application {#installation-access}
 
