@@ -47,7 +47,7 @@ web:
     admin:
       mail: admin@example.com
       username: admin
-      password: test
+      password: test1234
 
 ingress:
   port: 8080
@@ -56,7 +56,7 @@ ingress:
 broker:
   auth:
     username: admin
-    password: test
+    password: test1234
     erlangCookie: iKpbgHPsHAj8x58kzFWVT23xahSQ03Vw
 ```
 
