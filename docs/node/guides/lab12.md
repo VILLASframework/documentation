@@ -2,7 +2,7 @@
 sidebar_position: 12
 ---
 
-# Lab 12: WebSockets {#node-guide-lab12}
+# Lab 12: WebSockets
 
 <figure align="center">
     <img alt="Websocket node-type Example" src="/img/dia/villas_node_websocket.svg" height="180px" />

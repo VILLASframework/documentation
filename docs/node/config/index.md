@@ -16,17 +16,17 @@ VILLASnode currently supports two config file formats:
 - [JSON](https://www.json.org/) (recommended)
 - [libconfig](http://hyperrealm.github.io/libconfig/libconfig_manual.html#Configuration-Files)
 
-**Note:** Consider using the @ref node-usage-conf2json command to migrate your old configurations to JSON.
+**Note:** Consider using the [`villas conf2json`](../usage/villas-conf2json.md) command to migrate your old configurations to JSON.
 
 # Structure {#node-config-structure}
 
 At the top level, the configuration file consists of these sections:
 
-- @subpage node-config-global
-- @subpage node-config-logging
-- @subpage node-config-http
-- @subpage node-config-nodes
-- @subpage node-config-paths
+- [`global`](global.md)
+- [`logging`](logging.md)
+- [`http`](http.md)
+- [`nodes`](nodes.md)
+- [`paths`](paths.md)
 
 # Examples {#node-config-examples}
 

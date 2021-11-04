@@ -1,4 +1,4 @@
-# Usage {#controller-usage}
+# Usage
 
 VILLAScontroller consist of two parts:
 

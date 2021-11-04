@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # Getting Started {#node-guide}
@@ -7,9 +7,9 @@ sidebar_position: 2
 We put some effort in getting you started as smooth as possible.
 This tutorial introduces the basic concepts and terminologies of VILLASnode and shows some examples.
 
-Please [look below](@ref node-guide-video) for a video recording of a webinar covering the topics of this guide.
+Please look below for a [video recording](#video) of a webinar covering the topics of this guide.
 
-# Preparation {#node-guide-preparation}
+## Preparation {#node-guide-preparation}
 
 The [installation](installation.md) page lists several ways to install VILLASnode on your machine.
 
@@ -27,7 +27,7 @@ For some @ref node-guide-labs two interactive shells are required. To open a sec
 docker exec --tty --interactive $(docker ps -qn1) bash
 ```
 
-# Terminology {#node-terminology}
+## Terminology {#node-terminology}
 
 Before we start to use the VILLASnode tools, we will introduce some terminology:
 
@@ -42,7 +42,7 @@ Before we start to use the VILLASnode tools, we will introduce some terminology:
 	<figcaption>A two site scenario with VILLASfpga.</figcaption>
 </figure>
 
-# Tools {#node-tools}
+## Tools {#node-tools}
 
 VILLASnode is a collection of command line tools which follow the [Unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy):
 
@@ -66,31 +66,31 @@ In this guide we will show the following tools:
 
 A complete reference of all available options for those tools can be found on the @ref node-usage page.
 
-# Lab assignments <a id="node-guide-labs" />
+## Lab assignments <a id="node-guide-labs" />
 
 To get you started quickly, we prepared a series of small demos which you can try yourself.
 
 __All configurations files are available here: <https://git.rwth-aachen.de/acs/public/villas/node/tree/master/etc/labs>__
 
-- @subpage node-guide-lab1
-- @subpage node-guide-lab2
-- @subpage node-guide-lab3
-- @subpage node-guide-lab4
-- @subpage node-guide-lab5
-- @subpage node-guide-lab6
-- @subpage node-guide-lab7
-- @subpage node-guide-lab8
-- @subpage node-guide-lab9
-- @subpage node-guide-lab10
-- @subpage node-guide-lab11
-- @subpage node-guide-lab12
-- @subpage node-guide-lab13
-- @subpage node-guide-lab14
-- @subpage node-guide-lab15
-- @subpage node-guide-lab16
-- @subpage node-guide-lab17
+- [Lab1](lab1.md): Signal generation
+- [Lab2](lab2.md): A simple configuration file
+- [Lab3](lab3.md): Sending data to node from standard input
+- [Lab4](lab4.md): Receive data from a node and show it on standard output
+- [Lab5](lab5.md): Send sine wave to simulator
+- [Lab6](lab6.md): Write received sample data to a file
+- [Lab7](lab7.md): Read samples from file and send them to node
+- [Lab8](lab8.md): Use hook function to modify/filter the data
+- [Lab9](lab9.md): Network emulation and statistics
+- [Lab10](lab10.md): The daemon
+- [Lab11](lab11.md): Multi / Demultiplexing
+- [Lab12](lab12.md): WebSockets
+- [Lab13](lab13.md): Measure Round-trip time between RTDS and VILLASnode
+- [Lab14](lab14.md): File comparison
+- [Lab15](lab15.md): Working with EtherCAT
+- [Lab16](lab16.md): Visualize simulation data with InfluxDB and Grafana
+- [Lab17](lab17.md): RTDS-RTDS Co-simulation
 
-# Video {#node-guide-video}
+## Video
 
 This webinar was recorded during the preparation of the RT-SuperLab demonstration.
 

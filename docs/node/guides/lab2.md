@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Lab 2: A simple configuration file  {#node-guide-lab2}
+# Lab 2: A simple configuration file
 
 Before we proceed to other tools,  we need to get familiar with VILLASnode's configuration file format.
 The configuration file is used to describe the connectivity of a _super node_. Hence, it contains a list of _nodes_ and _paths_ and general settings.

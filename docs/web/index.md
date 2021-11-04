@@ -4,7 +4,7 @@ sidebar_label: Overview
 sidebar_position: 1
 ---
 
-# VILLASweb {#web} <img src="/img/logos/villas_web.svg" width="115px" align="right" />
+# VILLASweb <img src="/img/logos/villas_web.svg" width="115px" align="right" />
 
 VILLASweb is a tool to configure real-time co-simulations and display simulation real-time data in the web browser.
 The term **frontend** refers to this project, the actual website.

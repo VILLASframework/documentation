@@ -11,7 +11,7 @@ The server requires root privileges to:
 
  - Enable the realtime FIFO scheduler
  - Increase the task priority
- - Configure the network emulator (@ref node-netem)
+ - Configure the [network emulator](../netem.md)
  - Change the SMP affinity of threads and network interrupts
 
 # Usage

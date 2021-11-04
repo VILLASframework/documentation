@@ -1,24 +1,24 @@
-# Tabulator-separated values {#node-format-tsv}
+# Tabulator-separated values
 
 See also https://en.wikipedia.org/wiki/Tab-separated_values
 
-# Implementation
+## Implementation
 
 The source code of the format-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/column.cpp
 
-# Configuration {#node-config-format-tsv}
+## Configuration {#config}
 
 The @ref node-format-tsv format-type supports the options documented on the following pages:
 - [generic format options](@ref node-config-format)
 - [line format options](@ref node-config-format-line)
 - [column format options](@ref node-config-format-column)
 
-# Example Configuration {#node-format-tsv-example}
+## Example Configuration {#example}
 
 @include node/etc/examples/formats/tsw.conf
 
-# Example Payload {#node-format-tsv-payload}
+## Example Payload {#payload}
 
 ```tsv
 secs	nsecs	sequence	random	sine	square	triangle	ramp

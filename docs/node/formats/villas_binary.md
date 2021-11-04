@@ -1,4 +1,4 @@
-# Custom VILLAS Binary {#node-format-villas-binary}
+# Custom VILLAS Binary
 
 We designed a lightweight message format (or protocol) to facilitate a fast transmission with minimal (de-)serialization overhead.
 The on-wire format of the network datagrams is not subject to a standardization process.
@@ -35,26 +35,26 @@ All values are sent in **network byte order** (big endian)!
 
 @see msg for implementation details.
 
-# Implementation
+## Implementation
 
 The source code of the format-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/villas_binary.cpp
 
-# Configuration {#node-config-format-villas-binary}
+## Configuration {#config}
 
 The @ref node-format-villas-binary format-type supports all [generic format options](@ref node-config-format).
 
 In addition the following settings are supported:
 
-## source_index (integer) = 0 {#node-config-format-villas-binary-source_index}
+### source_index (integer) = 0 {#config-source_index}
 
 Configures the source index field which is a 8bit field in the packet header.
 
-# Example Configuration {#node-format-villas-binary-example}
+## Example Configuration {#example}
 
 @include node/etc/examples/formats/villas-binary.conf
 
-# Example Payload {#node-format-villas-binary-payload}
+## Example Payload {#payload}
 
 <figure align="center">
     <img alt="Wireshark capture of UDP traffic" src="/img/screenshots/node/wireshark_udp.png" width="90%" />

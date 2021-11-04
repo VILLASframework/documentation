@@ -1,42 +1,42 @@
-# Configuration {#fpga-config}
+# Configuration
 
 **Warning:** Section is outdated
 
 VILLASfpga is configured via the standard VILLASnode configuration file.
-Unlike the other node-types, the `fpga` node-type requires settings in two places:
+Unlike the other node-types, the [VILLASfpga node-type](../node/nodes/fpga.md) requires settings in two places:
 
-- Configuration of the FPGA: @ref fpga-config-card
-- Configuration of the VILLASnode / VLLASfpga interface: @ref node-config-fpga
+- [Configuration of the FPGA](../node/nodes/fpga.md#config)
+- [Configuration of the VILLASnode / VLLASfpga interface]
 
-## FPGA Card {#fpga-config-card}
+## FPGA Card {#card}
 
 This section is a group (like `nodes`) which allows the user to use multiple FPGA devices at the same time.
 Like nodes, each FPGA has it's own name:
 
-### id (string: "vendor:product") {#fpga-config-card-id}
+### id (string: "vendor:product") {#card-id}
 
 A string containing the vendor and product of the FPGA card as shown by `lscpi`.
 
-### slot (string) {#fpga-config-card-slot}
+### slot (string) {#card-slot}
 
 The slot in which the FPGA card is located as shown by `lspci`.
 
-### intc (integer: base address) {#fpga-config-card-intc}
+### intc (integer: base address) {#card-intc}
 
 The AXI4-Lite base address used to access registers of the interrupt controller.
 
-### reset (integer: base address) {#fpga-config-card-reset}
+### reset (integer: base address) {#card-reset}
 
 The AXI4-Lite base address used to access registers of the reset controller.
 
-### do_reset (boolean) {#fpga-config-card-do_reset}
+### do_reset (boolean) {#card-do_reset}
 
 Should VILLASnode perform a reset of the FPGA board when started?
 
-### paths (array of groups) {#fpga-config-card-paths}
+### paths (array of groups) {#card-paths}
 
 A list of connections within the FPGA fabric which should be configured.
-This is analog to the @ref node-config-path setting of VILLASnode.
+This is analog to the [`paths` configuration section](../node/config/paths.md) of VILLASnode.
 
 ### Example
 
@@ -61,20 +61,20 @@ fpgas = {
 }
 ```
 
-## FPGA IP core {#fpga-config-ip}
+## FPGA IP core {#ip}
 
 Each FPGA IP core requires at least the following setting.
 Depending on the [VLNV](https://www.xilinx.com/support/answers/50478.html) of each IP core, additional settings can be configured.
 
-### vlnv (string: "vendor:library:name:version:) {#fpga-config-ip-vlnv}
+### vlnv (string: "vendor:library:name:version:) {#ip-vlnv}
 
 A [VLNV](https://www.xilinx.com/support/answers/50478.html) identifier to properly identify the version and type of this IP core.
 
-### baseaddr (integer: baseaddr) {#fpga-config-ip-baseaddr}
+### baseaddr (integer: baseaddr) {#ip-baseaddr}
 
 The base address for register access.
 
-### port (integer) {#fpga-config-ip-port}
+### port (integer) {#ip-port}
 
 The port number of a switch to which this IP core is connected.
 

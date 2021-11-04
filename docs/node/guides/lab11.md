@@ -2,7 +2,7 @@
 sidebar_position: 11
 ---
 
-# Lab 11: Multi / Demultiplexing {#node-guide-lab11}
+# Lab 11: Multi / Demultiplexing
 
 <figure align="center">
     <img alt="(De-)Multiplexing Example" src="/img/dia/villas_node_demux.svg" width="50%" />
@@ -14,9 +14,9 @@ This is implemented in VILLASnode in the concept of (de-)multiplexing.
 
 The following configuration settings in a path definition are relavant and described in this lab session.
 
- - @ref node-config-path-mode
- - @ref node-config-path-mask
- - @ref node-config-path-rate
+ - [Path `mode`](../config/paths.md#mode)
+ - [Path `mask`](../config/paths.md#mask)
+ - [Path `rate`](../config/paths.md#rate)
 
 ## Multiplexing
 

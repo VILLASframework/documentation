@@ -1,29 +1,29 @@
-# Raw binary values {#node-format-raw}
+# Raw binary values
 
 VILLASnode supports sending samples formated as raw binary data.
 
 Signal values are encoded according to their configured data-type in either integer or IEEE-754 floating point values.
 
-# Implementation
+## Implementation
 
 The source code of the format-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/raw.cpp
 
-# Configuration {#node-config-format-raw}
+## Configuration {#config}
 
 The @ref node-format-raw format-type supports all [generic format options](@ref node-config-format) plus the following:
 
-## bits (integer) = 32 {#node-config-format-raw-bits}
+### bits (integer) = 32 {#config-bits}
 
 The word size of each value in bits.
 
-## endianess (string: "little" | "big") = "little" {#node-config-format-raw-endianess}
+### endianess (string: "little" | "big") = "little" {#config-endianess}
 
 The [endianess](https://en.wikipedia.org/wiki/Endianness) of multi-byte words.
 
 The setting not be provided for `bits = 8`.
 
-## fake (boolean) = false {#node-config-format-raw-fake}
+### fake (boolean) = false {#config-fake}
 
 If enabled, the fake header mode VILLASnode uses the first three raw values in each en/decoded payload for the following purpose:
 
@@ -33,11 +33,11 @@ If enabled, the fake header mode VILLASnode uses the first three raw values in e
 | `ts.origin.sec`  | Timestamp (in seconds) of sampling instant at origin            | integer   |
 | `ts.origin.nsec` | Timestamp (nano-seconds fraction) of sampling instant at origin | integer   |
 
-# Example Configuration {#node-format-raw-example}
+## Example Configuration {#example}
 
 @include node/etc/examples/formats/raw.conf
 
-# Notes
+## Notes
 
 - Floating-point encoding is only supported for width larger or equal to 32 bit.
 - The `raw` format-type does not support vectors. Only a single sample can be encoded per payload as there is no way to identify sample boundaries in the raw format.

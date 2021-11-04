@@ -10,13 +10,13 @@ All VILLASnode tools are available as sub-commands to the `villas` wrapper:
 
 ### Subcommands
 
-- @subpage node-usage-node
-- @subpage node-usage-relay
-- @subpage node-usage-pipe
-- @subpage node-usage-graph
-- @subpage node-usage-signal
-- @subpage node-usage-hook
-- @subpage node-usage-convert
-- @subpage node-usage-test
-- @subpage node-usage-zmq-keygen
-- @subpage node-usage-conf2json
+- [`villas node`](villas-node.md)
+- [`villas relay`](villas-relay.md)
+- [`villas pipe`](villas-pipe.md)
+- [`villas graph`](villas-graph.md)
+- [`villas signal`](villas-signal.md)
+- [`villas hook`](villas-hook.md)
+- [`villas convert`](villas-convert.md)
+- [`villas test`](villas-test.md)
+- [`villas zmq-keygen`](villas-zmq-keygen.md)
+- [`villas conf2json`](villas-conf2json.md)

@@ -1,4 +1,4 @@
-# Setup {#fpga-setup}
+# Setup
 
 ## FPGA
 
@@ -34,8 +34,6 @@ VILLASfpga requires the following kernel modules to be loaded:
 
 - `vfio`
 - `vfio_pci`
-
-If not
 
 ## Run VILLASfpga without Super-User privileges
 

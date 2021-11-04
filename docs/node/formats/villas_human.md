@@ -1,4 +1,4 @@
-# Custom VILLAS Human Readable {#node-format-villas-human}
+# Custom VILLAS Human Readable
 
 This is a simple human-readable format commonly used for logging or debugging:
 The format is similiar to a conventional CSV (comma seperated values) file.
@@ -20,22 +20,22 @@ The columns are defined as follows:
 
  2. Maximum `MSG_VALUES` floating point values per sample. The values are seperated by whitespaces as well.
 
-# Implementation
+## Implementation
 
 The source code of the format-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/villas_human.cpp
 
-# Configuration {#node-config-format-villas-human}
+## Configuration {#config}
 
 The @ref node-format-villas-human format-type supports the options documented on the following pages:
 - [generic format options](@ref node-config-format)
 - [line format options](@ref node-config-format-line)
 
-# Example Configuration {#node-format-villas-human-example}
+## Example Configuration {#example}
 
 @include node/etc/examples/formats/villas-human.conf
 
-# Example Payload {#node-format-villas-human-payload}
+## Example Payload {#payload}
 
 This example shows a dump with three values per sample:
 

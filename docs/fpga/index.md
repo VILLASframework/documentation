@@ -4,7 +4,7 @@ sidebar_position: 1
 sidebar_label: Overview
 ---
 
-# VILLASfpga {#fpga} <img src="/img/logos/villas_fpga.svg" width="100" align="right" />
+# VILLASfpga <img src="/img/logos/villas_fpga.svg" width="100" align="right" />
 
 VILLASfpga interconnects simulators and devices under test (DUT) for hardware-in-the loop simulation using hard real-time capable interfaces.
 VILLASfpga can guarantee fixed latencies in the nanosecond range.
@@ -14,7 +14,7 @@ It implements intellectual property (IP) cores for connecting:
 
  - RTDS racks via their proprietary [GTFPGA](https://www.rtds.com/the-simulator/our-hardware/gtfpga-unit/) (aka `RTDS_InterfaceModule`)
  - OPAL-RT simulators and AixControl DSP racks via [Xilinx' Aurora](https://www.xilinx.com/products/intellectual-property/aurora8b10b.html).
- - Integration with all VILLASnode @ref node-node-types via PCIexpress and DMA transfers.
+ - Integration with all [VILLASnode node-types](../node/nodes/index.md) via PCIexpress and DMA transfers.
  - FPGA models built with
    - Simulink by using [Xilinx' System Generator](https://www.xilinx.com/products/design-tools/vivado/integration/sysgen.html).
    - C / C++ by using [Xilinx' High Level Synthesis](https://www.xilinx.com/products/design-tools/vivado/integration/esl-design.html).
@@ -65,8 +65,3 @@ sudo modprobe vfio_pci
 
 sudo VILLASfpga/build/src/villas-fpga-pipe 
 ```
-
-
-## Available Bitstreams
-
-@todo Coming soon

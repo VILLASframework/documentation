@@ -1,4 +1,4 @@
-# Live image Installation {#liveusb-installation}
+# Video
 
 The following video shows the installation of the VILLAS live image on a [VirtualBox](http://www.virtualbox.org) virtual machine.
 

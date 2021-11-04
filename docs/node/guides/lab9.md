@@ -2,7 +2,7 @@
 sidebar_position: 9
 ---
 
-# Lab 9: Network emulation and statistics {#node-guide-lab9}
+# Lab 9: Network emulation and statistics
 
 <figure align="center">
     <img alt="villas-hook Example" src="/img/dia/villas_hook_stats.svg" height="180px" />

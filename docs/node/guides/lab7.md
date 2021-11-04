@@ -2,7 +2,7 @@
 sidebar_position: 7
 ---
 
-# Lab 7: Read samples from file and send them to node  {#node-guide-lab7}
+# Lab 7: Read samples from file and send them to node
 
 ## Easy way (non real-time)
 

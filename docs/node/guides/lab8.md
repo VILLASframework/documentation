@@ -2,7 +2,7 @@
 sidebar_position: 8
 ---
 
-# Lab 8: Use hook function to modify/filter the data {#node-guide-lab8}
+# Lab 8: Use hook function to modify/filter the data
 
 VILLASnode supports hook functions to filter or manipulate samples while their are forwarded.
 These functions are in C-code. A plugin mechanism makes it easy for the user to new hook functions.

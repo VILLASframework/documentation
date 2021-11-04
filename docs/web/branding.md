@@ -1,4 +1,4 @@
-# Branding {#web-branding}
+# Branding
 
 ## Existing brands
 

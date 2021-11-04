@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Lab 4: Receive data from a node and show it on standard output {#node-guide-lab4}
+# Lab 4: Receive data from a node and show it on standard output
 
 <figure align="center">
     <img alt="villas-pipe Example" src="/img/dia/villas_pipe2.svg" height="180px" />

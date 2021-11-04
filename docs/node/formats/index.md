@@ -3,38 +3,37 @@ sidebar_position: 1
 sidebar_label: Overview
 ---
 
-# Format-types {#node-format-types}
+# Format-types
 
-Some of the VILLASnode @ref node-node-types are transports which can exchange arbitrary payloads.
-Examples for these node-types are: @ref node-type-mqtt, @ref node-type-amqp and @ref node-type-socket.
+Some of the VILLASnode [node-types](../nodes/index.md) are transports which can exchange arbitrary payloads.
+Examples for these node-types are: [MQTT](../nodes/mqtt.md), [AMQP](../nodes/amqp.md) and [Socket](../nodes/socket.md).
 
 The format of the payload for these node-types is configurable.
 New formats can be added via plugins.
 
-Currently, the following formats are supported (or planned):
+Currently, the following formats are supported:
 
-| Type             | Description                                      | Status |
-| :--              | :--                                              | :--    |
-| `csv`            | @subpage node-format-csv                         | stable |
-| `gtnet`          | @subpage node-format-raw                         | stable |
-| `iotagent-ul`    | @subpage node-format-fiware-iotagent-ul          | stable |
-| `json.kakfa`     | @subpage node-format-json-kafka                  | stable |
-| `json`           | @subpage node-format-json                        | stable |
-| `protobuf`       | @subpage node-format-protobuf                    | stable |
-| `raw`            | @subpage node-format-raw                         | stable |
-| `tsv`            | @subpage node-format-tsv                         | stable |
-| `value`          | @subpage node-format-value                       | stable |
-| `villas.binary`  | @subpage node-format-villas-binary               | stable |
-| `villas.human`   | @subpage node-format-villas-human                | stable |
+| Type                                 | Description                                      | Status |
+| :--                                  | :--                                              | :--    |
+| [`csv`](csv.md)                      | Comma-separated values                           | stable |
+| [`iotagent-ul`](iotagent_ul.md)      | FIWARE IoTAgent Ultralight 2.0 Protocol          | stable |
+| [`json.kakfa`](json_kakfa.md)        | Kafka Schema/Payload Javascript Object Notation  | stable |
+| [`json`](json.md)                    | Javascript Object Notation                       | stable |
+| [`protobuf`](protobuf.md)            | Google Protobuf                                  | stable |
+| [`raw`](raw.md)                      | Raw binary values                                | stable |
+| [`tsv`](tsv.md)                      | Tabulator-separated values                       | stable |
+| [`value`](value.md)                  | Single value text                                | stable |
+| [`villas.binary`](villas_binary.md)  | Custom VILLAS Binary                             | stable |
+| [`villas.human`](villas_human.md)    | Custom VILLAS Human Readable                     | stable |
 
-# Configuration {#node-config-format}
+## Configuration {#node-config-format}
 
 To use one of the format-types above, a setting named `format` must be present in the configuration of the respective node instance.
 The value of the `format` setting can be eiter a simple string identifying one of the available format-types from the table above.
 Alternatively, a JSON dictionary can be used to provide additional configuration settings to the payload format.
 Please see below for examples of both approaches.
 
-If the format-type is provided as an argument to a VILLASnode command-line tool (see @ref node-usage), also both variants are supported:
+If the format-type is provided as an argument to a VILLASnode command-line tool (see [Usage](../usage/index.md)), also both variants are supported:
 
 ```bash
 # Simple
@@ -49,30 +48,31 @@ Use the following command to get a list of all available types on your system: `
 
 All format-types support the following generic options:
 
-## real_precision (integer) = 17 {#node-config-format-precision}
+### real_precision (integer) = 17 {#config-precision}
 
 Output all real numbers with at most n digits of precision. The valid range for this setting is between 0 and 31 (inclusive), and other values result in an undefined behavior.
 
 By default, the precision is 17, to correctly and losslessly encode all IEEE 754 double precision floating point numbers.
 
-## ts_origin (boolean) = true {#node-config-format-ts-origin}
+### ts_origin (boolean) = true {#config-ts-origin}
 
 If set, include the origin timestamp in the output.
-## sequence (boolean) {#node-config-format-sequence}
+
+### sequence (boolean) {#config-sequence}
 
 If set, include the sequence number in the output.
 
-## data (boolean) {#node-config-format-data}
+### data (boolean) {#config-data}
 
 If set, include the data in the output.
 
-## offset (boolean) {#node-config-format-offset}
+### offset (boolean) {#config-offset}
 
 If set, include the offset between origin and received timestamp in the output.
 
-# Example
+## Example
 
-## Simple
+### Simple {#example-simple}
 
 <!-- TODO: Convert to json -->
 ```
@@ -88,7 +88,7 @@ nodes = {
 }
 ```
 
-## Advanced
+### Advanced {#example-advanced}
 
 <!-- TODO: Convert to json -->
 ```
@@ -108,8 +108,10 @@ nodes = {
 }
 ```
 
+## Abstract format-types {#abstract}
 
-# Abstract format-types
+Thanks to C++ inheritance some format-types are well-suited as a base for other more specific format types:
 
-- @subpage node-format-line
-  - @subpage node-format-column
+- [JSON-based](json.md)
+- [Line-based](line.md)
+  - [Column-based](column.md)

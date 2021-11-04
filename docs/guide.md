@@ -17,7 +17,7 @@ The focus of this guide is to highlight the integration of VILLASframework compo
 
 Please also have a look at the detailed guides for each component:
 
-- [VILLASnode](@ref node-guide)
+- [VILLASnode](node/guide.md)
 
 ## Architecture
 

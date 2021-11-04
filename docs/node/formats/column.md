@@ -1,15 +1,17 @@
-# Column-based formats {#node-format-column}
+# Column-based formats
 
-- @subpage node-format-csv
-- @subpage node-format-tsv
+There are two columns-based formats:
 
-# Configuration {#node-config-format-column}
+- [`csv`](csv.md)
+- [`tsv`](tsv.md)
 
-## separator (string) = "\t" {#node-config-format-column-separator}
+## Configuration {#config}
+
+### separator (string) = "\t" {#config-separator}
 
 The column separator. Only single character separators are supported at the moment.
 
-# Implementation
+## Implementation
 
 The source code of the format-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/column.cpp

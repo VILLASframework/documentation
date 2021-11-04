@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# Lab 6: Write received sample data to a file {#node-guide-lab6}
+# Lab 6: Write received sample data to a file
 
 <figure align="center">
     <img alt="villas-pipe Example" src="/img/dia/villas_pipe_file.svg" height="180px" />

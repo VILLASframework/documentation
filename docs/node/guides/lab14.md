@@ -2,7 +2,7 @@
 sidebar_position: 14
 ---
 
-# Lab 14: File comparison {#node-guide-lab14}
+# Lab 14: File comparison
 
 One of the important uses of the VILLASnode toolbox is the comparison of a list of files.
 

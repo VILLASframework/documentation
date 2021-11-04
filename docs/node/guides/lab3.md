@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Lab 3: Sending data to node from standard input  {#node-guide-lab3}
+# Lab 3: Sending data to node from standard input
 
 <figure align="center">
     <img alt="villas-pipe Example" src="/img/dia/villas_pipe1.svg" height="180px" />

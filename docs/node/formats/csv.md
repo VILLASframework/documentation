@@ -1,23 +1,24 @@
-# Comma-separated values {#node-format-csv}
+# Comma-separated values
 
 See also https://en.wikipedia.org/wiki/Comma-separated_values
 
-# Implementation
+## Implementation
 
 The source code of the format-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/column.cpp
-# Configuration {#node-config-format-csv}
+
+## Configuration {#config}
 
 The @ref node-format-csv format-type supports the options documented on the following pages:
 - [generic format options](@ref node-config-format)
 - [line format options](@ref node-config-format-line)
 - [column format options](@ref node-config-format-column)
 
-# Example Configuration {#node-format-csv-example}
+## Example Configuration {#example}
 
 @include node/etc/examples/formats/csv.conf
 
-# Example Payload {#node-format-csv-payload}
+## Example Payload {#payload}
 
 ```csv
 secs,nsecs,sequence,random,sine,square,triangle,ramp

@@ -1,4 +1,4 @@
-# Protocol {#controller-protocol}
+# Protocol
 
 This page documents the data model/protocol used by VILLAScontroller to control and monitor infrastructure components (IC).
 The protocol uses AMQP to transport JSON encoded objects which are specified in the following document.
@@ -14,7 +14,7 @@ This includes the following tasks:
 - monitoring: status?
 - control: start, stop, pause, reset, resume, shutdown
 
-## Entities {#controller-protocol-entities}
+## Entities
 
 For the purpose of addressing the ICs, we introduce the following categories (1st level) and types (2nd level): 
 
@@ -54,13 +54,13 @@ classDiagram
       Gateway <-- VILLASrelaySession
 ```
 
-## Exchange {#controller-protocol-amqp-exchange}
+## Exchange
 
 All messages processed by VILLAScontroller are sent via an AMQP `headers` exchange.
 
 The exchange is named `villas`.
 
-## Routing {#controller-protocol-amqp-routing}
+## Routing
 
 The following headers are used to identify and route messages to the receipients:
 

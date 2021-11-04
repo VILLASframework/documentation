@@ -2,7 +2,7 @@
 sidebar_position: 10
 ---
 
-# Lab 10: The daemon {#node-guide-lab10}
+# Lab 10: The daemon
 
 During the previous labs, we use the `villas pipe`, `villas hook` and `villas signal` tools connect simulators and process the exchanged simulation data. This approach is handy for small tests, development and training.
 However, more complex scenaries are unmanagable with this approach.

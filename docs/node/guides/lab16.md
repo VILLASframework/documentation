@@ -2,7 +2,7 @@
 sidebar_position: 16
 ---
 
-# Lab 16: Visualize simulation data with InfluxDB and Grafana {#node-guide-lab16}
+# Lab 16: Visualize simulation data with InfluxDB and Grafana
 
 This lab session demonstrates the visualization of historic simulation data via the web-based Grafana dashboard.
 For this purpose, VILLASnode persists the simulation data into the InfluxDB time-series database via a dedicated @ref node-type-influxdb node-type.

@@ -10,10 +10,6 @@ Please feel free to submit pull requests or bug reports.
 
 A [contribution guide](https://git.rwth-aachen.de/acs/public/villas/node/blob/master/CONTRIBUTING.md) is available in the [Git repository](https://git.rwth-aachen.de/acs/public/villas/node/).
 
-- @subpage node-dev-api
-- @subpage node-dev-sample
-- @subpage node-dev-signal
-
 ## Programming Paradigm
 
 VILLASnode is currently written in C/C++ using the ISO C11 and C++14 standards while following an object oriented programming paradigm.

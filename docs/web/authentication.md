@@ -1,4 +1,4 @@
-# Authentication {#web-authentication}
+# Authentication
 
 ## External
 

@@ -15,6 +15,8 @@ erDiagram
     ComponentConfiguration }|--|| Signal: ""
 ```
 
+## Classes
+
 VILLASweb features the following data classes:
 
  - Users
@@ -26,6 +28,7 @@ VILLASweb features the following data classes:
     * Results
 
 ### Users
+
 - You need a username and a password to authenticate in VILLASweb
 - There exist three categories of users: Guest, User, and Admin
 - Guests have only read access and cannot modify anything
@@ -33,17 +36,20 @@ VILLASweb features the following data classes:
 - Admin users have full access to everything, they are the only users that can create new users or change the role of existing users. Only admin users can add or modify infrastructure components. 
 
 ### Infrastructure Components
+
 - Components of research infrastructure
 - Category: for example simulator, gateway, amplifier, database, etc.
 - Type: for example RTDS, OpalRT, VILLASnode, Cassandra
 - Can only be added/ modified by admin users
 
 ### Scenarios
+
 - A collection of component configurations, dashboards, and files for a specific experiment
 - Users can have access to multiple scenarios
 - Users can be added to and removed from scenarios
 
 ### Component Configurations and Signals
+
 - Configure an infrastructure component for the use in a specific scenario
 - Input signals: Signals that can be modified in VILLASweb
 - Output signals: Signals that can be visualized on dashboards of VILLASweb
@@ -51,11 +57,13 @@ VILLASweb features the following data classes:
 - Signals are the actual live data that is displayed or modified through VILLASweb dashboards 
 
 ### Dashboards and Widgets
+
 - Visualize ongoing experiments in real-time
 - Interact with ongoing experiments in real-time
 - Use widgets to design the dashboard according to the needs
 
 ### Files
+
 - Files can be added to scenarios optionally
 - Can be images, model files, CIM xml files
 - Can be used in widgets or component configurations 

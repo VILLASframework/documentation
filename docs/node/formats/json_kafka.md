@@ -1,21 +1,21 @@
-# Kafka Schema/Payload Javascript Object Notation {#node-format-json-kafka}
+# Kafka Schema/Payload Javascript Object Notation
 
-# Implementation
+## Implementation
 
 The source code of the format-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/json_kafka.cpp
 
-# Configuration {#node-config-format-json-kafka}
+## Configuration {#config}
 
 The @ref node-format-json-kafka format-type supports all configuration options of the @ref node-format-json format-type plus the following:
 
-## schema (object) {#node-config-format-json-kafka-schema}
+### schema (object) {#config-schema}
 
-# Example Configuration {#node-format-json-kafka-example}
+## Example Configuration {#example}
 
 @include node/etc/examples/formats/json-kafka.conf
 
-# Example Payload {#node-format-json-kafka-payload}
+## Example Payload {#payload}
 
 ```json
 {

@@ -2,7 +2,7 @@
 sidebar_position: 13
 ---
 
-# Lab 13: Measure Round-trip time between RTDS and VILLASnode {#node-guide-lab13}
+# Lab 13: Measure Round-trip time between RTDS and VILLASnode
 
 # Configuration
 

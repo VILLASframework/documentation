@@ -26,11 +26,11 @@ echo "isolated_cpucores=6-7" >> /etc/tuned/realtime-variables.conf
 systemctl enable tuned && systemctl start tuned
 ```
 
-2. Optimize the [VILLASnode configuration](@ref node-config).
-  1. Map NIC IRQs	(see setting @ref node-config-affinity).
-  2. Map Tasks (see global  setting @ref node-config-affinity).
-  3. Increase priority of server task (nice(2)) (see global setting  @ref node-config-priority).
-  4. Increase BSD socket priority (see global setting @ref node-config-priority for  node-type @ref node-type-socket).
+2. Optimize the [VILLASnode configuration](config/index.md).
+  1. Map NIC IRQs	(see global [affinity setting](config/global.md#affinity)).
+  2. Map Tasks (see global [affinity setting](config/global.md#affinity)).
+  3. Increase priority of server task (nice(2)) (see global [priority setting](config/global.md#priority)).
+  4. Increase BSD socket priority (see global [priority setting](config/global.md#priority) for the [Socket node-type](nodes/socket.md)).
 3. Configure NIC interrupt coalescence with `ethtool`:
     `ethtool --coalesce eth0 adaptive-rx off adaptive-tx off`
 4. Configure NIC kernel driver in `/etc/modprobe.d/e1000e.conf`:

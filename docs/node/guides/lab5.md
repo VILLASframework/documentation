@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# Lab 5: Send sine wave to simulator  {#node-guide-lab5}
+# Lab 5: Send sine wave to simulator
 
 <figure align="center">
     <img alt="villas-pipe Example" src="/img/dia/villas_pipe3.svg" height="180px" />

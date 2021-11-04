@@ -2,7 +2,7 @@
 sidebar_position: 17
 ---
 
-# Lab 17: RTDS-RTDS Co-simulation {#node-guide-lab17}
+# Lab 17: RTDS-RTDS Co-simulation
 
 This lab demonstrates the use of the VILLASnode gateway to couple two RTDS digital real-time simulators in a co-simulation of a simple power system.
 

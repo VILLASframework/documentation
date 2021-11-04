@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Lab 1: Signal generation  {#node-guide-lab1}
+# Lab 1: Signal generation
 
 <figure align="center">
     <img alt="villas-signal Example" src="/img/dia/villas_signal.svg" height="180px" />
