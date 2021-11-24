@@ -21,9 +21,17 @@ For small tests and beginners we recommend a local Minikube setup.
 
 1. [Install Minikube](https://minikube.sigs.k8s.io/docs/start/)
 2. [Install Helm](https://helm.sh/docs/intro/quickstart/)
-3. Enable the Ingress controller in your minikube cluster:
+3. Start Minikube:
 
-	minikube addons enable ingress
+```bash
+minikube start
+```
+
+4. Enable the Ingress controller in your minikube cluster:
+
+```bash
+minikube addons enable ingress
+```
 
 ## Helm chart {#installation-helm}
 
@@ -34,27 +42,43 @@ helm repo add fein https://packages.fein-aachen.org/helm/charts/
 helm repo update
 ```
 
-After adjusting your configuration settings (see next section) you can deploy the chart with the following command:
+Create a minimal chart configuration file named `values.yaml` with the following contents:
+Please have a look at the charts [default values](https://git.rwth-aachen.de/acs/public/catalogue/-/blob/master/charts/villas/values.yaml) for more details about the available configuration options.
+
+```yaml
+web:
+  auth:
+    admin:
+      mail: admin@example.com
+      username: admin
+
+	  # please to change to a secure password
+      password: VillasTest1234
+
+ingress:
+  port: 8080
+  host: localhost
+
+broker:
+  auth:
+    username: admin
+    password: vieQuoo2sieDahHee8ohM5aThaibiPei
+    erlangCookie: iKpbgHPsHAj8x58kzFWVT23xahSQ03Vw
+```
+
+Once the configuration file has been prepared, start the installation with the following command: 
 
 ```bash
 helm install -f values.yaml villas fein/villas
 ```
 
-## Configuration {#installation-config}
-
-Please have a look at the charts [default values](https://git.rwth-aachen.de/acs/public/catalogue/-/blob/master/charts/villas/values.yaml).
-
-Also have a look at the [Helm charts Git repo](https://git.rwth-aachen.de/acs/public/catalogue) for more details.
-
-# Admin Password {#installation-admin-pass}
-
-Run the following kubectl commands to retrieve the initial admin credentials:
-
-```bash
-echo ADMIN_USER: admin
-echo ADMIN_PASS: $(kubectl get secret --namespace villas villas-web -o jsonpath="{.data.password}" | base64 --decode)
-```
-
 ## Access the application {#installation-access}
 
-@todo Add explanation how to access Ingress
+1. Keep the following command in a terminal running in a background terminal:
+
+```bash
+kubectl -n ingress-nginx port-forward svc/ingress-nginx-controller 8080:80
+```
+
+Once the installation has completed, you can visit the VILLASweb interface at the following address: http://localhost:8080/
+Please use the username / password from above (`admin` / `VillasTest1234`) to login.
