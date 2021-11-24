@@ -9,10 +9,14 @@ https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/colu
 
 ## Configuration {#config}
 
-The @ref node-format-csv format-type supports the options documented on the following pages:
-- [generic format options](@ref node-config-format)
-- [line format options](@ref node-config-format-line)
-- [column format options](@ref node-config-format-column)
+The `csv` format-type supports the following settings:
+
+import ApiSchema from '@theme/ApiSchema';
+
+<ApiSchema
+  specUrl="external/node/doc/dist.yaml"
+  schemaRef="#/components/schemas/csv"
+/>
 
 ## Example Configuration {#example}
 

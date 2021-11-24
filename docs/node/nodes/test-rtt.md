@@ -1,6 +1,6 @@
 # Test Round-trip Time {#node-type-test-rtt}
 
-The @ref node-type-test-rtt node-type is a virtual node-type which can be used to measure round-trip time to other nodes.
+The `test_rtt` node-type is a virtual node-type which can be used to measure round-trip time to other nodes.
 The `test_rtt` nodes periodically generate probes which must be looped back via a second node:
 
 # Prerequisites {#node-type-test-rtt-prereq}

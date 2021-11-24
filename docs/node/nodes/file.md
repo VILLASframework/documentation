@@ -1,6 +1,6 @@
 # File {#node-type-file}
 
-The @ref node-type-file node-type can be used to log or replay samples to / from disk.
+The `file` node-type can be used to log or replay samples to / from disk.
 
 # Prerequisites {#node-type-file-prereq}
 
@@ -40,7 +40,7 @@ will create a file called:
 
 A IO format identifier selecting the file format which is used for reading and writing from the file.
 
-See @ref node-format-types for a complete list of supported formats.
+See [Format Types](../formats/index.md) for a complete list of supported formats.
 
 ## in.epoch (float) {#node-config-node-file-epoch}
 
@@ -87,7 +87,7 @@ Defines the behaviour if the end of file of the input file is reached.
 
 ## in.buffer_size (unsigned) = 0 {#node-config-node-file-in-buffer_size}
 
-Similar to @ref node-config-node-file-out-buffer_size. This means that the data is loaded into the buffer before it is passed on to the node.
+Similar to the [`out.buffer_size` setting](#out-buffer_size). This means that the data is loaded into the buffer before it is passed on to the node.
 
 If `in.buffer_size = 0`, no buffer will be generated.
 

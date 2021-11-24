@@ -15,7 +15,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/rtp.cpp
 
 Enables and configures the network emulation qeueing discipline.
 
-For more information see also: @ref node-netem
+For more information see also: [Netem Emulation](../netem.md)
 
 # Example {#node-type-rtp-example}
 

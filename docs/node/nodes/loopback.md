@@ -1,6 +1,6 @@
 # Loopback {#node-type-loopback}
 
-The @ref node-type-loopback node-type loops back every sample which has been sent to it.
+The `loopback` node-type loops back every sample which has been sent to it.
 Internally it is implemented by a FIFO queue.
 
 It can be used to **chain multiple** [paths](@ref node-config-paths) together by using the same @ref node-type-loopback node as an output node in the first path and as a source in the second path.

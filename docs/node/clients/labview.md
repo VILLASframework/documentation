@@ -2,7 +2,7 @@
 
 **Source code:** <http://git.rwth-aachen.de/acs/public/villas/node/tree/master/clients/labview>
 
-We build an example LabView model which is using the UDP message format of the @ref node-type-socket node-type to communicate with VILLASnode.
+We build an example LabView model which is using the UDP message format of the [`socket` node-type](../nodes/socket.md) to communicate with VILLASnode.
 
 @todo Add screenshot
 

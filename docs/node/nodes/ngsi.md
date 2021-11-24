@@ -20,7 +20,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/ngsi.cpp
 
 # Configuration {#node-config-node-ngsi}
 
-You can use the @ref node-config-node-vectorize setting to send multiple samples in a vector.
+You can use the [`vectorize` setting](../config/nodes.md#vectorize) to send multiple samples in a vector.
 
 Every `ngsi` node supports the following special settings:
 

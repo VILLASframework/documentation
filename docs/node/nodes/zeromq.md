@@ -1,11 +1,11 @@
 # ZeroMQ {#node-type-zeromq}
 
-The @ref node-type-zeromq node-type exchanges messages via the [ZMTP](https://rfc.zeromq.org/spec:23/ZMTP/) protocol.
-It is similiar to the @ref node-type-nanomsg node-type.
+The `zeromq` node-type exchanges messages via the [ZMTP](https://rfc.zeromq.org/spec:23/ZMTP/) protocol.
+It is similiar to the [`nanomsg`](nanomsg.md) node-type.
 
 > ZeroMQ (also known as ØMQ, 0MQ, or zmq) looks like an embeddable networking library but acts like a concurrency framework. It gives you sockets that carry atomic messages across various transports like in-process, inter-process, TCP, and multicast. You can connect sockets N-to-N with patterns like fan-out, pub-sub, task distribution, and request-reply. It's fast enough to be the fabric for clustered products. Its asynchronous I/O model gives you scalable multicore applications, built as asynchronous message-processing tasks. It has a score of language APIs and runs on most operating systems. ZeroMQ is from iMatix and is LGPLv3 open source.
 
-The @ref node-type-zeromq node-type implements the [publish/subscribe and radio/dish protocols](http://api.zeromq.org/4-2:zmq-socket).
+The `zeromq` node-type implements the [publish/subscribe and radio/dish protocols](http://api.zeromq.org/4-2:zmq-socket).
 
 # Prerequisites {#node-type-zeromq-prereq}
 
@@ -34,7 +34,7 @@ The payload format which is used to encode and decode exchanged messages.
 
 **Note:** This feature is currently broken.
 
-You can use the @ref node-usage-zmq-keygen command to create a new keypair for the following configuration options:
+You can use the [`villas zmq-keygen`](../usage/villas-zmq-keygen.md) command to create a new keypair for the following configuration options:
 
 ### curve.enabled (bool) = true {#node-config-node-zeromq-ipv6}
 

@@ -1,6 +1,6 @@
 # Advanced Messaging & Queuing Protocol (AMQP) {#node-type-amqp}
 
-The @ref node-type-amqp node-type exchanges messages over the AMQP protocol with a broker such as [RabbitMQ](https://www.rabbitmq.com).
+The `amqp` node-type exchanges messages over the AMQP protocol with a broker such as [RabbitMQ](https://www.rabbitmq.com).
 
 A typical publish/subscribe pattern is used:
 The node automatically declares a _direct_ exchange and dedicated queues for each subscriber.
@@ -34,7 +34,7 @@ The routing key of published messages as well as the routing key which is used t
 
 ## ssl (object) {#node-config-node-amqp-ssl}
 
-**Note:** These settings are only used if the @ref node-config-node-amqp-uri setting is using the `amqps://` schema.
+**Note:** These settings are only used if the [`uri` setting](#uri) is using the `amqps://` schema.
 
 # Example {#node-type-amqp-example}
 

@@ -1,6 +1,24 @@
-# HTTP / WebSocket server {#node-config-http}
+# Embedded HTTP / WebSocket server
 
-# Example {#node-config-http-example}
+## Configuration
+
+### http.enabled (boolean) = true {#enabled}
+
+When set to `false` the VILLASnode daemon will not listen on a port for servering HTTP and WebSocket requests.
+
+### http.port (integer)  = 80 {#port}
+
+The TCP port number on which HTTP / WebSocket server.
+
+### http.ssl_cert (string: path) {#ssl_cert}
+
+The public x509 certificate used for server-side SSL encryption.
+
+### http.ssl_private_key (string: path) {#ssl_private_key}
+
+The private x509 certificate used for server-side SSL encryption.
+
+## Example {#example}
 
 <!-- TODO: Convert to json -->
 ```
@@ -14,27 +32,3 @@ http = {
 	ssl_private_key= "/etc/ssl/private/mykey.pem";
 }
 ```
-
-# Configuration
-
-### http.enabled (boolean) = true {#node-config-http-enabled}
-
-When set to `false` the VILLASnode daemon will not listen on a port for servering HTTP and WebSocket requests.
-
-### http.htdocs (string: path) = "/usr/share/villas/node/web"  {#node-config-http-htdocs}
-
-The location of of static files served by the HTTP / WebSocket server.
-
-### http.port (integer)  = 80 {#node-config-http-port}
-
-The TCP port number on which HTTP / WebSocket server.
-
-### http.ssl_cert (string: path) {#node-config-ssl_cert}
-
-The public x509 certificate used for server-side SSL encryption.
-
-### http.ssl_private_key (string: path) {#node-config-ssl_private_key}
-
-The private x509 certificate used for server-side SSL encryption.
-
-

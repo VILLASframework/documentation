@@ -1,6 +1,6 @@
 # Controller Area Network (CAN) {#node-type-can}
 
-The @ref node-type-can node-type allows the exchange of signals via a [CAN bus](https://www.can-cia.org/can-knowledge/).
+The `can` node-type allows the exchange of signals via a [CAN bus](https://www.can-cia.org/can-knowledge/).
 
 # Prerequisites {#node-type-can-prereq}
 

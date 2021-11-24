@@ -11,7 +11,14 @@ https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/iota
 
 ## Configuration {#config}
 
-The @ref node-format-iotagent-ul format-type supports all [generic format options](@ref node-config-format).
+The `iotagent_ul` format-type supports the following settings:
+
+import ApiSchema from '@theme/ApiSchema';
+
+<ApiSchema
+  specUrl="external/node/doc/dist.yaml"
+  schemaRef="#/components/schemas/iotagent_ul"
+/>
 
 ## Example Configuration {#example}
 

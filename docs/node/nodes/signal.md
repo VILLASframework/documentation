@@ -1,6 +1,6 @@
 # Signal Generator {#node-type-signal}
 
-The @ref node-type-signal node-type is a simple signal generator which can be used to generate sine, square, ramp, triangle or random signals at user definable frequencies, rates, amplitudes.
+The `signal` node-type is a simple signal generator which can be used to generate sine, square, ramp, triangle or random signals at user definable frequencies, rates, amplitudes.
 
 Most commonly it is used for testing when no real simulation data is available.
 

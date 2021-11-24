@@ -2,8 +2,6 @@
 
 The `websocket` node type send and receives simulation data via binary WebSocket messages.
 
-[The message format](@ref node-type-socket-format) is the same as used by the @ref node-type-socket node-type.
-
 # Prerequisites {#node-type-websocket-prereq}
 
 This node-type requires [libwebsockets](http://libwebsockets.org) (>= 2.3.0).
@@ -15,8 +13,8 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/websocke
 
 # Configuration {#node-config-node-websocket}
 
-By default the @ref node-usage-node daemon listens on @ref node-config-http-port for HTTP and WebSocket requests.
-This behaviour can be disabled by setting @ref node-config-http-enabled to `false`.
+By default the [`villas node`](../usage/villas-node.md) daemon listens on [`http.port`](../config/http.md#port) for HTTP and WebSocket requests.
+This behaviour can be disabled by setting [`http.enabled`](../config/http.md#) to `false`.
 
 ## destinations (array of URIs) {#node-config-node-websocket-destinations}
 

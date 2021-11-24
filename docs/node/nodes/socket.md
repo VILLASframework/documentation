@@ -17,7 +17,7 @@ The implementation supports multiple protocols / OSI layers:
 
 This node-type does not have any special library dependencies. It is always available.
 
-Optionally, [libnl3](http://www.infradead.org/~tgr/libnl/) is used to setup network emulation as described in section @ref node-type-socket-netem.
+Optionally, [libnl3](http://www.infradead.org/~tgr/libnl/) is used to setup network emulation as described in page [Netem Emulation](../netem.md).
 
 # Implementation {#node-type-socket-implementation}
 
@@ -32,7 +32,7 @@ Every `socket` node supports the following special settings:
 
 The payload format which is used to encode and decode exchanged messages.
 
-See: @ref node-format-types
+See: [Format Types](../formats/index.md)
 
 ## in.address (string: "ip:port" | "mac:protocol") {#node-config-node-socket-in-address}
 
@@ -56,11 +56,11 @@ Check if source address of incoming packets matches the remote address.
 
 Enables and configures the network emulation qeueing discipline.
 
-For information see also: @ref node-netem
+For information see also: [Netem emulation](../netem.md)
 
 ## in.multicast (dictionary) {#node-config-node-socket-in-multicast}
 
-The @ref node-type-socket support sending and receiving IP / UDP packets to and from multicast addresses.
+The `socket` node-type supports sending and receiving IP / UDP packets to and from multicast addresses.
 
 **Note:** Multicast is only supported by IPv4 addressing. Using these settings with `layer = eth` or IPv6 adresses will fail!
 

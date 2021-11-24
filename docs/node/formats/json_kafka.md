@@ -7,9 +7,14 @@ https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/json
 
 ## Configuration {#config}
 
-The @ref node-format-json-kafka format-type supports all configuration options of the @ref node-format-json format-type plus the following:
+The `json.kafka` format-type supports the following settings:
 
-### schema (object) {#config-schema}
+import ApiSchema from '@theme/ApiSchema';
+
+<ApiSchema
+  specUrl="external/node/doc/dist.yaml"
+  schemaRef="#/components/schemas/json_kafka"
+/>
 
 ## Example Configuration {#example}
 

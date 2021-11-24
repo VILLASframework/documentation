@@ -12,7 +12,7 @@ Currently the following metrics are collected:
 | `owd`          | seconds | One-way-delay (OWD) of received messages                  |
 
 
-If the node to which this hook is attached is of type @ref node-type-rtp, the following additional statistics are collected from the RTP receiption reports.
+If the node to which this hook is attached an [`rtp` node-type](../nodes/rtp.md), the following additional statistics are collected from the RTP receiption reports.
 The contains details about the quality of service as seen be the receiver.
 
 | Identifier             | Unit    | Description                         |

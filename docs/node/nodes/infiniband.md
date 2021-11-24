@@ -1,6 +1,6 @@
 # Infiniband {#node-type-infiniband}
 
-The @ref node-type-infiniband node-type implements node communication over the [Infiniband standard](http://www.infinibandta.org/content/pages.php?pg=about_us_infiniband).
+The `infiniband` node-type implements node communication over the [Infiniband standard](http://www.infinibandta.org/content/pages.php?pg=about_us_infiniband).
 
 # Prerequisites {#node-type-infiniband-prereq}
 
@@ -29,7 +29,7 @@ More information on these two modes can be found on the manual page for [`rdma_c
 
 ## in.address (string) {#node-config-node-infiniband-in-address}
 
-Connections between @ref node-type-infiniband nodes are established over IP over IB (IPoIP). To use this node, you have to make sure that the linux driver `ib_ipoib` is loaded. If it is not loaded, load it with `modprobe ib_ipoib`.
+Connections between `infiniband` nodes are established over IP over IB (IPoIP). To use this node, you have to make sure that the linux driver `ib_ipoib` is loaded. If it is not loaded, load it with `modprobe ib_ipoib`.
 
 If it is loaded, you have to make sure that the Host Channel Adapters (HCAs) have an IP address. You can configure the IP address of the Infiniband HCA with the `ifconfig` utility, exactly like you would configure normal Ethernet adapters.
 

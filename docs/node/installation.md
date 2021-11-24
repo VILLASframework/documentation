@@ -220,9 +220,6 @@ sudo ldconfig
 
 Append `PREFIX=/opt/local` to change the installation destination.
 
-## RPM Packages {#rpm}
-
-TODO
 
 ## Test installation {#test}
 

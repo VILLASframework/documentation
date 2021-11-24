@@ -77,12 +77,12 @@ The key which this node will use in the Redis keyspace.
 
 ## channel (string) = _node-name_  {#node-config-node-redis-channel}
 
-The channel which this node will use in @ref node-config-node-redis-mode is `channel`.
+The channel which this node will use when [`mode` setting](#mode) is `channel`.
 
 ## notify (boolean) = true {#node-config-node-redis-events}
 
 Use [Redis keyspace notifications](https://redis.io/topics/notifications) to listen for new updates.
-This setting is only used if @ref node-config-node-redis-mode is set to `key` or `hash`.
+This setting is only used if [setting `mode`](#mode) is set to `key` or `hash`.
 
 ## ssl.enabled (boolean) = true {#node-config-node-redis-ssl-enabled}
 

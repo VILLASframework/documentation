@@ -2,14 +2,14 @@
 sidebar_position: 1
 ---
 
-# Getting Started {#node-guide}
+# Getting Started
 
 We put some effort in getting you started as smooth as possible.
 This tutorial introduces the basic concepts and terminologies of VILLASnode and shows some examples.
 
 Please look below for a [video recording](#video) of a webinar covering the topics of this guide.
 
-## Preparation {#node-guide-preparation}
+## Preparation
 
 The [installation](installation.md) page lists several ways to install VILLASnode on your machine.
 
@@ -27,7 +27,7 @@ For some @ref node-guide-labs two interactive shells are required. To open a sec
 docker exec --tty --interactive $(docker ps -qn1) bash
 ```
 
-## Terminology {#node-terminology}
+## Terminology
 
 Before we start to use the VILLASnode tools, we will introduce some terminology:
 
@@ -42,7 +42,7 @@ Before we start to use the VILLASnode tools, we will introduce some terminology:
 	<figcaption>A two site scenario with VILLASfpga.</figcaption>
 </figure>
 
-## Tools {#node-tools}
+## Tools
 
 VILLASnode is a collection of command line tools which follow the [Unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy):
 
@@ -66,7 +66,7 @@ In this guide we will show the following tools:
 
 A complete reference of all available options for those tools can be found on the @ref node-usage page.
 
-## Lab assignments <a id="node-guide-labs" />
+## Lab assignments {#labs}
 
 To get you started quickly, we prepared a series of small demos which you can try yourself.
 

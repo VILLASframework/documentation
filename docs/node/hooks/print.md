@@ -1,7 +1,7 @@
 # Print sample data {#node-hook-type-print}
 
 The `print` hook prints processed samples to the standard output or into a file.
-While doing so, it supports all the formats described here: @ref node-format-types .
+While doing so, it supports all the formats described here: [Format Types](../formats/index.md) .
 It can also optionally prefix each line of output with a user definable prefix in order to distinguish the output of multiple `print` hooks.
 
 # Implementation

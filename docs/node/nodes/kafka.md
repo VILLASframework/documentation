@@ -1,6 +1,6 @@
 # Kafka {#node-type-kafka}
 
-The @ref node-type-kafka node-type uses [librdkafka](https://github.com/edenhill/librdkafka) to produce and consume event stream messages to/from kafka message brokers cluster.
+The `kafka` node-type uses [librdkafka](https://github.com/edenhill/librdkafka) to produce and consume event stream messages to/from kafka message brokers cluster.
 
 # Prerequisites {#node-type-kafka-prereq}
 
@@ -35,7 +35,7 @@ Path to a Certificate Authority (CA) bundle which is used to validate broker ser
 ## sasl (object) {#node-config-node-kafka-sasl}
 
 An object for configuring the SASL authentication against the broker.
-This setting is used if @ref node-config-node-kafka-protocol is on of `SASL_PLAINTEXT` or `SASL_SSL`.
+This setting is used if [setting `protocol`](#protocol) is on of `SASL_PLAINTEXT` or `SASL_SSL`.
 
 See below for an example.
 

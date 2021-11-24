@@ -1,6 +1,6 @@
 # Shared memory {#node-type-shmem}
 
-The @ref node-type-shmem node-type can be used to quickly exchange samples with a process on the same host using a POSIX shared memory object.
+The `shmem` node-type can be used to quickly exchange samples with a process on the same host using a POSIX shared memory object.
 
 # Prerequisites {#node-type-shmem-prereq}
 

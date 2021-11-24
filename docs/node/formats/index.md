@@ -17,7 +17,7 @@ Currently, the following formats are supported:
 | :--                                  | :--                                              | :--    |
 | [`csv`](csv.md)                      | Comma-separated values                           | stable |
 | [`iotagent-ul`](iotagent_ul.md)      | FIWARE IoTAgent Ultralight 2.0 Protocol          | stable |
-| [`json.kakfa`](json_kakfa.md)        | Kafka Schema/Payload Javascript Object Notation  | stable |
+| [`json.kafka`](json_kafka.md)        | Kafka Schema/Payload Javascript Object Notation  | stable |
 | [`json`](json.md)                    | Javascript Object Notation                       | stable |
 | [`protobuf`](protobuf.md)            | Google Protobuf                                  | stable |
 | [`raw`](raw.md)                      | Raw binary values                                | stable |
@@ -48,27 +48,12 @@ Use the following command to get a list of all available types on your system: `
 
 All format-types support the following generic options:
 
-### real_precision (integer) = 17 {#config-precision}
+import ApiSchema from '@theme/ApiSchema';
 
-Output all real numbers with at most n digits of precision. The valid range for this setting is between 0 and 31 (inclusive), and other values result in an undefined behavior.
-
-By default, the precision is 17, to correctly and losslessly encode all IEEE 754 double precision floating point numbers.
-
-### ts_origin (boolean) = true {#config-ts-origin}
-
-If set, include the origin timestamp in the output.
-
-### sequence (boolean) {#config-sequence}
-
-If set, include the sequence number in the output.
-
-### data (boolean) {#config-data}
-
-If set, include the data in the output.
-
-### offset (boolean) {#config-offset}
-
-If set, include the offset between origin and received timestamp in the output.
+<ApiSchema
+  specUrl="external/node/doc/dist.yaml"
+  schemaRef="#/components/schemas/format"
+/>
 
 ## Example
 

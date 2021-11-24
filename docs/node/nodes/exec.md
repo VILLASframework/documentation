@@ -17,7 +17,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/exec.cpp
 
 A IO format identifier selecting the file format which is used for reading and writing from the file.
 
-See @ref node-format-types for a complete list of supported formats.
+See [Format Types](../formats/index.md) for a complete list of supported formats.
 
 ## shell (boolean) = false {#node-config-node-exec-shell}
 

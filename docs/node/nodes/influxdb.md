@@ -1,6 +1,6 @@
 # InfluxDB {#node-type-influxdb}
 
-The @ref node-type-influxdb node-type streams simulation data in real-time to a [InfluxDB](https://www.influxdata.com/time-series-platform/influxdb/) time-series database using an [UDP service](https://docs.influxdata.com/influxdb/v0.9/write_protocols/udp/) and a plain text [line protocol](https://docs.influxdata.com/influxdb/v1.7/write_protocols/line_protocol_reference/).
+The `influxdb` node-type streams simulation data in real-time to a [InfluxDB](https://www.influxdata.com/time-series-platform/influxdb/) time-series database using an [UDP service](https://docs.influxdata.com/influxdb/v0.9/write_protocols/udp/) and a plain text [line protocol](https://docs.influxdata.com/influxdb/v1.7/write_protocols/line_protocol_reference/).
 
 Each signal of a sample is mapped to one field. VILLASnode maps the signal names of the data source to InfluxDB fields.
 

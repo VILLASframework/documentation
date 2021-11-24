@@ -8,11 +8,11 @@ sidebar_label: Overview
 
 VILLASnode is a modular gateway for simulation data. It offers interfaces to simulation equipment, databases and web services.
 
-## Overview {#node-overview}
+## Overview
 
 The project consists of a server daemon and several client modules which are documented here.
 
-## Features {#node-overview-features}
+## Features
 
 - Wide selection of [interface types](nodes/index.md)
 - Statistic collection quality of service of the interfaces
@@ -25,11 +25,11 @@ The project consists of a server daemon and several client modules which are doc
   - Using the latest C11/C++17 standards
   - Easily extensible with new interface types, hook functions and payload formats
 - Released as open source software under the GPLv3 license
-- Easily deployable via [ISO installer](../liveiso/index.md), [Docker image](installation.md#docker), [RPM packages](installation.md#rpm) or from [source](installation.md#source)
+- Easily deployable via [ISO installer](../liveusb/index.md), [Docker image](installation.md#docker) or from [source](installation.md#source)
 - Only relies on open source software libraries and the Linux kernel
 - Follows the Unix philosophy by providing a set of smaller command line tools
 
-## Daemon {#node-overview-daemon}
+## Daemon
 
 The server simply acts as a gateway to forward simulation data from one client to another.
 Furthermore, it collects statistics, monitors the quality of service and handles encryption or tunneling through VPNs.
@@ -39,7 +39,7 @@ The primary design goal was to make the behaviour of the system as deterministic
 Therefore, it's advisable to run the server component on a [PREEMPT_RT](https://rt.wiki.kernel.org/index.php/CONFIG_PREEMPT_RT_Patch) patched version of Linux. In our environment, we use a Fedora-based distribution which has been stripped to the bare minimum (no GUI, only a few background processes).
 Have a look at [Tuning](tuning.md) for ways to improve the real-time performance of your system.
 
-## Clients {#node-overview-clients}
+## Clients
 
 There are two types of interfaces to VILLASnode:
 
