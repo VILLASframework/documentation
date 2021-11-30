@@ -22,9 +22,9 @@ nodes = {
 		samplelen = 64,
 
 		signals = (
-			{ name = "Va", unit = "Volts", type = "float", enabled = true },
-			{ name = "Vb", unit = "Volts", type = "float", enabled = true },
-			{ name = "Vc", unit = "Volts", type = "float", enabled = true },
+			{ name = "Va", unit = "Volts", type = "float", "init": 230.0 },
+			{ name = "Vb", unit = "Volts", type = "float", "init": 230.0 },
+			{ name = "Vc", unit = "Volts", type = "float", "init": 230.0 },
 		)
 
 		# type specific settings follow here.
@@ -109,10 +109,6 @@ The data-type of the signal.
 #### in.signals[].init (float | integer | boolean | complex) {#node-config-node-signals-init}
 
 The initial value of the signal.
-
-#### in.signals[].enabled (boolean) = true {#node-config-node-signals-enabled}
-
-Signals can be disabled which causes them to be ignored.
 
 ### Format string  {#node-config-node-signals-fstring}
 
