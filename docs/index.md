@@ -34,7 +34,7 @@ The source code of all open source components is available over the [RWTH GitLab
 
 ## Copyright
 
-2014-2021, Institute for Automation of Complex Power Systems, EONERC
+2014-2022, Institute for Automation of Complex Power Systems, EONERC
 
 ## Licensing
 
