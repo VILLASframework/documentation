@@ -11,7 +11,7 @@ Welcome to the documentation of the VILLASframework.
 
 :::caution
 
-For starters we recommand to read the **[getting started guide](guide.md)**!
+For starters we recommand to read the **[installation guide](installation.md)**!
 
 :::
 
