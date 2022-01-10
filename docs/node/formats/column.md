@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 # Column-based formats
 
 There are two columns-based formats:
@@ -7,9 +11,9 @@ There are two columns-based formats:
 
 ## Configuration {#config}
 
-### separator (string) = "\t" {#config-separator}
+import ApiSchema from '@theme/ApiSchema';
 
-The column separator. Only single character separators are supported at the moment.
+<ApiSchema example pointer="#/components/schemas/column" />
 
 ## Implementation
 

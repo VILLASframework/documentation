@@ -1,16 +1,20 @@
-# Shift sequence numbers {#node-hook-type-shift_seq}
+---
+hide_table_of_contents: true
+---
 
-# Implementation {#node-hook-type-shift_seq-implementation}
+# Shift sequence numbers
+
+## Implementation
 
 The source code of the hook is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/shift_seq.cpp
 
-# Configuration {#node-config-hook-shift_seq}
+## Configuration
 
-## offset (integer) {#node-config-hook-shift_seq-offset}
+import ApiSchema from '@theme/ApiSchema';
 
-The offset which is added to the sequence number of each processed sample.
+<ApiSchema example pointer="#/components/schemas/shift_seq" />
 
-# Example {#node-hook-type-shift_seq-example}
+## Example
 
 @include node/etc/examples/hooks/shift_seq.conf

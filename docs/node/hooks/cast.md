@@ -1,24 +1,22 @@
-# Cast signal values {#node-hook-type-cast}
+---
+hide_table_of_contents: true
+---
+
+# Cast signal values
 
 The `cast` hook casts the data-type of signals and can set a new name and unit to the casted signal.
 
-# Implementation {#node-hook-type-cast-implementation}
+## Implementation
 
 The source code of the hook is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/cast.cpp
 
-# Configuration {#node-config-hook-cast}
+## Configuration {#config}
 
-## signal (integer or string: signal name or index) {#node-config-hook-cast-signal}
+import ApiSchema from '@theme/ApiSchema';
 
-## new_type (string: "integer" | "float" | "boolean" | "complex" ) {#node-config-hook-cast-new_type}
+<ApiSchema example pointer="#/components/schemas/cast" />
 
-The the type of the casted signal.
-
-## new_name (string) {#node-config-hook-cast-new_name}
-
-## new_type (string) {#node-config-hook-cast-new_type}
-
-# Example {#node-hook-type-cast-implementation}
+## Example
 
 @include node/etc/examples/hooks/cast.conf

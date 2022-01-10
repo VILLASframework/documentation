@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 # FIWARE IoTAgent Ultralight 2.0 Protocol
 
 Ultralight 2.0 is a lightweight text based protocol aimed to constrained devices and communications where the bandwidth and device memory may be limited resources.
@@ -15,10 +19,7 @@ The `iotagent_ul` format-type supports the following settings:
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema
-  specUrl="external/node/doc/dist.yaml"
-  schemaRef="#/components/schemas/iotagent_ul"
-/>
+<ApiSchema example pointer="#/components/schemas/iotagent_ul" />
 
 ## Example Configuration {#example}
 

@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 # Line-based formats
 
 There are currently the following line-based payload format-types:
@@ -12,19 +16,6 @@ https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/line
 
 ## Configuration {#config}
 
-### comment (string) = "#" {#config-comment}
+import ApiSchema from '@theme/ApiSchema';
 
-A comment prefix character. Only single character delimiters are supported at the moment.
-
-### header (boolean) = true {#config-header}
-
-If set a header line will be written to the output before the forst line of data.
-
-### delimiter (string) = "\n" {#config-delimiter}
-
-The line delimiter. Only single character delimiters are supported at the moment.
-
-### skip_first_line (boolean) = false {#config-skip-first-line}
-
-Whether or not the first line of input should be discarded.
-E.g. when its used for a header.
+<ApiSchema example pointer="#/components/schemas/line" />

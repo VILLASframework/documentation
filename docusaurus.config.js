@@ -57,7 +57,7 @@ const config = {
         specs: [
           {
             routePath: '/api/node/',
-            spec: 'external/node/doc/openapi.yaml',
+            spec: 'external/node/doc/dist.yaml',
           },
           {
             routePath: '/api/relay/',

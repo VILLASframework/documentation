@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 # Single value text
 
 The `value` format-type encodes a single sample value in a human readable representation.
@@ -11,7 +15,9 @@ https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/valu
 
 ## Configuration {#config}
 
-The @ref node-format-value format-type supports all [generic format options](@ref node-config-format).
+import ApiSchema from '@theme/ApiSchema';
+
+<ApiSchema example pointer="#/components/schemas/value" />
 
 ## Example Configuration {#example}
 

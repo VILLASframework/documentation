@@ -1,12 +1,20 @@
-# Energy Based Metric calculation {#node-hook-type-ebm}
+---
+hide_table_of_contents: true
+---
 
-# Implementation {#node-hook-type-ebm-implementation}
+# Energy Based Metric calculation
+
+## Implementation
 
 The source code of the hook is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/ebm.cpp
 
-# Configuration {#node-config-hook-ebm}
+## Configuration
 
-# Example {#node-hook-type-ebm-example}
+import ApiSchema from '@theme/ApiSchema';
+
+<ApiSchema example pointer="#/components/schemas/ebm" />
+
+## Example
 
 @include node/etc/examples/hooks/ebm.conf

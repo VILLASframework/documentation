@@ -3,7 +3,7 @@ sidebar_position: 1
 sidebar_label: Overview
 ---
 
-# Hook-types {#node-hook-types}
+# Hook-types
 
 Sometimes forwarded sample data shall be modified or filtered.
 VILLASnode supports _hooks_ for this purpose.

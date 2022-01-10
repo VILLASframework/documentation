@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 # Kafka Schema/Payload Javascript Object Notation
 
 ## Implementation
@@ -11,10 +15,7 @@ The `json.kafka` format-type supports the following settings:
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema
-  specUrl="external/node/doc/dist.yaml"
-  schemaRef="#/components/schemas/json_kafka"
-/>
+<ApiSchema example pointer="#/components/schemas/json_kafka" />
 
 ## Example Configuration {#example}
 

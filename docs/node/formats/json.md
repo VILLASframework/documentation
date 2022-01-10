@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 # Javascript Object Notation
 
 **Specification:** http://json.org
@@ -13,10 +17,11 @@ The `json` format-type supports the following settings:
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema
-  specUrl="external/node/doc/dist.yaml"
-  schemaRef="#/components/schemas/json"
-/>
+<ApiSchema example pointer="#/components/schemas/json" />
+
+## Example Configuration {#example}
+
+@include node/etc/examples/formats/json.conf
 
 ## Example Payload {#payload}
 

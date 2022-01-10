@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 # Google Protobuf
 
 **Specification:** https://developers.google.com/protocol-buffers
@@ -17,7 +21,9 @@ https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/prot
 
 ## Configuration {#config}
 
-The @ref node-format-value format-type supports all [generic format options](@ref node-config-format).
+import ApiSchema from '@theme/ApiSchema';
+
+<ApiSchema example pointer="#/components/schemas/protobuf" />
 
 ## Example Configuration {#example}
 

@@ -1,16 +1,22 @@
-# Dump sample data {#node-hook-type-dump}
+---
+hide_table_of_contents: true
+---
+
+# Dump sample data
 
 The `dump` hook will print a detailed dump of each processes samples to the standard output.
 
-# Implementation {#node-hook-type-dump-implementation}
+## Implementation
 
 The source code of the hook is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/dump.cpp
 
-# Configuration {#node-config-hook-dump}
+## Configuration
 
-The `dump` hook has no configurable options.
+import ApiSchema from '@theme/ApiSchema';
 
-# Example {#node-hook-type-dump-example}
+<ApiSchema example pointer="#/components/schemas/dump" />
+
+## Example
 
 @include node/etc/examples/hooks/dump.conf

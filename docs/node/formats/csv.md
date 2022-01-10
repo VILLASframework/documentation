@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 # Comma-separated values
 
 See also https://en.wikipedia.org/wiki/Comma-separated_values
@@ -13,10 +17,7 @@ The `csv` format-type supports the following settings:
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema
-  specUrl="external/node/doc/dist.yaml"
-  schemaRef="#/components/schemas/csv"
-/>
+<ApiSchema example pointer="#/components/schemas/csv" />
 
 ## Example Configuration {#example}
 

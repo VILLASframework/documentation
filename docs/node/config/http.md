@@ -1,24 +1,10 @@
-# Embedded HTTP / WebSocket server
+---
+hide_table_of_contents: true
+---
 
-## Configuration
+# HTTP / WebSocket server {#node-config-http}
 
-### http.enabled (boolean) = true {#enabled}
-
-When set to `false` the VILLASnode daemon will not listen on a port for servering HTTP and WebSocket requests.
-
-### http.port (integer)  = 80 {#port}
-
-The TCP port number on which HTTP / WebSocket server.
-
-### http.ssl_cert (string: path) {#ssl_cert}
-
-The public x509 certificate used for server-side SSL encryption.
-
-### http.ssl_private_key (string: path) {#ssl_private_key}
-
-The private x509 certificate used for server-side SSL encryption.
-
-## Example {#example}
+## Example
 
 <!-- TODO: Convert to json -->
 ```
@@ -32,3 +18,9 @@ http = {
 	ssl_private_key= "/etc/ssl/private/mykey.pem";
 }
 ```
+
+## Configuration
+
+import ApiSchema from '@theme/ApiSchema';
+
+<ApiSchema example pointer="#/components/schemas/http" />

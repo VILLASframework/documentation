@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 # Custom VILLAS Human Readable
 
 This is a simple human-readable format commonly used for logging or debugging:
@@ -27,9 +31,9 @@ https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/vill
 
 ## Configuration {#config}
 
-The @ref node-format-villas-human format-type supports the options documented on the following pages:
-- [generic format options](@ref node-config-format)
-- [line format options](@ref node-config-format-line)
+import ApiSchema from '@theme/ApiSchema';
+
+<ApiSchema example pointer="#/components/schemas/villas_human" />
 
 ## Example Configuration {#example}
 

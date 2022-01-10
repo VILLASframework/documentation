@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 # Raw binary values
 
 VILLASnode supports sending samples formated as raw binary data.
@@ -11,27 +15,9 @@ https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/raw.
 
 ## Configuration {#config}
 
-The @ref node-format-raw format-type supports all [generic format options](@ref node-config-format) plus the following:
+import ApiSchema from '@theme/ApiSchema';
 
-### bits (integer) = 32 {#config-bits}
-
-The word size of each value in bits.
-
-### endianess (string: "little" | "big") = "little" {#config-endianess}
-
-The [endianess](https://en.wikipedia.org/wiki/Endianness) of multi-byte words.
-
-The setting not be provided for `bits = 8`.
-
-### fake (boolean) = false {#config-fake}
-
-If enabled, the fake header mode VILLASnode uses the first three raw values in each en/decoded payload for the following purpose:
-
-| Sample field     | Description                                                     | Data-type |
-|:--               |:--                                                              |:--        |
-| `sequence`       | Sequence number of the sample                                   | integer   |
-| `ts.origin.sec`  | Timestamp (in seconds) of sampling instant at origin            | integer   |
-| `ts.origin.nsec` | Timestamp (nano-seconds fraction) of sampling instant at origin | integer   |
+<ApiSchema example pointer="#/components/schemas/raw" />
 
 ## Example Configuration {#example}
 

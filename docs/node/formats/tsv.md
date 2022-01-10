@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 # Tabulator-separated values
 
 See also https://en.wikipedia.org/wiki/Tab-separated_values
@@ -9,10 +13,9 @@ https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/colu
 
 ## Configuration {#config}
 
-The @ref node-format-tsv format-type supports the options documented on the following pages:
-- [generic format options](@ref node-config-format)
-- [line format options](@ref node-config-format-line)
-- [column format options](@ref node-config-format-column)
+import ApiSchema from '@theme/ApiSchema';
+
+<ApiSchema example pointer="#/components/schemas/tsv" />
 
 ## Example Configuration {#example}
 

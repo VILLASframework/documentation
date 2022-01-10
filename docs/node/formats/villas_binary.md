@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 # Custom VILLAS Binary
 
 We designed a lightweight message format (or protocol) to facilitate a fast transmission with minimal (de-)serialization overhead.
@@ -42,13 +46,9 @@ https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/vill
 
 ## Configuration {#config}
 
-The @ref node-format-villas-binary format-type supports all [generic format options](@ref node-config-format).
+import ApiSchema from '@theme/ApiSchema';
 
-In addition the following settings are supported:
-
-### source_index (integer) = 0 {#config-source_index}
-
-Configures the source index field which is a 8bit field in the packet header.
+<ApiSchema example pointer="#/components/schemas/villas_binary" />
 
 ## Example Configuration {#example}
 

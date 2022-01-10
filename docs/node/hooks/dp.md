@@ -1,12 +1,20 @@
-# Dynamic Phasor calculation / DFT {#node-hook-type-dp}
+---
+hide_table_of_contents: true
+---
 
-# Implementation {#node-hook-type-dp-implementation}
+# Dynamic Phasor calculation / DFT
+
+## Implementation
 
 The source code of the hook is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/dp.cpp
 
-# Configuration {#node-config-hook-dp}
+## Configuration
 
-# Example {#node-hook-type-dp-example}
+import ApiSchema from '@theme/ApiSchema';
+
+<ApiSchema example pointer="#/components/schemas/dp" />
+
+## Example
 
 @include node/etc/examples/hooks/dp.conf

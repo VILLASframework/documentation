@@ -1,16 +1,24 @@
-# Timestamp {#node-hook-type-ts}
+---
+hide_table_of_contents: true
+---
+
+# Timestamp
 
 The `ts` hook overwrite the origin timestamp field of each sample with the current system time.
 
-# Implementation {#node-hook-type-ts-implementation}
+## Implementation
 
 The source code of the hook is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/ts.cpp
 
-# Configuration {#node-config-hook-ts}
+## Configuration
 
 The `ts` hook has no configurable options.
 
-# Example {#node-hook-type-ts-example}
+import ApiSchema from '@theme/ApiSchema';
+
+<ApiSchema example pointer="#/components/schemas/ts" />
+
+## Example
 
 @include node/etc/examples/hooks/ts.conf

@@ -1,20 +1,22 @@
-# Average signal values {#node-hook-type-average}
+---
+hide_table_of_contents: true
+---
+
+# Average signal values
 
 The `average` hook calculates arithmetic mean over a set of signals and insert it as a new value to the samples.
 
-# Implementation {#node-hook-type-average-implementation}
+## Implementation
 
 The source code of the hook is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/average.cpp
 
-# Configuration {#node-config-hook-average}
+## Configuration {#config}
 
-## signals (list of signal names or signal indices) {#node-config-hook-average-signals}
+import ApiSchema from '@theme/ApiSchema';
 
-## offset (integer) {#node-config-hook-average-offset}
+<ApiSchema example pointer="#/components/schemas/average" />
 
-The signal offset at which the average signal should be inserted.
-
-# Example {#node-hook-type-average-example}
+## Example
 
 @include node/etc/examples/hooks/average.conf

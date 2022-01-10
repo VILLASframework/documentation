@@ -1,16 +1,20 @@
-# Shift timestamps {#node-hook-type-shift_ts}
+---
+hide_table_of_contents: true
+---
 
-# Implementation {#node-hook-type-shift_ts-implementation}
+# Shift timestamps
+
+## Implementation
 
 The source code of the hook is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/shift_ts.cpp
 
-# Configuration {#node-config-hook-shift_ts}
+## Configuration
 
-## mode (string: "origin" | "received") {#node-config-hook-shift_ts-mode}
+import ApiSchema from '@theme/ApiSchema';
 
-## offset (float) {#node-config-hook-shift_ts-offset}
+<ApiSchema example pointer="#/components/schemas/shift_ts" />
 
-# Example {#node-hook-type-shift_ts-example}
+## Example
 
 @include node/etc/examples/hooks/shift_ts.conf

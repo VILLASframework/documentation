@@ -1,4 +1,8 @@
-# Statistic collection {#node-hook-type-stats}
+---
+hide_table_of_contents: true
+---
+
+# Statistic collection
 
 The `stats` hook collects statistics about nodes.
 Currently the following metrics are collected:
@@ -34,35 +38,18 @@ For each of the metrics the following moments / attrbributes are collected:
 | `stddev`  | float   | The standard deviation across all collected values. |
 | `total`   | integer | The total number of collected values.               |
 
-# Implementation {#node-hook-type-stats-implementation}
+## Implementation
 
 The source code of the hook is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/stats.cpp
 
 
-# Configuration {#node-config-hook-stats}
+## Configuration
 
-## format (string: "json" | "matlab" | "human") = "human" {#node-config-hook-stats-format}
+import ApiSchema from '@theme/ApiSchema';
 
-The output format used to print the statistics at shutdown.
+<ApiSchema example pointer="#/components/schemas/stats" />
 
-## buckets (integer) = 20 {#node-config-hook-stats-buckets}
-
-The number of buckets which should be used for the underlying histograms.
-
-## warmup (integer) = 500 {#node-config-hook-stats-warmup}
-
-Use the first `warmup` samples to estimate the bucket range of the underlying histograms.
-
-## verbose (boolean) = false {#node-config-hook-stats-verbose}
-
-Include full dumps of the histogram buckets into the output.
-
-## output (string: uri) {#node-config-hook-stats-output}
-
-The file where you want to write the report to.
-If omitted, stdout (the terminal) will be used.
-
-# Example {#node-hook-type-stats-example}
+# Example
 
 @include node/etc/examples/hooks/stats.conf
