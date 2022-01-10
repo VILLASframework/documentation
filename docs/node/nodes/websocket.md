@@ -33,4 +33,21 @@ The node name is separated by a slash `/`.
 
 # Example {#node-type-websocket-example}
 
-@include node/etc/examples/nodes/websocket.conf
+``` url="external/node/etc/examples/nodes/websocket.conf" title="node/etc/examples/nodes/websocket.conf"
+nodes = {
+	ws = {
+		type = "websocket"
+
+		destinations = [
+			"ws://someserver:8080/somenode"
+		]
+	}
+}
+
+http = {
+	port = 8080
+	htdocs = "/villas/contrib/websocket/"
+	ssl_cert = "/etc/ssl/certs/mycert.pem"
+	ssl_private_key= "/etc/ssl/private/mykey.pem"
+}
+```

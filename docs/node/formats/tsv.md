@@ -19,7 +19,8 @@ import ApiSchema from '@theme/ApiSchema';
 
 ## Example Configuration {#example}
 
-@include node/etc/examples/formats/tsw.conf
+``` url="external/node/etc/examples/formats/tsw.conf"
+```
 
 ## Example Payload {#payload}
 

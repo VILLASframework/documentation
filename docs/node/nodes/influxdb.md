@@ -29,4 +29,13 @@ See also: [InfluxDB documentation](https://docs.influxdata.com/influxdb/v0.9/wri
 
 # Example {#node-type-influxdb-example}
 
-@include node/etc/examples/nodes/influxdb.conf
+``` url="external/node/etc/examples/nodes/influxdb.conf" title="node/etc/examples/nodes/influxdb.conf"
+nodes = {
+	influxdb_node = {
+		type = "influxdb",
+
+		server = "localhost:8089",
+		key = "villas"
+	}
+}
+```

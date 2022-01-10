@@ -38,4 +38,18 @@ A filter applied to the USB port number for selecting a specific sensor if multi
 
 # Example {#node-type-temper-example}
 
-@include node/etc/examples/nodes/temper.conf
+``` url="external/node/etc/examples/nodes/temper.conf" title="node/etc/examples/nodes/temper.conf"
+nodes = {
+	temper_node = {
+		type = "temper"
+
+		calibration = {
+			scale = 1.0
+			offset = 0.0
+		}
+
+		bus = 0x1
+		port = 0x1
+	}
+}
+```

@@ -40,7 +40,45 @@ Example: `AttributeName(AttributeType) MetadataName1(MetadataType1)=MetadataValu
 
 # Example {#node-type-ngsi-example}
 
-@include node/etc/examples/nodes/ngsi.conf
+``` url="external/node/etc/examples/nodes/ngsi.conf" title="node/etc/examples/nodes/ngsi.conf"
+nodes = {
+	ngsi_node = {
+		type = "ngsi",
+
+	### The following settings are specific to the ngsi node-type!! ###
+
+		# The HTTP REST API endpoint of the FIRWARE context broker
+		endpoint = "http://46.101.131.212:1026",
+
+		entity_id = "S3_ElectricalGrid",
+		entity_type = "ElectricalGridMonitoring",
+
+		rate = 0.1					# Rate at which we poll the broker for updates
+		timeout = 1,				# Timeout of HTTP request in seconds (default is 1, must be smaller than 1 / rate)
+		verify_ssl = false,			# Verification of SSL server certificates (default is true)
+
+		in = {
+			signals = (
+				{
+					name = "attr1",
+					ngsi_attribute_name = "attr1",	# defaults to signal 'name'
+					ngsi_attribute_type = "Volts",	# default to signal 'unit'
+					ngsi_attribute_metadatas = (
+						{ name="accuracy", type="percent", value="5" }
+					)
+				}
+			)
+		}
+
+		out = {
+			signals = (
+				{ name="PTotalLosses", unit="MW" },
+				{ name="QTotalLosses", unit="Mvar" }
+			)
+		}
+	}
+}
+```
 
 # Further reading
 

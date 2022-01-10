@@ -20,4 +20,24 @@ import ApiSchema from '@theme/ApiSchema';
 
 ## Example
 
-@include node/etc/examples/hooks/scale.conf
+``` url="external/node/etc/examples/hooks/scale.conf" title="node/etc/examples/hooks/scale.conf"
+@include "hook-nodes.conf"
+
+paths = (
+	{
+		in = "signal_node"
+		out = "file_node"
+
+		hooks = (
+			{
+				type = "scale"
+
+				signal = "sine"
+
+				offset = 100.0
+				scale = 55.0
+			}
+		)
+	}
+)
+```

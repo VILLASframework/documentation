@@ -21,4 +21,23 @@ import ApiSchema from '@theme/ApiSchema';
 
 ## Example
 
-@include node/etc/examples/hooks/print.conf
+``` url="external/node/etc/examples/hooks/print.conf" title="node/etc/examples/hooks/print.conf"
+@include "hook-nodes.conf"
+
+paths = (
+	{
+		in = "signal_node"
+		out = "file_node"
+
+		hooks = (
+			{
+				type = "print",
+
+				output = "print_output_file.log"
+				format = "villas.human"
+				prefix = "[file_node] "
+			}
+		)
+	}
+)
+```

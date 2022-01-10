@@ -21,4 +21,19 @@ import ApiSchema from '@theme/ApiSchema';
 
 ## Example
 
-@include node/etc/examples/hooks/ts.conf
+``` url="external/node/etc/examples/hooks/ts.conf" title="node/etc/examples/hooks/ts.conf"
+@include "hook-nodes.conf"
+
+paths = (
+	{
+		in = "signal_node"
+		out = "file_node"
+
+		hooks = (
+			{
+				type = "ts"
+			}
+		)
+	}
+)
+```

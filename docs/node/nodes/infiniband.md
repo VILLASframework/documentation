@@ -156,7 +156,79 @@ It turns out that the ideal value in most cases is `out.max_wrs / 2`. Hence, usu
 
 # Example {#node-type-infiniband-example}
 
-@include node/etc/examples/nodes/infiniband.conf
+``` url="external/node/etc/examples/nodes/infiniband.conf" title="node/etc/examples/nodes/infiniband.conf"
+nodes = {
+	results = {
+		type = "file",
+
+		uri = "logs/ib_results-%Y%m%d_%H-%M-%S.log",
+	},
+
+	siggen = {
+		type = "signal",
+
+		signal = "mixed",
+		values = 3,
+		frequency = 3.0,
+		rate = 100000.0,
+		limit = 100000,
+	},
+
+	ib_node_source = {
+		type = "infiniband",
+
+		rdma_port_space = "RC",
+		
+		in = {
+			address = "10.0.0.2:1337",
+
+			max_wrs = 8192,
+			cq_size = 8192,
+
+			vectorize = 1,
+
+			buffer_subtraction = 128,
+		},
+
+		out = {
+			address = "10.0.0.1:1337",
+			resolution_timeout = 1000,
+			
+			max_wrs = 8192,
+			cq_size = 256,
+
+			vectorize = 1,
+
+			send_inline = true,
+			max_inline_data = 60,
+
+			use_fallback = true,
+		}
+	}
+
+	ib_node_target = {
+		type = "infiniband",
+
+		rdma_port_space = "RC",
+
+		in = {
+			address = "10.0.0.1:1337",
+
+			max_wrs = 8192,
+			cq_size = 8192,
+
+			vectorize = 1,
+
+			buffer_subtraction = 128,
+
+			hooks = (
+				{ type = "stats", verbose = true }
+			)
+		}
+	}
+}
+
+```
 
 # State diagram
 

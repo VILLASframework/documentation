@@ -6,7 +6,19 @@ VILLASnode comes with a couple of tools to test and debug connectivity and confi
 
 All VILLASnode tools are available as sub-commands to the `villas` wrapper:
 
-@include node/usage/villas.txt
+``` url="generated/node/usage/villas.txt" title="generated/node/usage/villas.txt"
+Usage: villas [TOOL]
+  TOOL     is one of api|conf2json|convert|ctl|cumulative-dist|extract-rtt|file-filter|file-merge|graph|hook|node|pipe|relay|shmem|signal|test-cmp|test-config|test-rtt|zmq-keygen
+
+For detailed documentation, please see: 'villas node'
+  http://villas.fein-aachen.org/doc/
+
+13:24:11 info node: This is VILLASnode v0.11.0-5c666fb-debug (built on Feb 23 2021, 02:34:46)
+13:24:11 info signals: Initialize subsystem
+ v0.11.0-5c666fb-debug (built on Feb 23 2021 02:34:46)
+ Copyright 2014-2017, Institute for Automation of Complex Power Systems, EONERC
+ Steffen Vogel <StVogel@eonerc.rwth-aachen.de>
+```
 
 ### Subcommands
 

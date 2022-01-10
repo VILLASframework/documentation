@@ -37,7 +37,21 @@ import ApiSchema from '@theme/ApiSchema';
 
 ## Example Configuration {#example}
 
-@include node/etc/examples/formats/villas-human.conf
+``` url="external/node/etc/examples/formats/villas-human.conf" title="node/etc/examples/formats/villas-human.conf"
+nodes = {
+	node = {
+		type = "file"
+		uri = "/dev/null"
+
+		format = {
+			type = "villas.human"
+
+			comment_prefix = "#"
+			header = false
+		}
+	}
+}
+```
 
 ## Example Payload {#payload}
 

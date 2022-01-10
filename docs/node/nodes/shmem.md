@@ -49,7 +49,28 @@ program directly from VILLASNode. If unset, no command is executed.
 
 # Example {#node-type-shmem-example}
 
-@include node/etc/examples/nodes/shmem.conf
+``` url="external/node/etc/examples/nodes/shmem.conf" title="node/etc/examples/nodes/shmem.conf"
+nodes = {
+	shmem_node = {
+		type = "shmem",
+		
+		in = {
+			name = "sn1_in"
+		},					# Name of shared memory segment for receiving side
+		out = {
+			name = "sn1_in"			# Name of shared memory segment for sending side
+		},
+
+		queuelen = 1024,			# Length of the queues
+		mode = "pthread",			# We can busy-wait or use pthread condition variables for synchronizations
+		
+		# Execute an external process when starting the node which
+		# then starts the other side of this shared memory channel
+		# Usually we also pass the shmem names as parameters.
+		exec = [ "villas-shmem", "sn1_in", "sn1_out" ]
+	}
+}
+```
 
 # API for external programs {#node-type-shmem-api}
 

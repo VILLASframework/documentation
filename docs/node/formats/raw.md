@@ -21,7 +21,22 @@ import ApiSchema from '@theme/ApiSchema';
 
 ## Example Configuration {#example}
 
-@include node/etc/examples/formats/raw.conf
+``` url="external/node/etc/examples/formats/raw.conf" title="node/etc/examples/formats/raw.conf"
+nodes = {
+	node = {
+		type = "file"
+		uri = "/dev/null"
+
+		format = {
+			type = "raw"
+
+			bits = 32
+			endianess = "little"
+			fake = false
+		}
+	}
+}
+```
 
 ## Notes
 

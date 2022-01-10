@@ -21,7 +21,24 @@ import ApiSchema from '@theme/ApiSchema';
 
 ## Example Configuration {#example}
 
-@include node/etc/examples/formats/json.conf
+``` url="external/node/etc/examples/formats/json.conf" title="node/etc/examples/formats/json.conf"
+nodes = {
+	node = {
+		type = "file"
+		uri = "/dev/null"
+
+		format = {
+			type = "json"
+
+			indent = 4
+			compact = true
+			ensure_ascii = true
+			escape_slash = false
+			sort_keys = true
+		}
+	}
+}
+```
 
 ## Example Payload {#payload}
 

@@ -19,7 +19,24 @@ import ApiSchema from '@theme/ApiSchema';
 
 ## Example Configuration {#example}
 
-@include node/etc/examples/formats/json-kafka.conf
+``` url="external/node/etc/examples/formats/json-kafka.conf" title="node/etc/examples/formats/json-kafka.conf"
+nodes = {
+	node = {
+		type = "file"
+		uri = "/dev/null"
+
+		format = {
+			type = "json.kafka"
+
+			indent = 2
+			schema = {
+				type = "struct"
+				name = "villas-node.Value"
+			}
+		}
+	}
+}
+```
 
 ## Example Payload {#payload}
 

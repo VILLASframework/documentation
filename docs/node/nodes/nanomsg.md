@@ -42,4 +42,25 @@ The `nanomsg` supports several different transport mechanisms which are listed i
 
 # Example {#node-type-nanomsg-example}
 
-@include node/etc/examples/nodes/nanomsg.conf
+``` url="external/node/etc/examples/nodes/nanomsg.conf" title="node/etc/examples/nodes/nanomsg.conf"
+nodes = {
+	nanomsg_node = {
+		type = "nanomsg",
+
+		out = {
+			endpoints = [
+				"tcp://*:12000",		# TCP socket
+				"ipc:///tmp/test.ipc",		# Interprocess communication
+				"inproc://test"			# Inprocess communication
+			],
+		}
+		in = {
+			endpoints = [
+				"tcp://127.0.0.1:12000",
+				"ipc:///tmp/test.ipc",
+				"inproc://test"
+			]
+		}
+	}
+}
+```

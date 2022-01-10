@@ -108,4 +108,35 @@ If `out.buffer_size = 0`, no buffer will be generated.
 
 # Example {#node-type-file-example}
 
-@include node/etc/examples/nodes/file.conf
+``` url="external/node/etc/examples/nodes/file.conf" title="node/etc/examples/nodes/file.conf"
+nodes = {
+	file_node = {
+		type	= "file"
+
+	### The following settings are specific to the file node-type!! ###
+
+		uri = "logs/input.log",			# These options specify the URI where the the files are stored
+		#uri = "logs/output_%F_%T.log"		# The URI accepts all format tokens of (see strftime(3))
+
+		format = "csv"
+
+		in = {
+			epoch_mode = "direct"		# One of: direct (default), wait, relative, absolute
+			epoch = 10			# The interpretation of this value depends on epoch_mode (default is 0).
+							# Consult the documentation of a full explanation
+
+			rate = 2.0			# A constant rate at which the lines of the input files should be read
+							# A missing or zero value will use the timestamp in the first column
+							# of the file to determine the pause between consecutive lines.
+			eof = "rewind"			# Rewind the file and start from the beginning.
+
+			buffer_size = 0			# Creates a stream buffer if value is positive
+		},
+		out = {
+			flush = false			# Flush or upload contents of the file every time new samples are sent.
+
+			buffer_size = 0			# Creates a stream buffer if value is positive
+		}
+	}
+}
+```

@@ -21,4 +21,17 @@ import ApiSchema from '@theme/ApiSchema';
 
 ## Example Configuration {#example}
 
-@include node/etc/examples/formats/value.conf
+``` url="external/node/etc/examples/formats/value.conf" title="node/etc/examples/formats/value.conf"
+nodes = {
+	node = {
+		type = "file"
+		uri = "/dev/null"
+
+		format = {
+			type = "value"
+
+			real_precision = 5
+		}
+	}
+}
+```

@@ -47,4 +47,18 @@ A object of key/value pairs of environemnt variables which should be passed to t
 
 # Example {#node-type-exec-example}
 
-@include node/etc/examples/nodes/exec.conf
+``` url="external/node/etc/examples/nodes/exec.conf" title="node/etc/examples/nodes/exec.conf"
+nodes = {
+	exec_node = {
+		type = "exec"
+		format = "villas.human"
+		flush = true
+		exec = "tee test"
+		shell = true
+		working_directory = "/tmp"
+		environment = {
+			MYVAR = "TESTVAL"
+		}
+	}
+}
+```

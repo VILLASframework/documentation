@@ -84,4 +84,5 @@ The time to live for outgoing multicast packets.
 
 # Example {#node-type-socket-example}
 
-@include node/etc/examples/node/nodes/socket.conf
+``` url="external/node/etc/examples/node/nodes/socket.conf"
+```

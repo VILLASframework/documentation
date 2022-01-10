@@ -86,4 +86,23 @@ If `true`, the @ref node-type-signal node-type will count missed steps and warn 
 
 # Example {#node-type-signal-example}
 
-@include node/etc/examples/nodes/signal.conf
+``` url="external/node/etc/examples/nodes/signal.conf" title="node/etc/examples/nodes/signal.conf"
+nodes = {
+	signal_node = {
+		type = "signal",
+
+		# One of "sine", "square", "ramp", "triangle", "random", "mixed", "counter"
+		signal = [ "sine", "pulse", "square" ],
+
+		values = 3,			# Number of values per sample
+		amplitude = [ 1.2, 0.0, 4.0 ],	# Amplitude of generated signals
+		frequency = 10,			# Frequency of generated signals
+		stddev = 2,			# Standard deviation of random signals (normal distributed)
+		rate = 10.0,			# Sample rate
+		offset = 1.0,			# Constant offset
+		realtime = true,		# Wait between emitting each sample
+		limit = 1000,			# Only emit 1000 samples, then stop
+		monitor_missed = true		# Count and warn about missed steps
+	}
+}
+```

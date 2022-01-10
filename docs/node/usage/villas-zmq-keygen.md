@@ -4,4 +4,5 @@ The `villas zmq-keygen` command generates keys for the [ZeroMQ node-type](../nod
 
 ## Usage
 
-@include node/usage/villas-zmq-keygen.txt
+``` url="generated/node/usage/villas-zmq-keygen.txt"
+```

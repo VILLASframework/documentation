@@ -20,4 +20,21 @@ import ApiSchema from '@theme/ApiSchema';
 
 ## Example
 
-@include node/etc/examples/hooks/limit_rate.conf
+``` url="external/node/etc/examples/hooks/limit_rate.conf" title="node/etc/examples/hooks/limit_rate.conf"
+@include "hook-nodes.conf"
+
+paths = (
+	{
+		in = "signal_node"
+		out = "file_node"
+
+		hooks = (
+			{
+				type = "limit_rate"
+
+				rate = 5.5
+			}
+		)
+	}
+)
+```

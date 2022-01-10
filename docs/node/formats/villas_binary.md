@@ -52,7 +52,20 @@ import ApiSchema from '@theme/ApiSchema';
 
 ## Example Configuration {#example}
 
-@include node/etc/examples/formats/villas-binary.conf
+``` url="external/node/etc/examples/formats/villas-binary.conf" title="node/etc/examples/formats/villas-binary.conf"
+nodes = {
+	node = {
+		type = "file"
+		uri = "/dev/null"
+
+		format = {
+			type = "villas.binary"
+
+			source_index = 99
+		}
+	}
+}
+```
 
 ## Example Payload {#payload}
 

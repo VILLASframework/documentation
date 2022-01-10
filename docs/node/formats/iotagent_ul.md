@@ -23,7 +23,16 @@ import ApiSchema from '@theme/ApiSchema';
 
 ## Example Configuration {#example}
 
-@include node/etc/examples/formats/iotagent_ul.conf
+``` url="external/node/etc/examples/formats/iotagent_ul.conf" title="node/etc/examples/formats/iotagent_ul.conf"
+nodes = {
+	node = {
+		type = "file"
+		uri = "/dev/null"
+
+		format = "iotagent_ul"
+	}
+}
+```
 
 ## Further Documentation
 

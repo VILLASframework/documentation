@@ -19,4 +19,19 @@ import ApiSchema from '@theme/ApiSchema';
 
 ## Example
 
-@include node/etc/examples/hooks/dump.conf
+``` url="external/node/etc/examples/hooks/dump.conf" title="node/etc/examples/hooks/dump.conf"
+@include "hook-nodes.conf"
+
+paths = (
+	{
+		in = "signal_node"
+		out = "file_node"
+
+		hooks = (
+			{
+				type = "dump"
+			}
+		)
+	}
+)
+```

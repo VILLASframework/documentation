@@ -21,7 +21,23 @@ import ApiSchema from '@theme/ApiSchema';
 
 ## Example Configuration {#example}
 
-@include node/etc/examples/formats/csv.conf
+``` url="external/node/etc/examples/formats/csv.conf" title="node/etc/examples/formats/csv.conf"
+nodes = {
+	node = {
+		type = "file"
+		uri = "/dev/null"
+
+		format = {
+			type = "csv"
+
+			separator = ","
+			delimiter = "\n"
+			skip_first_line = false
+			header = true
+		}
+	}
+}
+```
 
 ## Example Payload {#payload}
 

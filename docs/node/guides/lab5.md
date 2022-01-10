@@ -15,7 +15,27 @@ In this lab, the _node_ is a RTDS GTNETv2 card running the SKT firmware.
 
 We use a slightly modified configuration file in order to change the UDP packet format:
 
-@includelineno node/etc/labs/lab5.conf
+``` url="external/node/etc/labs/lab5.conf" title="node/etc/labs/lab5.conf"
+nodes = {
+	rtds_gtnet1 = {
+		type = "socket",
+		layer = "udp",
+		format = "gtnet",
+
+		in = {
+			address = "*:12000"
+
+			signals = {
+				count = 8,
+				type = "float"
+			}
+		},
+		out = {
+			address = "134.130.169.89:12000"
+		}
+	}
+}
+```
 
 ```bash
 villas signal -v 4 -r 1000 mixed | villas pipe lab5.conf rtds_gtnet1

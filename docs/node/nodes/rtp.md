@@ -19,7 +19,57 @@ For more information see also: [Netem Emulation](../netem.md)
 
 # Example {#node-type-rtp-example}
 
-@include node/etc/examples/nodes/rtp.conf
+``` url="external/node/etc/examples/nodes/rtp.conf" title="node/etc/examples/nodes/rtp.conf"
+nodes = {
+	rtp_node = {
+		type = "rtp"
+
+		format = {
+			type = "raw"
+			bits = "32"
+			endianess = "big"
+		}
+
+		rtcp = false
+
+		aimd = {
+			a = 10,
+			b = 0.5
+
+			Kp = 1.0
+			Ki = 0.0
+			Kd = 0
+
+			rate_min = 100
+			rate_init = 2000
+			rate_source = 10000
+
+			log = "aimd-rates-%Y_%m_%d_%s.log"
+
+			hook_type = "limit_rate"
+		}
+
+		in = {
+			address = "0.0.0.0:12000",
+			signals = {
+				count = 3
+				type = "float"
+			}
+		}
+
+		out = {
+			address = "127.0.0.1:12000"
+
+			netem = {			# Network emulation settings
+				enabled = false,
+				
+				delay = 100000,		# Additional latency in microseconds
+				loss = 10		# Packet loss in percent
+			}
+		}
+	}
+}
+```
 
 # Further reading
 

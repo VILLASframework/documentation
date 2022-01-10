@@ -77,4 +77,53 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/uldaq.cp
 
 # Example {#node-type-uldaq-example}
 
-@include node/etc/examples/nodes/uldaq.conf
+``` url="external/node/etc/examples/nodes/uldaq.conf" title="node/etc/examples/nodes/uldaq.conf"
+http = {
+	enabled = false
+}
+
+nodes = {
+	ul201 = {
+		type = "uldaq"
+		interface_type = "usb"
+		in = {
+			range = "bipolar-10",
+			input_mode = "single-ended" 
+			signals = (
+				{ name = "ch0", type = "float", channel = 0 }
+			)
+
+			sample_rate = 5000,
+			vectorize = 100
+		}
+	},
+
+	vpmu = {
+		type = "socket",
+		layer = "udp",
+
+		format = {
+			type = "raw"
+			bits = 32
+			endianess = "big"
+		}
+
+		in = {
+			address = "*:13001"
+
+			signals = ()
+		},
+		out = {
+			vectorize = 100
+			address = "10.100.1.125:13000"
+		}
+	}
+}
+
+paths = (
+	{
+		in = "ul201",
+		out = "vpmu"
+	}
+)
+```

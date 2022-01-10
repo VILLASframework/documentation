@@ -17,4 +17,29 @@ import ApiSchema from '@theme/ApiSchema';
 
 ## Example
 
-@include node/etc/examples/hooks/dp.conf
+``` url="external/node/etc/examples/hooks/dp.conf" title="node/etc/examples/hooks/dp.conf"
+@include "hook-nodes.conf"
+
+paths = (
+	{
+		in = "signal_node"
+		out = "file_node"
+
+		hooks = (
+			{
+				type = "dp"
+
+				signal = "sine"
+				f0 = 50 # Hz
+				dt = 0.1 # seconds
+				
+				# Alternative to dt
+				# rate = 10 Hz
+
+				harmonics = [ 0, 1, 3, 5, 7 ]
+				inverse = false
+			}
+		)
+	}
+)
+```

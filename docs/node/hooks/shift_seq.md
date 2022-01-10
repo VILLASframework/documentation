@@ -17,4 +17,21 @@ import ApiSchema from '@theme/ApiSchema';
 
 ## Example
 
-@include node/etc/examples/hooks/shift_seq.conf
+``` url="external/node/etc/examples/hooks/shift_seq.conf" title="node/etc/examples/hooks/shift_seq.conf"
+@include "hook-nodes.conf"
+
+paths = (
+	{
+		in = "signal_node"
+		out = "file_node"
+
+		hooks = (
+			{
+				type = "shift_seq"
+
+				offset = 10
+			}
+		)
+	}
+)
+```

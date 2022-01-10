@@ -19,4 +19,25 @@ import ApiSchema from '@theme/ApiSchema';
 
 ## Example
 
-@include node/etc/examples/hooks/cast.conf
+``` url="external/node/etc/examples/hooks/cast.conf" title="node/etc/examples/hooks/cast.conf"
+@include "hook-nodes.conf"
+
+paths = (
+	{
+		in = "signal_node"
+		out = "file_node"
+
+		hooks = (
+			{
+				type = "cast"
+
+				signal = "random"
+				
+				new_name = "int_random"
+				new_unit = "pts"
+				new_type = "integer"
+			}
+		)
+	}
+)
+```

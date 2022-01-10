@@ -19,4 +19,22 @@ import ApiSchema from '@theme/ApiSchema';
 
 ## Example
 
-@include node/etc/examples/hooks/average.conf
+``` url="external/node/etc/examples/hooks/average.conf" title="node/etc/examples/hooks/average.conf"
+@include "hook-nodes.conf"
+
+paths = (
+	{
+		in = "signal_node"
+		out = "file_node"
+
+		hooks = (
+			{
+				type = "average"
+
+				signals = [ "sine", "square" ]
+				offset = 0
+			}
+		)
+	}
+)
+```
