@@ -22,3 +22,5 @@ yarn-error.log*
 .vscode/
 figures/dia/*.svg
 static/recordings/videos/*
+
+generated/node/openapi.yaml
