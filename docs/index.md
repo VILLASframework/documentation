@@ -21,10 +21,6 @@ For starters we recommand to read the **[installation guide](installation.md)**!
 
 :::
 
-## Installation
-
-- [Installation](installation.md)
-
 ## Components
 
 - [VILLASnode](node/index.md)

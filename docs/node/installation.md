@@ -12,6 +12,12 @@ VILLASnode can be installed in multiple ways:
 - [Bootable Linux live image](../liveusb/index.md)
 - or from source
 
+::: caution
+
+Please make sure that your system fullfills the [requirements](requirements.md) before proceeding.
+
+:::
+
 ## Docker images {#docker}
 
 There exists a set of Docker images for running and developing VILLASnode.

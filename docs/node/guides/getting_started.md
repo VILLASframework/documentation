@@ -11,6 +11,12 @@ Please look below for a [video recording](#video) of a webinar covering the topi
 
 ## Preparation
 
+::: caution
+
+Please make sure that your system fullfills the [requirements](../requirements.md) before proceeding.
+
+:::
+
 The [installation](installation.md) page lists several ways to install VILLASnode on your machine.
 
 For this guide, we recommend to use the [VILLASnode Docker image](@ref node-installation-docker) on your workstation.
