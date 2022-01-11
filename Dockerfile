@@ -37,6 +37,8 @@ RUN apt-get update && \
 RUN mkdir /doc
 WORKDIR /doc
 
+RUN yarn global add @redocly/openapi-cli
+
 COPY package.json .
 RUN yarn
 
