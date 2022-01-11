@@ -11,7 +11,7 @@ Welcome to the documentation of the VILLASframework.
 
 :::note
 
-We recently migrated our documentation to a new site. However, the [old documentation](/doc/) is still available.
+We recently migrated our documentation to a new site. However, the [old documentation](https://villas.fein-aachen.org/doc/) is still available.
 
 :::
 
