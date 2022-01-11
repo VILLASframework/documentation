@@ -29,7 +29,34 @@ For this task we use Docker containers and the following `docker-compose.yml` fi
 
 ### `docker-compose.yml`
 
-``` url="external/node/grafana-influxdb/docker-compose.yml"
+``` url="examples/node/grafana-influxdb/docker-compose.yml" title="examples/node/grafana-influxdb/docker-compose.yml"
+influxdb:
+  image: influxdb:1.7.10
+  container_name: influxdb
+  ports:
+    - "8083:8083"
+    - "8086:8086"
+    - "8090:8090"
+    - "8089:8089/udp"
+  environment:
+    - INFLUXDB_DATA_ENGINE=tsm1
+    - INFLUXDB_REPORTING_DISABLED=false
+    - INFLUXDB_DB=villas
+    - INFLUXDB_ADMIN_USER=admin
+    - INFLUXDB_ADMIN_PASSWORD=admin
+    - INFLUXDB_UDP_ENABLED=true
+    - INFLUXDB_UDP_DATABASE=villas
+
+grafana:
+  image: grafana/grafana:6.6.2
+  container_name: grafana
+  ports:
+    - "3000:3000"
+  environment:
+    - GF_SECURITY_ADMIN_USER=admin
+    - GF_SECURITY_ADMIN_PASSWORD=admin
+  links:
+    - influxdb
 ```
 
 ### Steps
@@ -56,7 +83,35 @@ Add a new dashboard to Grafana by importing the following file: [VILLAS test das
 
 ### `villas.conf`
 
-``` url="external/node/grafana-influxdb/villas.conf"
+``` url="examples/node/grafana-influxdb/villas.conf" title="examples/node/grafana-influxdb/villas.conf"
+nodes = {
+	influx = {
+		type = "influxdb",
+
+		server = "influxdb:8089",
+		key = "villas"
+
+		# Send updates in batches of 50 samples
+		in = {
+			vectorize = 50
+		}
+	}
+
+	siggen = {
+		type = "signal",
+
+		signal = "mixed",
+		values = 6
+		rate = 50.0
+	}
+}
+
+paths = (
+	{
+		in = "siggen"
+		out = "influx"
+	}
+)
 ```
 
 ### Steps

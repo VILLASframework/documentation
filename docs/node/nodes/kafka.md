@@ -57,5 +57,33 @@ A timeout in seconds for the broker connection.
 
 # Example {#node-type-kafka-example}
 
-``` url="external/node/etc/examples/node/nodes/kafka.conf"
+``` url="external/node/etc/examples/nodes/kafka.conf" title="node/etc/examples/nodes/kafka.conf"
+nodes = {
+	kafka_node = {
+		type = "kafka",
+		
+		format = "json.kafka",
+
+		server = "localhost:9094",
+		protocol = "SASL_SSL",
+		client_id = "villas-node",
+
+		in = {
+			consume = "test-topic",
+			group_id = "villas-node"
+		},
+		out = {
+			produce = "test-topic"
+		},
+
+		ssl = {
+			ca = "/etc/ssl/certs/ca.pem",
+		},
+		sasl = {
+			mechanisms = "SCRAM-SHA-512",
+			username = "scram-sha-512-usr",
+			password = "scram-sha-512-pwd"
+		}
+	}
+}
 ```
