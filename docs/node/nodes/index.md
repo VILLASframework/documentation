@@ -9,6 +9,11 @@ All communication partners which are interfaced by the VILLASnode gateway are re
 These nodes act as sinks / sources for simulation data.
 Every node is an instance of a node-type. In a single VILLASnode instance, multiples instances of the same node-type can be created at the same time.
 
+<figure align="center">
+    <img alt="VILLASnode interfaces" src="/img/VILLASnode_interfaces.svg" width="100%" />
+    <figcaption>Excert of interfaces supported by VILLASnode.</figcaption>
+</figure>
+
 VILLASnode currently supports the following node-types:
 
 | Type                              | Network Emulation | Read | Write | Vectorize | Status      | Comments |
@@ -41,8 +46,3 @@ VILLASnode currently supports the following node-types:
 | [uldaq](uldaq.md)                 | no                | yes  | no    | unlimited | stable      | |
 | [websocket](websocket.md)         | no                | yes  | yes   | unlimited | stable      | |
 | [zeromq](zeromq.md)               | yes               | yes  | yes   | unlimited | stable      | |
-
-<figure align="center">
-    <img alt="VILLASnode interfaces" src="/img/VILLASnode_interfaces" width="100%" />
-    <figcaption>VILLASnode interfaces.</figcaption>
-</figure>

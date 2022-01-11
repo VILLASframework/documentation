@@ -12,7 +12,7 @@ VILLASnode can be installed in multiple ways:
 - [Bootable Linux live image](../liveusb/index.md)
 - or from source
 
-::: caution
+:::caution
 
 Please make sure that your system fullfills the [requirements](requirements.md) before proceeding.
 

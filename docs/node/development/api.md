@@ -1,4 +1,4 @@
-# API {#node-dev-api}
+# API
 
 VILLASnode can be controlled remotely with an Application Programming Interface (API).
 Using this API VILLASnode can be completly remote controlled.
@@ -10,7 +10,7 @@ There are two components which provide dedicated APIs:
 
 ## API specification
 
-- [**OpenAPI 3.0 Specification**](https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/doc/openapi.yaml)
+- [**OpenAPI 3.0 Specification**](https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/doc/openapi.yaml) ([online](/api/node/))
 - Python Wrapper: [Source](https://git.rwth-aachen.de/acs/public/villas/node/-/tree/master/python), [PyPi package](https://pypi.org/project/villas-node/)
    - Install it via: `pip install villas-node`
 

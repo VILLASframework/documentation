@@ -6,6 +6,12 @@ sidebar_position: 6
 
 To get started quickly, we recommend to run VILLAS in a small Kubernetes cluster.
 
+:::important
+
+There is also [a dedicated installation guide for VILLASnode](node/installation.md) in case you only want to use VILLASnode instead of the full VILLASframework system.
+
+:::
+
 You can run the full set of VILLASframework components pre-configured in a Kubernetes cluster using the [Helm chart](https://git.rwth-aachen.de/acs/public/catalogue/-/blob/master/charts/villas/).
 
 ## Requirements {#installation-prereq}

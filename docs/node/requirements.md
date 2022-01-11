@@ -38,8 +38,20 @@ VILLASnode is regularily tested on the following operating systems:
 
 - Fedora 34 (recommended)
 - Debian 11.2 - Bullseye
-- CentOS 8
+- CentOS / RHEL / RockyLinux 8
 - Alpine 3.13
 - Ubuntu 20.04
 
 Better real-time performance can be achieved by using an optimized system configuration. Please take a look at the [Tuning](tuning.md) page for details.
+
+:::caution
+
+Disable any firewall on your system or configure it accordingly to work with the protocols used by VILLASnode. An improperly configured firewall is the most common issue reported while using VILLASnode!
+
+
+E.g. on a RHEL/CentOS/RockyLinux or Fedora system:
+```bash
+systemctl disable --now firewalld
+```
+
+:::

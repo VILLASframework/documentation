@@ -11,7 +11,7 @@ Please look below for a [video recording](#video) of a webinar covering the topi
 
 ## Preparation
 
-::: caution
+:::caution
 
 Please make sure that your system fullfills the [requirements](../requirements.md) before proceeding.
 
@@ -19,7 +19,7 @@ Please make sure that your system fullfills the [requirements](../requirements.m
 
 The [installation](installation.md) page lists several ways to install VILLASnode on your machine.
 
-For this guide, we recommend to use the [VILLASnode Docker image](@ref node-installation-docker) on your workstation.
+For this guide, we recommend to use the [VILLASnode Docker image](../installation.md#docker) on your workstation.
 
 To open an interactive terminal in the VILLASnode Docker container run:
 
@@ -103,6 +103,12 @@ This webinar was recorded during the preparation of the RT-SuperLab demonstratio
 - **Date:** 8th May 2017
 - **Versions:** VILLASnode v0.3
 - **Speaker:** [Steffen Vogel](mailto:stvogel@eonerc.rwth-aachen.de)
+
+:::caution
+
+This video presents an outdated version of VILLASnode!
+
+:::
 
 <video controls width="100%" align="center">
 	<source src="https://videos.fein-aachen.org/VILLASnode_Webinar_2017_05_08.mp4" type="video/mp4" />
