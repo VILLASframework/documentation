@@ -32,7 +32,8 @@ RUN apt-get update && \
 		make \
 		xsltproc \
 		findutils \
-		locales
+		locales \
+		python3
 
 RUN mkdir /doc
 WORKDIR /doc

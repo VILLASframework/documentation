@@ -24,3 +24,4 @@ figures/dia/*.svg
 static/recordings/videos/*
 
 generated/node/openapi.yaml
+node_modules

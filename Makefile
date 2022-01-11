@@ -20,7 +20,7 @@ figures: $(SVG_FIGURES)
 clean:
 	rm -f build/
 
-build/index.html: figures openapi
+build/index.html: figures openapi examples
 	yarn build
 
 %.svg: %.dia
@@ -35,6 +35,9 @@ generated/node/openapi.yaml: external/node/doc/openapi/openapi.yaml
 	openapi bundle -o $@ $^
 
 openapi: generated/node/openapi.yaml
+
+examples:
+	python3 tools/insert_examples.py
 
 image:
 	docker build \
@@ -52,4 +55,4 @@ deploy:
 	kubectl apply -f deployment.yaml
 	kubectl -n fein rollout restart deployment villas-doc
 
-.PHONY: clean all deploy videos figures image upload run deploy openapi
+.PHONY: clean all deploy videos figures image upload run deploy openapi examples
