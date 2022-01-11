@@ -9,6 +9,12 @@ Welcome to the documentation of the VILLASframework.
 
 - [Architecture](architecture.md)
 
+:::note
+
+We recently migrated our documentation to a new site. However, the [old documentation](/doc/) is still available.
+
+:::
+
 :::caution
 
 For starters we recommand to read the **[installation guide](installation.md)**!
