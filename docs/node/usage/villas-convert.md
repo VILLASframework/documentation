@@ -1,4 +1,4 @@
-# villas convert {#node-usage-convert}
+# villas convert
 
 The `villas convert` command can be used to convert between different [format-types](../formats/index.md).
 

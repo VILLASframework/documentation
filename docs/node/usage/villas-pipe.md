@@ -1,4 +1,8 @@
-# villas pipe {#node-usage-pipe}
+---
+sidebar_position: 2
+---
+
+# villas pipe
 
 The `villas pipe` command allows to read and write samples from `stdin` / `stdout` streams.
 

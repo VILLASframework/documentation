@@ -1,4 +1,8 @@
-# villas node {#node-usage-node}
+---
+sidebar_position: 1
+---
+
+# villas node
 
 Starts the simulator to simulator server. The server acts as a central gateway to forward simulation data.
 

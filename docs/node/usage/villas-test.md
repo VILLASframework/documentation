@@ -1,9 +1,9 @@
-# villas test-* {#node-usage-test}
+# villas test-*
 
 VILLASnode provides a collection of utilities for testing its own functionality.
 Most of them are used by the integration test suite.
 
-# villas test-rtt {#node-usage-test-rtt}
+# villas test-rtt
 
 ## Usage
 
@@ -23,7 +23,7 @@ Usage: villas-test-rtt [OPTIONS] CONFIG NODE
  Copyright 2014-2017, Institute for Automation of Complex Power Systems, EONERC
  Steffen Vogel <StVogel@eonerc.rwth-aachen.de>```
 
-# villas test-cmp {#node-usage-test-cmp}
+# villas test-cmp
 
 The `villas test-cmp` command compares two files containing sample data for equality.
 
@@ -55,7 +55,7 @@ Return codes:
  Copyright 2014-2017, Institute for Automation of Complex Power Systems, EONERC
  Steffen Vogel <StVogel@eonerc.rwth-aachen.de>```
 
-# villas test-config {#node-usage-test-config}
+# villas test-config
 
 The `villas test-config` command tests the syntax and validity of a VILLASnode configuration file.
 

@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # villas signal
 
 The `villas signal` command is a signal generator which writes samples to `stdout`.

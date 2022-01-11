@@ -1,4 +1,8 @@
-# villas hook {#node-usage-hook}
+---
+sidebar_position: 4
+---
+
+# villas hook
 
 The `villas hook` command can be used to test filter / process hook functions.
 

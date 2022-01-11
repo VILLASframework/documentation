@@ -1,4 +1,4 @@
-# villas conf2json {#node-usage-conf2json}
+# villas conf2json
 
 The `villas conf2json` converts configuration files from the old libconfig format to JSON.
 

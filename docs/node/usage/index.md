@@ -2,7 +2,7 @@
 
 VILLASnode comes with a couple of tools to test and debug connectivity and configurations.
 
-## villas {#node-usage-wrapper}
+## villas
 
 All VILLASnode tools are available as sub-commands to the `villas` wrapper:
 

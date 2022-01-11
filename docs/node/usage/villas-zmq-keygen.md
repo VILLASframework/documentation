@@ -1,4 +1,4 @@
-# villas zmq-keygen {#node-usage-zmq-keygen}
+# villas zmq-keygen
 
 The `villas zmq-keygen` command generates keys for the [ZeroMQ node-type](../nodes/zeromq.md) when used with its built-in Curved cryptography.
 
