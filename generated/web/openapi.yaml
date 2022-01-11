@@ -1,0 +1,3403 @@
+openapi: 3.0.1
+info:
+  title: VILLASweb Backend API
+  description: |-
+    This is the [VILLASweb Backend](https://git.rwth-aachen.de/acs/public/villas/web-backend-go) API v2.0.
+    This documentation is auto-generated based on the API documentation in the code. The tool [swag](https://github.com/swaggo/swag) is used to auto-generate API docs for the [gin-gonic](https://github.com/gin-gonic/gin) framework.
+    Authentication: Use the authenticate endpoint below to obtain a token for your user account, copy the token into to the value field of the dialog showing up for the green Authorize button below and confirm with Done.
+  contact:
+    name: Sonja Happ
+    email: sonja.happ@eonerc.rwth-aachen.de
+  license:
+    name: GNU GPL 3.0
+    url: http://www.gnu.de/documents/gpl-3.0.en.html
+  version: "2.0"
+servers:
+- url: //villas.k8s.eonerc.rwth-aachen.de/api/v2
+paths:
+  /authenticate:
+    get:
+      tags:
+      - authentication
+      summary: Check if user is authenticated and provide details on how the user
+        can authenticate
+      operationId: authenticated
+      responses:
+        200:
+          description: JSON web token, success status, message and authenticated user
+            object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseAuthenticate'
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+  /authenticate/{mechanism}:
+    post:
+      tags:
+      - authentication
+      summary: Authentication for user
+      operationId: authenticate
+      parameters:
+      - name: mechanism
+        in: path
+        description: Login mechanism
+        required: true
+        schema:
+          type: string
+          enum:
+          - internal
+          - external
+      requestBody:
+        description: loginRequest of user
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/user.loginRequest'
+        required: true
+      responses:
+        200:
+          description: JSON web token, success status, message and authenticated user
+            object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseAuthenticate'
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      x-codegen-request-body-name: inputUser
+  /config:
+    get:
+      tags:
+      - config
+      summary: Get config VILLASweb to be used by frontend
+      operationId: config
+      responses:
+        200:
+          description: The configuration
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/config.Config'
+  /configs:
+    get:
+      tags:
+      - component-configurations
+      summary: Get all component configurations of scenario
+      operationId: getConfigs
+      parameters:
+      - name: scenarioID
+        in: query
+        description: Scenario ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: Component configurations which belong to scenario
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseConfigs'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+    post:
+      tags:
+      - component-configurations
+      summary: Add a component configuration to a scenario
+      operationId: addConfig
+      requestBody:
+        description: component configuration to be added incl. IDs of scenario and
+          IC
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/component_configuration.addConfigRequest'
+        required: true
+      responses:
+        200:
+          description: Component configuration that was added
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseConfig'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+      x-codegen-request-body-name: inputConfig
+  /configs/{configID}:
+    get:
+      tags:
+      - component-configurations
+      summary: Get a component configuration
+      operationId: getConfig
+      parameters:
+      - name: configID
+        in: path
+        description: Config ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: component configuration that was requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseConfig'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+    put:
+      tags:
+      - component-configurations
+      summary: Update a component configuration
+      operationId: updateConfig
+      parameters:
+      - name: configID
+        in: path
+        description: Config ID
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        description: component configuration to be updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/component_configuration.updateConfigRequest'
+        required: true
+      responses:
+        200:
+          description: Component configuration that was added
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseConfig'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+      x-codegen-request-body-name: inputConfig
+    delete:
+      tags:
+      - component-configurations
+      summary: Delete a component configuration
+      operationId: deleteConfig
+      parameters:
+      - name: configID
+        in: path
+        description: Config ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: component configuration that was deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseConfig'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+  /dashboards:
+    get:
+      tags:
+      - dashboards
+      summary: Get all dashboards of scenario
+      operationId: getDashboards
+      parameters:
+      - name: scenarioID
+        in: query
+        description: Scenario ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: Dashboards which belong to scenario
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseDashboards'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+    post:
+      tags:
+      - dashboards
+      summary: Add a dashboard to a scenario
+      operationId: addDashboard
+      requestBody:
+        description: Dashboard to be added incl. ID of Scenario
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/dashboard.addDashboardRequest'
+        required: true
+      responses:
+        200:
+          description: Dashboard that was added
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseDashboard'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+      x-codegen-request-body-name: inputDab
+  /dashboards/{dashboardID}:
+    get:
+      tags:
+      - dashboards
+      summary: Get a dashboard
+      operationId: getDashboard
+      parameters:
+      - name: dashboardID
+        in: path
+        description: Dashboard ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: Dashboard that was requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseDashboard'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+    put:
+      tags:
+      - dashboards
+      summary: Update a dashboard
+      operationId: updateDashboard
+      parameters:
+      - name: dashboardID
+        in: path
+        description: Dashboard ID
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        description: Dashboard to be updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/dashboard.updateDashboardRequest'
+        required: true
+      responses:
+        200:
+          description: Dashboard that was updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseDashboard'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+      x-codegen-request-body-name: inputDab
+    delete:
+      tags:
+      - dashboards
+      summary: Delete a dashboard
+      operationId: deleteDashboard
+      parameters:
+      - name: dashboardID
+        in: path
+        description: Dashboard ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: Dashboard that was deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseDashboard'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+  /files:
+    get:
+      tags:
+      - files
+      summary: Get all files of a specific scenario
+      operationId: getFiles
+      parameters:
+      - name: scenarioID
+        in: query
+        description: Scenario ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: Files which belong to scenario
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseFiles'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+    post:
+      tags:
+      - files
+      summary: Add a file to a specific scenario
+      operationId: addFile
+      parameters:
+      - name: scenarioID
+        in: query
+        description: ID of scenario to which file shall be added
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        content:
+          text/plain:
+            schema:
+              required:
+              - inputFile
+              properties:
+                inputFile:
+                  type: string
+                  description: File to be uploaded
+                  format: binary
+          image/png:
+            schema:
+              required:
+              - inputFile
+              properties:
+                inputFile:
+                  type: string
+                  description: File to be uploaded
+                  format: binary
+          image/jpeg:
+            schema:
+              required:
+              - inputFile
+              properties:
+                inputFile:
+                  type: string
+                  description: File to be uploaded
+                  format: binary
+          image/gif:
+            schema:
+              required:
+              - inputFile
+              properties:
+                inputFile:
+                  type: string
+                  description: File to be uploaded
+                  format: binary
+          model/x-cim:
+            schema:
+              required:
+              - inputFile
+              properties:
+                inputFile:
+                  type: string
+                  description: File to be uploaded
+                  format: binary
+          model/x-cim.zip:
+            schema:
+              required:
+              - inputFile
+              properties:
+                inputFile:
+                  type: string
+                  description: File to be uploaded
+                  format: binary
+          multipart/form-data:
+            schema:
+              required:
+              - inputFile
+              properties:
+                inputFile:
+                  type: string
+                  description: File to be uploaded
+                  format: binary
+        required: true
+      responses:
+        200:
+          description: File that was added
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseFile'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+  /files/{fileID}:
+    get:
+      tags:
+      - files
+      summary: Download a file
+      operationId: getFile
+      parameters:
+      - name: fileID
+        in: path
+        description: ID of the file to download
+        required: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: File that was requested
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/api.ResponseFile'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/api.ResponseFile'
+            application/gzip:
+              schema:
+                $ref: '#/components/schemas/api.ResponseFile'
+            application/x-gtar:
+              schema:
+                $ref: '#/components/schemas/api.ResponseFile'
+            application/x-tar:
+              schema:
+                $ref: '#/components/schemas/api.ResponseFile'
+            application/x-ustar:
+              schema:
+                $ref: '#/components/schemas/api.ResponseFile'
+            application/zip:
+              schema:
+                $ref: '#/components/schemas/api.ResponseFile'
+            application/msexcel:
+              schema:
+                $ref: '#/components/schemas/api.ResponseFile'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/api.ResponseFile'
+            application/x-bag:
+              schema:
+                $ref: '#/components/schemas/api.ResponseFile'
+            image/png:
+              schema:
+                $ref: '#/components/schemas/api.ResponseFile'
+            image/jpeg:
+              schema:
+                $ref: '#/components/schemas/api.ResponseFile'
+            image/gif:
+              schema:
+                $ref: '#/components/schemas/api.ResponseFile'
+            model/x-cim:
+              schema:
+                $ref: '#/components/schemas/api.ResponseFile'
+            model/x-cim.zip:
+              schema:
+                $ref: '#/components/schemas/api.ResponseFile'
+        400:
+          description: Bad request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/gzip:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/x-gtar:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/x-tar:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/x-ustar:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/zip:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/msexcel:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/x-bag:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            image/png:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            image/jpeg:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            image/gif:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            model/x-cim:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            model/x-cim.zip:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/gzip:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/x-gtar:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/x-tar:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/x-ustar:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/zip:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/msexcel:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/x-bag:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            image/png:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            image/jpeg:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            image/gif:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            model/x-cim:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            model/x-cim.zip:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/gzip:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/x-gtar:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/x-tar:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/x-ustar:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/zip:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/msexcel:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/x-bag:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            image/png:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            image/jpeg:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            image/gif:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            model/x-cim:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            model/x-cim.zip:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/gzip:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/x-gtar:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/x-tar:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/x-ustar:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/zip:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/msexcel:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            application/x-bag:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            image/png:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            image/jpeg:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            image/gif:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            model/x-cim:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+            model/x-cim.zip:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+    put:
+      tags:
+      - files
+      summary: Update a file
+      operationId: updateFile
+      parameters:
+      - name: fileID
+        in: path
+        description: ID of the file to update
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        content:
+          text/plain:
+            schema:
+              required:
+              - inputFile
+              properties:
+                inputFile:
+                  type: string
+                  description: File to be uploaded
+                  format: binary
+          image/png:
+            schema:
+              required:
+              - inputFile
+              properties:
+                inputFile:
+                  type: string
+                  description: File to be uploaded
+                  format: binary
+          image/jpeg:
+            schema:
+              required:
+              - inputFile
+              properties:
+                inputFile:
+                  type: string
+                  description: File to be uploaded
+                  format: binary
+          image/gif:
+            schema:
+              required:
+              - inputFile
+              properties:
+                inputFile:
+                  type: string
+                  description: File to be uploaded
+                  format: binary
+          model/x-cim:
+            schema:
+              required:
+              - inputFile
+              properties:
+                inputFile:
+                  type: string
+                  description: File to be uploaded
+                  format: binary
+          model/x-cim.zip:
+            schema:
+              required:
+              - inputFile
+              properties:
+                inputFile:
+                  type: string
+                  description: File to be uploaded
+                  format: binary
+          multipart/form-data:
+            schema:
+              required:
+              - inputFile
+              properties:
+                inputFile:
+                  type: string
+                  description: File to be uploaded
+                  format: binary
+        required: true
+      responses:
+        200:
+          description: File that was updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseFile'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+    delete:
+      tags:
+      - files
+      summary: Delete a file
+      operationId: deleteFile
+      parameters:
+      - name: fileID
+        in: path
+        description: ID of the file to update
+        required: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: File that was deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseFile'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+  /healthz:
+    get:
+      tags:
+      - healthz
+      summary: Get health status of backend
+      operationId: getHealth
+      responses:
+        204:
+          description: Backend is healthy, database and AMQP broker connections are
+            alive
+          content:
+            application/json:
+              schema:
+                type: string
+        500:
+          description: Backend is NOT healthy
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+  /ic:
+    get:
+      tags:
+      - infrastructure-components
+      summary: Get all infrastructure components
+      operationId: getICs
+      responses:
+        200:
+          description: ICs requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseICs'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+    post:
+      tags:
+      - infrastructure-components
+      summary: Add an infrastructure component
+      operationId: addIC
+      requestBody:
+        description: Infrastructure Component to be added
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/infrastructure_component.AddICRequest'
+        required: true
+      responses:
+        200:
+          description: Infrastructure Component that was added
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseIC'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+      x-codegen-request-body-name: inputIC
+  /ic/{ICID}:
+    get:
+      tags:
+      - infrastructure-components
+      summary: Get infrastructure component
+      operationId: getIC
+      parameters:
+      - name: ICID
+        in: path
+        description: Infrastructure Component ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: Infrastructure Component that was requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseIC'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+    put:
+      tags:
+      - infrastructure-components
+      summary: Update an infrastructure component
+      operationId: updateIC
+      parameters:
+      - name: ICID
+        in: path
+        description: InfrastructureComponent ID
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        description: InfrastructureComponent to be updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/infrastructure_component.UpdateICRequest'
+        required: true
+      responses:
+        200:
+          description: Infrastructure Component that was updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseIC'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+      x-codegen-request-body-name: inputIC
+    delete:
+      tags:
+      - infrastructure-components
+      summary: Delete an infrastructure component
+      operationId: deleteIC
+      parameters:
+      - name: ICID
+        in: path
+        description: Infrastructure Component ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: Infrastructure Component that was deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseIC'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+  /ic/{ICID}/action:
+    post:
+      tags:
+      - infrastructure-components
+      summary: Send an action to IC (only available if backend server is started with
+        -amqp parameter)
+      operationId: sendActionToIC
+      parameters:
+      - name: inputAction
+        in: query
+        description: Action for IC
+        required: true
+        schema:
+          type: string
+      - name: ICID
+        in: path
+        description: InfrastructureComponent ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: Action sent successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+  /ic/{ICID}/configs:
+    get:
+      tags:
+      - infrastructure-components
+      summary: Get all configurations of the infrastructure component
+      operationId: getConfigsOfIC
+      parameters:
+      - name: ICID
+        in: path
+        description: Infrastructure Component ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: Configs requested by user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseConfigs'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+  /metrics:
+    get:
+      tags:
+      - metrics
+      summary: Prometheus metrics endpoint
+      operationId: getMetrics
+      responses:
+        200:
+          description: Returns Prometheus metrics
+          content:
+            application/json:
+              schema:
+                type: string
+  /openapi:
+    get:
+      tags:
+      - openapi
+      summary: Get OpenAPI 2.0 spec of API
+      operationId: getOpenAPI
+      responses:
+        200:
+          description: A OpenAPI 2.0 specification of the API
+          content:
+            application/json:
+              schema:
+                type: string
+  /results:
+    get:
+      tags:
+      - results
+      summary: Get all results of scenario
+      operationId: getResults
+      parameters:
+      - name: scenarioID
+        in: query
+        description: Scenario ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: Results which belong to scenario
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseResults'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+    post:
+      tags:
+      - results
+      summary: Add a result to a scenario
+      operationId: addResult
+      requestBody:
+        description: Result to be added incl. ID of Scenario
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/result.addResultRequest'
+        required: true
+      responses:
+        200:
+          description: Result that was added
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseResult'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+      x-codegen-request-body-name: inputResult
+  /results/{resultID}:
+    get:
+      tags:
+      - results
+      summary: Get a Result
+      operationId: getResult
+      parameters:
+      - name: resultID
+        in: path
+        description: Result ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: Result that was requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseResult'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+    put:
+      tags:
+      - results
+      summary: Update a result
+      operationId: updateResult
+      parameters:
+      - name: resultID
+        in: path
+        description: Result ID
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        description: Result to be updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/result.updateResultRequest'
+        required: true
+      responses:
+        200:
+          description: Result that was updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseResult'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+      x-codegen-request-body-name: inputResult
+    delete:
+      tags:
+      - results
+      summary: Delete a Result incl. all result files
+      operationId: deleteResult
+      parameters:
+      - name: resultID
+        in: path
+        description: Result ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: Result that was deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseResult'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+  /results/{resultID}/file:
+    post:
+      tags:
+      - results
+      summary: Upload a result file to the DB and associate it with scenario and result
+      operationId: addResultFile
+      parameters:
+      - name: resultID
+        in: path
+        description: Result ID
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        content:
+          text/plain:
+            schema:
+              required:
+              - inputFile
+              properties:
+                inputFile:
+                  type: string
+                  description: File to be uploaded
+                  format: binary
+          text/csv:
+            schema:
+              required:
+              - inputFile
+              properties:
+                inputFile:
+                  type: string
+                  description: File to be uploaded
+                  format: binary
+          application/gzip:
+            schema:
+              required:
+              - inputFile
+              properties:
+                inputFile:
+                  type: string
+                  description: File to be uploaded
+                  format: binary
+          application/x-gtar:
+            schema:
+              required:
+              - inputFile
+              properties:
+                inputFile:
+                  type: string
+                  description: File to be uploaded
+                  format: binary
+          application/x-tar:
+            schema:
+              required:
+              - inputFile
+              properties:
+                inputFile:
+                  type: string
+                  description: File to be uploaded
+                  format: binary
+          application/x-ustar:
+            schema:
+              required:
+              - inputFile
+              properties:
+                inputFile:
+                  type: string
+                  description: File to be uploaded
+                  format: binary
+          application/zip:
+            schema:
+              required:
+              - inputFile
+              properties:
+                inputFile:
+                  type: string
+                  description: File to be uploaded
+                  format: binary
+          application/msexcel:
+            schema:
+              required:
+              - inputFile
+              properties:
+                inputFile:
+                  type: string
+                  description: File to be uploaded
+                  format: binary
+          application/xml:
+            schema:
+              required:
+              - inputFile
+              properties:
+                inputFile:
+                  type: string
+                  description: File to be uploaded
+                  format: binary
+          application/x-bag:
+            schema:
+              required:
+              - inputFile
+              properties:
+                inputFile:
+                  type: string
+                  description: File to be uploaded
+                  format: binary
+          multipart/form-data:
+            schema:
+              required:
+              - inputFile
+              properties:
+                inputFile:
+                  type: string
+                  description: File to be uploaded
+                  format: binary
+        required: true
+      responses:
+        200:
+          description: Result that was updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseResult'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+  /results/{resultID}/file/{fileID}:
+    delete:
+      tags:
+      - results
+      summary: Delete a result file
+      operationId: deleteResultFile
+      parameters:
+      - name: resultID
+        in: path
+        description: Result ID
+        required: true
+        schema:
+          type: integer
+      - name: fileID
+        in: path
+        description: ID of the file to delete
+        required: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: Result for which file was deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseResult'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+  /scenarios:
+    get:
+      tags:
+      - scenarios
+      summary: Get all scenarios of requesting user
+      operationId: getScenarios
+      responses:
+        200:
+          description: Scenarios to which user has access
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseScenarios'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+    post:
+      tags:
+      - scenarios
+      summary: Add a scenario
+      operationId: addScenario
+      requestBody:
+        description: Scenario to be added
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/scenario.addScenarioRequest'
+        required: true
+      responses:
+        200:
+          description: scenario that was added
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseScenario'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+      x-codegen-request-body-name: inputScenario
+  /scenarios/{scenarioID}:
+    get:
+      tags:
+      - scenarios
+      summary: Get scenario
+      operationId: getScenario
+      parameters:
+      - name: scenarioID
+        in: path
+        description: Scenario ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: Scenario requested by user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseScenario'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+    put:
+      tags:
+      - scenarios
+      summary: Update a scenario
+      operationId: updateScenario
+      parameters:
+      - name: scenarioID
+        in: path
+        description: Scenario ID
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        description: Scenario to be updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/scenario.updateScenarioRequest'
+        required: true
+      responses:
+        200:
+          description: Updated scenario.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseScenario'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+      x-codegen-request-body-name: inputScenario
+    delete:
+      tags:
+      - scenarios
+      summary: Delete a scenario
+      operationId: deleteScenario
+      parameters:
+      - name: scenarioID
+        in: path
+        description: Scenario ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: Deleted scenario
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseScenario'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+  /scenarios/{scenarioID}/user:
+    put:
+      tags:
+      - scenarios
+      summary: Add a user to a a scenario
+      operationId: addUserToScenario
+      parameters:
+      - name: scenarioID
+        in: path
+        description: Scenario ID
+        required: true
+        schema:
+          type: integer
+      - name: username
+        in: query
+        description: User name
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: User that was added to scenario
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseUser'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+    delete:
+      tags:
+      - scenarios
+      summary: Delete a user from a scenario
+      operationId: deleteUserFromScenario
+      parameters:
+      - name: scenarioID
+        in: path
+        description: Scenario ID
+        required: true
+        schema:
+          type: integer
+      - name: username
+        in: query
+        description: User name
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: User that was deleted from scenario
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseUser'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+  /scenarios/{scenarioID}/users/:
+    get:
+      tags:
+      - scenarios
+      summary: Get users of a scenario
+      operationId: getUsersOfScenario
+      parameters:
+      - name: scenarioID
+        in: path
+        description: Scenario ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: Array of users that have access to the scenario
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseUsers'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+  /signals:
+    get:
+      tags:
+      - signals
+      summary: Get all signals of one direction
+      operationId: getSignals
+      parameters:
+      - name: direction
+        in: query
+        description: Direction of signal (in or out)
+        required: true
+        schema:
+          type: string
+      - name: configID
+        in: query
+        description: Config ID of signals to be obtained
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: Signals which belong to component configuration
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseSignals'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+    post:
+      tags:
+      - signals
+      summary: Add a signal to a signal mapping of a component configuration
+      operationId: AddSignal
+      requestBody:
+        description: A signal to be added to the component configuration incl. direction
+          and config ID to which signal shall be added
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/signal.addSignalRequest'
+        required: true
+      responses:
+        200:
+          description: Signal that was added
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseSignal'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+      x-codegen-request-body-name: inputSignal
+  /signals/{signalID}:
+    get:
+      tags:
+      - signals
+      summary: Get a signal
+      operationId: getSignal
+      parameters:
+      - name: signalID
+        in: path
+        description: ID of signal to be obtained
+        required: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: Signal that was requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseSignal'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+    put:
+      tags:
+      - signals
+      summary: Update a signal
+      operationId: updateSignal
+      parameters:
+      - name: signalID
+        in: path
+        description: ID of signal to be updated
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        description: A signal to be updated
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/signal.updateSignalRequest'
+        required: true
+      responses:
+        200:
+          description: Signal that was updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseSignal'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+      x-codegen-request-body-name: inputSignal
+    delete:
+      tags:
+      - signals
+      summary: Delete a signal
+      operationId: deleteSignal
+      parameters:
+      - name: signalID
+        in: path
+        description: ID of signal to be deleted
+        required: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: Signal that was deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseSignal'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+  /users:
+    get:
+      tags:
+      - users
+      summary: Get all users
+      operationId: GetUsers
+      responses:
+        200:
+          description: Array of users
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseUsers'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+    post:
+      tags:
+      - users
+      summary: Add a user
+      operationId: AddUser
+      requestBody:
+        description: User to be added
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/user.addUserRequest'
+        required: true
+      responses:
+        200:
+          description: Contains added user object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseUser'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+      x-codegen-request-body-name: inputUser
+  /users/{userID}:
+    get:
+      tags:
+      - users
+      summary: Get user
+      operationId: GetUser
+      parameters:
+      - name: userID
+        in: path
+        description: User ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: requested user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseUser'
+        403:
+          description: Access forbidden.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+    put:
+      tags:
+      - users
+      summary: Update a user
+      operationId: UpdateUser
+      parameters:
+      - name: userID
+        in: path
+        description: User ID
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        description: User to be updated (anything except for ID can be changed, role
+          can only be change by admin)
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/user.updateUserRequest'
+        required: true
+      responses:
+        200:
+          description: Contains updated user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseUser'
+        400:
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        403:
+          description: Access forbidden.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+      x-codegen-request-body-name: inputUser
+    delete:
+      tags:
+      - users
+      summary: Delete a user
+      operationId: DeleteUser
+      parameters:
+      - name: userID
+        in: path
+        description: User ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: deleted user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseUser'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+  /widgets:
+    get:
+      tags:
+      - widgets
+      summary: Get all widgets of dashboard
+      operationId: getWidgets
+      parameters:
+      - name: dashboardID
+        in: query
+        description: Dashboard ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: Widgets to which belong to dashboard
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseWidgets'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+    post:
+      tags:
+      - widgets
+      summary: Add a widget to a dashboard
+      operationId: addWidget
+      requestBody:
+        description: Widget to be added incl. ID of dashboard
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/widget.addWidgetRequest'
+        required: true
+      responses:
+        200:
+          description: Widget that was added
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseWidget'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+      x-codegen-request-body-name: inputWidget
+  /widgets/{widgetID}:
+    get:
+      tags:
+      - widgets
+      summary: Get a widget
+      operationId: getWidget
+      parameters:
+      - name: widgetID
+        in: path
+        description: Widget ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: Widget that was requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseWidget'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+    put:
+      tags:
+      - widgets
+      summary: Update a widget
+      operationId: updateWidget
+      parameters:
+      - name: widgetID
+        in: path
+        description: Widget ID
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        description: Widget to be updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/widget.updateWidgetRequest'
+        required: true
+      responses:
+        200:
+          description: Widget that was updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseWidget'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+      x-codegen-request-body-name: inputWidget
+    delete:
+      tags:
+      - widgets
+      summary: Delete a widget
+      operationId: deleteWidget
+      parameters:
+      - name: widgetID
+        in: path
+        description: Widget ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: Widget that was deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseWidget'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        422:
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.ResponseError'
+      security:
+      - Bearer: []
+components:
+  schemas:
+    api.ResponseAuthenticate:
+      type: object
+    api.ResponseConfig:
+      type: object
+    api.ResponseConfigs:
+      type: object
+    api.ResponseDashboard:
+      type: object
+    api.ResponseDashboards:
+      type: object
+    api.ResponseError:
+      type: object
+    api.ResponseFile:
+      type: object
+    api.ResponseFiles:
+      type: object
+    api.ResponseIC:
+      type: object
+    api.ResponseICs:
+      type: object
+    api.ResponseResult:
+      type: object
+    api.ResponseResults:
+      type: object
+    api.ResponseScenario:
+      type: object
+    api.ResponseScenarios:
+      type: object
+    api.ResponseSignal:
+      type: object
+    api.ResponseSignals:
+      type: object
+    api.ResponseUser:
+      type: object
+    api.ResponseUsers:
+      type: object
+    api.ResponseWidget:
+      type: object
+    api.ResponseWidgets:
+      type: object
+    component_configuration.addConfigRequest:
+      type: object
+      properties:
+        config:
+          $ref: '#/components/schemas/component_configuration.validNewConfig'
+    component_configuration.updateConfigRequest:
+      type: object
+      properties:
+        config:
+          $ref: '#/components/schemas/component_configuration.validUpdatedConfig'
+    component_configuration.validNewConfig:
+      required:
+      - ICID
+      - Name
+      - ScenarioID
+      - StartParameters
+      type: object
+      properties:
+        FileIDs:
+          type: array
+          items:
+            type: integer
+        ICID:
+          type: integer
+        Name:
+          type: string
+        ScenarioID:
+          type: integer
+        StartParameters:
+          $ref: '#/components/schemas/postgres.Jsonb'
+    component_configuration.validUpdatedConfig:
+      type: object
+      properties:
+        FileIDs:
+          type: array
+          items:
+            type: integer
+        ICID:
+          type: integer
+        Name:
+          type: string
+        StartParameters:
+          $ref: '#/components/schemas/postgres.Jsonb'
+    config.Config:
+      type: object
+      properties:
+        Providers:
+          type: array
+          items:
+            $ref: '#/components/schemas/config.Provider'
+    config.Provider:
+      type: object
+    dashboard.addDashboardRequest:
+      type: object
+      properties:
+        dashboard:
+          $ref: '#/components/schemas/dashboard.validNewDashboard'
+    dashboard.updateDashboardRequest:
+      type: object
+      properties:
+        dashboard:
+          $ref: '#/components/schemas/dashboard.validUpdatedDashboard'
+    dashboard.validNewDashboard:
+      required:
+      - Grid
+      - Name
+      - ScenarioID
+      type: object
+      properties:
+        Grid:
+          type: integer
+        Height:
+          type: integer
+        Name:
+          type: string
+        ScenarioID:
+          type: integer
+    dashboard.validUpdatedDashboard:
+      type: object
+      properties:
+        grid:
+          type: integer
+        height:
+          type: integer
+        name:
+          type: string
+    infrastructure_component.AddICRequest:
+      type: object
+      properties:
+        ic:
+          $ref: '#/components/schemas/infrastructure_component.validNewIC'
+    infrastructure_component.UpdateICRequest:
+      type: object
+      properties:
+        ic:
+          $ref: '#/components/schemas/infrastructure_component.validUpdatedIC'
+    infrastructure_component.validNewIC:
+      required:
+      - Category
+      - ManagedExternally
+      - Name
+      - Type
+      type: object
+      properties:
+        APIURL:
+          type: string
+        Category:
+          type: string
+        CreateParameterSchema:
+          $ref: '#/components/schemas/postgres.Jsonb'
+        Description:
+          type: string
+        Location:
+          type: string
+        ManagedExternally:
+          type: boolean
+        Manager:
+          type: string
+        Name:
+          type: string
+        StartParameterSchema:
+          $ref: '#/components/schemas/postgres.Jsonb'
+        State:
+          type: string
+        StatusUpdateRaw:
+          $ref: '#/components/schemas/postgres.Jsonb'
+        Type:
+          type: string
+        UUID:
+          type: string
+        Uptime:
+          type: number
+        WebsocketURL:
+          type: string
+    infrastructure_component.validUpdatedIC:
+      type: object
+      properties:
+        APIURL:
+          type: string
+        Category:
+          type: string
+        CreateParameterSchema:
+          $ref: '#/components/schemas/postgres.Jsonb'
+        Description:
+          type: string
+        Location:
+          type: string
+        Manager:
+          type: string
+        Name:
+          type: string
+        StartParameterSchema:
+          $ref: '#/components/schemas/postgres.Jsonb'
+        State:
+          type: string
+        StatusUpdateRaw:
+          $ref: '#/components/schemas/postgres.Jsonb'
+        Type:
+          type: string
+        UUID:
+          type: string
+        Uptime:
+          type: number
+        WebsocketURL:
+          type: string
+    postgres.Jsonb:
+      type: object
+      properties:
+        json.RawMessage:
+          type: array
+          items:
+            type: integer
+    result.addResultRequest:
+      type: object
+      properties:
+        result:
+          $ref: '#/components/schemas/result.validNewResult'
+    result.updateResultRequest:
+      type: object
+      properties:
+        result:
+          $ref: '#/components/schemas/result.validUpdatedResult'
+    result.validNewResult:
+      required:
+      - ConfigSnapshots
+      - ScenarioID
+      type: object
+      properties:
+        ConfigSnapshots:
+          $ref: '#/components/schemas/postgres.Jsonb'
+        Description:
+          type: string
+        ResultFileIDs:
+          type: array
+          items:
+            type: integer
+        ScenarioID:
+          type: integer
+    result.validUpdatedResult:
+      type: object
+      properties:
+        configSnapshots:
+          $ref: '#/components/schemas/postgres.Jsonb'
+        description:
+          type: string
+        resultFileIDs:
+          type: array
+          items:
+            type: integer
+    scenario.addScenarioRequest:
+      type: object
+      properties:
+        scenario:
+          $ref: '#/components/schemas/scenario.validNewScenario'
+    scenario.updateScenarioRequest:
+      type: object
+      properties:
+        scenario:
+          $ref: '#/components/schemas/scenario.validUpdatedScenario'
+    scenario.validNewScenario:
+      required:
+      - Name
+      - StartParameters
+      type: object
+      properties:
+        Name:
+          type: string
+        StartParameters:
+          $ref: '#/components/schemas/postgres.Jsonb'
+    scenario.validUpdatedScenario:
+      type: object
+      properties:
+        IsLocked:
+          type: boolean
+        Name:
+          type: string
+        StartParameters:
+          $ref: '#/components/schemas/postgres.Jsonb'
+    signal.addSignalRequest:
+      type: object
+      properties:
+        signal:
+          $ref: '#/components/schemas/signal.validNewSignal'
+    signal.updateSignalRequest:
+      type: object
+      properties:
+        signal:
+          $ref: '#/components/schemas/signal.validUpdatedSignal'
+    signal.validNewSignal:
+      required:
+      - ConfigID
+      - Direction
+      - Index
+      - Name
+      type: object
+      properties:
+        ConfigID:
+          type: integer
+        Direction:
+          type: string
+        Index:
+          type: integer
+        Name:
+          type: string
+        ScalingFactor:
+          type: number
+        Unit:
+          type: string
+    signal.validUpdatedSignal:
+      type: object
+      properties:
+        Index:
+          type: integer
+        Name:
+          type: string
+        ScalingFactor:
+          type: number
+        Unit:
+          type: string
+    user.addUserRequest:
+      type: object
+      properties:
+        user:
+          $ref: '#/components/schemas/user.validNewUser'
+    user.loginRequest:
+      required:
+      - Password
+      - Username
+      type: object
+      properties:
+        Password:
+          type: string
+        Username:
+          type: string
+    user.updateUserRequest:
+      type: object
+      properties:
+        user:
+          $ref: '#/components/schemas/user.validUpdatedRequest'
+    user.validNewUser:
+      required:
+      - Mail
+      - Password
+      - Role
+      - Username
+      type: object
+      properties:
+        Mail:
+          type: string
+        Password:
+          type: string
+        Role:
+          type: string
+        Username:
+          type: string
+    user.validUpdatedRequest:
+      type: object
+      properties:
+        Active:
+          type: string
+        Mail:
+          type: string
+        OldPassword:
+          type: string
+        Password:
+          type: string
+        Role:
+          type: string
+        Username:
+          type: string
+    widget.addWidgetRequest:
+      type: object
+      properties:
+        widget:
+          $ref: '#/components/schemas/widget.validNewWidget'
+    widget.updateWidgetRequest:
+      type: object
+      properties:
+        widget:
+          $ref: '#/components/schemas/widget.validUpdatedWidget'
+    widget.validNewWidget:
+      required:
+      - DashboardID
+      - Height
+      - Name
+      - Type
+      - Width
+      type: object
+      properties:
+        CustomProperties:
+          $ref: '#/components/schemas/postgres.Jsonb'
+        DashboardID:
+          type: integer
+        Height:
+          type: integer
+        IsLocked:
+          type: boolean
+        MinHeight:
+          type: integer
+        MinWidth:
+          type: integer
+        Name:
+          type: string
+        SignalIDs:
+          type: array
+          items:
+            type: integer
+        Type:
+          type: string
+        Width:
+          type: integer
+        X:
+          type: integer
+        Y:
+          type: integer
+        Z:
+          type: integer
+    widget.validUpdatedWidget:
+      type: object
+      properties:
+        CustomProperties:
+          $ref: '#/components/schemas/postgres.Jsonb'
+        Height:
+          type: integer
+        IsLocked:
+          type: boolean
+        MinHeight:
+          type: integer
+        MinWidth:
+          type: integer
+        Name:
+          type: string
+        SignalIDs:
+          type: array
+          items:
+            type: integer
+        Type:
+          type: string
+        Width:
+          type: integer
+        X:
+          type: integer
+        Y:
+          type: integer
+        Z:
+          type: integer
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      name: Authorization
+      in: header

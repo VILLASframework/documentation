@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="20cm" height="7cm" viewBox="-301 209 392 125" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="-220" y1="290" x2="-149.736" y2="290"/>
+    <polygon style="fill: #000000" points="-142.236,290 -152.236,295 -149.736,290 -152.236,285 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-142.236,290 -152.236,295 -149.736,290 -152.236,285 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-180" y="304.431">
+    <tspan x="-180" y="304.431">STDIO</tspan>
+  </text>
+  <g>
+    <g>
+      <rect style="fill: #ffffff" x="-300" y="230" width="80" height="80"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-300" y="230" width="80" height="80"/>
+    </g>
+    <text font-size="12.8" style="fill: #000000;text-anchor:end;font-family:sans-serif;font-style:normal;font-weight:normal" x="-225" y="294.431">
+      <tspan x="-225" y="294.431">Keyboard</tspan>
+    </text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:end;font-family:sans-serif;font-style:normal;font-weight:normal" x="-225" y="254.431">
+      <tspan x="-225" y="254.431">Screen</tspan>
+    </text>
+    <text font-size="12.8016" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-260" y="330">
+      <tspan x="-260" y="330">Terminal 1</tspan>
+    </text>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-102.132" y="223.669">
+    <tspan x="-102.132" y="223.669">STDIO</tspan>
+  </text>
+  <g>
+    <text font-size="14.6756" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-100" y="330">
+      <tspan x="-100" y="330">villas-hook</tspan>
+    </text>
+    <g>
+      <rect style="fill: #ffffff" x="-140" y="230" width="80" height="80"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-140" y="230" width="80" height="80"/>
+    </g>
+    <image x="-130" y="240" width="60" height="60" xlink:href="images/logos/villas_node.svg"/>
+  </g>
+  <g>
+    <text font-size="14.6756" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="50" y="330">
+      <tspan x="50" y="330">villas-hook</tspan>
+    </text>
+    <g>
+      <rect style="fill: #ffffff" x="10" y="230" width="80" height="80"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="10" y="230" width="80" height="80"/>
+    </g>
+    <image x="20" y="240" width="60" height="60" xlink:href="images/logos/villas_node.svg"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="-60" y1="290" x2="0.263932" y2="290"/>
+    <polygon style="fill: #000000" points="7.76393,290 -2.23607,295 0.263932,290 -2.23607,285 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="7.76393,290 -2.23607,295 0.263932,290 -2.23607,285 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="10,250 -40,250 -40,210 -160,210 -160,250 -210.264,250 "/>
+    <polygon style="fill: #000000" points="-217.764,250 -207.764,245 -210.264,250 -207.764,255 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-217.764,250 -207.764,245 -210.264,250 -207.764,255 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-30.3468" y="305.901">
+    <tspan x="-30.3468" y="305.901">STDIO</tspan>
+  </text>
+</svg>

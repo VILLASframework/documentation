@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="28cm"
+   height="14cm"
+   viewBox="535 158 546 263"
+   id="svg5226"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="villas_controller_simulator_states_2_RESERVE.dia.svg"
+   inkscape:export-filename="/Users/stv0g/workspace/rwth/villas/documentation/figures/dia/villas_controller_simulator_states_2_RESERVE.dia.png"
+   inkscape:export-xdpi="100"
+   inkscape:export-ydpi="100">
+  <metadata
+     id="metadata5426">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs5424" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1440"
+     inkscape:window-height="852"
+     id="namedview5422"
+     showgrid="false"
+     inkscape:zoom="0.95464449"
+     inkscape:cx="310.72046"
+     inkscape:cy="247.12296"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg5226" />
+  <rect
+     id="rect5230"
+     height="38"
+     width="120"
+     y="160"
+     x="720"
+     style="fill:#e3fae3" />
+  <rect
+     id="rect5232"
+     height="38"
+     width="120"
+     y="160"
+     x="720"
+     style="fill:#0075be;fill-opacity:1;stroke:#000000;stroke-width:2" />
+  <text
+     id="text5234"
+     y="182.89999"
+     x="780"
+     style="font-style:normal;font-weight:normal;font-size:12.80000019px;font-family:sans-serif;text-anchor:middle;fill:#ffffff;"
+     font-size="12.8">
+    <tspan
+       id="tspan5236"
+       y="182.89999"
+       x="780"
+       style="fill:#ffffff;">Upload Model</tspan>
+  </text>
+  <g
+     id="g5238">
+    <rect
+       style="fill: #ffffff"
+       x="720"
+       y="220"
+       width="120"
+       height="38"
+       id="rect5240" />
+    <rect
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x="720"
+       y="220"
+       width="120"
+       height="38"
+       id="rect5242" />
+    <text
+       font-size="12.8"
+       style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+       x="780"
+       y="242.9"
+       id="text5244">
+      <tspan
+         x="780"
+         y="242.9"
+         id="tspan5246">Compile Model</tspan>
+    </text>
+  </g>
+  <g
+     id="g5248">
+    <rect
+       style="fill: #ffffff"
+       x="720"
+       y="360"
+       width="120"
+       height="38"
+       id="rect5250" />
+    <rect
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x="720"
+       y="360"
+       width="120"
+       height="38"
+       id="rect5252" />
+    <text
+       font-size="12.8"
+       style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+       x="780"
+       y="382.9"
+       id="text5254">
+      <tspan
+         x="780"
+         y="382.9"
+         id="tspan5256">Load Model</tspan>
+    </text>
+  </g>
+  <g
+     id="g5258">
+    <rect
+       style="fill: #ffffff"
+       x="937.35"
+       y="180"
+       width="125.3"
+       height="38"
+       id="rect5260" />
+    <rect
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x="937.35"
+       y="180"
+       width="125.3"
+       height="38"
+       id="rect5262" />
+    <text
+       font-size="12.8"
+       style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+       x="1000"
+       y="202.9"
+       id="text5264">
+      <tspan
+         x="1000"
+         y="202.9"
+         id="tspan5266">Start Simulation</tspan>
+    </text>
+  </g>
+  <g
+     id="g5268">
+    <rect
+       style="fill: #ffffff"
+       x="934.075"
+       y="240"
+       width="131.85"
+       height="38"
+       id="rect5270" />
+    <rect
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x="934.075"
+       y="240"
+       width="131.85"
+       height="38"
+       id="rect5272" />
+    <text
+       font-size="12.8"
+       style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+       x="1000"
+       y="262.9"
+       id="text5274">
+      <tspan
+         x="1000"
+         y="262.9"
+         id="tspan5276">Pause Simulation</tspan>
+    </text>
+  </g>
+  <g
+     id="g5278">
+    <rect
+       style="fill: #ffffff"
+       x="938.45"
+       y="300"
+       width="123.1"
+       height="38"
+       id="rect5280" />
+    <rect
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x="938.45"
+       y="300"
+       width="123.1"
+       height="38"
+       id="rect5282" />
+    <text
+       font-size="12.8"
+       style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+       x="1000"
+       y="322.9"
+       id="text5284">
+      <tspan
+         x="1000"
+         y="322.9"
+         id="tspan5286">Stop Simulation</tspan>
+    </text>
+  </g>
+  <rect
+     id="rect5290"
+     height="38"
+     width="135.85001"
+     y="360"
+     x="933.32501"
+     style="fill:#ffdddd" />
+  <rect
+     id="rect5292"
+     height="38"
+     width="135.85001"
+     y="360"
+     x="933.32501"
+     style="fill:#00af30;fill-opacity:1;stroke:#000000;stroke-width:2" />
+  <text
+     id="text5294"
+     y="382.89999"
+     x="1001.25"
+     style="font-style:normal;font-weight:normal;font-size:12.80000019px;font-family:sans-serif;text-anchor:middle;fill:#ffffff;"
+     font-size="12.8"
+     inkscape:export-xdpi="100"
+     inkscape:export-ydpi="100">
+    <tspan
+       id="tspan5296"
+       y="382.89999"
+       x="1001.25"
+       style="fill:#ffffff;">Download Results</tspan>
+  </text>
+  <g
+     id="g5298">
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x1="780"
+       y1="198"
+       x2="780"
+       y2="210.264"
+       id="line5300" />
+    <polygon
+       style="fill: #000000"
+       points="780,217.764 775,207.764 780,210.264 785,207.764 "
+       id="polygon5302" />
+    <polygon
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       points="780,217.764 775,207.764 780,210.264 785,207.764 "
+       id="polygon5304" />
+  </g>
+  <g
+     id="g5306">
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x1="1000"
+       y1="218"
+       x2="1000"
+       y2="230.264"
+       id="line5308" />
+    <polygon
+       style="fill: #000000"
+       points="1000,237.764 995,227.764 1000,230.264 1005,227.764 "
+       id="polygon5310" />
+    <polygon
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       points="1000,237.764 995,227.764 1000,230.264 1005,227.764 "
+       id="polygon5312" />
+  </g>
+  <g
+     id="g5314"
+     transform="translate(2.2013334,0)">
+    <polyline
+       style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2"
+       points="1060,259 1080,259 1080,199 1069.74,199 "
+       id="polyline5316" />
+    <polygon
+       style="fill:#000000"
+       points="1069.74,199 1072.24,204 1062.24,199 1072.24,194 "
+       id="polygon5318" />
+    <polygon
+       style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2"
+       points="1069.74,199 1072.24,204 1062.24,199 1072.24,194 "
+       id="polygon5320" />
+  </g>
+  <g
+     id="g5322">
+    <polygon
+       style="fill: #ffffff"
+       points="779.426,280.256 838.47,309.727 779.426,339.198 720.383,309.727 "
+       id="polygon5324" />
+    <polygon
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       points="779.426,280.256 838.47,309.727 779.426,339.198 720.383,309.727 "
+       id="polygon5326" />
+    <text
+       font-size="12.8"
+       style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+       x="779.426"
+       y="313.627"
+       id="text5328">
+      <tspan
+         x="779.426"
+         y="313.627"
+         id="tspan5330">Valid?</tspan>
+    </text>
+  </g>
+  <g
+     id="g5332">
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x1="780"
+       y1="258"
+       x2="779.666"
+       y2="271.559"
+       id="line5334" />
+    <polygon
+       style="fill: #000000"
+       points="779.481,279.057 774.729,268.936 779.666,271.559 784.726,269.183 "
+       id="polygon5336" />
+    <polygon
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       points="779.481,279.057 774.729,268.936 779.666,271.559 784.726,269.183 "
+       id="polygon5338" />
+  </g>
+  <g
+     id="g5340">
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x1="779.426"
+       y1="338.164"
+       x2="779.744"
+       y2="350.267"
+       id="line5342" />
+    <polygon
+       style="fill: #000000"
+       points="779.941,357.765 774.68,347.9 779.744,350.267 784.677,347.637 "
+       id="polygon5344" />
+    <polygon
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       points="779.941,357.765 774.68,347.9 779.744,350.267 784.677,347.637 "
+       id="polygon5346" />
+  </g>
+  <g
+     id="g5348">
+    <polyline
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       points="722.458,309.728 722.458,310 600,310 600,267.736 "
+       id="polyline5350" />
+    <polygon
+       style="fill: #000000"
+       points="600,260.236 605,270.236 600,267.736 595,270.236 "
+       id="polygon5352" />
+    <polygon
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       points="600,260.236 605,270.236 600,267.736 595,270.236 "
+       id="polygon5354" />
+  </g>
+  <g
+     id="g5356">
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x1="1000"
+       y1="278"
+       x2="1000"
+       y2="290.264"
+       id="line5358" />
+    <polygon
+       style="fill: #000000"
+       points="1000,297.764 995,287.764 1000,290.264 1005,287.764 "
+       id="polygon5360" />
+    <polygon
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       points="1000,297.764 995,287.764 1000,290.264 1005,287.764 "
+       id="polygon5362" />
+  </g>
+  <text
+     font-size="12.8"
+     style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal"
+     x="680"
+     y="300"
+     id="text5364">
+    <tspan
+       x="680"
+       y="300"
+       id="tspan5366">no</tspan>
+  </text>
+  <text
+     font-size="12.8"
+     style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal"
+     x="750"
+     y="351"
+     id="text5368">
+    <tspan
+       x="750"
+       y="351"
+       id="tspan5370">yes</tspan>
+  </text>
+  <g
+     id="g5372"
+     transform="translate(-2.2013334,0)">
+    <polyline
+       style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2"
+       points="940,199 920,199 920,319 930.264,319 "
+       id="polyline5374" />
+    <polygon
+       style="fill:#000000"
+       points="930.264,319 927.764,314 937.764,319 927.764,324 "
+       id="polygon5376" />
+    <polygon
+       style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2"
+       points="930.264,319 927.764,314 937.764,319 927.764,324 "
+       id="polygon5378" />
+  </g>
+  <text
+     font-size="12.8"
+     style="font-style:normal;font-weight:normal;font-size:12.80000019px;font-family:sans-serif;text-anchor:start;fill:#000000"
+     x="580.18835"
+     y="169.74867"
+     id="text5380">
+    <tspan
+       x="580.18835"
+       y="169.74867"
+       id="tspan5382">(single zip archive)</tspan>
+  </text>
+  <text
+     font-size="12.8"
+     style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal"
+     x="600"
+     y="324.425"
+     id="text5384">
+    <tspan
+       x="600"
+       y="324.425"
+       id="tspan5386">(return log files)</tspan>
+  </text>
+  <g
+     id="g5388">
+    <rect
+       style="fill: #ffffff"
+       x="536.65"
+       y="220"
+       width="126.7"
+       height="38"
+       id="rect5390" />
+    <rect
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x="536.65"
+       y="220"
+       width="126.7"
+       height="38"
+       id="rect5392" />
+    <text
+       font-size="12.8"
+       style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+       x="600"
+       y="242.9"
+       id="text5394">
+      <tspan
+         x="600"
+         y="242.9"
+         id="tspan5396">Model Interation</tspan>
+    </text>
+  </g>
+  <g
+     id="g5398">
+    <polyline
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       points="600,220 600,179 710.264,179 "
+       id="polyline5400" />
+    <polygon
+       style="fill: #000000"
+       points="717.764,179 707.764,184 710.264,179 707.764,174 "
+       id="polygon5402" />
+    <polygon
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       points="717.764,179 707.764,184 710.264,179 707.764,174 "
+       id="polygon5404" />
+  </g>
+  <g
+     id="g5406">
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x1="1000"
+       y1="338"
+       x2="1000.35"
+       y2="349.329"
+       id="line5408" />
+    <polygon
+       style="fill: #000000"
+       points="1000.57,356.826 995.272,346.983 1000.35,349.329 1005.27,346.678 "
+       id="polygon5410" />
+    <polygon
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       points="1000.57,356.826 995.272,346.983 1000.35,349.329 1005.27,346.678 "
+       id="polygon5412" />
+  </g>
+  <g
+     id="g5414">
+    <polyline
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       points="780,398 780,420 880,420 880,160 1000,160 1000,170.264 "
+       id="polyline5416" />
+    <polygon
+       style="fill: #000000"
+       points="1000,177.764 995,167.764 1000,170.264 1005,167.764 "
+       id="polygon5418" />
+    <polygon
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       points="1000,177.764 995,167.764 1000,170.264 1005,167.764 "
+       id="polygon5420" />
+  </g>
+</svg>

@@ -4,33 +4,24 @@ SVG_FIGURES = $(DIA_FIGURES:%.dia=%.svg)
 WEBM_VIDEOS = $(wildcard recordings/video/*.webm)
 MP4_VIDEOS =  $(WEBM_VIDEOS:%.webm=%.mp4)
 
-INPUT = $(shell find doc/ -name "*.md") \
-	$(shell find examples/node/etc/labs -name "*.conf")
-
 DOCKER_IMAGE ?= registry.git.rwth-aachen.de/acs/public/villas/documentation
 DOCKER_TAG ?= $(shell git rev-parse --abbrev-ref HEAD)
 
 export LC_ALL = en_US.utf-8
 
-all: html/index.html doxysearch.db/ $(MP4_VIDEOS)
+all: videos docs
+
+docs: build/index.html
 
 videos: $(MP4_VIDEOS)
 
 figures: $(SVG_FIGURES)
 
 clean:
-	rm -f html/*.{png,js,html,svg,css,*.md5}
+	rm -f build/
 
-html/index.html: $(INPUT) $(SVG_FIGURES) Doxyfile
-	doxygen
-
-searchdata.xml: html/index.html
-
-searchdata-tagfile.xml: villas.tag
-	xsltproc tools/searchdata-tagfile.xslt $< > $@
-
-doxysearch.db/: searchdata.xml searchdata-tagfile.xml
-	doxyindexer $^
+build/index.html: figures openapi
+	yarn build
 
 %.svg: %.dia
 	dia -n -l -t svg -e $@ $^
@@ -39,6 +30,11 @@ doxysearch.db/: searchdata.xml searchdata-tagfile.xml
 
 %.mp4: %.webm
 	ffmpeg -i $^ $@
+
+generated/node/openapi.yaml: external/node/doc/openapi/openapi.yaml
+	openapi bundle -o $@ $^
+
+openapi: generated/node/openapi.yaml
 
 image:
 	docker build \
@@ -56,4 +52,4 @@ deploy:
 	kubectl apply -f deployment.yaml
 	kubectl -n fein rollout restart deployment villas-doc
 
-.PHONY: clean all deploy videos figures image upload run deploy
+.PHONY: clean all deploy videos figures image upload run deploy openapi

@@ -1,9 +1,26 @@
-html/
-xml/
-searchdata.xml
-searchdata-tagfile.xml
-villas.tag
-figures/dia/*.svg
-doxygen_sqlite3.db
-warnings.log
+# Dependencies
+/node_modules
+
+# Production
+/build
+
+# Generated files
+.docusaurus
+.cache-loader
+
+# Misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
 .vscode/
+figures/dia/*.svg
+static/recordings/videos/*
+
+generated/node/openapi.yaml

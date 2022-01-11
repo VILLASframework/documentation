@@ -1,0 +1,63 @@
+# EtherCAT {#node-type-ethercat}
+
+**Important:** This node-type is currently under development.
+
+# Prerequisites {#node-type-ethercat-prereq}
+
+This node-type requires the [IgH EtherCAT Master](http://etherlab.org) (>= 1.5.2).
+
+# Implementation {#node-type-ethercat-implementation}
+
+The source code of the node-type is available here:
+https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/ethercat.cpp
+
+# Configuration {#node-config-node-ethercat}
+
+@todo Document EtherCAT node-type
+
+# Example {#node-type-ethercat-example}
+
+``` url="external/node/etc/examples/nodes/ethercat.conf" title="node/etc/examples/nodes/ethercat.conf"
+ethercat = {
+	coupler = {
+		position = 0
+		vendor_id = 0x00000002    # Backhoff
+		product_code = 0x044c2c52 # EK1100
+	}
+
+	alias = 0
+	master = 0
+}
+
+nodes = {
+	ethercat_node = {
+		type = "ethercat"
+
+		rate = 1000.0 # Rate of master cyclic task
+
+		# Analog Input Slave
+		in = {
+			num_channels = 8
+			range = 10.0 # -10.0 V to +10.0 V
+
+			position = 2
+			vendor_id = 0x00000002    # Beckhoff
+			product_code = 0x0bc03052 # EL3008
+
+			# PDOs are currently hardcoded!
+		}
+
+		# Analog Output Slave
+		out = {
+			num_channels = 8
+			range = 10.0 # -10.0 V to +10.0 V
+
+			position = 1
+			vendor_id = 0x00000002    # Beckhoff
+			product_code = 0x0fc63052 # EL4038
+
+			# PDOs are currently hardcoded!
+		}
+	}
+}
+```

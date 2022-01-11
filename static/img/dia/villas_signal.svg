@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="13cm" height="6cm" viewBox="302 138 254 105" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <g>
+      <rect style="fill: #ffffff" x="315" y="140" width="80" height="80"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ffffff" x="315" y="140" width="80" height="80"/>
+    </g>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="315" y="140" width="80" height="80"/>
+  </g>
+  <image x="325" y="150" width="60" height="60" xlink:href="figures/dia/../../images/logos/villas_node.svg"/>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="355" y="240">
+    <tspan x="355" y="240">villas-signal sine</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="431.5" y="199.5">
+    <tspan x="431.5" y="199.5">STDIO</tspan>
+  </text>
+  <g>
+    <g>
+      <rect style="fill: #ffffff" x="475" y="140" width="80" height="80"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #ffffff" x="475" y="140" width="80" height="80"/>
+    </g>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="475" y="140" width="80" height="80"/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="480" y="164.45">
+    <tspan x="480" y="164.45">Keyboard</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="480" y="204.45">
+    <tspan x="480" y="204.45">Screen</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="515" y="240">
+    <tspan x="515" y="240">Terminal</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="395" y1="180" x2="465.264" y2="180"/>
+    <polygon style="fill: #000000" points="472.764,180 462.764,185 465.264,180 462.764,175 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="472.764,180 462.764,185 465.264,180 462.764,175 "/>
+  </g>
+</svg>
