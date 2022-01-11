@@ -2,22 +2,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: villas-doc-new
+  name: villas-doc
   namespace: fein
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: villas-doc-new
+      app: villas-doc
   template:
     metadata:
       labels:
-        app: villas-doc-new
+        app: villas-doc
     spec:
       imagePullSecrets:
       - name: stvogel-rwth-pull-secret
       containers:
-      - image: registry.git.rwth-aachen.de/acs/public/villas/documentation/new
+      - image: registry.git.rwth-aachen.de/acs/public/villas/documentation
         imagePullPolicy: Always
         name: nginx
         ports:
@@ -27,7 +27,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: villas-doc-new
+  name: villas-doc
   namespace: fein
 spec:
   type: ClusterIP
@@ -35,12 +35,12 @@ spec:
   - port: 80
     protocol: TCP
   selector:
-    app: villas-doc-new
+    app: villas-doc
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: villas-doc-new
+  name: villas-doc
   namespace: fein
   annotations:
     kubernetes.io/ingress.class: nginx
@@ -49,13 +49,13 @@ metadata:
 spec:
   tls:
     - hosts:
-      - new.villas.fein-aachen.org
-      secretName: letsencrypt-prod-villas-new
+      - villas.fein-aachen.org
+      secretName: letsencrypt-prod-villas
   rules:
   - host: villas.fein-aachen.org
     http:
       paths:
       - path: /
         backend:
-          serviceName: villas-doc-new
+          serviceName: villas-doc
           servicePort: 80
