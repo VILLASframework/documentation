@@ -8,13 +8,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'VILLASframework',
   tagline: 'VILLASframework is a toolset for local and geographically distributed real-time co-simulation.',
-  url: 'https://new.villas.fein-aachen.org',
+  url: 'https://villas.fein-aachen.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'VILLASframework',
+  projectName: 'Documentation',
 
   scripts: [
     {
@@ -69,7 +69,9 @@ const config = {
           },
           {
             routePath: '/api/web/',
-            spec: 'external/web-backend-go/doc/api/swagger.yaml',
+            // TODO this file is currently manually converter to OpenAPI spec v3
+            // See: https://git.rwth-aachen.de/acs/public/villas/web-backend-go/-/issues/85
+            spec: 'generated/web/openapi.yaml',
           },
         ],
       },
