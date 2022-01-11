@@ -45,14 +45,14 @@ helm repo update
 Create a minimal chart configuration file named `values.yaml` with the following contents:
 Please have a look at the charts [default values](https://git.rwth-aachen.de/acs/public/catalogue/-/blob/master/charts/villas/values.yaml) for more details about the available configuration options.
 
-```yaml
+```yaml title="values.yaml"
 web:
   auth:
     admin:
       mail: admin@example.com
       username: admin
 
-	  # please to change to a secure password
+      # please to change to a secure password
       password: VillasTest1234
 
 ingress:
