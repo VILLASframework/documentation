@@ -4,7 +4,7 @@ SVG_FIGURES = $(DIA_FIGURES:%.dia=%.svg)
 WEBM_VIDEOS = $(wildcard recordings/video/*.webm)
 MP4_VIDEOS =  $(WEBM_VIDEOS:%.webm=%.mp4)
 
-DOCKER_IMAGE ?= registry.git.rwth-aachen.de/acs/public/villas/documentation/new
+DOCKER_IMAGE ?= registry.git.rwth-aachen.de/acs/public/villas/documentation
 DOCKER_TAG ?= $(shell git rev-parse --abbrev-ref HEAD)
 
 export LC_ALL = en_US.utf-8
@@ -50,6 +50,6 @@ run: image
 
 deploy:
 	kubectl apply -f deployment.yaml
-	kubectl -n fein rollout restart deployment villas-doc-new
+	kubectl -n fein rollout restart deployment villas-doc
 
 .PHONY: clean all deploy videos figures image upload run deploy openapi
