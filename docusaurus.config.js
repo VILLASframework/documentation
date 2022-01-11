@@ -57,7 +57,8 @@ const config = {
         specs: [
           {
             routePath: '/api/node/',
-            spec: 'external/node/doc/dist.yaml',
+            // Generated my Makefile
+            spec: 'generated/node/openapi.yaml',
           },
           {
             routePath: '/api/relay/',
