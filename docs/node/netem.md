@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Network Emulation {#node-netem}
+# Network Emulation
 
 VILLASnode supports the emulation of wide-area network characterisics.
 
@@ -44,35 +44,11 @@ Netem supports loading custom delay distributions.
  - https://git.kernel.org/cgit/linux/kernel/git/shemminger/iproute2.git/tree/README.iproute2+tc
  - https://github.com/stv0g/netem
 
-## Configuration {#node-config-netem}
+## Configuration
 
-### out.netem.enabled (boolean) = true {#node-config-netem-enabled}
+import ApiSchema from '@theme/ApiSchema';
 
-Weather or not network emulation is active.
-
-### out.netem.delay (integer) {#node-config-netem-delay}
-
-Additional latency in micro seconds.
-
-### out.netem.jitter (integer) {#node-config-netem-jitter}
-
-Packet delay jitter in micro seconds.
-
-### out.netem.distribution (string: "normal" | "uniform" | "pareto" | "paretonormal") {#node-config-netem-distribution}
-
-Distribution of delay: uniform, normal, pareto, paretonormal
-
-### out.netem.loss (integer) {#node-config-netem-loss}
-
-Packet loss in percent.
-
-### out.netem.duplicate (integer) {#node-config-netem-duplicate}
-
-Packet duplication in percent.
-
-### out.netem.corrupt (integer) {#node-config-netem-corrupt}
-
-Packet corruption in percent.
+<ApiSchema pointer="#/components/schemas/netem" />
 
 # Example
 

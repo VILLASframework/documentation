@@ -22,66 +22,11 @@ The path section in the configuration file consists of a **list** of one or more
 
 Every path object is configured by the following settings:
 
-### in (list of strings: node-names | mapping expression) {#in}
+import ApiSchema from '@theme/ApiSchema';
 
-The `in` settings expects the name of one or more source nodes or mapping expressions.
+<ApiSchema pointer="#/components/schemas/path" />
 
-See @ref node-config-path-mapping
-
-### out (list of strings: node-names) {#out}
-
-The `out` setting expects the name of one or more destination nodes.
-Each sample which is processed by the path will be sent to each of the destination nodes.
-
-### enabled (boolean) {#enabled}
-
-The optional `enabled` setting can be used to temporarily disable a path.
-If omitted, the path is enabled by default.
-
-### reverse (boolean) = false {#reverse}
-
-By default, the path is unidirectional. Meaning, that it only forwards samples from the source to the destination.
-Sometimes a bidirectional path is needed.
-This can be accomplished by setting `reverse` to `true`.
-
-### mode (string: "all" | "any") = "any" {#mode}
-
-The mode setting specifies under which condition a path is _triggered_.
-A triggered path will multiplex / merge samples from its input nodes and run the configured hook functions on them.
-Afterwards the processed and merged samples will be send to all output nodes.
-
-Two modes are currently supported:
-
-- `any`: The path will trigger the path as soon as any of the masked (see @ref node-config-path-mask) input nodes received new samples.
-- `all`: The path will trigger the path as soon as all input nodes received at least one new sample.
-
-### mask (list of strings: node-names) = _all input nodes_ {#mask}
-
-This setting allows masking the the input nodes which can trigger the path.
-
-See also: @ref node-config-path-mode
-
-### rate (float) = 0 {#rate}
-
-A non-zero value will periodically trigger the path and resend the last sample again.
-
-A value of zero will disable this feature.
-
-### original_sequence_no (boolean) = false {#original_sequence_no}
-
-When this flag is set, the original sequence number from the source node will be used when multiplexing the nodes.
-
-### hooks (list of objects: hooks) {#hooks}
-
-A list of hook functions which will be executed for each sample which is processed by this path.
-
-See @ref node-hook-types chapter of this documentation for details.
-
-### hooks[].type (string: "print" | "drop" | ...) {#hooks-type}
-
-### hooks[].enabled (boolean) = true {#hooks-enabled}
-
-## Input mapping {#node-config-path-mapping}
+## Input mapping
 
 The @ref node-config-path-in setting supports different ways of configuring and selecting the nodes from which the path sources its samples.
 
@@ -188,7 +133,7 @@ paths = (
 )
 ```
 
-## Example {#example}
+## Example
 
 <!-- TODO: Convert to json -->
 ```

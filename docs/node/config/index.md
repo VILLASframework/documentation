@@ -3,13 +3,13 @@ sidebar_position: 1
 sidebar_label: Overview
 ---
 
-# Configuration {#node-config}
+# Configuration
 
 The VILLASnode configuration consists of a a single file.
 
 For a collection of example configuration files see: <https://git.rwth-aachen.de/acs/public/villas/node/tree/master/etc>.
 
-# File format {#node-config-format}
+## File format
 
 VILLASnode currently supports two config file formats:
 
@@ -18,7 +18,7 @@ VILLASnode currently supports two config file formats:
 
 **Note:** Consider using the [`villas conf2json`](../usage/villas-conf2json.md) command to migrate your old configurations to JSON.
 
-# Structure {#node-config-structure}
+## Structure
 
 At the top level, the configuration file consists of these sections:
 
@@ -28,7 +28,7 @@ At the top level, the configuration file consists of these sections:
 - [`nodes`](nodes.md)
 - [`paths`](paths.md)
 
-# Examples {#node-config-examples}
+## Examples
 
 VILLASnode comes with a lot of existing configurations which can be used for inspiration:
 https://git.rwth-aachen.de/acs/public/villas/node/-/tree/master/etc
@@ -69,9 +69,9 @@ paths = (
 )
 ```
 
-# Tips & Tricks {#node-config-tips}
+## Tips & Tricks
 
-## Use environment variables in your configuration {#node-config-envvars}
+### Use environment variables in your configuration {#node-config-envvars}
 
 VILLASnode substitutes any environment variables in you JSON and libconfig configuration files.
 
@@ -79,7 +79,7 @@ To replace environment variables you must use the following syntax within any st
 
 **Note:** Non-string values can currently not be subsituted by environment variables!
 
-### Example
+#### Example
 
 <!-- convert to JSON -->
 ```
@@ -90,7 +90,7 @@ nodes = {
 }
 ```
 
-## Include other files into your configuration  {#node-config-include}
+### Include other files into your configuration  {#node-config-include}
 
 VILLASnode can include other files into you configuration.
 This allows you to better structure and reuse parts of your configuration (e.g. the node definitions).
@@ -100,20 +100,16 @@ The value of this key must point to an existing file on your file system.
 
 **Note:** libconfig supports inclusion of other files [out of the box via @include directives](http://hyperrealm.github.io/libconfig/libconfig_manual.html#Include-Directives). So this tip is mostly useful for JSON configuration files.
 
-### Example
+#### Example
 
-#### `params.json`
-
-```json
+```json title="params.json"
 {
   "gain": 1.45,
   "t_dt": 50e-6
 }
 ```
 
-#### `nodes.json`
-
-```json
+```json title="nodes.json"
 {
   "test_node": {
     "type": "file",
@@ -139,9 +135,7 @@ The value of this key must point to an existing file on your file system.
 }
 ```
 
-#### `experiment1.json`
-
-```json
+```json title="experiment1.json"
 {
   "nodes":{
     "@include": "nodes.json"

@@ -46,7 +46,7 @@ villas signal -f '{ "type": "json", "indent": 4, "precision": 4 }' -v 5 sine
 Please note, that depending on you system configuration not all format-types might be available.
 Use the following command to get a list of all available types on your system: `villas node -h`.
 
-All format-types support the following generic options:
+All format-types share the following common options:
 
 import ApiSchema from '@theme/ApiSchema';
 

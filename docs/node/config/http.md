@@ -2,7 +2,13 @@
 hide_table_of_contents: true
 ---
 
-# HTTP / WebSocket server {#node-config-http}
+# HTTP / WebSocket server
+
+## Configuration
+
+import ApiSchema from '@theme/ApiSchema';
+
+<ApiSchema example pointer="#/components/schemas/http" />
 
 ## Example
 
@@ -19,8 +25,3 @@ http = {
 }
 ```
 
-## Configuration
-
-import ApiSchema from '@theme/ApiSchema';
-
-<ApiSchema example pointer="#/components/schemas/http" />
