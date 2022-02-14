@@ -53,7 +53,7 @@ VILLASnode currently has the following list of dependencies:
 
  - [CMake](http://cmake.org/) (>= 3.9) for generating the build-system (_required_).
 
- - [libwebsockets](http://libwebsockets.org) (>= 2.3.0) for the [Websocket node-type](nodes/websocket.md) (_required_).
+ - [libwebsockets](http://libwebsockets.org) (>= 3.1.0) for the [Websocket node-type](nodes/websocket.md) (_required_).
  - [libjansson](http://www.digip.org/jansson/) (>= 2.7) JSON parser for [Websocket node-type](nodes/websocket.md) and [NGSI node-type](nodes/ngsi.md) node-types (_required_).
  - [openssl](https://www.openssl.org) (>= 1.0.0) for cryptographic hashing functions (_required_).
  - [libcurl](https://curl.haxx.se/libcurl/) (>= 7.29.0) for HTTP REST requests by the [NGSI node-type](nodes/ngsi.md) node-type (_required_).
