@@ -22,11 +22,11 @@ VILLASnode currently supports two config file formats:
 
 At the top level, the configuration file consists of these sections:
 
-- [`global`](global.md)
-- [`logging`](logging.md)
-- [`http`](http.md)
-- [`nodes`](nodes.md)
-- [`paths`](paths.md)
+- [`global`](./global.md)
+- [`logging`](./logging.md)
+- [`http`](./http.md)
+- [`nodes`](./nodes.md)
+- [`paths`](./paths.md)
 
 ## Examples
 
