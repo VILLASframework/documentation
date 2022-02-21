@@ -12,7 +12,7 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logos/villas_framework.svg',
   organizationName: 'VILLASframework',
   projectName: 'Documentation',
 
