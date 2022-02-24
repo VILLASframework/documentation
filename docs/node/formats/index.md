@@ -19,6 +19,7 @@ Currently, the following formats are supported:
 | [`iotagent-ul`](iotagent_ul.md)      | FIWARE IoTAgent Ultralight 2.0 Protocol          | stable |
 | [`json.kafka`](json_kafka.md)        | Kafka Schema/Payload Javascript Object Notation  | stable |
 | [`json`](json.md)                    | Javascript Object Notation                       | stable |
+| [`opal.asyncip`](opal_asyncip.md)    | OPAL-RT AsyncIP example format                   | stable |
 | [`protobuf`](protobuf.md)            | Google Protobuf                                  | stable |
 | [`raw`](raw.md)                      | Raw binary values                                | stable |
 | [`tsv`](tsv.md)                      | Tabulator-separated values                       | stable |
@@ -50,10 +51,7 @@ All format-types share the following common options:
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema
-  specUrl="external/node/doc/dist.yaml"
-  schemaRef="#/components/schemas/format"
-/>
+<ApiSchema schemaRef="#/components/schemas/format" />
 
 ## Example
 
