@@ -12,12 +12,12 @@ The `.proto` Protocol Buffers Version Language Specification of the payload used
 
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/formats/villas.proto
 
-``` url="external/node/lib/formats/villas.proto" title="node/lib/formats/villas.proto"
+```protobuf url="external/node/lib/formats/villas.proto" title="node/lib/formats/villas.proto"
 /// Protobuf schema based on msg_format.h
 ///
 /// @file
 /// @author Steffen Vogel <stvogel@eonerc.rwth-aachen.de>
-/// @copyright 2014-2020, Institute for Automation of Complex Power Systems, EONERC
+/// @copyright 2014-2021, Institute for Automation of Complex Power Systems, EONERC
 /// @license GNU General Public License (version 3)
 ///
 /// VILLASnode

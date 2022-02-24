@@ -35,7 +35,7 @@ paths = (
 
 				output = "print_output_file.log"
 				format = "villas.human"
-				prefix = "[file_node] "
+				# prefix = "[file_node] " # prefix and output are exclusive settings!
 			}
 		)
 	}

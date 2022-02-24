@@ -26,7 +26,7 @@ nodes = {
 
 		format = {
 			type = "raw"
-			bits = "32"
+			bits = 32
 			endianess = "big"
 		}
 

@@ -37,7 +37,7 @@ As soon as an IP is set for the local HCA, this entry can be used to point to th
 
 **Example**:
 
-```conf
+```
 in = {
     address="10.0.0.1:1337"
 }
@@ -64,7 +64,7 @@ If a connection is disconnected, all outstanding Work Requests—even is they ar
 
 It is therefor recommended to set the value of `cq_size` to at least
 
-```conf
+```
 in.cq_size >= in.max_wrs - in.buffer_subtraction
 ```
 
@@ -94,7 +94,7 @@ This is similar to @ref node-config-node-infiniband-in-address.
 
 **Example**:
 
-```conf
+```
 out = {
     address = "10.0.0.1:1337"
 }
@@ -133,7 +133,7 @@ The settings defaults to zero. However, many HCAs will automatically adjust it t
 
 **Example**:
 
-```conf
+```
 out = {
     send_inline = 1,
     max_inline_data = 60

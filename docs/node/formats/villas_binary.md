@@ -37,8 +37,6 @@ Later we might want to support more complex simulation scenarios which require s
 
 All values are sent in **network byte order** (big endian)!
 
-@see msg for implementation details.
-
 ## Implementation
 
 The source code of the format-type is available here:
