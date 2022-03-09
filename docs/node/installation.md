@@ -10,6 +10,7 @@ VILLASnode can be installed in multiple ways:
 - [Kubernetes (Helm chart)](../installation.md)
 - RPM packages for Redhat based Linux distributions
 - [Bootable Linux live image](../liveusb/index.md)
+- Automated [Kickstart installation](#kickstart) for Fedora/Redhat based distros
 - or from source
 
 :::caution
@@ -17,24 +18,6 @@ VILLASnode can be installed in multiple ways:
 Please make sure that your system fullfills the [requirements](requirements.md) before proceeding.
 
 :::
-
-## Docker images {#docker}
-
-There exists a set of Docker images for running and developing VILLASnode.
-Docker images are available for x86_64/amd64, armhf and arm64 architectures it you can run it also on a Raspberry Pi or other embedded platforms.
-We use Alpinelinux-based images to keep the size of the image below 100MB.
-
-With a working Docker daemon, you can run it like this:
-
-```bash
-docker run --privileged registry.git.rwth-aachen.de/acs/public/villas/node
-```
-
-To start the main daemon, you can pass a configuration file via a volume mount:
-
-```bash
-docker run --volume /path/to/my/local.conf:/config.conf --privileged registry.git.rwth-aachen.de/acs/public/villas/node node /config.conf
-```
 
 ## From source  {#source}
 
@@ -226,6 +209,40 @@ sudo ldconfig
 
 Append `PREFIX=/opt/local` to change the installation destination.
 
+
+## Docker images {#docker}
+
+There exists a set of Docker images for running and developing VILLASnode.
+Docker images are available for x86_64/amd64, armhf and arm64 architectures it you can run it also on a Raspberry Pi or other embedded platforms.
+We use Alpinelinux-based images to keep the size of the image below 100MB.
+
+With a working Docker daemon, you can run it like this:
+
+```bash
+docker run --privileged registry.git.rwth-aachen.de/acs/public/villas/node
+```
+
+To start the main daemon, you can pass a configuration file via a volume mount:
+
+```bash
+docker run --volume /path/to/my/local.conf:/config.conf --privileged registry.git.rwth-aachen.de/acs/public/villas/node node /config.conf
+```
+
+## Kickstart installation
+
+[Kickstart](https://docs.fedoraproject.org/en-US/fedora/f35/install-guide/advanced/Kickstart_Installations/) is a method for automating the installation of Fedora/Redhat based Linux distributions.
+It works by using a Kickstart (`.ks`) file which contains a configuration of all the installation options which the user would usually manually enter using the installation wizard.
+
+We have prepared such a Kickstart file which installs Fedora with our recommended configuration as well as [installs VILLASnode from source](#source) as described above.
+
+To use it, you will need to download a [Netinstall image of Fedora Server](https://getfedora.org/de/server/download/) and copy it to a USB stick or opticial disk.
+You also need to interrupt the initial boot of the Fedora installer, in the boot manager and append the following Kernel command line:
+
+```
+inst.ks=https://git.rwth-aachen.de/acs/public/villas/node/-/raw/master/packaging/live-iso/villas.ks
+```
+
+Further details on how to start the Kickstart installation can be found [in the official Fedora documentation](https://docs.fedoraproject.org/en-US/fedora/f35/install-guide/advanced/Kickstart_Installations/#sect-kickstart-installation-starting).
 
 ## Test installation {#test}
 
