@@ -47,3 +47,4 @@ VILLASnode currently supports the following node-types:
 | [uldaq](uldaq.md)                 | no                | yes  | no    | unlimited | stable      | |
 | [websocket](websocket.md)         | no                | yes  | yes   | unlimited | stable      | |
 | [zeromq](zeromq.md)               | yes               | yes  | yes   | unlimited | stable      | |
+| [webrtc](webrtc.md)               | no                | yes  | yes   | unlimited | stable      | |
