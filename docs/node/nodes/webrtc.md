@@ -37,6 +37,13 @@ A publicly reachable signaling server is required.
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/go/pkg/nodes/webrtc/
 
+## Web Demo {#demo}
+
+There exists an example WebRTC peer implementation running in a web-browser:
+
+- **Source:** https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/web/webrtc.html
+- **Online Demo:** https://villas.fein-aachen.org/webrtc/
+
 ## Configuration {#config}
 
 import ApiSchema from '@theme/ApiSchema';
