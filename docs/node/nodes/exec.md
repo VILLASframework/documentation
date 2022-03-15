@@ -1,25 +1,29 @@
-# Sub-process Execution {#node-type-exec}
+---
+hide_table_of_contents: true
+---
+
+# Sub-process Execution
 
 The `exec` node-type spawns a new subprocess and exchanges sample data via `stdin` and `stdout`.
 
-# Prerequisites {#node-type-exec-prereq}
+## Prerequisites
 
 This node-type does not have any special library dependencies. It is always available.
 
-# Implementation {#node-type-exec-implementation}
+## Implementation
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/exec.cpp
 
-# Configuration {#node-config-node-exec}
+## Configuration {#config}
 
-## format (string: format-id) = "villas.human" {#node-config-node-file-format}
+### format (string: format-id) = "villas.human"
 
 A IO format identifier selecting the file format which is used for reading and writing from the file.
 
 See [Format Types](../formats/index.md) for a complete list of supported formats.
 
-## shell (boolean) = false {#node-config-node-exec-shell}
+### shell (boolean) = false
 
 If set, the @node-config-node-exec-exec setting gets passed the shell (`/usr/bin`). 
 In this case the `exec` setting must be given as a string.
@@ -27,25 +31,25 @@ In this case the `exec` setting must be given as a string.
 If not set, we will directly execute the sub-process via `execvpe(2)`.
 In this case the `exec` setting must be given as an array (`argv[]`).
 
-## exec (string|array) {#node-config-node-exec-exec}
+### exec (string|array)
 
 The program which should be execed in the sub-process.
 
 The options is passed to the system shell for execution.
 
-## flush (boolean) = true {#node-config-node-exec-flush}
+### flush (boolean) = true
 
 Flush stream every time VILLASnode passes data the sub-process.
 
-## working_directory (string: path) {#node-config-node-exec-working_directory}
+### working_directory (string: path)
 
 If set, the working directory for the sub-process will be changed.
 
-## environment (object) {#node-config-node-exec-environent}
+### environment (object)
 
 A object of key/value pairs of environemnt variables which should be passed to the sub-process **in addition** to the parent environment.
 
-# Example {#node-type-exec-example}
+## Example
 
 ``` url="external/node/etc/examples/nodes/exec.conf" title="node/etc/examples/nodes/exec.conf"
 nodes = {

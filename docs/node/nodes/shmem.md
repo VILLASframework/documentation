@@ -1,53 +1,56 @@
-# Shared memory {#node-type-shmem}
+---
+hide_table_of_contents: true
+---
+
+# Shared memory
 
 The `shmem` node-type can be used to quickly exchange samples with a process on the same host using a POSIX shared memory object.
 
-# Prerequisites {#node-type-shmem-prereq}
+## Prerequisites
 
 This node-type does not have any special library dependencies. It is always available.
 
-# Implementation {#node-type-shmem-implementation}
+## Implementation
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/shmem.cpp
 
-
-# Configuration {#node-config-node-shmem}
+## Configuration {#config}
 
 The only required configuration option is the `name` option; all others are optional with reasonable defaults.
 
-## in.name (string) {#node-config-node-shmem-in-name}
+### in.name (string)
 
-## out.name (string) {#node-config-node-shmem-out-name}
+### out.name (string)
 
 Name of the POSIX shared memory object. Must start with a forward slash (`/`).
 The same name should be passed to the external program somehow in its
 configuration or command-line arguments.
 
-## queuelen (int) {#node-config-node-shmem-queuelen}
+### queuelen (int)
 
 Length of the input and output queues in elements. Defaults to `DEFAULT_SHMEM_QUEUELEN`,
 a compile-time constant.
 
-## samplelen (int) {#node-config-node-shmem-samplelen}
+### samplelen (int)
 
 Maximum number of data elements in a single `struct sample` for the samples handled
 by this node. Defaults to `DEFAULT_SHMEM_SAMPLELEN`, a compile-time constant.
 
-## mode (string: "pthread" | "polling") = "pthread" {#node-config-node-shmem-mode}
+### mode (string: "pthread" | "polling") = "pthread"
 
 If set to `pthread`, POSIX condition variables are used to signal writes between processes.
 If set to `polling`, no CV's are used, meaning that blocking writes have to be
 implemented using polling, leading to performance improvements at a cost of
 unnecessary CPU usage. Defaults to `pthread`.
 
-## exec (array of strings) {#node-config-node-shmem-exec}
+### exec (array of strings)
 
 Optional name and command-line arguments (as passed to `execve`) of a command
 to be executed during node startup. This can be used to start the external
 program directly from VILLASNode. If unset, no command is executed.
 
-# Example {#node-type-shmem-example}
+## Example
 
 ``` url="external/node/etc/examples/nodes/shmem.conf" title="node/etc/examples/nodes/shmem.conf"
 nodes = {
@@ -72,7 +75,7 @@ nodes = {
 }
 ```
 
-# API for external programs {#node-type-shmem-api}
+## API for external programs
 
 The actual sharing of data is implemented by putting two shared `struct queue`s
 (one per direction) and an associated `struct pool` in the shared memory region.

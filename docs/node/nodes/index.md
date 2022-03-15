@@ -1,9 +1,10 @@
 ---
 sidebar_position: 1
 sidebar_label: Overview
+hide_table_of_contents: true
 ---
 
-# Node-types {#node-node-types}
+# Node-types
 
 All communication partners which are interfaced by the VILLASnode gateway are represented by nodes.
 These nodes act as sinks / sources for simulation data.

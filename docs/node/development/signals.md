@@ -1,3 +1,7 @@
 # Signals {#node-dev-signal}
 
-@todo Document `struct signal` details 
+:::note ToDo
+
+Document `struct signal` details 
+
+:::

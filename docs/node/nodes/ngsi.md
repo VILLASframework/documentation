@@ -1,4 +1,8 @@
-# OMA Next Generation Services Interface {#node-type-ngsi}
+---
+sidebar_label: FIWARE NGSI
+---
+
+# Open Mobile Alliance (OMA) - Next Generation Services Interface (NGSI)
 
 The `ngsi` node type implements an interface to FIWARE context brokers.
 Currently version 1 of the RESTful HTTP API is implemented and using NGSI10 for the context management interface.
@@ -6,39 +10,39 @@ Currently version 1 of the RESTful HTTP API is implemented and using NGSI10 for 
 This implementation if currently limited to the `updateContext` operation.
 Therefore only publishing updates is supported. Subscribtion or polling of events is planned for later versions.
 
-# Prerequisites {#node-type-ngsi-prereq}
+## Prerequisites
 
 This node-type requires to following libraries to communicate with the context broker over JSON:
 
- - [libjansson](http://www.digip.org/jansson/) (>= 2.7)
- - [libcurl](https://curl.haxx.se/libcurl/) (>= 7.29.0)
+- [libjansson](http://www.digip.org/jansson/) (>= 2.7)
+- [libcurl](https://curl.haxx.se/libcurl/) (>= 7.29.0)
 
-# Implementation {#node-type-ngsi-implementation}
+## Implementation
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/ngsi.cpp
 
-# Configuration {#node-config-node-ngsi}
+## Configuration {#config}
 
 You can use the [`vectorize` setting](../config/nodes.md#vectorize) to send multiple samples in a vector.
 
 Every `ngsi` node supports the following special settings:
 
-## endpoint (string: uri) {#node-config-node-ngsi-endpoint}
+### endpoint (string: uri)
 
-## entity_id (string) {#node-config-node-ngsi-entity_id}
+### entity_id (string)
 
-## entity_type (string) {#node-config-node-ngsi-entity_type}
+### entity_type (string)
 
-## ssl_verify (boolean) {#node-config-node-ngsi-ssl_verify}
+### ssl_verify (boolean)
 
-## timeout (float: seconds) {#node-config-node-ngsi-timeout}
+### timeout (float: seconds)
 
-## mapping (array of strings) {#node-config-node-ngsi-mapping}
+### mapping (array of strings)
 
 Example: `AttributeName(AttributeType) MetadataName1(MetadataType1)=MetadataValue1 MetadataName2(MetadataType2)=MetadataValue2 ...`
 
-# Example {#node-type-ngsi-example}
+## Example
 
 ``` url="external/node/etc/examples/nodes/ngsi.conf" title="node/etc/examples/nodes/ngsi.conf"
 nodes = {
@@ -80,9 +84,9 @@ nodes = {
 }
 ```
 
-# Further reading
+## Further reading
 
 This standard was specified by the Open Mobile Alliance (OMA).
 
-@see https://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/FI-WARE_NGSI-10_Open_RESTful_API_Specification
-@see http://technical.openmobilealliance.org/Technical/Release_Program/docs/NGSI/V1_0-20120529-A/OMA-TS-NGSI_Context_Management-V1_0-20120529-A.pdf
+- [FIWARE-NGSI v2 Specification](http://fiware.github.io/specifications/ngsiv2/stable/)
+- [Open Mobile Alliance - NGSI Context Management](http://www.openmobilealliance.org/release/ngsi/v1_0-20120529-a/oma-ts-ngsi_context_management-v1_0-20120529-a.pdf)

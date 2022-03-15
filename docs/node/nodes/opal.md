@@ -1,4 +1,8 @@
-# OPAL-RT Asynchronous Process {#node-type-opal}
+---
+hide_table_of_contents: true
+---
+
+# OPAL-RT Asynchronous Process
 
 The communication between OPAL-RT models and VILLASnode is established by using asynchronous programs.
 Asynchronous programs are are a feature of RT-LAB. They are used to exchange data between Simulink models and custom C programs.
@@ -11,26 +15,26 @@ There are two ways to exchange sample values with an OPAL-RT simulator:
     It requires a 32-bit version of the `villas-node`. Data exchange is then handled using OPAL-RT's libOpalAsyncApi.
     This settings of this node-type a described on this page.
 
-# Prerequisites {#node-type-opal-prereq}
+## Prerequisites
 
 This node-type requires [libOpal{AsyncApi,Core,Utils}](https://git.rwth-aachen.de/acs/public/villas/libopal).
 
-# Implementation {#node-type-opal-implementation}
+## Implementation
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/opal.cpp
 
-# Configuration {#node-config-node-opal}
+## Configuration {#config}
 
 Every `opal` node supports the following special settings:
 
-## send_id (integer) {#node-config-node-opal-send_id}
+### send_id (integer)
 
-## recv_id (integer) {#node-config-node-opal-recv_id}
+### recv_id (integer)
 
-## reply (boolean) {#node-config-node-opal-reply}
+### reply (boolean)
 
-# Example {#node-type-opal-example}
+## Example
 
 ``` url="external/node/etc/examples/nodes/opal.conf" title="node/etc/examples/nodes/opal.conf"
 nodes = {
@@ -71,12 +75,16 @@ nodes = {
 }
 ```
 
-# Arguments for OPAL-RT block
+## Arguments for OPAL-RT block
 
 RT-LAB already provides a block to establish simple TCP/IP communication: ???
 This block is based on a more generic block used for aynchronous programs: ???
 
-@todo Insert name of RT-LAB blocks.
+:::note ToDo
+
+Insert name of RT-LAB blocks.
+
+:::
 
 | Param		 | Description   | Example Value  |
 | :------------- | :------------ |:-------------- |
@@ -87,4 +95,8 @@ This block is based on a more generic block used for aynchronous programs: ???
 | StringParam[1] | LocalAddr	 | 192.168.0.11   |
 | StringParam[2] | InterfaceName | eth2           |
 
-@todo Complete documentation for the OPAL-RT Simulink module.
+:::note ToDo
+
+Complete documentation for the OPAL-RT Simulink module.
+
+:::

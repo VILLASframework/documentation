@@ -1,19 +1,27 @@
-# Comedi {#node-type-comedi}
+---
+hide_table_of_contents: true
+---
 
-# Prerequisites {#node-type-comedi-prereq}
+# Comedi
+
+## Prerequisites
 
 This node-type requires [comedilib](http://comedi.org) (>= 0.11.0).
 
-# Implementation {#node-type-comedi-implementation}
+## Implementation
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/comedi.cpp
 
-# Configuration {#node-config-node-comedi}
+## Configuration {#config}
 
-@todo Document config options for Comedi node-type
+:::note ToDo
 
-# Example {#node-type-comedi-example}
+Document config options for Comedi node-type
+
+:::
+
+## Example
 
 ``` url="external/node/etc/examples/nodes/comedi.conf" title="node/etc/examples/nodes/comedi.conf"
 nodes = {
@@ -100,8 +108,8 @@ paths = (
 )
 ```
 
-# Further reading
+## Further reading
 
-## Linux Control and measurement device interface
+### Linux Control and measurement device interface
 
 > [The Comedi project](http://comedi.org) develops open-source drivers, tools, and libraries for data acquisition.

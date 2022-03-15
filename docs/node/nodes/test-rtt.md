@@ -1,22 +1,26 @@
-# Test Round-trip Time {#node-type-test-rtt}
+---
+hide_table_of_contents: true
+---
+
+# Test Round-trip Time
 
 The `test_rtt` node-type is a virtual node-type which can be used to measure round-trip time to other nodes.
 The `test_rtt` nodes periodically generate probes which must be looped back via a second node:
 
-# Prerequisites {#node-type-test-rtt-prereq}
+## Prerequisites
 
 This node-type does not have any special library dependencies. It is always available.
 
-# Implementation {#node-type-test-rtt-implementation}
+## Implementation
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/test_rtt.cpp
 
-# Configuration {#node-config-node-test-rtt}
+## Configuration {#config}
 
 @todo
 
-# Example {#node-type-test-rtt-example}
+## Example
 
 ``` url="external/node/etc/examples/nodes/test_rtt.conf" title="node/etc/examples/nodes/test_rtt.conf"
 nodes = {

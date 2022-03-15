@@ -1,22 +1,26 @@
-# File {#node-type-file}
+---
+hide_table_of_contents: true
+---
+
+# File
 
 The `file` node-type can be used to log or replay samples to / from disk.
 
-# Prerequisites {#node-type-file-prereq}
+## Prerequisites
 
 This node-type does not have any special library dependencies. It is always available.
 
-# Implementation {#node-type-file-implementation}
+## Implementation
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/file.cpp
 
-# Configuration {#node-config-node-file}
+## Configuration {#config}
 
 Every `file` node can be configured to only read or write or to do both at the same time.
 The node configuration is divided into two sub-groups: `in` and `out`.
 
-## uri (string: uri) {#node-config-node-file-uri}
+### uri (string: uri)
 
 Specifies the URI to a file from which is written to or read from depending in which group (`in`or `out`) is used.
 
@@ -36,15 +40,15 @@ will create a file called:
 ./logs/measurements_2015-08-09_22-20-50.log
 ```
 
-## format (string: format-id) = "villas.human" {#node-config-node-file-format}
+### format (string: format-id) = "villas.human"
 
 A IO format identifier selecting the file format which is used for reading and writing from the file.
 
 See [Format Types](../formats/index.md) for a complete list of supported formats.
 
-## in.epoch (float) {#node-config-node-file-epoch}
+### in.epoch (float)
 
-## in.epoch_mode ("direct" | "wait" | "relative" | "absolute") {#node-config-node-file-in-epoch_mode}
+### in.epoch_mode ("direct" | "wait" | "relative" | "absolute")
 
 The *epoch* describes the point in time when the first message will be read from the file.
 This setting allows to select the behaviour of the following `epoch` setting.
@@ -71,13 +75,13 @@ The supported values for `epoch_mode`:
 | `absolute` 	| `epoch - first` 	| `epoch` |
 | `original` 	| `0` 			| immeadiatly |
 
-## in.rate (float) {#node-config-node-file-in-rate}
+### in.rate (float)
 
 By default `send_rate` has the value `0` which means that the time between consecutive samples is the same as in the `in` file based on the timestamps in the first column.
 
 If this setting has a non-zero value, the default behaviour is overwritten with a fixed rate.
 
-## in.eof (string: "rewind" | "exit" | "wait") = "exit" {#node-config-node-file-in-eof}
+### in.eof (string: "rewind" | "exit" | "wait") = "exit"
 
 Defines the behaviour if the end of file of the input file is reached.
 
@@ -85,13 +89,13 @@ Defines the behaviour if the end of file of the input file is reached.
  - `exit` will terminated the program.
  - `wait` will periodically test if there are new samples which have been appended to the file.
 
-## in.buffer_size (unsigned) = 0 {#node-config-node-file-in-buffer_size}
+### in.buffer_size (unsigned) = 0
 
 Similar to the [`out.buffer_size` setting](#out-buffer_size). This means that the data is loaded into the buffer before it is passed on to the node.
 
 If `in.buffer_size = 0`, no buffer will be generated.
 
-## out.flush (boolean) {#node-config-node-file-out-flush}
+### out.flush (boolean)
 
 With this setting enabled, the outgoing file is flushed whenever new samples have been written to it.
 For remote files this means that the new sample is appended to the remote file which involves network IO.
@@ -100,13 +104,13 @@ For remote files this means that the new sample is appended to the remote file w
 It's know that this feature works for local files but not for WebDav.
 Other protocols hav not been tested yet.
 
-## out.buffer_size (unsigned) = 0 {#node-config-node-file-out-buffer_size}
+### out.buffer_size (unsigned) = 0
 
 If this is set to a positive value `<X>`, the node will generate a full [stream buffer](https://linux.die.net/man/3/setvbuf) with a size of `<X>` bytes. This means that the data is buffered and not written until the buffer is full or until the node is stopped.
 
 If `out.buffer_size = 0`, no buffer will be generated.
 
-# Example {#node-type-file-example}
+## Example
 
 ``` url="external/node/etc/examples/nodes/file.conf" title="node/etc/examples/nodes/file.conf"
 nodes = {

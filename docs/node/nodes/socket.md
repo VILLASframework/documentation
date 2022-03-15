@@ -1,4 +1,8 @@
-# Sockets {#node-type-socket}
+---
+hide_table_of_contents: true
+---
+
+# Sockets
 
 The socket node-type is the most comprehensive and complex one.
 It allows to send and receive simulation data over the network.
@@ -13,76 +17,76 @@ The implementation supports multiple protocols / OSI layers:
  - **Layer 2:** Raw IP (internet / VPN routing possible)
  - **Layer 3:** UDP encapsulation
 
-# Prerequisites {#node-type-socket-prereq}
+## Prerequisites
 
 This node-type does not have any special library dependencies. It is always available.
 
 Optionally, [libnl3](http://www.infradead.org/~tgr/libnl/) is used to setup network emulation as described in page [Netem Emulation](../netem.md).
 
-# Implementation {#node-type-socket-implementation}
+## Implementation
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/socket.cpp
 
-# Configuration {#node-config-node-socket}
+## Configuration {#config}
 
 Every `socket` node supports the following special settings:
 
-## format (string: "csv" | "json" | "villas.human" | "raw" | ...) {#node-config-node-socket-format}
+### format (string: "csv" | "json" | "villas.human" | "raw" | ...)
 
 The payload format which is used to encode and decode exchanged messages.
 
 See: [Format Types](../formats/index.md)
 
-## in.address (string: "ip:port" | "mac:protocol") {#node-config-node-socket-in-address}
+### in.address (string: "ip:port" | "mac:protocol")
 
 The local address and port number this node should listen for incoming packets.
 
 Use `*` to listen on all interfaces: `local = "*:12000"`.
 
-## out.address (string: "ip:port" | "mac:protocol") {#node-config-node-socket-out-address}
+### out.address (string: "ip:port" | "mac:protocol")
 
 The remote address and port number to which this node will send data.
 
-## layer (string: "udp" | "ip" | "eth") = "udp" {#node-config-node-socket-layer}
+### layer (string: "udp" | "ip" | "eth") = "udp"
 
 Select the network layer which should be used for the socket. Please note that `eth` can only be used locally in a LAN as it contains no routing information for the internet.
 
-## verify_source (boolean) = false {#node-config-node-socket-verify_source}
+### verify_source (boolean) = false
 
 Check if source address of incoming packets matches the remote address.
 
-## out.netem (dictionary) {#node-config-node-socket-out-netem}
+### out.netem (dictionary)
 
 Enables and configures the network emulation qeueing discipline.
 
 For information see also: [Netem emulation](../netem.md)
 
-## in.multicast (dictionary) {#node-config-node-socket-in-multicast}
+### in.multicast (dictionary)
 
 The `socket` node-type supports sending and receiving IP / UDP packets to and from multicast addresses.
 
 **Note:** Multicast is only supported by IPv4 addressing. Using these settings with `layer = eth` or IPv6 adresses will fail!
 
-## in.multicast.enabled (boolean) = true {#node-config-node-socket-multicast-enabled}
+### in.multicast.enabled (boolean) = true
 
 Weather or not multicast group subscription is active.
 
-## in.multicast.group (string: IPv4 Address) {#node-config-node-socket-multicast-group}
+### in.multicast.group (string: IPv4 Address)
 
 The multicast group. Must be within 224.0.0.0/4
 
-## in.multicast.interface (string: IPv4 Address) {#node-config-node-socket-multicast-interface}
+### in.multicast.interface (string: IPv4 Address)
 
 The IP address of the interface which should receive multicast packets.
 
-## in.multicast.ttl (integer) {#node-config-node-socket-multicast-ttl}
+### in.multicast.ttl (integer)
 
 The time to live for outgoing multicast packets.
 
-## in.multicast.loop (boolean) {#node-config-node-socket-multicast-loop}
+### in.multicast.loop (boolean)
 
-# Example {#node-type-socket-example}
+## Example
 
 ``` url="external/node/etc/examples/nodes/socket.conf" title="node/etc/examples/nodes/socket.conf"
 nodes = {

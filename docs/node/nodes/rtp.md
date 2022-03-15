@@ -1,23 +1,28 @@
-# Real-Time Protocol (RTP & RTCP) {#node-type-rtp}
+---
+sidebar_label: RTP
+hide_table_of_contents: true
+---
 
-# Prerequisites {#node-type-rtp-prereq}
+# Real-Time Protocol (RTP & RTCP)
+
+## Prerequisites
 
 This node-type requires [libre](http://www.creytiv.com/re.html) (>= 0.6.0).
 
-# Implementation {#node-type-rtp-implementation}
+## Implementation
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/rtp.cpp
 
-# Configuration {#node-config-node-rtp}
+## Configuration {#config}
 
-## netem (dictionary) {#node-config-node-rtp-netem}
+### netem (dictionary)
 
 Enables and configures the network emulation qeueing discipline.
 
 For more information see also: [Netem Emulation](../netem.md)
 
-# Example {#node-type-rtp-example}
+## Example
 
 ``` url="external/node/etc/examples/nodes/rtp.conf" title="node/etc/examples/nodes/rtp.conf"
 nodes = {
@@ -71,7 +76,7 @@ nodes = {
 }
 ```
 
-# Further reading
+## Further reading
 
 - https://en.wikipedia.org/wiki/Real-time_Transport_Protocol
 - https://www.ietf.org/proceedings/67/slides/avt-1.pdf

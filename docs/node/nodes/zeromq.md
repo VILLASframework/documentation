@@ -1,4 +1,8 @@
-# ZeroMQ {#node-type-zeromq}
+---
+hide_table_of_contents: true
+---
+
+# ZeroMQ
 
 The `zeromq` node-type exchanges messages via the [ZMTP](https://rfc.zeromq.org/spec:23/ZMTP/) protocol.
 It is similiar to the [`nanomsg`](nanomsg.md) node-type.
@@ -7,48 +11,48 @@ It is similiar to the [`nanomsg`](nanomsg.md) node-type.
 
 The `zeromq` node-type implements the [publish/subscribe and radio/dish protocols](http://api.zeromq.org/4-2:zmq-socket).
 
-# Prerequisites {#node-type-zeromq-prereq}
+## Prerequisites
 
 This node-type requires [libzmq](http://zeromq.org) (>= 2.2.0).
 
-# Implementation {#node-type-zeromq-implementation}
+## Implementation
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/zeromq.cpp
 
-# Configuration {#node-config-node-zeromq}
+## Configuration {#config}
 
-## format (string) {#node-config-node-zeromq-format}
+### format (string)
 
 The payload format which is used to encode and decode exchanged messages.
 
-## filter (string: "pubsub" | "radiodish") {#node-config-node-zeromq-pattern}
+### filter (string: "pubsub" | "radiodish")
 
-## publish (string: uri) {#node-config-node-zeromq-publish}
+### publish (string: uri)
 
-## subscribe (string / array of strings: uri) {#node-config-node-zeromq-subscribe}
+### subscribe (string / array of strings: uri)
 
-## ipv6 (bool) = false {#node-config-node-zeromq-ipv6}
+### ipv6 (bool) = false
 
-## CurveZMQ cryptography
+### CurveZMQ cryptography
 
 **Note:** This feature is currently broken.
 
 You can use the [`villas zmq-keygen`](../usage/villas-zmq-keygen.md) command to create a new keypair for the following configuration options:
 
-### curve.enabled (bool) = true {#node-config-node-zeromq-ipv6}
+#### curve.enabled (bool) = true
 
 Whether or not the encryption is enabled.
 
-### curve.public_key (string: Z85 encoded) {#node-config-node-zeromq-curve-public_key}
+#### curve.public_key (string: Z85 encoded)
 
 The public key of the server.
 
-### curve.private_key (string: Z85 encoded) {#node-config-node-zeromq-curve-public_key}
+#### curve.private_key (string: Z85 encoded)
 
 The private key of the server.
 
-# Example {#node-type-zeromq-example}
+## Example
 
 ``` url="external/node/etc/examples/nodes/zeromq.conf" title="node/etc/examples/nodes/zeromq.conf"
 nodes = {

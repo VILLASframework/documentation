@@ -1,21 +1,30 @@
-# Controller Area Network (CAN) {#node-type-can}
+---
+sidebar_label: CAN
+hide_table_of_contents: true
+---
+
+# Controller Area Network (CAN)
 
 The `can` node-type allows the exchange of signals via a [CAN bus](https://www.can-cia.org/can-knowledge/).
 
-# Prerequisites {#node-type-can-prereq}
+## Prerequisites
 
 This node-type does not have any special library dependencies. It is always available.
 
-# Implementation {#node-type-can-implementation}
+## Implementation
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/can.cpp
 
-# Configuration {#node-config-node-can}
+## Configuration {#config}
 
-@todo Finish CAN node-type documentation
+:::note ToDo
 
-# Example {#node-type-can-example}
+Finish CAN node-type documentation
+
+:::
+
+## Example
 
 ``` url="external/node/etc/examples/nodes/can.conf" title="node/etc/examples/nodes/can.conf"
 nodes = {

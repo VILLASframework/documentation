@@ -1,21 +1,33 @@
-# EtherCAT {#node-type-ethercat}
+---
+hide_table_of_contents: true
+---
 
-**Important:** This node-type is currently under development.
+# EtherCAT
 
-# Prerequisites {#node-type-ethercat-prereq}
+:::danger
+
+This node-type is currently under development.
+
+:::
+
+## Prerequisites
 
 This node-type requires the [IgH EtherCAT Master](http://etherlab.org) (>= 1.5.2).
 
-# Implementation {#node-type-ethercat-implementation}
+## Implementation
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/ethercat.cpp
 
-# Configuration {#node-config-node-ethercat}
+## Configuration {#config}
 
-@todo Document EtherCAT node-type
+:::note ToDo
 
-# Example {#node-type-ethercat-example}
+Document EtherCAT node-type
+
+:::
+
+## Example
 
 ``` url="external/node/etc/examples/nodes/ethercat.conf" title="node/etc/examples/nodes/ethercat.conf"
 ethercat = {

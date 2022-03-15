@@ -1,27 +1,32 @@
-# MCC Universal Library for Linux {#node-type-uldaq}
+---
+sidebar_label: ULDAQ
+hide_table_of_contents: true
+---
+
+# MCC Universal Library for Linux
 
 Interface to [DAQ devices](https://www.mccdaq.com/PDFs/Manuals/Linux-hw.pdf) from [Measurement Computing](https://www.mccdaq.com).
 
 This interface has been tested with the [MCC USB-200 Series](https://www.mccdaq.com/usb-data-acquisition/USB-200-Series.aspx) as used in RWTH-ACS's Low-Cost PMU.
 
-# Prerequisites {#node-type-uldaq-prereq}
+## Prerequisites
 
-This node-type requires [libuldaq](https://github.com/mccdaq/uldaq.gitignore) (>= 1.0.0).
+This node-type requires [libuldaq](https://github.com/mccdaq/uldaq.git) (>= 1.0.0).
 
-# Implementation {#node-type-uldaq-implementation}
+## Implementation
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/uldaq.cpp
 
-# Configuration {#node-config-node-uldaq}
+## Configuration {#config}
 
-## device_id (string) ${node-config-uldaq-device_id}
+### device_id (string) ${node-config-uldaq-device_id}
 
-## interface_type (string: "usb" | "bluetooth" | "ethernet" | "any" ) = "any" {#node-config-node-uldaq-in-interface_type}
+### interface_type (string: "usb" | "bluetooth" | "ethernet" | "any" ) = "any"
 
-## in.range (string) {#node-config-node-uldaq-in-range}
+### in.range (string)
 
-### Supported ranges
+#### Supported ranges
 
 | Value            | Min     | Max    |
 | :--------------- | :------ | :----- |
@@ -69,13 +74,13 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/uldaq.cp
 | `unipolar-0.01`  |  0.0    | +0.01  |
 | `unipolar-0.005` |  0.0    | +0.00  |
 
-## in.input_mode (string: "single-ended" | "differential" | "pseudo-differential") {#node-config-node-uldaq-in-input_mode}
+### in.input_mode (string: "single-ended" | "differential" | "pseudo-differential")
 
-## in.signals (list of objects: signals) = () {#node-config-node-uldaq-in-signals}
+### in.signals (list of objects: signals) = ()
 
-## in.sample_rate (float) {#node-config-node-uldaq-in-sample_rate}
+### in.sample_rate (float)
 
-# Example {#node-type-uldaq-example}
+## Example
 
 ``` url="external/node/etc/examples/nodes/uldaq.conf" title="node/etc/examples/nodes/uldaq.conf"
 http = {

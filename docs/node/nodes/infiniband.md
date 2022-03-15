@@ -1,21 +1,25 @@
-# Infiniband {#node-type-infiniband}
+---
+hide_table_of_contents: true
+---
+
+# Infiniband
 
 The `infiniband` node-type implements node communication over the [Infiniband standard](http://www.infinibandta.org/content/pages.php?pg=about_us_infiniband).
 
-# Prerequisites {#node-type-infiniband-prereq}
+# Prerequisites
 
 This node-type requires [libibverbs](https://github.com/linux-rdma/rdma-core) (>= 16.2) and [librdmacm](https://github.com/linux-rdma/rdma-core) (>= 16.2).
 
-# Implementation {#node-type-infiniband-implementation}
+# Implementation
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/infiniband.cpp
 
-# Configuration {#node-config-node-infiniband}
+## Configuration {#config}
 
 Every `infiniband` node can be configured to only read or write or to do both at the same time. The node configuration is divided into two sub-groups: `in` and `out`.
 
-## rdma_port_space (string: "RC" | "UC" | "UD") = "RC" {#node-config-node-infiniband-port-space}
+### rdma_port_space (string: "RC" | "UC" | "UD") = "RC"
 
 This specifies the type of connection the node will set up.
 
@@ -27,7 +31,7 @@ This specifies the type of connection the node will set up.
 
 More information on these two modes can be found on the manual page for [`rdma_create_id()`](https://linux.die.net/man/3/rdma_create_id).
 
-## in.address (string) {#node-config-node-infiniband-in-address}
+### in.address (string)
 
 Connections between `infiniband` nodes are established over IP over IB (IPoIP). To use this node, you have to make sure that the linux driver `ib_ipoib` is loaded. If it is not loaded, load it with `modprobe ib_ipoib`.
 
@@ -45,7 +49,7 @@ in = {
 
 binds the node to the local device which is bound to `10.0.0.1`. It will use port `1337` for communication related to the connection.
 
-## in.max_wrs (integer) = 128 {#node-config-node-infiniband-in-max_wrs}
+### in.max_wrs (integer) = 128
 
 Before a packet can be received with Infiniband, the application has to describe how this will be handled (e.g., to what address the data will be written). This happens in a so called Work Request (WR).
 
@@ -54,7 +58,7 @@ Before a packet can be received with Infiniband, the application has to describe
 For higher throughputs, it is recommended to increase this value since it will serve as a buffer.
 The default value of this setting is 128.
 
-## in.cq_size (integer) = 128 {#node-config-node-infiniband-in-cq_size}
+### in.cq_size (integer) = 128
 
 This value defines the number of Work Completions the Completion Queue can hold.
 
@@ -68,7 +72,7 @@ It is therefor recommended to set the value of `cq_size` to at least
 in.cq_size >= in.max_wrs - in.buffer_subtraction
 ```
 
-## in.buffer_subtraction (integer) = 16 {#node-config-node-infiniband-in-buffer_subtraction}
+### in.buffer_subtraction (integer) = 16
 
 As mentioned in @ref node-config-node-infiniband-in-max_wrs, Work Requests have to be present in the receive queue, for it to be able to process received data. To take full advantage of the zero-copy capabilities of Infiniband this node-type directly posts addresses from the VILLAS Framework to the receive queue instead of copying all data over after receiving it.
 
@@ -84,7 +88,7 @@ Thus, the maximum number of Work Requests to be present in the receive queue is 
 max_wrs_posted = in.max_wrs - in.buffer_subtraction
 ```
 
-## out.address (string) {#node-config-node-infiniband-out-address}
+### out.address (string)
 
 This value defines the IPoIB address of the remote node and is used to establish a connection to the remote host—in case of `RDMA_PS_TCP`—or to get the address handle of the remote host—in case of `RDMA_PS_UDP`.
 
@@ -100,31 +104,31 @@ out = {
 }
 ```
 
-## out.timeout (integer) = 1000 {#node-config-node-infiniband-out-timeout}
+### out.timeout (integer) = 1000
 
 This defines the time in milliseconds [`rdma_resolve_addr()`](https://linux.die.net/man/3/rdma_resolve_addr) waits for the resolution of the destination address to complete.
 The default value is 1 second.
 
-## out.max_wrs (integer) = 128 {#node-config-node-infiniband-out-max_wrs}
+### out.max_wrs (integer) = 128
 
 This is similar to @ref node-config-node-infiniband-in-max_wrs but for the send side of the Queue Pair. In contrast to the receive queue, there is no minimum amount of Work Requests in this queue and it can be filled up completely to `out.max_wrs`.
 The default number of work requests is 128.
 
-## out.cq_size (integer) = 128 {#node-config-node-infiniband-out-cq_size}
+### out.cq_size (integer) = 128
 
 This is similar to @ref node-config-node-infiniband-in-cq_size.
 
 An important side note for the receive completion queue was that it should be able to hold all Work Requests if the receive queue is flushed. Since no "preparatory" Work Requests are posted to the send queue and and thus all work requests are send out as soon as possible, there is no need for `out.cq_size` to be as big as `out.max_wrs`.
 The default size of the completion queue is 128.
 
-## out.send_inline (boolean) = true {#node-config-node-infiniband-out-send_inline}
+### out.send_inline (boolean) = true
 
 It is possible that the CPU copies the data to be sent directly to the HCA. Then, the HCA can take the data from it's internal memory as soon as it is ready to send it. This has the advantage that the buffer can be returned immediately to the VILLAS Framework and that it increases performance.
 By default inline packets are enabled.
 
 If this flag is set, the @ref node-type-infiniband node-type checks if a sample is small enough to be sent inline, and if this is the case sends it inline.
 
-## out.max_inline_data (integer) = 0 {#node-config-node-infiniband-out-max_inline_data}
+### out.max_inline_data (integer) = 0
 
 This value represents the maximum number of bytes to be send inline. The maximum number of this value depends on the HCA.
 The settings defaults to zero. However, many HCAs will automatically adjust it to 60.
@@ -142,19 +146,19 @@ out = {
 
 Every sample which is smaller than 60 bytes will be send inline. All other samples will be sent normally.
 
-## out.use_fallback (boolean) = true {#node-config-node-infiniband-out-use_fallback}
+### out.use_fallback (boolean) = true
 
 If an out section with a valid remote entry is present in the configuration file, the node will first bind to the local host channel adapter and subsequentely try to connect to the remote host. If the latter fails (e.g., because the remote host was not reachable or rejected the connection), there are two possible outcomes: the node can throw an error and abort or it can show a warning and continue in listening mode.
 
 If `use_fallback = true`, the node will fallback to listening mode if it is not able to connect to the remote host.
 
-## out.periodic_signaling (int) = out.max_wrs / 2 {#node-config-node-infiniband-out-periodic_signaling}
+### out.periodic_signaling (int) = out.max_wrs / 2
 
 If a sample is sent inline, no Completion Queue Entry (CQE) is generated. However, once a while, a CQE must be generated to prevent the Send Queue from overflowing. Therefore, every `out.periodic_signaling`th sample will be sent normally with signaling.
 
 It turns out that the ideal value in most cases is `out.max_wrs / 2`. Hence, usually, it is not necessary to explicitly set this value.
 
-# Example {#node-type-infiniband-example}
+## Example
 
 ``` url="external/node/etc/examples/nodes/infiniband.conf" title="node/etc/examples/nodes/infiniband.conf"
 nodes = {
@@ -230,7 +234,7 @@ nodes = {
 
 ```
 
-# State diagram
+## State diagram
 
 ```mermaid
 stateDiagram-v2

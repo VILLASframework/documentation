@@ -1,21 +1,29 @@
-# Statistics {#node-type-stats}
+---
+hide_table_of_contents: true
+---
+
+# Statistics
 
 The "stats" node-type receives statistics of a node or path.
 
-# Prerequisites {#node-type-stats-prereq}
+## Prerequisites
 
 This node-type does not have any special library dependencies. It is always available.
 
-# Implementation {#node-type-stats-implementation}
+## Implementation
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/stats.cpp
 
-# Configuration {#node-config-node-stats}
+## Configuration {#config}
 
-@todo Document config settings of statistics node-type
+:::note ToDo
 
-# Example {#node-type-stats-example}
+Document config settings of statistics node-type
+
+:::
+
+## Example
 
 ``` url="external/node/etc/examples/nodes/stats.conf" title="node/etc/examples/nodes/stats.conf"
 nodes = {

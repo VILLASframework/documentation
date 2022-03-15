@@ -1,61 +1,66 @@
-# Kafka {#node-type-kafka}
+---
+hide_table_of_contents: true
+---
+
+# Kafka
 
 The `kafka` node-type uses [librdkafka](https://github.com/edenhill/librdkafka) to produce and consume event stream messages to/from kafka message brokers cluster.
 
-# Prerequisites {#node-type-kafka-prereq}
+## Prerequisites
 
 This node-type requires [rdkafka](https://github.com/edenhill/librdkafka) (>= 1.5.0).
 
-# Implementation {#node-type-kafka-implementation}
+## Implementation
 
 The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/kafka.cpp
 
-# Configuration {#node-config-node-kafka}
+## Configuration {#config}
 
-## format (string) = "villas.binary" {#node-config-node-kafka-format}
+### format (string) = "villas.binary"
 
 The payload format which is used to encode and decode exchanged messages.
 
-## server (string) {#node-config-node-kafka-server}
+### server (string)
 
 The bootstrap server {ip}:{port} of the Kafka message brokers cluster.
 
-## protocol (string: "PLAINTEXT" | "SASL_PLAINTEXT" | "SASL_SSL" | "SSL") {#node-config-node-kafka-protocol}
+### protocol (string: "PLAINTEXT" | "SASL_PLAINTEXT" | "SASL_SSL" | "SSL")
 
 The [security protocol](https://kafka.apache.org/24/javadoc/org/apache/kafka/common/security/auth/SecurityProtocol.html) which is used for authentication with the Kafka cluster.
 
-## client_id (string) {#node-config-node-kafka-client_id}
+### client_id (string)
 
 The Kafka client identifier.
 
-## ssl.ca (string) {#node-config-node-kafka-ssl}
+### ssl.ca (string)
 
 Path to a Certificate Authority (CA) bundle which is used to validate broker server certificate.
-## sasl (object) {#node-config-node-kafka-sasl}
+
+### sasl (object)
 
 An object for configuring the SASL authentication against the broker.
 This setting is used if [setting `protocol`](#protocol) is on of `SASL_PLAINTEXT` or `SASL_SSL`.
 
 See below for an example.
 
-## in.consume (string)
+### in.consume (string)
 
 The Kafka topic to which this node-type will subscribe for receiving messages.
 
-## in.group_id (string)
+### in.group_id (string)
 
 The group id of the Kafka client used for receiving messages.
 
-## out.produce (string)
+### out.produce (string)
 
 The Kafka topic to which this node-type will publish messages.
 
-## timeout (float) = 1.0 {#node-config-node-kafka-timeout}
+### timeout (float) = 1.0
 
 A timeout in seconds for the broker connection.
 
-# Example {#node-type-kafka-example}
+## Example
 
 ``` url="external/node/etc/examples/nodes/kafka.conf" title="node/etc/examples/nodes/kafka.conf"
 nodes = {
