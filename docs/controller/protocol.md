@@ -199,6 +199,15 @@ After receiving such a message, each entity shall send a status update message a
 		"namespace": "villas"
 		"job_name": "My_Kubernetes_Simulator"
 		"pod_names": ["pod_number_1", "pod_number_2"]
+
+		/* Signal description in the same format as used by VILLASnode:
+		 * https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/doc/openapi/components/schemas/config/signal_list.yaml
+		 */
+		"signals": [
+			{ "name": "voltage_bus123_phase1", "unit": "V", "type": "float" },
+			{ "name": "voltage_bus123_phase2", "unit": "V", "type": "float" },
+			{ "name": "voltage_bus123_phase3", "unit": "V", "type": "float" }
+		]
 	},
 	"schema": {
 		"start": {
