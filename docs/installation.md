@@ -83,7 +83,7 @@ helm install -f values.yaml villas fein/villas
 1. Keep the following command in a terminal running in a background terminal:
 
 ```bash
-kubectl -n ingress-nginx port-forward svc/ingress-nginx-controller 8080:80
+minikube kubectl -- -n ingress-nginx port-forward svc/ingress-nginx-controller 8080:80
 ```
 
 Once the installation has completed, you can visit the VILLASweb interface at the following address: http://localhost:8080/
