@@ -68,6 +68,12 @@ VILLASfpga requires the following kernel modules to be loaded:
 echo "vfio\nvfio_pci" > /etc/modules-load.d/vfio.conf
 ```
 
+### FPGA Detection
+
+1. flash FPGA bitstream
+2. `echo 1  | sudo tee /sys/bus/pci/rescan`
+
+
 ## Run VILLASfpga without Super-User privileges
 
 @todo
