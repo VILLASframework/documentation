@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# Installation {#installation}
+# Installation
 
 To get started quickly, we recommend to run VILLAS in a small Kubernetes cluster.
 
@@ -14,14 +14,14 @@ There is also [a dedicated installation guide for VILLASnode](node/installation.
 
 You can run the full set of VILLASframework components pre-configured in a Kubernetes cluster using the [Helm chart](https://git.rwth-aachen.de/acs/public/catalogue/-/blob/master/charts/villas/).
 
-## Requirements {#installation-prereq}
+## Requirements
 
 - Linux (recommended), Windows or macOS system
 - [Kubernetes](https://kubernetes.io) >= v1.18 (tested)
 - [Helm (v3)](https://helm.sh/)
 - [Ingress Controller](https://kubernetes.github.io/ingress-nginx/deploy/)
 
-## Minikube {#installation-minikube}
+## Minikube
 
 For small tests and beginners we recommend a local Minikube setup.
 
@@ -39,7 +39,7 @@ minikube start
 minikube addons enable ingress
 ```
 
-## Helm chart {#installation-helm}
+## Helm Chart
 
 To deloy the Helm chart you must first add the FEIN e.V. chart repository:
 
@@ -78,7 +78,7 @@ Once the configuration file has been prepared, start the installation with the f
 helm install -f values.yaml villas fein/villas
 ```
 
-## Access the application {#installation-access}
+## Access the application {#access}
 
 1. Keep the following command in a terminal running in a background terminal:
 
