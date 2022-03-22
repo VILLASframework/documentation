@@ -4,8 +4,7 @@ hide_table_of_contents: true
 
 # Round signals
 
-The `round` hook modifies sample signals by a gain factor and optionally ads an offset.
-First the original signal value is multiplied by the gain, then the offset is added.
+The `round` hook rounds a sample.
 
 ## Implementation
 
