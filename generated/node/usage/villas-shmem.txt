@@ -1,0 +1,7 @@
+Usage: villas-test-shmem WNAME VECTORIZE
+  WNAME     name of the shared memory object for the output queue
+  RNAME     name of the shared memory object for the input queue
+  VECTORIZE maximum number of samples to read/write at a time
+ v0.11.0-56c966f-debug (built on Mar 14 2022 16:07:12)
+ Copyright 2014-2021, Institute for Automation of Complex Power Systems, EONERC
+ Steffen Vogel <StVogel@eonerc.rwth-aachen.de>

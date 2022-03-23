@@ -7,7 +7,7 @@ Most of them are used by the integration test suite.
 
 ## Usage
 
-``` url="generated/node/usage/villas-test-rtt.txt" title="generated/node/usage/villas-test-rtt.txt"
+``` url="generated/node/usage/villas-test-rtt.txt" title="villas-test-rtt --help"
 Usage: villas-test-rtt [OPTIONS] CONFIG NODE
   CONFIG  path to a configuration file
   NODE    name of the node which shoud be used
@@ -19,9 +19,10 @@ Usage: villas-test-rtt [OPTIONS] CONFIG NODE
     -h      show this usage information
     -V      show the version of the tool
 
- v0.11.0-5c666fb-debug (built on Feb 23 2021 02:34:46)
- Copyright 2014-2017, Institute for Automation of Complex Power Systems, EONERC
- Steffen Vogel <StVogel@eonerc.rwth-aachen.de>```
+ v0.11.0-56c966f-debug (built on Mar 14 2022 16:07:12)
+ Copyright 2014-2021, Institute for Automation of Complex Power Systems, EONERC
+ Steffen Vogel <StVogel@eonerc.rwth-aachen.de>
+```
 
 # villas test-cmp
 
@@ -68,8 +69,10 @@ Usage: villas-test-config [OPTIONS] CONFIG
     -d LVL  set debug level
     -V      show version and exit
     -c      perform plausability checks on config
+    -D      dump config in JSON format
     -h      show usage and exit
 
- v0.11.0-5c666fb-debug (built on Feb 23 2021 02:34:46)
- Copyright 2014-2017, Institute for Automation of Complex Power Systems, EONERC
- Steffen Vogel <StVogel@eonerc.rwth-aachen.d```
+ v0.11.0-56c966f-debug (built on Mar 14 2022 16:07:12)
+ Copyright 2014-2021, Institute for Automation of Complex Power Systems, EONERC
+ Steffen Vogel <StVogel@eonerc.rwth-aachen.de>
+```

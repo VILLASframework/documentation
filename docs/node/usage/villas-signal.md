@@ -10,7 +10,7 @@ Please note that we recommand to use the [`villas node` daemon](villas-node.md) 
 
 # Usage
 
-``` url="generated/node/usage/villas-signal.txt" title="generated/node/usage/villas-signal.txt"
+``` url="generated/node/usage/villas-signal.txt" title="villas-signal --help"
 Usage: villas-signal [OPTIONS] SIGNAL
   SIGNAL   is on of the following signal types:
     mixed
@@ -34,6 +34,7 @@ Usage: villas-signal [OPTIONS] SIGNAL
     -o OFF  the DC bias
     -l NUM  only send LIMIT messages and stop
 
- v0.11.0-5c666fb-debug (built on Feb 23 2021 02:34:46)
- Copyright 2014-2017, Institute for Automation of Complex Power Systems, EONERC
- Steffen Vogel <StVogel@eonerc.rwth-aachen.de>```
+ v0.11.0-56c966f-debug (built on Mar 14 2022 16:07:12)
+ Copyright 2014-2021, Institute for Automation of Complex Power Systems, EONERC
+ Steffen Vogel <StVogel@eonerc.rwth-aachen.de>
+```

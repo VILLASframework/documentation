@@ -4,7 +4,7 @@ The `villas graph` command generates a graph of a given VILLASnode configuration
 
 # Usage
 
-``` url="generated/node/usage/villas-graph.txt" title="generated/node/usage/villas-graph.txt"
+``` url="generated/node/usage/villas-graph.txt" title="villas-graph  --help"
 Usage: villas graph [-Vv?] [-(GNE)name=val] [-(KTlso)<val>] <dot files>
 (additional options for neato)    [-x] [-n<v>]
 (additional options for fdp)      [-L(gO)] [-L(nUCT)<val>]

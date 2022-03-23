@@ -8,7 +8,7 @@ The `villas pipe` command allows to read and write samples from `stdin` / `stdou
 
 # Usage
 
-``` url="generated/node/usage/villas-pipe.txt" title="generated/node/usage/villas-pipe.txt"
+``` url="generated/node/usage/villas-pipe.txt" title="villas-pipe --help"
 Usage: villas-pipe [OPTIONS] CONFIG NODE
   CONFIG  path to a configuration file
   NODE    the name of the node to which samples are sent and received from
@@ -26,6 +26,7 @@ Usage: villas-pipe [OPTIONS] CONFIG NODE
     -d               set logging level
     -V               show the version of the tool
 
- v0.11.0-5c666fb-debug (built on Feb 23 2021 02:34:46)
- Copyright 2014-2017, Institute for Automation of Complex Power Systems, EONERC
- Steffen Vogel <StVogel@eonerc.rwth-aachen.de>```
+ v0.11.0-56c966f-debug (built on Mar 14 2022 16:07:12)
+ Copyright 2014-2021, Institute for Automation of Complex Power Systems, EONERC
+ Steffen Vogel <StVogel@eonerc.rwth-aachen.de>
+```

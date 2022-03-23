@@ -4,10 +4,10 @@ The `villas conf2json` converts configuration files from the old libconfig forma
 
 # Usage
 
-``` url="generated/node/usage/villas-conf2json.txt" title="generated/node/usage/villas-conf2json.txt"
+``` url="generated/node/usage/villas-conf2json.txt" title="villas-conf2json --help"
 Usage: conf2json input.conf > output.json
 
- v0.11.0-5c666fb-debug (built on Feb 23 2021 02:34:46)
- Copyright 2014-2017, Institute for Automation of Complex Power Systems, EONERC
+ v0.11.0-56c966f-debug (built on Mar 14 2022 16:07:12)
+ Copyright 2014-2021, Institute for Automation of Complex Power Systems, EONERC
  Steffen Vogel <StVogel@eonerc.rwth-aachen.de>
 ```

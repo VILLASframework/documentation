@@ -6,7 +6,7 @@ The relay does not require configuration.
 
 # Usage
 
-``` url="generated/node/usage/villas-relay.txt" title="generated/node/usage/villas-relay.txt"
+``` url="generated/node/usage/villas-relay.txt" title="villas-relay --help"
 Usage: villas-relay [OPTIONS]
   OPTIONS is one or more of the following options:
     -d LVL    set debug level
@@ -17,6 +17,7 @@ Usage: villas-relay [OPTIONS]
     -V        show version and exit
     -h        show usage and exit
 
- v0.11.0-5c666fb-debug (built on Feb 23 2021 02:34:46)
- Copyright 2014-2017, Institute for Automation of Complex Power Systems, EONERC
- Steffen Vogel <StVogel@eonerc.rwth-aachen.de>```
+ v0.11.0-56c966f-debug (built on Mar 14 2022 16:07:12)
+ Copyright 2014-2021, Institute for Automation of Complex Power Systems, EONERC
+ Steffen Vogel <StVogel@eonerc.rwth-aachen.de>
+```
