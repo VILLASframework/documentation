@@ -2,11 +2,13 @@
 hide_table_of_contents: true
 ---
 
-# Round signals
+# Phasor calculation
 
 The `pmu_dft` hook provides a dft based phasor calculation. The current implementation is a proof of concept but should not be used in production since this implementation is rather resource hungry.
 
 This version supports phasor estimation for the frequency and amplitude but not yet for the phase.
+
+This hook removes all signals fed into it and replaces it with new signals called amplitude, frequency, phase, rocof. If `add_channel_name` is set to `false` this could result in duplicate channel names.
 
 ## Implementation
 
