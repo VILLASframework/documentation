@@ -24,7 +24,19 @@ We will show later how to stream the samples _in real-time_ to a destination nod
 
 ## Better way (real-time)
 
-@includelineno node/etc/labs/lab7.conf
+``` url="external/node/etc/labs/lab7.conf" title="node/etc/labs/lab7.conf"
+nodes = {
+	file_node1 = {
+		type = "file",
+
+		uri = "file_send.dat"
+		
+		in = {
+			
+		}
+	}
+}
+```
 
 In order to stream the samples in real-time from a file, we will use the @ref node-type-file node-type with the following configuration file (`lab7.conf`):
 

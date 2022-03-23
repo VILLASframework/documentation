@@ -6,7 +6,55 @@ sidebar_position: 13
 
 # Configuration
 
-@includelineno node/etc/labs/lab13.conf
+``` url="external/node/etc/labs/lab13.conf" title="node/etc/labs/lab13.conf"
+affinity = 0x8,
+
+nodes = {
+	rtds_gtnet1 = {
+		type = "socket",
+		layer = "udp",
+		format = "gtnet",
+
+		in = {
+			address = "*:12000"
+
+			signals = {
+				count = 8,
+				type = "float"
+			}
+		},
+		out = {
+			address = "134.130.169.98:12000"
+		}
+	},
+	rtds_gtnet2 = {
+		type = "socket",
+		layer = "udp",
+		format = "gtnet",
+
+		in = {
+			address = "*:12001"
+
+			signals = {
+				count = 8,
+				type = "float"
+			}
+		},
+		out = {
+			address = "134.130.169.99:12001"
+		}
+	}
+}
+
+paths = (
+	{
+		in  = "rtds_gtnet1"
+		out = "rtds_gtnet2"
+
+		reverse = true
+	}
+)
+```
 
 # RSCAD
 
