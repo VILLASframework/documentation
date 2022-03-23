@@ -8,7 +8,7 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer';
 import 'asciinema-player/dist/bundle/asciinema-player.css';
 
 <figure align="center">
-    <img alt="villas-pipe Example" src="/img/dia/villas_pipe_file.svg" height="180px" />
+    <img alt="villas-pipe Example" src="/img/drawio/villas_pipe_file.svg" height="180px" />
     <figcaption>villas-pipe Example.</figcaption>
 </figure>
 

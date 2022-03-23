@@ -8,7 +8,7 @@ import 'asciinema-player/dist/bundle/asciinema-player.css';
 # Lab 4: Receive data from a node and show it on standard output
 
 <figure align="center">
-    <img alt="villas-pipe Example" src="/img/dia/villas_pipe2.svg" height="180px" />
+    <img alt="villas-pipe Example" src="/img/drawio/villas_pipe2.svg" height="180px" />
     <figcaption>villas-pipe Example.</figcaption>
 </figure>
 

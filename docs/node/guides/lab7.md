@@ -10,7 +10,7 @@ import 'asciinema-player/dist/bundle/asciinema-player.css';
 ## Easy way (non real-time)
 
 <figure align="center">
-    <img alt="Send and receive samples from files to simulator" src="/img/dia/villas_pipe_file2.svg" height="180px" />
+    <img alt="Send and receive samples from files to simulator" src="/img/drawio/villas_pipe_file2.svg" height="180px" />
     <figcaption>Send and receive samples from files to simulator.</figcaption>
 </figure>
 
@@ -29,7 +29,7 @@ We will show later how to stream the samples _in real-time_ to a destination nod
 In order to stream the samples in real-time from a file, we will use the @ref node-type-file node-type with the following configuration file (`lab7.conf`):
 
 <figure align="center">
-    <img alt="Stream samples in real-time from file" src="/img/dia/villas_pipe_file3.svg" width="50%" />
+    <img alt="Stream samples in real-time from file" src="/img/drawio/villas_pipe_file3.svg" width="50%" />
     <figcaption>Stream samples in real-time from file.</figcaption>
 </figure>
 

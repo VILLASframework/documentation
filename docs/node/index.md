@@ -6,7 +6,12 @@ sidebar_label: Overview
 
 # VILLASnode <img src="/img/logos/villas_node.svg" width="100" align="right" />
 
-VILLASnode is a modular gateway for simulation data. It offers interfaces to simulation equipment, databases and web services.
+VILLASnode is a modular gateway for simulation data.
+It offers interfaces to simulation equipment, databases and web services.
+
+:::info
+Please have a look at our **[Getting Started Guide](./guides/getting_started.md)**!
+:::
 
 ## Overview
 

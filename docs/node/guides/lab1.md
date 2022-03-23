@@ -8,7 +8,7 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer';
 import 'asciinema-player/dist/bundle/asciinema-player.css';
 
 <figure align="center">
-    <img alt="villas-signal Example" src="/img/dia/villas_signal.svg" height="180px" />
+    <img alt="villas-signal Example" src="/img/drawio/villas_signal.svg" height="180px" />
     <figcaption>villas-signal Example.</figcaption>
 </figure>
 

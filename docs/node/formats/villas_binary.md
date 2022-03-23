@@ -21,13 +21,10 @@ Each message contains a header with the following fields:
 
 Timestamps are represented in [Unix time](https://en.wikipedia.org/wiki/Unix_time).
 
-The format of the packets is described by the following code:
-
- - Datastructure: [struct msg](https://git.rwth-aachen.de/acs/public/villas/node/blob/master/include/villas/formats/msg_format.h)
- - Code: [villas_binary_*()](https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/formats/villas_binary.cpp) Functions
+The format of the packets is described by the following code [`struct Message`](https://git.rwth-aachen.de/acs/public/villas/node/blob/master/include/villas/formats/msg_format.hpp) structure.
 
 <figure align="center">
-    <img alt="VILLAS binary payload format" src="/img/dia/msg_format.svg" width="80%" />
+    <img alt="VILLAS binary payload format" src="/img/drawio/msg_format.svg" width="80%" />
     <figcaption>VILLAS binary payload format.</figcaption>
 </figure>
 
