@@ -25,6 +25,15 @@ const config = {
         '/css/asciinema-player.css'
     ],
 
+    plugins: [
+      [
+        require.resolve("@cmfcmf/docusaurus-search-local"),
+        {
+          // Options here
+        },
+      ],
+    ],
+
     presets: [
         [
             '@docusaurus/preset-classic',
