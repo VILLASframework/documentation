@@ -4,7 +4,7 @@ hide_table_of_contents: true
 
 # Round signals
 
-The `round` hook rounds a sample.
+The `round` hook rounds selected signals of a sample to a specified number of digits.
 
 ## Implementation
 
