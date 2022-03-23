@@ -39,21 +39,21 @@ paths = (
 					"sine"
 				)
 
-				sample_rate = 1000,
-				dft_rate = 10,
+				sample_rate = 1000,			# sample rate of the input signal
+				dft_rate = 10,				# number of phasors calculated per second
 
-				start_freqency = 49.7,
-				end_freqency = 50.3,
-				frequency_resolution = 0.1,
+				start_freqency = 49.7,			# lowest freqyency bin
+				end_freqency = 50.3,			# highst freqyency bin
+				frequency_resolution = 0.1,		# freqyency bin resolution
 
-				window_size_factor = 1,
-				window_type = "hamming",
-				padding_type = "zero",
-				ffrequency_estimate_type = "quadratic",
+				window_size_factor = 1,			# a factor with which the window will be increased
+				window_type = "hamming",		# one of: flattop, hamming, hann
+				padding_type = "zero", 			# one of: signal_repeat, zero
+				ffrequency_estimate_type = "quadratic", # one of: quadratic
 
-				pps_index = 0,
+				pps_index = 0,				# signal index of the PPS signal
 				
-				angle_unit = "rad"
+				angle_unit = "rad" 			# one of: rad, degree
 			}
 		)
 	}

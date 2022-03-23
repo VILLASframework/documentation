@@ -32,7 +32,6 @@ paths = (
 				type = "round"
 
 				signal = "sine"
-
 				precision = 4
 			}
 		)
