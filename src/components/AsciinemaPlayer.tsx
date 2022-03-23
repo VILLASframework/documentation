@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import * as AsciinemaPlayerLibrary from 'asciinema-player';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 type AsciinemaPlayerProps = {
     src: string;
@@ -25,12 +25,20 @@ const AsciinemaPlayer: React.FC<AsciinemaPlayerProps> = ({
 }) => {
     const ref = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        const currentRef = ref.current;
-        AsciinemaPlayerLibrary.create(src, currentRef, asciinemaOptions);
-    }, [src]);
+    return (
+        <BrowserOnly fallback={<div>Loading...</div>}>
+          {() => {
+            const AsciinemaPlayerLibrary = require('asciinema-player');
 
-    return <div ref={ref} />;
+            useEffect(() => {
+                const currentRef = ref.current;
+                AsciinemaPlayerLibrary.create(src, currentRef, asciinemaOptions);
+            }, [src]);
+        
+            return <div ref={ref} />;
+          }}
+        </BrowserOnly>
+      );;
 };
 
 export default AsciinemaPlayer;
