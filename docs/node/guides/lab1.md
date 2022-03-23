@@ -4,6 +4,9 @@ sidebar_position: 1
 
 # Lab 1: Signal generation
 
+import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer';
+import 'asciinema-player/dist/bundle/asciinema-player.css';
+
 <figure align="center">
     <img alt="villas-signal Example" src="/img/dia/villas_signal.svg" height="180px" />
     <figcaption>villas-signal Example.</figcaption>
@@ -27,7 +30,7 @@ The samples have the following characteristics:
 | `-F 3` 	| Sets the frequency of the generated signal to 3 Hz |
 | `-v 1` 	| Sets the number of values which are generated |
 
-<asciinema-player rows="25" cols="500" poster="npt:0:1" src="/recordings/terminal/villas_signal.json" />
+<AsciinemaPlayer src="/recordings/terminal/villas_signal.json" rows={25} cols={120} idleTimeLimit={3} preload={true} />
 
 Every sample is printed in a single line consisting of several columns:
 
@@ -55,7 +58,8 @@ If you add the `-n` (non real-time mode) switch the data will be printed immeadi
 villas signal -l 10 -r 10 -F 3 -v 1 -n sine
 ```
 
-<asciinema-player rows="25" cols="500" poster="npt:0:1"  src="/recordings/terminal/villas_signal_nrt.json" />
+<AsciinemaPlayer src="/recordings/terminal/villas_signal_nrt.json" rows={25} cols={120} idleTimeLimit={3} preload={true} />
+
 
 You can use [shell redirection](https://www.gnu.org/software/bash/manual/html_node/Redirections.html) to write those samples to a file:
 
@@ -64,4 +68,4 @@ villas signal -l 10 -r 10 -F 3 -v 1 -n sine > file.dat
 cat file.dat
 ```
 
-<asciinema-player rows="25" cols="500" poster="npt:0:1"  src="/recordings/terminal/villas_signal_file.json" />
+<AsciinemaPlayer src="/recordings/terminal/villas_signal_file.json" rows={25} cols={120} idleTimeLimit={3} preload={true} />

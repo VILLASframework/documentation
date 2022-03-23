@@ -1,8 +1,11 @@
 # Video
 
+import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer';
+import 'asciinema-player/dist/bundle/asciinema-player.css';
+
 The following video shows the installation of the VILLAS live image on a [VirtualBox](http://www.virtualbox.org) virtual machine.
 
-<asciinema-player cols="500" poster="npt:0:1" src="/recordings/terminal/villaslive-installation.json" />
+<AsciinemaPlayer src="/recordings/terminal/villaslive-installation.json" rows={25} cols={120} idleTimeLimit={3} preload={true} />
 
 ## Old
 

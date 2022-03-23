@@ -4,6 +4,9 @@ sidebar_position: 9
 
 # Lab 9: Network emulation and statistics
 
+import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer';
+import 'asciinema-player/dist/bundle/asciinema-player.css';
+
 <figure align="center">
     <img alt="villas-hook Example" src="/img/dia/villas_hook_stats.svg" height="180px" />
     <figcaption>villas-hook Example.</figcaption>
@@ -47,6 +50,6 @@ After a few seconds, press Ctrl-C to stop the processing. Now we can analyze the
 villas hook -o verbose=true -o warmup=1000 stats < delayed_data.dat > /dev/null
 ```
 
-<asciinema-player rows="30" cols="500" poster="npt:0:1" src="/recordings/terminal/villas_hook_stats.json" />
+<AsciinemaPlayer src="/recordings/terminal/villas_hook_stats.json" rows={25} cols={120} idleTimeLimit={3} preload={true} />
 
 For more details see @ref node-netem

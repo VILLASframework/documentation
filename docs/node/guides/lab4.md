@@ -2,6 +2,9 @@
 sidebar_position: 4
 ---
 
+import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer';
+import 'asciinema-player/dist/bundle/asciinema-player.css';
+
 # Lab 4: Receive data from a node and show it on standard output
 
 <figure align="center">
@@ -17,14 +20,14 @@ In the first terminal:
 villas pipe lab3.conf udp_node1
 ```
 
-<asciinema-player rows="25" cols="500" poster="npt:0:1"  src="/recordings/terminal/lab4_t1.json" />
+<AsciinemaPlayer src="/recordings/terminal/lab4_t1.json" rows={25} cols={120} idleTimeLimit={3} preload={true} />
 
 In a second terminal, we use `-x` to exchange input/output addresses:
 ```bash
 villas pipe -x lab3.conf udp_node1
 ```
 
-<asciinema-player rows="25" cols="500" poster="npt:0:1"  src="/recordings/terminal/lab4_t2.json" />
+<AsciinemaPlayer src="/recordings/terminal/lab4_t2.json" rows={25} cols={120} idleTimeLimit={3} preload={true} />
 
 # Stopping `villas pipe` {#node-guide-lab4-stopping}
 

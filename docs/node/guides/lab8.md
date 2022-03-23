@@ -4,6 +4,9 @@ sidebar_position: 8
 
 # Lab 8: Use hook function to modify/filter the data
 
+import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer';
+import 'asciinema-player/dist/bundle/asciinema-player.css';
+
 VILLASnode supports hook functions to filter or manipulate samples while their are forwarded.
 These functions are in C-code. A plugin mechanism makes it easy for the user to new hook functions.
 
@@ -139,7 +142,7 @@ Use the `mode` parameter to select the timestamp which should be shifted.
 echo "123.456(1) 1.2 3.4 5.6" | villas hook ts
 ```
 
-<asciinema-player rows="7" cols="500" poster="npt:0:1"  src="/recordings/terminal/villas_hook_ts.json" />
+<AsciinemaPlayer src="/recordings/terminal/villas_hook_ts.json" rows={25} cols={120} idleTimeLimit={3} preload={true} />
 
 There is another related hook function called `fix_ts` which will only overwrite the the timestamp if the source has not provided one (timestamp must is `0.0`).
 
@@ -147,7 +150,7 @@ There is another related hook function called `fix_ts` which will only overwrite
 echo "0.0(1) 1.2 3.4 5.6" | villas hook fix_ts
 ```
 
-<asciinema-player rows="12" cols="500" poster="npt:0:1"  src="/recordings/terminal/villas_hook_fix_ts.json" />
+<AsciinemaPlayer src="/recordings/terminal/villas_hook_fix_ts.json" rows={25} cols={120} idleTimeLimit={3} preload={true} />
 
 ## Reduce the rate by a factor (decimate)
 
@@ -165,7 +168,7 @@ The resulting rate is: `1000 / 10 = 100`.
 villas signal -r 1000 sine | villas hook decimate -o ratio=10
 ```
 
-<asciinema-player rows="25" cols="500" poster="npt:0:1"  src="/recordings/terminal/villas_hook_decimate.json" />
+<AsciinemaPlayer src="/recordings/terminal/villas_hook_decimate.json" rows={25} cols={120} idleTimeLimit={3} preload={true} />
 
 ## Skip sample values based on the enable signal (gate)
 
@@ -222,7 +225,7 @@ villas signal sine | villas hook print > /dev/null
 villas signal -v 4 sine | villas hook map 'mapping=[ "data[3]", "data[2]", "data[1]", "data[0]", "hdr.sequence", "ts.origin" ]'
 ```
 
-<asciinema-player rows="12" cols="500" poster="npt:0:1"  src="/recordings/terminal/villas_hook_map.json" />
+<AsciinemaPlayer src="/recordings/terminal/villas_hook_map.json" rows={25} cols={120} idleTimeLimit={3} preload={true} />
 
 # Implement your own hook function
 

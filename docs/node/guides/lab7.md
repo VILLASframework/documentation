@@ -4,6 +4,9 @@ sidebar_position: 7
 
 # Lab 7: Read samples from file and send them to node
 
+import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer';
+import 'asciinema-player/dist/bundle/asciinema-player.css';
+
 ## Easy way (non real-time)
 
 <figure align="center">
@@ -34,4 +37,4 @@ In order to stream the samples in real-time from a file, we will use the @ref no
 villas pipe lab7.conf file_node1 | villas pipe lab3.conf udp_node1 > file_recv.dat
 ```
 
-<asciinema-player rows="25" cols="500" poster="npt:0:13"  src="/recordings/terminal/villas_pipe_file.json" />
+<AsciinemaPlayer src="/recordings/terminal/villas_pipe_file.json" rows={25} cols={120} idleTimeLimit={3} preload={true} />

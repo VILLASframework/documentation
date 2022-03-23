@@ -16,15 +16,6 @@ const config = {
     organizationName: 'VILLASframework',
     projectName: 'Documentation',
 
-    scripts: [{
-        src: '/js/asciinema-player.js',
-        defer: true,
-    }, ],
-
-    stylesheets: [
-        '/css/asciinema-player.css'
-    ],
-
     plugins: [
       [
         require.resolve("@cmfcmf/docusaurus-search-local"),
