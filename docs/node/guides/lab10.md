@@ -121,7 +121,7 @@ nodes = {
 
 ### A unidirectional path
 
-**Todo:** Please note, that currently each node must only used once as an input node. Using the same node as an input to multiple paths is not possible. Please consider using @ref node-type-loopback nodes as a workaround.
+**Todo:** Please note, that currently each node must only used once as an input node. Using the same node as an input to multiple paths is not possible. Please consider using [`loopback`](../nodes/loopback.md) nodes as a workaround.
 
 The configuration file `lab10_uni_path.conf` extends `lab10_nodes.conf` with a path section.
 This example reads samples from node `rpi-1` and forwards them immediately to node `rtds-1`.

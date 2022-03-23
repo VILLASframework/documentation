@@ -27,7 +27,7 @@ To open an interactive terminal in the VILLASnode Docker container run:
 docker run --privileged --tty --interactive --entrypoint bash --volume C:\path\to\configs:/configs -p 80:80 registry.git.rwth-aachen.de/acs/public/villas/node
 ```
 
-For some @ref node-guide-labs two interactive shells are required. To open a second shell, run the following command:
+For some lab excecises two interactive shells are required. To open a second shell, run the following command:
 
 ```bash
 docker exec --tty --interactive $(docker ps -qn1) bash
@@ -67,10 +67,10 @@ In this guide we will show the following tools:
 | `villas hook`			| Filter or manipulate _samples_ provided via [standard IO streams](https://en.wikipedia.org/wiki/Standard_streams). |
 | `villas compare`		| Compare multiple files/streams containing sample data. | 
 | `villas conf2json`	| Convert [libconfig](http://hyperrealm.github.io/libconfig/)-style formatted configuration files to JSON format. | 
-| `villas convert`		| Convert sample data files/streams between different supported [formats](@ref node-format-types). | 
+| `villas convert`		| Convert sample data files/streams between different supported [formats](../formats/index.md). | 
 | `villas graph`		| Generate a graphical representation of the VILLASnode configuration file with Graphviz. |   
 
-A complete reference of all available options for those tools can be found on the @ref node-usage page.
+A complete reference of all available options for those tools can be found on the [usage](../usage/index.md) page.
 
 ## Lab assignments {#labs}
 

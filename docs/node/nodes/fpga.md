@@ -12,7 +12,7 @@ This node-type is currently under development.
 
 VILLASfpga is an extension build on top of VILLASnode for realizing hard real-time interfaces between simulators, converters and devices under test with guaranteed cycle times in the microsecond range.
 
-Please look at the main page for details: @ref fpga.
+Please look at the main page for details: [VILLASfpga](../../fpga/index.md).
 
 ## Prerequisites
 
@@ -39,13 +39,13 @@ Every `fpga` node support the following special settings:
 
 ### datamover (string: fpga-ip-name)
 
-The must be the name of a FPGA IP core as defined in @ref fpga-config-ip.
+The must be the name of a FPGA IP core.
 
 This IP component is used to transfer samples between the FPGA and the main memory.
 
 ### card (string: fpga-card-name)
 
-The name of the FPGA card as configured by @ref fpga-config-card.
+The name of the FPGA card.
 
 ### user_irqs (boolean)
 

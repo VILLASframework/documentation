@@ -9,7 +9,7 @@ For bidirectional communication a corresponding path in the reverse direction mu
  
 By default, message contents are not altered.
 The server only performs checks for valid message headers (sequence number, cryptographic signature..).
-However, every path supports optional [hook functions](@ref node-hook-types) which allow user-defined operations on the samples.
+However, every path supports optional [hook functions](../hooks/index.md) which allow user-defined operations on the samples.
 
 <figure align="center">
 	<img alt="VILLASnode Paths." src="/img/VILLASnode_paths.svg" width="75%" />
@@ -28,7 +28,7 @@ import ApiSchema from '@theme/ApiSchema';
 
 ## Input mapping
 
-The @ref node-config-path-in setting supports different ways of configuring and selecting the nodes from which the path sources its samples.
+The `paths[].in` setting supports different ways of configuring and selecting the nodes from which the path sources its samples.
 
 ### Simple
 
@@ -71,8 +71,8 @@ The last way of configuring signals for a path is by using more complex signal m
 This allows you to select individual signals from one or multiple source nodes as well as other metadata such as:
 
 - Statistics
-  - **Note:** This requires @ref node-hook-type-stats hook activated for the respective node)
-  - See @ref node-hook-type-stats for a list of all supported statistics
+  - **Note:** This requires [`stats`](../hooks/stats.md) hook activated for the respective node)
+  - See [here](../hooks/stats.md) for a list of all supported statistics
 - Header fields
   - Sample sequence number
   - Sample signal count (length)

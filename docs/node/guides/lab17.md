@@ -19,7 +19,7 @@ tbd
 The setup requires the following components:
 
 * 1x Linux workstation or server running the VILLASnode gateway
-  * Checkout the [installation instructions](@ref node-installation) for further details.
+  * Checkout the [installation instructions](../installation.md) for further details.
 * 2x RTDS GPC / PB5 racks or Novacor Chassis
 * 2x GTNET card running the GTNET-SKT firmware
   * Used for co-simulation interface signals

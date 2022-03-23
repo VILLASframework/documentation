@@ -74,7 +74,7 @@ in.cq_size >= in.max_wrs - in.buffer_subtraction
 
 ### in.buffer_subtraction (integer) = 16
 
-As mentioned in @ref node-config-node-infiniband-in-max_wrs, Work Requests have to be present in the receive queue, for it to be able to process received data. To take full advantage of the zero-copy capabilities of Infiniband this node-type directly posts addresses from the VILLAS Framework to the receive queue instead of copying all data over after receiving it.
+As mentioned in the `in.max_wrs` settings, Work Requests have to be present in the receive queue, for it to be able to process received data. To take full advantage of the zero-copy capabilities of Infiniband this node-type directly posts addresses from the VILLAS Framework to the receive queue instead of copying all data over after receiving it.
 
 This technique relies on the exchange of addresses. This means that if an array of `in.vectorize` addresses is handed over to the node-type, max `release` <= `in.vectorize` addresses that point to received data can be returned.
 
@@ -92,7 +92,7 @@ max_wrs_posted = in.max_wrs - in.buffer_subtraction
 
 This value defines the IPoIB address of the remote node and is used to establish a connection to the remote host—in case of `RDMA_PS_TCP`—or to get the address handle of the remote host—in case of `RDMA_PS_UDP`.
 
-This is similar to @ref node-config-node-infiniband-in-address.
+This is similar to `in.address`.
 
 `out.address` has no default value and if it is not defined the node will be set to listening mode and all `out` configuration will be ignored.
 
@@ -111,12 +111,12 @@ The default value is 1 second.
 
 ### out.max_wrs (integer) = 128
 
-This is similar to @ref node-config-node-infiniband-in-max_wrs but for the send side of the Queue Pair. In contrast to the receive queue, there is no minimum amount of Work Requests in this queue and it can be filled up completely to `out.max_wrs`.
+This is similar to `in.max_wrs` but for the send side of the Queue Pair. In contrast to the receive queue, there is no minimum amount of Work Requests in this queue and it can be filled up completely to `out.max_wrs`.
 The default number of work requests is 128.
 
 ### out.cq_size (integer) = 128
 
-This is similar to @ref node-config-node-infiniband-in-cq_size.
+This is similar to `in.cq_size`.
 
 An important side note for the receive completion queue was that it should be able to hold all Work Requests if the receive queue is flushed. Since no "preparatory" Work Requests are posted to the send queue and and thus all work requests are send out as soon as possible, there is no need for `out.cq_size` to be as big as `out.max_wrs`.
 The default size of the completion queue is 128.
@@ -126,14 +126,14 @@ The default size of the completion queue is 128.
 It is possible that the CPU copies the data to be sent directly to the HCA. Then, the HCA can take the data from it's internal memory as soon as it is ready to send it. This has the advantage that the buffer can be returned immediately to the VILLAS Framework and that it increases performance.
 By default inline packets are enabled.
 
-If this flag is set, the @ref node-type-infiniband node-type checks if a sample is small enough to be sent inline, and if this is the case sends it inline.
+If this flag is set, the [`infiniband`](../nodes/infiniband.md) node-type checks if a sample is small enough to be sent inline, and if this is the case sends it inline.
 
 ### out.max_inline_data (integer) = 0
 
 This value represents the maximum number of bytes to be send inline. The maximum number of this value depends on the HCA.
 The settings defaults to zero. However, many HCAs will automatically adjust it to 60.
 
-*Important note*: The greater this value gets, the smaller @ref node-config-node-infiniband-out-max_wrs can be. If `out.max_inline_data` is too big for the number specified in `out.max_wrs`, the node will return an error that the Queue Pair could not be created. Since this is different for various HCAs, it is not possible for us to give more specified errors.
+*Important note*: The greater this value gets, the smaller `out.max_wrs` can be. If `out.max_inline_data` is too big for the number specified in `out.max_wrs`, the node will return an error that the Queue Pair could not be created. Since this is different for various HCAs, it is not possible for us to give more specified errors.
 
 **Example**:
 

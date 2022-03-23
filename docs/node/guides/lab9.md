@@ -81,4 +81,4 @@ villas hook -o verbose=true -o warmup=1000 stats < delayed_data.dat > /dev/null
 
 <AsciinemaPlayer src="/recordings/terminal/villas_hook_stats.json" rows={25} cols={120} idleTimeLimit={3} preload={true} />
 
-For more details see @ref node-netem
+For more details see here: [Network Emulation](../netem.md).

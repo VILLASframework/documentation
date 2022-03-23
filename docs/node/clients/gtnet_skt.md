@@ -2,16 +2,15 @@
 
 **Example drafts:** <https://git.rwth-aachen.de/acs/public/villas/node/tree/master/clients/rtds/GTNETv2_SKT>
 
-The GTNETx2 card can be upgraded with SKT firmware to send/receive UDP and TCP packets over Ethernet.
+The GTNETx2 card can be flashed with the SKT firmware to send/receive UDP and TCP packets over Ethernet.
 The card uses big endian byte order to send and receives data.
 
-There are two ways to exchange data with VILLASnode which are implemented by the @ref node-type-socket node-type.
-
- - **Without a header:** Only data values are sent without any header information like sequence number or timestamps.
-    This option is configured by setting @ref node-config-node-socket-header to `gtnet-skt:fake` in tge configuration file.
- - **With a header:** First 3 values are interpreted as sequence no, timestamp seconds and timestamp nanoseconds.
-    A timestamp can be added by using the GTSYNC card with a GPS source in the draft file.
-    Alternatively, if no timestamp is provided (value set to 0), VILLASnode will add a timestamp and thereby overriding replacing the 0 value.
+To exchange data with the GTNET-SKT block the [`socket`](../nodes/socket.md) node-type must be used with the [`raw`](../formats/raw.md) format-type.
+This raw format does not include any meta-data such as the timestamps or sequence numbers.
+To work around this limitation, the `fake` option of the `raw` format can be set.
+This will cause the first three 3 signals to interpreted as sequence no, timestamp seconds and timestamp nanoseconds.
+A timestamp can be added by using the GTSYNC card with a GPS source in the draft file.
+Alternatively, if no timestamp is provided (value set to 0), VILLASnode will add a timestamp and thereby overriding replacing the 0 value.
  
 ## Common Problems
 

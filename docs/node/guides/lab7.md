@@ -38,7 +38,7 @@ nodes = {
 }
 ```
 
-In order to stream the samples in real-time from a file, we will use the @ref node-type-file node-type with the following configuration file (`lab7.conf`):
+In order to stream the samples in real-time from a file, we will use the [`file`](../nodes/file.md) node-type with the following configuration file (`lab7.conf`):
 
 <figure align="center">
     <img alt="Stream samples in real-time from file" src="/img/drawio/villas_pipe_file3.svg" width="50%" />

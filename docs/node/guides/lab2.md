@@ -6,7 +6,7 @@ sidebar_position: 2
 
 Before we proceed to other tools,  we need to get familiar with VILLASnode's configuration file format.
 The configuration file is used to describe the connectivity of a _super node_. Hence, it contains a list of _nodes_ and _paths_ and general settings.
-A reference of all available configuration options is available on the @ref node-config page.
+A reference of all available configuration options is available on the [configuration](../config/index.md) page.
 
 VILLASnode supports two formats for its configuration file:
 

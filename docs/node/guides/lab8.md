@@ -37,7 +37,7 @@ During this lab we will use the following hook functions:
 | `print`       | Print the message to stdout. |
 | `shift_ts`    | Shift timestamps of samples. |
 
-A full list of supported hook functions is documented here: @ref node-hook-types
+A full list of supported hook functions is documented here: [Hook functions](../hooks/index.md)
 
 # How to configure a hook function
 
