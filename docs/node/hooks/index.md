@@ -51,7 +51,9 @@ Currently, the following _node-hook-types_ are supported:
 | [`jitter_calc`](jitter_calc.md) |           | yes       |            |      | stable     | Calc jitter, mean and variance of GPS vs NTP TS |
 | [`limit_rate`](limit_rate.md)   |           | yes       | yes        | yes  | stable     | Limit sending rate |
 | [`lua`](lua.md)                 |           | yes       | yes        | yes  | stable     | Lua scripting support |
+| [`pps_ts`](pps_ts.md)           |           | yes       | yes        | yes  | stable     | Timestamp samples based on a PPS signal/edge within the sample |
 | [`restart`](restart.md)         | yes       | yes       |            |      | stable     | Call restart hooks for current node |
+| [`round`](round.md)             |           | yes       | yes        | yes  | stable     | Round floating point and complex signals to decimal digits |
 | [`scale`](scale.md)             |           | yes       | yes        | yes  | stable     | Scale signals by a factor and add offset |
 | [`shift_seq`](shift_seq.md)     |           | yes       | yes        |      | stable     | Shift sequence number of samples |
 | [`shift_ts`](shift_ts.md)       |           | yes       | yes        |      | stable     | Shift timestamps of samples |
