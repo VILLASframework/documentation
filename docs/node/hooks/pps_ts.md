@@ -15,6 +15,10 @@ A cheap solution for generating PPS signals are of-the-shelf GPS receiver module
 
 The hook detects the PPS signal and re-timestamps the samples based on this signal. 
 
+<figure align="center">
+	<img alt="Timestamping via sampled PPS signal." src="/img/drawio/pps_ts.svg" width="50%" />
+	<figcaption>Timestamping via sampled PPS signal.</figcaption>
+</figure>
 
 ## Implementation
 
