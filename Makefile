@@ -1,11 +1,13 @@
-DIA_FIGURES = $(wildcard figures/dia/*.dia)
-SVG_FIGURES = $(DIA_FIGURES:%.dia=%.svg)
+DRAWIO_FIGURES = $(wildcard static/img/drawio/*.drawio)
+SVG_FIGURES = $(DRAWIO_FIGURES:%.drawio=%.svg)
 
 WEBM_VIDEOS = $(wildcard recordings/video/*.webm)
 MP4_VIDEOS =  $(WEBM_VIDEOS:%.webm=%.mp4)
 
 DOCKER_IMAGE ?= registry.git.rwth-aachen.de/acs/public/villas/documentation
 DOCKER_TAG ?= $(shell git rev-parse --abbrev-ref HEAD)
+
+DRAWIO ?= /Applications/draw.io.app/Contents/MacOS/draw.io
 
 export LC_ALL = en_US.utf-8
 
@@ -15,7 +17,7 @@ docs: build/index.html
 
 videos: $(MP4_VIDEOS)
 
-figures: $(SVG_FIGURES)
+figures: $(SVG_FIGURES) 
 
 clean:
 	rm -f build/
@@ -23,10 +25,8 @@ clean:
 build/index.html: figures openapi examples
 	yarn build
 
-%.svg: %.dia
-	dia -n -l -t svg -e $@ $^
-	@# This fixes the location of inlined SVG images in DIA figures
-	sed -i'' -e "s|file://$$(pwd)/||" $@
+%.svg: %.drawio
+	$(DRAWIO) -x -f svg -o $@ $^ 
 
 %.mp4: %.webm
 	ffmpeg -i $^ $@
