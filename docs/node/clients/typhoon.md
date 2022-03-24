@@ -22,7 +22,7 @@ VILLASnode can interface with Typhoon HIL simulators via their [_Ethernet Variab
 
 VILLASnode ships with an example schematic for the Typhoon HIL control center.
 
-- **Git:** 
+- **Git:** <https://git.rwth-aachen.de/acs/public/villas/node/-/tree/master/clients/typhoon>
 
 <figure align="center">
     <img alt="Typhoon model schematic" src="/img/screenshots/typhoon_ve_model.png" width="80%" />
