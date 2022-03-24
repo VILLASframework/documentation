@@ -18,23 +18,17 @@
 
 
 :::note ToDo
-
-Create a list of available bitstreams
-
+Create a list of available bitstreams.
 :::
 
 :::note ToDo
-
 Add instructions on how to flash a bitstream.
-
 :::
 
-### Indentify PCIexpress device
+### Identify PCIexpress device
 
 :::note ToDo
-
 Describe the usage of `lspci`
-
 :::
 
 ## Kernel

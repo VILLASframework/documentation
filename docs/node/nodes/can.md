@@ -19,9 +19,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/can.cpp
 ## Configuration {#config}
 
 :::note ToDo
-
-Finish CAN node-type documentation
-
+Finish CAN node-type documentation.
 :::
 
 ## Example

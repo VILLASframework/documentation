@@ -5,9 +5,7 @@ hide_table_of_contents: true
 # EtherCAT
 
 :::danger
-
 This node-type is currently under development.
-
 :::
 
 ## Prerequisites
@@ -22,9 +20,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/ethercat
 ## Configuration {#config}
 
 :::note ToDo
-
 Document EtherCAT node-type
-
 :::
 
 ## Example

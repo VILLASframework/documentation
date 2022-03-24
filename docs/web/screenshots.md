@@ -1,9 +1,7 @@
 # Screenshots {#web-screenshots}
 
-:::caution
-
+:::caution Outdated information
 This information is outdated!
-
 :::
 
 ## Login / User Management

@@ -27,9 +27,7 @@ VILLASnode has also been tested on various other systems:
 - As Docker container / Kubernetes pod
 
 :::caution
-
 We explicitly advise against using virtualized environments for anything apart from testing and development due to unpredictable latencies and bad real-time performance.
-
 :::
 
 ## Operating system

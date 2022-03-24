@@ -10,15 +10,11 @@ Welcome to the documentation of the VILLASframework.
 - [Architecture](architecture.md)
 
 :::note
-
 We recently migrated our documentation to a new site. However, the [old documentation](https://villas.fein-aachen.org/doc/) is still available.
-
 :::
 
 :::caution
-
 For starters we recommend to read the **[installation guide](installation.md)**!
-
 :::
 
 ## Components

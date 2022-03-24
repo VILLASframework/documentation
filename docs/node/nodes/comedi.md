@@ -16,9 +16,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/comedi.c
 ## Configuration {#config}
 
 :::note ToDo
-
-Document config options for Comedi node-type
-
+Document configuration options for Comedi node-type.
 :::
 
 ## Example

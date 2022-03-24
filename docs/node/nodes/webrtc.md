@@ -17,9 +17,7 @@ Instead just a common session name needs to be agreed on between the two nodes.
 Under the hood a signaling server is used for exchanging address and session information.
 
 :::info To summarize
-
 **The WebRTC node-type allows you to couple simulators and labs as easy as a Zoom/Skype video conference 📺.**
-
 :::
 
 **See also:** The [WebSocket node-type](./websocket.md) is a related but older node-type.

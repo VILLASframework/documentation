@@ -18,9 +18,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/stats.cp
 ## Configuration {#config}
 
 :::note ToDo
-
 Document config settings of statistics node-type
-
 :::
 
 ## Example

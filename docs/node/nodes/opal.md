@@ -81,9 +81,7 @@ RT-LAB already provides a block to establish simple TCP/IP communication: ???
 This block is based on a more generic block used for asynchronous programs: ???
 
 :::note ToDo
-
 Insert name of RT-LAB blocks.
-
 :::
 
 | Param		 | Description   | Example Value  |
@@ -96,7 +94,5 @@ Insert name of RT-LAB blocks.
 | StringParam[2] | InterfaceName | eth2           |
 
 :::note ToDo
-
 Complete documentation for the OPAL-RT Simulink module.
-
 :::

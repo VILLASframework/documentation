@@ -5,9 +5,7 @@ hide_table_of_contents: true
 # VILLASfpga
 
 :::note ToDo
-
 This node-type is currently under development.
-
 :::
 
 VILLASfpga is an extension build on top of VILLASnode for realizing hard real-time interfaces between simulators, converters and devices under test with guaranteed cycle times in the microsecond range.
@@ -54,7 +52,5 @@ Weather or not to polling / interrupts to wait for new samples from the FPGA.
 ## Example
 
 :::note ToDo
-
 Add example config
-
 :::

@@ -13,10 +13,8 @@ VILLASnode can be installed in multiple ways:
 - Automated [Kickstart installation](#kickstart) for Fedora/Redhat based distros
 - or from source
 
-:::caution
-
+:::caution Requirements
 Please make sure that your system fulfills the [requirements](requirements.md) before proceeding.
-
 :::
 
 ## From source  {#source}

@@ -5,9 +5,7 @@
 We build an example LabView model which is using the UDP message format of the [`socket` node-type](../nodes/socket.md) to communicate with VILLASnode.
 
 :::note ToDo
-
-Add screenshot
-
+Add a screenshot.
 :::
 
 ## Contact
