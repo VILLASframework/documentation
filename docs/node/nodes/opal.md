@@ -9,10 +9,10 @@ Asynchronous programs are are a feature of RT-LAB. They are used to exchange dat
 
 There are two ways to exchange sample values with an OPAL-RT simulator:
 
-1. Use our adapted version of OPAL-RT's AsyncIP example for asynchronous processes (see [AsyncIP client](../clients/async_ip.md))
+1. Use our adapted version of OPAL-RT's AsyncIP example for asynchronous processes (see [AsyncIP client](../clients/opal_async_ip.md))
     In this mode, OPAL will send sample data via UDP to VILLASnode. VILLASnode has to use the [`socket` node-type](socket.md).
 2. Run VILLASnode as an asynchronous process itself. This is a highly experimental feature and implemented in the node-type `opal`.
-    It requires a 32-bit version of the `villas-node`. Data exchange is then handled using OPAL-RT's libOpalAsyncApi.
+    It requires a 32-bit version of the `villas-node`. Data exchange is then handled using OPAL-RT's `libOpalAsyncApi`.
     This settings of this node-type a described on this page.
 
 ## Prerequisites

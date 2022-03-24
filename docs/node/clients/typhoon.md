@@ -4,9 +4,12 @@ sidebar_label: Typhoon HIL Ethernet VE
 
 # Typhoon HIL Ethernet VE <img align="right" width="150px" src="/img/logos/typhoon.png" alt="Typhoon HIL logo"></img>
 
-VILLASnode can interface with Typhoon HIL simulators via their [_Ethernet Variable Exchange_ protocol.](https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/References/ethernet_variable_exchange.html).
+VILLASnode can interface with Typhoon HIL simulators via their [_Ethernet Variable Exchange_ protocol](https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/References/ethernet_variable_exchange.html).
+On VILLASnode's side this interconnection is realized with the [`socket` node-type](../nodes/socket.md) and the [`raw` format-type](../formats/raw.md).
 
 ## Tested Versions
+
+The setup covered on this page has been tested with the following software versions:
 
 - **Typhoon HIL Control Center:** 2022.1
 - **VILLASnode:** [Commit 634d95362a7e776cc8d6b5999bc5c5e83be15870](https://git.rwth-aachen.de/acs/public/villas/node/-/commit/634d95362a7e776cc8d6b5999bc5c5e83be15870)
@@ -45,6 +48,8 @@ In this demonstration we use the following settings as an example:
 ## Configuration
 
 ### VILLASnode
+
+This VILLASnode configuration configures a simple loopback of the data send by the Typhoon HIL target back to itself.
 
 ``` title="typhoon.conf"
 nodes = {
