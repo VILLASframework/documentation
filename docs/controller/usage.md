@@ -7,7 +7,7 @@ VILLAScontroller consist of two parts:
 
 Both parts are accessible from the `villas-controller` command.
 
-## Quickstart
+## Quick-start
 
 1. Install VILLAScontroller
 

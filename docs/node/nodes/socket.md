@@ -58,7 +58,7 @@ Check if source address of incoming packets matches the remote address.
 
 ### out.netem (dictionary)
 
-Enables and configures the network emulation qeueing discipline.
+Enables and configures the network emulation queuing discipline.
 
 For information see also: [Netem emulation](../netem.md)
 
@@ -66,7 +66,7 @@ For information see also: [Netem emulation](../netem.md)
 
 The `socket` node-type supports sending and receiving IP / UDP packets to and from multicast addresses.
 
-**Note:** Multicast is only supported by IPv4 addressing. Using these settings with `layer = eth` or IPv6 adresses will fail!
+**Note:** Multicast is only supported by IPv4 addressing. Using these settings with `layer = eth` or IPv6 addresses will fail!
 
 ### in.multicast.enabled (boolean) = true
 
@@ -113,7 +113,7 @@ nodes = {
 			verify_source = true 		# Check if source address of incoming packets matches the remote address.
 		},
 		out = {
-			address = "127.0.0.1:12000",	# This node sents outgoing messages to this IP:Port pair
+			address = "127.0.0.1:12000",	# This node sends outgoing messages to this IP:Port pair
 		}
 	}
 
@@ -161,7 +161,7 @@ nodes = {
 			}
 		},
 		out = {
-			address = "127.0.0.1:12000",	# This node sents outgoing messages to this IP:Port pair
+			address = "127.0.0.1:12000",	# This node sends outgoing messages to this IP:Port pair
 		}
 	}
 }

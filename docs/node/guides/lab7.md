@@ -19,7 +19,7 @@ villas pipe lab3.conf udp_node1 < file_send.dat > file_recv.dat
 ```
 
 **Note:** In this lab all samples of `file.dat` will be sent immediately to `udp_node1`.
-Usually, this is not the desired behaviour.
+Usually, this is not the desired behavior.
 We will show later how to stream the samples _in real-time_ to a destination node.
 
 ## Better way (real-time)

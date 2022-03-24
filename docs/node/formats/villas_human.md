@@ -5,9 +5,9 @@ hide_table_of_contents: true
 # Custom VILLAS Human Readable
 
 This is a simple human-readable format commonly used for logging or debugging:
-The format is similiar to a conventional CSV (comma seperated values) file.
+The format is similar to a conventional CSV (comma separated values) file.
 Every line in a file correspondents to a message / sample of simulation data.
-The columns of a line are seperated by whitespaces (tabs or spaces).
+The columns of a line are separated by whitespaces (tabs or spaces).
 The columns are defined as follows:
 
     seconds.nanoseconds+offset(sequenceno)	value0 value1 ... valueN

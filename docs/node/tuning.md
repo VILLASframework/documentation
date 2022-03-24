@@ -11,7 +11,7 @@ It describes several ways to optimize the host system for running real-time appl
 
 For minimum latency several kernel and driver settings can be optimized.
 A [PREEMPT_RT patched Linux](https://rt.wiki.kernel.org/index.php/Main_Page) kernel is recommended.
-Precompiled kernels for Fedora can be found here: http://ccrma.stanford.edu/planetccrma/software/
+Pre-compiled kernels for Fedora can be found here: http://ccrma.stanford.edu/planetccrma/software/
 
 1. Tune overall system performance for real-time:
   1. Install a `PREEMPT_RT` patched Linux kernel.
@@ -46,7 +46,7 @@ option e1000e InterruptThrottleRate=
 This are some proposals for the selection of appropriate server hardware:
 
 - Server-grade CPU: Intel Xeon
-  - A multi-core system enables true paralell execution of multiple send / receive paths.
+  - A multi-core system enables true parallel execution of multiple send / receive paths.
 
 - Server-grade network cards: Intel PRO/1000
-  - These allow offloading of UDP checksumming to the hardware
+  - These allow offloading of UDP checksum calculation to the hardware

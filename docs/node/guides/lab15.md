@@ -30,7 +30,7 @@ All EtherCAT slaves are connected to the same bus coupler. All channels of the a
 
 ## Command Line Tools
 
-The IgH EtherCAT Master also provides command-line tools for the users to get information about the configuration, Slaves, Process Data Objects (PDOs) and Service Data Objects (SDOs) of the devices connected on EtherCAT chain. In this Lab we will experiment with some of the command line utilties shipped with the IgH EtherCAT master.
+The IgH EtherCAT Master also provides command-line tools for the users to get information about the configuration, Slaves, Process Data Objects (PDOs) and Service Data Objects (SDOs) of the devices connected on EtherCAT chain. In this Lab we will experiment with some of the command line utilities shipped with the IgH EtherCAT master.
 
 ```bash
 /usr/local/bin/ethercat master
@@ -58,7 +58,7 @@ The table below describes the notations for '1  0:1  PREOP  +  EL4038 8K. Ana. A
 | 0:1 | Decimal alias address of the slave: Decimal relative position to the last slave with an alias address set  |
 | PREOP | Current application layer state |
 | + | '-' refers to error flag, '+' means no error |
-| EL4038 | Name of the SII (if avaialble), otherwise Vendor ID and product code (both hexadecimal) |
+| EL4038 | Name of the SII (if available), otherwise Vendor ID and product code (both hexadecimal) |
 
 The information transferred from Slaves to Masters are called Process Data Objects (PDOs). These are limited by the size of an Ethernet frame. 
 The following command can be used to output the PDO information in C language: 

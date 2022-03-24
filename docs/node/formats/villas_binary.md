@@ -7,7 +7,7 @@ hide_table_of_contents: true
 We designed a lightweight message format (or protocol) to facilitate a fast transmission with minimal (de-)serialization overhead.
 The on-wire format of the network datagrams is not subject to a standardization process.
 
-In constrast to the [`villas.human` format](villas_human.md), this binary format is space efficient and commonly used for network communication.
+In contrast to the [`villas.human` format](villas_human.md), this binary format is space efficient and commonly used for network communication.
 
 Usually a a simulator sends one message per timestep.
 A message contains a variable number of values.

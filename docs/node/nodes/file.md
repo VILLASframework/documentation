@@ -25,7 +25,7 @@ The node configuration is divided into two sub-groups: `in` and `out`.
 Specifies the URI to a file from which is written to or read from depending in which group (`in`or `out`) is used.
 
 This setting allows to add special paceholders for time and date values.
-See [strftime(3)](http://man7.org/linux/man-pages/man3/strftime.3.html) for a list of supported placeholder.
+See [`strftime(3)`](http://man7.org/linux/man-pages/man3/strftime.3.html) for a list of supported placeholder.
 
 **Example**:
 
@@ -51,10 +51,10 @@ See [Format Types](../formats/index.md) for a complete list of supported formats
 ### in.epoch_mode ("direct" | "wait" | "relative" | "absolute")
 
 The *epoch* describes the point in time when the first message will be read from the file.
-This setting allows to select the behaviour of the following `epoch` setting.
+This setting allows to select the behavior of the following `epoch` setting.
 It can be used to adjust the point in time when the first value should be read.
 
-The behaviour of `epoch` is depending on the value of `epoch_mode`.
+The behavior of `epoch` is depending on the value of `epoch_mode`.
 
 To facilitate the following description of supported `epoch_mode`'s, we will introduce some intermediate variables (timestamps).
 Those variables will also been displayed during the startup phase of the server to simplify debugging.
@@ -73,17 +73,17 @@ The supported values for `epoch_mode`:
 | `wait`  	| `now + epoch` 		| `now + first` |
 | `relative` 	| `epoch` 		| `first + epoch` |
 | `absolute` 	| `epoch - first` 	| `epoch` |
-| `original` 	| `0` 			| immeadiatly |
+| `original` 	| `0` 			| immediately |
 
 ### in.rate (float)
 
 By default `send_rate` has the value `0` which means that the time between consecutive samples is the same as in the `in` file based on the timestamps in the first column.
 
-If this setting has a non-zero value, the default behaviour is overwritten with a fixed rate.
+If this setting has a non-zero value, the default behavior is overwritten with a fixed rate.
 
 ### in.eof (string: "rewind" | "exit" | "wait") = "exit"
 
-Defines the behaviour if the end of file of the input file is reached.
+Defines the behavior if the end of file of the input file is reached.
 
  - `rewind` will rewind the file pointer and restart reading samples from the beginning of the file.
  - `exit` will terminated the program.

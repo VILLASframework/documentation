@@ -12,7 +12,7 @@ import 'asciinema-player/dist/bundle/asciinema-player.css';
     <figcaption>villas-pipe Example.</figcaption>
 </figure>
 
-Similarily, _samples_ which are send to the node are printed on the screen.
+Similarly, _samples_ which are send to the node are printed on the screen.
 To demonstrate this we start `villas pipe` a second time with swapped `local` and `remote` addresses.
 
 In the first terminal:
@@ -40,4 +40,4 @@ Furthermore, the tool supports three more modes to terminate itself:
 
  - If called with the `-l NUM` switch, `villas pipe` terminates after `NUM` received samples.
  - If called with the `-L NUM` switch, `villas pipe` terminates after `NUM` sent samples.
- - If called witht the `-t NUM` switch, `villas pipe` terminates after `NUM` seconds of execution.
+ - If called with the `-t NUM` switch, `villas pipe` terminates after `NUM` seconds of execution.

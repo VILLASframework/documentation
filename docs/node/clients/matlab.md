@@ -7,13 +7,13 @@ MATLAB (matrix laboratory) is a multi-paradigm numerical computing environment a
 Integration of MATLAB with VILLASnode is relatively is relatively easy by using MATLABs [Instrument Control Toolbox](https://de.mathworks.com/help/instrument/index.html).
 The Instrument Control Toolbox provides a [`udp()` function](https://de.mathworks.com/help/instrument/udp.html) which can be used to open UDP/IP connections to remote systems like VILLASnode.
 
-**Note:** Please note that MATLAB is usally not suited for real-time operation. Please have a look at OPAL-RTs RT-Lab environement if real-time execution is a requirement.
+**Note:** Please note that MATLAB is usually not suited for real-time operation. Please have a look at OPAL-RTs RT-Lab environment if real-time execution is a requirement.
 
 ## Example
 
 Please have a look at the [`clients/matlab/`](https://git.rwth-aachen.de/acs/public/villas/node/tree/master/clients/matlab) directory for an exemplary VILLASnode configuration file and MATLAB code.
 
-You can run this example by execution this `receiver` script in your MATLAB prompt and starting VILLASnode by running the follwing command in your shell:
+You can run this example by execution this `receiver` script in your MATLAB prompt and starting VILLASnode by running the following command in your shell:
 
 ```bash
 villas-node villas.conf

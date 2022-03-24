@@ -10,7 +10,7 @@ The GTFPGA card is basically just a Xilinx ML507 evaluation board running a spec
 
 The code running on the GTFPGA board is divided into two parts:
 
- 1. Software running on the embedded PowerPC 440 processor which handling the UDP/IP commmunication by using the LWIP network stack.
+ 1. Software running on the embedded PowerPC 440 processor which handling the UDP/IP communication by using the LWIP network stack.
  2. Hardware / FPGA bitstream for the Virtex5 FGPA for connecting the DDR RAM and SFP ports to the PowerPC core by using a PLB bus.
 
 #### Generating the FPGA bitstream

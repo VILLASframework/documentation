@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Network Emulation
 
-VILLASnode supports the emulation of wide-area network characterisics.
+VILLASnode supports the emulation of wide-area network characteristics.
 
 This emulation can be configured on a per-node basis for **outgoing** (egress) data only.
 Incoming data is not processed by the network emulation!
@@ -12,7 +12,7 @@ Incoming data is not processed by the network emulation!
 This network emulation is handled by Linux' [netem queuing discipline](http://www.linuxfoundation.org/collaborate/workgroups/networking/netem) which is part of the traffic control subsystem.
 Take a look at the following manual page for supported metrics: [tc-netem(8)](http://man7.org/linux/man-pages/man8/tc-netem.8.html).
 
-VILLASnode only takes care of setup and initalizing the netem queuing discipline inside the kernel.
+VILLASnode only takes care of setup and initializing the netem queuing discipline inside the kernel.
 For this the iproute2 software package (`ip` & `tc` commands) must be installed.
 The configuration is done via the config file.
 Look at `etc/example.conf` for a section called `netem` or `tc-netem(8)` for more details.
@@ -20,7 +20,7 @@ Look at `etc/example.conf` for a section called `netem` or `tc-netem(8)` for mor
 ## Fix for Fedora
 
 For some reason, Fedora installs the delay distribution profiles under `/usr/lib64/tc/`.
-But libnl3 only seraches `/usr/lib/tc/`. This results in the following error when using netem:
+But libnl3 only searches `/usr/lib/tc/`. This results in the following error when using netem:
 
 ``` # noqa MD040
 Invalid delay distribution 'normal' in netem config in
@@ -36,7 +36,7 @@ Netem supports loading custom delay distributions.
    https://git.kernel.org/cgit/linux/kernel/git/shemminger/iproute2.git/tree/netem
 2. Create a custom distribution by following the steps described here:
    https://git.kernel.org/cgit/linux/kernel/git/shemminger/iproute2.git/tree/README.distribution
-3. Put the generated distrubtion with the suffix `.dist` in the `tc` lib directory:  `/usr/lib/tc/`.
+3. Put the generated distribution with the suffix `.dist` in the `tc` lib directory:  `/usr/lib/tc/`.
 4. Load the distribution specifying the basename in the server config.
 
 ## Further information
@@ -65,11 +65,11 @@ nodes = {
 			address = "127.0.0.1:12001"	# This node only received messages on this IP:Port pair
 		},
 		out = {
-			address = "127.0.0.1:12000",	# This node sents outgoing messages to this IP:Port pair
+			address = "127.0.0.1:12000",	# This node sends outgoing messages to this IP:Port pair
 		
 			netem = {			# Network emulation settings
 				enabled = true,
-							# Those settings can be specified for each node invidually!
+							# Those settings can be specified for each node individually!
 				delay = 100000,		# Additional latency in microseconds
 				jitter = 30000,		# Jitter in uS
 				distribution = "normal", # Distribution of delay: uniform, normal, pareto, paretonormal

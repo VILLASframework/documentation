@@ -5,7 +5,7 @@ hide_table_of_contents: true
 # ZeroMQ
 
 The `zeromq` node-type exchanges messages via the [ZMTP](https://rfc.zeromq.org/spec:23/ZMTP/) protocol.
-It is similiar to the [`nanomsg`](nanomsg.md) node-type.
+It is similar to the [`nanomsg`](nanomsg.md) node-type.
 
 > ZeroMQ (also known as ØMQ, 0MQ, or zmq) looks like an embeddable networking library but acts like a concurrency framework. It gives you sockets that carry atomic messages across various transports like in-process, inter-process, TCP, and multicast. You can connect sockets N-to-N with patterns like fan-out, pub-sub, task distribution, and request-reply. It's fast enough to be the fabric for clustered products. Its asynchronous I/O model gives you scalable multicore applications, built as asynchronous message-processing tasks. It has a score of language APIs and runs on most operating systems. ZeroMQ is from iMatix and is LGPLv3 open source.
 
@@ -79,7 +79,7 @@ nodes = {
 				"tcp://localhost:12444"
 			]
 
-			filter = "ab184"		# A prefix which is prepended to each send message.
+			filter = "ab184"		# A prefix which is pre-pended to each message.
 		}
 	}
 }

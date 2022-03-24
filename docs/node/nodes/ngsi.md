@@ -8,7 +8,7 @@ The `ngsi` node type implements an interface to FIWARE context brokers.
 Currently version 1 of the RESTful HTTP API is implemented and using NGSI10 for the context management interface.
 
 This implementation if currently limited to the `updateContext` operation.
-Therefore only publishing updates is supported. Subscribtion or polling of events is planned for later versions.
+Therefore only publishing updates is supported. Subscription or polling of events is planned for later versions.
 
 ## Prerequisites
 

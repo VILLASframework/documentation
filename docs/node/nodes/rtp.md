@@ -18,7 +18,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/rtp.cpp
 
 ### netem (dictionary)
 
-Enables and configures the network emulation qeueing discipline.
+Enables and configures the network emulation queuing discipline.
 
 For more information see also: [Netem Emulation](../netem.md)
 

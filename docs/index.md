@@ -17,7 +17,7 @@ We recently migrated our documentation to a new site. However, the [old document
 
 :::caution
 
-For starters we recommand to read the **[installation guide](installation.md)**!
+For starters we recommend to read the **[installation guide](installation.md)**!
 
 :::
 
@@ -52,7 +52,7 @@ Please contact [Prof. Antonello Monti](mailto:amonti@eonerc.rwth-aachen.de) for 
 ## Contact / Mailing list
 
 The project is using a public [mailing list](https://mailman.rwth-aachen.de/mailman/listinfo/villas) for announcements and general discussions.
-Please click on the link above to subsribe.
+Please click on the link above to subscribe.
 
 [Steffen Vogel](mailto:svogel2@eonerc.rwth-aachen.de) is coordinating development of VILLASframework and its application in project at ACS.
 

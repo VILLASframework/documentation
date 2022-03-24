@@ -5,7 +5,7 @@ sidebar_position: 10
 # Lab 10: The daemon
 
 During the previous labs, we use the `villas pipe`, `villas hook` and `villas signal` tools connect simulators and process the exchanged simulation data. This approach is handy for small tests, development and training.
-However, more complex scenaries are unmanagable with this approach.
+However, more complex scenarios are unmanagable with this approach.
 
 In this lab we introduce the VILLASnode daemon `villas node` which provides an easier way to setup complex scenarios.
 In addition, `villas node` benefits from lower latencies because we omit the standard input / output streams and the conversion of the samples in a human readable / line-based representation.
@@ -13,7 +13,7 @@ In addition, `villas node` benefits from lower latencies because we omit the sta
 **Note:** We recommend the usage of the daemon for all real-time critical HIL simulations
 
 The invocation of the daemon is pretty simple.
-Just pass the path to the configuration file as a paramteter:
+Just pass the path to the configuration file as a parameter:
 
 ```bash
 villas node lab10_path_uni.conf
@@ -183,7 +183,7 @@ In a last example we demonstrate a bi-directional path by using multiple entries
 @include "lab10_nodes.conf"
 
 paths = (
-	# Each path dictionary corresponds to one way communnication
+	# Each path dictionary corresponds to one way communication
 	{
 		in  = [ "rpi-1"  ],
 		out = [ "rtds-1" ]

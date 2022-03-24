@@ -7,10 +7,10 @@ VILLAScontroller is implemented in Python and using the [Kombo messaging package
 
 The Git repository is available at: http://git.rwth-aachen.de/acs/public/villas/controller
 
-The puporse of VILLAScontroller is the orchestration of IC in distributed lab setups.
+The purpose of VILLAScontroller is the orchestration of IC in distributed lab setups.
 This includes the following tasks:
 
-- managment: instantiation, deletion & discovery
+- management: instantiation, deletion & discovery
 - monitoring: status?
 - control: start, stop, pause, reset, resume, shutdown
 
@@ -34,7 +34,7 @@ For the purpose of addressing the ICs, we introduce the following categories (1s
   - `generic`
   - `kubernetes`
 
-These component types are implemented by the following class hierachy in VILLAScontroller's Python code:
+These component types are implemented by the following class hierarchy in VILLAScontroller's Python code:
 
 ```mermaid
 classDiagram
@@ -62,10 +62,10 @@ The exchange is named `villas`.
 
 ## Routing
 
-The following headers are used to identify and route messages to the receipients:
+The following headers are used to identify and route messages to the recipients:
 
 - `realm` describes the entity which is responsible for operating the equipment.
-  The realm should be a fully quallified domain name (FQDN) in reverse order.
+  The realm should be a fully qualified domain name (FQDN) in reverse order.
   - Examples:
     - `de.rwth-aachen.eonerc.acs`
     - `gov.inl`
@@ -116,7 +116,7 @@ Example of an application header:
 
 **Important:** Note that at least one of the headers must be provided. Otherwise no component will receive it.
 
-It is also valid to just provide a single header (e.g. `uuid` to address a specific component or `type` to adress a class of components).
+It is also valid to just provide a single header (e.g. `uuid` to address a specific component or `type` to address a class of components).
 
 ## State Machine
 
@@ -147,12 +147,12 @@ stateDiagram-v2
 
 ### Discovery
 
-In a messaging protocol like AMQP, brokers do not store message contents in a persistant way.
+In a messaging protocol like AMQP, brokers do not store message contents in a persistent way.
 They only temporarily queue messages until they have been delivered.
-Therefore, the broker cannot keep track of the state or presence of entitities.
+Therefore, the broker cannot keep track of the state or presence of entities.
 
 This section describes a simple discovery mechanism to work around this limitation.
-Each entity must react on `action = ping` messages and respond immediatly with a status response message.
+Each entity must react on `action = ping` messages and respond immediately with a status response message.
 
 ```json
 {
@@ -160,7 +160,7 @@ Each entity must react on `action = ping` messages and respond immediatly with a
 }
 ```
 
-After receiving such a message, each entity shall send a status update message as decribed below.
+After receiving such a message, each entity shall send a status update message as described below.
 
 ### Status Update
 
@@ -211,10 +211,10 @@ After receiving such a message, each entity shall send a status update message a
 	},
 	"schema": {
 		"start": {
-			/* JSON-Schma describing start parameters. */
+			/* JSON-Schema describing start parameters. */
 		},
 		"create": {
-			/* JSON-Schma describing properties of new ICs created via create action (targeted at ICs of category=manager). */
+			/* JSON-Schema describing properties of new ICs created via create action (targeted at ICs of category=manager). */
 		}
 	},
 	"when" : 1234567890 /* timestamp in seconds (UTC / Unix epoch / since 1970-01-01) (float) */
@@ -339,7 +339,7 @@ Another example for `type = generic`:
         ],
         "working_directory" : "/tmp/simulationX",
         "shell" : false,
-        "environemnt" : [
+        "environment" : [
             "DEBUG" : "1"
         ]
     },

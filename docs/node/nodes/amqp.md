@@ -35,7 +35,7 @@ The name of the AMQP exchange the node will publish the messages to.
 
 ### routing_key (string)
 
-The routing key of published messages as well as the routing key which is used to bind the subcriber queue.
+The routing key of published messages as well as the routing key which is used to bind the subscriber queue.
 
 ### ssl (object)
 

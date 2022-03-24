@@ -17,7 +17,7 @@ There are several built-in hooks for:
   - remapping values of a sample
   - overwriting / updating timestamps
   - converting data-types
-  - downsampling
+  - down-sampling
 
 But main goal of this mechanism is to provide extensibility for the end user.
 Example applications for hooks might be:
@@ -29,9 +29,9 @@ Example applications for hooks might be:
 
 Hooks can be added to the processing pipeline in three places:
 
-- **Node-read:**  Everytime a sample is received from a node
-- **Node-write:** Everytime a sample is sent to a node
-- **Path:**       Everytime a sample is processed within a path
+- **Node-read:**  Every time a sample is received from a node
+- **Node-write:** Every time a sample is sent to a node
+- **Path:**       Every time a sample is processed within a path
 
 Some hooks are built-in hooks which are by default enabled without a corresponding section in the configuration file.
 Usually, built-in hooks have no configurable options.

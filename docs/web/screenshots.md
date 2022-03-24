@@ -13,7 +13,7 @@ This information is outdated!
 ![Plot Widget Settings](/img/screenshots/web/VILLASweb_plot_widget_edit.png)
 ![User Management](/img/screenshots/web/VILLASweb_user_management_admin_medium.png)
 
-## Project / Simulator / Simulation Managment
+## Project / Simulator / Simulation Management
 
 ![Project List](/img/screenshots/web/VILLASweb_projects.png)
 ![Simulation Models](/img/screenshots/web/VILLASweb_simulation_models.png)
@@ -26,7 +26,7 @@ This information is outdated!
 ![Widget Catalog](/img/screenshots/web/VILLASweb_widgets_catalog.png)
 ![Visualization](/img/screenshots/web/VILLASweb_visualization.png)
 ![Edit Visualizations](/img/screenshots/web/VILLASweb_visualization_edit.png)
-![Visualization Contex Menu](/img/screenshots/web/VILLASweb_visualization_edit_context_menu.png)
+![Visualization Context Menu](/img/screenshots/web/VILLASweb_visualization_edit_context_menu.png)
 ![Edit Plot Widget](/img/screenshots/web/VILLASweb_plot_widget_edit.png)
 
 # Classic {#web-screenshots-classic}

@@ -4,7 +4,7 @@ hide_table_of_contents: true
 
 # Handle restarts
 
-The `restart` hook tries to detect starts/restarts of simulation cases by looking for wrap-arounds in sequence numbers.
+The `restart` hook tries to detect starts/restarts of simulation cases by looking for wrap-around in sequence numbers.
 
 ## Implementation
 

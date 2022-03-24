@@ -12,7 +12,7 @@ sidebar_position: 12
 In this lab we will show you the VILLASnode WebSockets mockup.
 The mockup is a simple webpage which receives / sends simulation from / to VILLASnode by using low latency WebSockets.
 
-This technique is usefull for live monitoring and user interaction with simulations.
+This technique is useful for live monitoring and user interaction with simulations.
 
 ## The configuration file
 
@@ -53,7 +53,7 @@ paths = (
 		out = [ "web_node1" ],
 
 		hooks = (
-			# We dont want to overload the WebBrowsers
+			# We do not want to overload the WebBrowsers
 			{ type = "decimate", ratio = 2 }
 		)
 	},

@@ -1,6 +1,6 @@
 # Sample {#node-dev-sample}
 
-One of the main design decissions while developing VILLASnode gateway was the choice of a simple and common data structure for simulation data.
+One of the main design decisions while developing VILLASnode gateway was the choice of a simple and common data structure for simulation data.
 
 In VILLAS terminology, we refer to this as a _sample_. A sample is a set of signals which have been generated, simulated or measured at the same sampling time instant. Each node-type needs to convert its own data format into the common intermediate data structure.
 This enables VILLASnode to interface each of the available [node-types](../nodes/index.md) with each other.
@@ -14,7 +14,7 @@ The data-structure used by VILLASnode is defined by the [`struct sample`](https:
 
 ### Sequence Number
 
-Each sample contains a sequence number. This sequence number needs to increase monotonicly.
+Each sample contains a sequence number. This sequence number needs to increase monotonically.
 The main purpose of the sequence number is the detection of lost, reordered or duplicated samples.
 
 ### Timestamps
@@ -38,7 +38,7 @@ union signal_data {
 struct sample {
     [...]
 
-    struct vlist *signals; /**< Signal defintions */
+    struct vlist *signals; /**< Signal definitions */
 
     // Variable length array
     union signal_data data[];
@@ -46,7 +46,7 @@ struct sample {
 ```
 
 Metadata such as signal names, units, data-types etc. which dot not change between samples are not part of `struct sample`.
-They are rather stored in a separate list of `struct signal` defintions.
+They are rather stored in a separate list of `struct signal` definitions.
 The design of VILLASnode assumes that the these signal definitions remain static over the runtime of VILLASnode,
 
 Each sample contains a pointer to this list of signal definitions.

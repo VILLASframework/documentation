@@ -23,7 +23,7 @@ The project consists of a server daemon and several client modules which are doc
 - Statistic collection quality of service of the interfaces
 - Web interface for live monitoring and control using WebSocket streams
 - [Remote API](development/api.md) for control via HTTP
-- Lua scriptable hook functions
+- Lua script-able hook functions
 - Network emulation using the Linux's [netem queuing discipline](https://wiki.linuxfoundation.org/networking/netem)
 - Multicast addressing for [Socket node-type](nodes/socket.md)
 - Deterministic and low jitter due to low level C/C++ implementation
@@ -40,7 +40,7 @@ The server simply acts as a gateway to forward simulation data from one client t
 Furthermore, it collects statistics, monitors the quality of service and handles encryption or tunneling through VPNs.
 
 For optimal performance the server is implemented in low-level C and makes use of several Linux-specific realtime features.
-The primary design goal was to make the behaviour of the system as deterministic as possible.
+The primary design goal was to make the behavior of the system as deterministic as possible.
 Therefore, it's advisable to run the server component on a [PREEMPT_RT](https://rt.wiki.kernel.org/index.php/CONFIG_PREEMPT_RT_Patch) patched version of Linux. In our environment, we use a Fedora-based distribution which has been stripped to the bare minimum (no GUI, only a few background processes).
 Have a look at [Tuning](tuning.md) for ways to improve the real-time performance of your system.
 
@@ -48,11 +48,11 @@ Have a look at [Tuning](tuning.md) for ways to improve the real-time performance
 
 There are two types of interfaces to VILLASnode:
 
-1.  The server handles diffrent types of nodes.
+1.  The server handles different types of nodes.
     The most commonly used node-type is the [Socket node-type](nodes/socket.md) which allows communication over network links (UDP, raw IP, raw Ethernet frames).
-    But there are also other specialized node types to retreive or send data to equipemnt, which is directly connected to or running on the server itself.
+    But there are also other specialized node types to retrieve or send data to equipment, which is directly connected to or running on the server itself.
     An example for such a node is the  [VILLASfpga node-type](nodes/fpga.md) which directly fetches and pushes data to a PCIe card.
-    Or the [File node-type](nodes/file.md) which logs or replays simulation data from the harddisk.
+    Or the [File node-type](nodes/file.md) which logs or replays simulation data from the hard-disk.
 
 2. An other way to connect simulation equipment is by using a client-application which itself sends the data over the network to VILLASnode.
     In this scenario, VILLASnode uses the [Socket node-type](nodes/socket.md) to communicate with the client-application.

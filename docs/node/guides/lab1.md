@@ -52,7 +52,7 @@ The first column is a combination of timestamp and sequence number in the form o
 The timestamp is derived from Unix time (seconds after 01/01/1970 UTC).
 The remaining columns contain the values of the sample.
 
-If you add the `-n` (non real-time mode) switch the data will be printed immeadiately to the screen:
+If you add the `-n` (non real-time mode) switch the data will be printed immediately to the screen:
 
 ```bash
 villas signal -l 10 -r 10 -F 3 -v 1 -n sine

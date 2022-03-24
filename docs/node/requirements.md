@@ -34,7 +34,7 @@ We explicitly advise against using virtualized environments for anything apart f
 
 ## Operating system
 
-VILLASnode is regularily tested on the following operating systems:
+VILLASnode is regularly tested on the following operating systems:
 
 - Fedora 34 (recommended)
 - Debian 11.2 - Bullseye

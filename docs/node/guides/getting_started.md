@@ -13,7 +13,7 @@ Please look below for a [video recording](#video) of a webinar covering the topi
 
 :::caution
 
-Please make sure that your system fullfills the [requirements](../requirements.md) before proceeding.
+Please make sure that your system fulfills the [requirements](../requirements.md) before proceeding.
 
 :::
 
@@ -27,7 +27,7 @@ To open an interactive terminal in the VILLASnode Docker container run:
 docker run --privileged --tty --interactive --entrypoint bash --volume C:\path\to\configs:/configs -p 80:80 registry.git.rwth-aachen.de/acs/public/villas/node
 ```
 
-For some lab excecises two interactive shells are required. To open a second shell, run the following command:
+For some lab exercises two interactive shells are required. To open a second shell, run the following command:
 
 ```bash
 docker exec --tty --interactive $(docker ps -qn1) bash
@@ -88,7 +88,7 @@ __All configurations files are available here: <https://git.rwth-aachen.de/acs/p
 - [Lab8](lab8.md): Use hook function to modify/filter the data
 - [Lab9](lab9.md): Network emulation and statistics
 - [Lab10](lab10.md): The daemon
-- [Lab11](lab11.md): Multi / Demultiplexing
+- [Lab11](lab11.md): Multi / De-multiplexing
 - [Lab12](lab12.md): WebSockets
 - [Lab13](lab13.md): Measure Round-trip time between RTDS and VILLASnode
 - [Lab14](lab14.md): File comparison

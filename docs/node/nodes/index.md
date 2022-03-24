@@ -12,7 +12,7 @@ Every node is an instance of a node-type. In a single VILLASnode instance, multi
 
 <figure align="center">
     <img alt="VILLASnode interfaces" src="/img/VILLASnode_interfaces.svg" width="100%" />
-    <figcaption>Excert of interfaces supported by VILLASnode.</figcaption>
+    <figcaption>Excerpt of interfaces supported by VILLASnode.</figcaption>
 </figure>
 
 VILLASnode currently supports the following node-types:

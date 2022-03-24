@@ -18,7 +18,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/websocke
 ## Configuration {#config}
 
 By default the [`villas node`](../usage/villas-node.md) daemon listens on [`http.port`](../config/http.md#port) for HTTP and WebSocket requests.
-This behaviour can be disabled by setting [`http.enabled`](../config/http.md#) to `false`.
+This behavior can be disabled by setting [`http.enabled`](../config/http.md#) to `false`.
 
 ### destinations (array of URIs)
 

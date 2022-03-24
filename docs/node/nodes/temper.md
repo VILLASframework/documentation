@@ -6,7 +6,7 @@ hide_table_of_contents: true
 # TEMPer / PCsensor temperature sensors
 
 The `temper` node-type reads out temperature and humidity measurements from TEMPer USB senors.
-These sensors are sold by [PCsenser](http://www.pcsensor.com/temperature-humidity-series.html).
+These sensors are sold by [PCsensor](http://www.pcsensor.com/temperature-humidity-series.html).
 
 The implementation is tested against the following products:
 

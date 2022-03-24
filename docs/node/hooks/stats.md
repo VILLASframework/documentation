@@ -16,17 +16,17 @@ Currently the following metrics are collected:
 | `owd`          | seconds | One-way-delay (OWD) of received messages                  |
 
 
-If the node to which this hook is attached an [`rtp` node-type](../nodes/rtp.md), the following additional statistics are collected from the RTP receiption reports.
+If the node to which this hook is attached an [`rtp` node-type](../nodes/rtp.md), the following additional statistics are collected from the RTP reception reports.
 The contains details about the quality of service as seen be the receiver.
 
 | Identifier             | Unit    | Description                         |
 | :--                    | :--     | :--                                 |
 | `rtp.loss_fraction`    | percent | Fraction lost since last RTP SR/RR. |
-| `rtp.pkts_lost`        | packets | Cumulative number of packtes lost.  |
-| `rtp.jitter`           | seconds?| Interarrival jitter                 |
+| `rtp.pkts_lost`        | packets | Cumulative number of packets lost.  |
+| `rtp.jitter`           | seconds?| Inter-arrival jitter                 |
 
 
-For each of the metrics the following moments / attrbributes are collected:
+For each of the metrics the following moments / attributes are collected:
 
 | Moment    | Type    | Description                                         |
 |:--        |:--      |:--                                                  |

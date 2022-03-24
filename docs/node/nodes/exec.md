@@ -33,7 +33,7 @@ In this case the `exec` setting must be given as an array (`argv[]`).
 
 ### exec (string|array)
 
-The program which should be execed in the sub-process.
+The program which should be executed in the sub-process.
 
 The options is passed to the system shell for execution.
 
@@ -47,7 +47,7 @@ If set, the working directory for the sub-process will be changed.
 
 ### environment (object)
 
-A object of key/value pairs of environemnt variables which should be passed to the sub-process **in addition** to the parent environment.
+A object of key/value pairs of environment variables which should be passed to the sub-process **in addition** to the parent environment.
 
 ## Example
 

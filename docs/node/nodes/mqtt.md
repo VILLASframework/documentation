@@ -4,7 +4,7 @@ hide_table_of_contents: true
 
 # MQTT
 
-The `mqtt` node-type uses [libmosquitto] to publish and subscribe messages via the [MQTT](http://mqtt.org) protocol. It is similiar to the [`amqp` node-type](amqp.md).
+The `mqtt` node-type uses [libmosquitto] to publish and subscribe messages via the [MQTT](http://mqtt.org) protocol. It is similar to the [`amqp` node-type](amqp.md).
 
 ## Prerequisites
 

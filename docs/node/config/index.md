@@ -77,7 +77,7 @@ VILLASnode substitutes any environment variables in you JSON and libconfig confi
 
 To replace environment variables you must use the following syntax within any string value of your config: `${MYENV_VAR}`.
 
-**Note:** Non-string values can currently not be subsituted by environment variables!
+**Note:** Non-string values can currently not be substituted by environment variables!
 
 #### Example
 

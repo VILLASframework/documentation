@@ -78,7 +78,7 @@ nodes = {
 ## Arguments for OPAL-RT block
 
 RT-LAB already provides a block to establish simple TCP/IP communication: ???
-This block is based on a more generic block used for aynchronous programs: ???
+This block is based on a more generic block used for asynchronous programs: ???
 
 :::note ToDo
 

@@ -19,7 +19,7 @@ During this lab we will use the following hook functions:
 | `restart`     | Call restart hooks for current path. |
 | `ts`          | Overwrite origin timestamp of samples with receive timestamp. |
 | `stats`       | Collect statistics for the current path. |
-| `decimate`    | Downsamping by integer factor. |
+| `decimate`    | Down-sampling by integer factor. |
 | `dp`          | Transform to/from dynamic phasor. |
 | `ebm`         | Energy based metric. |
 | `fix`         | Fix received data by adding missing fields. |
@@ -91,7 +91,7 @@ paths = (
 				priority = 1
 
 				# Hook specific parameters follow
-				# [paramter1] = [value1]
+				# [parameter1] = [value1]
 				ratio = 2
 			},
 			{
@@ -251,7 +251,7 @@ villas hook gate -o signal=0 -o mode=falling_edge < gate_in.dat > gate_out_re.da
 
 ## Convert values between floating point / integer representation (convert)
 
-This invocation convertes values 5-8 to a integer number with a gain factor of 1000:
+This invocation converts values 5-8 to a integer number with a gain factor of 1000:
 
 ```bash
 villas signal sine | villas hook convert 'mode="fixed" mask=0xf0 scale=1000.0'

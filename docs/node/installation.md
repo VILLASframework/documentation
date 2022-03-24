@@ -15,7 +15,7 @@ VILLASnode can be installed in multiple ways:
 
 :::caution
 
-Please make sure that your system fullfills the [requirements](requirements.md) before proceeding.
+Please make sure that your system fulfills the [requirements](requirements.md) before proceeding.
 
 :::
 

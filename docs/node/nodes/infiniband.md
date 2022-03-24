@@ -23,9 +23,9 @@ Every `infiniband` node can be configured to only read or write or to do both at
 
 This specifies the type of connection the node will set up.
 
-* `RC` provides reliable, connection-oriented, message based communication between the nodes. Packets are delivered in order. In this mode, one Queue Pair is connected to one othere Queue Pair.
+* `RC` provides reliable, connection-oriented, message based communication between the nodes. Packets are delivered in order. In this mode, one Queue Pair is connected to one other Queue Pair.
 * `UC` provides unreliable, connection-oriented, message based communication between the nodes. This service type is not officially supported by the RDMA communication manager and is implemented for scientific purposes in VILLASnode. [The InfiniBand node-type source code provides information on how to enable this service type.](https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/infiniband.c#L429)
-* `UD` provides unreliable, connectionless, datagram communication between nodes. Both ordering and delivery are not guaranteed in this mode.
+* `UD` provides unreliable, connection-less, datagram communication between nodes. Both ordering and delivery are not guaranteed in this mode.
 
 `RC`, `UC`, and `UD` are mapped to the Queue Pair types as `RDMA_PS_TCP`/`IBV_QPT_RC`, `RDMA_PS_IPOIB`/`IBV_QPT_UC`, and `RDMA_PS_UDP`/`IBV_QPT_UD`, respectively. If two nodes should be connected, both should be set to the same `rdma_port_space`.
 
@@ -55,7 +55,7 @@ Before a packet can be received with Infiniband, the application has to describe
 
 `in.max_wrs` sets the maximum number of receive Work Requests which can be posted to the receive queue of the Queue Pair.
 
-For higher throughputs, it is recommended to increase this value since it will serve as a buffer.
+For higher throughput, it is recommended to increase this value since it will serve as a buffer.
 The default value of this setting is 128.
 
 ### in.cq_size (integer) = 128
