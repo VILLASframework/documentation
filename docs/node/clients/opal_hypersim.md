@@ -1,4 +1,8 @@
-# OPAL-RT HYPERSIM {#node-client-hypersim}
+---
+sidebar_label: OPAL-RT HYPERSIM
+---
+
+# OPAL-RT HYPERSIM <img align="right" width="250px" src="/img/logos/opal.jpg" alt="OPAL-RT logo"></img>
 
 **Source code:** <http://git.rwth-aachen.de/acs/public/villas/node/tree/master/clients/hypersim>
 

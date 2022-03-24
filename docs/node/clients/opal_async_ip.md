@@ -1,4 +1,8 @@
-# OPAL-RT Asynchronous Process (AsyncIP)
+---
+sidebar_label: OPAL-RT AsyncIP
+---
+
+# OPAL-RT Asynchronous Process (AsyncIP) <img align="right" width="250px" src="/img/logos/opal.jpg" alt="OPAL-RT logo"></img>
 
 ## OPAL-RT RTlab Example Project
 

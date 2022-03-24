@@ -1,4 +1,8 @@
-# RTDS GTNET-SKT card {#node-client-gtnet}
+---
+sidebar_label: RTDS GTNET-SKT
+---
+
+# RTDS GTNET-SKT card <img align="right" width="150px" src="/img/logos/rtds.jpg" alt="RTDS Technologies logo"></img>
 
 **Example drafts:** <https://git.rwth-aachen.de/acs/public/villas/node/tree/master/clients/rtds/GTNETv2_SKT>
 
