@@ -202,6 +202,7 @@ Install the files to your search path:
 
 ```bash
 sudo make install
+echo /usr/local/lib | sudo tee /etc/ld.so.conf.d/local.conf
 sudo ldconfig
 ```
 
