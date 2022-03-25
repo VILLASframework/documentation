@@ -52,7 +52,7 @@ In this demonstration we use the following settings as an example:
 
 This [VILLASnode configuration](../config/index.md) configures a simple loopback of the data send by the Typhoon HIL target back to itself.
 
-``` title="typhoon.conf"
+``` url="external/node/etc/examples/typhoon.conf" title="typhoon.conf"
 stats = 1.0
 
 nodes = {
