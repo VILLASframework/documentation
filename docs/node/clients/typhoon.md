@@ -49,9 +49,11 @@ In this demonstration we use the following settings as an example:
 
 ### VILLASnode
 
-This VILLASnode configuration configures a simple loopback of the data send by the Typhoon HIL target back to itself.
+This [VILLASnode configuration](../config/index.md) configures a simple loopback of the data send by the Typhoon HIL target back to itself.
 
 ``` title="typhoon.conf"
+stats = 1.0
+
 nodes = {
     typhoon_1 = {
         type = "socket"
@@ -65,13 +67,17 @@ nodes = {
         in = {
             address = "*:12000"
 
-            signals = [
+            hooks = (
+                "stats"
+            )
+
+            signals = (
                 { name = "signal0", type="float" },
                 { name = "signal1", type="integer" },
                 { name = "signal2", type="boolean" },
                 { name = "signal3", type="float" },
                 { name = "signal4", type="complex" }
-            ]
+            )
         }
 
         out = {
