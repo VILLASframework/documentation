@@ -1,8 +1,13 @@
 ---
 sidebar_label: RTDS GTFPGA UDP
+title: RTDS GTFPGA UDP
 ---
 
 # RTDS GTFPGA UDP <img align="right" width="150px" src="/img/logos/rtds.jpg" alt="RTDS Technologies logo"></img>
+
+:::caution
+This page is outdated.
+:::
 
 The Xilinx ML507 FPGA board can be used as alternative to RTDS GTNET cards.
 

@@ -1,5 +1,6 @@
 ---
 sidebar_label: Typhoon HIL Ethernet VE
+title: Typhoon HIL Ethernet VE
 ---
 
 # Typhoon HIL Ethernet VE <img align="right" width="150px" src="/img/logos/typhoon.png" alt="Typhoon HIL logo"></img>

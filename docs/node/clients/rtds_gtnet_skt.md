@@ -1,5 +1,6 @@
 ---
 sidebar_label: RTDS GTNET-SKT
+title: RTDS GTNET-SKT card
 ---
 
 # RTDS GTNET-SKT card <img align="right" width="150px" src="/img/logos/rtds.jpg" alt="RTDS Technologies logo"></img>
