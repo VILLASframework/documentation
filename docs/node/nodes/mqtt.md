@@ -1,8 +1,9 @@
 ---
+sidebar_label: MQTT
 hide_table_of_contents: true
 ---
 
-# MQTT
+# Message Queuing Telemetry Transport (MQTT)
 
 The `mqtt` node-type uses [libmosquitto] to publish and subscribe messages via the [MQTT](http://mqtt.org) protocol. It is similar to the [`amqp` node-type](amqp.md).
 
@@ -16,34 +17,6 @@ The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/mqtt.cpp
 
 ## Configuration {#config}
-
-### format (string)
-
-The payload format which is used to encode and decode exchanged messages.
-
-### username (string)
-
-The username which is used for authentication with the MQTT broker.
-
-### password (string)
-
-The password which is used for authentication with the MQTT broker.
-
-### host (string)
-
-The hostname of the MQTT broker.
-
-### port (integer) = 1883
-
-The port number of the MQTT broker.
-
-### retain (boolean) = false
-
-### keepalive (integer) = 1
-
-### qos (integer) = 0
-
-## Configuration
 
 import ApiSchema from '@theme/ApiSchema';
 
