@@ -50,20 +50,23 @@ const config = {
             'redocusaurus',
             {
                 specs: [{
-                        routePath: '/api/node/',
-                        // Generated my Makefile
-                        spec: 'generated/node/openapi.yaml',
+                        id: 'node',
+                        route: '/api/node/',
+                        spec: 'external/node/doc/openapi/openapi.yaml',
                     },
                     {
-                        routePath: '/api/relay/',
+                        id: 'relay',
+                        route: '/api/relay/',
                         spec: 'external/node/doc/openapi-relay.yaml',
                     },
                     {
-                        routePath: '/api/controller/',
+                        id: 'controller',
+                        route: '/api/controller/',
                         spec: 'external/controller/doc/openapi.yaml',
                     },
                     {
-                        routePath: '/api/web/',
+                        id: 'web',
+                        route: '/api/web/',
                         // TODO this file is currently manually converter to OpenAPI spec v3
                         // See: https://git.rwth-aachen.de/acs/public/villas/web-backend-go/-/issues/85
                         spec: 'generated/web/openapi.yaml',

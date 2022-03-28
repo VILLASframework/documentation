@@ -1326,14 +1326,6 @@
     postcss "^8.4.12"
     postcss-sort-media-queries "^4.2.1"
 
-"@docusaurus/logger@2.0.0-beta.17":
-  version "2.0.0-beta.17"
-  resolved "https://registry.yarnpkg.com/@docusaurus/logger/-/logger-2.0.0-beta.17.tgz#89c5ace3b4efd5274adb0d8919328892c4466d02"
-  integrity sha512-F9JDl06/VLg+ylsvnq9NpILSUeWtl0j4H2LtlLzX5gufEL4dGiCMlnUzYdHl7FSHSzYJ0A/R7vu0SYofsexC4w==
-  dependencies:
-    chalk "^4.1.2"
-    tslib "^2.3.1"
-
 "@docusaurus/logger@2.0.0-beta.18":
   version "2.0.0-beta.18"
   resolved "https://registry.yarnpkg.com/@docusaurus/logger/-/logger-2.0.0-beta.18.tgz#12302f312a083eb018caa28505b63f5dd4ab6a91"
@@ -1556,7 +1548,7 @@
     react-router-dom "^5.2.0"
     rtlcss "^3.5.0"
 
-"@docusaurus/theme-common@2.0.0-beta.18":
+"@docusaurus/theme-common@2.0.0-beta.18", "@docusaurus/theme-common@^2.0.0-beta.17":
   version "2.0.0-beta.18"
   resolved "https://registry.yarnpkg.com/@docusaurus/theme-common/-/theme-common-2.0.0-beta.18.tgz#abf74f82c37d2ce813f92447cb020831290059fb"
   integrity sha512-3pI2Q6ttScDVTDbuUKAx+TdC8wmwZ2hfWk8cyXxksvC9bBHcyzXhSgcK8LTsszn2aANyZ3e3QY2eNSOikTFyng==
@@ -1601,7 +1593,7 @@
     fs-extra "^10.0.1"
     tslib "^2.3.1"
 
-"@docusaurus/types@2.0.0-beta.18":
+"@docusaurus/types@2.0.0-beta.18", "@docusaurus/types@^2.0.0-beta.17":
   version "2.0.0-beta.18"
   resolved "https://registry.yarnpkg.com/@docusaurus/types/-/types-2.0.0-beta.18.tgz#9446928a6b751eefde390420b39eac32ba26abb2"
   integrity sha512-zkuSmPQYP3+z4IjGHlW0nGzSSpY7Sit0Nciu/66zSb5m07TK72t6T1MlpCAn/XijcB9Cq6nenC3kJh66nGsKYg==
@@ -1610,18 +1602,6 @@
     joi "^17.6.0"
     utility-types "^3.10.0"
     webpack "^5.70.0"
-    webpack-merge "^5.8.0"
-
-"@docusaurus/types@^2.0.0-beta.15":
-  version "2.0.0-beta.17"
-  resolved "https://registry.yarnpkg.com/@docusaurus/types/-/types-2.0.0-beta.17.tgz#582e3d961ce4409ed17454669b3f6a7a9f696cdd"
-  integrity sha512-4o7TXu5sKlQpybfFFtsGUElBXwSpiXKsQyyWaRKj7DRBkvMtkDX6ITZNnZO9+EHfLbP/cfrokB8C/oO7mCQ5BQ==
-  dependencies:
-    commander "^5.1.0"
-    joi "^17.6.0"
-    querystring "0.2.1"
-    utility-types "^3.10.0"
-    webpack "^5.69.1"
     webpack-merge "^5.8.0"
 
 "@docusaurus/utils-common@2.0.0-beta.18":
@@ -1642,7 +1622,7 @@
     js-yaml "^4.1.0"
     tslib "^2.3.1"
 
-"@docusaurus/utils@2.0.0-beta.18":
+"@docusaurus/utils@2.0.0-beta.18", "@docusaurus/utils@^2.0.0-beta.17":
   version "2.0.0-beta.18"
   resolved "https://registry.yarnpkg.com/@docusaurus/utils/-/utils-2.0.0-beta.18.tgz#c3fe0e9fac30db4510962263993fd0ee2679eebb"
   integrity sha512-v2vBmH7xSbPwx3+GB90HgLSQdj+Rh5ELtZWy7M20w907k0ROzDmPQ/8Ke2DK3o5r4pZPGnCrsB3SaYI83AEmAA==
@@ -1662,27 +1642,6 @@
     tslib "^2.3.1"
     url-loader "^4.1.1"
     webpack "^5.70.0"
-
-"@docusaurus/utils@^2.0.0-beta.15":
-  version "2.0.0-beta.17"
-  resolved "https://registry.yarnpkg.com/@docusaurus/utils/-/utils-2.0.0-beta.17.tgz#6a696e2ec5e50b2271f2d26d31562e9f3e2bc559"
-  integrity sha512-yRKGdzSc5v6M/6GyQ4omkrAHCleevwKYiIrufCJgRbOtkhYE574d8mIjjirOuA/emcyLxjh+TLtqAA5TwhIryA==
-  dependencies:
-    "@docusaurus/logger" "2.0.0-beta.17"
-    "@svgr/webpack" "^6.0.0"
-    file-loader "^6.2.0"
-    fs-extra "^10.0.1"
-    github-slugger "^1.4.0"
-    globby "^11.0.4"
-    gray-matter "^4.0.3"
-    js-yaml "^4.1.0"
-    lodash "^4.17.21"
-    micromatch "^4.0.4"
-    resolve-pathname "^3.0.0"
-    shelljs "^0.8.5"
-    tslib "^2.3.1"
-    url-loader "^4.1.1"
-    webpack "^5.69.1"
 
 "@emotion/is-prop-valid@^0.8.8":
   version "0.8.8"
@@ -1821,6 +1780,22 @@
   version "1.0.0-beta.89"
   resolved "https://registry.yarnpkg.com/@redocly/openapi-core/-/openapi-core-1.0.0-beta.89.tgz#3c78419bad0cd291edf285dd507abdfddf789f88"
   integrity sha512-3+k9oIBhCcs7LJ50eCWB6FdwV4pDH06d613pwFo5F2TmDPviNVWothj3CO/BheDz24tc9K8xR5pQuECE65qr/w==
+  dependencies:
+    "@redocly/ajv" "^8.6.4"
+    "@types/node" "^14.11.8"
+    colorette "^1.2.0"
+    js-levenshtein "^1.1.6"
+    js-yaml "^4.1.0"
+    lodash.isequal "^4.5.0"
+    minimatch "^3.0.4"
+    node-fetch "^2.6.1"
+    pluralize "^8.0.0"
+    yaml-ast-parser "0.0.43"
+
+"@redocly/openapi-core@^1.0.0-beta.87":
+  version "1.0.0-beta.90"
+  resolved "https://registry.yarnpkg.com/@redocly/openapi-core/-/openapi-core-1.0.0-beta.90.tgz#edf53b23314368e190b005e1958c1f4a7dfaa2c3"
+  integrity sha512-MvkME+AWCBexyJyNp/sVFRUBjxCSk5CQ+CAozkwm0t/HusXp9G+kH26+e9giD6Fms129smr1qp3pCAUbwJZzZA==
   dependencies:
     "@redocly/ajv" "^8.6.4"
     "@types/node" "^14.11.8"
@@ -2063,7 +2038,7 @@
     "@svgr/plugin-svgo" "^5.5.0"
     loader-utils "^2.0.0"
 
-"@svgr/webpack@^6.0.0", "@svgr/webpack@^6.2.1":
+"@svgr/webpack@^6.2.1":
   version "6.2.1"
   resolved "https://registry.yarnpkg.com/@svgr/webpack/-/webpack-6.2.1.tgz#ef5d51c1b6be4e7537fb9f76b3f2b2e22b63c58d"
   integrity sha512-h09ngMNd13hnePwgXa+Y5CgOjzlCvfWLHg+MBnydEedAnuLRzUHUJmGS3o2OsrhxTOOqEsPOFt5v/f6C5Qulcw==
@@ -4637,28 +4612,30 @@ dns-txt@^2.0.2:
   dependencies:
     buffer-indexof "^1.0.0"
 
-docusaurus-plugin-redoc@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/docusaurus-plugin-redoc/-/docusaurus-plugin-redoc-0.7.0.tgz#a78d51d0a50ba70464e15f0ec69b24a4001f7248"
-  integrity sha512-+tq8Jl4H3zuuTHPGT4Yg6LJnDsBK2+qy2IpBK1D0nO0EVfYPKViRMlzwJ18XfWGsxeH1JQ+T/oiZ9AfQEMNR/g==
+docusaurus-plugin-redoc@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/docusaurus-plugin-redoc/-/docusaurus-plugin-redoc-1.0.0.tgz#ade7de2a9c6668ff365703e36707fac25caad333"
+  integrity sha512-BvohSiMfA15FaF5qy8+DHCCEzNXqZ8J4gjLT1G9M3zfcPkI7U2IoacCt66mnjN0tnJG3yvMlJ5LyxTKBWrkIGQ==
   dependencies:
-    "@docusaurus/types" "^2.0.0-beta.15"
-    "@docusaurus/utils" "^2.0.0-beta.15"
+    "@docusaurus/types" "^2.0.0-beta.17"
+    "@docusaurus/utils" "^2.0.0-beta.17"
+    "@redocly/openapi-core" "^1.0.0-beta.87"
     joi "^17.5.0"
-    yaml "^1.10.2"
+    redoc "^2.0.0-rc.64"
 
-docusaurus-theme-redoc@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/docusaurus-theme-redoc/-/docusaurus-theme-redoc-0.6.0.tgz#c16c2377ce9f209768373132f0f437c8d2403d46"
-  integrity sha512-wjgvUPnvsjt9DAD7pPbqOhD5CRtQUDvdYvtlLucClruEF72XfWRHpJLrZWiyVn1AjjR/5rfhGdPcYZTsRghGNw==
+docusaurus-theme-redoc@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/docusaurus-theme-redoc/-/docusaurus-theme-redoc-1.0.1.tgz#d0ee11f02d7d4f951e16428cd1e20dadadebbcdc"
+  integrity sha512-FwnQbU5Fca3/zc0q9lZUDM4uhN8NWFCxJOTQXNa1nPU61iyBtWipqrLgAXqKP6jjjhE1QYI4MfmhIsO2+S2pgw==
   dependencies:
-    "@docusaurus/types" "^2.0.0-beta.15"
+    "@docusaurus/theme-common" "^2.0.0-beta.17"
+    "@docusaurus/types" "^2.0.0-beta.17"
     clsx "^1.1.1"
     copyfiles "^2.4.1"
     lodash "^4.17.21"
     mobx "^6.3.13"
     node-polyfill-webpack-plugin "^1.1.4"
-    redoc "^2.0.0-rc.61"
+    redoc "^2.0.0-rc.64"
     styled-components "^5.3.3"
     to-arraybuffer "^1.0.1"
 
@@ -8079,11 +8056,6 @@ querystring@0.2.0:
   resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
   integrity sha1-sgmEkgO7Jd+CDadW50cAWHhSFiA=
 
-querystring@0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.2.1.tgz#40d77615bb09d16902a85c3e38aa8b5ed761c2dd"
-  integrity sha512-wkvS7mL/JMugcup3/rMitHmd9ecIGd2lhFhK9N3UUQ450h66d1r3Y9nvXzQAW1Lq+wyx61k/1pfKS5KuKiyEbg==
-
 queue-microtask@^1.2.2:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/queue-microtask/-/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
@@ -8372,7 +8344,7 @@ recursive-readdir@^2.2.2:
   dependencies:
     minimatch "3.0.4"
 
-redoc@^2.0.0-rc.61:
+redoc@^2.0.0-rc.64:
   version "2.0.0-rc.65"
   resolved "https://registry.yarnpkg.com/redoc/-/redoc-2.0.0-rc.65.tgz#54f3e8fe7b526ab22cb9f2d5a0b122367181beb6"
   integrity sha512-VqJbhb3krYXFP8De7ygyaWsA4jr9K5avsMo3GJUDv2xPiHTOzcprkIfOaL4ZdINn03x6JT1GOa47cWhrmb5KVA==
@@ -8401,14 +8373,14 @@ redoc@^2.0.0-rc.61:
     swagger2openapi "^7.0.6"
     url-template "^2.0.8"
 
-redocusaurus@0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/redocusaurus/-/redocusaurus-0.7.0.tgz#c930a55ab98975f723dcc20bdbe206fee4dfe90e"
-  integrity sha512-Jnj1wE6loQzXdLi2SJKuXMh/xjNrNt6W80y5rCBAI7d87hHQ4Ez97X7PGY59FpQOlfZuN4xd97QmtLJn4PM9ew==
+redocusaurus@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/redocusaurus/-/redocusaurus-1.0.1.tgz#f423d3cd0a09c8779100f4d861873705696c4488"
+  integrity sha512-i7vytxCLhnIjutTYRDFS9u/brREMkY0bIlAN3Qec5HDWNd8n5GxTI49fcygc63+QN4RlGLxlv19Ho0TTO6rHbA==
   dependencies:
-    "@docusaurus/types" "^2.0.0-beta.15"
-    docusaurus-plugin-redoc "^0.7.0"
-    docusaurus-theme-redoc "^0.6.0"
+    "@docusaurus/types" "^2.0.0-beta.17"
+    docusaurus-plugin-redoc "1.0.0"
+    docusaurus-theme-redoc "1.0.1"
 
 reftools@^1.1.9:
   version "1.1.9"
@@ -10044,7 +10016,7 @@ webpack-sources@^3.2.3:
   resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-3.2.3.tgz#2d4daab8451fd4b240cc27055ff6a0c2ccea0cde"
   integrity sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==
 
-webpack@^5.69.1, webpack@^5.70.0:
+webpack@^5.70.0:
   version "5.70.0"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.70.0.tgz#3461e6287a72b5e6e2f4872700bc8de0d7500e6d"
   integrity sha512-ZMWWy8CeuTTjCxbeaQI21xSswseF2oNOwc70QSKNePvmxE7XW36i7vpBMYZFAUHPwQiEbNGCEYIOOlyRbdGmxw==
