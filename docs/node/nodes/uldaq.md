@@ -80,6 +80,13 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/uldaq.cp
 
 ### in.sample_rate (float)
 
+
+## Configuration
+
+import ApiSchema from '@theme/ApiSchema';
+
+<ApiSchema example pointer="#/components/schemas/uldaq" />
+
 ## Example
 
 ``` url="external/node/etc/examples/nodes/uldaq.conf" title="node/etc/examples/nodes/uldaq.conf"

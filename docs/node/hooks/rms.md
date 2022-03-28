@@ -1,0 +1,40 @@
+---
+hide_table_of_contents: true
+---
+
+# RMS signals
+
+The `rms` hook calculates the RMS of signals on a given window.
+
+## Implementation
+
+The source code of the hook is available here:
+https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/rms.cpp
+
+## Configuration
+
+import ApiSchema from '@theme/ApiSchema';
+
+<ApiSchema example pointer="#/components/schemas/rms" />
+
+## Example
+
+``` url="external/node/etc/examples/hooks/rms.conf" title="node/etc/examples/hooks/rms.conf"
+@include "hook-nodes.conf"
+
+paths = (
+	{
+		in = "signal_node"
+		out = "file_node"
+
+		hooks = (
+			{
+				type = "rms"
+
+				signal = "sine"
+				window_size = 1000
+			}
+		)
+	}
+)
+```

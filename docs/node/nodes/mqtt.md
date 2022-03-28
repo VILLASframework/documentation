@@ -43,6 +43,12 @@ The port number of the MQTT broker.
 
 ### qos (integer) = 0
 
+## Configuration
+
+import ApiSchema from '@theme/ApiSchema';
+
+<ApiSchema example pointer="#/components/schemas/mqtt" />
+
 ## Example
 
 ``` url="external/node/etc/examples/nodes/mqtt.conf" title="node/etc/examples/nodes/mqtt.conf"
