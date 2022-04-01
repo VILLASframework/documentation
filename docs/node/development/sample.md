@@ -28,20 +28,32 @@ In order to ease implementation of new node-types, the data structure is kept as
 Each sample stores its signal data as a linear array of values:
 
 ```c
-union signal_data {
-	double f;			/**< Floating point values. */
-	int64_t i;			/**< Integer values. */
-	bool b;				/**< Boolean values. */
-	float _Complex z;		/**< Complex values. */
+union SignalData {
+    double f;			            /**< Floating point values. */
+    int64_t i;			            /**< Integer values. */
+    bool b;				            /**< Boolean values. */
+    float _Complex z;	            /**< Complex values. */
 };
 
-struct sample {
-    [...]
+struct Sample {
+    uint64_t sequence;			    /**< The sequence number of this sample. */
+    unsigned length;			    /**< The number of values in sample::values which are valid. */
+    unsigned capacity;			    /**< The number of values in sample::values for which memory is reserved. */
+    int flags;                      /**< Flags are used to store binary properties of a sample. */
 
-    struct vlist *signals; /**< Signal definitions */
+    SignalList::Ptr signals;	    /**< The list of signal descriptors. */
 
-    // Variable length array
-    union signal_data data[];
+    std::atomic<int> refcnt;	    /**< Reference counter. */
+    ptrdiff_t pool_off;			    /**< This sample belongs to this memory pool (relative pointer). See sample_pool(). */
+
+    /** All timestamps are seconds / nano seconds after 1.1.1970 UTC */
+    struct {
+        struct timespec origin;		/**< The point in time when this data was sampled. */
+        struct timespec received;	/**< The point in time when this data was received. */
+    } ts;
+
+    // Variable length array at the end of the struct
+    union SignalData data[];
 };
 ```
 
@@ -50,6 +62,4 @@ They are rather stored in a separate list of `struct signal` definitions.
 The design of VILLASnode assumes that the these signal definitions remain static over the runtime of VILLASnode,
 
 Each sample contains a pointer to this list of signal definitions.
-The indices of signal data coressponds to the index within the list of signal definitions.
-
-See @node-dev-signal for more details.
+The indices of signal data corresponds to the index within the list of signal definitions.

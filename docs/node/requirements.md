@@ -9,7 +9,7 @@ This page documents the requirements for running VILLASnode.
 ## Hardware
 
 We recommend a recent 64-bit Intel x86_64 Xeon server with at least 8 CPU cores in combination with a professional Intel network card providing multiple independent Ethernet ports.
-This allows you to optimize VILLAS to run on an isolated set of CPU cores and use a dedicted network port for the simulation data.
+This allows you to optimize VILLAS to run on an isolated set of CPU cores and use a dedicated network port for the simulation data.
 Please have a look at the [tuning guide](./tuning.md) for details.
 
 Minimum tested system requirements are:
