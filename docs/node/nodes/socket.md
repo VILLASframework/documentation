@@ -30,61 +30,9 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/socket.c
 
 ## Configuration {#config}
 
-Every `socket` node supports the following special settings:
+import ApiSchema from '@theme/ApiSchema';
 
-### format (string: "csv" | "json" | "villas.human" | "raw" | ...)
-
-The payload format which is used to encode and decode exchanged messages.
-
-See: [Format Types](../formats/index.md)
-
-### in.address (string: "ip:port" | "mac:protocol")
-
-The local address and port number this node should listen for incoming packets.
-
-Use `*` to listen on all interfaces: `local = "*:12000"`.
-
-### out.address (string: "ip:port" | "mac:protocol")
-
-The remote address and port number to which this node will send data.
-
-### layer (string: "udp" | "ip" | "eth") = "udp"
-
-Select the network layer which should be used for the socket. Please note that `eth` can only be used locally in a LAN as it contains no routing information for the internet.
-
-### verify_source (boolean) = false
-
-Check if source address of incoming packets matches the remote address.
-
-### out.netem (dictionary)
-
-Enables and configures the network emulation queuing discipline.
-
-For information see also: [Netem emulation](../netem.md)
-
-### in.multicast (dictionary)
-
-The `socket` node-type supports sending and receiving IP / UDP packets to and from multicast addresses.
-
-**Note:** Multicast is only supported by IPv4 addressing. Using these settings with `layer = eth` or IPv6 addresses will fail!
-
-### in.multicast.enabled (boolean) = true
-
-Weather or not multicast group subscription is active.
-
-### in.multicast.group (string: IPv4 Address)
-
-The multicast group. Must be within 224.0.0.0/4
-
-### in.multicast.interface (string: IPv4 Address)
-
-The IP address of the interface which should receive multicast packets.
-
-### in.multicast.ttl (integer)
-
-The time to live for outgoing multicast packets.
-
-### in.multicast.loop (boolean)
+<ApiSchema example pointer="#/components/schemas/socket" />
 
 ## Example
 

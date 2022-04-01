@@ -20,17 +20,9 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/loopback
 
 ## Configuration {#config}
 
-### queuelen (integer)
+import ApiSchema from '@theme/ApiSchema';
 
-The queue length of the internal queue which buffers the samples.
-
-### samplelen (integer)
-
-The number of values each buffered sample can store.
-
-### mode (string: "pthread" | "polling" | "pipe" | "eventfd" | "auto") = "auto"
-
-Specify the synchronization mode of the internal queue.
+<ApiSchema example pointer="#/components/schemas/loopback" />
 
 ## Example
 

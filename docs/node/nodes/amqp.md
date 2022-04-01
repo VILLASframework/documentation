@@ -21,25 +21,9 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/amqp.cpp
 
 ## Configuration {#config}
 
-### format (string)
+import ApiSchema from '@theme/ApiSchema';
 
-The payload format which is used to encode and decode exchanged messages.
-
-### uri (string)
-
-See also: https://www.rabbitmq.com/uri-spec.html
-
-### exchange (string)
-
-The name of the AMQP exchange the node will publish the messages to.
-
-### routing_key (string)
-
-The routing key of published messages as well as the routing key which is used to bind the subscriber queue.
-
-### ssl (object)
-
-**Note:** These settings are only used if the [`uri` setting](#uri) is using the `amqps://` schema.
+<ApiSchema example pointer="#/components/schemas/amqp" />
 
 ## Example
 

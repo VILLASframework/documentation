@@ -21,17 +21,9 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/nanomsg.
 
 ## Configuration {#config}
 
-### format (string)
+import ApiSchema from '@theme/ApiSchema';
 
-The payload format which is used to encode and decode exchanged messages.
-
-### publish (string / array of strings: uri)
-
-A single endpoint URI or list of URIs on which this node should listen for subscribers.
-
-### subscribe (string / array of strings: uri)
-
-A single endpoint URI or list of URIs pointing to which this node should connect to as a subscriber.
+<ApiSchema example pointer="#/components/schemas/nanomsg" />
 
 ### Endpoints
 

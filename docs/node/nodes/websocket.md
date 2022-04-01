@@ -20,20 +20,9 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/websocke
 By default the [`villas node`](../usage/villas-node.md) daemon listens on [`http.port`](../config/http.md#port) for HTTP and WebSocket requests.
 This behavior can be disabled by setting [`http.enabled`](../config/http.md#) to `false`.
 
-### destinations (array of URIs)
+import ApiSchema from '@theme/ApiSchema';
 
-During startup connect to those WebSocket servers as a client.
-
-Each URI must use the following scheme:
-
-```
-protocol://host:port/nodename
-```
-
-It starts with a protocol which must be one of `ws` (unencrypted) or `wss` (SSL).
-The host name or IP address is separated by `://`.
-The optional port number is separated by a colon `:`.
-The node name is separated by a slash `/`.
+<ApiSchema example pointer="#/components/schemas/websocket" />
 
 ## Example
 

@@ -22,35 +22,9 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/zeromq.c
 
 ## Configuration {#config}
 
-### format (string)
+import ApiSchema from '@theme/ApiSchema';
 
-The payload format which is used to encode and decode exchanged messages.
-
-### filter (string: "pubsub" | "radiodish")
-
-### publish (string: uri)
-
-### subscribe (string / array of strings: uri)
-
-### ipv6 (bool) = false
-
-### CurveZMQ cryptography
-
-**Note:** This feature is currently broken.
-
-You can use the [`villas zmq-keygen`](../usage/villas-zmq-keygen.md) command to create a new keypair for the following configuration options:
-
-#### curve.enabled (bool) = true
-
-Whether or not the encryption is enabled.
-
-#### curve.public_key (string: Z85 encoded)
-
-The public key of the server.
-
-#### curve.private_key (string: Z85 encoded)
-
-The private key of the server.
+<ApiSchema example pointer="#/components/schemas/websocket" />
 
 ## Example
 

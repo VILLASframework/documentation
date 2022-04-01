@@ -26,13 +26,9 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/opal.cpp
 
 ## Configuration {#config}
 
-Every `opal` node supports the following special settings:
+import ApiSchema from '@theme/ApiSchema';
 
-### send_id (integer)
-
-### recv_id (integer)
-
-### reply (boolean)
+<ApiSchema example pointer="#/components/schemas/opal" />
 
 ## Example
 
