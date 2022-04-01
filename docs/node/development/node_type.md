@@ -26,7 +26,7 @@ VILLASnode already comes with a lot of existing implementations of node-types wh
     cp include/villas/example.hpp include/villas/my_proto.hpp
     ```
 
-1. Add the new C++ file to the [`lib/nodes/CMakeLists.txt`] file
+1. Add the new C++ file to the [`lib/nodes/CMakeLists.txt`](https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/nodes/CMakeLists.txt) file
     - Make sure it is guarded by the new CMake option introduce in step 2)
 
 1. Implement the new node-type by editing `my_proto.cpp` and `my_proto.cpp`
