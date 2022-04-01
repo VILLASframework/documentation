@@ -7,6 +7,11 @@ sidebar_position: 5
 This page is not directly related to VILLASnode.
 It describes several ways to optimize the host system for running real-time applications like VILLASnode.
 
+
+## Hardware
+
+Please have a look at the [requirements page](./requirements.md) for some recommended hardware selection.
+
 ## Operating System and Kernel
 
 For minimum latency several kernel and driver settings can be optimized.
@@ -41,12 +46,12 @@ systemctl enable tuned && systemctl start tuned
 option e1000e InterruptThrottleRate=
 ```
 
-## Hardware
+## Real-time
 
-This are some proposals for the selection of appropriate server hardware:
+In general we recommend to run VILLASnode with super-user privileges (`sudo villas-node`) as it grants VILLASnode the permission to tweak several system settings for real-time execution.
 
-- Server-grade CPU: Intel Xeon
-  - A multi-core system enables true parallel execution of multiple send / receive paths.
+When VILLASnode is executed in a Docker container, please use the following command line:
 
-- Server-grade network cards: Intel PRO/1000
-  - These allow offloading of UDP checksum calculation to the hardware
+```bash
+docker run -cpu-rt-period=1000000 --cpu-rt-runtime=800000 --ulimit rtprio=99 --cap-add sys_nice --privileged registry.git.rwth-aachen.de/acs/public/villas/node node
+```
