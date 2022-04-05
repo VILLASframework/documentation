@@ -28,19 +28,9 @@ You can use the [`vectorize` setting](../config/nodes.md#vectorize) to send mult
 
 Every `ngsi` node supports the following special settings:
 
-### endpoint (string: uri)
+import ApiSchema from '@theme/ApiSchema';
 
-### entity_id (string)
-
-### entity_type (string)
-
-### ssl_verify (boolean)
-
-### timeout (float: seconds)
-
-### mapping (array of strings)
-
-Example: `AttributeName(AttributeType) MetadataName1(MetadataType1)=MetadataValue1 MetadataName2(MetadataType2)=MetadataValue2 ...`
+<ApiSchema example pointer="#/components/schemas/ngsi" />
 
 ## Example
 

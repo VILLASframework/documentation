@@ -24,22 +24,9 @@ The source code of the node-type is available here:
 https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/temper.cpp
 
 ## Configuration {#config}
+import ApiSchema from '@theme/ApiSchema';
 
-### calibration.scale (double) = 1.0
-
-A scaling factor for calibrating the sensor.
-
-### calibration.offset (double) = 0.0 
-
-An offset for calibrating the sensor.
-
-### bus (integer)
-
-A filter applied to the USB bus number for selecting a specific sensor if multiple are available.
-
-### port (integer)
-
-A filter applied to the USB port number for selecting a specific sensor if multiple are available.
+<ApiSchema example pointer="#/components/schemas/temper" />
 
 ## Example
 

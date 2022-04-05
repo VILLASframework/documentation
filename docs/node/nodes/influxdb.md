@@ -21,15 +21,9 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/influxdb
 
 ## Configuration {#config}
 
-### server (string)
+import ApiSchema from '@theme/ApiSchema';
 
-A hostname/port combination of the InfluxDB database server.
-
-### key (string)
-
-The key is the measurement name and any optional tags separated by commas.
-
-See also: [InfluxDB documentation](https://docs.influxdata.com/influxdb/v0.9/write_protocols/line/#key)
+<ApiSchema example pointer="#/components/schemas/influxdb" />
 
 ## Example
 

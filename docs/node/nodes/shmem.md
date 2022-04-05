@@ -17,38 +17,9 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/shmem.cp
 
 ## Configuration {#config}
 
-The only required configuration option is the `name` option; all others are optional with reasonable defaults.
+import ApiSchema from '@theme/ApiSchema';
 
-### in.name (string)
-
-### out.name (string)
-
-Name of the POSIX shared memory object. Must start with a forward slash (`/`).
-The same name should be passed to the external program somehow in its
-configuration or command-line arguments.
-
-### queuelen (int)
-
-Length of the input and output queues in elements. Defaults to `DEFAULT_SHMEM_QUEUELEN`,
-a compile-time constant.
-
-### samplelen (int)
-
-Maximum number of data elements in a single `struct sample` for the samples handled
-by this node. Defaults to `DEFAULT_SHMEM_SAMPLELEN`, a compile-time constant.
-
-### mode (string: "pthread" | "polling") = "pthread"
-
-If set to `pthread`, POSIX condition variables are used to signal writes between processes.
-If set to `polling`, no CV's are used, meaning that blocking writes have to be
-implemented using polling, leading to performance improvements at a cost of
-unnecessary CPU usage. Defaults to `pthread`.
-
-### exec (array of strings)
-
-Optional name and command-line arguments (as passed to `execve`) of a command
-to be executed during node startup. This can be used to start the external
-program directly from VILLASNode. If unset, no command is executed.
+<ApiSchema example pointer="#/components/schemas/shmem" />
 
 ## Example
 

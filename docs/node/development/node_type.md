@@ -32,6 +32,7 @@ VILLASnode already comes with a lot of existing implementations of node-types wh
 1. Implement the new node-type by editing `my_proto.cpp` and `my_proto.cpp`
     - Make sure to register the new node-type in the last lines of `my_proto.cpp`.
     - Adjust the node-type name as well as add a short description.
+    - Remove the `NodeFactory::Flags::HIDDEN` flag from the node-type registration.
 
 1. Implement an integration test for your node-type which test its functionality in an end-to-end test:
     ```bash

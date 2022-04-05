@@ -17,48 +17,9 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/kafka.cp
 
 ## Configuration {#config}
 
-### format (string) = "villas.binary"
+import ApiSchema from '@theme/ApiSchema';
 
-The payload format which is used to encode and decode exchanged messages.
-
-### server (string)
-
-The bootstrap server {ip}:{port} of the Kafka message brokers cluster.
-
-### protocol (string: "PLAINTEXT" | "SASL_PLAINTEXT" | "SASL_SSL" | "SSL")
-
-The [security protocol](https://kafka.apache.org/24/javadoc/org/apache/kafka/common/security/auth/SecurityProtocol.html) which is used for authentication with the Kafka cluster.
-
-### client_id (string)
-
-The Kafka client identifier.
-
-### ssl.ca (string)
-
-Path to a Certificate Authority (CA) bundle which is used to validate broker server certificate.
-
-### sasl (object)
-
-An object for configuring the SASL authentication against the broker.
-This setting is used if [setting `protocol`](#protocol) is on of `SASL_PLAINTEXT` or `SASL_SSL`.
-
-See below for an example.
-
-### in.consume (string)
-
-The Kafka topic to which this node-type will subscribe for receiving messages.
-
-### in.group_id (string)
-
-The group id of the Kafka client used for receiving messages.
-
-### out.produce (string)
-
-The Kafka topic to which this node-type will publish messages.
-
-### timeout (float) = 1.0
-
-A timeout in seconds for the broker connection.
+<ApiSchema example pointer="#/components/schemas/kafka" />
 
 ## Example
 

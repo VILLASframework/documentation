@@ -16,11 +16,9 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/rtp.cpp
 
 ## Configuration {#config}
 
-### netem (dictionary)
+import ApiSchema from '@theme/ApiSchema';
 
-Enables and configures the network emulation queuing discipline.
-
-For more information see also: [Netem Emulation](../netem.md)
+<ApiSchema example pointer="#/components/schemas/rtp" />
 
 ## Example
 
