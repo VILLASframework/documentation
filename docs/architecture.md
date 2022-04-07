@@ -2,17 +2,15 @@
 sidebar_position: 2
 ---
 
-# Architecture {#framework-architecture}
+# Architecture
 
-Design objective for VILLAS framework: a holistic framework with modular and generic architecture.
+<div align="center">
+    <img alt="VILLASframework architecture" src="/img/VILLASframework_architecture.svg" />
+</div>
 
-## Integration Layers {#framework-architecture-layers}
+## Integration Layers
 
 Three integration layers are foreseen based on the diversity of the facilities and applications:
-
-- Hard Real-Time Integration Layer (H-RTIL)
-- Soft Real-Time Integration Layer (S-RTIL)
-- Offline Integration Layer (O-IL)
 
 <div align="center">
     <img alt="VILLAS integration layers." src="/img/Generic_VILLAS_Architecture_mapping.svg" width="75%" />
@@ -36,11 +34,8 @@ Three integration layers are foreseen based on the diversity of the facilities a
 - An interface to adapt parameters or models of experiments in a pre-experiment phase
 - Non-real-time tasks during the experiment, such as data logging for Data as a Service
 
-## Example scenarios {#framework-architecture-scenarios}
+## Example scenario
 
 The following diagrams show example configuration of VILLASframework components as they have been used in various demonstrations and experiments:
 
-![Two site scenario with VILLASfpga.](/img/VILLASnode_large.svg)
 ![VILLASframework.](/img/VILLASframework.svg)
-![ERIClab scenario.](/img/VILLASframework_ERIC_lab.svg)
-![RT-SuperLab scenario.](/img/VILLASframework_RT_SuperLab.svg)
