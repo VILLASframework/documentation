@@ -17,9 +17,9 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/stats.cp
 
 ## Configuration {#config}
 
-:::note ToDo
-Document config settings of statistics node-type
-:::
+import ApiSchema from '@theme/ApiSchema';
+
+<ApiSchema id="node" example pointer="#/components/schemas/stats_node" />
 
 ## Example
 

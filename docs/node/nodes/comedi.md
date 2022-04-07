@@ -15,9 +15,9 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/comedi.c
 
 ## Configuration {#config}
 
-:::note ToDo
-Document configuration options for Comedi node-type.
-:::
+import ApiSchema from '@theme/ApiSchema';
+
+<ApiSchema id="node" example pointer="#/components/schemas/comedi" />
 
 ## Example
 

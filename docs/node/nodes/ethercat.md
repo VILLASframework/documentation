@@ -19,9 +19,9 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/ethercat
 
 ## Configuration {#config}
 
-:::note ToDo
-Document EtherCAT node-type
-:::
+import ApiSchema from '@theme/ApiSchema';
+
+<ApiSchema id="node" example pointer="#/components/schemas/ethercat" />
 
 ## Example
 

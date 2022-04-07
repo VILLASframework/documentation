@@ -18,9 +18,9 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/can.cpp
 
 ## Configuration {#config}
 
-:::note ToDo
-Finish CAN node-type documentation.
-:::
+import ApiSchema from '@theme/ApiSchema';
+
+<ApiSchema id="node" example pointer="#/components/schemas/can" />
 
 ## Example
 

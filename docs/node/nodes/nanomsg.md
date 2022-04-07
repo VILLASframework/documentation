@@ -4,9 +4,12 @@ hide_table_of_contents: true
 
 # nanomsg
 
-The `nanomsg` node-type uses [libzmq] to exchange messages via the [ZMTP](https://rfc.nanomsg.org/spec:23/ZMTP/) protocol. It is similiar to the [`zeromq` node-type](zeromq.md).
+The `nanomsg` node-type uses [libnanomsg](http://nanomsg.org/) to exchange messages.
+It is similar to the [`zeromq` node-type](zeromq.md).
 
-> nanomsg is a socket library that provides several common communication patterns. It aims to make the networking layer fast, scalable, and easy to use. Implemented in C, it works on a wide range of operating systems with no further dependencies.
+> nanomsg is a socket library that provides several common communication patterns.
+It aims to make the networking layer fast, scalable, and easy to use.
+Implemented in C, it works on a wide range of operating systems with no further dependencies.
 
 The `nanomsg` node-type only implements the [publish-subscribe protocol](http://nanomsg.org/v1.0.0/nn_pubsub.7.html) provided by nanomsg.
 

@@ -18,7 +18,9 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/test_rtt
 
 ## Configuration {#config}
 
-@todo
+import ApiSchema from '@theme/ApiSchema';
+
+<ApiSchema id="node" example pointer="#/components/schemas/test_rtt" />
 
 ## Example
 

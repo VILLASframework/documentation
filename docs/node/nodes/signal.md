@@ -2,13 +2,17 @@
 hide_table_of_contents: true
 ---
 
-# Signal Generator
+# Signal Generator (v1)
+
+:::caution Deprecation
+This node-type is deprecated. Please use the newer [`signal.v2` node-type](./signal_v2.md).
+:::
 
 The `signal` node-type is a simple signal generator which can be used to generate sine, square, ramp, triangle or random signals at user definable frequencies, rates, amplitudes.
 
 Most commonly it is used for testing when no real simulation data is available.
 
-**Note:** There is also the `villas-signal` tool which has a similar purpose.
+**Note:** There is also the [`villas-signal` tool](../usage/villas-signal.md) which has a similar purpose.
 
 # Prerequisites
 
@@ -17,7 +21,7 @@ This node-type does not have any special library dependencies. It is always avai
 ## Implementation
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/signal_generator.cpp
+https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/signal.cpp
 
 ## Configuration {#config}
 
