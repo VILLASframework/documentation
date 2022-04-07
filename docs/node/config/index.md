@@ -28,7 +28,17 @@ At the top level, the configuration file consists of these sections:
 - [`nodes`](./nodes.md)
 - [`paths`](./paths.md)
 
-## Examples
+## OpenAPI / JSON Schema Specification
+
+There exists a formal description of the configuration file as a [JSON Schema](https://json-schema.org/) / [OpenAPI 3.0 specification](https://www.openapis.org/).
+
+The remaining part of this subsection shows a HTML version of this schema rendered by [Redoc](https://github.com/Redocly/redoc):
+
+import ApiSchema from '@theme/ApiSchema';
+
+<ApiSchema id="node" pointer="#/components/schemas/config" />
+
+## Example
 
 VILLASnode comes with a lot of existing configurations which can be used for inspiration:
 https://git.rwth-aachen.de/acs/public/villas/node/-/tree/master/etc
