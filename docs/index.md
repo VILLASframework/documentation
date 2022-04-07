@@ -7,11 +7,9 @@ sidebar_position: 1
 
 Welcome to the documentation of the VILLASframework.
 
-- [Architecture](architecture.md)
+VILLASframework is a toolkit for local and geographically distributed real-time co-simulation (GD-RTS).
 
-:::note
-We recently migrated our documentation to a new site. However, the [old documentation](https://villas.fein-aachen.org/doc/) is still available.
-:::
+It is actively developed by the [Institute for Automation of Complex Power Systems](https://www.acs.eonerc.rwth-aachen.de/) at the [RWTH Aachen University](https://www.rwth-aachen.de).
 
 :::caution
 For starters we recommend to read the **[installation guide](installation.md)**!
@@ -19,16 +17,18 @@ For starters we recommend to read the **[installation guide](installation.md)**!
 
 ## Components
 
-- [VILLASnode](node/index.md)
-- [VILLASweb](web/index.md)
-- [VILLAScontroller](controller/index.md)
-- [VILLASfpga](fpga/index.md)
+VILLASframework consists of several components:
+
+<ul style={{listStyleType: 'none', fontSize: '1.5em', fontWeight: 'bold'}}>
+    <li><a href="./node/"><img style={{height: '1.5em'}} src="/img/logos/villas_node.svg"></img>       VILLASnode</a></li>
+    <li><a href="./web/"><img style={{height: '1.5em'}} src="/img/logos/villas_web.svg"></img>        VILLASweb</a></li>
+    <li><a href="./controller/"><img style={{height: '1.5em'}} src="/img/logos/villas_controller.svg"></img> VILLAScontroller</a></li>
+    <li><a href="./fpga/"><img style={{height: '1.5em'}} src="/img/logos/villas_fpga.svg"></img>       VILLASfpga</a></li>
+</ul>
 
 ## Download
 
 The source code of all open source components is available over the [RWTH GitLab](https://git.rwth-aachen.de).
-
-- [LiveUSB Image](liveusb/index.md)
 
 ## Copyright
 
@@ -57,3 +57,11 @@ Please click on the link above to subscribe.
 [RWTH University Aachen, Germany](http://www.rwth-aachen.de)  
 
 <img alt="EONERC ACS Logo" src="/img/logos/eonerc_logo.png" align="right" />
+
+## Funding
+
+Funding is provided by the following research projects:
+
+- **[RESERVE](http://re-serve.eu/)**: European Unions Horizon 2020 research and innovation programme under grant agreement No 727481.
+- **[VILLAS](https://villas.fein-aachen.org/website/)**: Funding provided by [JARA-ENERGY](http://www.jara.org/en/research/energy). Jülich-Aachen Research Alliance (JARA) is an initiative of RWTH Aachen University and Forschungszentrum Jülich.
+- **[Urban Energy Lab 4.0](http://www.acs.eonerc.rwth-aachen.de/go/id/qxvw)**: Funding is provided by the [European Regional Development Fund (EFRE)](https://ec.europa.eu/regional_policy/en/funding/erdf/).
