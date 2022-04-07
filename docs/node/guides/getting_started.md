@@ -12,9 +12,7 @@ Please look below for a [video recording](#video) of a webinar covering the topi
 ## Preparation
 
 :::caution
-
 Please make sure that your system fulfills the [requirements](../requirements.md) before proceeding.
-
 :::
 
 The [installation](installation.md) page lists several ways to install VILLASnode on your machine.
@@ -105,9 +103,7 @@ This webinar was recorded during the preparation of the RT-SuperLab demonstratio
 - **Speaker:** [Steffen Vogel](mailto:stvogel@eonerc.rwth-aachen.de)
 
 :::caution
-
 This video presents an outdated version of VILLASnode!
-
 :::
 
 <video controls width="100%" align="center">
