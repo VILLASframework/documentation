@@ -15,7 +15,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/colu
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/tsv" />
+<ApiSchema id="node" example pointer="#/components/schemas/tsv" />
 
 ## Example Configuration {#example}
 

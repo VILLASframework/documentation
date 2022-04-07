@@ -33,7 +33,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/vill
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/villas_human" />
+<ApiSchema id="node" example pointer="#/components/schemas/villas_human" />
 
 ## Example Configuration {#example}
 

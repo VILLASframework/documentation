@@ -17,7 +17,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/raw.
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/raw" />
+<ApiSchema id="node" example pointer="#/components/schemas/raw" />
 
 ## Example Configuration {#example}
 

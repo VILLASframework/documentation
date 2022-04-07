@@ -20,7 +20,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/mqtt.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/mqtt" />
+<ApiSchema id="node" example pointer="#/components/schemas/mqtt" />
 
 ## Example
 

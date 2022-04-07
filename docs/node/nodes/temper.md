@@ -26,7 +26,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/temper.c
 ## Configuration {#config}
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/temper" />
+<ApiSchema id="node" example pointer="#/components/schemas/temper" />
 
 ## Example
 

@@ -17,7 +17,7 @@ The `csv` format-type supports the following settings:
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/csv" />
+<ApiSchema id="node" example pointer="#/components/schemas/csv" />
 
 ## Example Configuration {#example}
 

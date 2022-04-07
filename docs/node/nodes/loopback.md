@@ -22,7 +22,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/loopback
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/loopback" />
+<ApiSchema id="node" example pointer="#/components/schemas/loopback" />
 
 ## Example
 

@@ -86,7 +86,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/prot
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/protobuf" />
+<ApiSchema id="node" example pointer="#/components/schemas/protobuf" />
 
 ## Example Configuration {#example}
 

@@ -23,7 +23,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/signal_g
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/signal" />
+<ApiSchema id="node" example pointer="#/components/schemas/signal_node" />
 
 ## Example
 

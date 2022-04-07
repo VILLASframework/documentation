@@ -18,4 +18,4 @@ https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/line
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/line" />
+<ApiSchema id="node" example pointer="#/components/schemas/line" />

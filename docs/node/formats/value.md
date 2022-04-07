@@ -17,7 +17,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/valu
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/value" />
+<ApiSchema id="node" example pointer="#/components/schemas/value" />
 
 ## Example Configuration {#example}
 

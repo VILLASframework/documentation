@@ -24,7 +24,7 @@ Every path object is configured by the following settings:
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema pointer="#/components/schemas/path" />
+<ApiSchema id="node" pointer="#/components/schemas/path" />
 
 ## Input mapping
 

@@ -25,4 +25,4 @@ logging = {
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/logging" />
+<ApiSchema id="node" example pointer="#/components/schemas/logging" />

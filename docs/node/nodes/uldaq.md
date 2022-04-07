@@ -22,7 +22,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/uldaq.cp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/uldaq" />
+<ApiSchema id="node" example pointer="#/components/schemas/uldaq" />
 
 ## Example
 

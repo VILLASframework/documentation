@@ -16,7 +16,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/scale.cp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/scale" />
+<ApiSchema id="node" example pointer="#/components/schemas/scale" />
 
 ## Example
 

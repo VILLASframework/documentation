@@ -16,7 +16,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/skip_fir
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/skip_first" />
+<ApiSchema id="node" example pointer="#/components/schemas/skip_first" />
 
 ## Example
 

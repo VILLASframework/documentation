@@ -16,7 +16,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/limit_ra
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/limit_rate" />
+<ApiSchema id="node" example pointer="#/components/schemas/limit_rate" />
 
 ## Example
 

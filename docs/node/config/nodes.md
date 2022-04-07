@@ -13,7 +13,7 @@ There are different type of nodes available. But all types share the following c
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/node" />
+<ApiSchema id="node" example pointer="#/components/schemas/node" />
 
 ## Example {#example}
 

@@ -13,7 +13,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/ebm.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/ebm" />
+<ApiSchema id="node" example pointer="#/components/schemas/ebm" />
 
 ## Example
 

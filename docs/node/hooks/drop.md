@@ -17,4 +17,4 @@ The `drop` hook is a built-in hook. It is active by default and does not require
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/dump" />
+<ApiSchema id="node" example pointer="#/components/schemas/dump" />

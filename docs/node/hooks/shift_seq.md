@@ -13,7 +13,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/shift_se
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/shift_seq" />
+<ApiSchema id="node" example pointer="#/components/schemas/shift_seq" />
 
 ## Example
 

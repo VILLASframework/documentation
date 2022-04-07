@@ -19,7 +19,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/exec.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/exec" />
+<ApiSchema id="node" example pointer="#/components/schemas/exec" />
 
 ## Example
 

@@ -13,7 +13,7 @@ There are two columns-based formats:
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/column" />
+<ApiSchema id="node" example pointer="#/components/schemas/column" />
 
 ## Implementation
 

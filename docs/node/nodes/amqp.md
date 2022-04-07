@@ -23,7 +23,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/amqp.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/amqp" />
+<ApiSchema id="node" example pointer="#/components/schemas/amqp" />
 
 ## Example
 

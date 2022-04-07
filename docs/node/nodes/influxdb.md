@@ -23,7 +23,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/influxdb
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/influxdb" />
+<ApiSchema id="node" example pointer="#/components/schemas/influxdb" />
 
 ## Example
 

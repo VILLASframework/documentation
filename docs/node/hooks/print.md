@@ -17,7 +17,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/print.cp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/print" />
+<ApiSchema id="node" example pointer="#/components/schemas/print" />
 
 ## Example
 

@@ -17,7 +17,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/redis.cp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/redis" />
+<ApiSchema id="node" example pointer="#/components/schemas/redis" />
 
 ## Example
 

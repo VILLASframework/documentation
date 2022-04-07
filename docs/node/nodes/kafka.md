@@ -19,7 +19,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/kafka.cp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/kafka" />
+<ApiSchema id="node" example pointer="#/components/schemas/kafka" />
 
 ## Example
 

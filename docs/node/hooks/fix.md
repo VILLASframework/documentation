@@ -17,4 +17,4 @@ The `fix` hook is a built-in hook. It is active by default and does not require 
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/fix" />
+<ApiSchema id="node" example pointer="#/components/schemas/fix" />

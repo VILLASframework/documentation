@@ -13,7 +13,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/shift_ts
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/shift_ts" />
+<ApiSchema id="node" example pointer="#/components/schemas/shift_ts" />
 
 ## Example
 

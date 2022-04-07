@@ -15,7 +15,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/rms.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/rms" />
+<ApiSchema id="node" example pointer="#/components/schemas/rms" />
 
 ## Example
 
@@ -29,10 +29,13 @@ paths = (
 
 		hooks = (
 			{
-				type = "rms"
+				type = "rms",
 
-				signal = "sine"
 				window_size = 1000
+
+				signals = [
+					"sine"
+				]
 			}
 		)
 	}

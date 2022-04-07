@@ -18,7 +18,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/rtp.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/rtp" />
+<ApiSchema id="node" example pointer="#/components/schemas/rtp" />
 
 ## Example
 

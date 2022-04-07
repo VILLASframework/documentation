@@ -29,7 +29,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/pps_ts.c
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/pps_ts" />
+<ApiSchema id="node" example pointer="#/components/schemas/pps_ts" />
 
 ## Example
 

@@ -17,4 +17,4 @@ The `restart` hook is a built-in hook. It is active by default and does not requ
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/restart" />
+<ApiSchema id="node" example pointer="#/components/schemas/restart" />

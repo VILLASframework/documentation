@@ -8,7 +8,7 @@ hide_table_of_contents: true
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/http" />
+<ApiSchema id="node" example pointer="#/components/schemas/http" />
 
 ## Example
 

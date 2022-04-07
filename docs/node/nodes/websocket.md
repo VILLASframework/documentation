@@ -22,7 +22,7 @@ This behavior can be disabled by setting [`http.enabled`](../config/http.md#) to
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/websocket" />
+<ApiSchema id="node" example pointer="#/components/schemas/websocket" />
 
 ## Example
 

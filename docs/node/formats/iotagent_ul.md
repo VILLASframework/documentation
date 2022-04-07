@@ -19,7 +19,7 @@ The `iotagent_ul` format-type supports the following settings:
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/iotagent_ul" />
+<ApiSchema id="node" example pointer="#/components/schemas/iotagent_ul" />
 
 ## Example Configuration {#example}
 

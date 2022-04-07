@@ -13,7 +13,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/jitter_c
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/jitter_calc" />
+<ApiSchema id="node" example pointer="#/components/schemas/jitter_calc" />
 
 ## Example
 

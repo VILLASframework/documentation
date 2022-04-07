@@ -24,7 +24,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/zeromq.c
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/websocket" />
+<ApiSchema id="node" example pointer="#/components/schemas/websocket" />
 
 ## Example
 

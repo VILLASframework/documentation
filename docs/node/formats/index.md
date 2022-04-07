@@ -51,7 +51,7 @@ All format-types share the following common options:
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema schemaRef="#/components/schemas/format" />
+<ApiSchema id="node" schemaRef="#/components/schemas/format" />
 
 ## Example
 

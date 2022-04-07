@@ -15,7 +15,7 @@ https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/round.cp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/round" />
+<ApiSchema id="node" example pointer="#/components/schemas/round" />
 
 ## Example
 

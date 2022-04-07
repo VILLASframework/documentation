@@ -30,7 +30,7 @@ Every `ngsi` node supports the following special settings:
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/ngsi" />
+<ApiSchema id="node" example pointer="#/components/schemas/ngsi" />
 
 ## Example
 

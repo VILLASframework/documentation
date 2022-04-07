@@ -21,7 +21,7 @@ Every `infiniband` node can be configured to only read or write or to do both at
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema example pointer="#/components/schemas/infiniband" />
+<ApiSchema id="node" example pointer="#/components/schemas/infiniband" />
 
 ## Example
 

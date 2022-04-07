@@ -8,7 +8,7 @@ hide_table_of_contents: true
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema pointer="#/components/schemas/global" />
+<ApiSchema id="node" pointer="#/components/schemas/global" />
 
 ## Example {#node-config-global-example}
 
