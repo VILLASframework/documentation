@@ -36,8 +36,8 @@ VILLASframework is presented and/or used by the following publications.
 
 ## Dissertations and Theses
 
-- L. Razik “[High-performance computing methods in large-scale power system simulation](https://publications.rwth-aachen.de/record/796268), ” 2020, Disseratation, RWTH Aachen University, [doi: 10.18154/RWTH-2020-08892](https://doi.org/10.18154/RWTH-2020-08892)
-- M. Mirz “[A Dynamic Phasor Real-Time Simulation Based Digital Twin for Power Systems](http://publications.rwth-aachen.de/record/804608), ”, 2020, Disseratation, RWTH Aachen University, [doi: 10.18154/RWTH-2020-10412](https://doi.org/10.18154/RWTH-2020-10412)
+- L. Razik “[High-performance computing methods in large-scale power system simulation](https://publications.rwth-aachen.de/record/796268), ” 2020, Dissertation, RWTH Aachen University, [doi: 10.18154/RWTH-2020-08892](https://doi.org/10.18154/RWTH-2020-08892)
+- M. Mirz “[A Dynamic Phasor Real-Time Simulation Based Digital Twin for Power Systems](http://publications.rwth-aachen.de/record/804608), ”, 2020, Dissertation, RWTH Aachen University, [doi: 10.18154/RWTH-2020-10412](https://doi.org/10.18154/RWTH-2020-10412)
 - R. Poggio “[Interconnection Techniques among Real-Time Simulators for Remote Co-Simulation](https://webthesis.biblio.polito.it/19849/1/tesi.pdf), ” Oct. 2021, Master Thesis, Politecnico di Torino
 - D. Potter, “[Implementation and Analysis of an InfiniBand based Communication in a Real-Time Co-Simulation Framework](https://git.dennispotter.eu/attachments/9e1ead91-54d0-4b41-ad96-6d3ae9f0f81d).”, Master Thesis, RWTH Aachen University
 - S. Vogel, “[Development of a modular and fully-digital PCIe-based interface to Real-Time Digital Simulator](https://publications.rwth-aachen.de/record/698510/),” 2016, Master Thesis, RWTH Aachen University
