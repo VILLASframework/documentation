@@ -45,7 +45,6 @@ VILLASnode is regularly tested on the following operating systems:
 Better real-time performance can be achieved by using an optimized system configuration. Please take a look at the [Tuning](tuning.md) page for details.
 
 :::caution
-
 Disable any firewall on your system or configure it accordingly to work with the protocols used by VILLASnode. An improperly configured firewall is the most common issue reported while using VILLASnode!
 
 
@@ -53,5 +52,4 @@ E.g. on a RHEL/CentOS/RockyLinux or Fedora system:
 ```bash
 systemctl disable --now firewalld
 ```
-
 :::
