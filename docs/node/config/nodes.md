@@ -7,7 +7,7 @@ hide_table_of_contents: true
 The node section is a map node-names and their configuration which are interfaced by the VILLASnode instance.
 The directory is indexed by the name of the node
 
-## Configuration
+## Configuration {#config}
 
 There are different type of nodes available. But all types share the following common settings:
 
@@ -15,7 +15,7 @@ import ApiSchema from '@theme/ApiSchema';
 
 <ApiSchema id="node" example pointer="#/components/schemas/node" />
 
-## Example {#example}
+## Example
 
 <!-- TODO: Convert to json -->
 ```

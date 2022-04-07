@@ -18,7 +18,7 @@ VILLASnode currently supports two config file formats:
 
 **Note:** Consider using the [`villas conf2json`](../usage/villas-conf2json.md) command to migrate your old configurations to JSON.
 
-## Structure
+## Top-level Structure
 
 At the top level, the configuration file consists of these sections:
 

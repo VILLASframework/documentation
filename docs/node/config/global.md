@@ -2,15 +2,15 @@
 hide_table_of_contents: true
 ---
 
-# Global {#node-config-global}
+# Global
 
-## Configuration
+## Configuration {#config}
 
 import ApiSchema from '@theme/ApiSchema';
 
 <ApiSchema id="node" pointer="#/components/schemas/global" />
 
-## Example {#node-config-global-example}
+## Example
 
 <!-- TODO: Convert to json -->
 ```

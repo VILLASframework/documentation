@@ -2,9 +2,15 @@
 hide_table_of_contents: true
 ---
 
-# Logging {#node-config-logging}
+# Logging
 
-## Example {#node-config-logging-example}
+## Configuration {#config}
+
+import ApiSchema from '@theme/ApiSchema';
+
+<ApiSchema id="node" example pointer="#/components/schemas/logging" />
+
+## Example
 
 <!-- TODO: Convert to json -->
 ```
@@ -20,9 +26,3 @@ logging = {
 	)
 }
 ```
-
-## Configuration
-
-import ApiSchema from '@theme/ApiSchema';
-
-<ApiSchema id="node" example pointer="#/components/schemas/logging" />

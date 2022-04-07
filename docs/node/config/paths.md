@@ -18,7 +18,7 @@ However, every path supports optional [hook functions](../hooks/index.md) which 
 
 The path section in the configuration file consists of a **list** of one or more paths objects.
 
-## Configuration
+## Configuration {#config}
 
 Every path object is configured by the following settings:
 

@@ -8,7 +8,7 @@ VILLASfpga is configured via the standard VILLASnode configuration file.
 Unlike the other node-types, the [VILLASfpga node-type](../node/nodes/fpga.md) requires settings in two places:
 
 - [Configuration of the FPGA](../node/nodes/fpga.md#config)
-- [Configuration of the VILLASnode / VILLASfpga interface]
+- [Configuration of the VILLASnode / VILLASfpga interface](../node/nodes/fpga.md)
 
 ## FPGA Card {#card}
 

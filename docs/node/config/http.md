@@ -4,7 +4,7 @@ hide_table_of_contents: true
 
 # HTTP / WebSocket server
 
-## Configuration
+## Configuration {#config}
 
 import ApiSchema from '@theme/ApiSchema';
 
