@@ -22,11 +22,10 @@ Please make sure that your system fulfills the [requirements](requirements.md) b
 VILLASnode can be compiled from source using [CMake](http://cmake.org).
 This process has been tested with the following Linux distributions:
 
- - Fedora 33
- - Debian 10 (Buster)
- - Ubuntu 20.04 (Bionic Beaver)
- - Centos 8
- - Alpine Edge
+ - Fedora 34
+ - Debian 11 (Bullseye)
+ - Ubuntu 20.04 (Focal Fossa)
+ - RHEL / Rocky Linux 8
 
 ### Prerequisites
 
@@ -100,11 +99,11 @@ sudo apt-get install \
     librdkafka-dev
 ```
 
-or the following line for Fedora/CentOS/Redhat systems:
+or the following line for Fedora/Redhat/RockyLinux systems:
 
 ```bash
-sudo dnf config-manager --add-repo https://packages.fein-aachen.org/fedora/fein.repo
-sudo dnf install \
+sudo yum install epel-release
+sudo yum install \
     gcc gcc-c++ \
     pkgconfig make cmake ninja-build \
     protobuf-compiler protobuf-c-compiler \
@@ -129,43 +128,11 @@ sudo dnf install \
     mosquitto-devel \
     libibverbs-devel \
     librdmacm-devel \
-    re-devel \
     libusb-devel \
     lua-devel \
+    hiredis-devel \
+    libre-devel \
     librdkafka-devel
-```
-
-or for Alpine:
-
-```bash
-echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
-apk update
-apk add gcc g++ \
-    pkgconf cmake make \
-    autoconf automake libtool \
-    git mercurial \
-    flex bison \
-    protobuf \
-    file
-    openssl-dev \
-    ossp-uuid-dev@testing \
-    libconfig-dev \
-    libwebsockets-dev \
-    curl-dev \
-    jansson-dev \
-    spdlog-dev \
-    fmt-dev \
-    libnl3-dev \
-    graphviz-dev \
-    protobuf-dev \
-    protobuf-c-dev \
-    zeromq-dev \
-    nanomsg-dev@testing \
-    rabbitmq-c-dev \
-    mosquitto-dev \
-    libusb-dev \
-    lua-dev \
-    librdkafka-dev
 ```
 
 ### Downloading from Git
