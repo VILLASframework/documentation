@@ -159,8 +159,8 @@ Or alternatively you can copy the following signal configuration into the `Confi
     {'signal_name': 'signal1',      'signal_type': 'variable', 'signal_value': 'From input port', 'data_type': 'int',  'length': '8', 'endianess': 'little_endian', 'dimension': 'inherit'},
     {'signal_name': 'signal2',      'signal_type': 'variable', 'signal_value': 'From input port', 'data_type': 'uint', 'length': '8', 'endianess': 'little_endian', 'dimension': 'inherit'},
     {'signal_name': 'signal3',      'signal_type': 'variable', 'signal_value': 'From input port', 'data_type': 'real', 'length': '8', 'endianess': 'little_endian', 'dimension': 'inherit'},
-    {'signal_name': 'signal4_real', 'signal_type': 'variable', 'signal_value': 'From input port', 'data_type': 'real', 'length': '4', 'endianess': 'little_endian', 'dimension': 'inherit'},
-    {'signal_name': 'signal4_imag', 'signal_type': 'variable', 'signal_value': 'From input port', 'data_type': 'real', 'length': '4', 'endianess': 'little_endian', 'dimension': 'inherit'}]
+    {'signal_name': 'signal4_real', 'signal_type': 'variable', 'signal_value': 'From input port', 'data_type': 'real', 'length': '8', 'endianess': 'little_endian', 'dimension': 'inherit'},
+    {'signal_name': 'signal4_imag', 'signal_type': 'variable', 'signal_value': 'From input port', 'data_type': 'real', 'length': '8', 'endianess': 'little_endian', 'dimension': 'inherit'}]
 ```
 
 #### Signal type mapping
@@ -170,4 +170,4 @@ Or alternatively you can copy the following signal configuration into the `Confi
 | `boolean`          | `uint`                   |
 | `float`            | `real`                   |
 | `integer`          | `int`                    |
-| `complex`          | use two consecutive `real` signals with half the number of bytes as shown here for `signal4` |
+| `complex`          | use two consecutive `real` signals |
