@@ -54,23 +54,23 @@ Please make sure to substitute `api_node` with the actual name or UUID of your n
 #### Get node configuration
 
 ```bash
-curl -v localhost:80/api/v2/universal/api_node/config
+curl -v http://localhost:80/api/v2/universal/api_node/config
 ```
 
 #### Get list of signals provided by the node
 
 ```bash
-curl -v localhost:80/api/v2/universal/api_node/signals
+curl -v http://localhost:80/api/v2/universal/api_node/signals
 ```
 
 #### Get current value of a signal by its ID
 
 ```bash
-curl -v localhost:80/api/v2/universal/api_node/signal/ramp/state
+curl -v http://localhost:80/api/v2/universal/api_node/signal/ramp/state
 ```
 
 #### Update signal value by its ID
 
 ```bash
-curl -v -XPUT -d '{"timestamp": 1648482084.1462665,"value":1234}' localhost:80/api/v2/universal/api_node/signal/signal0/state
+curl -v -XPUT -d '{"timestamp": 1648482084.1462665,"value":1234.0}' http://localhost:80/api/v2/universal/api_node/signal/signal0/state
 ```
