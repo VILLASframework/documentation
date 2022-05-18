@@ -119,7 +119,7 @@ const config = {
                     title: 'Docs',
                     items: [{
                         label: 'Documentation',
-                        to: '/docs/index',
+                        to: '/docs/',
                     }, {
                         label: 'FEIN Aachen e.V.',
                         href: 'https://www.fein-aachen.org',
