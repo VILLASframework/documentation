@@ -52,9 +52,9 @@ Create a minimal chart configuration file named `values.yaml` with the following
 Please have a look at the charts [default values](https://git.rwth-aachen.de/acs/public/catalogue/-/blob/master/charts/villas/values.yaml) for more details about the available configuration options.
 
 :::info
-Please make sure to update the `ingress.host` with the the hostname of the machine running Minikube.
-If there is no hostname or the hostname is not resolvable within you network, you can use the [nip.io](https://nip.io) service.
-Just update the `ingress.host` setting with the IP address of the Minikube host as shown below.
+In this guide we assume the host running Minikube is accessible via the local IP address `192.168.1.100`.
+
+Please make sure to update the `ingress.host` setting with a resolvable hostname of the machine running Minikube or update the `nip.io` name it with the real IP address as shown below.
 :::
 
 ```yaml title="values.yaml"
