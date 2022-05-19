@@ -20,7 +20,7 @@ Parts of VILLASframework are used or have been used in the past by the following
 - EU Joint Research Center, Petten, Netherlands
 - Forschungszentrum Jülich, Germany
 - Friedrich-Alexander-Universität Erlangen-Nürnberg, Germany
-- Idaho National Lab, USA
+- Idaho National Lab (INL), USA
 - Institute for Automation of Complex Power Systems, RWTH Aachen University, Germany
 - Karlsruhe Institute of Technology, Germany
 - National Renewable Energy Laboratory (NREL), USA
@@ -28,7 +28,7 @@ Parts of VILLASframework are used or have been used in the past by the following
 - OFFIS - Institut für Informatik, Oldenburg, Germany
 - Politecnico di Turino, Italy
 - Power System Research Group, University of Sannio RCOST, Italy
-- Sandia National Lab, USA
+- Sandia National Lab (SNL), USA
 - SINTEF Energy AS, Trondheim, Norway
 - Technical University Delft, Netherlands
 - Universidad Nacional de Colombia
@@ -36,5 +36,7 @@ Parts of VILLASframework are used or have been used in the past by the following
 - University Politehnica of Bucharest, Bulgaria
 - Washington State University, USA
 - Waterford Institute of Technology, Walton Institute - Telecommunications Software & Systems Group (TSSG), Ireland
+- Savannah River National Laboratory (SRNL), USA
+- Ericsson GmbH / Eurolab, Herzogenrath, Germany
 
 Please let us know if you want to be added to this list.
