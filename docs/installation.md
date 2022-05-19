@@ -51,6 +51,12 @@ helm repo update
 Create a minimal chart configuration file named `values.yaml` with the following contents:
 Please have a look at the charts [default values](https://git.rwth-aachen.de/acs/public/catalogue/-/blob/master/charts/villas/values.yaml) for more details about the available configuration options.
 
+:::info
+Please make sure to update the `ingress.host` with the the hostname of the machine running Minikube.
+If there is no hostname or the hostname is not resolvable within you network, you can use the [nip.io](https://nip.io) service.
+Just update the `ingress.host` setting with the IP address of the Minikube host as shown below.
+:::
+
 ```yaml title="values.yaml"
 web:
   auth:
@@ -63,7 +69,7 @@ web:
 
 ingress:
   port: 8080
-  host: localhost
+  host: villas.192-168-1-100.nip.io 
 
 broker:
   auth:
@@ -83,8 +89,8 @@ helm install -f values.yaml villas fein/villas
 1. Keep the following command in a terminal running in a background terminal:
 
 ```bash
-minikube kubectl -- -n ingress-nginx port-forward svc/ingress-nginx-controller 8080:80
+minikube kubectl -- -n ingress-nginx port-forward svc/ingress-nginx-controller 8080:80 --address='0.0.0.0'
 ```
 
-Once the installation has completed, you can visit the VILLASweb interface at the following address: http://localhost:8080/
+Once the installation has completed, you can visit the VILLASweb interface at the following address: http://villas.192-168-1-100.nip.io:8080/
 Please use the username / password from above (`admin` / `VillasTest1234`) to login.
