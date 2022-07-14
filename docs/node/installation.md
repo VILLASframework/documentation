@@ -8,7 +8,6 @@ VILLASnode can be installed in multiple ways:
 
 - [Docker image](https://git.rwth-aachen.de/acs/public/villas/node/container_registry)
 - [Kubernetes (Helm chart)](../installation.md)
-- RPM packages for Redhat based Linux distributions
 - [Bootable Linux live image](../liveusb/index.md)
 - Automated [Kickstart installation](#kickstart) for Fedora/Redhat based distros
 - or from source
