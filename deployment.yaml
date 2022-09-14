@@ -37,7 +37,7 @@ spec:
   selector:
     app: villas-doc
 ---
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: villas-doc
@@ -56,6 +56,9 @@ spec:
     http:
       paths:
       - path: /
+        pathType: ImplementationSpecific
         backend:
-          serviceName: villas-doc
-          servicePort: 80
+          service:
+            name: villas-doc
+            port:
+              number: 80
