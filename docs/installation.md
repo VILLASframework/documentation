@@ -101,7 +101,7 @@ If the login with the configured admin user credentials is not working, it is mo
 Use the `kubectl` tool to troubleshoot the issue:
 
 ```bash
-minikube kubectl -- -n villas get all
+minikube kubectl -- get all
 ```
 
 This command should list all the micro-services of the framework:
@@ -146,7 +146,7 @@ Make sure that all deployments are ready and pods (a.k.a containers) are in a ru
 If for some reason a deployment is not ready, you can use the following `kubectl` command to show the log of the respective pod.
 
 ```bash
-minikube kubectl -- -n villas logs pod/villas-web-backend-55846fb89f-64f66
+minikube kubectl -- logs pod/villas-web-backend-55846fb89f-64f66
 ```
 
 For more information on how to troubleshoot the setup with the `kubectl` tool, please consult [the `kubectl` documentation](https://kubernetes.io/docs/reference/kubectl/) and guides about Kubernetes in general.
