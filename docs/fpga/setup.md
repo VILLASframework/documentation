@@ -1,42 +1,28 @@
 # Setup
 
-## FPGA
-
-### Bitstreams / Vivado projects
-
-1. vc707_villas_simple
-    - PCIe to loopback and RTDS GTFPGA AXI4-Stream Bridge connected to internal SFP cage
-    - M00_AXI: Stream Interconnect CTRL
-    - M01_AXI: RTDS GTFPGA AXI4-Stream Bridge CTRL
-    - M02_AXI: DMA Inteface
-    - M00_AXIS: to RTDS GTFPGA AXI4-Stream Bridge
-    - M01_AXIS: to DMA
-    - M02_AXIS: to stream loopback
-    - S00_AXIS: from RTDS GTFPGA AXI4-Stream Bridge
-    - S01_AXIS: from stream loopback
-    - S02_AXIS: from DMA
+## Install Xilinx FPGA evaluation board
 
 
-:::note ToDo
-Create a list of available bitstreams.
-:::
+### Identify PCIe device
 
-:::note ToDo
-Add instructions on how to flash a bitstream.
-:::
+Identify the bus/device/function (BDF) identifier of the Xilinx Evaluation board:
 
-### Identify PCIexpress device
+In the following example the BDF of the Xilinx evaluation board is `88:00.0 `:
 
-:::note ToDo
-Describe the usage of `lspci`
-:::
+```bash
+lspci | grep Xilinx
+88:00.0 Memory controller: Xilinx Corporation Device 7021
+```
+
+Please remember the BDF as it is required for the VILLASfpga configuration later.
 
 ## Kernel
 
 ### Version
 
 VILLASfpga requires a recent Linux kernel with version > 4.18.0
-```
+
+```bash
 uname -a
 ```
 
@@ -44,9 +30,11 @@ uname -a
 
 VILLASfpga uses the VFIO subsystem to access the FPGA hardware.
 
-VFIO requires an IOMMU.
+VFIO requires an IOMMU:
 
-```
+- [Enable IOMMU](https://wiki.archlinux.org/title/PCI_passthrough_via_OVMF#Setting_up_IOMMU)
+
+```bash
 sudo grubby --update-kernel=ALL --args="intel_iommu=on iommu=pt"
 sudo reboot
 cat /proc/cmdline
@@ -58,16 +46,12 @@ VILLASfpga requires the following kernel modules to be loaded:
 
 - `vfio`
 - `vfio_pci`
-```
+
+```bash
 echo "vfio\nvfio_pci" > /etc/modules-load.d/vfio.conf
 ```
 
 ### FPGA Detection
 
-1. flash FPGA bitstream
+1. Flash FPGA bitstream
 2. `echo 1  | sudo tee /sys/bus/pci/rescan`
-
-
-## Run VILLASfpga without Super-User privileges
-
-@todo
