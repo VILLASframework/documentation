@@ -12,13 +12,16 @@ VILLASfpga is using Xilinx' FPGA evaluation boards to interfaces such devices to
 
 It implements intellectual property (IP) cores for connecting:
 
- - RTDS racks via their proprietary [GTFPGA](https://www.rtds.com/the-simulator/our-hardware/gtfpga-unit/) (aka `RTDS_InterfaceModule`)
- - OPAL-RT simulators and AixControl DSP racks via [Xilinx' Aurora](https://www.xilinx.com/products/intellectual-property/aurora8b10b.html).
- - Integration with all [VILLASnode node-types](../node/nodes/index.md) via PCIexpress and DMA transfers.
- - FPGA models built with
-   - Simulink by using [Xilinx' System Generator](https://www.xilinx.com/products/design-tools/vivado/integration/sysgen.html).
-   - C / C++ by using [Xilinx' High Level Synthesis](https://www.xilinx.com/products/design-tools/vivado/integration/esl-design.html).
- - Commercial inverters and HIL amplifiers via [EtherCAT](https://en.wikipedia.org/wiki/EtherCAT) (planned)
+- [GTFPGA](https://www.rtds.com/the-simulator/our-hardware/gtfpga-unit/) (aka `RTDS_InterfaceModule`)
+  - RTDS 
+- [Xilinx' Aurora](https://www.xilinx.com/products/intellectual-property/aurora8b10b.html).
+  - OPAL-RT
+  - RTDS
+  - AixControl units
+- Integration with all [VILLASnode node-types](../node/nodes/index.md) via PCIexpress and DMA transfers.
+- FPGA models built with
+  - Simulink by using [Xilinx' System Generator](https://www.xilinx.com/products/design-tools/vivado/integration/sysgen.html).
+  - C / C++ by using [Xilinx' High Level Synthesis](https://www.xilinx.com/products/design-tools/vivado/integration/esl-design.html).
 
 VILLASfpga can be configured to connect these interfaces in an arbitrary fashion without the need of generating a new bitstream. This is realized by using [a software configurable switch](https://www.xilinx.com/products/intellectual-property/axi4-stream_interconnect.html) in the FPGA fabric.
 
@@ -29,7 +32,6 @@ VILLASfpga is based on ARM's [AXI-4 Stream](http://infocenter.arm.com/help/index
 The VILLASfpga project is splitted into two Git repositories:
 - [VILLASfpga](https://git.rwth-aachen.de/acs/public/villas/fpga) contains the C++ driver library and a few example applications
 - [VILLASfpga-hardware](https://git.rwth-aachen.de/acs/public/villas/fpga-hardware) contains the Xilinx FPGA design based on the Vivado
-
 
 ## Building
 
