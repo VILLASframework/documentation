@@ -11,7 +11,7 @@ It can also optionally prefix each line of output with a user definable prefix i
 ## Implementation
 
 The source code of the hook is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/print.cpp
+https://github.com/VILLASframework/node/blob/master/lib/hooks/print.cpp
 
 ## Configuration
 

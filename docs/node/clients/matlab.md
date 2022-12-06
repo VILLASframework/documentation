@@ -1,6 +1,6 @@
 # MATLAB {#node-client-matlab}
 
-**Source code:** <http://git.rwth-aachen.de/acs/public/villas/node/tree/master/clients/matlab>
+**Source code:** <https://github.com/VILLASframework/node/tree/master/clients/matlab>
 
 MATLAB (matrix laboratory) is a multi-paradigm numerical computing environment and proprietary programming language developed by MathWorks. MATLAB allows matrix manipulations, plotting of functions and data, implementation of algorithms, creation of user interfaces, and interfacing with programs written in other languages, including C, C++, C#, Java, Fortran and Python.
 
@@ -11,7 +11,7 @@ The Instrument Control Toolbox provides a [`udp()` function](https://de.mathwork
 
 ## Example
 
-Please have a look at the [`clients/matlab/`](https://git.rwth-aachen.de/acs/public/villas/node/tree/master/clients/matlab) directory for an exemplary VILLASnode configuration file and MATLAB code.
+Please have a look at the [`clients/matlab/`](https://github.com/VILLASframework/node/tree/master/clients/matlab) directory for an exemplary VILLASnode configuration file and MATLAB code.
 
 You can run this example by execution this `receiver` script in your MATLAB prompt and starting VILLASnode by running the following command in your shell:
 

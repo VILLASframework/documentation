@@ -21,7 +21,7 @@ This node-type requires [libusb](https://libusb.info/) (>= 1.0.23).
 ## Implementation
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/temper.cpp
+https://github.com/VILLASframework/node/blob/master/lib/nodes/temper.cpp
 
 ## Configuration {#config}
 import ApiSchema from '@theme/ApiSchema';

@@ -12,7 +12,7 @@ There are currently the following line-based payload format-types:
 ## Implementation
 
 The source code of the format-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/line.cpp
+https://github.com/VILLASframework/node/blob/master/lib/formats/line.cpp
 
 ## Configuration {#config}
 

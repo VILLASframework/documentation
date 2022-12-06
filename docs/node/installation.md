@@ -57,7 +57,7 @@ VILLASnode currently has the following list of dependencies:
 | [Etherlab](http://etherlab.org) | >= 1.5.2 | for the [Ethercat node-type](nodes/ethercat.md) | optional | __GPL 3__ |
 | [Criterion](https://github.com/Snaipe/Criterion) | >= 2.3.1 | for running the unit tests | optional | MIT |
 | [libuuid](https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git) | >= 2.29 | - | - | BSD |
-| [libxil](https://git.rwth-aachen.de/acs/public/villas/fpga/libxil) | >= 1.0.0 | for the [VILLASfpga node-type](nodes/fpga.md) | optional | ??? |
+| [libxil](https://github.com/VILLASframework/libxil) | >= 1.0.0 | for the [VILLASfpga node-type](nodes/fpga.md) | optional | ??? |
 | [Lua](http://www.lua.org/) | >= 5.1 | for the [Lua hook](hooks/lua.md) | optional | MIT |
 | [rdkafka](https://github.com/edenhill/librdkafka) | >= 1.5.0 | for the [Kafka node-type](nodes/kafka.md) | optional | BSD |
 | [Graphviz](https://graphviz.org/) | >= 2.30 | for the visualisation of configuration files | optional | EPL |
@@ -139,7 +139,7 @@ sudo yum install \
 ### Downloading from Git
 
 ```bash
-git clone https://git.rwth-aachen.de/acs/public/villas/node.git VILLASnode
+git clone https://github.com/VILLASframework/node.git VILLASnode
 cd VILLASnode
 git submodule update --init common
 ```
@@ -206,7 +206,7 @@ To use it, you will need to download a [Netinstall image of Fedora Server](https
 You also need to interrupt the initial boot of the Fedora installer, in the boot manager and append the following Kernel command line:
 
 ```
-inst.ks=https://git.rwth-aachen.de/acs/public/villas/node/-/raw/master/packaging/live-iso/villas.ks
+inst.ks=https://raw.githubusercontent.com/VILLASframework/node/master/packaging/live-iso/villas.ks
 ```
 
 Further details on how to start the Kickstart installation can be found [in the official Fedora documentation](https://docs.fedoraproject.org/en-US/fedora/f35/install-guide/advanced/Kickstart_Installations/#sect-kickstart-installation-starting).

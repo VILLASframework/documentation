@@ -77,7 +77,7 @@ grafana:
 
 ## 2. Import Demo Dashboard into Grafana
 
-Add a new dashboard to Grafana by importing the following file: [VILLAS test dashboard](https://git.rwth-aachen.de/acs/public/villas/documentation/-/raw/master/examples/node/grafana-influxdb/dashboard.json)
+Add a new dashboard to Grafana by importing the following file: [VILLAS test dashboard](https://github.com/VILLASframework/documentation/blob/master/examples/node/grafana-influxdb/dashboard.json)
 
 ## 3. Run dummy simulation to fill InfluxDB with test data
 

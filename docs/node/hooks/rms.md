@@ -9,7 +9,7 @@ The `rms` hook calculates the RMS of signals on a given window.
 ## Implementation
 
 The source code of the hook is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/rms.cpp
+https://github.com/VILLASframework/node/blob/master/lib/hooks/rms.cpp
 
 ## Configuration
 

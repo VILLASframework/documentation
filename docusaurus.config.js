@@ -32,14 +32,14 @@ const config = {
             ({
                 docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
-                    editUrl: 'https://git.rwth-aachen.de/acs/public/villas/documentation/-/edit/master/',
+                    editUrl: 'https://github.com/VILLASframework/documentation/edit/master/',
                     remarkPlugins: [
                         require('mdx-mermaid'),
                     ]
                 },
                 blog: {
                     showReadingTime: true,
-                    editUrl: 'https://git.rwth-aachen.de/acs/public/villas/documentation/-/edit/master/',
+                    editUrl: 'https://github.com/VILLASframework/documentation/edit/master/',
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
@@ -68,7 +68,7 @@ const config = {
                         id: 'web',
                         route: '/api/web/',
                         // TODO this file is currently manually converter to OpenAPI spec v3
-                        // See: https://git.rwth-aachen.de/acs/public/villas/web-backend-go/-/issues/85
+                        // See: https://github.com/VILLASframework/web-backend/tree/master/doc/api
                         spec: 'generated/web/openapi.yaml',
                     },
                 ],
@@ -102,8 +102,8 @@ const config = {
                     position: 'right',
                 },
                 {
-                    href: 'https://git.rwth-aachen.de/acs/public/villas/',
-                    label: 'GitLab',
+                    href: 'https://github.com/VILLASframework/',
+                    label: 'GitHub',
                     position: 'right',
                 },
             ],
@@ -148,8 +148,8 @@ const config = {
                             to: '/blog',
                         },
                         {
-                            label: 'GitLab',
-                            href: 'https://git.rwth-aachen.de/acs/public/villas',
+                            label: 'GitHub',
+                            href: 'https://github.com/VILLASframework',
                         },
                     ],
                 },

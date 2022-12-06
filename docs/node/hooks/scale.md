@@ -10,7 +10,7 @@ First the original signal value is multiplied by the gain, then the offset is ad
 ## Implementation
 
 The source code of the hook is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/scale.cpp
+https://github.com/VILLASframework/node/blob/master/lib/hooks/scale.cpp
 
 ## Configuration
 

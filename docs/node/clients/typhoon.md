@@ -13,7 +13,7 @@ On VILLASnode's side this interconnection is realized with the [`socket` node-ty
 The setup covered on this page has been tested with the following software versions:
 
 - **Typhoon HIL Control Center:** 2022.1
-- **VILLASnode:** [Commit 634d95362a7e776cc8d6b5999bc5c5e83be15870](https://git.rwth-aachen.de/acs/public/villas/node/-/commit/634d95362a7e776cc8d6b5999bc5c5e83be15870)
+- **VILLASnode:** [Commit 634d95362a7e776cc8d6b5999bc5c5e83be15870](https://github.com/VILLASframework/node/commit/634d95362a7e776cc8d6b5999bc5c5e83be15870)
 
 ## Limitations
 
@@ -26,7 +26,7 @@ The setup covered on this page has been tested with the following software versi
 
 VILLASnode ships with an example schematic for the Typhoon HIL control center.
 
-- **Git:** <https://git.rwth-aachen.de/acs/public/villas/node/-/tree/master/clients/typhoon>
+- **Git:** <https://github.com/VILLASframework/node/tree/master/clients/typhoon>
 
 <figure align="center">
     <img alt="Typhoon model schematic" src="/img/screenshots/typhoon_ve_model.png" width="80%" />

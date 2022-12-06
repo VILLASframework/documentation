@@ -11,7 +11,7 @@ This node-type requires [comedilib](http://comedi.org) (>= 0.11.0).
 ## Implementation
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/comedi.cpp
+https://github.com/VILLASframework/node/blob/master/lib/nodes/comedi.cpp
 
 ## Configuration {#config}
 

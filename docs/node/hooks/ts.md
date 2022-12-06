@@ -9,7 +9,7 @@ The `ts` hook overwrite the origin timestamp field of each sample with the curre
 ## Implementation
 
 The source code of the hook is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/ts.cpp
+https://github.com/VILLASframework/node/blob/master/lib/hooks/ts.cpp
 
 ## Configuration
 

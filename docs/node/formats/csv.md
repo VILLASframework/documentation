@@ -9,7 +9,7 @@ See also https://en.wikipedia.org/wiki/Comma-separated_values
 ## Implementation
 
 The source code of the format-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/column.cpp
+https://github.com/VILLASframework/node/blob/master/lib/formats/column.cpp
 
 ## Configuration {#config}
 

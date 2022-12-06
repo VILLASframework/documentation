@@ -11,7 +11,7 @@ The `value` format-type encodes a single sample value in a human readable repres
 ## Implementation
 
 The source code of the format-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/value.cpp
+https://github.com/VILLASframework/node/blob/master/lib/formats/value.cpp
 
 ## Configuration {#config}
 

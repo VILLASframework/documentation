@@ -9,7 +9,7 @@ The `cast` hook casts the data-type of signals and can set a new name and unit t
 ## Implementation
 
 The source code of the hook is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/cast.cpp
+https://github.com/VILLASframework/node/blob/master/lib/hooks/cast.cpp
 
 ## Configuration {#config}
 

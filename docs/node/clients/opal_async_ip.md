@@ -51,7 +51,7 @@ Alternatively, we also provide a custom RT-lab project as an example which uses 
 It is a customization of the original AysncIP code from OPAL-RT.
 This approach has the advantage that the payload format is carrying more metadata such as timestamps which can useful for collecting statistics or synchronizing systems.
 
-**Source code:** <http://git.rwth-aachen.de/acs/public/villas/node/tree/master/clients/opal>
+**Source code:** <https://github.com/VILLASframework/node/tree/master/clients/opal>
 
 ### Add AsyncIP to the existing project
 

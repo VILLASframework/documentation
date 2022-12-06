@@ -30,14 +30,14 @@ VILLASfpga is based on ARM's [AXI-4 Stream](http://infocenter.arm.com/help/index
 ## Repositories
 
 The VILLASfpga project is splitted into two Git repositories:
-- [VILLASfpga](https://git.rwth-aachen.de/acs/public/villas/fpga) contains the C++ driver library and a few example applications
-- [VILLASfpga-hardware](https://git.rwth-aachen.de/acs/public/villas/fpga-hardware) contains the Xilinx FPGA design based on the Vivado
+- [VILLASfpga](https://github.com/VILLASframework/fpga) contains the C++ driver library and a few example applications
+- [VILLASfpga-hardware](https://github.com/VILLASframework/fpga-hardware) contains the Xilinx FPGA design based on the Vivado
 
 ## Building
 
 ```bash
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
-git clone  https://git.rwth-aachen.de/acs/public/villas/fpga
+git clone  https://github.com/VILLASframework/fpga
 pushd VILLASfpga
 git submodule update --init --recursive
 mkdir -p thirdparty/libxil/build

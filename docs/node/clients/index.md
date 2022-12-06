@@ -30,6 +30,6 @@ For details about the UDP packet format, checkout the [respective format docs](.
 - [RTDS GTFPGA](rtds_ml507_gtfpga.md):
     An alternative to [GTNET cards](rtds_gtnet_skt.md) for interfacing RTDS via UDP.
 
-- [DPsim](https://git.rwth-aachen.de/acs/core/simulation/DPsim):
+- [DPsim](https://github.com/sogno-platform/dpsim):
     VILLAsnode can communicate via the [`shmem` node-type](../nodes/shmem.md) with the dynamic phasor solver (DPsim) of the Institute for Automation of Complex Power Systems.
     Please contact [Markus Mirz](mailto:mmirz@eonerc.rwth-aachen.de) for details.

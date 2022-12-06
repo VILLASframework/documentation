@@ -10,8 +10,8 @@ There are two components which provide dedicated APIs:
 
 ## API specification
 
-- [**OpenAPI 3.0 Specification**](https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/doc/openapi.yaml) ([online](/api/node/))
-- Python Wrapper: [Source](https://git.rwth-aachen.de/acs/public/villas/node/-/tree/master/python), [PyPi package](https://pypi.org/project/villas-node/)
+- [**OpenAPI 3.0 Specification**](https://github.com/VILLASframework/node/blob/master/doc/openapi/openapi.yaml) ([online](/api/node/))
+- Python Wrapper: [Source](https://github.com/VILLASframework/node/tree/master/python), [PyPi package](https://pypi.org/project/villas-node/)
    - Install it via: `pip install villas-node`
 
 ## Security

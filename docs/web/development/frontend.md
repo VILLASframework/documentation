@@ -1,6 +1,6 @@
 # Frontend {#web-development-frontend}
 
-**Code:** https://git.rwth-aachen.de/acs/public/villas/web
+**Code:** https://github.com/VILLASframework/web
 
 ## Description
 
@@ -15,7 +15,7 @@ Additional libraries are used, for a complete list see the file `package.json`.
 ## Setup and Running
 
 ```bash
-git clone --recursive https://git.rwth-aachen.de/acs/public/villas/web.git
+git clone --recursive https://github.com/VILLASframework/web.git
 cd web
 npm install
 npm start

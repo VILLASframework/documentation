@@ -18,7 +18,7 @@ This node-type requires [libzmq](http://zeromq.org) (>= 2.2.0).
 ## Implementation
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/zeromq.cpp
+https://github.com/VILLASframework/node/blob/master/lib/nodes/zeromq.cpp
 
 ## Configuration {#config}
 

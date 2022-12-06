@@ -36,7 +36,7 @@ struct data_in
 ## Implementation
 
 The source code of the format-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/opal_asyncip.cpp
+https://github.com/VILLASframework/node/blob/master/lib/formats/opal_asyncip.cpp
 
 ## Configuration {#config}
 

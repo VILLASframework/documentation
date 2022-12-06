@@ -20,7 +20,7 @@ This node-type requires to following libraries to communicate with the context b
 ## Implementation
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/ngsi.cpp
+https://github.com/VILLASframework/node/blob/master/lib/nodes/ngsi.cpp
 
 ## Configuration {#config}
 

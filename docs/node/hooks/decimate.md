@@ -9,7 +9,7 @@ The `decimate` hook reduces the sampling rate by periodically discarding samples
 ## Implementation
 
 The source code of the hook is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/decimate.cpp
+https://github.com/VILLASframework/node/blob/master/lib/hooks/decimate.cpp
 
 ## Configuration
 

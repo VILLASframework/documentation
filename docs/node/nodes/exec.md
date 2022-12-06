@@ -13,7 +13,7 @@ This node-type does not have any special library dependencies. It is always avai
 ## Implementation
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/exec.cpp
+https://github.com/VILLASframework/node/blob/master/lib/nodes/exec.cpp
 
 ## Configuration {#config}
 

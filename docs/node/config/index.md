@@ -7,7 +7,7 @@ sidebar_label: Overview
 
 The VILLASnode configuration consists of a a single file.
 
-For a collection of example configuration files see: <https://git.rwth-aachen.de/acs/public/villas/node/tree/master/etc>.
+For a collection of example configuration files see: <https://github.com/VILLASframework/node/tree/master/etc/>.
 
 ## File format
 
@@ -40,8 +40,7 @@ import ApiSchema from '@theme/ApiSchema';
 
 ## Example
 
-VILLASnode comes with a lot of existing configurations which can be used for inspiration:
-https://git.rwth-aachen.de/acs/public/villas/node/-/tree/master/etc
+VILLASnode comes with a lot of existing configurations which can be used for inspiration: https://github.com/VILLASframework/node/tree/master/etc/examples
 
 <!-- convert to JSON -->
 ```

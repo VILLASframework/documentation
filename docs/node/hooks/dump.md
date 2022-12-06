@@ -9,7 +9,7 @@ The `dump` hook will print a detailed dump of each processes samples to the stan
 ## Implementation
 
 The source code of the hook is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/dump.cpp
+https://github.com/VILLASframework/node/blob/master/lib/hooks/dump.cpp
 
 ## Configuration
 

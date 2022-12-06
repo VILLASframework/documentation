@@ -13,7 +13,7 @@ This node-type requires [rdkafka](https://github.com/edenhill/librdkafka) (>= 1.
 ## Implementation
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/kafka.cpp
+https://github.com/VILLASframework/node/blob/master/lib/nodes/kafka.cpp
 
 ## Configuration {#config}
 
