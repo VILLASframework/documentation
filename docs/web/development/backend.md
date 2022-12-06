@@ -25,7 +25,7 @@ To run the tests use `go test $(go list ./... ) -p 1` in the top-level folder of
 Running the backend will only work if the PostgreSQL database is setup properly. Otherwise, you will get error messages.
 
 If you want to use test data (including some test users), you can start the backend with the parameter `-mode=test`.
-Please check the repository of the VILLASweb-backend-go to find information on the test user login names and passwords.
+Please check the repository of the VILLASweb-backend to find information on the test user login names and passwords.
 The testing mode is NOT intended for production deployments.
 
 ## Auto-generate the API documentation

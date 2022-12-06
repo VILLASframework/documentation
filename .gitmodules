@@ -5,5 +5,5 @@
 	path = external/controller
 	url = ../controller.git
 [submodule "external/web-backend-go"]
-	path = external/web-backend-go
-	url = ../web-backend-go.git
+	path = external/web-backend
+	url = ../web-backend.git
