@@ -5,7 +5,7 @@ The `villas-web-backend` starts the VILLASweb backend.
 # Usage
 
 ``` url="generated/web/usage/villas-web-backend.txt" title="generated/web/usage/villas-web-backend.txt"
-2021/06/07 07:50:37 Starting VILLASweb-backend-go
+2021/06/07 07:50:37 Starting VILLASweb-backend
 Usage of villasweb-backend:
   -admin-mail string
     	Initial admin mail address

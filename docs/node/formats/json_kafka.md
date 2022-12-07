@@ -7,7 +7,7 @@ hide_table_of_contents: true
 ## Implementation
 
 The source code of the format-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/json_kafka.cpp
+https://github.com/VILLASframework/node/blob/master/lib/formats/json_kafka.cpp
 
 ## Configuration {#config}
 

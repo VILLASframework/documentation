@@ -14,7 +14,7 @@ VILLASnode already comes with a lot of existing implementations of node-types wh
 
 1. Identify required external dependencies & libraries
 
-1. Check for availability of external libraries in [main `CMakeLists.txt`](https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/CMakeLists.txt).
+1. Check for availability of external libraries in [main `CMakeLists.txt`](https://github.com/VILLASframework/node/blob/master/CMakeLists.txt).
     - Do not forget to introduce a new calls to `cmake_dependent_option()` as well as a `add_feature_info()` for your new node-type further down in the CMake file.
 
 1. Copy the example C++ code:
@@ -26,7 +26,7 @@ VILLASnode already comes with a lot of existing implementations of node-types wh
     cp include/villas/example.hpp include/villas/my_proto.hpp
     ```
 
-1. Add the new C++ file to the [`lib/nodes/CMakeLists.txt`](https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/nodes/CMakeLists.txt) file
+1. Add the new C++ file to the [`lib/nodes/CMakeLists.txt`](https://github.com/VILLASframework/node/blob/master/lib/nodes/CMakeLists.txt) file
     - Make sure it is guarded by the new CMake option introduce in step 2)
 
 1. Implement the new node-type by editing `my_proto.cpp` and `my_proto.cpp`
@@ -52,7 +52,7 @@ VILLASnode already comes with a lot of existing implementations of node-types wh
     ```
 
 1. Add the configuration schema of your node-type to the list of available nodes in:
-    [`doc/openapi/components/schemas/config/node_obj.yaml`](https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/doc/openapi/components/schemas/config/node_obj.yaml)
+    [`doc/openapi/components/schemas/config/node_obj.yaml`](hhttps://github.com/VILLASframework/node/blob/master/doc/openapi/components/schemas/config/node_obj.yaml)
 
-1. Submit [a new merge-request](https://git.rwth-aachen.de/acs/public/villas/node/-/merge_requests) with your changes.
+1. Submit [a new pull-request](https://github.com/VILLASframework/node/pulls) with your changes.
     - Check if build finishes successfully

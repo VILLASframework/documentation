@@ -13,7 +13,7 @@ This node-type requires [libibverbs](https://github.com/linux-rdma/rdma-core) (>
 # Implementation
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/infiniband.cpp
+https://github.com/VILLASframework/node/blob/master/lib/nodes/infiniband.cpp
 
 ## Configuration {#config}
 

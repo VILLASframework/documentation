@@ -12,7 +12,7 @@ This node-type requires [libre](http://www.creytiv.com/re.html) (>= 0.6.0).
 ## Implementation
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/rtp.cpp
+https://github.com/VILLASframework/node/blob/master/lib/nodes/rtp.cpp
 
 ## Configuration {#config}
 

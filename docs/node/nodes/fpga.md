@@ -14,12 +14,12 @@ Please look at the main page for details: [VILLASfpga](../../fpga/index.md).
 
 ## Prerequisites
 
-This node-type requires the [VILLASfpga](https://git.rwth-aachen.de/acs/public/villas/fpga/fpga) library.
+This node-type requires the [VILLASfpga](https://github.com/VILLASframework/fpga) library.
 
 ## Implementation
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/fpga.cpp
+https://github.com/VILLASframework/node/blob/master/lib/nodes/fpga.cpp
 
 ## Configuration {#config}
 

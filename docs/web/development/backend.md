@@ -1,6 +1,6 @@
 # Backend {#web-development-backend}
 
-**Code:** https://git.rwth-aachen.de/acs/public/villas/web-backend-go
+**Code:** https://github.com/VILLASframework/web-backend
 
 ## Description
 
@@ -14,8 +14,8 @@ The backend of VILLASweb uses the programming language Go and a PostgreSQL datab
 
 ## Setup and Running
 
- - `git clone git@git.rwth-aachen.de/acs/public/villas/web-backend-go.git` to copy the project on your computer
- - `cd VILLASweb-backend-go`
+ - `git clone https://github.com/VILLASframework/web-backend.git` to copy the project on your computer
+ - `cd web-backend`
  - `go mod tidy`
  - `go run start.go [params]`
  
@@ -25,7 +25,7 @@ To run the tests use `go test $(go list ./... ) -p 1` in the top-level folder of
 Running the backend will only work if the PostgreSQL database is setup properly. Otherwise, you will get error messages.
 
 If you want to use test data (including some test users), you can start the backend with the parameter `-mode=test`.
-Please check the repository of the VILLASweb-backend-go to find information on the test user login names and passwords.
+Please check the repository of the VILLASweb-backend to find information on the test user login names and passwords.
 The testing mode is NOT intended for production deployments.
 
 ## Auto-generate the API documentation
@@ -41,4 +41,4 @@ The `.yaml` and `.json` files in OpenAPI swagger format are created in the outpu
 
 ## PostgreSQL database setup
 
-Please check the [Readme file in the backend repository](https://git.rwth-aachen.de/acs/public/villas/web-backend-go) for some useful hints on the local setup of the PostreSQL database.
+Please check the [Readme file in the backend repository](https://github.com/VILLASframework/web-backend) for some useful hints on the local setup of the PostreSQL database.

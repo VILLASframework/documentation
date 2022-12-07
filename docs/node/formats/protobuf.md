@@ -10,7 +10,7 @@ hide_table_of_contents: true
 
 The `.proto` Protocol Buffers Version Language Specification of the payload used by VILLASnode is available in the Git repository:
 
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/formats/villas.proto
+https://github.com/VILLASframework/node/blob/master/lib/formats/villas.proto
 
 ```protobuf url="external/node/lib/formats/villas.proto" title="node/lib/formats/villas.proto"
 /// Protobuf schema based on msg_format.h
@@ -65,7 +65,7 @@ message Complex {
 ## Implementation
 
 The source code of the format-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/protobuf.cpp
+https://github.com/VILLASframework/node/blob/master/lib/formats/protobuf.cpp
 
 ## Configuration {#config}
 

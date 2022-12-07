@@ -20,7 +20,7 @@ This node-type requires [libnanomsg](http://nanomsg.org/) (>= 1.0.0).
 ## Implementation
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/nanomsg.cpp
+https://github.com/VILLASframework/node/blob/master/lib/nodes/nanomsg.cpp
 
 ## Configuration {#config}
 

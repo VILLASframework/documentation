@@ -14,7 +14,7 @@ This node-type requires [mosquitto](https://mosquitto.org) (>= 1.4.15).
 ## Implementation
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/mqtt.cpp
+https://github.com/VILLASframework/node/blob/master/lib/nodes/mqtt.cpp
 
 ## Configuration {#config}
 

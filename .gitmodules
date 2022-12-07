@@ -1,9 +1,9 @@
 [submodule "node/external-code"]
 	path = external/node
-	url = ../node.git
+	url = https://github.com/VILLASframework/node.git
 [submodule "external/controller"]
 	path = external/controller
-	url = ../controller.git
+	url = https://github.com/VILLASframework/controller.git
 [submodule "external/web-backend-go"]
-	path = external/web-backend-go
-	url = ../web-backend-go.git
+	path = external/web-backend
+	url = https://github.com/VILLASframework/web-backend.git

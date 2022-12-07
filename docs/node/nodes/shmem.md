@@ -13,7 +13,7 @@ This node-type does not have any special library dependencies. It is always avai
 ## Implementation
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/shmem.cpp
+https://github.com/VILLASframework/node/blob/master/lib/nodes/shmem.cpp
 
 ## Configuration {#config}
 
@@ -62,5 +62,5 @@ configuration file), samples can be read from and written to VILLASNode using
 the node must be allocated by `sample_alloc` from the shared pool; samples read
 from the node should be freed with `sample_put` after they have been processed.
 
-See the [example client](https://git.rwth-aachen.de/acs/public/villas/node/blob/master/clients/shmem/villas-shmem.cpp) and the [API
-](https://git.rwth-aachen.de/acs/public/villas/node/blob/master/include/villas/shmem.h) for more details.
+See the [example client](https://github.com/VILLASframework/node/blob/master/clients/shmem/villas-shmem.cpp) and the [API
+](https://github.com/VILLASframework/node/blob/master/include/villas/shmem.h) for more details.

@@ -5,7 +5,7 @@ title: RTDS GTNET-SKT card
 
 # RTDS GTNET-SKT card <img align="right" width="150px" src="/img/logos/rtds.jpg" alt="RTDS Technologies logo"></img>
 
-**Example drafts:** <https://git.rwth-aachen.de/acs/public/villas/node/tree/master/clients/rtds/GTNETv2_SKT>
+**Example drafts:** <https://github.com/VILLASframework/node/tree/master/clients/rtds/gtnet_skt>
 
 The GTNETx2 card can be flashed with the SKT firmware to send/receive UDP and TCP packets over Ethernet.
 The card uses big endian byte order to send and receives data.

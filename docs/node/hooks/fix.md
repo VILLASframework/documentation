@@ -9,7 +9,7 @@ The `fix` hook checks each sample and adds missing metadata such as timestamps o
 ## Implementation
 
 The source code of the hook is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/fix.cpp
+https://github.com/VILLASframework/node/blob/master/lib/hooks/fix.cpp
 
 ## Configuration
 

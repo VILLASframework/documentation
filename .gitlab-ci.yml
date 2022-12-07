@@ -1,5 +1,4 @@
 variables:
-  GIT_STRATEGY: fetch
   GIT_SUBMODULE_STRATEGY: recursive
 
 stages:
@@ -35,3 +34,6 @@ deploy:kubernetes:
   - make deploy
   tags:
   - docker
+  only:
+    refs:
+    - master

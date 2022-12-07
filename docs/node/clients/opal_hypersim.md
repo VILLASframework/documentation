@@ -5,7 +5,7 @@ title: OPAL-RT HYPERSIM
 
 # OPAL-RT HYPERSIM <img align="right" width="250px" src="/img/logos/opal.jpg" alt="OPAL-RT logo"></img>
 
-**Source code:** <http://git.rwth-aachen.de/acs/public/villas/node/tree/master/clients/hypersim>
+**Source code:** <https://github.com/VILLASframework/node/tree/master/clients/hypersim>
 
 [HYPERSIM](https://www.opal-rt.com/systems-hypersim/) is a digital real-time power system simulator developed by [OPAL-RT](http://opal-rt.com) and [Hydro Quebec](http://www.hydroquebec.com/international/en/technology/grid-simulation.html).
 
@@ -22,7 +22,7 @@ title: OPAL-RT HYPERSIM
 
 2. This will create a file name ucm_node.def
 
-3. Open the file in editor and copy paste the downloaded code from the VILLASnode Git repository[VILLASnode/clients/hypersim/model/ucm_node.def](https://git.rwth-aachen.de/acs/public/villas/node/raw/develop/clients/hypersim/model/ucm_node.def)
+3. Open the file in editor and copy paste the downloaded code from the VILLASnode Git repository [VILLASnode/clients/hypersim/model/ucm_node.def](https://github.com/VILLASframework/node/blob/master/clients/hypersim/model/ucm_node.def)
 
 4. Right click and update the code.
 

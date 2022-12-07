@@ -9,7 +9,7 @@ The `average` hook calculates arithmetic mean over a set of signals and insert i
 ## Implementation
 
 The source code of the hook is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/average.cpp
+https://github.com/VILLASframework/node/blob/master/lib/hooks/average.cpp
 
 ## Configuration {#config}
 

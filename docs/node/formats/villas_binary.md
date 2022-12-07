@@ -21,7 +21,7 @@ Each message contains a header with the following fields:
 
 Timestamps are represented in [Unix time](https://en.wikipedia.org/wiki/Unix_time).
 
-The format of the packets is described by the following code [`struct Message`](https://git.rwth-aachen.de/acs/public/villas/node/blob/master/include/villas/formats/msg_format.hpp) structure.
+The format of the packets is described by the following code [`struct Message`](https://github.com/VILLASframework/node/blob/master/include/villas/formats/msg_format.hpp) structure.
 
 <figure align="center">
     <img alt="VILLAS binary payload format" src="/img/drawio/msg_format.svg" width="80%" />
@@ -37,7 +37,7 @@ All values are sent in **network byte order** (big endian)!
 ## Implementation
 
 The source code of the format-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/lib/formats/villas_binary.cpp
+https://github.com/VILLASframework/node/blob/master/lib/formats/villas_binary.cpp
 
 ## Configuration {#config}
 

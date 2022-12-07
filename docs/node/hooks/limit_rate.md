@@ -10,7 +10,7 @@ The decision whether a sample is discarded or not is based on its timestamp.
 ## Implementation
 
 The source code of the hook is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/limit_rate.cpp
+https://github.com/VILLASframework/node/blob/master/lib/hooks/limit_rate.cpp
 
 ## Configuration
 

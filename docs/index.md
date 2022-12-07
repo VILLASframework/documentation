@@ -69,7 +69,7 @@ VILLASframework consists of several components:
 
 ## Download
 
-The source code of all open source components is available over the [RWTH GitLab](https://git.rwth-aachen.de).
+The source code of all open source components is available via [GitHub](https://github.com/VILLASframework).
 
 ## Copyright
 

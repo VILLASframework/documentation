@@ -9,7 +9,7 @@ The `round` hook rounds selected signals of a sample to a specified number of di
 ## Implementation
 
 The source code of the hook is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/round.cpp
+https://github.com/VILLASframework/node/blob/master/lib/hooks/round.cpp
 
 ## Configuration
 

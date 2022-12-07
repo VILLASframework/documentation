@@ -17,7 +17,7 @@ This is the default if the `libwebsockets` library has been detected on the syst
 ## Implementation
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/api.cpp
+https://github.com/VILLASframework/node/blob/master/lib/nodes/api.cpp
 
 ## Configuration {#config}
 

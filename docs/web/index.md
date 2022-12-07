@@ -11,12 +11,12 @@ The term **frontend** refers to this project, the actual website.
 
 The frontend connects to **two** backends:
 
-- [VILLASweb-backend-go](https://git.rwth-aachen.de/acs/public/villas/web-backend-go)
-- [VILLASnode](https://git.rwth-aachen.de/acs/public/villas/node)
+- [VILLASweb-backend](https://github.com/VILLASframework/web-backend)
+- [VILLASnode](https://github.com/VILLASframework/node)
 
 The VILLASweb-backend in turn controls infrastructure components via the [VILLAScontroller](../controller/index.md) component
 
 _VILLASnode_ provides actual simulation data via websockets.
-_VILLASweb-backend-go_ provides any other data such as user accounts, infrastructure components and configurations, dashboards etc.
+_VILLASweb-backend_ provides any other data such as user accounts, infrastructure components and configurations, dashboards etc.
 For more information on the backends see their repositories.
 

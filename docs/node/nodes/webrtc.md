@@ -30,18 +30,18 @@ VILLASnode must be build with the CMake option `-DWITH_GO=ON` (enabled by defaul
 A publicly reachable signaling server is required.
 [RWTH-ACS](https://www.acs.eonerc.rwth-aachen.de) operates such a signaling server at `wss://ws-signal.villas.k8s.eonerc.rwth-aachen.de` which is used by default.
 
-You can use your own signaling server by using the code here: https://git.rwth-aachen.de/acs/public/villas/webrtc-signaling
+You can use your own signaling server by using the code here: https://github.com/VILLASframework/signaling
 
 ## Implementation
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/go/pkg/nodes/webrtc/
+https://github.com/VILLASframework/node/blob/master/go/pkg/nodes/webrtc/
 
 ## Web Demo {#demo}
 
 There exists an example WebRTC peer implementation running in a web-browser:
 
-- **Source:** https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/web/webrtc.html
+- **Source:** https://github.com/VILLASframework/node/blob/master/web/webrtc.html
 - **Online Demo:** https://villas.fein-aachen.org/webrtc/
 
 ## Configuration {#config}

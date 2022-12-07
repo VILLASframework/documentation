@@ -11,7 +11,7 @@ This node-type requires [hiredis](https://github.com/redis/hiredis) (>= 1.0.0) a
 ## Implementation
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/redis.cpp
+https://github.com/VILLASframework/node/blob/master/lib/nodes/redis.cpp
 
 ## Configuration {#config}
 

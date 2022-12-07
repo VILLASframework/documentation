@@ -7,7 +7,7 @@ hide_table_of_contents: true
 The `lua` hook allows for the evaluation arbitrary Lua expressions.
 
 Take a look at some example Lua scripts used by this hook here:
-https://git.rwth-aachen.de/acs/public/villas/node/-/tree/master/lua/hooks
+https://github.com/VILLASframework/node/tree/master/lua/hooks
 
 ## Prerequisites
 
@@ -16,7 +16,7 @@ This hook requires [Lua](https://www.lua.org/) (>= 5.1).
 ## Implementation
 
 The source code of the hook is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/hooks/lua.cpp
+https://github.com/VILLASframework/node/blob/master/lib/hooks/lua.cpp
 
 ## Configuration
 

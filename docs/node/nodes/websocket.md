@@ -13,7 +13,7 @@ This node-type requires [libwebsockets](http://libwebsockets.org) (>= 2.3.0).
 ## Implementation
 
 The source code of the node-type is available here:
-https://git.rwth-aachen.de/acs/public/villas/node/blob/master/lib/nodes/websocket.cpp
+https://github.com/VILLASframework/node/blob/master/lib/nodes/websocket.cpp
 
 ## Configuration {#config}
 

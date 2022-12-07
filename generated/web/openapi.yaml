@@ -2,7 +2,7 @@ openapi: 3.0.1
 info:
   title: VILLASweb Backend API
   description: |-
-    This is the [VILLASweb Backend](https://git.rwth-aachen.de/acs/public/villas/web-backend-go) API v2.0.
+    This is the [VILLASweb backend](https://github.com/VILLASframework/web-backend) API v2.0.
     This documentation is auto-generated based on the API documentation in the code. The tool [swag](https://github.com/swaggo/swag) is used to auto-generate API docs for the [gin-gonic](https://github.com/gin-gonic/gin) framework.
     Authentication: Use the authenticate endpoint below to obtain a token for your user account, copy the token into to the value field of the dialog showing up for the green Authorize button below and confirm with Done.
   contact:

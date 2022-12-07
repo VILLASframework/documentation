@@ -5,7 +5,7 @@ The protocol uses AMQP to transport JSON encoded objects which are specified in 
 
 VILLAScontroller is implemented in Python and using the [Kombo messaging package](https://kombu.readthedocs.io).
 
-The Git repository is available at: http://git.rwth-aachen.de/acs/public/villas/controller
+The Git repository is available at: http://github.com/VILLASframework/controller
 
 The purpose of VILLAScontroller is the orchestration of IC in distributed lab setups.
 This includes the following tasks:
@@ -201,7 +201,7 @@ After receiving such a message, each entity shall send a status update message a
 		"pod_names": ["pod_number_1", "pod_number_2"]
 
 		/* Signal description in the same format as used by VILLASnode:
-		 * https://git.rwth-aachen.de/acs/public/villas/node/-/blob/master/doc/openapi/components/schemas/config/signal_list.yaml
+		 * https://github.com/VILLASframework/node/blob/master/doc/openapi/components/schemas/config/signal_list.yaml
 		 */
 		"signals": [
 			{ "name": "voltage_bus123_phase1", "unit": "V", "type": "float" },
