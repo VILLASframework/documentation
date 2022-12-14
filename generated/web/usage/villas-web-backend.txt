@@ -23,7 +23,7 @@ Usage of villasweb-backend:
   -config string
     	Path to YAML configuration file
   -contact-mail string
-    	EMail of the administrative contact (default "svogel2@eonerc.rwth-aachen.de")
+    	EMail of the administrative contact (default "post@steffenvogel.de")
   -contact-name string
     	Name of the administrative contact (default "Steffen Vogel")
   -db-host string
