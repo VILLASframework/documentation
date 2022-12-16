@@ -5,7 +5,7 @@ The `villas-web-backend` starts the VILLASweb backend.
 # Usage
 
 ``` url="generated/web/usage/villas-web-backend.txt" title="generated/web/usage/villas-web-backend.txt"
-2021/06/07 07:50:37 Starting VILLASweb-backend
+2021/06/07 07:50:37 Starting VILLASweb-backend-go
 Usage of villasweb-backend:
   -admin-mail string
     	Initial admin mail address
@@ -66,4 +66,5 @@ Usage of villasweb-backend:
   -test-data-path string
     	The path to the test data json file (used in test mode) (default "database/testdata.json")
   -title string
-    	Title shown in the frontend (default "VILLASweb")```
+    	Title shown in the frontend (default "VILLASweb")
+```
