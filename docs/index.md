@@ -91,7 +91,7 @@ Please contact [Prof. Antonello Monti](mailto:amonti@eonerc.rwth-aachen.de) for 
 The project is using a public [mailing list](https://mailman.rwth-aachen.de/mailman/listinfo/villas) for announcements and general discussions.
 Please click on the link above to subscribe.
 
-[Steffen Vogel](mailto:svogel2@eonerc.rwth-aachen.de) is coordinating development of VILLASframework and its application in project at ACS.
+[Steffen Vogel](mailto:post@steffenvogel.de) is coordinating development of VILLASframework and its application in project at ACS.
 
 [Institute for Automation of Complex Power Systems (ACS)](http://www.acs.eonerc.rwth-aachen.de)  
 [EON Energy Research Center (EONERC)](http://www.eonerc.rwth-aachen.de)  

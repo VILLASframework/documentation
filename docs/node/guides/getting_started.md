@@ -98,7 +98,7 @@ This webinar was recorded during the preparation of the RT-SuperLab demonstratio
 
 - **Date:** 8th May 2017
 - **Versions:** VILLASnode v0.3
-- **Speaker:** [Steffen Vogel](mailto:stvogel@eonerc.rwth-aachen.de)
+- **Speaker:** [Steffen Vogel](mailto:post@steffenvogel.de)
 
 :::caution
 This video presents an outdated version of VILLASnode!

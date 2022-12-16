@@ -189,7 +189,7 @@ After receiving such a message, each entity shall send a status update message a
 		"name" : "OP5600",
 		"description" : "some optional description",
 		"location" : "OPAL-RT Rack, ACS Real-time Lab, EONERC, RWTH",
-		"owner" : "stvogel@eonerc.rwth-aachen.de",
+		"owner" : "post@steffenvogel.de",
 
 		"ws_url" : "https://villas.k8s.eonerc.rwth-aachen.de/ws/relay/node_1",
 		"api_url" : "https://villas.k8s.eonerc.rwth-aachen.de/ws/relay/api/node_1",
