@@ -18,7 +18,7 @@ title: OPAL-RT HYPERSIM
 1. Create a new UCM name “node” and save to the real-time simulator folder of HYPERSIM.
    Example: `C:\Users\auser\HYPERSIM\ucm`.
 
-	![](/img/screenshots/node/hypersim_1.png)
+	![](/img/screenshots/node/opal-hypersim/hypersim_1.png)
 
 2. This will create a file name ucm_node.def
 
@@ -26,7 +26,7 @@ title: OPAL-RT HYPERSIM
 
 4. Right click and update the code.
 
-	![](/img/screenshots/node/hypersim_2.png)
+	![](/img/screenshots/node/opal-hypersim/hypersim_2.png)
 
 5. Within the opening window, adjust the user settings
    - Destination Port number
@@ -34,13 +34,13 @@ title: OPAL-RT HYPERSIM
 
 6. Go to options and set for real time
 
-	![](/img/screenshots/node/hypersim_3.png)
+	![](/img/screenshots/node/opal-hypersim/hypersim_3.png)
 
 7. Start simulation on HYPERSIM, and VILLASnode
 
 8. The received data can be viewed on the ScopeView
 
-	![](/img/screenshots/node/hypersim_4.png)
+	![](/img/screenshots/node/opal-hypersim/hypersim_4.png)
 
 ## Author
 
