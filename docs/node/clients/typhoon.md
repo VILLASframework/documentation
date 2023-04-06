@@ -29,7 +29,7 @@ VILLASnode ships with an example schematic for the Typhoon HIL control center.
 - **Git:** <https://github.com/VILLASframework/node/tree/master/clients/typhoon>
 
 <figure align="center">
-    <img alt="Typhoon model schematic" src="/img/screenshots/typhoon_ve_model.png" width="80%" />
+    <img alt="Typhoon model schematic" src="/img/screenshots/node/typhoon/model.png" width="80%" />
     <figcaption>Typhoon model schematic.</figcaption>
 </figure>
 
@@ -104,7 +104,7 @@ paths = (
 | Subnet mask	            | `255.255.255.0` |
 
 <figure align="center">
-    <img alt="ETH VE Setup properties" src="/img/screenshots/typhoon_ve_setup.png" width="50%" />
+    <img alt="ETH VE Setup properties" src="/img/screenshots/node/typhoon/setup.png" width="50%" />
     <figcaption>ETH VE Setup properties.</figcaption>
 </figure>
 
@@ -121,8 +121,8 @@ Please use the following settings for the _VE Send_ blocks:
 | Data      | Configuration             | _See [signal configuration](#signal-configuration) section_ |
 
 <figure align="center">
-    <img alt="ETH VE Setup properties" src="/img/screenshots/typhoon_ve_send_network.png" width="33%" />&nbsp;
-    <img alt="ETH VE Setup properties" src="/img/screenshots/typhoon_ve_send_data.png" width="33%" />
+    <img alt="ETH VE Setup properties" src="/img/screenshots/node/typhoon/send_network.png" width="33%" />&nbsp;
+    <img alt="ETH VE Setup properties" src="/img/screenshots/node/typhoon/send_data.png" width="33%" />
     <figcaption>ETH VE Send properties.</figcaption>
 </figure>
 
@@ -137,8 +137,8 @@ Please use the following settings for the _VE Send_ blocks:
 | Data      | Configuration             | _See [signal configuration](#signal-configuration) section_ |
 
 <figure align="center">
-    <img alt="ETH VE Setup properties" src="/img/screenshots/typhoon_ve_receive_network.png" width="33%" />&nbsp;
-    <img alt="ETH VE Setup properties" src="/img/screenshots/typhoon_ve_receive_data.png" width="33%" />
+    <img alt="ETH VE Setup properties" src="/img/screenshots/node/typhoon/receive_network.png" width="33%" />&nbsp;
+    <img alt="ETH VE Setup properties" src="/img/screenshots/node/typhoon/receive_data.png" width="33%" />
     <figcaption>ETH VE Receive properties.</figcaption>
 </figure>
 
@@ -147,7 +147,7 @@ Please use the following settings for the _VE Send_ blocks:
 You can either configure the signal mapping via Typhoon graphical editor as shown in the screenshot below:
 
 <figure align="center">
-    <img alt="ETH VE Setup properties" src="/img/screenshots/typhoon_ve_signals.png" width="80%" />
+    <img alt="ETH VE Setup properties" src="/img/screenshots/node/typhoon/signals.png" width="80%" />
     <figcaption>ETH VE Signal Configuration.</figcaption>
 </figure>
 
