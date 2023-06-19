@@ -1,6 +1,6 @@
 #!/bin/env python3
 
-from io import TextIOWrapper
+
 from pathlib import Path
 
 import re
@@ -8,8 +8,10 @@ import re
 regex_code = r"```(?P<lang>[a-z]+)?(?: (?P<tagline>[^\n]+))?(?:\n.*?)*```"
 regex_tag = r"(?P<key>[a-z]+)=\"(?P<value>[^\"]+)\""
 
+
 def strip_path(path):
     return path.removeprefix('external/')
+
 
 def replace_match(match):
     tagline = match.group('tagline')
@@ -27,11 +29,11 @@ def replace_match(match):
         language = ''
 
     url = tags['url']
-    
+
     try:
         with open(url) as f:
             new_contents = f.read()
-    except FileNotFoundError as e:
+    except FileNotFoundError:
         print(f'  Failed to find file: {url}')
         return match.group(0)
 
@@ -42,6 +44,7 @@ def replace_match(match):
 
     return f'```{language}{new_tagline}\n{new_contents}```'
 
+
 def process_file(f):
     contents = f.read()
 
@@ -51,12 +54,14 @@ def process_file(f):
     f.write(new_contents)
     f.truncate()
 
+
 def main():
     for path in Path('docs').rglob('*.md'):
         # print(f'Processing: {path}')
 
-        with open(path, 'r+') as f:
+        with open(path, 'r+', encoding='utf-8', newline='\n') as f:
             process_file(f)
+
 
 if __name__ == '__main__':
     main()
