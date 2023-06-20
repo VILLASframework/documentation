@@ -12,7 +12,7 @@ There are [dedicated installation instructions for VILLASnode](node/installation
 **For beginners, we recommend to start looking at VILLASnode first.**
 :::
 
-You can run the full set of VILLASframework components pre-configured in a Kubernetes cluster using the [Helm chart](https://git.rwth-aachen.de/acs/public/catalogue/-/blob/master/charts/villas/).
+You can run the full set of VILLASframework components pre-configured in a Kubernetes cluster using the [Helm chart](https://github.com/VILLASframework/chart).
 
 ## Requirements
 
