@@ -5,7 +5,7 @@
 	"build": {
 		"context": "..",
 		"dockerfile": "../Dockerfile",
-		"target": "vscode"
+		"target": "dev"
 	},
 	"forwardPorts": [
 		3000
