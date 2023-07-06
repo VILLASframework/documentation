@@ -37,9 +37,6 @@ RUN apt-get update && \
 
 RUN yarn global add @redocly/cli
 
-COPY package.json .
-RUN yarn
-
 FROM deps AS dev
 
 # create a non-root user for vscode to use
@@ -56,6 +53,9 @@ FROM deps AS builder
 
 RUN mkdir /doc
 WORKDIR /doc
+
+COPY package.json .
+RUN yarn
 
 COPY . .
 RUN make docs
