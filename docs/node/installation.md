@@ -33,36 +33,36 @@ VILLASnode currently has the following list of dependencies:
 | Package | Version | Purpose | Optional | License |
 | --- | --- | --- | --- | --- |
 | [CMake](http://cmake.org/) | >= 3.9 | for generating the build-system | required | BSD 3 |
+| [fmtlib](https://github.com/fmtlib/fmt) | >= 6.1.2 | for string formatting | required | MIT |
+| [libcurl](https://curl.haxx.se/libcurl/) | >= 7.29.0 | for HTTP REST requests by the [NGSI node-type](nodes/ngsi.md) node-type | required | similar to MIT |
+| [libjansson](http://www.digip.org/jansson/) | >= 2.7 | JSON parser for [Websocket node-type](nodes/websocket.md) and [NGSI node-type](nodes/ngsi.md) node-types | required | MIT |
+| [libuuid](https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git) | >= 2.29 | - | required | BSD |
+| [libwebsockets](http://libwebsockets.org) | >= 3.1.0 | for the [Websocket node-type](nodes/websocket.md) | required | MIT |
+| [openssl](https://www.openssl.org) | >= 1.0.0 | for cryptographic hashing functions | required | Apache 2 for >=3.0 |
+| [spdlog](https://github.com/gabime/spdlog) | >= 1.8.2 | for logging | required | MIT |
 | [comedilib](http://comedi.org) | >= 0.11.0 | for the [Comedi node-type](nodes/comedi.md) | optional | LGPL-2.1 |
 | [Criterion](https://github.com/Snaipe/Criterion) | >= 2.3.1 | for running the unit tests | optional | MIT |
 | [Etherlab](http://etherlab.org) | >= 1.5.2 | for the [Ethercat node-type](nodes/ethercat.md) | optional | __GPL 3__ |
-| [fmtlib](https://github.com/fmtlib/fmt) | >= 6.1.2 | for string formatting | required | MIT |
 | [Graphviz](https://graphviz.org/) | >= 2.30 | for the visualisation of configuration files | optional | EPL |
 | [libconfig](http://www.hyperrealm.com/libconfig/) | >= 1.4.9 | for parsing the configuration file | optional | LGPL-2.1 |
-| [libcurl](https://curl.haxx.se/libcurl/) | >= 7.29.0 | for HTTP REST requests by the [NGSI node-type](nodes/ngsi.md) node-type | required | similar to MIT |
 | [libdatachannel](https://libdatachannel.org/) | >= 0.18.4 | for the WebRTC node-type | optional | MPL-2.0 |
 | [libibverbs](https://github.com/linux-rdma/rdma-core) | >= 16.2 | for the [Infiniband node-type](nodes/infiniband.md) | optional | BSD |
 | [libiec61850](http://libiec61850.com/libiec61850/) | >= 1.3.1 | for the [IEC61850-8-1](nodes/iec61850-8-1.md) and [IEC61850-9-2](nodes/iec61850-9-2.md) node-types | optional | __GPL 3__ |
-| [libjansson](http://www.digip.org/jansson/) | >= 2.7 | JSON parser for [Websocket node-type](nodes/websocket.md) and [NGSI node-type](nodes/ngsi.md) node-types | required | MIT |
 | [libnanomsg](http://nanomsg.org/) | >= 1.0.0 | for the [Nanomsg node-type](nodes/nanomsg.md) | optional | MIT |
 | [libnice](https://libnice.freedesktop.org/) | >= 0.1.16 | for libdatachannel / WebRTC | optional | MPL-1.1 & LGPL-2.1 |
 | [libnl3](http://www.infradead.org/~tgr/libnl/) | >= 3.2.27 | for the network communication & emulation support of the [Socket node-type](nodes/socket.md) node-type | optional | LGPL-2.1 |
 | [libOpal{AsyncApi,Core,Utils}](https://git.rwth-aachen.de/acs/public/villas/libopal) | - | for running VILLASnode as an Asynchronous process inside your RT-LAB model with [OPAL node-type](nodes/opal.md) | optional | ??? |
 | [librdmacm](https://github.com/linux-rdma/rdma-core) | >= 16.2 | for the [Infiniband node-type](nodes/infiniband.md) | optional | BSD |
-| [libre](http://www.creytiv.com/re.html) | >= 0.5.6 | for the [RTP node-type](nodes/rtp.md) | optional | BSD 3 | 
+| [libre](http://www.creytiv.com/re.html) | >= 0.5.6 | for the [RTP node-type](nodes/rtp.md) | optional | BSD 3 |
 | [libuldaq](https://github.com/mccdaq/uldaq) | >= 1.0.0 | for the [ULDAQ node-type](nodes/uldaq.md) | optional | MIT
-| [libuuid](https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git) | >= 2.29 | - | - | BSD |
-| [libwebsockets](http://libwebsockets.org) | >= 3.1.0 | for the [Websocket node-type](nodes/websocket.md) | required | MIT |
 | [libxil](https://github.com/VILLASframework/libxil) | >= 1.0.0 | for the [VILLASfpga node-type](nodes/fpga.md) | optional | ??? |
 | [libzmq](http://zeromq.org) | >= 2.2.0 | for the [ZeroMQ node-type](nodes/zeromq.md) | optional | __GPL 3__ |
 | [Lua](http://www.lua.org/) | >= 5.1 | for the [Lua hook](hooks/lua.md) | optional | MIT |
 | [mosquitto](https://mosquitto.org) | >= 1.4.15 | for the [MQTT node-type](nodes/mqtt.md) | optional | EPL 2 |
-| [openssl](https://www.openssl.org) | >= 1.0.0 | for cryptographic hashing functions | required | Apache 2 for >=3.0 |
 | [protobuf-c](https://github.com/protobuf-c/protobuf-c/) | >= 1.1.0 | for the [Protobuf format-type](formats/protobuf.md) | optional | similar to BSD |
 | [protobuf](https://github.com/google/protobuf) | >= 2.6.0 | for the [Protobuf format-type](formats/protobuf.md) | optional | similar to BSD |
 | [rabbitmq-c](https://github.com/alanxz/rabbitmq-c) | >= 0.8.0 | for the [AMQP node-type](nodes/amqp.md) | optional | MIT |
 | [rdkafka](https://github.com/edenhill/librdkafka) | >= 1.5.0 | for the [Kafka node-type](nodes/kafka.md) | optional | BSD |
-| [spdlog](https://github.com/gabime/spdlog) | >= 1.8.2 | for logging | required | MIT |
 
 There are three ways to install these dependencies:
 
