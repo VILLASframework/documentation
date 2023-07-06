@@ -7,5 +7,14 @@
 		"dockerfile": "../Dockerfile",
 		"target": "vscode"
 	},
+	"forwardPorts": [
+		3000
+	],
+	"portsAttributes": {
+		"3000": {
+			"label": "Development Server",
+			"onAutoForward": "openBrowserOnce"
+		}
+	},
 	"remoteUser": "node"
 }
