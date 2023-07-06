@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "run local server",
+            "type": "shell",
+            "command": "yarn start",
+            "isBackground": true,
+            "problemMatcher": [],
+            "dependsOn": ["prepare yarn"],
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
+        },
+        {
+            "label": "prepare yarn",
+            "type": "shell",
+            "command": "yarn",
+            "problemMatcher": []
+        }
+    ]
+}
