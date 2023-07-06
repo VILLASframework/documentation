@@ -1,7 +1,6 @@
 # API
 
 VILLASnode can be controlled remotely with an Application Programming Interface (API).
-Using this API VILLASnode can be completely remote controlled.
 
 There are two components which provide dedicated APIs:
 

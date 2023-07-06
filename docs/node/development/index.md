@@ -12,7 +12,7 @@ A [contribution guide](https://github.com/VILLASframework/node/blob/master/CONTR
 
 ## Programming Paradigm
 
-VILLASnode is currently written in C/C++ using the ISO C11 and C++14 standards while following an object oriented programming paradigm.
+VILLASnode is currently written in C/C++ using the ISO C11 and C++17 standards while following an object oriented programming paradigm.
 
 Main _classes_ in VILLASnode are:
 - [`struct villas::node::Sample`](https://github.com/VILLASframework/node/blob/master/include/villas/sample.hpp)
@@ -21,22 +21,24 @@ Main _classes_ in VILLASnode are:
 - [`class villas::node::Hook`](https://github.com/VILLASframework/node/blob/master/include/villas/hook.hpp)
 
 In order to track the life cycle of those objects, each of them has an `enum State` member.
-The following figure illustrates the state machine which is used:
+The following figure illustrates the normal transition through the states of a `Node` type:
 
 ```mermaid
     stateDiagram-v2
-        [*] --> initialized: _init()
-        initialized --> parsed: _parse()
-        initialized --> destroyed: _destroy()
-        parsed --> destroyed: _destroy()
-        parsed --> checked: _check()
-        checked --> destroyed: _destroy()
-        checked --> prepared: _prepare()
-        prepared --> started: _start()
-        started --> stopped: _stop()
-        stopped --> destroyed: _destroy()
+        [*] --> initialized: _init() / Node#58;#58;Node()
+        initialized --> parsed: _parse() / Node#58;#58;parse()
+        parsed --> checked: _check() / Node#58;#58;check()
+        checked --> prepared: _prepare() / Node#58;#58;prepare()
+        prepared --> started: _start() / Node#58;#58;start()
+        started --> stopped: _stop() / Node#58;#58;stop()
+        stopped --> started: _start() / Node#58;#58;start()
+        stopped --> destroyed: _destroy() / Node#58;#58;~Node()
         destroyed --> [*]
 ```
+
+Be aware that, when a fatal error occures `_destroy / Node::~Node()` will be called, no matter the previous state of the node.
+Also note that `_read() / Node::read()` and `_write() / Node::write()` are guaranteed to only be called in the `started` state.
+Please rely on the guaranteed state transition order and do **not** replicate these state transitions within your node type's implementation.
 
 ## Shared library: `libvillas.so`
 

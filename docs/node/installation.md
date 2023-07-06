@@ -49,11 +49,11 @@ VILLASnode currently has the following list of dependencies:
 | [libnl3](http://www.infradead.org/~tgr/libnl/) | >= 3.2.27 | for the network communication & emulation support of the [Socket node-type](nodes/socket.md) node-type | optional | LGPL-2.1 |
 | [libOpal{AsyncApi,Core,Utils}](https://git.rwth-aachen.de/acs/public/villas/libopal) | - | for running VILLASnode as an Asynchronous process inside your RT-LAB model with [OPAL node-type](nodes/opal.md) | optional | ??? |
 | [librdmacm](https://github.com/linux-rdma/rdma-core) | >= 16.2 | for the [Infiniband node-type](nodes/infiniband.md) | optional | BSD |
-| [libre](http://www.creytiv.com/re.html) | >= 0.5.6 | for the [RTP node-type](nodes/rtp.md) | optional | BSD 3 | 
+| [libre](http://www.creytiv.com/re.html) | >= 2.9.0 | for the [RTP node-type](nodes/rtp.md) | optional | BSD 3 |
 | [libuldaq](https://github.com/mccdaq/uldaq) | >= 1.0.0 | for the [ULDAQ node-type](nodes/uldaq.md) | optional | MIT
 | [libuuid](https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git) | >= 2.29 | - | - | BSD |
 | [libwebsockets](http://libwebsockets.org) | >= 3.1.0 | for the [Websocket node-type](nodes/websocket.md) | required | MIT |
-| [libxil](https://github.com/VILLASframework/libxil) | >= 1.0.0 | for the [VILLASfpga node-type](nodes/fpga.md) | optional | ??? |
+| [libxil](https://github.com/VILLASframework/libxil) | >= 1.0.0 | for the [VILLASfpga node-type](nodes/fpga.md) | optional | MIT |
 | [libzmq](http://zeromq.org) | >= 2.2.0 | for the [ZeroMQ node-type](nodes/zeromq.md) | optional | __GPL 3__ |
 | [Lua](http://www.lua.org/) | >= 5.1 | for the [Lua hook](hooks/lua.md) | optional | MIT |
 | [mosquitto](https://mosquitto.org) | >= 1.4.15 | for the [MQTT node-type](nodes/mqtt.md) | optional | EPL 2 |
@@ -94,7 +94,7 @@ sudo apt-get install \
     libcomedi-dev \
     libibverbs-dev \
     librdmacm-dev \
-    libre-dev \
+    libre2-dev \
     libspdlog-dev \
     libfmt-dev \
     libusb-1.0-0-dev \
@@ -141,43 +141,131 @@ sudo yum install \
 ### Downloading from Git
 
 ```bash
+# clone the repository into ./VILLASnode
 git clone https://github.com/VILLASframework/node.git VILLASnode
 cd VILLASnode
+
+# initialize at least the common submodule for a successful build
 git submodule update --init common
+
+# initialize all submodules for VILLASfpga support
+git submodule update --init --recursive
 ```
 
-### Install unpackaged dependencies
+### Install unpackaged dependencies from source - `deps.sh`
 
 VILLASnode requires several external libraries which are not packaged by common Linux distributions (see above).
-Please consult the list above to install at least the mandatory dependencies by hand or use the following script:
+The script found at `packaging/deps.sh` can be used to build and install the dependencies you could not find packaged.
 
+It supports several configuration options specified in environment variables:
+- `PREFIX=<DIR>`: The installation target directory. Default: `/usr/local`
+- `DEPS_SCAN`: Only list missing dependencies. Default: unset
+- `DEPS_INCLUDE`: Only install the specified dependencies. Default: unset
+- `DEPS_SKIP`: Skip the specified dependencies. Default: unset
+- `DEPS_NONINTERACTIVE`: Do not ask interactively. Default: unset
+
+Here are some example usages:
 ```bash
+# install in this directory, /usr/local is also the default if unspecified
+export PREFIX=/usr/local
+
+# this asks interactively for each dependency which was determined to be missing
 bash packaging/deps.sh
+
+# force noninteractive install in interactive sessions
+DEPS_NONINTERACTIVE=1 bash packaging/deps.sh
+
+# list all dependencies which were determined to be missing on your system
+DEPS_SCAN=1 bash packaging/deps.sh
+
+# specify a subset of the packages from DEPS_SCAN
+DEPS_INCLUDE='uldaq jansson' bash packaging/deps.sh
+
+# install all but a subset of packages from DEPS_SCAN
+DEPS_SKIP='libre rdkafka' bash packaging/deps.sh
 ```
 
-### Compilation
+## Compile and install
 
-Start the compilation with:
+`VILLASnode` uses CMake for the build and install process.
+
+### Simple build
+
+Simply build VILLASnode with all features available for the dependencies installed on your system.
 
 ```bash
-mkdir build
-cd build
-cmake ..
-make -j$(nproc)
+# setup the build directory for a release mode build
+cmake -S . -B ./build -DCMAKE_BUILD_TYPE=Release
+
+# build villas node in the build directory
+cmake --build ./build
+
+# you can find the villas-node binary at ./build/src
+./build/src/villas-node -h
 ```
 
 ### Installation
 
-Install the files to your search path:
+You can also install the binaries and tools into to your search path after building them.
 
 ```bash
-sudo make install
-echo /usr/local/lib | sudo tee /etc/ld.so.conf.d/local.conf
-sudo ldconfig
+# install the VILLASnode libraries tools and binaries
+cmake --build ./build --target install
 ```
 
-Append `PREFIX=/opt/local` to change the installation destination.
+### Customizing the build
 
+The compilation of villas can be customized for faster compilation, smaller binaries or to fix issues on more excotic systems.
+Normal users should probably stick with the defaults.
+
+#### Exclude broken features
+
+:::note NOTE
+If the VILLASnode CMake configuration can't cope with your environment. For example if it detects a dependency,
+enables the corresponding features but fails to build. You can deactivate many parts of VILLASnode in a rather fine-grained way.
+:::
+
+See the the top-level [`CMakeLists.txt`] file for all options.
+
+For instance, every node-type can be excluded separately using a `-DWITH_NODE_<name>=OFF` flag.
+If for example the RTP node is breaking your compilation, you can disable it like this:
+```shell
+cmake -S . -B build -DWITH_NODE_RTP=OFF
+```
+
+#### Minimal builds
+
+:::note NOTE
+Minimal builds should only be attempted if you know exactly which of VILLASnode's features you will need.
+:::
+
+First use the "-DWITH_DEFAULTS=OFF" cmake flag to deactivate all optional features, even if the dependencies are satisfied.
+You can then add the features you need back using the options from [`CMakeLists.txt`].
+
+Here is an example VILLASnode configuration with only the "file" node-type and hooks, which can be configured by JSON or libconfig syntax:
+```shell
+# disable all default features
+FLAGS+=" -DWITH_DEFAULTS=OFF"
+
+# enable the villas-* binaries from ./src again
+FLAGS+=" -DWITH_SRC=ON"
+
+# enable the villas-* tools from ./tools again
+FLAGS+=" -DWITH_TOOLS=ON"
+
+# enable libconfig configuration syntax
+FLAGS+=" -DWITH_CONFIG=ON"
+
+# enable the file node
+FLAGS+=" -DWITH_NODE_FILE=ON"
+
+# enable hooks support
+FLAGS+=" -DWITH_HOOKS=ON"
+
+cmake -S . -B build $FLAGS
+```
+
+[`CMakeLists.txt`]: https://github.com/VILLASframework/node/blob/master/CMakeLists.txt#L169
 
 ## Docker images {#docker}
 
