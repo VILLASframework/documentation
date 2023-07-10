@@ -8,7 +8,7 @@ sidebar_label: Overview
 Development is currently coordinated by Steffen Vogel <post@steffenvogel.de> at [VILLASframework GitHub organization](https://github.com/VILLASframework/node).
 Please feel free to submit pull requests or bug reports.
 
-A [contribution guide](https://github.com/VILLASframework/node/blob/master/CONTRIBUTING.md) is available in the [Git repository](https://github.com/VILLASframework/node).
+Please follow our [contribution guide](./contributing.md) when creating pull requests at GitHub.
 
 ## Programming Paradigm
 
