@@ -5,7 +5,16 @@
 	"build": {
 		"context": "..",
 		"dockerfile": "../Dockerfile",
-		"target": "vscode"
+		"target": "dev"
+	},
+	"forwardPorts": [
+		3000
+	],
+	"portsAttributes": {
+		"3000": {
+			"label": "Development Server",
+			"onAutoForward": "openBrowserOnce"
+		}
 	},
 	"remoteUser": "node"
 }

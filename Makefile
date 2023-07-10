@@ -34,10 +34,20 @@ build/index.html: figures examples
 examples:
 	python3 tools/insert_examples.py
 
+image-dev:
+	docker build \
+		--target dev \
+		--tag $(DOCKER_IMAGE):dev \
+		--tag $(DOCKER_IMAGE):$(DOCKER_TAG)-dev .
+
 image:
 	docker build \
 		--tag $(DOCKER_IMAGE):$(DOCKER_TAG) \
 		--tag $(DOCKER_IMAGE):latest .
+
+upload-dev: image-dev
+	docker push $(DOCKER_IMAGE):$(DOCKER_TAG)-dev
+	docker push $(DOCKER_IMAGE):dev
 
 upload: image
 	docker push $(DOCKER_IMAGE):$(DOCKER_TAG)
@@ -45,6 +55,14 @@ upload: image
 
 run: image
 	docker run -p 8080:80 $(DOCKER_IMAGE):$(DOCKER_TAG)
+
+dev: image-dev
+	docker run \
+		--publish 3000:3000 \
+		--tty --interactive \
+		--volume $(shell pwd):/documentation \
+		--workdir /documentation \
+		$(DOCKER_IMAGE):$(DOCKER_TAG)-dev
 
 deploy:
 	kubectl apply -f deployment.yaml

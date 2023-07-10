@@ -35,7 +35,9 @@ RUN apt-get update && \
 		locales \
 		python3
 
-FROM deps AS vscode
+RUN yarn global add @redocly/cli
+
+FROM deps AS dev
 
 # create a non-root user for vscode to use
 ARG USERNAME=node
@@ -43,14 +45,14 @@ RUN apt-get install sudo \
 	&& echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
 	&& chmod 0440 /etc/sudoers.d/$USERNAME
 
-ENTRYPOINT [ "bash" ]
+EXPOSE 3000
+
+ENTRYPOINT [ "yarn", "start", "--host", "0.0.0.0" ]
 
 FROM deps AS builder
 
 RUN mkdir /doc
 WORKDIR /doc
-
-RUN yarn global add @redocly/cli
 
 COPY package.json .
 RUN yarn

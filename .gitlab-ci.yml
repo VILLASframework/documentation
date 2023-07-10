@@ -2,8 +2,22 @@ variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
 stages:
+- prepare
 - build
 - deploy
+
+# Stage: prepare
+##############################################################################
+
+prepare:image-dev:
+  stage: prepare
+  before_script:
+  - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
+  - apk add make git
+  script:
+  - make upload-dev
+  tags:
+  - docker
 
 # Stage: build
 ##############################################################################
