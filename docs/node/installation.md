@@ -268,6 +268,15 @@ cmake -S . -B build ${FLAGS}
 
 [`CMakeLists.txt`]: https://github.com/VILLASframework/node/blob/master/CMakeLists.txt#L169
 
+#### GPL-less builds
+
+In certain use-cases a build of VILLASnode without any GPL dependencies might be necessary.
+This can be achieved by using the `WITHOUT_GPL` CMake option:
+
+```shell
+cmake -S . -B build -DWITHOUT_GPL=ON
+```
+
 ## Docker images {#docker}
 
 There exists a set of Docker images for running and developing VILLASnode.
