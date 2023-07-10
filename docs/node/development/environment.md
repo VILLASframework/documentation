@@ -17,7 +17,7 @@ The page roughly follows the tutorial from Microsoft on this topic: [Remote deve
 
 Alternatively, we provide just a Docker image containing all development dependency which can be used alone without Visual Studio Code at via:
 
-```bash
+```shell
 docker run --privileged registry.git.rwth-aachen.de/acs/public/villas/node/dev:master
 ```
 

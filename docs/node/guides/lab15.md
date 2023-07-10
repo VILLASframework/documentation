@@ -32,13 +32,13 @@ All EtherCAT slaves are connected to the same bus coupler. All channels of the a
 
 The IgH EtherCAT Master also provides command-line tools for the users to get information about the configuration, Slaves, Process Data Objects (PDOs) and Service Data Objects (SDOs) of the devices connected on EtherCAT chain. In this Lab we will experiment with some of the command line utilities shipped with the IgH EtherCAT master.
 
-```bash
+```shell
 /usr/local/bin/ethercat master
 ```
 
 The following command can be used to find out the number of slaves in the EtherCAT chain: 
 
-```bash
+```shell
 /usr/local/bin/ethercat slave
 ```
 
@@ -63,19 +63,19 @@ The table below describes the notations for '1  0:1  PREOP  +  EL4038 8K. Ana. A
 The information transferred from Slaves to Masters are called Process Data Objects (PDOs). These are limited by the size of an Ethernet frame. 
 The following command can be used to output the PDO information in C language: 
 
-```bash
+```shell
 /usr/local/bin/ethercat cstruct
 ```
 
 The following command can be used to display the process data:
 
-```bash
+```shell
 /usr/local/bin/ethercat data
 ```
 
 The following command can be used to display the ethernet over EtherCAT statistics. The TxRate and RxRate are displayed in Bytes/s.
 
-```bash
+```shell
 /usr/local/bin/ethercat eoe
 ```
 
@@ -86,7 +86,7 @@ The following code code sends a single sample to 'ethercat_node'.
 
 The `villas pipe` tool can be used to send and receive sample to / from a node.
 
-```bash
+```shell
 # send 10 values to udp_node1
 villas signal -v 3 -r 10 -l 10 mixed | villas pipe lab15.conf ethercat_node
 ```

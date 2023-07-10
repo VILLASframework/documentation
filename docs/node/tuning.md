@@ -24,7 +24,7 @@ Pre-compiled kernels for Fedora can be found here: http://ccrma.stanford.edu/pla
   - Please adjust the setting `isolated_cpucores` according to your hardware.
   - Enable the following `realtime` tuned profile
 
-```bash
+```shell
 dnf install tuned-profiles-realtime
 echo "realtime" > /etc/tuned/active_profile
 echo "isolated_cpucores=6-7" >> /etc/tuned/realtime-variables.conf
@@ -52,6 +52,6 @@ In general we recommend to run VILLASnode with super-user privileges (`sudo vill
 
 When VILLASnode is executed in a Docker container, please use the following command line:
 
-```bash
+```shell
 docker run -cpu-rt-period=1000000 --cpu-rt-runtime=800000 --ulimit rtprio=99 --cap-add sys_nice --privileged registry.git.rwth-aachen.de/acs/public/villas/node node
 ```

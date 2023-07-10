@@ -29,13 +29,13 @@ For small tests and beginners we recommend a local Minikube setup.
 2. [Install Helm](https://helm.sh/docs/intro/quickstart/)
 3. Start Minikube:
 
-```bash
+```shell
 minikube start
 ```
 
 4. Enable the Ingress controller in your minikube cluster:
 
-```bash
+```shell
 minikube addons enable ingress
 ```
 
@@ -43,7 +43,7 @@ minikube addons enable ingress
 
 To deloy the Helm chart you must first add the FEIN e.V. chart repository:
 
-```bash
+```shell
 helm repo add fein https://packages.fein-aachen.org/helm/charts/
 helm repo update
 ```
@@ -80,7 +80,7 @@ broker:
 
 Once the configuration file has been prepared, start the installation with the following command: 
 
-```bash
+```shell
 helm install -f values.yaml villas fein/villas
 ```
 
@@ -88,7 +88,7 @@ helm install -f values.yaml villas fein/villas
 
 1. Keep the following command in a terminal running in a background terminal:
 
-```bash
+```shell
 minikube kubectl -- -n ingress-nginx port-forward svc/ingress-nginx-controller 8080:80 --address='0.0.0.0'
 ```
 
@@ -100,7 +100,7 @@ Please use the username / password from above (`admin` / `VillasTest1234`) to lo
 If the login with the configured admin user credentials is not working, it is most likely caused by some unhealthy components of the VILLASframework setup.
 Use the `kubectl` tool to troubleshoot the issue:
 
-```bash
+```shell
 minikube kubectl -- get all
 ```
 
@@ -145,7 +145,7 @@ deployment.apps/villas-web-frontend         2/2     2            2           280
 Make sure that all deployments are ready and pods (a.k.a containers) are in a running state.
 If for some reason a deployment is not ready, you can use the following `kubectl` command to show the log of the respective pod.
 
-```bash
+```shell
 minikube kubectl -- logs pod/villas-web-backend-55846fb89f-64f66
 ```
 

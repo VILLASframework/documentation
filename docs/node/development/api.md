@@ -1,7 +1,6 @@
 # API
 
 VILLASnode can be controlled remotely with an Application Programming Interface (API).
-Using this API VILLASnode can be completely remote controlled.
 
 There are two components which provide dedicated APIs:
 
@@ -26,7 +25,7 @@ We recommend to hide the VILLASnode API behind an [API gateway](https://www.ngin
 
 ### VILLASnode daemon
 
-```bash
+```shell
 villas-node &
 curl http://localhost:8080/api/v2/status
 {
@@ -82,7 +81,7 @@ curl http://localhost:8080/api/v2/status
 
 ### VILLASnode relay
 
-```bash
+```shell
 villas-relay &
 curl localhost:8088/api/v1
 {

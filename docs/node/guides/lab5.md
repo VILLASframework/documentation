@@ -37,7 +37,7 @@ nodes = {
 }
 ```
 
-```bash
+```shell
 villas signal -v 4 -r 1000 mixed | villas pipe lab5.conf rtds_gtnet1
 villas signal -f 50 -r 10000 sine | villas pipe lab5.conf rtds_gtnet1
 ```

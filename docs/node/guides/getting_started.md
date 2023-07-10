@@ -21,13 +21,13 @@ For this guide, we recommend to use the [VILLASnode Docker image](../installatio
 
 To open an interactive terminal in the VILLASnode Docker container run:
 
-```bash
+```shell
 docker run --privileged --tty --interactive --entrypoint bash --volume C:\path\to\configs:/configs -p 80:80 registry.git.rwth-aachen.de/acs/public/villas/node
 ```
 
 For some lab exercises two interactive shells are required. To open a second shell, run the following command:
 
-```bash
+```shell
 docker exec --tty --interactive $(docker ps -qn1) bash
 ```
 

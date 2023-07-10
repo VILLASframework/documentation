@@ -21,7 +21,7 @@ VILLASnode already comes with a lot of existing implementations of node-types wh
     - Name the files according to the name of your node-type.
     - Replace dashes with underscores.
 
-    ```bash
+    ```shell
     cp lib/nodes/example.cpp lib/nodes/my_proto.cpp
     cp include/villas/example.hpp include/villas/my_proto.hpp
     ```
@@ -35,18 +35,18 @@ VILLASnode already comes with a lot of existing implementations of node-types wh
     - Remove the `NodeFactory::Flags::HIDDEN` flag from the node-type registration.
 
 1. Implement an integration test for your node-type which test its functionality in an end-to-end test:
-    ```bash
+    ```shell
     cp tests/integration/node-example.sh tests/integration/node-my-proto.sh
     ```
 
 1. Copy the example configuration and adapt it to your node-type
-    ```bash
+    ```shell
     cp etc/example/nodes/example.conf etc/example/nodes/my_proto.conf
     ```
 
 1. Copy the configuration schema (OpenAPI spec) and adapt it to your node-type:
 
-    ```bash
+    ```shell
     cp doc/openapi/components/schemas/config/nodes/example.yaml doc/openapi/components/schemas/config/nodes/my_proto.yaml
     cp doc/openapi/components/schemas/config/nodes/_example.yaml doc/openapi/components/schemas/config/nodes/_my_proto.yaml
     ```

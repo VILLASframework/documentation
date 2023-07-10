@@ -14,7 +14,7 @@ import 'asciinema-player/dist/bundle/asciinema-player.css';
 
 Receive data from node `udp_node1` and save to file `file.dat`:
 
-```bash
+```shell
 villas pipe lab3.conf udp_node1 > file.dat
 ```
 

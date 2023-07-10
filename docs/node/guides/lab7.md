@@ -14,7 +14,7 @@ import 'asciinema-player/dist/bundle/asciinema-player.css';
     <figcaption>Send and receive samples from files to simulator.</figcaption>
 </figure>
 
-```bash
+```shell
 villas pipe lab3.conf udp_node1 < file_send.dat > file_recv.dat
 ```
 
@@ -45,7 +45,7 @@ In order to stream the samples in real-time from a file, we will use the [`file`
     <figcaption>Stream samples in real-time from file.</figcaption>
 </figure>
 
-```bash
+```shell
 villas pipe lab7.conf file_node1 | villas pipe lab3.conf udp_node1 > file_recv.dat
 ```
 

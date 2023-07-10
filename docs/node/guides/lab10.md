@@ -15,13 +15,13 @@ In addition, `villas node` benefits from lower latencies because we omit the sta
 The invocation of the daemon is pretty simple.
 Just pass the path to the configuration file as a parameter:
 
-```bash
+```shell
 villas node lab10_path_uni.conf
 ```
 
 All VILLASnode tools can fetch their configuration file from remote locations (all [protocols from libcurl](https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html) are supported):
 
-```bash
+```shell
 # From a web server
 villas node https://villas.fein-aachen.org/doc/etc/lab3.conf
 

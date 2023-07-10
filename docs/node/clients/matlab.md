@@ -15,7 +15,7 @@ Please have a look at the [`clients/matlab/`](https://github.com/VILLASframework
 
 You can run this example by execution this `receiver` script in your MATLAB prompt and starting VILLASnode by running the following command in your shell:
 
-```bash
+```shell
 villas-node villas.conf
 ```
 

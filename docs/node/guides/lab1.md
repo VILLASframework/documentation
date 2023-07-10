@@ -17,7 +17,7 @@ Rarely used in a real simulation, this tool can be handy for testing and underst
 
 The following command emits a stream of samples to the [standard output](https://en.wikipedia.org/wiki/Standard_streams#Standard_output_.28stdout.29) of your terminal:
 
-```bash
+```shell
 villas signal -l 10 -r 10 -F 3 -v 1 sine
 ```
 
@@ -54,7 +54,7 @@ The remaining columns contain the values of the sample.
 
 If you add the `-n` (non real-time mode) switch the data will be printed immediately to the screen:
 
-```bash
+```shell
 villas signal -l 10 -r 10 -F 3 -v 1 -n sine
 ```
 
@@ -63,7 +63,7 @@ villas signal -l 10 -r 10 -F 3 -v 1 -n sine
 
 You can use [shell redirection](https://www.gnu.org/software/bash/manual/html_node/Redirections.html) to write those samples to a file:
 
-```bash
+```shell
 villas signal -l 10 -r 10 -F 3 -v 1 -n sine > file.dat
 cat file.dat
 ```

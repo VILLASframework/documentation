@@ -8,7 +8,7 @@ One of the important uses of the VILLASnode toolbox is the comparison of a list 
 
 The following command can be used to compare the files:
 
-```bash
+```shell
 villas-test-cmp [OPTIONS] FILE1 FILE2 ... FILEn
 ```
 
@@ -28,20 +28,20 @@ Where options refers to one or more of the following:
 
 In this example we shall use this tool to compare two files. In the first terminal execute the following command: 
 
-```bash
+```shell
 villas signal sine > file_send.dat
 villas pipe lab3.conf villas_node1 < file_send.dat
 ```
 
 Open a second terminal to record the data being sent into another file. Execute the following command: 
 
-```bash
+```shell
 villas pipe -x lab3.conf villas_node1 > file_receive.dat
 ```
 
 Now run the following command to compare the two files. He we ignore the timestamps since it will be different in both the cases:
 
-```bash
+```shell
 villas test-cmp -T file_send.dat file_receive.dat
 ```
 
@@ -58,7 +58,7 @@ Following return codes are obtained based on the similarity between the two file
   
 Following command can be used to determine the return codes:
 
-```bash
+```shell
 echo $?
 ```
 
