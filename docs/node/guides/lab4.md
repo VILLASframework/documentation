@@ -16,14 +16,14 @@ Similarly, _samples_ which are send to the node are printed on the screen.
 To demonstrate this we start `villas pipe` a second time with swapped `local` and `remote` addresses.
 
 In the first terminal:
-```bash
+```shell
 villas pipe lab3.conf udp_node1
 ```
 
 <AsciinemaPlayer src="/recordings/terminal/lab4_t1.json" rows={25} cols={120} idleTimeLimit={3} preload={true} />
 
 In a second terminal, we use `-x` to exchange input/output addresses:
-```bash
+```shell
 villas pipe -x lab3.conf udp_node1
 ```
 

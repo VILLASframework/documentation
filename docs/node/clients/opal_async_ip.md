@@ -92,7 +92,7 @@ In RT-Lab under Files tab, we should see the files listed above for .llm file
 
 In RT-LAB model settings: Development tab -> Compiler -> Compiler Command (makefile) add the following command
 
-```bash
+```shell
 /usr/bin/make -f /usr/opalrt/common/bin/opalmodelmk
 ```
 

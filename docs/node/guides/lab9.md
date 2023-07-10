@@ -19,7 +19,7 @@ The `stats` hook can be used to collect statistics about the co-simulation inter
 - Packet reordering
 - Sending rate
 
-```bash
+```shell
 villas signal -r 1000 -l 10000 sine | villas hook -o verbose=true -o warmup=3000 stats
 ```
 
@@ -63,19 +63,19 @@ nodes = {
 
 In  the first terminal:
 
-```bash
+```shell
 villas signal -r 1000 sine | villas pipe etc/lab9_netem.conf udp_node1
 ```
 
 In a second terminal:
 
-```bash
+```shell
 villas pipe etc/lab9_netem.conf udp_node1 -x > delayed_data.dat
 ```
 
 After a few seconds, press Ctrl-C to stop the processing. Now we can analyze the delay distribution of the received data:
 
-```bash
+```shell
 villas hook -o verbose=true -o warmup=1000 stats < delayed_data.dat > /dev/null
 ```
 

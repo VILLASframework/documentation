@@ -14,7 +14,7 @@ Additional libraries are used, for a complete list see the file `package.json`.
 
 ## Setup and Running
 
-```bash
+```shell
 git clone --recursive https://github.com/VILLASframework/web.git
 cd web
 npm install

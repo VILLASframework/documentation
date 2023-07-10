@@ -16,7 +16,7 @@ The `villas pipe` tool can be used to send and receive sample to / from a node.
 
 The following command sends a single _sample_ to node `udp_node1`.
 
-```bash
+```shell
 # start tcpdump to capture traffic in background
 tcpdump -i lo udp port 12001
 

@@ -199,18 +199,18 @@ Please make sure to substitute `api_node` with the actual name or UUID of your n
 
 #### Get list of channels provided by the node
 
-```bash
+```shell
 curl -v http://localhost:80/api/v2/universal/api_node/channels
 ```
 
 #### Get current value of a signal by its ID
 
-```bash
+```shell
 curl -v http://localhost:80/api/v2/universal/api_node/channel/ramp/sample
 ```
 
 #### Update signal value by its ID
 
-```bash
+```shell
 curl -v -XPUT -d '{"timestamp": 1648482084.1462665,"value":1234.0}' http://localhost:80/api/v2/universal/api_node/channel/signal0/sample
 ```

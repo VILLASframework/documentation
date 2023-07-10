@@ -68,7 +68,7 @@ paths = (
 
 ## Start node and signal generator
 
-```bash
+```shell
 villas signal -v 4 -r 120 mixed | villas pipe -x lab3.conf udp_node1 &
 villas node lab12.conf
 ```

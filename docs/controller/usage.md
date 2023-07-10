@@ -11,14 +11,14 @@ Both parts are accessible from the `villas-controller` command.
 
 1. Install VILLAScontroller
 
-```bash
+```shell
 git clone https://github.com/VILLASframework/controller.git
 sudo python3 setup.py install
 ```
 
 2. Start RabbitMQ broker
 
-```bash
+```shell
 docker run -p 5672:5672 -p 15672:15672 -d rabbitmq:management
 ```
 
@@ -52,13 +52,13 @@ docker run -p 5672:5672 -p 15672:15672 -d rabbitmq:management
 
 4. Start VILLAScontroller daemon:
 
-```bash
+```shell
 villas-controller --config config.json daemon
 ```
 
 5. Start monitor:
 
-```bash
+```shell
 villas-controller monitor
 ```
 
@@ -66,7 +66,7 @@ villas-controller monitor
 
 5. Discover / ping simulators:
 
-```bash
+```shell
 villas-controller simulator ping
 ```
 
@@ -74,7 +74,7 @@ villas-controller simulator ping
 
 **Note:** Take the UUID from step 5.
 
-```bash
+```shell
 villas-controller simulator --uuid ef6f6e46-044e-11e8-812f-17b6617a2f37 start
 villas-controller simulator --uuid ef6f6e46-044e-11e8-812f-17b6617a2f37 pause
 villas-controller simulator --uuid ef6f6e46-044e-11e8-812f-17b6617a2f37 resume
@@ -84,19 +84,19 @@ villas-controller simulator --uuid ef6f6e46-044e-11e8-812f-17b6617a2f37 stop
 
 ## Example: Kubernetes
 
-```bash
+```shell
 MANAGER_UUID=614dc3d3-6825-47d3-b991-05d082eb2494
 SIMULATOR_UUID=9afeebf4-825a-45cd-bd25-1b6c219ed72a
 ```
 
 ### Create simulator
 
-```bash
+```shell
 villas-controller --config etc/config_k8s.yaml simulator --uuid ${MANAGER_UUID} create --parameters-file etc/params_k8s_create.yaml
 ```
 
 ### Start job/simulation
 
-```bash
+```shell
 villas-controller --config etc/config_k8s.yaml simulator --uuid ${SIMULATOR_UUID} start
 ```

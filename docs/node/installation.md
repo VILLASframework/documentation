@@ -70,7 +70,7 @@ There are three ways to install these dependencies:
 
 Use the following command to install the dependencies under Debian/Ubuntu-based distributions:
 
-```bash
+```shell
 sudo apt-get install \
     gcc g++ \
     pkg-config make cmake ninja-build \
@@ -104,7 +104,7 @@ sudo apt-get install \
 
 or the following line for Fedora/Redhat/RockyLinux systems:
 
-```bash
+```shell
 sudo yum install epel-release
 sudo yum install \
     gcc gcc-c++ \
@@ -140,7 +140,7 @@ sudo yum install \
 
 ### Downloading from Git
 
-```bash
+```shell
 # Clone the repository into ./VILLASnode
 git clone https://github.com/VILLASframework/node.git VILLASnode
 cd VILLASnode
@@ -165,7 +165,7 @@ It supports several configuration options specified in environment variables:
 - `DEPS_NONINTERACTIVE`: Do not ask interactively. Default: unset
 
 Here are some example usages:
-```bash
+```shell
 # Install in this directory, /usr/local is also the default if unspecified
 export PREFIX=/usr/local
 
@@ -193,7 +193,7 @@ DEPS_SKIP='libre rdkafka' bash packaging/deps.sh
 
 Simply build VILLASnode with all features available for the dependencies installed on your system.
 
-```bash
+```shell
 # Setup the build directory for a release mode build
 cmake -S . -B ./build -DCMAKE_BUILD_TYPE=Release
 
@@ -208,7 +208,7 @@ cmake --build ./build
 
 You can also install the binaries and tools into to your search path after building them.
 
-```bash
+```shell
 # Install the VILLASnode libraries tools and binaries
 cmake --build ./build --target install
 ```
@@ -276,13 +276,13 @@ We use Alpinelinux-based images to keep the size of the image below 100MB.
 
 With a working Docker daemon, you can run it like this:
 
-```bash
+```shell
 docker run --privileged registry.git.rwth-aachen.de/acs/public/villas/node
 ```
 
 To start the main daemon, you can pass a configuration file via a volume mount:
 
-```bash
+```shell
 docker run --volume /path/to/my/local.conf:/config.conf --privileged registry.git.rwth-aachen.de/acs/public/villas/node node /config.conf
 ```
 
@@ -306,7 +306,7 @@ Further details on how to start the Kickstart installation can be found [in the 
 
 Verify everything is working and required node-types are compiled-in:
 
-```bash
+```shell
 villas node --help
 ```
 

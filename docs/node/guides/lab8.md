@@ -48,7 +48,7 @@ A hook function can be used in two ways:
 
 When used with `villas hook` we can pass options to the hook function as optional parameters to the invocation of `villas hook`:
 
-```bash
+```shell
 villas hook [hook_name] [parameter1] [parameter2] ... [parameterN]
 ```
 <figure align="center">
@@ -110,7 +110,7 @@ paths = (
 
 Hook  functions are chainable:
 
-```bash
+```shell
 villas hook fix_ts | villas hook skip_first samples=10
 ```
 
@@ -123,52 +123,52 @@ villas hook fix_ts | villas hook skip_first samples=10
 
 ## Skip the first 10 seconds (skip_first)
 
-```bash
+```shell
 villas signal sine | villas hook skip_first -o seconds=10
 ```
 
 ## Skip the first 1000 samples (skip_first)
 
-```bash
+```shell
 villas signal sine | villas hook skip_first -o samples=1000
 ```
 
 ## Calculate average over first five signals (average)
 
-```bash
+```shell
 villas signal sine | villas hook average -o offset=0 -o signals=0,1,2,3,4
 ```
 
 ## Shift the timestamps of all samples 10 seconds into the future (shift_ts)
 
-```bash
+```shell
 villas signal sine | villas hook shift_ts mode=origin offset=10.0
 ```
 
 ## Caste signal type (cast)
 
-```bash
+```shell
 villas signal -l 10 -r 10 -F 3 -v 1 random > signals_mixed.dat
 villas-hook cast -o new_name=test -o new_unit=V -o new_type=integer -o signal=1 < signals_mixed.dat
 ```
 
 ## Transformation to dynamic phasor (dp)
 
-```bash
+```shell
 villas signal -l 10 -r 10 -F 3 sine > dp_in.dat
 villas hook dp -o inverse=true -o f0=3 -o rate=10 -o signal=0 -o harmonics=0,1,3,5,7 < dp_out.dat >dp_in2.dat
 ```
 
 ## Limit the rate of sending signals (limit_rate)
 
-```bash
+```shell
 villas-signal -r 1000 -l 1000 -n sine > limit_rate_in.dat
 villas-hook -o rate=10 -o mode=origin limit_rate < limit_rate_in.dat > limit_rate_out.dat
 ```
 
 ## Scale signals by a factor and add offset (scale)
 
-```bash
+```shell
 villas signal -l 10 -r 10 -F 3 sine > scale_in.dat
 villas-hook scale -o scale=100 -o offset=55 -o signal=signal0 < scale_in.dat > scale_out.dat
 
@@ -184,7 +184,7 @@ Use the `mode` parameter to select the timestamp which should be shifted.
 
 ## Override the timestamp with the current time (ts, fix_ts)
 
-```bash
+```shell
 echo "123.456(1) 1.2 3.4 5.6" | villas hook ts
 ```
 
@@ -192,7 +192,7 @@ echo "123.456(1) 1.2 3.4 5.6" | villas hook ts
 
 There is another related hook function called `fix_ts` which will only overwrite the the timestamp if the source has not provided one (timestamp must is `0.0`).
 
-```bash
+```shell
 echo "0.0(1) 1.2 3.4 5.6" | villas hook fix_ts
 ```
 
@@ -203,14 +203,14 @@ echo "0.0(1) 1.2 3.4 5.6" | villas hook fix_ts
 This invocation reduces the sending  rate by a factor of 10.
 The resulting rate is: `1000 / 10 = 100`.
 
-```bash
+```shell
 villas signal -r 1000 sine | villas hook decimate -o ratio=10
 ```
 
 This invocation reduces the sending  rate by a factor of 10.
 The resulting rate is: `1000 / 10 = 100`.
 
-```bash
+```shell
 villas signal -r 1000 sine | villas hook decimate -o ratio=10
 ```
 
@@ -227,7 +227,7 @@ falling_edge
 The 'above' mode allows only the signal values which are greater than the threshold. By default the threshold is set to 0. Similarly the 'below' mode allows only the signal values which are lesser than the threshold.
 This can be visualized in the waveforms below:
 
-```bash
+```shell
 villas signal -l 200 -r 200 -F 2 sine > gate_in.dat
 villas hook gate -o signal=0 -o mode=above -o threshold=0.5 < gate_in.dat > gate_out_above.dat
 villas hook gate -o signal=0 -o mode=below -o threshold=0.5 < gate_in.dat > gate_out_below.dat
@@ -239,7 +239,7 @@ villas hook gate -o signal=0 -o mode=below -o threshold=0.5 < gate_in.dat > gate
 
 The modes rising edge and falling edge allow signal values to pass on rising edge and falling edge respectively. It is demonstrated by the examples and waveforms below: 
 
-```bash
+```shell
 villas signal -l 200 -r 200 -F 2 sine > gate_in.dat
 villas hook gate -o signal=0 -o mode=rising_edge < gate_in.dat > gate_out_re.dat
 villas hook gate -o signal=0 -o mode=falling_edge < gate_in.dat > gate_out_re.dat
@@ -253,13 +253,13 @@ villas hook gate -o signal=0 -o mode=falling_edge < gate_in.dat > gate_out_re.da
 
 This invocation converts values 5-8 to a integer number with a gain factor of 1000:
 
-```bash
+```shell
 villas signal sine | villas hook convert 'mode="fixed" mask=0xf0 scale=1000.0'
 ```
 
 ## Print samples to the screen (print)
 
-```bash
+```shell
 villas signal sine | villas hook print > /dev/null
 ```
 
@@ -267,7 +267,7 @@ villas signal sine | villas hook print > /dev/null
 
 ## Remap values and add special header fields as data (map)
 
-```bash
+```shell
 villas signal -v 4 sine | villas hook map 'mapping=[ "data[3]", "data[2]", "data[1]", "data[0]", "hdr.sequence", "ts.origin" ]'
 ```
 

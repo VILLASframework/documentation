@@ -49,7 +49,7 @@ Disable any firewall on your system or configure it accordingly to work with the
 
 
 E.g. on a RHEL/CentOS/RockyLinux or Fedora system:
-```bash
+```shell
 systemctl disable --now firewalld
 ```
 :::

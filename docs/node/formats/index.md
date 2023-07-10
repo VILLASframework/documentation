@@ -36,7 +36,7 @@ Please see below for examples of both approaches.
 
 If the format-type is provided as an argument to a VILLASnode command-line tool (see [Usage](../usage/index.md)), also both variants are supported:
 
-```bash
+```shell
 # Simple
 villas signal -f json -v 5 sine
 

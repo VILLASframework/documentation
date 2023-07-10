@@ -35,7 +35,7 @@ The VILLASfpga project is splitted into two Git repositories:
 
 ## Building
 
-```bash
+```shell
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 git clone  https://github.com/VILLASframework/fpga
 pushd VILLASfpga
@@ -55,13 +55,13 @@ ldconfig
 
 Check that system is booted with IOMMU support:
 
-```bash
+```shell
 find /sys | grep dmar
 ```
 
 If not add `intel_iommu=on` to the kernel commandline and reboot.
 
-```bash
+```shell
 sudo modprobe vfio
 sudo modprobe vfio_pci
 
