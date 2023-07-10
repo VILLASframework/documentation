@@ -20,7 +20,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###################################################################################
 
-FROM node:16-bullseye AS builder
+FROM node:16-bullseye AS deps
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV LANG en_US.UTF-8
@@ -34,6 +34,18 @@ RUN apt-get update && \
 		findutils \
 		locales \
 		python3
+
+FROM deps AS vscode
+
+# create a non-root user for vscode to use
+ARG USERNAME=node
+RUN apt-get install sudo \
+	&& echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
+	&& chmod 0440 /etc/sudoers.d/$USERNAME
+
+ENTRYPOINT [ "bash" ]
+
+FROM deps AS builder
 
 RUN mkdir /doc
 WORKDIR /doc
