@@ -141,14 +141,14 @@ sudo yum install \
 ### Downloading from Git
 
 ```bash
-# clone the repository into ./VILLASnode
+# Clone the repository into ./VILLASnode
 git clone https://github.com/VILLASframework/node.git VILLASnode
 cd VILLASnode
 
-# initialize at least the common submodule for a successful build
+# Initialize at least the common submodule for a successful build
 git submodule update --init common
 
-# initialize all submodules for VILLASfpga support
+# Initialize all submodules for VILLASfpga support
 git submodule update --init --recursive
 ```
 
@@ -166,22 +166,22 @@ It supports several configuration options specified in environment variables:
 
 Here are some example usages:
 ```bash
-# install in this directory, /usr/local is also the default if unspecified
+# Install in this directory, /usr/local is also the default if unspecified
 export PREFIX=/usr/local
 
-# this asks interactively for each dependency which was determined to be missing
+# This asks interactively for each dependency which was determined to be missing
 bash packaging/deps.sh
 
-# force noninteractive install in interactive sessions
+# Force noninteractive install in interactive sessions
 DEPS_NONINTERACTIVE=1 bash packaging/deps.sh
 
-# list all dependencies which were determined to be missing on your system
+# List all dependencies which were determined to be missing on your system
 DEPS_SCAN=1 bash packaging/deps.sh
 
-# specify a subset of the packages from DEPS_SCAN
+# Specify a subset of the packages from DEPS_SCAN
 DEPS_INCLUDE='uldaq jansson' bash packaging/deps.sh
 
-# install all but a subset of packages from DEPS_SCAN
+# Install all but a subset of packages from DEPS_SCAN
 DEPS_SKIP='libre rdkafka' bash packaging/deps.sh
 ```
 
@@ -194,13 +194,13 @@ DEPS_SKIP='libre rdkafka' bash packaging/deps.sh
 Simply build VILLASnode with all features available for the dependencies installed on your system.
 
 ```bash
-# setup the build directory for a release mode build
+# Setup the build directory for a release mode build
 cmake -S . -B ./build -DCMAKE_BUILD_TYPE=Release
 
-# build villas node in the build directory
+# Build villas node in the build directory
 cmake --build ./build
 
-# you can find the villas-node binary at ./build/src
+# You can find the villas-node binary at ./build/src
 ./build/src/villas-node -h
 ```
 
@@ -209,7 +209,7 @@ cmake --build ./build
 You can also install the binaries and tools into to your search path after building them.
 
 ```bash
-# install the VILLASnode libraries tools and binaries
+# Install the VILLASnode libraries tools and binaries
 cmake --build ./build --target install
 ```
 
@@ -243,26 +243,27 @@ First use the "-DWITH_DEFAULTS=OFF" cmake flag to deactivate all optional featur
 You can then add the features you need back using the options from [`CMakeLists.txt`].
 
 Here is an example VILLASnode configuration with only the "file" node-type and hooks, which can be configured by JSON or libconfig syntax:
+
 ```shell
-# disable all default features
+# Disable all default features
 FLAGS+=" -DWITH_DEFAULTS=OFF"
 
-# enable the villas-* binaries from ./src again
+# Enable the villas-* binaries from ./src again
 FLAGS+=" -DWITH_SRC=ON"
 
-# enable the villas-* tools from ./tools again
+# Enable the villas-* tools from ./tools again
 FLAGS+=" -DWITH_TOOLS=ON"
 
-# enable libconfig configuration syntax
+# Enable libconfig configuration syntax
 FLAGS+=" -DWITH_CONFIG=ON"
 
-# enable the file node
+# Enable the file node
 FLAGS+=" -DWITH_NODE_FILE=ON"
 
-# enable hooks support
+# Enable hooks support
 FLAGS+=" -DWITH_HOOKS=ON"
 
-cmake -S . -B build $FLAGS
+cmake -S . -B build ${FLAGS}
 ```
 
 [`CMakeLists.txt`]: https://github.com/VILLASframework/node/blob/master/CMakeLists.txt#L169
@@ -310,4 +311,3 @@ villas node --help
 ```
 
 Will print the current version including a list of all supported node-types, hooks, etc.
-
