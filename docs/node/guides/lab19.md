@@ -55,8 +55,11 @@ paths = (
 ```
 As already mentioned, the configuration files includes the data generator which is the signal node-type. 
 Three samples are genereated with five values. 
-The udp node is a simple socket node-type and serves as interface to the python client so that data can be sent. The out part, especially the port number, must match with the python client configuration. 
+
+The udp node is a simple socket node-type and serves as interface to the python client so that data can be sent. 
+The output part, especially the port number, must match with the python client configuration. 
 It is important that the format type is protobuf, otherwise the udp node cannot decode data recevied by python client. 
+
 The last part of the configuration file specifies the paths. The first path ensures that generated data is send to udp node. The second path is responsible for receiving data from python client. 
 
 ## Python client configuration
