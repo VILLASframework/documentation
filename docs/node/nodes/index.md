@@ -33,6 +33,7 @@ VILLASnode currently supports the following node-types:
 | [influxdb](influxdb.md)             | no                | no   | yes   | unlimited | stable      | |
 | [kafka](kafka.md)                   | yes               | yes  | yes   | unlimited | stable      | |
 | [loopback](loopback.md)             | no                | yes  | yes   | unlimited | stable      | |
+| [modbus](modbus.md)                 | no                | yes  | yes   | 1         | stable      | |
 | [mqtt](mqtt.md)                     | no                | yes  | yes   | unlimited | stable      | |
 | [nanomsg](nanomsg.md)               | yes               | yes  | yes   | unlimited | stable      | |
 | [ngsi](ngsi.md)                     | no                | yes  | yes   | unlimited | stable      | Use WebSockets for Live data |
