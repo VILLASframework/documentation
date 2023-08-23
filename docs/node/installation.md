@@ -48,6 +48,7 @@ VILLASnode currently has the following list of dependencies:
 | [libdatachannel](https://libdatachannel.org/) | >= 0.18.4 | for the WebRTC node-type | optional | MPL-2.0 |
 | [libibverbs](https://github.com/linux-rdma/rdma-core) | >= 16.2 | for the [Infiniband node-type](nodes/infiniband.md) | optional | BSD |
 | [libiec61850](http://libiec61850.com/libiec61850/) | >= 1.3.1 | for the [IEC61850-8-1](nodes/iec61850-8-1.md) and [IEC61850-9-2](nodes/iec61850-9-2.md) node-types | optional | __GPL 3__ |
+| [libmodbus](https://libmodbus.org/) | >= 3.1.0 | for the [Modbus](nodes/modbus.md) node-type | optional | LGPL-2.1 |
 | [libnanomsg](http://nanomsg.org/) | >= 1.0.0 | for the [Nanomsg node-type](nodes/nanomsg.md) | optional | MIT |
 | [libnice](https://libnice.freedesktop.org/) | >= 0.1.16 | for libdatachannel / WebRTC | optional | MPL-1.1 & LGPL-2.1 |
 | [libnl3](http://www.infradead.org/~tgr/libnl/) | >= 3.2.27 | for the network communication & emulation support of the [Socket node-type](nodes/socket.md) node-type | optional | LGPL-2.1 |
@@ -79,27 +80,28 @@ sudo apt-get install \
     texinfo git mercurial curl \
     flex bison xmlto \
     doxygen dia graphviz \
-    libssl-dev \
-    libprotobuf-dev \
-    libprotobuf-c-dev \
-    uuid-dev \
-    libconfig-dev \
-    libnl-3-dev libnl-route-3-dev \
-    libcurl4-openssl-dev \
-    libjansson-dev \
-    libzmq3-dev \
-    libnanomsg-dev \
-    librabbitmq-dev \
-    libmosquitto-dev \
     libcomedi-dev \
+    libconfig-dev \
+    libcurl4-openssl-dev \
+    libfmt-dev \
     libibverbs-dev \
+    libjansson-dev \
+    liblua5.3-dev \
+    libmodbus-dev \
+    libmosquitto-dev \
+    libnanomsg-dev \
+    libnl-3-dev libnl-route-3-dev \
+    libprotobuf-c-dev \
+    libprotobuf-dev \
+    librabbitmq-dev \
+    librdkafka-dev \
     librdmacm-dev \
     libre2-dev \
     libspdlog-dev \
-    libfmt-dev \
+    libssl-dev \
     libusb-1.0-0-dev \
-    liblua5.3-dev \
-    librdkafka-dev
+    libzmq3-dev \
+    uuid-dev
 ```
 
 or the following line for Fedora/Redhat/RockyLinux systems:
@@ -117,25 +119,26 @@ sudo yum install \
     openssl-devel \
     protobuf-devel \
     protobuf-c-devel \
-    libuuid-devel \
-    libconfig-devel \
-    libnl3-devel \
-    libcurl-devel \
-    jansson-devel \
-    spdlog-devel \
     fmt-devel \
-    libwebsockets-devel \
-    zeromq-devel \
-    nanomsg-devel \
-    librabbitmq-devel \
-    mosquitto-devel \
-    libibverbs-devel \
-    librdmacm-devel \
-    libusb-devel \
-    lua-devel \
     hiredis-devel \
+    jansson-devel \
+    libconfig-devel \
+    libcurl-devel \
+    libibverbs-devel \
+    libmodbus-devel \
+    libnl3-devel \
+    librabbitmq-devel \
+    librdkafka-devel \
+    librdmacm-devel \
     libre-devel \
-    librdkafka-devel
+    libusb-devel \
+    libuuid-devel \
+    libwebsockets-devel \
+    lua-devel \
+    mosquitto-devel \
+    nanomsg-devel \
+    spdlog-devel \
+    zeromq-devel
 ```
 
 ### Downloading from Git
