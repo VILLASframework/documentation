@@ -27,10 +27,13 @@ Under the hood a signaling server is used for exchanging address and session inf
 This node-type requires [libdatachannel](https://libdatachannel.org/) > v0.18.4.
 We recommend building libdatachannel with [libnice](https://libnice.freedesktop.org/) to support ICE connections via TCP by passing the [`-DUSE_NICE=ON`](https://github.com/paullouisageneau/libdatachannel/blob/1f6f09bbb5457895e422fea2960260b6dbef7192/CMakeLists.txt#L10) to CMake.
 
-A publicly reachable signaling server is required.
-[RWTH-ACS](https://www.acs.eonerc.rwth-aachen.de) operates such a signaling server at `wss://villas.k8s.eonerc.rwth-aachen.de/ws/signaling` which is used by default.
+### WebRTC Signaling Server
+A publicly reachable signaling server is required. [RWTH-ACS](https://www.acs.eonerc.rwth-aachen.de) operates such a signaling server at `https://villas.k8s.eonerc.rwth-aachen.de/ws/signaling` which is used by default.
+If two VILLASnode instances are connected, the **name of the `webrtc` node-type must differ** between the configuration files. 
 
-You can use your own signaling server by using the code here: https://github.com/VILLASframework/signaling
+If a local signaling server should be run, the latest docker image can be pulled:
+`docker run -p 8080:8080 --privileged registry.git.rwth-aachen.de/acs/public/villas/signaling:server-client-communication`.
+The source code is available here: https://github.com/VILLASframework/signaling
 
 ## Implementation
 
@@ -38,6 +41,10 @@ The source code of the node-type is available here:
 https://github.com/VILLASframework/node/blob/master/go/pkg/nodes/webrtc/
 
 ## Web Demo {#demo}
+
+:::caution Deprecation
+This demo is deprecated. It is currently updated.
+:::
 
 There exists an example WebRTC peer implementation running in a web-browser:
 
