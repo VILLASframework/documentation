@@ -20,6 +20,10 @@ Under the hood a signaling server is used for exchanging address and session inf
 The WebRTC node-type allows you to couple simulators and labs as easy as a Zoom/Skype video conference 📺.
 :::
 
+:::info Lab exercise
+For a hands-on exercise, please have a look at [Lab 18: WebRTC](../guides/lab18.md).
+:::
+
 **See also:** The [WebSocket node-type](./websocket.md) is a related but older node-type.
 
 ## Prerequisites
@@ -47,6 +51,15 @@ The source code is available here: https://github.com/VILLASframework/signaling
 
 The source code of the node-type is available here:
 https://github.com/VILLASframework/node/blob/master/go/pkg/nodes/webrtc/
+
+## Limitations
+
+:::note
+WebRTC only supports is limited to the bi-directional exchange of data between **two** peers.
+Exchanging data between a group of more than two peers is not possible.
+
+Please refer to the `websocket`, `mqtt` or `amqp` node-types for exchanging data between a of nodes using a publish/subscribe message pattern.
+:::
 
 ## Web Demo {#demo}
 
