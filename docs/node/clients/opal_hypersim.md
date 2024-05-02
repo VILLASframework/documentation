@@ -13,12 +13,21 @@ title: OPAL-RT HYPERSIM
 
 ## Interfacing VILLASnode and HYPERSIM
 
-**These instructions have been tested with HYPERSIM R6.1.3.o698.**
+:::note
+These instructions have been tested with HYPERSIM 2023.2.0.o389.
+:::
+
+:::important
+An OPAL-RT System using a  Redhat OS is required. 
+:::
 
 1. Create a new UCM name “node” and save to the real-time simulator folder of HYPERSIM.
    Example: `C:\Users\auser\HYPERSIM\ucm`.
 
-	![](/img/screenshots/node/opal-hypersim/hypersim_1.png)
+<figure align="center">
+    <img alt="Add UCM block to HYPERSIM" src="/img/screenshots/node/opal-hypersim/hypersim_1.png" width="100%" />
+    <figcaption>Add UCM block to HYPERSIM.</figcaption>
+</figure>
 
 2. This will create a file name ucm_node.def
 
@@ -26,7 +35,10 @@ title: OPAL-RT HYPERSIM
 
 4. Right click and update the code.
 
-	![](/img/screenshots/node/opal-hypersim/hypersim_2.png)
+<figure align="center">
+    <img alt="Update the UCM code" src="/img/screenshots/node/opal-hypersim/hypersim_2.png" width="100%" />
+    <figcaption>Update the UCM code.</figcaption>
+</figure>
 
 5. Within the opening window, adjust the user settings
    - Destination Port number
@@ -34,19 +46,44 @@ title: OPAL-RT HYPERSIM
 
 6. Go to options and set for real time
 
-	![](/img/screenshots/node/opal-hypersim/hypersim_3.png)
+<figure align="center">
+    <img alt="Enable real-time settings" src="/img/screenshots/node/opal-hypersim/hypersim_3.png" width="100%" />
+    <figcaption>Enable real-time settings.</figcaption>
+</figure>
 
 7. Start simulation on HYPERSIM, and VILLASnode
 
 8. The received data can be viewed on the ScopeView
 
-	![](/img/screenshots/node/opal-hypersim/hypersim_4.png)
+<figure align="center">
+    <img alt="Inspect data in ScopeView" src="/img/screenshots/node/opal-hypersim/hypersim_4.png" width="100%" />
+    <figcaption>Inspect data in ScopeView.</figcaption>
+</figure>
 
-## Author
+## Screenshot
+
+<figure align="center">
+    <img alt="HYPERSIM model with VILLASnode UCM block" src="/img/screenshots/node/opal-hypersim/hypersim_ucm_schematic.png" width="100%" />
+    <figcaption>HYPERSIM model with VILLASnode UCM block.</figcaption>
+</figure>
+
+## Limitations
+
+Currently, the number if input/output control signals is hard-coded to 7 in the UCM-code.
+This can be adjusted by manually changing the UCM-code and rebuilding the model.
+
+## Troubleshooting
+
+###  `ERROR: Unable to execute RPC call`
+
+```
+*** ERROR: Unable to execute RPC call to host RTServer program 0x3ff00115 service HS_RPC_COMMAND_EXECUTE Status
+Unable to connect to simulation for user XXXXX on MTL-L-04439:1 IP-Address
+```
+
+**Work around:** Clean shared memories of your target or restart target.
+
+## Authors
 
 - Anju Meghwani <meghwani@iitk.ac.in>
-
-Anju Meghwani is a Research Establishment Officer at Indian Institute of Kanpur, India and worked in Washington State University, Pullman as visiting scholar in Summer 2018.
-During her visit, she developed an interfacing framework for VILLASnode and HYPERSIM.
-This work was based on requirements of projects CREDC and UI-ASSIST.
-UI- ASSIST is a joint research project between India and the US.
+- Louis Birkner <louis.birkner@opal-rt.com>
