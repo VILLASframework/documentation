@@ -1,39 +1,36 @@
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
+  DOCKER_IMAGE: registry.git.rwth-aachen.de/acs/public/villas/documentation
+  DOCKER_TAG: ${CI_COMMIT_REF_NAME}
 
 stages:
-- prepare
-- build
-- deploy
+  - prepare
+  - build
+  - deploy
 
 # Stage: prepare
-##############################################################################
 
 prepare:image-dev:
   stage: prepare
   before_script:
-  - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
-  - apk add make git
+    - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
   script:
-  - make upload-dev
+    - docker build --target dev --tag ${DOCKER_IMAGE}:dev --tag ${DOCKER_IMAGE}:${DOCKER_TAG}-dev .
   tags:
-  - docker
+    - docker-image-builder
 
 # Stage: build
-##############################################################################
 
 build:image:
   stage: build
   before_script:
-  - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
-  - apk add make git
+    - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
   script:
-  - make upload
+    - docker build --tag ${DOCKER_IMAGE}:${DOCKER_TAG} --tag ${DOCKER_IMAGE}:latest .
   tags:
-  - docker
+    - docker-image-builder
 
 # Stage: deploy
-##############################################################################
 
 deploy:kubernetes:
   stage: deploy
@@ -41,13 +38,11 @@ deploy:kubernetes:
     KUBECONFIG: /root/.kube/config
   image: registry.git.rwth-aachen.de/acs/internal/cloud/kubernetes/deployment
   before_script:
-  - mkdir -p $(dirname ${KUBECONFIG})
-  - echo "${KUBECONFIG_ENCODED}" | base64 -d > ${KUBECONFIG}
-  - kubectl version
+    - mkdir -p $(dirname ${KUBECONFIG})
+    - echo "${KUBECONFIG_ENCODED}" | base64 -d > ${KUBECONFIG}
+    - kubectl version
   script:
-  - make deploy
-  tags:
-  - docker
+    - make deploy
   only:
     refs:
-    - master
+      - master
