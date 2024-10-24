@@ -79,18 +79,18 @@ The source code of all open source components is available via [GitHub](https://
 
 <img alt="GPLv3 logo" src="/img/logos/gplv3.png" width="120" align="right" />
 
-__VILLASnode__, __Signaling__, __VILLAScontroller__, and __VILLASdataprocessing__ are released as open source software under the [Apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0).
+__VILLASnode__, __VILLASfpga__, __VILLAScontroller__, __VILLASdataprocessing__ and the VILLASnode __Signaling Server__  are released as open source software under the [Apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0).
 
 <img alt="GPLv3 logo" src="/img/logos/apache.jpg" width="120" align="right" />
 
- __VILLASfpga__  and __VILLASweb__ are released as open source software under the [GPLv3 license](https://www.gnu.org/licenses/gpl-3.0.en.html).
+ __VILLASweb__ is released as open source software under the [GPLv3 license](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 Other licensing options available upon request.
 Please contact [Prof. Antonello Monti](mailto:amonti@eonerc.rwth-aachen.de) for further details.
 
 ## Contact
 
-Several people are involved in the development of the VILLASframework. The easiest way to contact the right people is to reach out via the Issues in the specific repositories. 
+Several people are involved in the development of the VILLASframework. The easiest way to contact the right people is to reach out via the issues in the specific repositories. 
 
 [Institute for Automation of Complex Power Systems (ACS)](http://www.acs.eonerc.rwth-aachen.de)  
 [EON Energy Research Center (EONERC)](http://www.eonerc.rwth-aachen.de)  
