@@ -35,8 +35,16 @@ We recommend building libdatachannel with [libnice](https://libnice.freedesktop.
 A publicly reachable signaling server is required. [RWTH-ACS](https://www.acs.eonerc.rwth-aachen.de) operates such a signaling server at `https://villas.k8s.eonerc.rwth-aachen.de/ws/signaling` which is used by default.
 If two VILLASnode instances are connected, the **name of the `webrtc` node-type must differ** between the configuration files. 
 
-If a local signaling server should be run, the latest docker image can be pulled:
-`docker run -p 8080:8080 --privileged registry.git.rwth-aachen.de/acs/public/villas/signaling:server-client-communication`.
+:::caution
+If two VILLASnode instances are connected, the names of the `webrtc` nodes must be different between the configuration files. 
+:::
+
+If a local signaling server can be easily started for testing purposes using this Docker image:
+
+```shell
+docker run -p 8080:8080 --privileged registry.git.rwth-aachen.de/acs/public/villas/signaling
+```
+
 The source code is available here: https://github.com/VILLASframework/signaling
 
 ## Implementation
