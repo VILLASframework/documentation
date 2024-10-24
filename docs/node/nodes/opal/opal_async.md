@@ -10,14 +10,6 @@ hide_table_of_contents: true
 
 They are used to exchange data between RT-LAB Simulink models and custom user-defined programs via [shared memory](https://en.wikipedia.org/wiki/Shared_memory) on a real-time target.
 
-There are two ways to exchange sample values with an OPAL-RT simulator:
-
-1. Use our adapted version of OPAL-RT's AsyncIP example for asynchronous processes (see [AsyncIP client](../clients/opal_async_ip.md))
-    In this mode, OPAL will send sample data via UDP to VILLASnode. VILLASnode has to use the [`socket` node-type](socket.md).
-2. Run VILLASnode as an asynchronous process itself. This is a highly experimental feature and implemented in the node-type `opal.async`.
-    Data exchange is then handled using OPAL-RT's `libOpalAsyncApi`.
-    This settings of this node-type a described on this page.
-
 ## Prerequisites
 
 This node-types requires a running version of VILLASnode on an OPAL-RT target:
@@ -26,13 +18,19 @@ This node-types requires a running version of VILLASnode on an OPAL-RT target:
 - RT-LAB v2023.1 or newer
 
 :::caution
-HYPERSIM or older targets running RHEL / CentOS operating systems are not supported.
+The node-types requires the use of the RT-LAB simulation environment.
+When using HYPERSIM, please consider the running VILLASnode as an [OPAL-RT Orchestra Client](opal_orchestra.md).
+
+Older targets running RHEL / CentOS operating systems are not supported.
 :::
 
 ## Implementation
 
-The source code of the node-type is available here:
-https://github.com/VILLASframework/node/blob/master/lib/nodes/opal.cpp
+:::note
+The implementation of the `opal.async` node-type is currently not open source.
+
+Please contact [Steffen Vogel](mailto:steffen.vogel@opal-rt.com) if you are interested in run
+:::
 
 ## Installation
 
@@ -82,41 +80,24 @@ import ApiSchema from '@theme/ApiSchema';
 
 ## Example
 
-``` url="external/node/etc/examples/nodes/opal.conf" title="node/etc/examples/nodes/opal.conf"
+``` url="external/node/etc/examples/nodes/opal_async.conf" title="node/etc/examples/nodes/opal_async.conf"
+# Author: Steffen Vogel <steffen.vogel@opal-rt.com>
+
 nodes = {
-	opal_node = {					# The server can be started as an Asynchronous process
-		type	= "opal",			# from within an OPAL-RT model.
+    opal_async_node1 = {
+        type = "opal.async"
 
-	### The following settings are specific to the opal node-type!! ###
+        # The Send/Recv ID of the RT-Lab OpAsyncSend/Recv blocks.
+        id = 1
 
-		send_id	= 1,				# It's possible to have multiple send / recv Icons per model
-		recv_id	= 1,				# Specify the ID here.
-		reply = true
-	},
-	file_node = {
-		type	= "file",
+        in = {
+            # Send a confirmation to the Simulink model that signals have been received and processed.
+            reply = false
 
-	### The following settings are specific to the file node-type!! ###
-
-		uri = "logs/input.log",			# These options specify the path prefix where the the files are stored
-
-		in = {
-			epoch_mode = "direct"		# One of: direct (default), wait, relative, absolute
-			epoch = 10			# The interpretation of this value depends on epoch_mode (default is 0).
-							# Consult the documentation of a full explanation
-
-			rate = 2.0			# A constant rate at which the lines of the input files should be read
-							# A missing or zero value will use the timestamp in the first column
-							# of the file to determine the pause between consecutive lines.
-
-			buffer_size = 1000000
-
-			eof = "rewind"	# One of: rewind, exit (default) or wait
-		},
-		out = {
-			flush = true
-			buffer_size = 1000000
-		}
-	}
+            hooks = (
+                "stats"
+            )
+        }
+    }
 }
 ```
