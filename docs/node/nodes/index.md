@@ -38,7 +38,7 @@ VILLASnode currently supports the following node-types:
 | [mqtt](mqtt.md)                     | no                | yes  | yes   | unlimited | stable      | |
 | [nanomsg](nanomsg.md)               | yes               | yes  | yes   | unlimited | stable      | |
 | [ngsi](ngsi.md)                     | no                | yes  | yes   | unlimited | stable      | Use WebSockets for Live data |
-| [opal](opal.md)                     | no                | yes  | yes   | 1         | untested    | |
+| [opal](opal/index.md)               | no                | yes  | yes   | 1         | untested    | |
 | [redis](redis.md)                   | no                | yes  | yes   | unlimited | stable      | |
 | [rtp](rtp.md)                       | yes               | yes  | yes   | ?         | beta        | |
 | [shmem](shmem.md)                   | no                | yes  | yes   | unlimited | stable      | |
