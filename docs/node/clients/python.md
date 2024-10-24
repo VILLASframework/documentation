@@ -12,6 +12,11 @@ Please notice that there is also an extra branch called python-client-lab to sto
 The Python client requires a Python package named `villas_pb2`.
 This package is generated from an Protobuf description which is available at [`VILLASnode/lib/formats/villas.proto`](https://github.com/VILLASframework/node/blob/master/lib/formats/villas.proto)
 
+## Compile Protobuf descriptors
+
+The Python client requires a Python package named `villas_pb2`.
+This package is generated from an Protobuf description which is available at [`VILLASnode/lib/formats/villas.proto`](https://github.com/VILLASframework/node/blob/master/lib/formats/villas.proto)
+
 ```shell
 protoc -I=./lib/formats --python_out=./clients/python ./lib/formats/villas.proto
 ```
@@ -19,6 +24,8 @@ protoc -I=./lib/formats --python_out=./clients/python ./lib/formats/villas.proto
 Please refer to the [Python protobuf documentation](https://protobuf.dev/getting-started/pythontutorial/) for more information.
 
 ## Client Description
+
+The Python client builds on the socket library of Python. 
 
 The Python client builds on the socket library of Python. 
 Since UDP is used, the socket has to bind to a specific port. 
