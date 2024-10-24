@@ -17,7 +17,11 @@ Instead just a common session name needs to be agreed on between the two nodes.
 Under the hood a signaling server is used for exchanging address and session information.
 
 :::info To summarize
-**The WebRTC node-type allows you to couple simulators and labs as easy as a Zoom/Skype video conference 📺.**
+The WebRTC node-type allows you to couple simulators and labs as easy as a Zoom/Skype video conference 📺.
+:::
+
+:::info Lab exercise
+For a hands-on exercise, please have a look at [Lab 18: WebRTC](../guides/lab18.md).
 :::
 
 **See also:** The [WebSocket node-type](./websocket.md) is a related but older node-type.
@@ -31,8 +35,16 @@ We recommend building libdatachannel with [libnice](https://libnice.freedesktop.
 A publicly reachable signaling server is required. [RWTH-ACS](https://www.acs.eonerc.rwth-aachen.de) operates such a signaling server at `https://villas.k8s.eonerc.rwth-aachen.de/ws/signaling` which is used by default.
 If two VILLASnode instances are connected, the **name of the `webrtc` node-type must differ** between the configuration files. 
 
-If a local signaling server should be run, the latest docker image can be pulled:
-`docker run -p 8080:8080 --privileged registry.git.rwth-aachen.de/acs/public/villas/signaling:server-client-communication`.
+:::caution
+If two VILLASnode instances are connected, the names of the `webrtc` nodes must be different between the configuration files. 
+:::
+
+If a local signaling server can be easily started for testing purposes using this Docker image:
+
+```shell
+docker run -p 8080:8080 --privileged registry.git.rwth-aachen.de/acs/public/villas/signaling
+```
+
 The source code is available here: https://github.com/VILLASframework/signaling
 
 ## Implementation
@@ -40,10 +52,20 @@ The source code is available here: https://github.com/VILLASframework/signaling
 The source code of the node-type is available here:
 https://github.com/VILLASframework/node/blob/master/go/pkg/nodes/webrtc/
 
+## Limitations
+
+:::note
+WebRTC only supports is limited to the bi-directional exchange of data between **two** peers.
+Exchanging data between a group of more than two peers is not possible.
+
+Please refer to the `websocket`, `mqtt` or `amqp` node-types for exchanging data between a of nodes using a publish/subscribe message pattern.
+:::
+
 ## Web Demo {#demo}
 
-:::caution Deprecation
-This demo is deprecated. It is currently updated.
+:::caution 
+This demo is currently broken.
+Please follow this issue for updates: https://github.com/VILLASframework/node/issues/725
 :::
 
 There exists an example WebRTC peer implementation running in a web-browser:

@@ -20,20 +20,20 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###################################################################################
 
-FROM node:16-bullseye AS deps
+FROM docker.io/library/node:16-bullseye AS deps
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV LANG en_US.UTF-8
 
 RUN apt-get update && \
 	apt-get -y install \
-		git \
-		dia \
-		make \
-		xsltproc \
-		findutils \
-		locales \
-		python3
+	git \
+	dia \
+	make \
+	xsltproc \
+	findutils \
+	locales \
+	python3
 
 RUN yarn global add @redocly/cli
 
@@ -60,6 +60,6 @@ RUN yarn
 COPY . .
 RUN make docs
 
-FROM nginx:1.21.3
+FROM docker.io/library/nginx:1.21.3
 
 COPY --from=builder /doc/build /usr/share/nginx/html

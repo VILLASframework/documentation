@@ -4,10 +4,12 @@ sidebar_position: 19
 
 # Lab 19: Python client
 
-Villas supports third party clients. This lab focuses on the python client. 
-A small scenario is created to test the functionality of the python client together with villas using data generation and udp node. 
+VILLASnode supports third-party clients to exchange signals with external tools or programming languages.
+This lab focuses on using the Python programming language for exchanging signals with VILLASnode. 
 
-## Villas configuration file
+A small example scenario is created to test the functionality of the Python client together with VILLASnode using the [Signal Generator](../nodes/signal.md) (`signal`) and [UDP Socket](../nodes/socket.md) (`socket`) node-types. 
+
+## VILLASnode configuration file
 
 ``` url="external/node/etc/labs/lab19.conf" title="node/etc/labs/lab19.conf"
 nodes = {
@@ -20,7 +22,7 @@ nodes = {
             address = "*:12000"
 
             signals = {
-                count = 5   # expected incoming sample, send back from python client, repeats samples if values in signal is smaller
+                count = 5   # expected incoming sample, send back from Python client, repeats samples if values in signal is smaller
                 type = "float"
             }
             hooks = (
@@ -53,26 +55,32 @@ paths = (
 
 )
 ```
-As already mentioned, the configuration files includes the data generator which is the signal node-type. 
-Three samples are genereated with five values. 
 
-The udp node is a simple socket node-type and serves as interface to the python client so that data can be sent. 
-The output part, especially the port number, must match with the python client configuration. 
-It is important that the format type is protobuf, otherwise the udp node cannot decode data recevied by python client. 
+As already mentioned, the configuration files includes the data generator which is the signal node-type. 
+Three samples are generated with five values. 
+
+The udp node is a simple socket node-type and serves as interface to the Python client so that data can be sent. 
+The output part, especially the port number, must match with the Python client configuration. 
+It is important that the format type is protobuf, otherwise the udp node cannot decode data received by Python client. 
 
 The last part of the configuration file specifies the paths. The first path ensures that generated data is send to udp node. The second path is responsible for receiving data from python client. 
 
 ## Python client configuration
+
 The [`python client`](../clients/python.md) explains the corresponding configuration file. 
 
 ## Let's start
-Open two terminals. In one terminal start the python client: 
+
+Open two terminals. In one terminal start the Python client: 
+
 ```shell
 python3 client.py
 ```
-In the other terminal, start the villas node with above-described configuration file:
+In the other terminal, start the VILLASnode with above-described configuration file:
+
 ```shell
 villas node lab19.conf
 ```
-In python client terminal, you should see the send data. 
-In villas output, you should see the send data twice because python client sends the received data back. 
+
+In Python client terminal, you should see the send data. 
+In the VILLASnode output, you should see the send data twice because Python client sends the received data back. 
