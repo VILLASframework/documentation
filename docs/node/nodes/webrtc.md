@@ -33,8 +33,11 @@ We recommend building libdatachannel with [libnice](https://libnice.freedesktop.
 
 ### WebRTC Signaling Server
 
+<<<<<<< HEAD
 A publicly reachable signaling server is required. [RWTH-ACS](https://www.acs.eonerc.rwth-aachen.de) operates such a signaling server at `https://villas.k8s.eonerc.rwth-aachen.de/ws/signaling` which is used by default.
 
+=======
+>>>>>>> 0a6b926 (rebase)
 :::caution
 If two VILLASnode instances are connected, the names of the `webrtc` nodes must be different between the configuration files. 
 :::
