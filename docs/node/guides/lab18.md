@@ -81,16 +81,153 @@ We will be using the [print hook](../hooks/print.md) to display the received dat
     <figcaption>villas-node WebRTC Examplel Example.</figcaption>
 </figure>
 
-## Configuration
+## Configuration 
 
-``` url="external/node/etc/labs/lab18.conf" title="node/etc/labs/lab18.conf"
-TODO
+Two configuration files are needed to have one VILLASnode instance to generate the data and the other one to loopback the data, i.e., it receives the data and sends it back directly. 
+
+### Signal Generator
+
+``` url="external/node/etc/labs/lab18-siggen.conf" title="node/etc/labs/lab18-siggen.conf"
+
+nodes = {
+	webrtc_siggen = {
+		type = "webrtc",
+
+		format = "json"
+
+		in = {
+			signals = (
+				{ name = "signal", type = "float", unit = "unit" },
+				{ name = "signal", type = "float", unit = "unit" },
+				{ name = "signal", type = "float", unit = "unit" }
+			)
+		}
+
+		out = {
+			signals = (
+				{ name = "signal", type = "float", unit = "unit" },
+				{ name = "signal", type = "float", unit = "unit" },
+				{ name = "signal", type = "float", unit = "unit" }
+			)
+		}
+
+		# A unique session identifier which must be shared between two nodes
+		session = "villas-test"
+
+		# Address to the websocket signaling server
+		server = "https://villas.k8s.eonerc.rwth-aachen.de/ws/signaling"
+
+		# Limit the number of times a channel will retransmit data if not successfully delivered.
+		# This value may be clamped if it exceeds the maximum value supported.
+		max_retransmits = 0
+
+		# Number of seconds to wait for a WebRTC connection before proceeding the start
+		# of VILLASnode. Mainly used for testing
+		wait_seconds = 10 # in seconds
+
+		# Indicates if data is allowed to be delivered out of order.
+		# The default value of false, does not make guarantees that data will be delivered in order.
+		ordered = false
+
+		# Setting for Interactive Connectivity Establishment
+    # If empty then configured servers in signaling server are used. 
+		ice = {
+		# List of STUN/TURN servers
+		# servers = (
+    )
+	  }
+  }
+	siggen = {
+        type = "signal"
+        signal = [ "sine", "pulse", "square" ]
+        values = 3,         # Number of values per sample
+        limit = 1,         # Number of samples to generate
+		    rate = 1,           # Rate in Hz
+    }
+}
+paths = (
+	{
+		in = "siggen"
+		out = "webrtc_siggen" 
+
+		hooks = ( { type = "print" })
+	},
+	{
+		in = "webrtc_siggen"
+				
+		hooks = ( { type = "print" })
+	}
+)
+
+```
+### Loopback
+
+``` url="external/node/etc/labs/lab18-loopback.conf" title="node/etc/labs/lab18-loopback.conf"
+
+nodes = {
+	webrtc_loopback = {
+		type = "webrtc",
+
+		format = "json"
+
+		in = {
+			signals = (
+				{ name = "signal", type = "float", unit = "unit" },
+				{ name = "signal", type = "float", unit = "unit" },
+				{ name = "signal", type = "float", unit = "unit" }
+			)
+		}
+
+		out = {
+			signals = (
+				{ name = "signal", type = "float", unit = "unit" },
+				{ name = "signal", type = "float", unit = "unit" },
+				{ name = "signal", type = "float", unit = "unit" }
+			)
+		}
+
+		# A unique session identifier which must be shared between two nodes
+		session = "sessions/villas-test"
+
+		# Address to the websocket signaling server
+		server = "https://villas.k8s.eonerc.rwth-aachen.de/ws/signaling"
+		
+		# Limit the number of times a channel will retransmit data if not successfully delivered.
+		# This value may be clamped if it exceeds the maximum value supported.
+		max_retransmits = 0
+
+		# Number of seconds to wait for a WebRTC connection before proceeding the start
+		# of VILLASnode. Mainly used for testing
+		# wait_seconds = 10 # in seconds
+
+		# Indicates if data is allowed to be delivered out of order.
+		# The default value of false, does not make guarantees that data will be delivered in order.
+		ordered = false
+
+		# Setting for Interactive Connectivity Establishment
+    # If empty then configured servers in signaling server are used. 
+		ice = {
+		# List of STUN/TURN servers
+		# servers = (
+		)
+	  }
+  }
+}
+paths = (
+	{
+		in = "webrtc_loopback"
+		out = "webrtc_loopback" 
+
+		hooks = ( { type = "print" })
+	}
+)
+
 ```
 
 ## Steps
 
 1. Prepare the two VILLASnode instances.
 2. Verify that both have Internet connectivity by running: `ping rwth-aachen.de`.
-3. Create/copy the [`lab18.conf` configuration file](#configuration) on both machines.
-4. Run VILLASnode on both machines: `villas node lab18.conf`
+3. Create/copy the [`lab18-siggen.conf` configuration file](#configuration) and [`lab18-siggen.conf` configuration file](#configuration) each on one machine.
+4. Run VILLASnode on both machines: `villas node lab18-siggen.conf` and `villas node lab18-loopback.conf`
 5. Verify that you can see sample data being displayed on both terminals. 
