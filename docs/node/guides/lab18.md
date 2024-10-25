@@ -133,8 +133,8 @@ nodes = {
     # If empty then configured servers in signaling server are used. 
 		ice = {
 		# List of STUN/TURN servers
-		# servers = (
-    )
+		servers = (
+    	)
 	  }
   }
 	siggen = {
@@ -187,7 +187,7 @@ nodes = {
 		}
 
 		# A unique session identifier which must be shared between two nodes
-		session = "sessions/villas-test"
+		session = "villas-test"
 
 		# Address to the websocket signaling server
 		server = "https://villas.k8s.eonerc.rwth-aachen.de/ws/signaling"
@@ -198,7 +198,7 @@ nodes = {
 
 		# Number of seconds to wait for a WebRTC connection before proceeding the start
 		# of VILLASnode. Mainly used for testing
-		# wait_seconds = 10 # in seconds
+		wait_seconds = 10 # in seconds
 
 		# Indicates if data is allowed to be delivered out of order.
 		# The default value of false, does not make guarantees that data will be delivered in order.
@@ -208,7 +208,7 @@ nodes = {
     # If empty then configured servers in signaling server are used. 
 		ice = {
 		# List of STUN/TURN servers
-		# servers = (
+		servers = (
 		)
 	  }
   }
