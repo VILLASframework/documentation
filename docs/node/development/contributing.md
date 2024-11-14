@@ -43,7 +43,7 @@ PRs that update the style of existing code should be made separate from PRs that
     3. Commented code that is not part of an explanation is not allowed.
 4. Commits
     - We use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
-    - You must agree to the [DCO](https://github.com/VILLASframework/node/blob/master/DCO.md) and sign-off your commits. This is also enforced by the CI.
+    - You must agree to the [DCO](https://developercertificate.org/) and sign-off your commits. This is also enforced by the CI.
 5. C++ Features
     1. **Error Handling:** We do not use exceptions in new code. Instead use `std::expected` to return errors as optionals. 
     2. **RTTI:** Avoid RTTI in new code. If you need to check the type of an object, consider using a virtual function instead.
