@@ -12,8 +12,8 @@ As the codebase and these guidelines evolve, the codebase may not always be in f
 Existing code should not be taken as and example for new code.
 PRs that update the style of existing code should be made separate from PRs that change or add code.
 
-
 ## VILLASframework Coding Guidelines
+
 1. Automated formatting tools
     1. **clang-format:** The VILLASframework uses clang-format to enforce a consistent code style. Please refer to the [clang-format configuration](https://github.com/VILLASframework/node/blob/master/.clang-format). Please run `clang-format` on your code before making a commit.
     2. **EditorConfig:** Please refer to the [editorconfig file](https://github.com/VILLASframework/node/blob/master/.editorconfig) on how to setup your editor.
@@ -45,7 +45,7 @@ PRs that update the style of existing code should be made separate from PRs that
     - We use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
     - You must agree to the [DCO](https://developercertificate.org/) and sign-off your commits. This is also enforced by the CI.
 5. C++ Features
-    1. **Error Handling:** We do not use exceptions in new code. Instead use `std::expected` to return errors as optionals. 
+    1. **Error Handling:** Avoid using exceptions in new code.
     2. **RTTI:** Avoid RTTI in new code. If you need to check the type of an object, consider using a virtual function instead.
     3. **Templates:** Avoid using templates in new code.
 6. Pull Requests
@@ -53,3 +53,6 @@ PRs that update the style of existing code should be made separate from PRs that
     2.  When a PR is submitted that follows all the rules, a review should not require changes to new/undocumented rules. Instead reviewers can add changes to a PR themselves. In this case they must also update this guidelines document.
 7. Make the CI happy
     1. Only branches which pass the CI can be merged.
+
+We referenced the [LLVM Coding Standards](https://llvm.org/docs/CodingStandards.html) when creating these guidelines. Although we do not follow them exactly, we believe in the benefits of following established standards.
+Additions and changes to the guidelines should also be in line with guidelines of other major C++ projects.
