@@ -2,7 +2,7 @@
 hide_table_of_contents: true
 ---
 
-# RMS signals
+# RMS Signals
 
 The `rms` hook calculates the RMS of signals on a given window.
 

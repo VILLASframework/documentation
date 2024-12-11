@@ -2,7 +2,7 @@
 hide_table_of_contents: true
 ---
 
-# Scale and offset signals
+# Scale and Offset Signals
 
 The `scale` hook modifies sample signals by a gain factor and optionally ads an offset.
 First the original signal value is multiplied by the gain, then the offset is added.

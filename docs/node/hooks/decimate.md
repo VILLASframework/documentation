@@ -2,7 +2,7 @@
 hide_table_of_contents: true
 ---
 
-# Decimate sample rate
+# Decimate Sample Rate
 
 The `decimate` hook reduces the sampling rate by periodically discarding samples.
 

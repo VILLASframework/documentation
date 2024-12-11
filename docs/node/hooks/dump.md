@@ -2,7 +2,7 @@
 hide_table_of_contents: true
 ---
 
-# Dump sample data
+# Dump Sample Data
 
 The `dump` hook will print a detailed dump of each processes samples to the standard output.
 

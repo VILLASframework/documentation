@@ -2,7 +2,7 @@
 hide_table_of_contents: true
 ---
 
-# Handle restarts
+# Handle Restarts
 
 The `restart` hook tries to detect starts/restarts of simulation cases by looking for wrap-around in sequence numbers.
 

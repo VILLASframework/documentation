@@ -2,7 +2,7 @@
 hide_table_of_contents: true
 ---
 
-# Statistic collection
+# Statistic Collection
 
 The `stats` hook collects statistics about nodes.
 Currently the following metrics are collected:

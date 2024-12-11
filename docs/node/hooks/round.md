@@ -2,7 +2,7 @@
 hide_table_of_contents: true
 ---
 
-# Round signals
+# Round Signals
 
 The `round` hook rounds selected signals of a sample to a specified number of digits.
 

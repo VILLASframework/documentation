@@ -2,7 +2,7 @@
 hide_table_of_contents: true
 ---
 
-# Average signal values
+# Average Signal Values
 
 The `average` hook calculates arithmetic mean over a set of signals and insert it as a new value to the samples.
 

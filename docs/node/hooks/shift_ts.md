@@ -2,7 +2,10 @@
 hide_table_of_contents: true
 ---
 
-# Shift timestamps
+# Shift Timestamps
+
+The hook `shift_ts` is designed to shift timestamps by applying a specified time offset. 
+The hook can shift either the origin or received timestamp of each sample, based on the configuration.
 
 ## Implementation
 
