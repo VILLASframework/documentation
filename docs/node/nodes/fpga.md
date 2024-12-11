@@ -1,4 +1,8 @@
 ---
+sidebar_label: FPGA
+---
+
+---
 hide_table_of_contents: true
 ---
 
