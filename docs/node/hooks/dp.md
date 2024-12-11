@@ -2,7 +2,9 @@
 hide_table_of_contents: true
 ---
 
-# Dynamic Phasor calculation / DFT
+# Dynamic Phasor (DP) Calculation / DFT
+
+The `dp` hook calulcates the dynamic phasor of a given signal by using Discrete Fourier Transformation (DFT).
 
 ## Implementation
 

@@ -2,7 +2,7 @@
 hide_table_of_contents: true
 ---
 
-# Print sample data
+# Print Sample Data
 
 The `print` hook prints processed samples to the standard output or into a file.
 While doing so, it supports all the formats described here: [Format Types](../formats/index.md) .

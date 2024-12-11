@@ -4,6 +4,8 @@ hide_table_of_contents: true
 
 # Calculate Jitter
 
+The `jitter_calc` hook is designed to calculate the jitter, mean, and variance between GPS and NTP timestamps.
+
 ## Implementation
 
 The source code of the hook is available here:

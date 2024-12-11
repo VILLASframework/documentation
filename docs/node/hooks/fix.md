@@ -2,7 +2,7 @@
 hide_table_of_contents: true
 ---
 
-# Fix missing metadata
+# Fix Missing Metadata
 
 The `fix` hook checks each sample and adds missing metadata such as timestamps or sequence numbers.
 

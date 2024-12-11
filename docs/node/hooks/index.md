@@ -53,16 +53,17 @@ Currently, the following _node-hook-types_ are supported:
 | [`lua`](lua.md)                 |           | yes       | yes        | yes  | stable     | Lua scripting support |
 | [`pmu_dft`](pmu_dft.md)                 |           | yes       | yes        | yes  | stable     | Caluclate the phasor on a sample window |
 | [`pps_ts`](pps_ts.md)           |           | yes       | yes        | yes  | stable     | Timestamp samples based on a PPS signal/edge within the sample |
+| [`print`](print.md)             |           | yes       | yes        | yes  | stable     | Print the message to stdout |
 | [`restart`](restart.md)         | yes       | yes       |            |      | stable     | Call restart hooks for current node |
-| [`round`](round.md)             |           | yes       | yes        | yes  | stable     | Round floating point and complex signals to decimal digits |
 | [`rms`](rms.md)             |           | yes       | yes        | yes  | stable     | Calculate the RMS value of a signal |
+| [`round`](round.md)             |           | yes       | yes        | yes  | stable     | Round floating point and complex signals to decimal digits |
 | [`scale`](scale.md)             |           | yes       | yes        | yes  | stable     | Scale signals by a factor and add offset |
 | [`shift_seq`](shift_seq.md)     |           | yes       | yes        |      | stable     | Shift sequence number of samples |
 | [`shift_ts`](shift_ts.md)       |           | yes       | yes        |      | stable     | Shift timestamps of samples |
 | [`skip_first`](skip_first.md)   |           | yes       | yes        | yes  | stable     | Skip the first samples |
 | [`stats`](stats.md)             |           | yes       |            |      | stable     | Collect statistics for the current path |
 | [`ts`](ts.md)                   |           | yes       | yes        | yes  | stable     | Overwrite origin timestamp of samples with receive timestamp |
-| [`print`](print.md)             |           | yes       | yes        | yes  | stable     | Print the message to stdout |
+
 
 ## Writing custom hook functions
 

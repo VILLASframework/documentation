@@ -2,7 +2,7 @@
 hide_table_of_contents: true
 ---
 
-# Phasor calculation
+# Phasor Calculation
 
 The `pmu_dft` hook provides a dft based phasor calculation. The current implementation is a proof of concept but should not be used in production since this implementation is rather resource hungry.
 

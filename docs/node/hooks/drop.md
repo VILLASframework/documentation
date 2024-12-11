@@ -2,7 +2,7 @@
 hide_table_of_contents: true
 ---
 
-# Drop reordered samples
+# Drop Reordered Samples
 
 The `drop` hook will discard samples which a received with repeating or reordered sequence numbers.
 

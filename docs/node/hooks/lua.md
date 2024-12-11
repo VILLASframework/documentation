@@ -2,7 +2,7 @@
 hide_table_of_contents: true
 ---
 
-# Lua scripting
+# Lua Scripting
 
 The `lua` hook allows for the evaluation arbitrary Lua expressions.
 
