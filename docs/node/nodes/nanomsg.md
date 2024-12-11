@@ -2,7 +2,7 @@
 hide_table_of_contents: true
 ---
 
-# nanomsg
+# Nanomsg
 
 The `nanomsg` node-type uses [libnanomsg](http://nanomsg.org/) to exchange messages.
 It is similar to the [`zeromq` node-type](zeromq.md).

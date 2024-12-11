@@ -1,5 +1,5 @@
 ---
-sidebar_label: FIWARE NGSI
+sidebar_label: NGSI (FIRWARE)
 ---
 
 # Open Mobile Alliance (OMA) - Next Generation Services Interface (NGSI)

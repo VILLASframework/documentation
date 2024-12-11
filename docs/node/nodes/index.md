@@ -20,6 +20,7 @@ VILLASnode currently supports the following node-types:
 | Type                                | Network Emulation | Read | Write | Vectorize | Status      | Comments |
 | :--                                 | :--               | :--  | :--   | :--       | :--         | :--      |
 | [amqp](amqp.md)                     | no                | yes  | yes   | unlimited | stable      | |
+| [api](api.md)                       | no                | yes  | yes   | unlimited | stable      | |
 | [can](can.md)                       | no                | yes  | yes   | ?         | beta        | |
 | [comedi](comedi.md)                 | no                | yes  | yes   | unlimited | beta        | Support for a wide range of Analog/Digital Input/Output cards |
 | [ethercat](ethercat.md)             | no                | yes  | yes   | ?         | alpha       | |
