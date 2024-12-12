@@ -1,94 +1,48 @@
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
   DOCKER_IMAGE: registry.git.rwth-aachen.de/acs/public/villas/documentation
-  DOCKER_IMAGE_DEV: ${DOCKER_IMAGE}/dev
   DOCKER_TAG: ${CI_COMMIT_REF_NAME}
-  TARGET: 
 
 stages:
   - prepare
-  # - build
-  - packaging
-  # - test ##TODO
+  - build
   - deploy
-  - latest
 
 # Stage: prepare
 
 prepare:image-dev:
   stage: prepare
-  image: docker:latest
+  before_script:
+    - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
   script:
-    - docker build --target dev --tag ${DOCKER_IMAGE_DEV}:${DOCKER_TAG} .
+    - docker build --target dev --tag ${DOCKER_IMAGE}:dev --tag ${DOCKER_IMAGE}:${DOCKER_TAG}-dev .
   tags:
     - docker-image-builder
 
-# # Stage: build
+# Stage: build
 
-# build:image:
-#   stage: build
-#   image: ${DOCKER_IMAGE_DEV}:${DOCKER_TAG}
-#   before_script:
-#     - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY} || { echo 'Docker login failed'; exit 1; }
-#   script:
-#     - docker build --tag ${DOCKER_IMAGE}:${DOCKER_TAG} --tag ${DOCKER_IMAGE}:latest .
-#   tags:
-#     - docker-image-builder
-
-# Stage: packaging
-
-pkg:docker:
-  stage: packaging
-  image: ${DOCKER_IMAGE}:${DOCKER_TAG}
+build:image:
+  stage: build
   before_script:
-    - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY} || { echo 'Docker login failed'; exit 1; }
+    - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
   script:
-    - docker build --target app --tag ${DOCKER_IMAGE}:${DOCKER_TAG} .
-    - docker push ${DOCKER_IMAGE}:${DOCKER_TAG}
-    # - docker push ${DOCKER_IMAGE}:latest
+    - docker build --tag ${DOCKER_IMAGE}:${DOCKER_TAG} --tag ${DOCKER_IMAGE}:latest .
   tags:
     - docker-image-builder
 
 # Stage: deploy
 
-deploy:docker-dev:
-    stage: deploy
-    image: docker:latest
-    before_script:
-      - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY} || { echo 'Docker login failed'; exit 1; }
-    script:
-      - docker push ${DOCKER_IMAGE_DEV}:${DOCKER_TAG}
-    tags:
-      - docker-image-builder
-    needs:
-      - job: prepare:image-dev
-
-# deploy:kubernetes:
-#   stage: deploy
-#   variables:
-#     KUBECONFIG: /root/.kube/config
-#   image: registry.git.rwth-aachen.de/acs/internal/cloud/kubernetes/deployment
-#   before_script:
-#     - mkdir -p $(dirname ${KUBECONFIG})
-#     - echo "${KUBECONFIG_ENCODED}" | base64 -d > ${KUBECONFIG}
-#     - kubectl version
-#   script:
-#     - make deploy
-#   only:
-#     refs:
-#       - master
-
-# Stage: latest
-
-latest:docker:
-  stage: latest
-  image: docker:latest
+deploy:kubernetes:
+  stage: deploy
+  variables:
+    KUBECONFIG: /root/.kube/config
+  image: registry.git.rwth-aachen.de/acs/internal/cloud/kubernetes/deployment
   before_script:
-    - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY} || { echo 'Docker login failed'; exit 1; }
+    - mkdir -p $(dirname ${KUBECONFIG})
+    - echo "${KUBECONFIG_ENCODED}" | base64 -d > ${KUBECONFIG}
+    - kubectl version
   script:
-    - docker tag  ${DOCKER_IMAGE_DEV}:${DOCKER_TAG} ${DOCKER_IMAGE_DEV}:latest
-    - docker push ${DOCKER_IMAGE}:latest
-  tags:
-    - docker-image-builder
-  needs:
-    - job: deploy:docker-dev
+    - make deploy
+  only:
+    refs:
+      - master
