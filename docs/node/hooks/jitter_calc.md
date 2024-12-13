@@ -4,7 +4,8 @@ hide_table_of_contents: true
 
 # Calculate Jitter
 
-The `jitter_calc` hook is designed to calculate the jitter, mean, and variance between GPS and NTP timestamps.
+The `jitter_calc` hook calculates the jitter based on inter-sampling time as used in [Wireshark](https://wiki.wireshark.org/RTP_statistics) according to RFC3550. 
+The original purpose was to calculate the jitter between the timestamp of a GTNET GPS timestamp and the VILLASNode NTP timestamp. 
 
 ## Implementation
 

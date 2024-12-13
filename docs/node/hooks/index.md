@@ -64,7 +64,6 @@ Currently, the following _node-hook-types_ are supported:
 | [`stats`](stats.md)             |           | yes       |            |      | stable     | Collect statistics for the current path |
 | [`ts`](ts.md)                   |           | yes       | yes        | yes  | stable     | Overwrite origin timestamp of samples with receive timestamp |
 
-
 ## Writing custom hook functions
 
 :::note ToDo
