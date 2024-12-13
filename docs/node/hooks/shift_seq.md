@@ -4,7 +4,7 @@ hide_table_of_contents: true
 
 # Shift Sequence Numbers
 
-The `shift_seq` hook is designed to modify the sequence number of samples.
+The `shift_seq` hook is designed to modify the sequence number of samples with an offset.
 
 ## Implementation
 
