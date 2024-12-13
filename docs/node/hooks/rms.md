@@ -2,7 +2,7 @@
 hide_table_of_contents: true
 ---
 
-# RMS Signals
+# Root-Mean-Square Calculation
 
 The `rms` hook calculates the RMS of signals on a given window.
 
