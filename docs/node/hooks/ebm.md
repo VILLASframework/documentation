@@ -4,7 +4,7 @@ hide_table_of_contents: true
 
 # Energy Based Metric Calculation
 
-The `ebm` hook calculates the energy consumption based on voltage and current samples over time.
+The `ebm` hook calculates the energy of a signal based on voltage and current product.
 
 ## Implementation
 
