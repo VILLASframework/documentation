@@ -6,7 +6,7 @@ sidebar_label: Execution
 hide_table_of_contents: true
 ---
 
-# Execution of Sub-process
+# Execution of Sub-processes
 
 The `exec` node-type spawns a new subprocess and exchanges sample data via `stdin` and `stdout`.
 
