@@ -79,6 +79,8 @@ sudo apt-get install \
     autoconf automake libtool \
     texinfo git mercurial curl \
     flex bison xmlto \
+    python3-venv \
+    clang-format clangd \
     doxygen dia graphviz \
     libcomedi-dev \
     libconfig-dev \
@@ -101,7 +103,10 @@ sudo apt-get install \
     libssl-dev \
     libusb-1.0-0-dev \
     libzmq3-dev \
-    uuid-dev
+    uuid-dev \
+    libre2-dev \
+	libglib2.0-0 libglib2.0-dev \
+	libcriterion-dev
 ```
 
 or the following line for Fedora/Redhat/RockyLinux systems:
@@ -115,6 +120,8 @@ sudo yum install \
     autoconf automake libtool \
     texinfo git mercurial curl tar \
     flex bison rpmdevtools \
+    python3-venv \
+    clang-format clangd \
     doxygen dia graphviz \
     openssl-devel \
     protobuf-devel \
@@ -138,7 +145,9 @@ sudo yum install \
     mosquitto-devel \
     nanomsg-devel \
     spdlog-devel \
-    zeromq-devel
+    zeromq-devel \
+    libglib2.0-0 libglib2.0-dev \
+	libcriterion-dev
 ```
 
 ### Downloading from Git
