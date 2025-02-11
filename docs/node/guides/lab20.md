@@ -4,9 +4,9 @@ sidebar_position: 20
 
 # Lab 20: Socket TCP
 
-This lab tutorial focuses on VILLASnode's socket node type with TCP connection. 
+This lab tutorial focuses on VILLASnode's [`socket`](../nodes/socket.md) node-type using a TCP connection. 
 
-An example is created to test the connection between VILLASnode's [socket TCP client](../nodes/socket.md) (`socket`) with [Signal Generator](../nodes/signal.md) (`signal`) and a TCP echo server [tcpbin.com](tcpbin.com). The echo server is response for receiving the data from TCP client and send the same data back for testing purpose.
+An example is created to test the connection between VILLASnode's [TCP client (`socket`)](../nodes/socket.md) with a [Signal Generator (`signal`)](../nodes/signal.md) and a TCP echo server [tcpbin.com](tcpbin.com). The echo server is response for receiving the data from TCP client and send the same data back for testing purpose.
 
 ## VILLASnode configuration file
 
@@ -45,10 +45,10 @@ paths = (
 )
 ```
 
-The configuration files includes the data generator which is the signal node-type. 
+The configuration file includes the data generator which uses the `signal` node-type. 
 
 The TCP client node is a simple socket node-type and serves as interface to the TCP echo server so that data can be sent. 
-For TCP client the in and out address has to match a TCP server address, in this case tcpbin.com.
+For TCP client the in and out address has to match a TCP server address, in this case [tcpbin.com](https://tcpbin.com/).
 The last part of the configuration file specifies the paths. The first path ensures that generated data is send to TCP client node. 
 The second path is responsible for receiving echo data from TCP server. 
 
