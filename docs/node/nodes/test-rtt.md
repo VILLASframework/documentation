@@ -7,9 +7,10 @@ hide_table_of_contents: true
 The `test_rtt` node-type is a virtual node-type which can be used to measure round-trip time to other nodes.
 The `test_rtt` nodes periodically generate probes which must be looped back via a second node.
 
-:::info Hint for UDP `socket` node-type
-If you want to use the UDP `socket` node-type, you need to use the `raw` format type and set `fake = true` in the configuration file. 
-In that way, you make sure that the timestamp is set correctly. 
+:::info Hint for `raw` format
+If your second node is using the `raw` format you will need to set the `fake = true` setting in the format configuration.
+
+Otherwise, no sample meta data such as time stamps are exchanged. However, these are required by the `test_rtt` node-type to calculate the round-trip time.
 :::
 
 ## Prerequisites
