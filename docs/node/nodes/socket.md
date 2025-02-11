@@ -13,10 +13,9 @@ This means that there's currently no support for TCP!
 
 The implementation supports multiple protocols / OSI layers:
 
- - **Layer 1:** Raw Ethernet Frames (no routing!)
- - **Layer 2:** Raw IP (internet / VPN routing possible)
- - **Layer 3:** UDP encapsulation
- - **Layer 4:** TCP client or server
+ - **Data-Link Layer 2:** Raw Ethernet Frames (no routing!)
+ - **Network Layer 3:** Raw IP (internet / VPN routing possible)
+ - **Transport Layer 4:** UDP encapsulation, TCP client or server
 
 ## Prerequisites
 
@@ -119,7 +118,7 @@ nodes = {
 	}
 
 	tcp_server_node = {					# The dictionary is indexed by the name of the node.
-		type = "socket",			# For a list of available node-types run: 'villas-node -h'
+		type = "socket",				# For a list of available node-types run: 'villas-node -h'
 
 	### The following settings are specific to the socket node-type!! ###
 
@@ -135,11 +134,11 @@ nodes = {
 	}
 
 	tcp_client_node = {					# The dictionary is indexed by the name of the node.
-		type = "socket",			# For a list of available node-types run: 'villas-node -h'
+		type = "socket",				# For a list of available node-types run: 'villas-node -h'
 
 	### The following settings are specific to the socket node-type!! ###
 
-		layer	= "tcp-client",			# see above
+		layer	= "tcp-client",				# See above
 		in = {
 			address = "127.0.0.1:12001"	
 		},
