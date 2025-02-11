@@ -23,7 +23,7 @@ This process has been tested with the following Linux distributions:
 
  - Fedora 36
  - Debian 12 (Bookworm)
- - Ubuntu 22.04 (Jammy Jellyfish)
+ - Ubuntu 24.04 (Noble Numbat)
  - RHEL / Rocky Linux 8
 
 ### Prerequisites
@@ -79,6 +79,8 @@ sudo apt-get install \
     autoconf automake libtool \
     texinfo git mercurial curl \
     flex bison xmlto \
+    python3-venv \
+    clang-format clangd \
     doxygen dia graphviz \
     libcomedi-dev \
     libconfig-dev \
@@ -101,20 +103,24 @@ sudo apt-get install \
     libssl-dev \
     libusb-1.0-0-dev \
     libzmq3-dev \
-    uuid-dev
+    uuid-dev \
+    libre2-dev \
+    libglib2.0-dev \
+    libcriterion-dev
 ```
 
 or the following line for Fedora/Redhat/RockyLinux systems:
 
 ```shell
-sudo yum install epel-release
-sudo yum install \
+sudo dnf update
+sudo dnf install \
     gcc gcc-c++ \
     pkgconfig make cmake ninja-build \
-    protobuf-compiler protobuf-c-compiler \
-    autoconf automake libtool \
+    autoconf automake autogen libtool \
     texinfo git mercurial curl tar \
     flex bison rpmdevtools \
+    python3-devel \
+    clang-tools-extra \
     doxygen dia graphviz \
     openssl-devel \
     protobuf-devel \
@@ -138,7 +144,10 @@ sudo yum install \
     mosquitto-devel \
     nanomsg-devel \
     spdlog-devel \
-    zeromq-devel
+    zeromq-devel \
+    glib2-devel \
+    libnice-devel
+
 ```
 
 ### Downloading from Git
@@ -218,7 +227,7 @@ cmake --build ./build --target install
 
 ### Customizing the build
 
-The compilation of villas can be customized for faster compilation, smaller binaries or to fix issues on more excotic systems.
+The compilation of villas can be customized for faster compilation, smaller binaries or to fix issues on more exotic systems.
 Normal users should probably stick with the defaults.
 
 #### Exclude broken features
