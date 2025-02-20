@@ -6,7 +6,7 @@ sidebar_position: 20
 
 This lab tutorial focuses on VILLASnode's [`socket`](../nodes/socket.md) node-type using a TCP connection. 
 
-An example is created to test the connection between VILLASnode's [TCP client (`socket`)](../nodes/socket.md) with a [Signal Generator (`signal`)](../nodes/signal.md) and a TCP echo server [tcpbin.com](tcpbin.com). The echo server is response for receiving the data from TCP client and send the same data back for testing purpose.
+An example is created to test the connection between VILLASnode's [TCP client (`socket`)](../nodes/socket.md) with a [Signal Generator (`signal`)](../nodes/signal.md) and a TCP echo server [tcpbin.com](https://tcpbin.com). The echo server is response for receiving the data from TCP client and send the same data back for testing purpose.
 
 ## VILLASnode configuration file
 
