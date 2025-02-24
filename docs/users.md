@@ -16,7 +16,7 @@ Parts of VILLASframework are used or have been used in the past by the following
 - College of Engineering, University of Texas at Arlington, USA
 - Colorado State University, USA
 - Denmark Technical University (DTU), Riso, Denmark
-- Deutsches Zentrum für Lust- und Raumfahrt, Institut für Vernetzte Energiesysteme, Oldenburg, Germany
+- Deutsches Zentrum für Luft- und Raumfahrt, Institut für Vernetzte Energiesysteme, Oldenburg, Germany
 - EU Joint Research Center, Petten, Netherlands
 - Forschungszentrum Jülich, Germany
 - Friedrich-Alexander-Universität Erlangen-Nürnberg, Germany
