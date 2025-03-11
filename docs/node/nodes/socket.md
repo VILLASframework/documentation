@@ -13,9 +13,9 @@ This means that there's currently no support for TCP!
 
 The implementation supports multiple protocols / OSI layers:
 
- - **Layer 1:** Raw Ethernet Frames (no routing!)
- - **Layer 2:** Raw IP (internet / VPN routing possible)
- - **Layer 3:** UDP encapsulation
+ - **Data-Link Layer 2:** Raw Ethernet Frames (no routing!)
+ - **Network Layer 3:** Raw IP (internet / VPN routing possible)
+ - **Transport Layer 4:** UDP encapsulation, TCP client or server
 
 ## Prerequisites
 
@@ -29,6 +29,8 @@ The source code of the node-type is available here:
 https://github.com/VILLASframework/node/blob/master/lib/nodes/socket.cpp
 
 ## Configuration {#config}
+
+For TCP connection, the node can only be either server or client which is specified by "tcp-server" or "tcp-client" in the layer section.
 
 import ApiSchema from '@theme/ApiSchema';
 
@@ -52,6 +54,8 @@ nodes = {
 							#   - udp	 Send / receive L4 UDP packets
 							#   - ip	  Send / receive L3 IP packets
 							#   - eth	 Send / receive L2 Ethernet frames (IEEE802.3)
+							# 	- tcp-server Send / receive byte stream as a TCP client
+							#	- tcp-client Send / receive byte stream as a TCP server
 
 		format	= "gtnet",			# For a list of available node-types run: 'villas-node -h'
 
@@ -92,7 +96,7 @@ nodes = {
 	}
 
 	udp_multicast_node = {					# The dictionary is indexed by the name of the node.
-		type = "socket",			# For a list of available node-types run: 'villas-node -h'
+		type = "socket",					# For a list of available node-types run: 'villas-node -h'
 
 	### The following settings are specific to the socket node-type!! ###
 
@@ -104,12 +108,42 @@ nodes = {
 
 				group = "224.1.2.3",	# The multicast group. Must be within 224.0.0.0/4
 				interface = "1.2.3.4",	# The IP address of the interface which should receive multicast packets.
-				ttl = 128,		# The time to live for outgoing multicast packets.
-				loop = false,		# Whether or not to loopback outgoing multicast packets to the local host.
+				ttl = 128,				# The time to live for outgoing multicast packets.
+				loop = false,			# Whether or not to loopback outgoing multicast packets to the local host.
 			}
 		},
 		out = {
 			address = "127.0.0.1:12000",	# This node sends outgoing messages to this IP:Port pair
+		}
+	}
+
+tcp_server_node = {						# The dictionary is indexed by the name of the node.
+		type = "socket",				# For a list of available node-types run: 'villas-node -h'
+
+	### The following settings are specific to the socket node-type!! ###
+
+		layer	= "tcp-server",			# see above
+		in = {
+			address = "127.0.0.1:12001"	# TCP server address
+										# This node only sends and received messages with its client
+			
+		},
+		out = {
+			address = "127.0.0.1:12000",	
+		}
+	}
+	tcp_client_node = {					# The dictionary is indexed by the name of the node.
+		type = "socket",				# For a list of available node-types run: 'villas-node -h'
+
+	### The following settings are specific to the socket node-type!! ###
+
+		layer	= "tcp-client",			# see above
+		in = {
+			address = "127.0.0.1:12001"	
+		},
+		out = {
+			address = "127.0.0.1:12000",	# This node connect to TCP server on this IP:Port pair
+											# This node only sends and receive messages with its server
 		}
 	}
 }
