@@ -51,11 +51,11 @@ nodes = {
 	### The following settings are specific to the socket node-type!! ###
 
 		layer	= "udp",			# Layer can be one of:
-							#   - udp	 Send / receive L4 UDP packets
-							#   - ip	  Send / receive L3 IP packets
-							#   - eth	 Send / receive L2 Ethernet frames (IEEE802.3)
 							# 	- tcp-server Send / receive byte stream as a TCP client
 							#	- tcp-client Send / receive byte stream as a TCP server
+							#   - udp	     Send / receive L4 UDP packets
+							#   - ip	     Send / receive L3 IP packets
+							#   - eth	     Send / receive L2 Ethernet frames (IEEE802.3)
 
 		format	= "gtnet",			# For a list of available node-types run: 'villas-node -h'
 
@@ -122,7 +122,7 @@ tcp_server_node = {						# The dictionary is indexed by the name of the node.
 
 	### The following settings are specific to the socket node-type!! ###
 
-		layer	= "tcp-server",			# see above
+		layer = "tcp-server"			# See above
 		in = {
 			address = "127.0.0.1:12001"	# TCP server address
 										# This node only sends and received messages with its client
@@ -137,7 +137,7 @@ tcp_server_node = {						# The dictionary is indexed by the name of the node.
 
 	### The following settings are specific to the socket node-type!! ###
 
-		layer	= "tcp-client",			# see above
+		layer = "tcp-client"			# See above
 		in = {
 			address = "127.0.0.1:12001"	
 		},

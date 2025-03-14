@@ -15,12 +15,9 @@ An example is created to test the connection between VILLASnode's [TCP client (`
 ``` url="external/node/etc/labs/lab20-server.conf" title="node/etc/labs/lab20-server.conf"
 nodes = {
     tcp_node = {
-        type = "socket",
-
-        layer = "tcp-server",
-
-        format = "villas.human",
-
+        type = "socket"
+        layer = "tcp-server"
+        format = "villas.human"
         in = {
             address = "127.0.0.1:12000"
         },
@@ -43,11 +40,8 @@ paths = (
 nodes = {
     tcp_node = {
         type = "socket"
-
         layer = "tcp-client"
-
         format = "villas.human"
-
         in = {
             address = "127.0.0.1:12000"
         }
