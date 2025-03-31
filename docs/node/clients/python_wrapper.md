@@ -1,92 +1,44 @@
 # Python-Wrapper Documentation:
 
->Important Preface:  
-All of the documentation and testing done regarding the VILLASnode Python-Wrapper
-is based upon the signal_v2 node provided by VILLASnode.
+:::note
+
+All of the documentation and testing done regarding the VILLASnode Python-wrapper
+is based upon the `signal_v2` node-type provided by VILLASnode.
 Node specific functions are implemented on a node to node basis and 
 therefore may exert different behavior.
 
-1. [VILLASnode functions exposed by the C-API](#1.-villasnode-functions-exposed-by-the-c-api)
+- [VILLASnode functions exposed by the C-API](#villasnode-functions-exposed-by-the-c-api)
     - [Functions to set up a node or modify its state](#functions-to-set-up-a-node-or-modify-its-state)
     - [Functions to extract node specific information](#functions-to-extract-node-specific-information)
     - [Functions related to data transfer](#functions-related-to-data-transfer)
-2. [Using the C-API with the Python-Wrapper](#2.-using-the-c-api-with-the-python-wrapper)
-3. [Bugs](#3.-bugs)
-4. [Improvements](#4.-improvements)
-5. [Contributing to the Python-Wrapper](#5.-contributing-to-the-python-wrapper)
-6. [Installation](#6.-installation)
-
-## 1. VILLASnode functions exposed by the C-API
-```
-#Functions to set up up a node or modify its state
+- [Installation](#installation)
 
 
-vnode * node_new(const char *id_str, const char *json_str);
+## VILLASnode functions exposed by the C-API
 
-int node_check(vnode *n);
-int node_prepare(vnode *n);
-int node_start(vnode *n);
-int node_stop(vnode *n);
-int node_pause(vnode *n);
-int node_resume(vnode *n);
-int node_restart(vnode *n);
-int node_destroy(vnode *n);
+The C-API functions can be found [here](https://github.com/VILLASframework/node/blob/master/include/villas/node.h)
 
-#Functions to extract node specific information
 
-bool node_is_valid_name(const char *name);
-bool node_is_enabled(const vnode *n);
-const char *node_name(vnode *n);
-const char *node_name_short(vnode *n);
-const char *node_name_full(vnode *n);
-const char *node_details(vnode *n);
-unsigned node_input_signals_max_cnt(vnode *n);
-unsigned node_output_signals_max_cnt(vnode *n);
-const char *node_to_json_str(vnode *n);
-unsigned sample_length(vsample *smp);
-
-#Functions related to data transfer
-
-int node_reverse(vnode *n);
-int node_read(vnode *n, vsample **smps, unsigned cnt);
-int node_write(vnode *n, vsample **smps, unsigned cnt);
-int node_poll_fds(vnode *n, int fds[]);
-int node_netem_fds(vnode *n, int fds[]);
-vsample *sample_alloc(unsigned len);
-void sample_decref(vsample *smp);
-vsample *sample_pack(unsigned seq, struct timespec *ts_origin,
-                     struct timespec *ts_received, unsigned len,
-                     double *values);
-void sample_unpack(vsample *s, unsigned *seq, struct timespec *ts_origin,
-                   struct timespec *ts_received, int *flags, unsigned *len,
-                   double *values);
-int memory_init(int hugepages);
-```
----
 ### Functions to set up a node or modify its state
 
 <a id="node_new()"></a>
-`node_new(const char *id_str, const char *json_str)` takes two strings as input parameters.
-- `id_str:` identification string (uuid - 36 characters long + 1 character for null termination).  
-If not provided, resulting in the nullptr, a random uuid is created and assigned to the node by VILLASnode.  
-It can be retrieved by different functions like [node_name_full()](#node_name_full()).
+`node_new(const char *id_str, const char *json_str)` takes two strings as input parameters
+- `id_str:` identification string (uuid - 36 characters long + 1 character for null termination)  
+	If not provided, resulting in the nullptr, a random uuid is created and assigned to the node by VILLASnode.  
+	It can be retrieved by different functions like `node_name_full()`.
 
 - `json_str:` the string containing a valid json configuration
 
-Invalid json configurations will throw an error.
-
-**Further:** valid VILLASnode configurations can be either checked for with `node_check()`
-if the configuration has been accepted by VILLASnode ***or*** may fail completely when
-a wrong configurations is used to create a node, resulting in a runtime error.  
+Invalid json configurations will throw an error.  
 The required json format to configure nodes can be found [here](https://villas.fein-aachen.org/docs/node/nodes/).
 
 ***Paths or the VILLASdaemon are not used for the Python-Wrapper instance.  
-Therefore only the node configurations need to be considered.***
+Therefore only node configurations need to be considered.***
 
 <details>
-    <summary>Creating a Node</summary>
+    <summary> Creating a Node </summary>
 
-```
+```python
 import uuid
 import villas_node as vn
 
@@ -122,7 +74,6 @@ for name, content in data.items():
 ```
 </details>
 
----
 
 `int node_check(vnode *n)` checks the in and output signals of a node and sets the node state to **checked**
 
@@ -139,7 +90,7 @@ for name, content in data.items():
 `int node_restart(vnode *n)` restarts a stopped node
 
 <a id="dangling_pointer"></a>
-`int node_destroy(vnode *n)` deletes/destroys a node, can not be used again leaving the node pointer [dangling](#dangling_pointer_comment) (do not use (the pointer))
+`int node_destroy(vnode *n)` deletes/destroys a node, can not be used again leaving the node pointer dangling (do not use (the pointer)) - in this case the variable assigned to the parameter `vnode *n`
 
 - `vnode *n` a node pointer that can be created by [node_new()](#node_new())
 
@@ -149,12 +100,12 @@ In other words either `-1`, `0`, `1` is returned depending on either:
 - success `0`
 - failure `1`
 
-An example: in case node_start() is used on a node that has already been started `1` is returned.  
+An example: in case `node_start()` is used on a node that has already been started `1` is returned.  
 This can be used for branching.  
 <details>
-    <summary>All of these functions can be used like this</summary>
+    <summary> All of these functions can be used like this </summary>
 
-```
+```python
 # assuming node is a valid node
 node = ...
 
@@ -177,7 +128,7 @@ if (status == 1):
 ```
 </details>
 
----
+
 ### Functions to extract node specific information
 
 `bool node_is_valid_name(const char *name)`
@@ -186,7 +137,7 @@ if (status == 1):
 
 `const char *node_name(vnode *n)` returns the node name
 
-`const char *node_name_short(vnode *n)` [not working](#node_name_short)
+`const char *node_name_short(vnode *n)` currently not working
 
 `const char *node_name_full(vnode *n)` returns name and details of the node
 >output structure of the details:  
@@ -216,10 +167,10 @@ out.address=\<ip:port>
 `unsigned sample_length(vsample *smp)` returns the length of the samples stored in a sample object
 
 <details>
-    <summary>All of these functions can be used like this</summary>
+    <summary> All of these functions can be used like this </summary>
 
-```
-#assuming node is a valid node
+```python
+# assuming node is a valid node
 name = "some name"
 node = ...
 
@@ -233,7 +184,7 @@ node_input_signals_max_cnt(node)
 node_output_signals_max_cnt(node)
 node_to_json_str(node)
 
-#sample_length() requires a sample handle
+# sample_length() requires a sample handle
 #this can be a sample stored in an array
 samples = smps_array(1)
 samples[0] = sample_alloc(i) #i should be the sample length
@@ -241,7 +192,7 @@ samples[0] = sample_alloc(i) #i should be the sample length
 
 sample_length(samples[0])
 
-#or a sample created manually with sample_pack()
+# or a sample created manually with sample_pack()
 
 sample = sample_pack(...)
 
@@ -249,8 +200,7 @@ sample_length(sample)
 ```
 </details>
 
----
-`json_t *node_to_json(const vnode *n):` returns a [node configuration](#node_to_json_wrong_format) of the node
+`json_t *node_to_json(const vnode *n):` returns a node configuration of the node
 
 The node configuration returned is either of type:
 - `none`
@@ -263,8 +213,16 @@ the following returned types contain the ones above:
 - `dictionary`
 - `list`
 
----
+
 ### Functions related to data transfer
+
+`smps_array(int size)` fixed size data structure to hold samples
+
+Before samples can be stored within the sample array, each sample has to be allocated.  
+The index starts with 0 instead of 1 and ends with `len(smps_array) - 1` as would be usual in a system programming languages.  
+Only set and get functions are provided and can be accessed by the `=` operator.  
+When assigning a new sample to an already existing sample within the data structure, it automatically handles deallocation. Ideally it is not necessary to ever call `sample_decref()`.  
+Once sample entries within the array are allocated they do not need to be reallocated.
 
 `int node_reverse(vnode *n)` swap in and output signals of a node
 
@@ -273,15 +231,17 @@ the following returned types contain the ones above:
 - `vnode *n` the pointer to a node
 - `vsample **smps` is a pointer to a data structure that can hold samples  
 
-Since this is impossible without a wrapper class such as the [sample holding array](#2.-implementation-notes) to do natively with a python data structure, the samples array has to be used for this.
+	Since this is impossible to do, without a wrapper class such as the **sample holding array**, natively with a python data structure, the **samples array** has to be used for this.
 
-- `unsigned cnt` the amount of samples to read or write
+- `unsigned cnt` the amount of samples to read
 
-Some nodes like the signal generator (v2) node can only read one sample at a time. Especially when using things such as rt (realtime) mode.
+	Some node-types like the `signal_v2` node can only **read** one sample at a time.  
+	Considering rt-mode for the `signal_v2` node, trying to read the next sample before it is ready will result in the program stalling till the next sample is generated.  
+	The same applies for **reading** from a socket before the socket has received any samples. In this case the thread trying to read from the socket will lock up.
 
 `int node_write(vnode *n, vsample **smps, unsigned cnt)` writes to a node's storage/buffer
 
-The same as `node_read()` above.
+The same as `node_read()` above except for the waiting/locking up.
 
 `int node_poll_fds(vnode *n, int fds[])`
 
@@ -303,44 +263,11 @@ The sample is deleted and deallocated if it has no pointers pointing to it.
 
 `int memory_init(int hugepages)` initializes memory system with **hugepages**
 
-All of these functions can be used like in [this example](#rw_test).  
-
----
-
-### 2. Using the C-API with the Python-Wrapper
-
-The wrapper exposes all of the C-API functions of VILLASnode.
-
-All functions except for:
-```
-int node_poll_fds()
-int node_netem_fds()
-vsample *sample_pack()
-void sample_unpack()
-int memory_init()
-```
-
-have been tested and work, except for:
-
-```
-node_name_short()
-node_restart()
-node_stop()
-```
-
-which may cause  unexpected behavior.
-
-
----
-### An example creating a signal, socket and file nodes to read from a configuration file, write the data to a file and send over a socket.
-
-This will be moved to a Lab in the future.
-Further there will be also another Lab of the Python-Wrapper that leverages a VILLASnode openDSS node type, which is still being implemented.
 
 <details>
-    <summary>The configuration file may look like this</summary>
+    <summary> configuration file for the following example </summary>
 
-```
+```json
 {
   "send_socket": {
     "type": "socket",
@@ -510,10 +437,11 @@ Further there will be also another Lab of the Python-Wrapper that leverages a VI
 }
 ```
 </details>
+<details>
+    <summary> Example code taken from the Wrapper Unit tests and slightly modified: </summary>
 
 <a id="rw_test"></a>
-**Example code taken from the Wrapper Unit tests and slightly modified:**
-```
+```python
 import json
 import uuid
 import villas_node as vn
@@ -538,7 +466,7 @@ for name, content in data.items():
     config = json.dumps(obj, indent=2)
     id = str(uuid.uuid4())
 
-    #creating new nodes, accesible by name
+    #creating new nodes, accessible by name
     test_nodes[name] = vn.node_new(id, config)
 
 # verifying the node configurations and starting them
@@ -549,7 +477,7 @@ for node in test_nodes.values():
         raise RuntimeError(f"Failed to verify {vn.node_name(node)} node configuration")
     vn.node_start(node)
 
-# declare Arrays with that can hold 1, 100 and 100 samples respectively
+# declare Arrays that can hold 1, 100 and 100 samples respectively
 send_smpls = vn.smps_array(1)
 intmdt_smpls = vn.smps_array(100)
 recv_smpls = vn.smps_array(100)
@@ -574,344 +502,10 @@ vn.node_write(test_nodes["intmdt_socket"], intmdt_smpls, 100)
 vn.node_read(test_nodes["recv_socket"], recv_smpls, 100)
 vn.node_write(test_nodes["recv_socket_file"], recv_smpls, 100)
 ```
-
-___
-## 3. Bugs
-
-This is a small collection of known bugs. If any other ones are encountered, you are encouraged to open an [issue](#https://github.com/VILLASframework/node/issues).
-
----
-Hooks are a big issue.
-Not every hook works properly, some cause undefined behavior or even segmentation faults.
-
-Hooks within the json config have no exclusive place to be defined in.  
-Let's consider what would happen if you defined the same hook for print in:
-- `"in":{...}`
-- `"out": {...}`
-- `"hooks": {[...]}`
-<details>
-<summary> <a id="hooks"></a> Hooks example </summary>
-
-```
-{
-    "some_node": {
-        ...
-        "in":{
-            "...": {
-                ...
-            },
-            ...
-            "hooks": {[
-                {
-                    #some hook
-                },
-                ...
-            ]}
-        },
-        "out":{
-            "...": {
-                ...
-            },
-            ...
-            "hooks": {[
-                {
-                    #some hook
-                },
-                ...
-            ]}
-        },
-        "hooks": {[
-            {
-                #some hook
-            },
-            ...
-        ]}
-    }
-}
-```
 </details>
 
----
-<a id="node_name_short_bug"></a>
-node_write_short() bugged, appears to be trying to print a free()'d (json?)object.
 
----
-## 4. Improvements
-
-This is a small collection of known improvements that could be made. If any other suggestions arise, you are encouraged
-to either open an [issue](#https://github.com/VILLASframework/node/issues) or contact the code authors.
-
----
-Fix [bugs](#-bugs).  
-
-Convenience functions/bindings in the wrapper for ease of use (one example would be the automatic sample_decref()).
-
-Implement sample_alloc() for an array slice? for loops in python are terribly slow.
-
-Reduce the amount of calls between Python/C/C++.
-
-<a id="dangling_pointer_comment"></a>
-Ensure that the [dangling pointer](#dangling_pointer) is a nullptr.
-
-
-It does not seem like vectorize has much sensible use...
-
----
-## 5. Contributing to the Python-Wrapper
-
-This is a small guide about what was used to create the Python-Wrapper to help with understanding how the wrapper works
-and therefore also help with developing for it.
-
-### Implementation Notes
-
-For Samples to be able to be used and stored in Python, it was necessary to
-create a data structure that can store them.
-This was done with a simple Array implementation that can hold the type
-`void ***` equivalent to `vsample **`, which is cast to `vsample *` when used by bindings for singular samples. These are then cast to `villas::node::Sample *`.  
-- `void ***:` list to a set of samples stored in a data structure
-- `vsample **:` indicative of samples to be used with this data structure
-- `vsample *:` indicative of a singular sample to be used
-- `villas::node::Sample ` or `Sample *:` cast to the sample
-
-
-The Sample Array automatically uses sample_decref() on a sample, if its entry is overwritten or for all the Samples it holds as long as they do exist (differ from the nullptr) and the Array is deleted/destroyed.
-This makes the use easier and less annoying in python.
-Further this reduces the API calls between C/C++ and Python.
-
-For node_to_json() to return a json object, as the json library in Python itself would do, a wrapper function had to be created to translate the possible json return types to the same ones [Python would translate them to](#json_wrapper).
-This function is implemented recursively and unfortunately const can not be used, as the for each function expects a non const json_t *.
-Using a recursive function should be fine, as json objects are not typically that deep.
-Further it is only used by the tool itself to generate a valid json_t translated python object, thus it is not exposed to the wrapper and can not be used to create a "configuration bomb".
-
-<details>
-    <summary> <a id="json_wrapper"></a> Json-Wrapper for C/C++/Python </summary>
-
-```
-#include <jansson.h>
-#include <pybind11/pybind11.h>
-
-namespace py = pybind11;
-
-py::object json_to_py_json(json_t *json) {
-  switch(json_typeof(json)) {
-    case JSON_NULL:
-        return py::none();
-
-    case JSON_INTEGER:
-        return py::int_(json_integer_value(json));
-        
-    case JSON_REAL:
-        return py::float_(json_real_value(json));
-
-    case JSON_TRUE:
-        return py::bool_(json_string_value(json));
-
-    case JSON_FALSE:
-        return py::bool_(json_boolean_value(json));
-
-    case JSON_STRING:
-        return py::str(json_string_value(json));
-
-    case JSON_OBJECT: {
-        py::dict dict;
-        const char *key;
-        json_t *value;
-
-        json_object_foreach(json, key, value) {
-          dict[py::str(key)] = json_to_py_json(value);
-        }
-        return dict;
-      }
-
-    case JSON_ARRAY: {
-        py::list list(json_array_size(json));
-        size_t index;
-        json_t *value;
-
-        json_array_foreach(json, index, value) {
-          list[index] = json_to_py_json(value);
-        }
-        return list;
-      }
-
-    default:
-      throw std::runtime_error("Unsupported JSON type");
-  }
-}
-```
-</details>
-
----
-### Pybind11 (and why not SIP)
-
-Late in the process, I've realized that not declaring
-```
-extern "C"{
-#include <villas/node.hpp>
-} 
-```
-but rather
-```
-#include <villas/node.hpp>
-```
-has been the cause for not being able to link bindings properly to libvillas.  
-This may be, next to some shared issues with Pybind11, the main cause that caused me to abandon SIP.  
-Other problems include Pybind11 or SIP not being able to deal with pointers of type `void **` or `void ***`.  
-Pybind11 as well as SIP can only handle `void *` pointers natively.  
-Nevertheless this does not directly pose an issue, as void pointers can simply be cast to any other type within the implemented functions.
-
-**An example:**
-<a id="node_start()"></a>
-```
-typedef void *vnode;
-
-PYBIND11_MODULE(villas_node, m) {
-    ...
-    #binding for 'node_start()'
-    m.def("node_start",
-
-        #lambda function using a pointer of type 'void *'
-        [](void *n) -> int {
-            return node_start((vnode *)n); #casting pointer to type 'vnode *'
-        });
-    ...
-}
-
-#C-API of VILLASnode called by the node_start() binding
-int node_start(vnode *n) {
-  auto *nc = (Node *)n; #'vnode *' cast to the Node type
-  return nc->start();
-}
-```
-
-SIP being originally developed to be used with PyQt may be a mighty tool, but there is too much unneccessary overhead required to learn in comparison to Pybind11, causing SIP to be not as straight forward and "barebones" as Pybind11.  
-Since writing bindings with SIP does not directly leverage the Python C API, but rather uses tools to translate and at the same time optimize everything, you have to rely on SIP being flawless.
-
-This is where Pybind11 has the advantage of being a header only library, essentially being Macros that directly use the Python C API. This gives you more direct control as for how your code works and interacts with C/C++/Python.  
-Especially Pybind11 being the more lightweight solution, considering dependencies, installation and integration, makes it more favorable to use.
-
----
-### Some Pybind11 basics:
-
-The [example above](#node_start()) already shows how Pybind11 is used for the most part.  
-For convenience: everything used to create the Wrapper bindings with Pybind11 is in the following documented briefly.  
-The full Pybind11 Documentation can be found [here](https://pybind11.readthedocs.io/en/stable/index.html).
-
-### Module Definitions
-
-`PYBIND11_MODULE(module_name, m)`
-
-- `module_name:` module_name
-- `m:` module identifier to define module bindings
-
-`m.doc() = "<docstring>":` docstring for the Python module
-
-`m.def()` takes different inputs to define Bindings separated by `,`
-
-- `"<string before function parameter>":` defines the binding name as found in the module imported into Python
-
-- `(param1, param2, ...)[] -> <return_type> { #code }:` lambda function to define the implementation if not already done elsewhere.  
-If already defined `&function_name` automatically uses this implementation for the binding.  
-Return types can be of C/C++ standard or STL-Types and will be translated to corresponding Python Types.
-However you can also define Python return types [directly](#node_to_json()),  
-this can be as plain as a generic Python Object `pybind11::object`.  
-Pointers are returned within [capsules](https://docs.python.org/3/c-api/capsule.html) to Python and can therefore not be used directly within Python, for the most part, without having a wrapped function that can make use of them.
-
-- `optional: pybind11::return_value_policy::<return_type>:` automatically determined, but not always as to the desired behaviour.  
-Can be explicitly defined with `<return_type>:`  
-`take_ownership`, `copy`, `move`, `reference`, `reference_internal`, `automatic`, `automatic_reference`  
-Further documentation can be found [here](https://pybind11.readthedocs.io/en/stable/advanced/functions.html).
-
-- `optional: <string at the end>:` docstring for a binding
-### Classes
-Can be implemented like you would implement them in C++.
-These are extended by the Python object types through Pybind11.  
-Classes exposed to Python have to be defined with [bindings](#class_definition).
-
-**These are as follows:**  
-`pybind11::class_<class_name>(module_identifier, "Python object name")`
-- class_name has to match the C++ defined class name
-- module identifier can be chosen freely, [in this given example](#node_start()) it would be `m`
-- `"Python object name"` sets the name of the class becoming available as a Python object
-
-Further definitions are extended by `.`.
-
-`.def()` for classes follows the same pattern as `module_identifier.def()` for the bindings.  
-It is however important to define e.g. the **constructor**.  
-**Set** and **get functions can be implemented, which will always be  
-called upon writing or reading to or from an object of the class.  
-
-- `pybind::init<type>()` is an essential argument for the constructor
-- `.def("__getitem__", ...)`
-- `.def("__setitem__", ...)`
-
-`"__getitem__"` and `"__setitem__"` are predefined by Python.  
-In other words: these names have to be used in order to define the  
-get and set functions for the Python object.
-
-<details>
-<summary> <a id="class_definition"></a> Array Class Bindings as example </summary>
-
-```
-py::class_<Array>(m, "SamplesArray")
-    .def(py::init<unsigned int>(), py::arg("len"))
-    .def("size", &Array::size)
-    .def("__getitem__", [](Array &a, unsigned int idx) {
-        if (idx >= a.size()) {
-          throw py::index_error("Index out of bounds");
-        }
-        return a[idx];
-      })
-    .def("__setitem__", [](Array &a, unsigned int idx, void *smp) {
-        if (idx >= a.size()) {
-          throw py::index_error("Index out of bounds");
-        }
-        if (a[idx]) {
-          sample_decref(a[idx]);
-        }
-        a[idx] = (vsample *)smp;
-      });
-```
-</details>
-
----
-Pointer return types are returned to Python as [capsules](https://docs.python.org/3/c-api/capsule.html) (addresses can be seen and dereferenced, but are essentially useless in Python). 
-Capsules are a "safe" way of having pointers in Python and using them with wrapped C++ functions.
-
-Further, capsules can be used to ensure lifetime constraints, if you use them as a return object. You can use a lambda function to return a capsule with a defined destructor that is executed when the object is garbage collected and thus deleted by Python.
-
-<details>
-<summary> Example for a capsule return </summary>
-
-```
-#node_new() if it just accepted proper configurations as per VILLASnode documentation
-m.def("node_new", [](const char *id_str, const char *json_str) -> py::capsule {
-    json_error_t err;
-    uuid_t id;
-
-    uuid_parse(id_str, id);
-    auto *json = json_loads(json_str, 0, &err);
-    
-    void *it = json_object_iter(json);
-    json_t *inner = json_object_iter_value(it);
-
-    // create node with name
-    auto node = (vnode *)villas::node::NodeFactory::make(json_object_iter_value(it), id, json_object_iter_key(it));
-
-    return py::capsule(node, [](void *p) {
-        auto *vnode = (vnode *)(p);
-        if (vnode != nullptr){
-            node_destroy(vnode);
-        }
-    })
-  });
-```
-</details>
-
-Function parameters in Pybind11 are strict, a wrong type will cause a function call to fail and a runtime error to be caused.
-
----
-### 6. Installation
+### Installation
 
 There are two recommended methods to install the VILLASnode Python-Wrapper. 
 
@@ -922,7 +516,7 @@ There are two recommended methods to install the VILLASnode Python-Wrapper.
 2.  Build VILLASnode from source [as is described here](../installation.md) and make sure to have all of the necessary  
     dependencies installed.
 
-**The requirements for the Python-Wrapper differ from the Versions listed in 2.**
+**The requirements for the Python-Wrapper differ from the versions listed in 2.**
 
 | Package | Version | Purpose | License |
 | --- | --- | --- | --- |
