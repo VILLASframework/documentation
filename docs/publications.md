@@ -11,7 +11,11 @@ VILLASframework is presented and/or used by the following publications.
 
 ## Publications
 
+### 2025
+- A. Bach, A. Monti, "[Remote Real-Time Testing of Physical Components Using Communication Setup Automation](https://publications.rwth-aachen.de/record/1006139/files/1006139.pdf)," _IEEE Access_, vol. 13, pp. 39066-39075, 2025, [doi: 10.1109/ACCESS.2025.3546311](https://doi.org/10.1109/ACCESS.2025.3546311)
+
 ### 2024 
+- S. Vogel, F. Wege, A. Monti, "[WebRTC-based plug-&-play signal transport for peer-to-peer connectivity between DRTSs, IEDs and operators](https://publications.rwth-aachen.de/record/1005673)," _2024 Conference on Sustainable Energy Supply and Energy Storage Systems (NEIS)_, Hamburg, September 16 - 17, 2024, [doi: 10.30420/566464017](https://doi.org/10.30420/566464017)
 - M. Pitz, F. Wege, N. Eiling, S. Vogel, V. Bareis, A. Monti, "[Automated Deployment of Single-Board Computer Based Grid Measurement and Co-Simulation Equipment](https://xploreqa.ieee.org/document/10668996)," _2024 Open Source Modelling and Simulation of Energy Systems (OSMSES)_, Vienna, Austria, 2024, pp. 1-6, [doi: 10.1109/OSMSES62085.2024.10668996](https://doi.org/10.1109/OSMSES62085.2024.10668996)
 
 ### 2023

@@ -43,6 +43,7 @@ VILLASnode currently supports the following node-types:
 | [rtp](rtp.md)                       | yes               | yes  | yes   | ?         | beta        | |
 | [shmem](shmem.md)                   | no                | yes  | yes   | unlimited | stable      | |
 | [signal](signal.md)                 | no                | yes  | no    | 1         | stable      | |
+| [smu](smu.md)                       | no                | yes  | no    | 1         | beta        | Use with data acquisition unit |
 | [socket](socket.md)                 | yes               | yes  | yes   | unlimited | stable      | |
 | [stats](stats.md)                   | no                | yes  | no    | 1         | stable      | |
 | [temper](temper.md)                 | no                | yes  | no    | unlimited | stable      | |
