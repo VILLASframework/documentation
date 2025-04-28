@@ -1,11 +1,11 @@
 ---
-sidebar_label: OPAL-RT AsyncIP
-title: OPAL-RT Asynchronous Process (AsyncIP)
+sidebar_label: OPAL-RT RT-LAB
+title: OPAL-RT RT-LAB Asynchronous Process (AsyncIP)
 ---
 
-# OPAL-RT Asynchronous Process (AsyncIP) <img align="right" width="250px" src="/img/logos/opal.jpg" alt="OPAL-RT logo"></img>
+# OPAL-RT RT-LAB Asynchronous Process (AsyncIP) <img align="right" width="250px" src="/img/logos/opal.jpg" alt="OPAL-RT logo"></img>
 
-## OPAL-RT RTlab Example Project
+## OPAL-RT RT-LAB Example Project
 
 VILLASnode can interface with OPAL-RT targets using Asynchronous Process blocks.
 OPAL-RT's RT-Lab ships with a minimal example to demonstrate the usage of AysncIP blocks.
@@ -45,9 +45,9 @@ nodes = {
 }
 ```
 
-## Custom VILLASnode-specific RTlab Project
+## Custom VILLASnode-specific RT-LAB Project
 
-Alternatively, we also provide a custom RT-lab project as an example which uses the [`villas.binary`](../formats/villas_binary.md) format.
+Alternatively, we also provide a custom RT-LAB project as an example which uses the [`villas.binary`](../formats/villas_binary.md) format.
 It is a customization of the original AysncIP code from OPAL-RT.
 This approach has the advantage that the payload format is carrying more metadata such as timestamps which can useful for collecting statistics or synchronizing systems.
 
@@ -86,7 +86,7 @@ src\compat.c=Ascii
 
 #### Step 3
 
-In RT-Lab under Files tab, we should see the files listed above for .llm file
+In RT-LAB under Files tab, we should see the files listed above for .llm file
 
 #### Step 4
 
