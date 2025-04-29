@@ -4,12 +4,14 @@ hide_table_of_contents: true
 
 # OpenDSS
 
-OpenDSS is an electric power distribution system simulator (DSS) designed to support distributed energy resource (DER) grid integration and grid modernization.
-This node type run OpenDSS within VILLASnode and enabled VILLASnode to send and receive data to OpenDSS. 
+[OpenDSS](https://sourceforge.net/projects/electricdss/) is an electric power distribution system simulator (DSS) designed to support distributed energy resource (DER) grid integration and grid modernization.
+This node-type runs OpenDSS within VILLASnode and enables VILLASnode to exchange data with OpenDSS. 
 
 ## Prerequisites
-This node type requires OpenDSS shared library. 
-The documentation for compiling the library can be found on [OpenDSS documentation website](https://opendss.epri.com/OpenDSSC.html).
+
+This node-type requires OpenDSS shared library. 
+The documentation for compiling the library can be found in the [OpenDSS documentation](https://opendss.epri.com/OpenDSSC.html).
+Alternatively, the script found at `packaging/deps.sh` can be used. Please refer to the [installation document](../installation.md).
 
 ## Implementation
 
@@ -19,9 +21,8 @@ The Implementation of this node type is limited to only sending the data to set 
  - **Generator:** Voltage(kV), Active Power(kW), Apparent Power(kVA), Power Factor(Pf)
  - **ISource:** Current(Amps), Phase angle(AngleDeg), Frequency(f)
 
-For the output, VILLASnode will read the data from monitor element for each time step.
-The data input and output data needed to be transported by [`path`](../config/paths.md) and additional node.
-
+For the output, VILLASnode will read the data from a monitor element for each time step.
+The input and output data needed to be transported by [`path`](../config/paths.md) from/to other nodes.
 
 The source code of the node-type is available here:
 https://github.com/VILLASframework/node/blob/master/lib/nodes/opendss.cpp
@@ -38,14 +39,12 @@ import ApiSchema from '@theme/ApiSchema';
 ## Example
 
 ``` url="external/node/etc/examples/nodes/opendss.conf" title="node/etc/examples/nodes/opendss.conf"
-node = {
+nodes = {
     opendss_node = {
         type = "opendss"
 
-        #Path to OpenDSS file
+        # Path to OpenDSS file
         file_path = "OpenDSS_file/sample.DSS"
-
-        format = "villas.human"
 
         # Example input configuration. Input data will be used to set Active power and power factor
         # of load element name load1 and Active power of the generator element name gen1.
@@ -62,7 +61,7 @@ node = {
         }
 
         # Example output configuration. Output data will be read from monitor name load1_power and load1_v.
-        # Monitor name are decleared in OpenDSS file
+        # Monitor name are declared in OpenDSS file.
         out = {
             list = ["load1_power", "load1_v"]
         }
@@ -77,7 +76,7 @@ node = {
 
         in = {
             address = "*:12000"
-        },
+        }
         out = {
             address = "127.0.0.1:12001"
         }
@@ -106,7 +105,7 @@ paths = (
     },
     {
         # Output to udp node type
-        in = "opendss_node",
+        in = "opendss_node"
         out = "udp_node"
         hooks = ( { type = "print" } )
     }
