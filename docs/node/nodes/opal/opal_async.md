@@ -10,14 +10,6 @@ hide_table_of_contents: true
 
 They are used to exchange data between RT-LAB Simulink models and custom user-defined programs via [shared memory](https://en.wikipedia.org/wiki/Shared_memory) on a real-time target.
 
-There are two ways to exchange sample values with an OPAL-RT simulator:
-
-1. Use our adapted version of OPAL-RT's AsyncIP example for asynchronous processes (see [AsyncIP client](../clients/opal_async_ip.md))
-    In this mode, OPAL will send sample data via UDP to VILLASnode. VILLASnode has to use the [`socket` node-type](socket.md).
-2. Run VILLASnode as an asynchronous process itself. This is a highly experimental feature and implemented in the node-type `opal.async`.
-    Data exchange is then handled using OPAL-RT's `libOpalAsyncApi`.
-    This settings of this node-type a described on this page.
-
 ## Prerequisites
 
 This node-types requires a running version of VILLASnode on an OPAL-RT target:
@@ -26,13 +18,19 @@ This node-types requires a running version of VILLASnode on an OPAL-RT target:
 - RT-LAB v2023.1 or newer
 
 :::caution
-HYPERSIM or older targets running RHEL / CentOS operating systems are not supported.
+The node-types requires the use of the RT-LAB simulation environment.
+When using HYPERSIM, please consider the running VILLASnode as an [OPAL-RT Orchestra Client](opal_orchestra.md).
+
+Older targets running RHEL / CentOS operating systems are not supported.
 :::
 
 ## Implementation
 
-The source code of the node-type is available here:
-https://github.com/VILLASframework/node/blob/master/lib/nodes/opal.cpp
+:::note
+The implementation of the `opal.async` node-type is currently not open source.
+
+Please contact [Steffen Vogel](mailto:steffen.vogel@opal-rt.com) if you are interested in run
+:::
 
 ## Installation
 
