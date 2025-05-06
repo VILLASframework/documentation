@@ -9,7 +9,7 @@ VILLASnode can be installed in multiple ways:
 - [Docker image](https://git.rwth-aachen.de/acs/public/villas/node/container_registry)
 - [Kubernetes (Helm chart)](../installation.md)
 - [Bootable Linux live image](../liveusb/index.md)
-- Automated [Kickstart installation](#kickstart) for Fedora/Redhat based distros
+- Automated [Kickstart installation](#kickstart-installation) for Fedora/RedHat based distributions
 - or from source
 
 :::caution Requirements
@@ -21,10 +21,10 @@ Please make sure that your system fulfills the [requirements](requirements.md) b
 VILLASnode can be compiled from source using [CMake](http://cmake.org).
 This process has been tested with the following Linux distributions:
 
- - Fedora 36
- - Debian 12 (Bookworm)
- - Ubuntu 24.04 (Noble Numbat)
- - RHEL / Rocky Linux 8
+- Fedora 36
+- Debian 12 (Bookworm)
+- Ubuntu 24.04 (Noble Numbat)
+- RHEL / Rocky Linux 8
 
 ### Prerequisites
 
@@ -55,7 +55,7 @@ VILLASnode currently has the following list of dependencies:
 | [libOpal\{AsyncApi,Core,Utils\}](https://git.rwth-aachen.de/acs/public/villas/libopal) | - | for running VILLASnode as an Asynchronous process inside your RT-LAB model with [OPAL node-type](nodes/opal.md) | optional | ??? |
 | [librdmacm](https://github.com/linux-rdma/rdma-core) | >= 16.2 | for the [Infiniband node-type](nodes/infiniband.md) | optional | BSD |
 | [libre](http://www.creytiv.com/re.html) | >= 2.9.0 | for the [RTP node-type](nodes/rtp.md) | optional | BSD 3 |
-| [libuldaq](https://github.com/mccdaq/uldaq) | >= 1.0.0 | for the [ULDAQ node-type](nodes/uldaq.md) | optional | MIT
+| [libuldaq](https://github.com/mccdaq/uldaq) | >= 1.0.0 | for the [ULDAQ node-type](nodes/uldaq.md) | optional | MIT |
 | [libxil](https://github.com/VILLASframework/libxil) | >= 1.0.0 | for the [VILLASfpga node-type](nodes/fpga.md) | optional | MIT |
 | [libzmq](http://zeromq.org) | >= 2.2.0 | for the [ZeroMQ node-type](nodes/zeromq.md) | optional | MPL-2.0 |
 | [Lua](http://www.lua.org/) | >= 5.1 | for the [Lua hook](hooks/lua.md) | optional | MIT |
@@ -170,6 +170,7 @@ VILLASnode requires several external libraries which are not packaged by common 
 The script found at `packaging/deps.sh` can be used to build and install the dependencies you could not find packaged.
 
 It supports several configuration options specified in environment variables:
+
 - `PREFIX=<DIR>`: The installation target directory. Default: `/usr/local`
 - `DEPS_SCAN`: Only list missing dependencies. Default: unset
 - `DEPS_INCLUDE`: Only install the specified dependencies. Default: unset
@@ -177,6 +178,7 @@ It supports several configuration options specified in environment variables:
 - `DEPS_NONINTERACTIVE`: Do not ask interactively. Default: unset
 
 Here are some example usages:
+
 ```shell
 # Install in this directory, /usr/local is also the default if unspecified
 export PREFIX=/usr/local
@@ -241,6 +243,7 @@ See the the top-level [`CMakeLists.txt`] file for all options.
 
 For instance, every node-type can be excluded separately using a `-DWITH_NODE_<name>=OFF` flag.
 If for example the RTP node is breaking your compilation, you can disable it like this:
+
 ```shell
 cmake -S . -B build -DWITH_NODE_RTP=OFF
 ```
@@ -317,7 +320,7 @@ We have prepared such a Kickstart file which installs Fedora with our recommende
 To use it, you will need to download a [Netinstall image of Fedora Server](https://getfedora.org/de/server/download/) and copy it to a USB stick or opticial disk.
 You also need to interrupt the initial boot of the Fedora installer, in the boot manager and append the following Kernel command line:
 
-```
+```text
 inst.ks=https://raw.githubusercontent.com/VILLASframework/node/master/packaging/live-iso/villas.ks
 ```
 
