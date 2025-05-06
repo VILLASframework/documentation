@@ -13,7 +13,7 @@ It facilitates the setup of a VILLASnode instances by partners of the Institute 
  - An USB drive with at least 8 GB capacity (the content on the drive will be erased, backup before if there are any important files stored!)
  - A computer running Windows, Mac OS X or Linux
  - A keyboard and display attached to the server
- - The live image file `.img.xz` which you can download here: <https://villas.fein-aachen.org/iso/>
+ - The live image file `.img.xz` which you can download here: https://villas.fein-aachen.org/iso/
 
 ## Setup {#liveusb-setup}
 

@@ -5,7 +5,7 @@ title: OPAL-RT HYPERSIM
 
 # OPAL-RT HYPERSIM <img align="right" width="250px" src="/img/logos/opal.jpg" alt="OPAL-RT logo"></img>
 
-**Source code:** <https://github.com/VILLASframework/node/tree/master/clients/hypersim>
+**Source code:** https://github.com/VILLASframework/node/tree/master/clients/hypersim
 
 [HYPERSIM](https://www.opal-rt.com/systems-hypersim/) is a digital real-time power system simulator developed by [OPAL-RT](http://opal-rt.com) and [Hydro Quebec](http://www.hydroquebec.com/international/en/technology/grid-simulation.html).
 
@@ -18,7 +18,7 @@ These instructions have been tested with HYPERSIM 2023.2.0.o389.
 :::
 
 :::important
-An OPAL-RT System using a  Redhat OS is required. 
+An OPAL-RT System using a  Redhat OS is required.
 :::
 
 1. Create a new UCM name “node” and save to the real-time simulator folder of HYPERSIM.
@@ -85,5 +85,5 @@ Unable to connect to simulation for user XXXXX on MTL-L-04439:1 IP-Address
 
 ## Authors
 
-- Anju Meghwani <meghwani@iitk.ac.in>
-- Louis Birkner <louis.birkner@opal-rt.com>
+- Anju Meghwani [meghwani@iitk.ac.in](mailto:meghwani@iitk.ac.in)
+- Louis Birkner [louis.birkner@opal-rt.com](mailto:louis.birkner@opal-rt.com)

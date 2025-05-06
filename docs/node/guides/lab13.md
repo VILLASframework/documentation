@@ -58,7 +58,7 @@ paths = (
 
 # RSCAD
 
-**Source:** <https://github.com/VILLASframework/node/tree/master/clients/rtds/gtnet_skt/gtnet_skt_udp_loopback_rtt>
+**Source:** https://github.com/VILLASframework/node/tree/master/clients/rtds/gtnet_skt/gtnet_skt_udp_loopback_rtt
 
 <figure align="center">
     <img alt="RSCAD draft for GTNET interface to VILLASnode" src="/img/screenshots/rscad/rscad_gtnet_skt_udp_loopback_rtt_draft.png" width="100%" />

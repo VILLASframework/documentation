@@ -89,7 +89,7 @@ To get you started quickly, we prepared a series of small demos which you can tr
 - [**Lab17**](lab17.md): RTDS-RTDS Co-simulation
 
 :::note
-All configurations files are available here: <https://github.com/VILLASframework/node/tree/master/etc/labs>
+All configurations files are available here: https://github.com/VILLASframework/node/tree/master/etc/labs
 :::
 
 ## Video

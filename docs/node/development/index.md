@@ -5,7 +5,7 @@ sidebar_label: Overview
 
 # Development
 
-Development is currently coordinated by Steffen Vogel <post@steffenvogel.de> at [VILLASframework GitHub organization](https://github.com/VILLASframework/node).
+Development is currently coordinated by Steffen Vogel [post@steffenvogel.de](mailto:post@steffenvogel.de) at [VILLASframework GitHub organization](https://github.com/VILLASframework/node).
 Please feel free to submit pull requests or bug reports.
 
 Please follow our [contribution guide](./contributing.md) when creating pull requests at GitHub.

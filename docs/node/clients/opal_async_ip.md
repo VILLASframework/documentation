@@ -51,11 +51,11 @@ Alternatively, we also provide a custom RT-LAB project as an example which uses 
 It is a customization of the original AysncIP code from OPAL-RT.
 This approach has the advantage that the payload format is carrying more metadata such as timestamps which can useful for collecting statistics or synchronizing systems.
 
-**Source code:** <https://github.com/VILLASframework/node/tree/master/clients/opal>
+**Source code:** https://github.com/VILLASframework/node/tree/master/clients/opal
 
 ### Add AsyncIP to the existing project
 
-Follow the steps below to add AsyncIP to the existing OPAL-RT project:   
+Follow the steps below to add AsyncIP to the existing OPAL-RT project:
 
 #### Step 1
 
@@ -103,7 +103,7 @@ Maximum number of values in UDP packets:
 There is a `#define` inside the implementation which must be changed accordingly.
 The #define is in file: `model_directory/include/config.h` There you will find a directive called MAX_VALUES.
 
-It is recommended to keep this value below 300 to ensure that all values are transferred within a single UDP packet. 
+It is recommended to keep this value below 300 to ensure that all values are transferred within a single UDP packet.
 
 ## Troubleshooting
 
