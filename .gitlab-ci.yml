@@ -30,7 +30,7 @@ build:image:
     - docker push ${DOCKER_IMAGE}:${DOCKER_TAG}
   tags:
     - docker-image-builder
-    
+
 build:image-latest:
   stage: build
   before_script:
