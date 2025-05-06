@@ -52,7 +52,7 @@ VILLASnode currently has the following list of dependencies:
 | [libnanomsg](http://nanomsg.org/) | >= 1.0.0 | for the [Nanomsg node-type](nodes/nanomsg.md) | optional | MIT |
 | [libnice](https://libnice.freedesktop.org/) | >= 0.1.16 | for libdatachannel / WebRTC | optional | MPL-1.1 & LGPL-2.1 |
 | [libnl3](http://www.infradead.org/~tgr/libnl/) | >= 3.2.27 | for the network communication & emulation support of the [Socket node-type](nodes/socket.md) node-type | optional | LGPL-2.1 |
-| [libOpal{AsyncApi,Core,Utils}](https://git.rwth-aachen.de/acs/public/villas/libopal) | - | for running VILLASnode as an Asynchronous process inside your RT-LAB model with [OPAL node-type](nodes/opal.md) | optional | ??? |
+| [libOpal\{AsyncApi,Core,Utils\}](https://git.rwth-aachen.de/acs/public/villas/libopal) | - | for running VILLASnode as an Asynchronous process inside your RT-LAB model with [OPAL node-type](nodes/opal.md) | optional | ??? |
 | [librdmacm](https://github.com/linux-rdma/rdma-core) | >= 16.2 | for the [Infiniband node-type](nodes/infiniband.md) | optional | BSD |
 | [libre](http://www.creytiv.com/re.html) | >= 2.9.0 | for the [RTP node-type](nodes/rtp.md) | optional | BSD 3 |
 | [libuldaq](https://github.com/mccdaq/uldaq) | >= 1.0.0 | for the [ULDAQ node-type](nodes/uldaq.md) | optional | MIT

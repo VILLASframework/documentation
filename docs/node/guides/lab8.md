@@ -237,7 +237,7 @@ villas hook gate -o signal=0 -o mode=below -o threshold=0.5 < gate_in.dat > gate
 ![](/img/plots/gate_out_above.svg)
 ![](/img/plots/gate_out_below.svg)
 
-The modes rising edge and falling edge allow signal values to pass on rising edge and falling edge respectively. It is demonstrated by the examples and waveforms below: 
+The modes rising edge and falling edge allow signal values to pass on rising edge and falling edge respectively. It is demonstrated by the examples and waveforms below:
 
 ```shell
 villas signal -l 200 -r 200 -F 2 sine > gate_in.dat
@@ -275,4 +275,4 @@ villas signal -v 4 sine | villas hook map 'mapping=[ "data[3]", "data[2]", "data
 
 # Implement your own hook function
 
-Have a look at the following skeleton code: <https://github.com/VILLASframework/node/blob/master/plugins/example_hook.cpp>
+Have a look at the following skeleton code: https://github.com/VILLASframework/node/blob/master/plugins/example_hook.cpp.

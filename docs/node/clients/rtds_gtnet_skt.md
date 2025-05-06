@@ -5,7 +5,7 @@ title: RTDS GTNET-SKT card
 
 # RTDS GTNET-SKT card <img align="right" width="150px" src="/img/logos/rtds.jpg" alt="RTDS Technologies logo"></img>
 
-**Example drafts:** <https://github.com/VILLASframework/node/tree/master/clients/rtds/gtnet_skt>
+**Example drafts:** https://github.com/VILLASframework/node/tree/master/clients/rtds/gtnet_skt
 
 The GTNETx2 card can be flashed with the SKT firmware to send/receive UDP and TCP packets over Ethernet.
 The card uses big endian byte order to send and receives data.
@@ -16,7 +16,7 @@ To work around this limitation, the `fake` option of the `raw` format can be set
 This will cause the first three 3 signals to interpreted as sequence no, timestamp seconds and timestamp nanoseconds.
 A timestamp can be added by using the GTSYNC card with a GPS source in the draft file.
 Alternatively, if no timestamp is provided (value set to 0), VILLASnode will add a timestamp and thereby overriding replacing the 0 value.
- 
+
 ## Common Problems
 
 Problems faced during setting up of GTNET-SKT card with GTSYNC card are:
@@ -43,11 +43,11 @@ In case the GTNET-SKT can’t detect the processor, restart the rack after repea
 In case GT-SKT can’t detect a correct protocol, telnet (login: `rtds`, password: `commcard`) into the card and run the command `status` to see which protocol version the card has.
 
 If the card doesn’t display the correct protocol in the telnet but the “Firmware Upgrade” in RSCAD shows the correct version, downgrade the version in Firmware upgrade and then upgrade it to the desired version.
- 
+
 ### Timing source not synced
- 
+
 In case the draft file gives an error “Timing source not synced”, the GTSYNC card is not connected to GPS source.
 
 ## Contact
- 
-Author: Umar Farooq <umar.farooq@rwth-aachen.de>
+
+Author: Umar Farooq [umar.farooq@rwth-aachen.de](mailto:umar.farooq@rwth-aachen.de)

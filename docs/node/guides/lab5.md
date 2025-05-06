@@ -46,7 +46,7 @@ As we can see in the diagram, the `villas pipe` tool also receives data which is
 
 # RSCAD
 
-**Source:** <https://github.com/VILLASframework/node/tree/master/clients/rtds/gtnet_skt/gtnet_skt_udp_2point>
+**Source:** https://github.com/VILLASframework/node/tree/master/clients/rtds/gtnet_skt/gtnet_skt_udp_2point
 
 <figure align="center">
     <img alt="RSCAD draft for GTNET interface to VILLASnode" src="/img/screenshots/rscad/rscad_gtnet_skt_2point_udp_draft.png" width="100%" />

@@ -7,7 +7,7 @@ sidebar_label: Overview
 
 The VILLASnode configuration consists of a a single file.
 
-For a collection of example configuration files see: <https://github.com/VILLASframework/node/tree/master/etc/>.
+For a collection of example configuration files see: https://github.com/VILLASframework/node/tree/master/etc/.
 
 ## File format
 

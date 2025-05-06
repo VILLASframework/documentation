@@ -26,7 +26,7 @@ The setup covered on this page has been tested with the following software versi
 
 VILLASnode ships with an example schematic for the Typhoon HIL control center.
 
-- **Git:** <https://github.com/VILLASframework/node/tree/master/clients/typhoon>
+- **Git:** https://github.com/VILLASframework/node/tree/master/clients/typhoon
 
 <figure align="center">
     <img alt="Typhoon model schematic" src="/img/screenshots/node/typhoon/model.png" width="80%" />
