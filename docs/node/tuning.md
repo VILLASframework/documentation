@@ -32,10 +32,10 @@ systemctl enable tuned && systemctl start tuned
 ```
 
 2. Optimize the [VILLASnode configuration](config/index.md).
-  1. Map NIC IRQs	(see global [affinity setting](config/global.md#affinity)).
-  2. Map Tasks (see global [affinity setting](config/global.md#affinity)).
-  3. Increase priority of server task (nice(2)) (see global [priority setting](config/global.md#priority)).
-  4. Increase BSD socket priority (see global [priority setting](config/global.md#priority) for the [Socket node-type](nodes/socket.md)).
+  1. Map NIC IRQs	(see global [affinity setting](config/global.md)).
+  2. Map Tasks (see global [affinity setting](config/global.md)).
+  3. Increase priority of server task (nice(2)) (see global [priority setting](config/global.md)).
+  4. Increase BSD socket priority (see global [priority setting](config/global.md) for the [Socket node-type](nodes/socket.md)).
 3. Configure NIC interrupt coalescence with `ethtool`:
     `ethtool --coalesce eth0 adaptive-rx off adaptive-tx off`
 4. Configure NIC kernel driver in `/etc/modprobe.d/e1000e.conf`:

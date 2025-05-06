@@ -17,7 +17,7 @@ https://github.com/VILLASframework/node/blob/master/lib/nodes/websocket.cpp
 
 ## Configuration {#config}
 
-By default the [`villas node`](../usage/villas-node.md) daemon listens on [`http.port`](../config/http.md#port) for HTTP and WebSocket requests.
+By default the [`villas node`](../usage/villas-node.md) daemon listens on [`http.port`](../config/http.md) for HTTP and WebSocket requests.
 This behavior can be disabled by setting [`http.enabled`](../config/http.md#) to `false`.
 
 import ApiSchema from '@theme/ApiSchema';

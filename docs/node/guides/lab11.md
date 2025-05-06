@@ -14,9 +14,9 @@ This is implemented in VILLASnode in the concept of (de-)multiplexing.
 
 The following configuration settings in a path definition are relevant and described in this lab session.
 
- - [Path `mode`](../config/paths.md#mode)
- - [Path `mask`](../config/paths.md#mask)
- - [Path `rate`](../config/paths.md#rate)
+ - [Path `mode`](../config/paths.md)
+ - [Path `mask`](../config/paths.md)
+ - [Path `rate`](../config/paths.md)
 
 ## Multiplexing
 
