@@ -57,7 +57,7 @@ VILLASnode currently has the following list of dependencies:
 | [libre](http://www.creytiv.com/re.html) | >= 2.9.0 | for the [RTP node-type](nodes/rtp.md) | optional | BSD 3 |
 | [libuldaq](https://github.com/mccdaq/uldaq) | >= 1.0.0 | for the [ULDAQ node-type](nodes/uldaq.md) | optional | MIT
 | [libxil](https://github.com/VILLASframework/libxil) | >= 1.0.0 | for the [VILLASfpga node-type](nodes/fpga.md) | optional | MIT |
-| [libzmq](http://zeromq.org) | >= 2.2.0 | for the [ZeroMQ node-type](nodes/zeromq.md) | optional | __GPL 3__ |
+| [libzmq](http://zeromq.org) | >= 2.2.0 | for the [ZeroMQ node-type](nodes/zeromq.md) | optional | MPL-2.0 |
 | [Lua](http://www.lua.org/) | >= 5.1 | for the [Lua hook](hooks/lua.md) | optional | MIT |
 | [mosquitto](https://mosquitto.org) | >= 1.4.15 | for the [MQTT node-type](nodes/mqtt.md) | optional | EPL 2 |
 | [protobuf-c](https://github.com/protobuf-c/protobuf-c/) | >= 1.1.0 | for the [Protobuf format-type](formats/protobuf.md) | optional | similar to BSD |
