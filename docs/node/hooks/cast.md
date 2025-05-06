@@ -2,7 +2,7 @@
 hide_table_of_contents: true
 ---
 
-# Cast Signal VSalues
+# Cast Signal Values
 
 The `cast` hook casts the data-type of signals and can set a new name and unit to the casted signal.
 
