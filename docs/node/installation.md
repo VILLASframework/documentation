@@ -336,7 +336,31 @@ To start the main daemon, you can pass a configuration file via a volume mount:
 docker run --volume /path/to/my/local.conf:/config.conf --privileged registry.git.rwth-aachen.de/acs/public/villas/node node /config.conf
 ```
 
-## Kickstart installation {#kickstart}
+## Nix
+
+VILLASnode is also packaged as a [Nix Flake](https://wiki.nixos.org/wiki/Flakes).
+[Nix](https://nixos.org) is a cross-platform package manager for Unix-like systems, and a tool to instantiate and manage those systems, invented in 2003 by Eelco Dolstra.
+
+### Setup Nix
+
+Note that flakes are an (as of May 2025) experimental feature of the Nix project to provide the declarative and fully reproducible builds of Nix without the hassle of manually updating hashes.
+
+Using `villas` as a flake thus requires the nix package manager to be installed and the `flakes` and `nix-command` features to be enabled.
+
+Documentation:
+
+- Installation: https://nixos.org/download.html
+- Enable Flakes: https://nixos.wiki/wiki/Flakes#Enable_flakes
+
+Try to run `villas node` by typing
+
+```shell
+nix run github:VILLASframework/node -- node --help
+```
+
+For more details please refer to the details here: https://github.com/VILLASframework/node/blob/master/packaging/nix/README.md
+
+## Kickstart installation
 
 [Kickstart](https://docs.fedoraproject.org/en-US/fedora/f35/install-guide/advanced/Kickstart_Installations/) is a method for automating the installation of Fedora/Redhat based Linux distributions.
 It works by using a Kickstart (`.ks`) file which contains a configuration of all the installation options which the user would usually manually enter using the installation wizard.
