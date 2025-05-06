@@ -6,10 +6,10 @@
 # SPDX-License-Identifier: Apache-2.0
 ###################################################################################
 
-FROM node:24.0.0-bookwork AS deps
+FROM node:23.11-bookworm AS deps
 
 ENV DEBIAN_FRONTEND=noninteractive
-ENV LANG en_US.UTF-8
+ENV LANG=en_US.UTF-8
 
 RUN apt-get update && \
 	apt-get -y install \

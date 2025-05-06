@@ -1,8 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -16,13 +15,12 @@ const config = {
     organizationName: 'VILLASframework',
     projectName: 'Documentation',
 
+    markdown: {
+        mermaid: true,
+    },
+
     plugins: [
-      [
-        require.resolve("@cmfcmf/docusaurus-search-local"),
-        {
-          // Options here
-        },
-      ],
+      require.resolve('docusaurus-lunr-search'),
     ],
 
     presets: [
@@ -33,9 +31,6 @@ const config = {
                 docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
                     editUrl: 'https://github.com/VILLASframework/documentation/edit/master/',
-                    remarkPlugins: [
-                        require('mdx-mermaid'),
-                    ]
                 },
                 blog: {
                     showReadingTime: true,
@@ -74,6 +69,10 @@ const config = {
                 ],
             },
         ],
+    ],
+
+    themes: [
+        '@docusaurus/theme-mermaid'
     ],
 
     themeConfig:
@@ -157,8 +156,8 @@ const config = {
             copyright: `Copyright © ${new Date().getFullYear()} Institute for Automation of Complex Power Systems, RWTH Aachen University.`,
         },
         prism: {
-            theme: lightCodeTheme,
-            darkTheme: darkCodeTheme,
+            theme: prismThemes.github,
+            darkTheme: prismThemes.dracula,
         },
     }),
 };
