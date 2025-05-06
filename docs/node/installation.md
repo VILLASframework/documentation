@@ -16,7 +16,7 @@ VILLASnode can be installed in multiple ways:
 Please make sure that your system fulfills the [requirements](requirements.md) before proceeding.
 :::
 
-## From source  {#source}
+## From sources {#source}
 
 VILLASnode can be compiled from source using [CMake](http://cmake.org).
 This process has been tested with the following Linux distributions:
@@ -291,6 +291,32 @@ This can be achieved by using the `WITHOUT_GPL` CMake option:
 ```shell
 cmake -S . -B build -DWITHOUT_GPL=ON
 ```
+
+## Single-binary
+
+We provide single-binary builds of VILLASnode bundle all depdendencies in a [self-extracting archive](https://en.wikipedia.org/wiki/Self-extracting_archive).
+These standalone binaries allow running VILLASnode irrespectively of the underlying Linux distribution or availability of library dependencies.
+The installation becomes pretty simple:
+
+```shell
+curl -o villas https://git.rwth-aachen.de/api/v4/projects/79039/jobs/artifacts/master/raw/artifacts/villas?job=build:nix
+chmod +x villas
+sudo mv villas /usr/local/bin
+
+# Test
+villas node --help
+```
+
+:::note
+Due to the self-extracting archive, the initial start of VILLASnode will be slower than usual.
+However, subsequent invocations will be quicker due to caching of the extracted contents.
+:::
+
+:::caution
+The standalone VILLASnode library is currently only compatible with Intel/AMD x86_64 architectures.
+
+Apart from a recent Kernel no other prerequisites are required.
+::::
 
 ## Docker images {#docker}
 
