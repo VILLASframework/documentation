@@ -78,7 +78,7 @@ During model load the configuration file will be loaded to the target and used b
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/opal" />
+{/* <ApiSchema id="node" example pointer="#/components/schemas/opal" /> */}
 
 ## Example
 
@@ -99,7 +99,7 @@ nodes = {
 	### The following settings are specific to the file node-type!! ###
 
 		uri = "logs/input.log",			# These options specify the path prefix where the the files are stored
-		
+
 		in = {
 			epoch_mode = "direct"		# One of: direct (default), wait, relative, absolute
 			epoch = 10			# The interpretation of this value depends on epoch_mode (default is 0).
@@ -108,7 +108,7 @@ nodes = {
 			rate = 2.0			# A constant rate at which the lines of the input files should be read
 							# A missing or zero value will use the timestamp in the first column
 							# of the file to determine the pause between consecutive lines.
-			
+
 			buffer_size = 1000000
 
 			eof = "rewind"	# One of: rewind, exit (default) or wait
