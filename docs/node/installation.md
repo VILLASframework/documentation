@@ -307,7 +307,7 @@ To start the main daemon, you can pass a configuration file via a volume mount:
 docker run --volume /path/to/my/local.conf:/config.conf --privileged registry.git.rwth-aachen.de/acs/public/villas/node node /config.conf
 ```
 
-## Kickstart installation
+## Kickstart installation {#kickstart}
 
 [Kickstart](https://docs.fedoraproject.org/en-US/fedora/f35/install-guide/advanced/Kickstart_Installations/) is a method for automating the installation of Fedora/Redhat based Linux distributions.
 It works by using a Kickstart (`.ks`) file which contains a configuration of all the installation options which the user would usually manually enter using the installation wizard.

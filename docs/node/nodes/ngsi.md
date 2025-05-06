@@ -24,7 +24,7 @@ https://github.com/VILLASframework/node/blob/master/lib/nodes/ngsi.cpp
 
 ## Configuration {#config}
 
-You can use the [`vectorize` setting](../config/nodes.md#vectorize) to send multiple samples in a vector.
+You can use the [`vectorize` setting](../config/nodes.md) to send multiple samples in a vector.
 
 Every `ngsi` node supports the following special settings:
 
