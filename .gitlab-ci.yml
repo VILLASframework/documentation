@@ -54,14 +54,9 @@ deploy:kubernetes:
     - >
         DEBIAN_FRONTEND=noninteractive
         apt-get update &&
-        apt install -y \
-            git
-            make
-            ca-certificates
-            curl
-            wget
+        apt install -y git make ca-certificates wget
 
-    - wget https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl /usr/local/bin/kubectl
+    - wget -O /usr/local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl
     - chmod +x /usr/local/bin/kubectl
     - mkdir -p $(dirname ${KUBECONFIG})
     - echo "${KUBECONFIG_ENCODED}" | base64 -d > ${KUBECONFIG}
