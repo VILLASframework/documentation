@@ -49,8 +49,20 @@ deploy:kubernetes:
   stage: deploy
   variables:
     KUBECONFIG: /root/.kube/config
-  image: registry.git.rwth-aachen.de/acs/internal/cloud/kubernetes/deployment
+  image: debian:bookworm
   before_script:
+    - >
+        DEBIAN_FRONTEND=noninteractive
+        apt-get update &&
+        apt install -y \
+            git
+            make
+            ca-certificates
+            curl
+            wget
+
+    - wget https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl /usr/local/bin/kubectl
+    - chmod +x /usr/local/bin/kubectl
     - mkdir -p $(dirname ${KUBECONFIG})
     - echo "${KUBECONFIG_ENCODED}" | base64 -d > ${KUBECONFIG}
     - kubectl version
