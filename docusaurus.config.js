@@ -9,11 +9,14 @@ const config = {
     tagline: 'VILLASframework is a toolset for local and geographically distributed real-time co-simulation.',
     url: 'https://villas.fein-aachen.org',
     baseUrl: '/',
-    onBrokenLinks: 'throw',
-    onBrokenMarkdownLinks: 'warn',
     favicon: 'img/logos/villas_framework.svg',
     organizationName: 'VILLASframework',
     projectName: 'Documentation',
+
+    onBrokenLinks: 'throw',
+    onBrokenAnchors: 'throw',
+    onBrokenMarkdownLinks: 'throw',
+    onDuplicateRoutes: 'throw',
 
     markdown: {
         mermaid: true,
