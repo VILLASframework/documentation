@@ -292,19 +292,15 @@ This can be achieved by using the `WITHOUT_GPL` CMake option:
 cmake -S . -B build -DWITHOUT_GPL=ON
 ```
 
-## Single-binary
+## Single-binary / Standalone Executable
 
-We provide single-binary builds of VILLASnode bundle all depdendencies in a [self-extracting archive](https://en.wikipedia.org/wiki/Self-extracting_archive).
+We provide single-binary / standalone executable builds of VILLASnode bundle all depdendencies in a [self-extracting ARX archive](https://en.wikipedia.org/wiki/Self-extracting_archive).
 These standalone binaries allow running VILLASnode irrespectively of the underlying Linux distribution or availability of library dependencies.
+
 The installation becomes pretty simple:
 
 ```shell
-curl -o villas https://git.rwth-aachen.de/api/v4/projects/79039/jobs/artifacts/master/raw/artifacts/villas?job=build:nix
-chmod +x villas
-sudo mv villas /usr/local/bin
-
-# Test
-villas node --help
+bash <(curl -s https://raw.githubusercontent.com/VILLASframework/node/refs/heads/master/tools/villas-install.sh)
 ```
 
 :::note
