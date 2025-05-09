@@ -309,9 +309,10 @@ However, subsequent invocations will be quicker due to caching of the extracted 
 :::
 
 :::caution
-The standalone VILLASnode library is currently only compatible with Intel/AMD x86_64 architectures.
+The standalone VILLASnode binary is currently only compatible Linux systems running one one of the following architectures:
 
-Apart from a recent Kernel no other prerequisites are required.
+-  Intel/AMD x86_64
+-  ARM v8 Aarch64
 ::::
 
 ## Docker images {#docker}
