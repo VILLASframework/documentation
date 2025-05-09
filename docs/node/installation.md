@@ -6,11 +6,11 @@ sidebar_position: 3
 
 VILLASnode can be installed in multiple ways:
 
+- [Precompiled standalone binaries](#standalone)
 - [Docker image](https://git.rwth-aachen.de/acs/public/villas/node/container_registry)
 - [Kubernetes (Helm chart)](../installation.md)
-- [Bootable Linux live image](../liveusb/index.md)
-- Automated [Kickstart installation](#kickstart-installation) for Fedora/RedHat based distributions
-- or from source
+- [Nix Flake](#nix)
+- or [from source](#source)
 
 :::caution Requirements
 Please make sure that your system fulfills the [requirements](requirements.md) before proceeding.
@@ -292,7 +292,7 @@ This can be achieved by using the `WITHOUT_GPL` CMake option:
 cmake -S . -B build -DWITHOUT_GPL=ON
 ```
 
-## Single-binary / Standalone Executable
+## Single-binary / Standalone Executable {#standalone}
 
 We provide single-binary / standalone executable builds of VILLASnode bundle all depdendencies in a [self-extracting ARX archive](https://en.wikipedia.org/wiki/Self-extracting_archive).
 These standalone binaries allow running VILLASnode irrespectively of the underlying Linux distribution or availability of library dependencies.
@@ -333,7 +333,7 @@ To start the main daemon, you can pass a configuration file via a volume mount:
 docker run --volume /path/to/my/local.conf:/config.conf --privileged registry.git.rwth-aachen.de/acs/public/villas/node node /config.conf
 ```
 
-## Nix
+## Nix {#nix}
 
 VILLASnode is also packaged as a [Nix Flake](https://wiki.nixos.org/wiki/Flakes).
 [Nix](https://nixos.org) is a cross-platform package manager for Unix-like systems, and a tool to instantiate and manage those systems, invented in 2003 by Eelco Dolstra.
@@ -356,22 +356,6 @@ nix run github:VILLASframework/node -- node --help
 ```
 
 For more details please refer to the details here: https://github.com/VILLASframework/node/blob/master/packaging/nix/README.md
-
-## Kickstart installation
-
-[Kickstart](https://docs.fedoraproject.org/en-US/fedora/f35/install-guide/advanced/Kickstart_Installations/) is a method for automating the installation of Fedora/Redhat based Linux distributions.
-It works by using a Kickstart (`.ks`) file which contains a configuration of all the installation options which the user would usually manually enter using the installation wizard.
-
-We have prepared such a Kickstart file which installs Fedora with our recommended configuration as well as [installs VILLASnode from source](#source) as described above.
-
-To use it, you will need to download a [Netinstall image of Fedora Server](https://getfedora.org/de/server/download/) and copy it to a USB stick or opticial disk.
-You also need to interrupt the initial boot of the Fedora installer, in the boot manager and append the following Kernel command line:
-
-```text
-inst.ks=https://raw.githubusercontent.com/VILLASframework/node/master/packaging/live-iso/villas.ks
-```
-
-Further details on how to start the Kickstart installation can be found [in the official Fedora documentation](https://docs.fedoraproject.org/en-US/fedora/f35/install-guide/advanced/Kickstart_Installations/#sect-kickstart-installation-starting).
 
 ## Test installation {#test}
 
