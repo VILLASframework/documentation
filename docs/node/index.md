@@ -30,7 +30,7 @@ The project consists of a server daemon and several client modules which are doc
   - Using the latest C11/C++17 standards
   - Easily extensible with new interface types, hook functions and payload formats
 - Released as open source software under the GPLv3 license
-- Easily deployable via [ISO installer](../liveusb/index.md), [Docker image](./installation.md#docker) or from [source](./installation.md#source)
+- Easily deployable via [Precompiled standalone binaries](./installation.md#standalone), [Docker image](./installation.md#docker) or from [source](./installation.md#source)
 - Only relies on open source software libraries and the Linux kernel
 - Follows the Unix philosophy by providing a set of smaller command line tools
 
