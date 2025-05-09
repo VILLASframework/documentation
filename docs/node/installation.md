@@ -300,7 +300,7 @@ These standalone binaries allow running VILLASnode irrespectively of the underly
 The installation becomes pretty simple:
 
 ```shell
-bash <(curl -s https://raw.githubusercontent.com/VILLASframework/node/refs/heads/master/tools/villas-install.sh)
+curl -s https://raw.githubusercontent.com/VILLASframework/node/refs/heads/master/tools/villas-install.sh | bash
 ```
 
 :::note
