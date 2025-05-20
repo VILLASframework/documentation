@@ -11,15 +11,21 @@ VILLASframework is presented and/or used by the following publications.
 
 ## Publications
 
+### 2025
+- A. Bach and A. Monti, "[Remote Real-Time Testing of Physical Components Using Communication Setup Automation](https://ieeexplore.ieee.org/document/10906587/),” IEEE Access, vol. 13, pp. 39066–39075, 2025, [doi: 10.1109/ACCESS.2025.3546311](https://doi.org/10.1109/ACCESS.2025.3546311)
+
 ### 2024 
 - M. Pitz, F. Wege, N. Eiling, S. Vogel, V. Bareis, A. Monti, "[Automated Deployment of Single-Board Computer Based Grid Measurement and Co-Simulation Equipment](https://xploreqa.ieee.org/document/10668996)," _2024 Open Source Modelling and Simulation of Energy Systems (OSMSES)_, Vienna, Austria, 2024, pp. 1-6, [doi: 10.1109/OSMSES62085.2024.10668996](https://doi.org/10.1109/OSMSES62085.2024.10668996)
+- S. Vogel, F. Wege, and A. Monti, "[WebRTC-based plug-&-play signal transport for peer-to-peer connectivity between DRTSs, IEDs and operators](https://ieeexplore.ieee.org/document/10926633),” in NEIS 2024; Conference on Sustainable Energy Supply and Energy Storage Systems, Sep. 2024, pp. 127–133. [doi:  10.30420/566464017](https://doi.org/10.30420/566464017)
 
 ### 2023
 - G. Mehlmann et al., "[The Kopernikus ENSURE Co-Demonstration Platform](https://xploreqa.ieee.org/document/10316568)," _IEEE Open Journal of Power Electronics_, vol. 4, pp. 987-1002, 2023, [doi: 10.1109/OJPEL.2023.3332515](https://doi.org/10.1109/OJPEL.2023.3332515)
 - O. Gehrke et al., "[Towards Automation of Configuration Management for Multi-Research Infrastructure Experiments](https://xploreqa.ieee.org/document/10490311)," 2023 Asia Meeting on Environment and Electrical Engineering (EEE-AM), Hanoi, Vietnam, 2023, pp. 1-6, [doi: 10.1109/EEE-AM58328.2023.10490311](https://doi.org/10.1109/EEE-AM58328.2023.10490311)
+- G. Mehlmann et al., "[Concept and Operation of a distributed multi-domain Power System Laboratory with HiL-capabilities](https://ieeexplore.ieee.org/document/10172942)," in ETG Congress 2023, May 2023, pp. 1–8.
 
 ### 2022
 - M. H. Syed et al., "[Real-Time Coupling of Geographically Distributed Research Infrastructures: Taxonomy, Overview, and Real-World Smart Grid Applications](https://xploreqa.ieee.org/document/9235545)," in IEEE Transactions on Smart Grid, vol. 12, no. 2, pp. 1747-1760, March 2021, [doi: 10.1109/TSG.2020.3033070](https://doi.org/10.1109/TSG.2020.3033070)
+- D. Carta et al., "[VILLASnode-based Co-simulation of Local Energy Communities](https://ieeexplore.ieee.org/document/9768933/)," in 2022 Open Source Modelling and Simulation of Energy Systems (OSMSES), Apr. 2022, pp. 1–6. [doi: 10.1109/OSMSES54027.2022.9768933](htttps://doi.org/10.1109/OSMSES54027.2022.9768933)
 
 ### 2021
 
