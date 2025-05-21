@@ -88,9 +88,10 @@ __VILLASnode__, __VILLASfpga__, __VILLAScontroller__, __VILLASdataprocessing__ a
 Other licensing options available upon request.
 Please contact [Prof. Antonello Monti](mailto:amonti@eonerc.rwth-aachen.de) for further details.
 
-## Contact
+## Authors
 
-Several people are involved in the development of the VILLASframework. The easiest way to contact the right people is to reach out via the issues in the specific repositories. 
+Several people and organizations are involved in the development of the VILLASframework.
+Most contributions are made by the following authors:
 
 [Institute for Automation of Complex Power Systems (ACS)](http://www.acs.eonerc.rwth-aachen.de)  
 [EON Energy Research Center (EONERC)](http://www.eonerc.rwth-aachen.de)  
@@ -101,6 +102,20 @@ Several people are involved in the development of the VILLASframework. The easie
 [OPAL-RT Germany GmbH](https://www.opal-rt.com/)
 
 <img alt="OPAL-RT Germany Logo" src="/img/logos/opal.jpg" align="right" />
+
+## Contact &amp; Community
+
+GitHub issues and discussion boards are the preferred way to get in touch with us:
+
+- **VILLASnode**
+    - [Discussions](https://github.com/VILLASframework/node/discussions)
+    - [Issues](https://github.com/VILLASframework/node/issues)
+- **VILLASweb**
+    - [Discussions](https://github.com/VILLASframework/web/discussions)
+    - [Issues](https://github.com/VILLASframework/web/issues)
+- **VILLAScontroller**
+    - [Discussions](https://github.com/VILLASframework/controller/discussions)
+    - [Issues](https://github.com/VILLASframework/controller/issues)
 
 ## Funding
 
