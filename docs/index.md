@@ -98,6 +98,10 @@ Several people are involved in the development of the VILLASframework. The easie
 
 <img alt="EONERC ACS Logo" src="/img/logos/eonerc_logo.png" align="right" />
 
+[OPAL-RT Germany GmbH](https://www.opal-rt.com/)
+
+<img alt="OPAL-RT Germany Logo" src="/img/logos/opal.jpg" align="right" />
+
 ## Funding
 
 Funding is provided by the following research projects:
