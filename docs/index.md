@@ -97,11 +97,11 @@ Most contributions are made by the following authors:
 [EON Energy Research Center (EONERC)](http://www.eonerc.rwth-aachen.de)  
 [RWTH University Aachen, Germany](http://www.rwth-aachen.de)  
 
-<img alt="EONERC ACS Logo" src="/img/logos/eonerc_logo.png" align="right" />
+<img alt="EONERC ACS Logo" src="/img/logos/eonerc_logo.png" align="right" width="250" height="auto" />
 
 [OPAL-RT Germany GmbH](https://www.opal-rt.com/)
 
-<img alt="OPAL-RT Germany Logo" src="/img/logos/opal.jpg" align="right" />
+<img alt="OPAL-RT Germany Logo" src="/img/logos/opal.jpg" align="right" width="250" height="auto" />
 
 ## Contact &amp; Community
 
