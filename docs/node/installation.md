@@ -225,6 +225,9 @@ You can also install the binaries and tools into to your search path after build
 ```shell
 # Install the VILLASnode libraries tools and binaries
 cmake --build ./build --target install
+
+# Refresh linker cache
+sudo ldconfig
 ```
 
 ### Customizing the build
