@@ -21,10 +21,10 @@ Please make sure that your system fulfills the [requirements](requirements.md) b
 VILLASnode can be compiled from source using [CMake](http://cmake.org).
 This process has been tested with the following Linux distributions:
 
-- Fedora 36
+- Fedora 42
 - Debian 12 (Bookworm)
 - Ubuntu 24.04 (Noble Numbat)
-- RHEL / Rocky Linux 8
+- Rocky Linux 9.3
 
 ### Prerequisites
 
