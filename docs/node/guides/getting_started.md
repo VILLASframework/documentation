@@ -49,7 +49,7 @@ Before we start to use the VILLASnode tools, we will introduce some terminology:
 
 <figure align="center">
     <img alt="A two site scenario with VILLASfpga." src="/img/VILLASnode_large.svg" width="75%" />
-	<figcaption>A two site scenario with VILLASfpga.</figcaption>
+    <figcaption>A two site scenario with VILLASfpga.</figcaption>
 </figure>
 
 ## Tools
@@ -63,12 +63,12 @@ VILLASnode is a collection of command line tools which follow the [Unix philosop
 
 In this guide we will show the following tools:
 
-| Tool					                        | Purpose |
-| :----					                        | :---- |
-| [`villas node`](../usage/villas-node.md)		| The main VILLASnode daemon. |
-| [`villas signal`](../usage/villas-signal.md)	| A signal generator for testing and training purposes. |
-| [`villas pipe`](../usage/villas-pipe.md)		| Send / receive _samples_ to / from _nodes_ via [standard IO streams](https://en.wikipedia.org/wiki/Standard_streams). |
-| [`villas hook`](../usage/villas-hook.md)		| Filter or manipulate _samples_ provided via [standard IO streams](https://en.wikipedia.org/wiki/Standard_streams). |
+| Tool                                          | Purpose |
+| :----                                         | :---- |
+| [`villas node`](../usage/villas-node.md)      | The main VILLASnode daemon. |
+| [`villas signal`](../usage/villas-signal.md)  | A signal generator for testing and training purposes. |
+| [`villas pipe`](../usage/villas-pipe.md)      | Send / receive _samples_ to / from _nodes_ via [standard IO streams](https://en.wikipedia.org/wiki/Standard_streams). |
+| [`villas hook`](../usage/villas-hook.md)      | Filter or manipulate _samples_ provided via [standard IO streams](https://en.wikipedia.org/wiki/Standard_streams). |
 
 A complete list of available tools and commandline options can be found on the [usage](../usage/index.md) page.
 
@@ -107,5 +107,5 @@ This video presents an outdated version of VILLASnode!
 :::
 
 <video controls width="100%" align="center">
-	<source src="https://videos.fein-aachen.org/VILLASnode_Webinar_2017_05_08.mp4" type="video/mp4" />
+    <source src="https://videos.fein-aachen.org/VILLASnode_Webinar_2017_05_08.mp4" type="video/mp4" />
 </video>
