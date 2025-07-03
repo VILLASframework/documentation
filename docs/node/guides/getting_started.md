@@ -22,7 +22,7 @@ For this guide, we recommend to use the [VILLASnode Docker image](../installatio
 ::: note
 We provide a set of example configuration files at [github.com/VILLASframework/node/etc](https://github.com/VILLASframework/node/tree/master/etc).
 
-Please download these or checkout the VILLASnode Git repo locally at `C:\VILLASnode` so they can be used in the following labs.
+Please download these files or clone the VILLASnode Git repository to C:\VILLASnode so they can be used in the following labs.
 :::
 
 To open an interactive terminal in the VILLASnode Docker container run:
@@ -74,7 +74,9 @@ A complete list of available tools and commandline options can be found on the [
 
 ## Lab assignments {#labs}
 
-To get you started quickly, we prepared a series of small demos which you can try yourself.
+To help you get started quickly, we have prepared a series of small demos that you can try yourself. They are designed to introduce you step by step to the concepts and features of VILLASnode.
+
+These laboratory exercises use configuration files that are included in the example configurations directory at C:\VILLASnode\etc\labs.
 
 - [**Lab1**](lab1.md): Signal generation
 - [**Lab2**](lab2.md): A simple configuration file
