@@ -73,7 +73,7 @@ The source code of all open source components is available via [GitHub](https://
 
 ## Copyright
 
-2014-2024, Institute for Automation of Complex Power Systems, EONERC
+2014-2025, The VILLASframework Authors
 
 ## Licensing
 
