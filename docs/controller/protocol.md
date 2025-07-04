@@ -1,7 +1,7 @@
 # Protocol
 
-This page documents the data model/protocol used by VILLAScontroller to control and monitor infrastructure components (IC).
-The protocol uses AMQP to transport JSON encoded objects which are specified in the following document.
+This page documents the data model/protocol used by VILLAScontroller to control and monitor infrastructure components (ICs).
+The protocol uses AMQP to transport JSON-encoded objects, which are specified in the following document.
 
 VILLAScontroller is implemented in Python and using the [Kombo messaging package](https://kombu.readthedocs.io).
 
@@ -64,7 +64,7 @@ The exchange is named `villas`.
 
 The following headers are used to identify and route messages to the recipients:
 
-- `realm` describes the entity which is responsible for operating the equipment.
+- `realm` describes the entity that is responsible for operating the equipment.
   The realm should be a fully qualified domain name (FQDN) in reverse order.
   - Examples:
     - `de.rwth-aachen.eonerc.acs`

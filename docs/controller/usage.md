@@ -1,9 +1,9 @@
 # Usage
 
-VILLAScontroller consist of two parts:
+VILLAScontroller consists of two parts:
 
- - A daemon which listens for control commands from an AMQP broker and controls the simulator.
- - A CLI tool for sending commands to the broker
+ - A daemon that listens for control commands from an AMQP broker and controls the simulator.
+ - A command-line tool for issuing commands to the broker.
 
 Both parts are accessible from the `villas-controller` command.
 
@@ -62,7 +62,7 @@ villas-controller --config config.json daemon
 villas-controller monitor
 ```
 
-**Note:** If you have `jq` installed, you might want to add `| jq .` to the end for pretty printing the JSON messages.
+**Note:** If you have `jq` installed, you might want to add `| jq .` to the end for pretty-printing the JSON messages.
 
 5. Discover / ping simulators:
 
