@@ -25,7 +25,7 @@ VILLASframework is presented and/or used by the following publications.
 
 ### 2022
 - M. H. Syed et al., "[Real-Time Coupling of Geographically Distributed Research Infrastructures: Taxonomy, Overview, and Real-World Smart Grid Applications](https://xploreqa.ieee.org/document/9235545)," in IEEE Transactions on Smart Grid, vol. 12, no. 2, pp. 1747-1760, March 2021, [doi: 10.1109/TSG.2020.3033070](https://doi.org/10.1109/TSG.2020.3033070)
-- D. Carta et al., "[VILLASnode-based Co-simulation of Local Energy Communities](https://ieeexplore.ieee.org/document/9768933/)," in 2022 Open Source Modelling and Simulation of Energy Systems (OSMSES), Apr. 2022, pp. 1–6. [doi: 10.1109/OSMSES54027.2022.9768933](htttps://doi.org/10.1109/OSMSES54027.2022.9768933)
+- D. Carta et al., "[VILLASnode-based Co-simulation of Local Energy Communities](https://ieeexplore.ieee.org/document/9768933/)," in 2022 Open Source Modelling and Simulation of Energy Systems (OSMSES), Apr. 2022, pp. 1–6. [doi: 10.1109/OSMSES54027.2022.9768933](https://doi.org/10.1109/OSMSES54027.2022.9768933)
 
 ### 2021
 

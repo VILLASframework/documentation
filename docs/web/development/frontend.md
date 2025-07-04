@@ -4,7 +4,7 @@
 
 ## Description
 
-The frontend is build upon [ReactJS](https://facebook.github.io/react/) and [Flux](https://facebook.github.io/flux/).
+The frontend is built upon [ReactJS](https://facebook.github.io/react/) and [Flux](https://facebook.github.io/flux/).
 React is responsible for rendering the UI and Flux for handling the data and communication with the backends. For more information also have a look at REACT.md
 Additional libraries are used, for a complete list see the file `package.json`.
 

@@ -15,7 +15,7 @@ This raw format does not include any meta-data such as the timestamps or sequenc
 To work around this limitation, the `fake` option of the `raw` format can be set.
 This will cause the first three 3 signals to interpreted as sequence no, timestamp seconds and timestamp nanoseconds.
 A timestamp can be added by using the GTSYNC card with a GPS source in the draft file.
-Alternatively, if no timestamp is provided (value set to 0), VILLASnode will add a timestamp and thereby overriding replacing the 0 value.
+Alternatively, if no timestamp is provided (value set to 0), VILLASnode will add a timestamp, thereby replacing the 0 value.
 
 ## Common Problems
 

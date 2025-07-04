@@ -67,5 +67,5 @@ paths = (
 
 <figure align="center">
     <img alt="RSCAD runtime of GTNET interface to VILLASnode." src="/img/screenshots/rscad/rscad_gtnet_skt_udp_loopback_rtt_runtime.png" width="100%" />
-    <figcaption>RSCAD runtime of GTNET interface to VILLASnode..</figcaption>
+    <figcaption>RSCAD runtime of GTNET interface to VILLASnode.</figcaption>
 </figure>
