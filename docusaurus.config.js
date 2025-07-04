@@ -1,7 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -23,7 +23,7 @@ const config = {
     },
 
     plugins: [
-      require.resolve('docusaurus-lunr-search'),
+        require.resolve('docusaurus-lunr-search'),
     ],
 
     presets: [
@@ -48,27 +48,27 @@ const config = {
             'redocusaurus',
             {
                 specs: [{
-                        id: 'node',
-                        route: '/api/node/',
-                        spec: 'external/node/doc/openapi/openapi.yaml',
-                    },
-                    {
-                        id: 'relay',
-                        route: '/api/relay/',
-                        spec: 'external/node/doc/openapi-relay.yaml',
-                    },
-                    {
-                        id: 'controller',
-                        route: '/api/controller/',
-                        spec: 'external/controller/doc/openapi.yaml',
-                    },
-                    {
-                        id: 'web',
-                        route: '/api/web/',
-                        // TODO this file is currently manually converter to OpenAPI spec v3
-                        // See: https://github.com/VILLASframework/web-backend/tree/master/doc/api
-                        spec: 'generated/web/openapi.yaml',
-                    },
+                    id: 'node',
+                    route: '/api/node/',
+                    spec: 'external/node/doc/openapi/openapi.yaml',
+                },
+                {
+                    id: 'relay',
+                    route: '/api/relay/',
+                    spec: 'external/node/doc/openapi-relay.yaml',
+                },
+                {
+                    id: 'controller',
+                    route: '/api/controller/',
+                    spec: 'external/controller/doc/openapi.yaml',
+                },
+                {
+                    id: 'web',
+                    route: '/api/web/',
+                    // TODO this file is currently manually converter to OpenAPI spec v3
+                    // See: https://github.com/VILLASframework/web-backend/tree/master/doc/api
+                    spec: 'generated/web/openapi.yaml',
+                },
                 ],
             },
         ],
@@ -79,15 +79,15 @@ const config = {
     ],
 
     themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+        /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
         ({
-        navbar: {
-            title: 'VILLASframework',
-            logo: {
-                alt: 'VILLASframework logo',
-                src: 'img/logos/villas_framework.svg',
-            },
-            items: [{
+            navbar: {
+                title: 'VILLASframework',
+                logo: {
+                    alt: 'VILLASframework logo',
+                    src: 'img/logos/villas_framework.svg',
+                },
+                items: [{
                     type: 'doc',
                     docId: 'index',
                     position: 'left',
@@ -108,16 +108,16 @@ const config = {
                     label: 'GitHub',
                     position: 'right',
                 },
-            ],
-        },
-        footer: {
-            logo: {
-                alt: 'RWTH Aachen',
-                src: 'img/logos/eonerc_dark.png',
-                href: 'https://acs.eonerc.rwth-aachen.de',
+                ],
             },
-            style: 'dark',
-            links: [{
+            footer: {
+                logo: {
+                    alt: 'RWTH Aachen',
+                    src: 'img/logos/eonerc_dark.png',
+                    href: 'https://acs.eonerc.rwth-aachen.de',
+                },
+                style: 'dark',
+                links: [{
                     title: 'Docs',
                     items: [{
                         label: 'Documentation',
@@ -125,44 +125,44 @@ const config = {
                     }, {
                         label: 'FEIN Aachen e.V.',
                         href: 'https://www.fein-aachen.org',
-                    }, ],
+                    },],
                 },
                 {
                     title: 'Community',
                     items: [{
-                            label: 'RWTH Aachen University',
-                            href: 'https://www.rwth-aachen.de',
-                        },
-                        {
-                            label: 'E.ON Energy Research Center',
-                            href: 'https://eonerc.rwth-aachen.de',
-                        },
-                        {
+                        label: 'RWTH Aachen University',
+                        href: 'https://www.rwth-aachen.de',
+                    },
+                    {
+                        label: 'E.ON Energy Research Center',
+                        href: 'https://eonerc.rwth-aachen.de',
+                    },
+                    {
                         label: 'Institute for Automation of Complex Power Systems',
-                            href: 'https://acs.eonerc.rwth-aachen.de',
-                        },
+                        href: 'https://acs.eonerc.rwth-aachen.de',
+                    },
                     ],
                 },
                 {
                     title: 'More',
                     items: [{
-                            label: 'Blog',
-                            to: '/blog',
-                        },
-                        {
-                            label: 'GitHub',
-                            href: 'https://github.com/VILLASframework',
-                        },
+                        label: 'Blog',
+                        to: '/blog',
+                    },
+                    {
+                        label: 'GitHub',
+                        href: 'https://github.com/VILLASframework',
+                    },
                     ],
                 },
-            ],
-            copyright: `Copyright © ${new Date().getFullYear()} Institute for Automation of Complex Power Systems, RWTH Aachen University.`,
-        },
-        prism: {
-            theme: prismThemes.github,
-            darkTheme: prismThemes.dracula,
-        },
-    }),
+                ],
+                copyright: `Copyright © 2014-${new Date().getFullYear()} The VILLASframework Authors`,
+            },
+            prism: {
+                theme: prismThemes.github,
+                darkTheme: prismThemes.dracula,
+            },
+        }),
 };
 
 module.exports = config;
