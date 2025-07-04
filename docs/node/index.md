@@ -57,5 +57,5 @@ There are two types of interfaces to VILLASnode:
 2. Another way to connect simulation equipment is by using a client application that sends the data over the network to VILLASnode.
     In this scenario, VILLASnode uses the [socket node type](nodes/socket.md) to communicate with the client application.
 
-Usually, new clients/equipment should be implemented as a new node type as part of VILLASnode.
+Usually, new clients or equipment should be implemented as a new node type as part of VILLASnode.
 Using a dedicated client application that communicates via the 'socket' type is deprecated because it leads to code duplication.
