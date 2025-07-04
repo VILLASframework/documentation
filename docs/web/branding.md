@@ -2,16 +2,16 @@
 
 ## Existing brands
 
-* VillasWeb - Classic branding
+* VILLASweb - Classic branding
 * SLEW - Second Life for Energiewende, RWTH education project
 * template - Can be used for new brand creation
 
 ## How to create a new brand
 
-1. Create a new folder for the new brand inside the `branding` folder - !needs to be written in the same way as the branding environment variable `REACT_APP_BRAND=<brandname>`!
-2. Add files inside the folder of your brand 
-    * `functions` (HTML-code for welcome page, home page, app footer)
-    * `values` file definitions
+1. Create a new folder for the new brand inside the `branding` folder. The folder name must match the branding environment variable: `REACT_APP_BRAND=<brandname>`!
+2. Add the following files to your brand's folder:
+    * `functions` (HTML code for the welcome page, home page, and app footer)
+    * `values` file for definitions
 
 ```js
 export function <brand_home>() {
@@ -45,42 +45,42 @@ export function <brand_welcome>() {
 const <brand_values> = {
    title: '<brand title>',
    subtitle: '<brand subtitle>',
-   icon: "<brand icon, !needs to be in public folder with favicon!",
+   icon: "<brand icon, (must be in the public folder with the favicon)!",
    pages: {
-      home: <true|false>,
-      scenarios: <true|false>,
-      infrastructure: <true|false>,
-      users: <true|false>,
-      account: <true|false>,
-      api: <true|false>
+      home: <true | false>,
+      scenarios: <true | false>,
+      infrastructure: <true | false>,
+      users: <true | false>,
+      account: <true | false>,
+      api: <true | false>
    },
    links: {
-      "<link description>": "<link>",
-      "<link description>": "<link>"
+      "<link description>": "<link URL>",
+      "<link description>": "<link URL>"
    },
    style: {
       background: '<background color>',
-      highlights: '<color for highlights like title and table>',
-      maincolor: '<main color for texts and symbols',
-      secondarytext: '<text color for menu and footer',
-      font: "<text font, e.g. 16px Roboto, sans-serif>",
-      borderradius: "<0px for sharp box edges, >0px for rounded box edges>"
+      highlights: '<highlight color for titles and tables>',
+      maincolor: '<main color for text and symbols',
+      secondarytext: '<text color for the menu and footer',
+      font: "<text font (e.g., '16px Roboto, sans-serif')>",
+      borderradius: "<'0px' for sharp box edges, '>0px' for rounded box edges>"
    }
 }
 
 export default <brand_values>;
 ```
 
-Colors can be defined in several ways (CSS syntax), examples:
+Colors can be defined in several ways (CSS syntax), for example:
 
-- `#ff000`
+- `#ff0000`
 - `red`
 - `rgb(255,0,0)`
 - `rgba(255,0,0,0.7)`
 
 3. Adapt `branding.js`:
-    - import 'values' and 'functions' files
-    - if applicable, add cases in switch statements for the following functions:
+    - Import the `values` and `functions` files.
+    - If applicable, add cases to the `switch` statements for the following functions:
         - setValues
         - getHome
         - getWelcome
