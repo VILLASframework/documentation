@@ -29,7 +29,7 @@ PRs that update the style of existing code should be made separate from PRs that
     /* This is a short description of what this file does.
     *
     * More detailed description expanding on the previous one.
-    * This can also containt information about how to use the code,
+    * This can also contain information about how to use the code,
     * some design decisions or other information that is not
     * obvious from the code.
     *

@@ -26,13 +26,13 @@ Parts of VILLASframework are used or have been used in the past by the following
 - National Renewable Energy Laboratory (NREL), USA
 - Norwegian University of Science and Technology (NTNU), Trondheim, Norway
 - OFFIS - Institut für Informatik, Oldenburg, Germany
-- Politecnico di Turino, Italy
+- Politecnico di Torino, Italy
 - Power System Research Group, University of Sannio RCOST, Italy
 - Sandia National Lab (SNL), USA
 - SINTEF Energy AS, Trondheim, Norway
 - Technical University Delft, Netherlands
 - Universidad Nacional de Colombia
-- University of Strathclyde, Scottland
+- University of Strathclyde, Scotland
 - University Politehnica of Bucharest, Bulgaria
 - Washington State University, USA
 - Waterford Institute of Technology, Walton Institute - Telecommunications Software & Systems Group (TSSG), Ireland

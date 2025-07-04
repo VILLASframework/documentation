@@ -13,11 +13,11 @@ Unlike the other node-types, the [VILLASfpga node-type](../node/nodes/fpga.md) r
 ## FPGA Card {#card}
 
 This section is a group (like `nodes`) which allows the user to use multiple FPGA devices at the same time.
-Like nodes, each FPGA has it's own name:
+Like nodes, each FPGA has its own name:
 
 ### id (string: "vendor:product") {#card-id}
 
-A string containing the vendor and product of the FPGA card as shown by `lscpi`.
+A string containing the vendor and product of the FPGA card as shown by `lspci`.
 
 ### slot (string) {#card-slot}
 

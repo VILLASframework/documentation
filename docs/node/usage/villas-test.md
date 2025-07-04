@@ -68,7 +68,7 @@ Usage: villas-test-config [OPTIONS] CONFIG
   OPTIONS is one or more of the following options:
     -d LVL  set debug level
     -V      show version and exit
-    -c      perform plausability checks on config
+    -c      perform plausibility checks on config
     -D      dump config in JSON format
     -h      show usage and exit
 

@@ -41,7 +41,7 @@ minikube addons enable ingress
 
 ## Helm Chart
 
-To deloy the Helm chart you must first add the FEIN e.V. chart repository:
+To deploy the Helm chart you must first add the FEIN e.V. chart repository:
 
 ```shell
 helm repo add fein https://packages.fein-aachen.org/helm/charts/
@@ -64,12 +64,12 @@ web:
       mail: admin@example.com
       username: admin
 
-      # please to change to a secure password
+      # please change to a secure password
       password: VillasTest1234
 
 ingress:
   port: 8080
-  host: villas.192-168-1-100.nip.io 
+  host: villas.192-168-1-100.nip.io
 
 broker:
   auth:

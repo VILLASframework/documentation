@@ -32,10 +32,10 @@ To generate the software binary "Xilinx SDK 12.4" **must** be used. Please make 
 
 #### Generate SystemACE images for the CompactFlash card
 
-The Xilinx ML507 board supports to load it's initial configuration (hardware and software) from a Compact Flash memory card.
+The Xilinx ML507 board supports to load its initial configuration (hardware and software) from a Compact Flash memory card.
 This is an easy way to get the GTFPGA card running without using the Xilinx tools to program the FPGA.
 
-By default, the GTFPGA will load it's default configuration (IP address, port, rate) from above.
+By default, the GTFPGA will load its default configuration (IP address, port, rate) from above.
 
 #### Manually programming the GTFPGA by using a Xilinx Platform USB Cable
 

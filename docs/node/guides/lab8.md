@@ -190,7 +190,7 @@ echo "123.456(1) 1.2 3.4 5.6" | villas hook ts
 
 <AsciinemaPlayer src="/recordings/terminal/villas_hook_ts.json" rows={25} cols={120} idleTimeLimit={3} preload={true} />
 
-There is another related hook function called `fix_ts` which will only overwrite the the timestamp if the source has not provided one (timestamp must is `0.0`).
+There is another related hook function called `fix_ts` which will only overwrite the timestamp if the source has not provided one (timestamp must be `0.0`).
 
 ```shell
 echo "0.0(1) 1.2 3.4 5.6" | villas hook fix_ts

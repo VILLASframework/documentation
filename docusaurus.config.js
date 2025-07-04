@@ -138,7 +138,7 @@ const config = {
                             href: 'https://eonerc.rwth-aachen.de',
                         },
                         {
-                            label: 'Insitute for Automation of Complex Power Systems',
+                        label: 'Institute for Automation of Complex Power Systems',
                             href: 'https://acs.eonerc.rwth-aachen.de',
                         },
                     ],
