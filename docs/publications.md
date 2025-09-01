@@ -12,6 +12,7 @@ VILLASframework is presented and/or used in the following publications.
 ## Publications
 
 ### 2025
+- S. Vogel, N. Eiling, M. Pitz, A. Bach, M. Stevic, and P. A. Monti, “[VILLASnode: An Open-Source Real-time Multi-protocol Gateway](https://joss.theoj.org/papers/10.21105/joss.08401),” Journal of Open Source Software, vol. 10, no. 112, p. 8401, Aug. 2025, doi: [10.21105/joss.08401](https://doi.org/10.21105/joss.08401).
 - A. Bach and A. Monti, "[Remote Real-Time Testing of Physical Components Using Communication Setup Automation](https://ieeexplore.ieee.org/document/10906587/),” IEEE Access, vol. 13, pp. 39066–39075, 2025, [doi: 10.1109/ACCESS.2025.3546311](https://doi.org/10.1109/ACCESS.2025.3546311)
 
 ### 2024
