@@ -12,7 +12,7 @@ Please follow our [contribution guide](./contributing.md) when creating pull req
 
 ## Programming Paradigm
 
-VILLASnode is currently written in C/C++ using the ISO C11 and C++17 standards while following an object oriented programming paradigm.
+VILLASnode is currently written in C/C++ using the ISO C11 and C++20 standards while following an object oriented programming paradigm.
 
 Main _classes_ in VILLASnode are:
 - [`struct villas::node::Sample`](https://github.com/VILLASframework/node/blob/master/include/villas/sample.hpp)
