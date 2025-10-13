@@ -62,7 +62,7 @@ Default cache directory is cwd/cache unless specified otherwise using the cache_
 
 Supported keys in the configuration: 
 profile_path: path to a Delta Sharing profile JSON. 
-table_path: path for the table, here we mention the server, share and the schema in the format - ```server#share.schame.table```
+table_path: path for the table, here we mention the server, share and the schema in the format - ```server#share.schema.table```
 batch_size: batch size to be used for parsing rows in the Arrow table. Currently not implemented.
 
 The output is then piped into a .dat file using the file nodetype. 
