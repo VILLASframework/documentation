@@ -20,7 +20,7 @@ Supported Keys:
 - `op` (string, optional): One of `read`, `write`, `noop`. Defaults to `noop`.
 - `batch_size` (integer, optional): Batch size for chunk I/O (currently not implemented).
 
-## Behaviour: 
+## Behaviour
 
 - On start, the node initializes a Delta Sharing Client from `profile_path` and lists available shares, schemas and tables. 
 - For `op=read`, the node parses `table_path` populates cache from each file, loads the first file as an Arrow table. It then maps Arrow types to VILLASnode supported datatypes.
