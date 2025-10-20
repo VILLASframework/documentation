@@ -23,7 +23,7 @@ Supported Keys:
 ## Behaviour
 
 - On start, the node initializes a Delta Sharing Client from `profile_path` and lists available shares, schemas and tables. 
-- For `op=read`, the node parses `table_path` populates cache from each file, loads the first file as an Arrow table. It then maps Arrow types to VILLASnode supported datatypes.
+- For `op = read`, the node parses `table_path` populates cache from each file, loads the first file as an Arrow table. It then maps Arrow types to VILLASnode supported datatypes.
 - For `op = write` the node constructs and in-memory Arrow `Table` from outgoing VILLASnode samples based on the supported signal types. Current implementation does not upload to a Delta Sharing server yet.
 - Supported datatypes for reading are DOUBLE, FLOAT, INT64, INT32. Others are classified as unsupported and filled with defaults.
 
