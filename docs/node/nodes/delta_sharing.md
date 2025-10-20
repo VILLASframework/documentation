@@ -30,7 +30,6 @@ Supported Keys:
 ## Example
 
 ``` url="external/node/etc/examples/nodes/delta_sharing.conf" title="node/etc/examples/nodes/delta_sharing.conf"
-
 nodes = {
     delta_node = {
         type = "delta_sharing"
