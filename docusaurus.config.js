@@ -15,11 +15,13 @@ const config = {
 
     onBrokenLinks: 'throw',
     onBrokenAnchors: 'throw',
-    onBrokenMarkdownLinks: 'throw',
     onDuplicateRoutes: 'throw',
 
     markdown: {
         mermaid: true,
+        hooks: {
+            onBrokenMarkdownLinks: 'throw',
+        }
     },
 
     plugins: [
