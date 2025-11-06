@@ -50,34 +50,43 @@ import ApiSchema from '@theme/ApiSchema';
 
 ``` url="external/node/etc/examples/nodes/api.conf" title="node/etc/examples/nodes/api.conf"
 nodes = {
-	api_node = {
-		type = "api"
+    api_node = {
+        type = "api"
 
-		in = {
-			signals = (
-				{
-					name = "" 			# Same as 'id' in uAPI context
-					description = "Volts on Bus A"	# A human readable description of the channel
-					type = "float"			# Same as 'datatype' in uAPI context
-					unit = "V"
-					payload = "events" 		# or 'samples'
-					rate = 100.0			# An expected refresh/sample rate of the signal
-					range = {
-						min = 20.0
-						max = 100.0
-					}
-					readable = true
-					writable = false
-				}
-			)
-		}
+        in = {
+            signals = (
+                {
+                    # Same as 'id' in uAPI context
+                    name = ""
 
-		out = {
-			signals = (
-				# Similar to above
-			)
-		}
-	}
+                    # A human readable description of the channel
+                    description = "Volts on Bus A"
+
+                    # Same as 'datatype' in uAPI context
+                    type = "float"
+                    unit = "V"
+                    payload = "events" # Or 'samples'
+
+                    # An expected refresh/sample rate of the signal
+                    rate = 100.0
+
+                    range = {
+                        min = 20.0
+                        max = 100.0
+                    }
+
+                    readable = true
+                    writable = false
+                }
+            )
+        }
+
+        out = {
+            signals = (
+                # Similar to above
+            )
+        }
+    }
 }
 ```
 
@@ -85,106 +94,107 @@ nodes = {
 
 ``` url="external/node/etc/examples/api.conf" title="node/etc/examples/api.conf"
 http = {
-	port = 8080
+    port = 8080
 }
 
 nodes = {
-	api_node = {
-		type = "api"
+    api_node = {
+        type = "api"
 
-		in = {
-			signals = (
-				{
-					name = "sig1_in",
-					type = "float",
-					unit = "V",
-					description = "Signal 1",
-					rate = 100,
-					readable = true,
-					writable = false,
-					payload = "samples"
-				},
-				{
-					name = "sig2_in",
-					type = "float",
-					unit = "A",
-					description = "Signal 1",
-					rate = 100,
-					readable = true,
-					writable = false,
-					payload = "samples"
-				},
-				{
-					name = "sig3_in",
-					type = "float",
-					unit = "A",
-					description = "Signal 1",
-					rate = 100,
-					readable = true,
-					writable = false,
-					payload = "samples"
-				}
-			)
-		}
+        in = {
+            signals = (
+                {
+                    name = "sig1_in"
+                    type = "float"
+                    unit = "V"
+                    description = "Signal 1"
+                    rate = 100
+                    readable = true
+                    writable = false
+                    payload = "samples"
+                },
+                {
+                    name = "sig2_in"
+                    type = "float"
+                    unit = "A"
+                    description = "Signal 1"
+                    rate = 100
+                    readable = true
+                    writable = false
+                    payload = "samples"
+                },
+                {
+                    name = "sig3_in"
+                    type = "float"
+                    unit = "A"
+                    description = "Signal 1"
+                    rate = 100
+                    readable = true
+                    writable = false
+                    payload = "samples"
+                }
+            )
+        }
 
-		out = {
-			signals = (
-				# Output signals have no name, type and unit settings as those are implicitly
-				# derived from the signals which are routed to this node
-				{
-					description = "Signal 1",
-					rate = 100,
-					readable = true,
-					writable = false,
-					payload = "samples"
-				},
-				{
-					description = "Signal 1",
-					rate = 100,
-					readable = true,
-					writable = false,
-					payload = "samples"
-				},
-				{
-					description = "Signal 1",
-					rate = 100,
-					readable = true,
-					writable = false,
-					payload = "samples"
-				}
-			)
-		}
-	}
+        out = {
+            signals = (
+                # Output signals have no name, type and unit settings as those are implicitly
+                # derived from the signals which are routed to this node
+                {
+                    description = "Signal 1"
+                    rate = 100
+                    readable = true
+                    writable = false
+                    payload = "samples"
+                },
+                {
+                    description = "Signal 1"
+                    rate = 100
+                    readable = true
+                    writable = false
+                    payload = "samples"
+                },
+                {
+                    description = "Signal 1"
+                    rate = 100
+                    readable = true
+                    writable = false
+                    payload = "samples"
+                }
+            )
+        }
+    }
 
-	signal_node = {
-		type = "signal"
+    signal_node = {
+        type = "signal"
 
-		signal = "mixed"
-		values = 5
-		rate = 1.0
-	}
+        signal = "mixed"
+        values = 5
+        rate = 1.0
+    }
 }
 
 paths = (
-	{
-		in = [
-			"api_node"
-		],
-		hooks = (
-			"print"
-		)
-	},
-	{
-		in = [
-			"signal_node"
-		]
-		out = [
-			"api_node"
-		]
-		hooks = (
-			"print"
-		)
-	}
+    {
+        in = [
+            "api_node"
+        ]
+
+        hooks = (
+            "print"
+        )
+    },
+    {
+        in = [
+            "signal_node"
+        ]
+        out = [
+            "api_node"
+        ]
+        hooks = (
+            "print"
+        )
+    }
 )
 ```
 

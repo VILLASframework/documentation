@@ -29,7 +29,7 @@ paths = (
 
         hooks = (
             {
-                type = "rms",
+                type = "rms"
 
                 window_size = 1000
 

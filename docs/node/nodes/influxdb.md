@@ -29,11 +29,11 @@ import ApiSchema from '@theme/ApiSchema';
 
 ``` url="external/node/etc/examples/nodes/influxdb.conf" title="node/etc/examples/nodes/influxdb.conf"
 nodes = {
-	influxdb_node = {
-		type = "influxdb",
+    influxdb_node = {
+        type = "influxdb"
 
-		server = "localhost:8089",
-		key = "villas"
-	}
+        server = "localhost:8089"
+        key = "villas"
+    }
 }
 ```

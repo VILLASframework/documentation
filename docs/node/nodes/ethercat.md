@@ -27,45 +27,45 @@ import ApiSchema from '@theme/ApiSchema';
 
 ``` url="external/node/etc/examples/nodes/ethercat.conf" title="node/etc/examples/nodes/ethercat.conf"
 ethercat = {
-	coupler = {
-		position = 0
-		vendor_id = 0x00000002    # Backhoff
-		product_code = 0x044c2c52 # EK1100
-	}
+    coupler = {
+        position = 0
+        vendor_id = 0x00000002    # Beckhoff
+        product_code = 0x044c2c52 # EK1100
+    }
 
-	alias = 0
-	master = 0
+    alias = 0
+    master = 0
 }
 
 nodes = {
-	ethercat_node = {
-		type = "ethercat"
+    ethercat_node = {
+        type = "ethercat"
 
-		rate = 1000.0 # Rate of master cyclic task
+        rate = 1000.0 # Rate of master cyclic task
 
-		# Analog Input Slave
-		in = {
-			num_channels = 8
-			range = 10.0 # -10.0 V to +10.0 V
+        # Analog Input Slave
+        in = {
+            num_channels = 8
+            range = 10.0 # -10.0 V to +10.0 V
 
-			position = 2
-			vendor_id = 0x00000002    # Beckhoff
-			product_code = 0x0bc03052 # EL3008
+            position = 2
+            vendor_id = 0x00000002    # Beckhoff
+            product_code = 0x0bc03052 # EL3008
 
-			# PDOs are currently hardcoded!
-		}
+            # PDOs are currently hardcoded!
+        }
 
-		# Analog Output Slave
-		out = {
-			num_channels = 8
-			range = 10.0 # -10.0 V to +10.0 V
+        # Analog Output Slave
+        out = {
+            num_channels = 8
+            range = 10.0 # -10.0 V to +10.0 V
 
-			position = 1
-			vendor_id = 0x00000002    # Beckhoff
-			product_code = 0x0fc63052 # EL4038
+            position = 1
+            vendor_id = 0x00000002    # Beckhoff
+            product_code = 0x0fc63052 # EL4038
 
-			# PDOs are currently hardcoded!
-		}
-	}
+            # PDOs are currently hardcoded!
+        }
+    }
 }
 ```

@@ -21,8 +21,8 @@ It only contains a single node named `udp_node1` which sends / receives samples 
 ``` url="external/node/etc/labs/lab3.conf" title="node/etc/labs/lab3.conf"
 nodes = {
     udp_node1 = {
-        type = "socket",
-        layer = "udp",
+        type = "socket"
+        layer = "udp"
 
         in = {
             address = "*:12000"
@@ -31,7 +31,8 @@ nodes = {
                 count = 3
                 type = "float"
             }
-        },
+        }
+
         out = {
             address = "127.0.0.1:12001"
         }

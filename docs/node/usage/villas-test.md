@@ -54,7 +54,8 @@ Return codes:
 
  v0.11.0-5c666fb-debug (built on Feb 23 2021 02:34:46)
  Copyright 2014-2017, Institute for Automation of Complex Power Systems, EONERC
- Steffen Vogel <StVogel@eonerc.rwth-aachen.de>```
+ Steffen Vogel <StVogel@eonerc.rwth-aachen.de>
+```
 
 # villas test-config
 
@@ -68,7 +69,7 @@ Usage: villas-test-config [OPTIONS] CONFIG
   OPTIONS is one or more of the following options:
     -d LVL  set debug level
     -V      show version and exit
-    -c      perform plausibility checks on config
+    -c      perform plausability checks on config
     -D      dump config in JSON format
     -h      show usage and exit
 

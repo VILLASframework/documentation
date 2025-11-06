@@ -43,8 +43,8 @@ The setup requires the following components:
 ``` url="external/node/etc/labs/lab17.conf" title="node/etc/labs/lab17.conf"
 nodes = {
     rtds_ss1 = {
-        type = "socket",
-        layer = "udp",
+        type = "socket"
+        layer = "udp"
         format = {
             type = "gtnet"
             fake = true
@@ -88,8 +88,8 @@ nodes = {
     }
 
     rtds_ss2 = {
-        type = "socket",
-        layer = "udp",
+        type = "socket"
+        layer = "udp"
         format = {
             type = "gtnet"
             fake = true
@@ -175,14 +175,14 @@ nodes = {
 
 paths = (
     {
-        in = "rtds_ss1",
-        out = "rtds_ss2",
+        in = "rtds_ss1"
+        out = "rtds_ss2"
         reverse = true
     },
     {
-        enabled = false,
-        in = "rtds_ss1_monitoring",
-        out = "web_monitoring",
+        enabled = false
+        in = "rtds_ss1_monitoring"
+        out = "web_monitoring"
         reverse = true
     }
 )

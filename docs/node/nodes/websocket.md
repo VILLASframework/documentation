@@ -28,18 +28,18 @@ import ApiSchema from '@theme/ApiSchema';
 
 ``` url="external/node/etc/examples/nodes/websocket.conf" title="node/etc/examples/nodes/websocket.conf"
 nodes = {
-	ws = {
-		type = "websocket"
+    ws = {
+        type = "websocket"
 
-		destinations = [
-			"ws://someserver:8080/somenode"
-		]
-	}
+        destinations = [
+            "ws://someserver:8080/somenode"
+        ]
+    }
 }
 
 http = {
-	port = 8080
-	ssl_cert = "/etc/ssl/certs/mycert.pem"
-	ssl_private_key= "/etc/ssl/private/mykey.pem"
+    port = 8080
+    ssl_cert = "/etc/ssl/certs/mycert.pem"
+    ssl_private_key= "/etc/ssl/private/mykey.pem"
 }
 ```

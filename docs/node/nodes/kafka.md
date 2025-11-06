@@ -25,31 +25,33 @@ import ApiSchema from '@theme/ApiSchema';
 
 ``` url="external/node/etc/examples/nodes/kafka.conf" title="node/etc/examples/nodes/kafka.conf"
 nodes = {
-	kafka_node = {
-		type = "kafka",
-		
-		format = "json.kafka",
+    kafka_node = {
+        type = "kafka"
 
-		server = "localhost:9094",
-		protocol = "SASL_SSL",
-		client_id = "villas-node",
+        format = "json.kafka"
 
-		in = {
-			consume = "test-topic",
-			group_id = "villas-node"
-		},
-		out = {
-			produce = "test-topic"
-		},
+        server = "localhost:9094"
+        protocol = "SASL_SSL"
+        client_id = "villas-node"
 
-		ssl = {
-			ca = "/etc/ssl/certs/ca.pem",
-		},
-		sasl = {
-			mechanisms = "SCRAM-SHA-512",
-			username = "scram-sha-512-usr",
-			password = "scram-sha-512-pwd"
-		}
-	}
+        in = {
+            consume = "test-topic"
+            group_id = "villas-node"
+        }
+
+        out = {
+            produce = "test-topic"
+        }
+
+        ssl = {
+            ca = "/etc/ssl/certs/ca.pem"
+        }
+
+        sasl = {
+            mechanisms = "SCRAM-SHA-512"
+            username = "scram-sha-512-usr"
+            password = "scram-sha-512-pwd"
+        }
+    }
 }
 ```
