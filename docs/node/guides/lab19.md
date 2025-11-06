@@ -26,11 +26,12 @@ nodes = {
                 type = "float"
             }
             hooks = (
-            {
-                type = "print"
-            }
-        )
-        },
+                {
+                    type = "print"
+                }
+            )
+        }
+
         out = {
             address = "127.0.0.1:12001"
         }

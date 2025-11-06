@@ -33,27 +33,28 @@ villas signal -r 1000 -l 10000 sine | villas hook -o verbose=true -o warmup=3000
 ``` url="external/node/etc/labs/lab9_netem.conf" title="node/etc/labs/lab9_netem.conf"
 nodes = {
     udp_node1 = {
-        type = "socket",
-        layer = "udp",
+        type = "socket"
+        layer = "udp"
 
         in = {
             address = "*:12000"
 
             signals = {
-                count = 8,
+                count = 8
                 type = "float"
             }
-        },
+        }
+
         out = {
-            address = "127.0.0.1:12001",
+            address = "127.0.0.1:12001"
 
             netem = {
-                enabled   = true,
-                loss      = 0,      # In %
-                corrupt   = 0,      # In %
-                duplicate = 0,      # In %
-                delay     = 100000, # In uS
-                jitter    =   5000, # In uS
+                enabled   = true
+                loss      = 0      # In %
+                corrupt   = 0      # In %
+                duplicate = 0      # In %
+                delay     = 100000 # In uS
+                jitter    = 5000   # In uS
                 distribution = "normal"
             }
         }

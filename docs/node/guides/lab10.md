@@ -63,11 +63,13 @@ nodes = {
                     warmup = 3000
                 }
             )
-        },
+        }
+
         out = {
             address = "192.168.0.5:12005" # Remote machine IP and port number
         }
-    },
+    }
+
     rpi-2 = {
         type = "socket"
         layer = "udp"
@@ -91,7 +93,8 @@ nodes = {
         out = {
             address = "192.168.0.6:12006" # Remote machine IP and port number
         }
-    },
+    }
+
     rtds-1 = {
         type = "socket"
         layer = "udp"
@@ -131,7 +134,7 @@ This example reads samples from node `rpi-1` and forwards them immediately to no
 
 paths = (
     {
-        in  = [ "rpi-1"  ],
+        in  = [ "rpi-1"  ]
         out = [ "rtds-1" ]
     }
 )
@@ -147,7 +150,7 @@ This example reads samples from node `rtds-1`, duplicates them and forwards them
 
 paths = (
     {
-        in  = [ "rtds-1" ],
+        in  = [ "rtds-1" ]
         out = [ "rpi-1", "rpi-2" ]
     }
 )
@@ -165,8 +168,8 @@ This examples uses the `print` hook to display all forwarded samples on `stdout`
 
 paths = (
     {
-        in  = [ "rpi-1"  ],
-        out = [ "rtds-1" ],
+        in  = [ "rpi-1"  ]
+        out = [ "rtds-1" ]
 
         hooks = (
             { type = "print", output = "stdout" }
@@ -185,11 +188,11 @@ In a last example we demonstrate a bi-directional path by using multiple entries
 paths = (
     # Each path dictionary corresponds to one way communication
     {
-        in  = [ "rpi-1"  ],
+        in  = [ "rpi-1"  ]
         out = [ "rtds-1" ]
     },
     {
-        in  = [ "rtds-1" ],
+        in  = [ "rtds-1" ]
         out = [ "rpi-1"  ]
     }
 
@@ -197,8 +200,8 @@ paths = (
     #   and set reverse = true
     # Example:
     # {
-    #    in  = [ "rpi-1"  ],
-    #    out = [ "rtds-1" ],
+    #    in  = [ "rpi-1"  ]
+    #    out = [ "rtds-1" ]
     #    reverse = true
     # }
 )

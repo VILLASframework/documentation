@@ -41,4 +41,5 @@ Usage: villas graph [-Vv?] [-(GNE)name=val] [-(KTlso)<val>] <dot files>
 
  -c          - Configure plugins (Writes $prefix/lib/graphviz/config
                with available plugin information.  Needs write privilege.)
- -?          - Print usage and exit```
+ -?          - Print usage and exit
+```

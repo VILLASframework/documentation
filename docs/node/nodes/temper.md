@@ -32,16 +32,16 @@ import ApiSchema from '@theme/ApiSchema';
 
 ``` url="external/node/etc/examples/nodes/temper.conf" title="node/etc/examples/nodes/temper.conf"
 nodes = {
-	temper_node = {
-		type = "temper"
+    temper_node = {
+        type = "temper"
 
-		calibration = {
-			scale = 1.0
-			offset = 0.0
-		}
+        calibration = {
+            scale = 1.0
+            offset = 0.0
+        }
 
-		bus = 0x1
-		port = 0x1
-	}
+        bus = 0x1
+        port = 0x1
+    }
 }
 ```

@@ -164,7 +164,7 @@ paths = (
 ``` url="external/node/etc/labs/lab18-loopback.conf" title="node/etc/labs/lab18-loopback.conf"
 nodes = {
     webrtc_loopback = {
-        type = "webrtc",
+        type = "webrtc"
 
         format = "json"
 

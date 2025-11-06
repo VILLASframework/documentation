@@ -29,16 +29,16 @@ import ApiSchema from '@theme/ApiSchema';
 
 ``` url="external/node/etc/examples/nodes/exec.conf" title="node/etc/examples/nodes/exec.conf"
 nodes = {
-	exec_node = {
-		type = "exec"
-		format = "villas.human"
-		flush = true
-		exec = "tee test"
-		shell = true
-		working_directory = "/tmp"
-		environment = {
-			MYVAR = "TESTVAL"
-		}
-	}
+    exec_node = {
+        type = "exec"
+        format = "villas.human"
+        flush = true
+        exec = "tee test"
+        shell = true
+        working_directory = "/tmp"
+        environment = {
+            MYVAR = "TESTVAL"
+        }
+    }
 }
 ```

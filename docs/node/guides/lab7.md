@@ -27,7 +27,7 @@ We will show later how to stream the samples _in real-time_ to a destination nod
 ``` url="external/node/etc/labs/lab7.conf" title="node/etc/labs/lab7.conf"
 nodes = {
     file_node1 = {
-        type = "file",
+        type = "file"
 
         uri = "file_send.dat"
 

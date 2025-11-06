@@ -31,7 +31,7 @@ paths = (
 
         hooks = (
             {
-                type = "print",
+                type = "print"
 
                 output = "print_output_file.log"
                 format = "villas.human"
