@@ -23,19 +23,19 @@ import ApiSchema from '@theme/ApiSchema';
 
 ``` url="external/node/etc/examples/formats/csv.conf" title="node/etc/examples/formats/csv.conf"
 nodes = {
-	node = {
-		type = "file"
-		uri = "/dev/null"
+    node = {
+        type = "file"
+        uri = "/dev/null"
 
-		format = {
-			type = "csv"
+        format = {
+            type = "csv"
 
-			separator = ","
-			delimiter = "\n"
-			skip_first_line = false
-			header = true
-		}
-	}
+            separator = ","
+            delimiter = "\n"
+            skip_first_line = false
+            header = true
+        }
+    }
 }
 ```
 

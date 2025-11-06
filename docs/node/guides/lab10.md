@@ -43,79 +43,79 @@ All of the following examples use the same set of nodes, which we define in the 
 hugepages = 200
 
 nodes = {
-	# Node names can be any alphanumeric value
-	rpi-1 = {
-		type = "socket"
-		layer = "udp"
-		format = "gtnet" # pre-built format to communicate in RTDS GTNET-SKT payload
+    # Node names can be any alphanumeric value
+    rpi-1 = {
+        type = "socket"
+        layer = "udp"
+        format = "gtnet" # Pre-built format to communicate in RTDS GTNET-SKT payload
 
-		in = {
-			address = "*:12005" # villas node machine IP and port number
+        in = {
+            address = "*:12005" # VILLASnode machine IP and port number
 
-			signals = {
-				count = 8
-				type = "float"
-			}
+            signals = {
+                count = 8
+                type = "float"
+            }
 
-			hooks = (
-				{
-					type = "stats"
-					warmup = 3000
-				}
-			)
-		},
-		out = {
-			address = "192.168.0.5:12005" # remote machine IP and port number
-		}
-	},
-	rpi-2 = {
-		type = "socket"
-		layer = "udp"
-		format = "gtnet" # pre-built format to communicate in RTDS GTNET-SKT payload
+            hooks = (
+                {
+                    type = "stats"
+                    warmup = 3000
+                }
+            )
+        },
+        out = {
+            address = "192.168.0.5:12005" # Remote machine IP and port number
+        }
+    },
+    rpi-2 = {
+        type = "socket"
+        layer = "udp"
+        format = "gtnet" # Pre-built format to communicate in RTDS GTNET-SKT payload
 
-		in = {
-			address = "*:12006" # villas node machine IP and port number
+        in = {
+            address = "*:12006" # VILLASnode machine IP and port number
 
-			signals = {
-				count = 8
-				type = "float"
-			}
+            signals = {
+                count = 8
+                type = "float"
+            }
 
-			hooks = (
-				{
-					type = "stats"
-					warmup = 3000
-				}
-			)
-		}
-		out = {
-			address = "192.168.0.6:12006" # remote machine IP and port number
-		}
-	},
-	rtds-1 = {
-		type = "socket"
-		layer = "udp"
-		format = "gtnet"
+            hooks = (
+                {
+                    type = "stats"
+                    warmup = 3000
+                }
+            )
+        }
+        out = {
+            address = "192.168.0.6:12006" # Remote machine IP and port number
+        }
+    },
+    rtds-1 = {
+        type = "socket"
+        layer = "udp"
+        format = "gtnet"
 
-		in = {
-			address = "*:12083" # villas node machine IP and port number
+        in = {
+            address = "*:12083" # VILLASnode machine IP and port number
 
-			signals = {
-				count = 8
-				type = "float"
-			}
+            signals = {
+                count = 8
+                type = "float"
+            }
 
-			hooks = (
-				{
-					type = "stats"
-					warmup = 3000
-				}
-			)
-		}
-		out = {
-			address = "192.168.0.4:12083" # remote machine IP and port number
-		}
-	}
+            hooks = (
+                {
+                    type = "stats"
+                    warmup = 3000
+                }
+            )
+        }
+        out = {
+            address = "192.168.0.4:12083" # Remote machine IP and port number
+        }
+    }
 }
 ```
 
@@ -130,10 +130,10 @@ This example reads samples from node `rpi-1` and forwards them immediately to no
 @include "lab10_nodes.conf"
 
 paths = (
-	{
-		in  = [ "rpi-1"  ],
-		out = [ "rtds-1" ]
-	}
+    {
+        in  = [ "rpi-1"  ],
+        out = [ "rtds-1" ]
+    }
 )
 ```
 
@@ -146,10 +146,10 @@ This example reads samples from node `rtds-1`, duplicates them and forwards them
 @include "lab10_nodes.conf"
 
 paths = (
-	{
-		in  = [ "rtds-1" ],
-		out = [ "rpi-1", "rpi-2" ]
-	}
+    {
+        in  = [ "rtds-1" ],
+        out = [ "rpi-1", "rpi-2" ]
+    }
 )
 ```
 
@@ -164,14 +164,14 @@ This examples uses the `print` hook to display all forwarded samples on `stdout`
 @include "lab10_nodes.conf"
 
 paths = (
-	{
-		in  = [ "rpi-1"  ],
-		out = [ "rtds-1" ],
+    {
+        in  = [ "rpi-1"  ],
+        out = [ "rtds-1" ],
 
-		hooks = (
-			{ type = "print", output = "stdout" }
-		)
-	}
+        hooks = (
+            { type = "print", output = "stdout" }
+        )
+    }
 )
 ```
 
@@ -183,23 +183,23 @@ In a last example we demonstrate a bi-directional path by using multiple entries
 @include "lab10_nodes.conf"
 
 paths = (
-	# Each path dictionary corresponds to one way communication
-	{
-		in  = [ "rpi-1"  ],
-		out = [ "rtds-1" ]
-	},
-	{
-		in  = [ "rtds-1" ],
-		out = [ "rpi-1"  ]
-	}
+    # Each path dictionary corresponds to one way communication
+    {
+        in  = [ "rpi-1"  ],
+        out = [ "rtds-1" ]
+    },
+    {
+        in  = [ "rtds-1" ],
+        out = [ "rpi-1"  ]
+    }
 
-	# Alternatively, you can use a single path specification
-	#   and set reverse = true
-	# Example:
-	# {
-	# 	in  = [ "rpi-1"  ],
-	#	out = [ "rtds-1" ],
-	#	reverse = true
-	# }
+    # Alternatively, you can use a single path specification
+    #   and set reverse = true
+    # Example:
+    # {
+    #    in  = [ "rpi-1"  ],
+    #    out = [ "rtds-1" ],
+    #    reverse = true
+    # }
 )
 ```

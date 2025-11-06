@@ -17,23 +17,23 @@ We use a slightly modified configuration file in order to change the UDP packet 
 
 ``` url="external/node/etc/labs/lab5.conf" title="node/etc/labs/lab5.conf"
 nodes = {
-	rtds_gtnet1 = {
-		type = "socket",
-		layer = "udp",
-		format = "gtnet",
+    rtds_gtnet1 = {
+        type = "socket",
+        layer = "udp",
+        format = "gtnet",
 
-		in = {
-			address = "*:12000"
+        in = {
+            address = "*:12000"
 
-			signals = {
-				count = 8,
-				type = "float"
-			}
-		},
-		out = {
-			address = "134.130.169.89:12000"
-		}
-	}
+            signals = {
+                count = 8,
+                type = "float"
+            }
+        },
+        out = {
+            address = "134.130.169.89:12000"
+        }
+    }
 }
 ```
 

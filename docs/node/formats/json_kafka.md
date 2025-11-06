@@ -21,20 +21,20 @@ import ApiSchema from '@theme/ApiSchema';
 
 ``` url="external/node/etc/examples/formats/json-kafka.conf" title="node/etc/examples/formats/json-kafka.conf"
 nodes = {
-	node = {
-		type = "file"
-		uri = "/dev/null"
+    node = {
+        type = "file"
+        uri = "/dev/null"
 
-		format = {
-			type = "json.kafka"
+        format = {
+            type = "json.kafka"
 
-			indent = 2
-			schema = {
-				type = "struct"
-				name = "villas-node.Value"
-			}
-		}
-	}
+            indent = 2
+            schema = {
+                type = "struct"
+                name = "villas-node.Value"
+            }
+        }
+    }
 }
 ```
 

@@ -16,8 +16,11 @@ An example is created to test the connection between VILLASnode's [TCP client (`
 nodes = {
     tcp_node = {
         type = "socket"
+
         layer = "tcp-server"
+
         format = "villas.human"
+
         in = {
             address = "127.0.0.1:12000"
         },
@@ -29,7 +32,7 @@ nodes = {
 paths = (
     {
         in = "tcp_node"
-        out = "tcp_node",
+        out = "tcp_node"
         hooks = ( { type = "print" } )
     }
 )
@@ -40,8 +43,11 @@ paths = (
 nodes = {
     tcp_node = {
         type = "socket"
+
         layer = "tcp-client"
+
         format = "villas.human"
+
         in = {
             address = "127.0.0.1:12000"
         }

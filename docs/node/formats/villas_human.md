@@ -39,17 +39,17 @@ import ApiSchema from '@theme/ApiSchema';
 
 ``` url="external/node/etc/examples/formats/villas-human.conf" title="node/etc/examples/formats/villas-human.conf"
 nodes = {
-	node = {
-		type = "file"
-		uri = "/dev/null"
+    node = {
+        type = "file"
+        uri = "/dev/null"
 
-		format = {
-			type = "villas.human"
+        format = {
+            type = "villas.human"
 
-			comment_prefix = "#"
-			header = false
-		}
-	}
+            comment_prefix = "#"
+            header = false
+        }
+    }
 }
 ```
 

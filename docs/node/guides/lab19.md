@@ -37,11 +37,11 @@ nodes = {
     }
     signal = {
         type = "signal"
-        
+
         signal = "mixed"
         values = 5  # values per sample
         limit = 3   # emit limited number of samples
-    }       
+    }
 }
 
 paths = (
