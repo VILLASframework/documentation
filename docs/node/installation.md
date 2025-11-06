@@ -112,7 +112,7 @@ sudo apt-get install \
     zlib1g-dev liblz4-dev \
     brotli-dev libzstd-dev \
     libsnappy-dev libboost-all-dev \
-    libthrift-dev rapidjson-dev libxsimd-dev
+    libthrift-dev libxsimd-dev
 ```
 
 or the following line for Fedora/Redhat/RockyLinux systems:
@@ -156,7 +156,7 @@ sudo dnf install \
     re2-devel utf8proc-devel \
     zlib-devel brotli-devel lz4-devel zstd-devel \
     snappy-devel boost-devel thrift thrift-devel \
-    rapidjson-devel xsimd-devel
+    xsimd-devel
 
 
 
