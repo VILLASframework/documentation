@@ -18,51 +18,51 @@ This technique is useful for live monitoring and user interaction with simulatio
 
 ``` url="external/node/etc/labs/lab12.conf" title="node/etc/labs/lab12.conf"
 nodes = {
-	udp_node1 = {
-		type = "socket",
-		layer = "udp",
+    udp_node1 = {
+        type = "socket",
+        layer = "udp",
 
-		in = {
-			address = "*:12000"
+        in = {
+            address = "*:12000"
 
-			signals = {
-				count = 8,
-				type = "float"
-			}
-		},
-		out = {
-			address = "127.0.0.1:12001"
-		}
-	},
-	web_node1 = {
-		type = "websocket",
+            signals = {
+                count = 8,
+                type = "float"
+            }
+        },
+        out = {
+            address = "127.0.0.1:12001"
+        }
+    },
+    web_node1 = {
+        type = "websocket",
 
-		vectorize = 2,
-		series = (
-			{ label = "Random walk", unit = "V"   },
-			{ label = "Sine",        unit = "A"   },
-			{ label = "Rect",        unit = "Var" },
-			{ label = "Ramp",        unit = "°C"  }
-		)
-	}
+        vectorize = 2,
+        series = (
+            { label = "Random walk", unit = "V"   },
+            { label = "Sine",        unit = "A"   },
+            { label = "Rect",        unit = "Var" },
+            { label = "Ramp",        unit = "Â°C"  }
+        )
+    }
 }
 
 paths = (
-	{
-		in  = [ "udp_node1" ],
-		out = [ "web_node1" ],
+    {
+        in  = [ "udp_node1" ],
+        out = [ "web_node1" ],
 
-		hooks = (
-			# We do not want to overload the WebBrowsers
-			{ type = "decimate", ratio = 2 }
-		)
-	},
-	{
-		in  = [ "web_node1" ],
-		out = [ "udp_node1" ]
+        hooks = (
+            # We do not want to overload the WebBrowsers
+            { type = "decimate", ratio = 2 }
+        )
+    },
+    {
+        in  = [ "web_node1" ],
+        out = [ "udp_node1" ]
 
-		# Web -> UDP does not require decimation
-	}
+        # Web -> UDP does not require decimation
+    }
 )
 ```
 

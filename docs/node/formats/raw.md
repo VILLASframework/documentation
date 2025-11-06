@@ -23,18 +23,18 @@ import ApiSchema from '@theme/ApiSchema';
 
 ``` url="external/node/etc/examples/formats/raw.conf" title="node/etc/examples/formats/raw.conf"
 nodes = {
-	node = {
-		type = "file"
-		uri = "/dev/null"
+    node = {
+        type = "file"
+        uri = "/dev/null"
 
-		format = {
-			type = "raw"
+        format = {
+            type = "raw"
 
-			bits = 32
-			endianess = "little"
-			fake = false
-		}
-	}
+            bits = 32
+            endianess = "little"
+            fake = false
+        }
+    }
 }
 ```
 

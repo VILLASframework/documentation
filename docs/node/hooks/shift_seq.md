@@ -23,17 +23,17 @@ import ApiSchema from '@theme/ApiSchema';
 @include "hook-nodes.conf"
 
 paths = (
-	{
-		in = "signal_node"
-		out = "file_node"
+    {
+        in = "signal_node"
+        out = "file_node"
 
-		hooks = (
-			{
-				type = "shift_seq"
+        hooks = (
+            {
+                type = "shift_seq"
 
-				offset = 10
-			}
-		)
-	}
+                offset = 10
+            }
+        )
+    }
 )
 ```

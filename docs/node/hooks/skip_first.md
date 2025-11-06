@@ -24,18 +24,18 @@ import ApiSchema from '@theme/ApiSchema';
 @include "hook-nodes.conf"
 
 paths = (
-	{
-		in = "signal_node"
-		out = "file_node"
+    {
+        in = "signal_node"
+        out = "file_node"
 
-		hooks = (
-			{
-				type = "average"
+        hooks = (
+            {
+                type = "average"
 
-				signals = [ "sine", "square" ]
-				offset = 0
-			}
-		)
-	}
+                signals = [ "sine", "square" ]
+                offset = 0
+            }
+        )
+    }
 )
 ```

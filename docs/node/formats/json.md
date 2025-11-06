@@ -23,20 +23,20 @@ import ApiSchema from '@theme/ApiSchema';
 
 ``` url="external/node/etc/examples/formats/json.conf" title="node/etc/examples/formats/json.conf"
 nodes = {
-	node = {
-		type = "file"
-		uri = "/dev/null"
+    node = {
+        type = "file"
+        uri = "/dev/null"
 
-		format = {
-			type = "json"
+        format = {
+            type = "json"
 
-			indent = 4
-			compact = true
-			ensure_ascii = true
-			escape_slash = false
-			sort_keys = true
-		}
-	}
+            indent = 4
+            compact = true
+            ensure_ascii = true
+            escape_slash = false
+            sort_keys = true
+        }
+    }
 }
 ```
 

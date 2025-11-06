@@ -23,15 +23,15 @@ import ApiSchema from '@theme/ApiSchema';
 
 ``` url="external/node/etc/examples/formats/value.conf" title="node/etc/examples/formats/value.conf"
 nodes = {
-	node = {
-		type = "file"
-		uri = "/dev/null"
+    node = {
+        type = "file"
+        uri = "/dev/null"
 
-		format = {
-			type = "value"
+        format = {
+            type = "value"
 
-			real_precision = 5
-		}
-	}
+            real_precision = 5
+        }
+    }
 }
 ```

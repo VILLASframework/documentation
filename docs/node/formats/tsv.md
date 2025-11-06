@@ -21,19 +21,19 @@ import ApiSchema from '@theme/ApiSchema';
 
 ``` url="external/node/etc/examples/formats/tsv.conf" title="node/etc/examples/formats/tsv.conf"
 nodes = {
-	node = {
-		type = "file"
-		uri = "/dev/null"
+    node = {
+        type = "file"
+        uri = "/dev/null"
 
-		format = {
-			type = "tsv"
+        format = {
+            type = "tsv"
 
-			separator = "\t"
-			delimiter = "\n"
-			skip_first_line = false
-			header = true
-		}
-	}
+            separator = "\t"
+            delimiter = "\n"
+            skip_first_line = false
+            header = true
+        }
+    }
 }
 ```
 

@@ -60,49 +60,49 @@ When used with `villas node` the hook is configured as part of a path:
 
 ``` url="external/node/etc/labs/lab8.conf" title="node/etc/labs/lab8.conf"
 nodes = {
-	udp_node1 = {
-		type = "socket"
-		layer = "udp"
+    udp_node1 = {
+        type = "socket"
+        layer = "udp"
 
-		in = {
-			address = "*:12000"
+        in = {
+            address = "*:12000"
 
-			signals = (
-				{ name = "sig1", type = "float" },
-				{ name = "sig2", type = "float" },
-				{ name = "sig3", type = "float" },
-				{ name = "sig4", type = "float" }
-			)
-		}
-		out = {
-			address = "127.0.0.1:12001"
-		}
-	}
+            signals = (
+                { name = "sig1", type = "float" },
+                { name = "sig2", type = "float" },
+                { name = "sig3", type = "float" },
+                { name = "sig4", type = "float" }
+            )
+        }
+        out = {
+            address = "127.0.0.1:12001"
+        }
+    }
 }
 
 paths = (
-	{
-		in  = [ "udp_node1" ]
-		out = [ "udp_node1" ]
+    {
+        in  = [ "udp_node1" ]
+        out = [ "udp_node1" ]
 
-		hooks = (
-			{
-				type = "decimate"
-				priority = 1
+        hooks = (
+            {
+                type = "decimate"
+                priority = 1
 
-				# Hook specific parameters follow
-				# [parameter1] = [value1]
-				ratio = 2
-			},
-			{
-				type = "scale"
+                # Hook specific parameters follow
+                # [parameter1] = [value1]
+                ratio = 2
+            },
+            {
+                type = "scale"
 
-				signal = "sig3"
-				offset = 10.0
-				scale = 2.5
-			}
-		)
-	}
+                signal = "sig3"
+                offset = 10.0
+                scale = 2.5
+            }
+        )
+    }
 )
 ```
 

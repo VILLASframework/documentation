@@ -49,16 +49,16 @@ import ApiSchema from '@theme/ApiSchema';
 
 ``` url="external/node/etc/examples/formats/villas-binary.conf" title="node/etc/examples/formats/villas-binary.conf"
 nodes = {
-	node = {
-		type = "file"
-		uri = "/dev/null"
+    node = {
+        type = "file"
+        uri = "/dev/null"
 
-		format = {
-			type = "villas.binary"
+        format = {
+            type = "villas.binary"
 
-			source_index = 99
-		}
-	}
+            source_index = 99
+        }
+    }
 }
 ```
 

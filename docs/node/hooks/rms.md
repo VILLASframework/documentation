@@ -23,21 +23,21 @@ import ApiSchema from '@theme/ApiSchema';
 @include "hook-nodes.conf"
 
 paths = (
-	{
-		in = "signal_node"
-		out = "file_node"
+    {
+        in = "signal_node"
+        out = "file_node"
 
-		hooks = (
-			{
-				type = "rms",
+        hooks = (
+            {
+                type = "rms",
 
-				window_size = 1000
+                window_size = 1000
 
-				signals = [
-					"sine"
-				]
-			}
-		)
-	}
+                signals = [
+                    "sine"
+                ]
+            }
+        )
+    }
 )
 ```

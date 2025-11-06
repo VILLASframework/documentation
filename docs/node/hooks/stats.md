@@ -53,29 +53,32 @@ import ApiSchema from '@theme/ApiSchema';
 # Example
 
 ``` url="external/node/etc/examples/hooks/stats.conf" title="node/etc/examples/hooks/stats.conf"
+stats = 1
+
 nodes = {
-	udp_node = {
-		type = "socket"
+    signal_node = {
+        type = "signal"
+        signal = "mixed"
+        values = 5
+        rate = 50
 
-		in = {
-			address = "*:12000"
+        in = {
+            hooks = (
+                {
+                    type = "stats"
 
-			hooks = (
-				{
-					type = "stats"
-
-					verbose = true
-					warmup = 100
-					buckets = 25
-
-					output = "stats.log"
-					format = "json"
-				}
-			)
-		}
-		out = {
-			address = "127.0.0.1:12000"
-		}
-	}
+                    verbose = true
+                    warmup = 10
+                    buckets = 25
+                }
+            )
+        }
+    }
 }
+
+paths = (
+    {
+        in = "signal_node"
+    }
+)
 ```

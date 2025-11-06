@@ -25,19 +25,19 @@ import ApiSchema from '@theme/ApiSchema';
 @include "hook-nodes.conf"
 
 paths = (
-	{
-		in = "signal_node"
-		out = "file_node"
+    {
+        in = "signal_node"
+        out = "file_node"
 
-		hooks = (
-			{
-				type = "print",
+        hooks = (
+            {
+                type = "print",
 
-				output = "print_output_file.log"
-				format = "villas.human"
-				# prefix = "[file_node] " # prefix and output are exclusive settings!
-			}
-		)
-	}
+                output = "print_output_file.log"
+                format = "villas.human"
+                # prefix = "[file_node] " # Prefix and output are exclusive settings!
+            }
+        )
+    }
 )
 ```

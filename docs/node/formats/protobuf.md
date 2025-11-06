@@ -13,52 +13,53 @@ The `.proto` Protocol Buffers Version Language Specification of the payload used
 https://github.com/VILLASframework/node/blob/master/lib/formats/villas.proto
 
 ```protobuf url="external/node/lib/formats/villas.proto" title="node/lib/formats/villas.proto"
-/// Protobuf schema based on msg_format.h
-///
-/// @file
-/// @author Steffen Vogel <post@steffenvogel.de>
-/// @copyright 2014-2022, Institute for Automation of Complex Power Systems, EONERC
-/// @license Apache 2.0
-////////////////////////////////////////////////////////////////////////////////////
+// Protobuf schema based on msg_format.h
+//
+// @file
+// Author: Steffen Vogel <post@steffenvogel.de>
+// SPDX-FileCopyrightText: 2014-2023 Institute for Automation of Complex Power Systems, RWTH Aachen University
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto2";
 
 package villas.node;
 
 message Message {
-	repeated Sample samples = 1;
+  repeated Sample samples = 1;
 }
 
 message Sample {
-	enum Type {
-		DATA = 1;				// Message contains float / integer data values
-		START = 2;				// Message marks the beginning of a new simulation case
-		STOP = 3;				// Message marks the end of a simulation case
-	};
+  enum Type {
+    DATA = 1;				            // Message contains float / integer data values
+    START = 2;			            // Message marks the beginning of a new simulation case
+    STOP = 3;				            // Message marks the end of a simulation case
+  };
 
-	required Type type = 1 [default = DATA];
-	optional uint64 sequence = 2;			// The sequence number is incremented by one for consecutive messages.
-	optional Timestamp timestamp = 4;
-	repeated Value values = 5;
+  required Type type = 1 [default = DATA];
+  optional uint64 sequence = 2; // The sequence number is incremented for consecutive samples.
+  optional Timestamp ts_origin = 3;
+  optional Timestamp ts_received = 4;
+  optional bool new_frame = 5;
+  repeated Value values = 100;
 }
 
 message Timestamp {
-	required uint32 sec = 1;			// Seconds since 1970-01-01 00:00:00
-	required uint32 nsec = 2;			// Nanoseconds of the current second.
+  required uint32 sec = 1;		  // Seconds since 1970-01-01 00:00:00
+  required uint32 nsec = 2;		  // Nanoseconds of the current second.
 }
 
 message Value {
-	oneof value {
-		double f = 1;				// Floating point values.
-		int64 i = 2;				// Integer values.
-		bool b = 3;				// Boolean values.
-		Complex z = 4;				// Complex values.
-	}
+  oneof value {
+    double f = 1;				        // Floating point values.
+    int64 i = 2;				        // Integer values.
+    bool b = 3;				          // Boolean values.
+    Complex z = 4;			        // Complex values.
+  }
 }
 
 message Complex {
-	required float real = 1;			// Real component
-	required float imag = 2;			// Imaginary component
+  required float real = 1;		  // Real component
+  required float imag = 2;		  // Imaginary component
 }
 ```
 
@@ -77,11 +78,11 @@ import ApiSchema from '@theme/ApiSchema';
 
 ``` url="external/node/etc/examples/formats/protobuf.conf" title="node/etc/examples/formats/protobuf.conf"
 nodes = {
-	node = {
-		type = "file"
-		uri = "/dev/null"
+    node = {
+        type = "file"
+        uri = "/dev/null"
 
-		format = "protobuf"
-	}
+        format = "protobuf"
+    }
 }
 ```
