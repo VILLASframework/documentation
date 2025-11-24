@@ -101,7 +101,7 @@ Most contributions are made by the following authors:
 
 [OPAL-RT Germany GmbH](https://www.opal-rt.com/)
 
-<img alt="OPAL-RT Germany Logo" src="/img/logos/opal.jpg" align="right" width="250" height="auto" />
+<img align="right" width="250px" src="/img/logos/opal-rt.svg" alt="OPAL-RT logo"></img>
 
 ## Contact &amp; Community
 

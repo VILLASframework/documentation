@@ -2,7 +2,7 @@
 hide_table_of_contents: true
 ---
 
-# OPAL-RT Integration
+# OPAL-RT Integration <img align="right" width="250px" src="/img/logos/opal-rt.svg" alt="OPAL-RT logo"></img>
 
 There are three options to exchange simulation signals with an OPAL-RT real-time simulator:
 

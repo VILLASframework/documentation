@@ -3,7 +3,7 @@ sidebar_label: OPAL-RT RT-LAB
 title: OPAL-RT RT-LAB Asynchronous Process (AsyncIP)
 ---
 
-# OPAL-RT RT-LAB Asynchronous Process (AsyncIP) <img align="right" width="250px" src="/img/logos/opal.jpg" alt="OPAL-RT logo"></img>
+# OPAL-RT RT-LAB Asynchronous Process (AsyncIP) <img align="right" width="250px" src="/img/logos/opal-rt.svg" alt="OPAL-RT logo"></img>
 
 ## OPAL-RT RT-LAB Example Project
 
