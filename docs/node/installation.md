@@ -6,7 +6,8 @@ sidebar_position: 3
 
 VILLASnode can be installed in multiple ways:
 
-- [Precompiled standalone binaries](#standalone)
+- [Pre-compiled standalone binaries](#standalone)
+- [Pre-compiled RPM package](#rpm)
 - [Docker image](https://git.rwth-aachen.de/acs/public/villas/node/container_registry)
 - [Kubernetes (Helm chart)](../installation.md)
 - [Nix Flake](#nix)
@@ -18,45 +19,68 @@ Please make sure that your system fulfills the [requirements](requirements.md) b
 
 ## From sources {#source}
 
-VILLASnode can be compiled from source using [CMake](http://cmake.org).
+VILLASnode can be compiled from source using [CMake](http://cmake.org):
+
+#### TL;DR Version
+
+```shell
+mkdir -p ~/build/villas
+cd ~/build/villas
+
+git clone https://github.com/VILLASframework/node.git
+
+mkdir -p node/{prefix,build}
+cd node
+
+export PREFIX=/opt/villas
+export CMAKE_PREFIX_PATH=${PREFIX}
+export CMAKE_INSTALL_PREFIX=${PREFIX}
+mkdir -p ${PREFIX}
+
+DEPS_NONINTERACTIVE=1 \
+bash packaging/deps.sh
+
+cmake -B build -S .
+cmake --build build --parallel 4 --target install 
+```
 
 ### Prerequisites
 
 VILLASnode currently has the following list of dependencies:
 
-| Package | Version | Purpose | Optional | License |
-| --- | --- | --- | --- | --- |
-| [CMake](http://cmake.org/) | >= 3.9 | for generating the build-system | required | BSD 3 |
-| [fmtlib](https://github.com/fmtlib/fmt) | >= 6.1.2 | for string formatting | required | MIT |
-| [libcurl](https://curl.haxx.se/libcurl/) | >= 7.29.0 | for HTTP REST requests by the [NGSI node-type](nodes/ngsi.md) node-type | required | similar to MIT |
-| [libjansson](http://www.digip.org/jansson/) | >= 2.7 | JSON parser for [Websocket node-type](nodes/websocket.md) and [NGSI node-type](nodes/ngsi.md) node-types | required | MIT |
-| [libuuid](https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git) | >= 2.29 | - | required | BSD |
-| [libwebsockets](http://libwebsockets.org) | >= 3.1.0 | for the [Websocket node-type](nodes/websocket.md) | required | MIT |
-| [openssl](https://www.openssl.org) | >= 1.0.0 | for cryptographic hashing functions | required | Apache 2 for >=3.0 |
-| [spdlog](https://github.com/gabime/spdlog) | >= 1.8.2 | for logging | required | MIT |
-| [comedilib](http://comedi.org) | >= 0.11.0 | for the [Comedi node-type](nodes/comedi.md) | optional | LGPL-2.1 |
-| [Criterion](https://github.com/Snaipe/Criterion) | >= 2.3.1 | for running the unit tests | optional | MIT |
-| [Etherlab](http://etherlab.org) | >= 1.5.2 | for the [Ethercat node-type](nodes/ethercat.md) | optional | __GPL 3__ |
-| [Graphviz](https://graphviz.org/) | >= 2.30 | for the visualisation of configuration files | optional | EPL |
-| [libconfig](http://www.hyperrealm.com/libconfig/) | >= 1.4.9 | for parsing the configuration file | optional | LGPL-2.1 |
-| [libdatachannel](https://libdatachannel.org/) | >= 0.18.4 | for the WebRTC node-type | optional | MPL-2.0 |
-| [libibverbs](https://github.com/linux-rdma/rdma-core) | >= 16.2 | for the [Infiniband node-type](nodes/infiniband.md) | optional | BSD |
-| [libiec61850](http://libiec61850.com/libiec61850/) | >= 1.3.1 | for the [IEC61850-8-1](nodes/iec61850-8-1.md) and [IEC61850-9-2](nodes/iec61850-9-2.md) node-types | optional | __GPL 3__ |
-| [libmodbus](https://libmodbus.org/) | >= 3.1.0 | for the [Modbus](nodes/modbus.md) node-type | optional | LGPL-2.1 |
-| [libnanomsg](http://nanomsg.org/) | >= 1.0.0 | for the [Nanomsg node-type](nodes/nanomsg.md) | optional | MIT |
-| [libnice](https://libnice.freedesktop.org/) | >= 0.1.16 | for libdatachannel / WebRTC | optional | MPL-1.1 & LGPL-2.1 |
-| [libnl3](http://www.infradead.org/~tgr/libnl/) | >= 3.2.27 | for the network communication & emulation support of the [Socket node-type](nodes/socket.md) node-type | optional | LGPL-2.1 |
-| [librdmacm](https://github.com/linux-rdma/rdma-core) | >= 16.2 | for the [Infiniband node-type](nodes/infiniband.md) | optional | BSD |
-| [libre](http://www.creytiv.com/re.html) | >= 2.9.0 | for the [RTP node-type](nodes/rtp.md) | optional | BSD 3 |
-| [libuldaq](https://github.com/mccdaq/uldaq) | >= 1.0.0 | for the [ULDAQ node-type](nodes/uldaq.md) | optional | MIT |
-| [libxil](https://github.com/VILLASframework/libxil) | >= 1.0.0 | for the [VILLASfpga node-type](nodes/fpga.md) | optional | MIT |
-| [libzmq](http://zeromq.org) | >= 2.2.0 | for the [ZeroMQ node-type](nodes/zeromq.md) | optional | MPL-2.0 |
-| [Lua](http://www.lua.org/) | >= 5.1 | for the [Lua hook](hooks/lua.md) | optional | MIT |
-| [mosquitto](https://mosquitto.org) | >= 1.4.15 | for the [MQTT node-type](nodes/mqtt.md) | optional | EPL 2 |
-| [protobuf-c](https://github.com/protobuf-c/protobuf-c/) | >= 1.1.0 | for the [Protobuf format-type](formats/protobuf.md) | optional | similar to BSD |
-| [protobuf](https://github.com/google/protobuf) | >= 2.6.0 | for the [Protobuf format-type](formats/protobuf.md) | optional | similar to BSD |
-| [rabbitmq-c](https://github.com/alanxz/rabbitmq-c) | >= 0.8.0 | for the [AMQP node-type](nodes/amqp.md) | optional | MIT |
-| [rdkafka](https://github.com/edenhill/librdkafka) | >= 1.5.0 | for the [Kafka node-type](nodes/kafka.md) | optional | BSD |
+| Package                                                         | Version   | Purpose                                                                                                  | Optional | License            |
+| --------------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------- | -------- | ------------------ |
+| [CMake](http://cmake.org/)                                      | >= 3.9    | for generating the build-system                                                                          | required | BSD 3              |
+| [fmtlib](https://github.com/fmtlib/fmt)                         | >= 6.1.2  | for string formatting                                                                                    | required | MIT                |
+| [libcurl](https://curl.haxx.se/libcurl/)                        | >= 7.29.0 | for HTTP REST requests by the [NGSI node-type](nodes/ngsi.md) node-type                                  | required | similar to MIT     |
+| [libjansson](http://www.digip.org/jansson/)                     | >= 2.7    | JSON parser for [Websocket node-type](nodes/websocket.md) and [NGSI node-type](nodes/ngsi.md) node-types | required | MIT                |
+| [libuuid](https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git) | >= 2.29   | -                                                                                                        | required | BSD                |
+| [libwebsockets](http://libwebsockets.org)                       | >= 3.1.0  | for the [Websocket node-type](nodes/websocket.md)                                                        | required | MIT                |
+| [openssl](https://www.openssl.org)                              | >= 1.0.0  | for cryptographic hashing functions                                                                      | required | Apache 2 for >=3.0 |
+| [spdlog](https://github.com/gabime/spdlog)                      | >= 1.8.2  | for logging                                                                                              | required | MIT                |
+| [comedilib](http://comedi.org)                                  | >= 0.11.0 | for the [Comedi node-type](nodes/comedi.md)                                                              | optional | LGPL-2.1           |
+| [Criterion](https://github.com/Snaipe/Criterion)                | >= 2.3.1  | for running the unit tests                                                                               | optional | MIT                |
+| [Etherlab](http://etherlab.org)                                 | >= 1.5.2  | for the [Ethercat node-type](nodes/ethercat.md)                                                          | optional | __GPL 3__          |
+| [Graphviz](https://graphviz.org/)                               | >= 2.30   | for the visualisation of configuration files                                                             | optional | EPL                |
+| [libconfig](http://www.hyperrealm.com/libconfig/)               | >= 1.4.9  | for parsing the configuration file                                                                       | optional | LGPL-2.1           |
+| [libdatachannel](https://libdatachannel.org/)                   | >= 0.18.4 | for the WebRTC node-type                                                                                 | optional | MPL-2.0            |
+| [libibverbs](https://github.com/linux-rdma/rdma-core)           | >= 16.2   | for the [Infiniband node-type](nodes/infiniband.md)                                                      | optional | BSD                |
+| [libiec61850](http://libiec61850.com/libiec61850/)              | >= 1.3.1  | for the [IEC61850-8-1](nodes/iec61850-8-1.md) and [IEC61850-9-2](nodes/iec61850-9-2.md) node-types       | optional | __GPL 3__          |
+| [libmodbus](https://libmodbus.org/)                             | >= 3.1.0  | for the [Modbus](nodes/modbus.md) node-type                                                              | optional | LGPL-2.1           |
+| [libnanomsg](http://nanomsg.org/)                               | >= 1.0.0  | for the [Nanomsg node-type](nodes/nanomsg.md)                                                            | optional | MIT                |
+| [libnice](https://libnice.freedesktop.org/)                     | >= 0.1.16 | for libdatachannel / WebRTC                                                                              | optional | MPL-1.1 & LGPL-2.1 |
+| [libnl3](http://www.infradead.org/~tgr/libnl/)                  | >= 3.2.27 | for the network communication & emulation support of the [Socket node-type](nodes/socket.md) node-type   | optional | LGPL-2.1           |
+| [librdmacm](https://github.com/linux-rdma/rdma-core)            | >= 16.2   | for the [Infiniband node-type](nodes/infiniband.md)                                                      | optional | BSD                |
+| [libre](http://www.creytiv.com/re.html)                         | >= 2.9.0  | for the [RTP node-type](nodes/rtp.md)                                                                    | optional | BSD 3              |
+| [libuldaq](https://github.com/mccdaq/uldaq)                     | >= 1.0.0  | for the [ULDAQ node-type](nodes/uldaq.md)                                                                | optional | MIT                |
+| [libxil](https://github.com/VILLASframework/libxil)             | >= 1.0.0  | for the [VILLASfpga node-type](nodes/fpga.md)                                                            | optional | MIT                |
+| [libzmq](http://zeromq.org)                                     | >= 2.2.0  | for the [ZeroMQ node-type](nodes/zeromq.md)                                                              | optional | MPL-2.0            |
+| [Lua](http://www.lua.org/)                                      | >= 5.1    | for the [Lua hook](hooks/lua.md)                                                                         | optional | MIT                |
+| [mosquitto](https://mosquitto.org)                              | >= 1.4.15 | for the [MQTT node-type](nodes/mqtt.md)                                                                  | optional | EPL 2              |
+| [protobuf-c](https://github.com/protobuf-c/protobuf-c/)         | >= 1.1.0  | for the [Protobuf format-type](formats/protobuf.md)                                                      | optional | similar to BSD     |
+| [protobuf](https://github.com/google/protobuf)                  | >= 2.6.0  | for the [Protobuf format-type](formats/protobuf.md)                                                      | optional | similar to BSD     |
+| [rabbitmq-c](https://github.com/alanxz/rabbitmq-c)              | >= 0.8.0  | for the [AMQP node-type](nodes/amqp.md)                                                                  | optional | MIT                |
+| [rdkafka](https://github.com/edenhill/librdkafka)               | >= 1.5.0  | for the [Kafka node-type](nodes/kafka.md)                                                                | optional | BSD                |
 
 There are three ways to install these dependencies:
 
@@ -192,11 +216,9 @@ DEPS_INCLUDE='uldaq jansson' bash packaging/deps.sh
 DEPS_SKIP='libre rdkafka' bash packaging/deps.sh
 ```
 
-## Compile and install
+### Compile VILLASnode
 
 `VILLASnode` uses CMake for the build and install process.
-
-### Simple build
 
 Simply build VILLASnode with all features available for the dependencies installed on your system.
 
@@ -211,7 +233,7 @@ cmake --build ./build
 ./build/src/villas-node -h
 ```
 
-### Installation
+### Install VILLASnode
 
 You can also install the binaries and tools into to your search path after building them.
 
@@ -288,7 +310,7 @@ This can be achieved by using the `WITHOUT_GPL` CMake option:
 cmake -S . -B build -DWITHOUT_GPL=ON
 ```
 
-## Single-binary / Standalone Executable {#standalone}
+## Pre-compiled standalone binary {#standalone}
 
 We provide single-binary / standalone executable builds of VILLASnode bundle all depdendencies in a [self-extracting ARX archive](https://en.wikipedia.org/wiki/Self-extracting_archive).
 These standalone binaries allow running VILLASnode irrespectively of the underlying Linux distribution or availability of library dependencies.
@@ -311,7 +333,23 @@ The standalone VILLASnode binary is currently only compatible Linux systems runn
 -  ARM v8 Aarch64
 ::::
 
-## Docker images {#docker}
+## Pre-compiled RPM package {#rpm}
+
+VILLASnode can be installed from an pre-compiled package on systems with which use the RPM package manager, such as:
+
+- Fedora and derivatives
+- Redhat Enterprise Linux
+- CentOS stream
+- Rocky Linux
+
+```shell
+rpm \
+    --install \
+    --excludepath=/usr/lib/.build-id/ \
+    'https://git.rwth-aachen.de/api/v4/projects/79039/jobs/artifacts/master/raw/artifacts/villas-x86_64-linux.rpm?job=pkg:nix:rpm:%20[x86_64-linux]'
+```
+
+## Docker Images {#docker}
 
 There exists a set of Docker images for running and developing VILLASnode.
 Docker images are available for x86_64/amd64, armhf and arm64 architectures it you can run it also on a Raspberry Pi or other embedded platforms.

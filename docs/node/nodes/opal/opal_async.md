@@ -14,7 +14,7 @@ They are used to exchange data between RT-LAB Simulink models and custom user-de
 :::danger[Deprecation]
 The `opal.async` node-type is deprecated for the following reasons.
 
-**Please consider the more actively supported [`opal.orchestra`](./orchestra) node-type instead!**
+**Please consider the more actively supported [`opal.orchestra`](./opal_orchestra) node-type instead!**
 
 - The OPAL-RT **HYPERSIM** simulation environment is not supported.
 - Older targets running RHEL / CentOS operating systems are not supported.
