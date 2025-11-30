@@ -1,26 +1,42 @@
 ---
 hide_table_of_contents: true
+sidebar_position: 1
 ---
 
-# OPAL-RT Orchestra
+# Orchestra
 
-Orchstra is OPAL-RT's co-simulation framework for integrating custom code and external models.
-More information about Orchestra can be found in the [OPAL-RT Wiki](https://opal-rt.atlassian.net/wiki/spaces/PRD/pages/143626248/Orchestra).
+Orchestra is OPAL-RT's co-simulation framework for integrating custom code and external models.
+More information about Orchestra can be found in the [OPAL-RT Wiki](https://opal-rt.atlassian.net/wiki/spaces/PRD/pages/505348099/Orchestra+I+O).
+
+:::tip
+Please familiarize yourself first with Orchestra using the [OPAL-RT Wiki](https://opal-rt.atlassian.net/wiki/spaces/PRD/pages/505348099/Orchestra+I+O) before attempting to use it with VILLASnode.
+:::
 
 ## Prerequisites
 
-- `libOpalOrchestra.so` & `RTAPI.h`
+- A OPAL-RT real-time simulator.
+- 64-bit OPAL-RT Linux v3.4.1 or newer.
+    - `libOpalOrchestra.so` & `RTAPI.h`
+- One of:
+    - RT-LAB v2025.1 or newer
+    - HYPERSIM v2025.3 or newer
+
+:::info
+The RT-LAB and HYPERSIM versions above were validated. Other versions might work as well. Use at your own discretion.
+:::
+
+:::caution
+Older 32-bit OPAL-RT targets running RHEL / CentOS operating systems are not supported.
+:::
 
 ## Implementation
 
-:::note
-The implementation of the `opal.orchestra` node-type is currently not open source.
-
-Please contact [Steffen Vogel](mailto:steffen.vogel@opal-rt.com) if you are interested in run
-:::
+The source code of the node-type is available here:
+https://github.com/VILLASframework/node/blob/master/lib/nodes/opal_orchestra.cpp
 
 ## Installation
 
+Please refer to the [Lab 21](../../guides/lab21) for a detailed guide on how to install VILLASnode on an OPAL-RT Real-time target.
 
 ## Configuration {#config}
 
@@ -137,3 +153,17 @@ paths = (
     }
 )
 ```
+
+## Running VILLASnode on a remote system
+
+Orchestra offers the possibility to run VILLASnode (as an Orchestra client) on a separate machine from the real-time target.
+This allows for integration and Co-simulation external systems.
+In this case signals between the client and the framework are exchanged over a TCP or UDP/IP connection.
+
+:::caution
+This is an advanced use-case as it requires linking of VILLASnode against `libOpalOrchestra.so` on a non-OPAL-RTLinux system.
+
+When [building VILLASnode with Nix](../../installation.md#nix), or using any of the by-Nix pre-compiled installations options like the [standalone](../../installation.md#standalone) or  `.rpm` packages or [Docker images](../../installation.md#docker),
+VILLASnode, should be already compiled with the necessary `libOpalOrchestra.so` library and `OrchestraExtCommIP` helper tool.
+:::
+
