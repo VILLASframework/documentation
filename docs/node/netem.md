@@ -42,7 +42,7 @@ Netem supports loading custom delay distributions.
 ## Further information
 
  - https://git.kernel.org/cgit/linux/kernel/git/shemminger/iproute2.git/tree/README.iproute2+tc
- - https://github.com/stv0g/netem
+ - https://codeberg.org/stv0g/netplika
 
 ## Configuration
 
