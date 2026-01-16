@@ -81,6 +81,7 @@ VILLASnode currently has the following list of dependencies:
 | [protobuf](https://github.com/google/protobuf)                  | >= 2.6.0  | for the [Protobuf format-type](formats/protobuf.md)                                                      | optional | similar to BSD     |
 | [rabbitmq-c](https://github.com/alanxz/rabbitmq-c)              | >= 0.8.0  | for the [AMQP node-type](nodes/amqp.md)                                                                  | optional | MIT                |
 | [rdkafka](https://github.com/edenhill/librdkafka)               | >= 1.5.0  | for the [Kafka node-type](nodes/kafka.md)                                                                | optional | BSD                |
+| [bzip2](https://gitlab.com/federicomenaquintero/bzip2.git)      | >= 1.0.8  | for the [Create Chronics hook](hooks/create_chronics.md)
 
 There are three ways to install these dependencies:
 
@@ -123,7 +124,8 @@ sudo apt-get install \
     uuid-dev \
     libre2-dev \
     libglib2.0-dev \
-    libcriterion-dev
+    libcriterion-dev \
+    libbz2-dev
 ```
 
 or the following line for Fedora/Redhat/RockyLinux systems:
@@ -163,7 +165,8 @@ sudo dnf install \
     spdlog-devel \
     zeromq-devel \
     glib2-devel \
-    libnice-devel
+    libnice-devel \
+    bzip2-devel
 
 ```
 
