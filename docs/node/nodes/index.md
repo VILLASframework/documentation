@@ -27,6 +27,7 @@ VILLASnode currently supports the following node-types:
 | [exec](exec.md)                     | no                | yes  | yes   | unlimited | stable      | |
 | [file](file.md)                     | no                | yes  | yes   | unlimited | stable      | |
 | [fpga](fpga.md)                     | no                | yes  | yes   | ?         | beta        | |
+| [gateway](gateway.md)               | no                | yes  | yes   | unlimited | stable      | HTTP to gRPC conversion only |
 | [iec60870-5-104](iec60870-5-104.md) | no                | no   | yes   | 1         | stable      | |
 | [iec61850-8-1](iec61850-8-1.md)     | no                | yes  | yes   | 1         | alpha       | |
 | [iec61850-9-2](iec61850-9-2.md)     | no                | yes  | yes   | 1         | beta        | |
