@@ -61,7 +61,7 @@ If the http request body is empty, the input from other node will be used.
 
 Since this node-type does not implement the gRPC server, it needs to be added manually. A description is available [here](https://www.acs.eonerc.rwth-aachen.de/global/show_document.asp?id=aaaaaaaadidaesd).
 
-Note on http methods
+Note on HTTP methods
  - GET should be used only when the input of gRPC method can be empty or ignored.
  - PUT should be used when the output of gRPC method is in VILLASnode format and the user want to put the data to the path.
  - POST should be used when the output of gRPC method is not in VILLASnode format or the user not want output data to the path.
