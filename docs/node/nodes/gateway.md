@@ -55,7 +55,7 @@ nodes = {
 ## Usage
 
 The usage of this node is similar to [`api`](api.md) node-type.
-The following [`curl`](https://curl.se/) commands are examples for calling gRPC methods with http API.
+The following [`curl`](https://curl.se/) commands are examples for calling gRPC methods via the HTTP API.
 The input for a gRPC call can be either the body of http request or input data from another node (via a [path](../config/paths.md)).
 If the http request body is empty, the input from other node will be used.
 
