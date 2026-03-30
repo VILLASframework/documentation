@@ -105,7 +105,7 @@ curl http://localhost:8080/api/v2/gateway/gateway_node/ex_server/ex_service/GetD
 ```
 Since the PUT method is used, the output from gRPC method will be put to the path.
 
-### Call SetData method on gRPC server
+### Call `SetData` method on gRPC server
 
 ```shell
 curl http://localhost:8080/api/v2/gateway/gateway_node/ex_server/ex_service/SetData -XPOST
