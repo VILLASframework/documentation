@@ -5,15 +5,8 @@ hide_table_of_contents: true
 
 # Gateway
 
-The `gateway` node-type enables VILLASnode to transform Application Programmable Interfaces (API) types. 
+The `gateway` node-type enables VILLASnode to translate between Application Programmable Interfaces (API) types. 
 Currently, the transformation of [HTTP](https://en.wikipedia.org/wiki/HTTP) and [gRPC](https://grpc.io/) is supported. 
-
-
-### Limitations
-
-- For protobuf payload that is not [VILLASnode format](../formats/protobuf.md), only simple datatypes are supported. 
-- It only supportes unary RPC.
-
 
 ## Prerequisites
 
@@ -25,6 +18,10 @@ Please refer to the [installation document](../installation.md).
 
 The source code of the node-type is available here:
 https://github.com/VILLASframework/node/blob/master/lib/nodes/gateway.cpp
+
+### Limitations
+
+- The `gateway` node-type only supportes unary RPC.
 
 ## Configuration {#config}
 
@@ -59,13 +56,12 @@ The following [`curl`](https://curl.se/) commands are examples for calling gRPC 
 The input for a gRPC call can be either the body of HTTP request or input data from another node (via a [path](../config/paths.md)).
 If the http request body is empty, the input from other node will be used.
 
-Since this node-type does not implement the gRPC server, it needs to be added manually. A description is available [here](https://www.acs.eonerc.rwth-aachen.de/global/show_document.asp?id=aaaaaaaadidaesd).
+Since this node-type does not implement the gRPC server, it needs to be added manually. A description is available [1].
 
 Note on HTTP methods
  - GET should be used only when the input of gRPC method can be empty or ignored.
  - PUT should be used when the output of gRPC method is in VILLASnode format and the user want to put the data to the path.
  - POST should be used when the output of gRPC method is not in VILLASnode format or the user not want output data to the path.
-
 
 ### General Request
 
@@ -74,7 +70,7 @@ The URL for sending a request to the gateway node-type is as following:
 http://<address>:<port>/api/v2/gateway/<node name or UUID>/<gRPC package>/<gRPC service>/<gRPC method>
 ```
 
-The following `.proto` file will be used as an example
+The following `server.proto` file will be used as an example which imports the already existing [`villas.proto`](https://github.com/VILLASframework/node/blob/master/lib/formats/villas.proto) data format. 
 ```
 syntax = "proto3";
 
@@ -99,22 +95,30 @@ message msg {
 ```
 
 ### Call `GetData` method on gRPC server
+The `GetData` method writes the data from gRPC server to the VILLASnode path. 
+It uses the PUT method. 
 
 ```shell
 curl http://localhost:8080/api/v2/gateway/gateway_node/ex_server/ex_service/GetData -XPUT
 ```
-Since the PUT method is used, the output from gRPC method will be put to the path.
 
 ### Call `SetData` method on gRPC server
+The `SetData` method writes the data from the VILLASnode path to the gRPC server. 
+No data is given in the request body. 
+It uses the POST method. 
 
 ```shell
 curl http://localhost:8080/api/v2/gateway/gateway_node/ex_server/ex_service/SetData -XPOST
 ```
-Since the body is empty the data from the path will be send to gRPC server.
 
 ### Call `GetDataRef` method on gRPC server
+The `GetDataRef` method requests data of the gRPC based on input references, e.g., referring to nodes in the simulation. 
+The body provides a protobuf payload based on the example `.proto` file. 
+VILLASnode send the request to the gRPC server.
 
 ```shell
 curl http://localhost:8080/api/v2/gateway/gateway_node/ex_server/ex_service/GetDataRef -d '{"ref":[0,1,2,3,4]}'
 ```
-Since the body is not empty, it will a protobuf payload based on the example `.proto` file and send to the gRPC server.
+
+# Reference
+[1] Jitpanu Maneeratpongsuk, "Enhancing Interoperability and Automation in Co-Simulations: An API Gateway Approach for VILLASnode," [Online]. Available: https://www.acs.eonerc.rwth-aachen.de/global/show_document.asp?id=aaaaaaaadidaesd
