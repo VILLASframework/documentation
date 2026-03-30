@@ -98,7 +98,7 @@ message msg {
 
 ```
 
-### Call GetData method on gRPC server
+### Call `GetData` method on gRPC server
 
 ```shell
 curl http://localhost:8080/api/v2/gateway/gateway_node/ex_server/ex_service/GetData -XPUT
