@@ -69,7 +69,7 @@ Note on http methods
 
 ### General Request
 
-The url for sending a request to the gateway node-type is as following:
+The URL for sending a request to the gateway node-type is as following:
 ```
 http://<address>:<port>/api/v2/gateway/<node name or UUID>/<gRPC package>/<gRPC service>/<gRPC method>
 ```
