@@ -112,7 +112,7 @@ curl http://localhost:8080/api/v2/gateway/gateway_node/ex_server/ex_service/SetD
 ```
 Since the body is empty the data from the path will be send to gRPC server.
 
-### Call GetDataRef method on gRPC server
+### Call `GetDataRef` method on gRPC server
 
 ```shell
 curl http://localhost:8080/api/v2/gateway/gateway_node/ex_server/ex_service/GetDataRef -d '{"ref":[0,1,2,3,4]}'
