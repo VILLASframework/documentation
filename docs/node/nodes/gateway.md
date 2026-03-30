@@ -6,7 +6,7 @@ hide_table_of_contents: true
 # Gateway
 
 The `gateway` node-type enables VILLASnode to transform Application Programmable Interfaces (API) types. 
-Currently, the transformation of [http](https://en.wikipedia.org/wiki/HTTP) and [gRPC](https://grpc.io/) is supported. 
+Currently, the transformation of [HTTP](https://en.wikipedia.org/wiki/HTTP) and [gRPC](https://grpc.io/) is supported. 
 
 
 ### Limitations
