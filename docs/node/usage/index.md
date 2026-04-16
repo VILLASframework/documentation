@@ -32,3 +32,4 @@ For detailed documentation, please see: 'villas node'
 - [`villas test`](villas-test.md)
 - [`villas zmq-keygen`](villas-zmq-keygen.md)
 - [`villas conf2json`](villas-conf2json.md)
+- [`villas chronics`](villas-chronics.md)
