@@ -15,7 +15,7 @@ The `json.kafka` format-type supports the following settings:
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/json_kafka" />
+<ApiSchema id="node" example pointer="#/components/schemas/format-json_kafka" />
 
 ## Example Configuration {#example}
 

@@ -22,7 +22,7 @@ https://github.com/VILLASframework/node/blob/master/lib/nodes/uldaq.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/uldaq" />
+<ApiSchema id="node" example pointer="#/components/schemas/node-uldaq" />
 
 ## Example
 

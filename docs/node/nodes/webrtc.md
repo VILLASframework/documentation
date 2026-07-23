@@ -77,7 +77,7 @@ There exists an example WebRTC peer implementation running in a web-browser:
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/webrtc" />
+<ApiSchema id="node" example pointer="#/components/schemas/node-webrtc" />
 
 ## Example
 

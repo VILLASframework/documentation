@@ -15,7 +15,7 @@ https://github.com/VILLASframework/node/blob/master/lib/hooks/decimate.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/decimate" />
+<ApiSchema id="node" example pointer="#/components/schemas/hook-decimate" />
 
 ## Example
 

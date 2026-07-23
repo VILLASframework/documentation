@@ -24,7 +24,7 @@ https://github.com/VILLASframework/node/blob/master/lib/nodes/signal_v2.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/signal_v2_node" />
+<ApiSchema id="node" example pointer="#/components/schemas/node-signal_v2" />
 
 ## Example
 

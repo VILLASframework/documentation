@@ -20,7 +20,7 @@ https://github.com/VILLASframework/node/blob/master/lib/nodes/mqtt.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/mqtt" />
+<ApiSchema id="node" example pointer="#/components/schemas/node-mqtt" />
 
 ## Example
 

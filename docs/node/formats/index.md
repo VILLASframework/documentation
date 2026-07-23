@@ -90,11 +90,3 @@ nodes = {
     }
 }
 ```
-
-## Abstract format-types {#abstract}
-
-Thanks to C++ inheritance some format-types are well-suited as a base for other more specific format types:
-
-- [JSON-based](json.md)
-- [Line-based](line.md)
-  - [Column-based](column.md)

@@ -16,7 +16,7 @@ https://github.com/VILLASframework/node/blob/master/lib/hooks/limit_rate.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/limit_rate" />
+<ApiSchema id="node" example pointer="#/components/schemas/hook-limit_rate" />
 
 ## Example
 

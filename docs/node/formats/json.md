@@ -17,7 +17,7 @@ The `json` format-type supports the following settings:
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/json" />
+<ApiSchema id="node" example pointer="#/components/schemas/format-json" />
 
 ## Example Configuration {#example}
 

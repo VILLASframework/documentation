@@ -43,7 +43,7 @@ https://github.com/VILLASframework/node/blob/master/lib/formats/villas_binary.cp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/villas_binary" />
+<ApiSchema id="node" example pointer="#/components/schemas/format-villas_binary" />
 
 ## Example Configuration {#example}
 

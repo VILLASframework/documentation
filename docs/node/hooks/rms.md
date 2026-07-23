@@ -15,7 +15,7 @@ https://github.com/VILLASframework/node/blob/master/lib/hooks/rms.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/rms" />
+<ApiSchema id="node" example pointer="#/components/schemas/hook-rms" />
 
 ## Example
 

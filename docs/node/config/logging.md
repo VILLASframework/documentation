@@ -8,7 +8,7 @@ hide_table_of_contents: true
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/logging" />
+<ApiSchema id="node" example pointer="#/components/schemas/config-logging" />
 
 ## Example
 

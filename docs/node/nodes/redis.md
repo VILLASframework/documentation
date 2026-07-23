@@ -17,7 +17,7 @@ https://github.com/VILLASframework/node/blob/master/lib/nodes/redis.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/redis" />
+<ApiSchema id="node" example pointer="#/components/schemas/node-redis" />
 
 ## Example
 

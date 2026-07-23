@@ -34,7 +34,7 @@ However, for output data only the name of the monitor element is needed.
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/opendss" />
+<ApiSchema id="node" example pointer="#/components/schemas/node-opendss" />
 
 ## Example
 

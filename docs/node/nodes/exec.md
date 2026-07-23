@@ -23,7 +23,7 @@ https://github.com/VILLASframework/node/blob/master/lib/nodes/exec.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/exec" />
+<ApiSchema id="node" example pointer="#/components/schemas/node-exec" />
 
 ## Example
 

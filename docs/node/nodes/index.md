@@ -46,7 +46,7 @@ VILLASnode currently supports the following node-types:
 | [socket](socket.md)                 | yes               | yes  | yes   | unlimited | stable      | |
 | [stats](stats.md)                   | no                | yes  | no    | 1         | stable      | |
 | [temper](temper.md)                 | no                | yes  | no    | unlimited | stable      | |
-| [test-rtt](test-rtt.md)             | no                | yes  | yes   | unlimited | stable      | Virtual node-type |
+| [test_rtt](test_rtt.md)             | no                | yes  | yes   | unlimited | stable      | Virtual node-type |
 | [uldaq](uldaq.md)                   | no                | yes  | no    | unlimited | stable      | |
 | [webrtc](webrtc.md)                 | no                | yes  | yes   | unlimited | stable      | |
 | [websocket](websocket.md)           | no                | yes  | yes   | unlimited | stable      | |

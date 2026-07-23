@@ -18,7 +18,7 @@ https://github.com/VILLASframework/node/blob/master/lib/nodes/rtp.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/rtp" />
+<ApiSchema id="node" example pointer="#/components/schemas/node-rtp" />
 
 ## Example
 

@@ -22,7 +22,7 @@ https://github.com/VILLASframework/node/blob/master/lib/hooks/lua.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/lua" />
+<ApiSchema id="node" example pointer="#/components/schemas/hook-lua" />
 
 ## Example
 

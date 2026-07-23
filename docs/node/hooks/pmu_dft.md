@@ -19,7 +19,7 @@ https://github.com/VILLASframework/node/blob/master/lib/hooks/pmu_dft.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/pmu_dft" />
+<ApiSchema id="node" example pointer="#/components/schemas/hook-pmu_dft" />
 
 ## Example
 

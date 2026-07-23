@@ -42,7 +42,7 @@ https://github.com/VILLASframework/node/blob/master/lib/formats/opal_asyncip.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/villas_binary" />
+<ApiSchema id="node" example pointer="#/components/schemas/format-opal_asyncip" />
 
 ## Example Configuration {#example}
 

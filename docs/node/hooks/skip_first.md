@@ -16,7 +16,7 @@ https://github.com/VILLASframework/node/blob/master/lib/hooks/skip_first.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/skip_first" />
+<ApiSchema id="node" example pointer="#/components/schemas/hook-skip_first" />
 
 ## Example
 

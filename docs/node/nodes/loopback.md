@@ -22,7 +22,7 @@ https://github.com/VILLASframework/node/blob/master/lib/nodes/loopback.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/loopback" />
+<ApiSchema id="node" example pointer="#/components/schemas/node-loopback" />
 
 ## Example
 

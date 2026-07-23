@@ -16,7 +16,7 @@ https://github.com/VILLASframework/node/blob/master/lib/hooks/shift_ts.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/shift_ts" />
+<ApiSchema id="node" example pointer="#/components/schemas/hook-shift_ts" />
 
 ## Example
 

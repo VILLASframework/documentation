@@ -19,7 +19,7 @@ https://github.com/VILLASframework/node/blob/master/lib/nodes/stats.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/stats_node" />
+<ApiSchema id="node" example pointer="#/components/schemas/node-stats" />
 
 ## Example
 

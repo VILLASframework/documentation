@@ -72,7 +72,7 @@ https://github.com/VILLASframework/node/blob/master/lib/formats/protobuf.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/protobuf" />
+<ApiSchema id="node" example pointer="#/components/schemas/format-protobuf" />
 
 ## Example Configuration {#example}
 

@@ -21,7 +21,7 @@ https://github.com/VILLASframework/node/blob/master/lib/nodes/ethercat.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/ethercat" />
+<ApiSchema id="node" example pointer="#/components/schemas/node-ethercat" />
 
 ## Example
 

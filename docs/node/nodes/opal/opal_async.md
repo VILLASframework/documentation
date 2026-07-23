@@ -80,7 +80,7 @@ During model load the configuration file will be loaded to the target and used b
 
 import ApiSchema from '@theme/ApiSchema';
 
-{/* <ApiSchema id="node" example pointer="#/components/schemas/opal_async" /> */}
+{/* <ApiSchema id="node" example pointer="#/components/schemas/node-opal_async" /> */}
 
 ## Example
 

@@ -26,7 +26,7 @@ https://github.com/VILLASframework/node/blob/master/lib/nodes/temper.cpp
 ## Configuration {#config}
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/temper" />
+<ApiSchema id="node" example pointer="#/components/schemas/node-temper" />
 
 ## Example
 

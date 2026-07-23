@@ -17,7 +17,7 @@ The `ts` hook has no configurable options.
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/ts" />
+<ApiSchema id="node" example pointer="#/components/schemas/hook-ts" />
 
 ## Example
 

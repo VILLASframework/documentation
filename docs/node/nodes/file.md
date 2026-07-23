@@ -22,7 +22,7 @@ The node configuration is divided into two sub-groups: `in` and `out`.
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/file" />
+<ApiSchema id="node" example pointer="#/components/schemas/node-file" />
 
 ## Example
 

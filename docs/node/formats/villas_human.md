@@ -33,7 +33,7 @@ https://github.com/VILLASframework/node/blob/master/lib/formats/villas_human.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/villas_human" />
+<ApiSchema id="node" example pointer="#/components/schemas/format-villas_human" />
 
 ## Example Configuration {#example}
 

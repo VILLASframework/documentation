@@ -44,7 +44,7 @@ Please refer to the [Lab 21](../../guides/lab21) for a detailed guide on how to 
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/opal_orchestra" />
+<ApiSchema id="node" example pointer="#/components/schemas/node-opal_orchestra" />
 
 ## Example
 
