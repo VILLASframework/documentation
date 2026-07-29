@@ -21,6 +21,7 @@ VILLASnode currently supports the following node-types:
 | :--                                 | :--               | :--  | :--   | :--       | :--         | :--      |
 | [amqp](amqp.md)                     | no                | yes  | yes   | unlimited | stable      | |
 | [api](api.md)                       | no                | yes  | yes   | unlimited | stable      | |
+| [c37.118](c37_118.md)               | no                | yes  | yes   | 1         | alpha       | IEEE C37.118 synchrophasor protocol (PMU/PDC) |
 | [can](can.md)                       | no                | yes  | yes   | ?         | beta        | |
 | [comedi](comedi.md)                 | no                | yes  | yes   | unlimited | beta        | Support for a wide range of Analog/Digital Input/Output cards |
 | [ethercat](ethercat.md)             | no                | yes  | yes   | ?         | alpha       | |
