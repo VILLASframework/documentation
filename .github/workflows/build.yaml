@@ -1,0 +1,97 @@
+name: Build
+
+on:
+  push:
+    branches: [master]
+    tags: ["v*"]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-docs:
+    name: Build Documentation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Configure locale
+        run: |
+          sudo locale-gen en_US.UTF-8
+          sudo update-locale LANG=en_US.UTF-8
+
+      - name: Resolve draw.io release
+        id: drawio
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          import urllib.request
+
+          url = "https://api.github.com/repos/jgraph/drawio-desktop/releases/latest"
+          with urllib.request.urlopen(url) as r:
+              rel = json.load(r)
+
+          tag = rel["tag_name"]
+          asset = next(
+              a for a in rel["assets"]
+              if a["name"].startswith("drawio-amd64-") and a["name"].endswith(".deb")
+          )
+
+          print(f"tag={tag}")
+          print(f"asset_name={asset['name']}")
+          print(f"asset_url={asset['browser_download_url']}")
+          PY
+
+      - name: Install draw.io
+        shell: bash
+        run: |
+          set -euo pipefail
+          tmpdir=$(mktemp -d)
+          curl -fsSL "${{ steps.drawio.outputs.asset_url }}" -o "$tmpdir/${{ steps.drawio.outputs.asset_name }}"
+          sudo apt-get update
+          sudo apt-get -y install "$tmpdir/${{ steps.drawio.outputs.asset_name }}"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+          cache-dependency-path: yarn.lock
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile --prefer-offline
+
+      - name: Build documentation site
+        run: make docs
+
+      - name: Configure GitHub Pages
+        if: "${{ github.ref == 'refs/heads/master' }}"
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        if: "${{ github.ref == 'refs/heads/master' }}"
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+  deploy-pages:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: build-docs
+    if: "${{ github.ref == 'refs/heads/master' }}"
+    permissions:
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -8,7 +8,7 @@ VILLASnode can be installed in multiple ways:
 
 - [Pre-compiled standalone binaries](#standalone)
 - [Pre-compiled RPM package](#rpm)
-- [Container image](https://github.com/VILLASframework/node/pkgs/container/villas%2Fnode)
+- [Container image](https://github.com/VILLASframework/node/pkgs/container/node)
 - [Kubernetes (Helm chart)](../installation.md)
 - [Nix Flake](#nix)
 - or [from source](#source)
@@ -358,13 +358,13 @@ We use Alpinelinux-based images to keep the size of the image below 100MB.
 With a working Docker daemon, you can run it like this:
 
 ```shell
-docker run --privileged rghcr.io/villasframework/villas/node
+docker run --privileged ghcr.io/villasframework/node
 ```
 
 To start the main daemon, you can pass a configuration file via a volume mount:
 
 ```shell
-docker run --volume /path/to/my/local.conf:/config.conf --privileged ghcr.io/villasframework/villas/node node /config.conf
+docker run --volume /path/to/my/local.conf:/config.conf --privileged ghcr.io/villasframework/node node /config.conf
 ```
 
 ## Nix {#nix}
