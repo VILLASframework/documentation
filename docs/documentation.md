@@ -4,19 +4,6 @@ The VILLASframework documentation is built using [Docusaurus 2](https://docusaur
 
 ### Local Development
 
-#### Using Docker
-
-```
-$ make dev
-```
-
-### Using Devcontainers
-
-1. Clone repo in [Visual Studio Code](https://visualstudio.microsoft.com/de/)
-2. Reopen workspace in Devcontainer: `> Devcontainers: Reopen in Container`
-
-### Directly with Yarn
-
 #### Install
 
 ```
