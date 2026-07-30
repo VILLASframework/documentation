@@ -17,7 +17,7 @@ Please make sure that your system fulfills the [requirements](../requirements.md
 
 The [installation](installation.md) page lists several ways to install VILLASnode on your machine.
 
-For this guide, we recommend to use the [VILLASnode Docker image](../installation.md#docker) on your workstation.
+For this guide, we recommend to use the [VILLASnode container image](../installation.md#container) on your workstation.
 
 ::: note
 We provide a set of example configuration files at [github.com/VILLASframework/node/etc](https://github.com/VILLASframework/node/tree/master/etc).
@@ -25,10 +25,10 @@ We provide a set of example configuration files at [github.com/VILLASframework/n
 Please download these files or clone the VILLASnode Git repository to C:\VILLASnode so they can be used in the following labs.
 :::
 
-To open an interactive terminal in the VILLASnode Docker container run:
+To open an interactive terminal in the VILLASnode container run:
 
 ```shell
-docker run --privileged --tty --interactive --entrypoint bash --volume C:\VILLASnode\etc:/configs -p 80:80 registry.git.rwth-aachen.de/acs/public/villas/node
+docker run --privileged --tty --interactive --entrypoint bash --volume C:\VILLASnode\etc:/configs -p 80:80 ghcr.io/villasframework/node
 ```
 
 For some lab exercises two interactive shells are required. To open a second shell, run the following command:

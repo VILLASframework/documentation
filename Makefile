@@ -4,7 +4,7 @@ SVG_FIGURES = $(DRAWIO_FIGURES:%.drawio=%.svg)
 WEBM_VIDEOS = $(wildcard recordings/video/*.webm)
 MP4_VIDEOS =  $(WEBM_VIDEOS:%.webm=%.mp4)
 
-DOCKER_IMAGE ?= registry.git.rwth-aachen.de/acs/public/villas/documentation
+DOCKER_IMAGE ?= ghcr.io/villasframework/documentation
 DOCKER_TAG ?= $(shell git rev-parse --abbrev-ref HEAD)
 
 DRAWIO ?= /Applications/draw.io.app/Contents/MacOS/draw.io

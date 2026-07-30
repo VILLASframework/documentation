@@ -53,5 +53,5 @@ In general we recommend to run VILLASnode with super-user privileges (`sudo vill
 When VILLASnode is executed in a Docker container, please use the following command line:
 
 ```shell
-docker run -cpu-rt-period=1000000 --cpu-rt-runtime=800000 --ulimit rtprio=99 --cap-add sys_nice --privileged registry.git.rwth-aachen.de/acs/public/villas/node node
+docker run -cpu-rt-period=1000000 --cpu-rt-runtime=800000 --ulimit rtprio=99 --cap-add sys_nice --privileged ghcr.io/villasframework/node node
 ```
