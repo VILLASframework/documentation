@@ -49,7 +49,7 @@ helm repo update
 ```
 
 Create a minimal chart configuration file named `values.yaml` with the following contents:
-Please have a look at the charts [default values](https://git.rwth-aachen.de/acs/public/catalogue/-/blob/master/charts/villas/values.yaml) for more details about the available configuration options.
+Please have a look at the charts [default values](https://github.com/VILLASframework/chart/blob/master/charts/villas/values.yaml) for more details about the available configuration options.
 
 :::info
 In this guide we assume the host running Minikube is accessible via the local IP address `192.168.1.100`.
@@ -151,4 +151,4 @@ minikube kubectl -- logs pod/villas-web-backend-55846fb89f-64f66
 
 For more information on how to troubleshoot the setup with the `kubectl` tool, please consult [the `kubectl` documentation](https://kubernetes.io/docs/reference/kubectl/) and guides about Kubernetes in general.
 
-To gain a deeper understanding of the micro-service architecture, we recommend to also have a closer look at the [VILLAS Helm chart source code](https://git.rwth-aachen.de/acs/public/catalogue/-/tree/master/charts/villas).
+To gain a deeper understanding of the micro-service architecture, we recommend to also have a closer look at the [VILLAS Helm chart source code](https://github.com/VILLASframework/chart/tree/master/charts/villas).

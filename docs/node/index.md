@@ -30,7 +30,7 @@ The project consists of a server daemon and several client modules which are doc
   - Uses the latest C11/C++17 standards
   - Is easily extensible with new interface types, hook functions, and payload formats
 - Is released as open-source software under the GPLv3 license
-- Is easily deployable via [precompiled standalone binaries](./installation.md#standalone), a [Docker image](./installation.md#docker), or from [source](./installation.md#source)
+- Is easily deployable via [precompiled standalone binaries](./installation.md#standalone), a [Docker image](./installation.md#container), or from [source](./installation.md#source)
 - Relies only on open-source software libraries and the Linux kernel
 - Follows the Unix philosophy by providing a set of smaller command-line tools
 

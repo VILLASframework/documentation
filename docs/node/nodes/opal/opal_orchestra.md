@@ -163,7 +163,7 @@ In this case signals between the client and the framework are exchanged over a T
 :::caution
 This is an advanced use-case as it requires linking of VILLASnode against `libOpalOrchestra.so` on a non-OPAL-RTLinux system.
 
-When [building VILLASnode with Nix](../../installation.md#nix), or using any of the by-Nix pre-compiled installations options like the [standalone](../../installation.md#standalone) or  `.rpm` packages or [Docker images](../../installation.md#docker),
+When [building VILLASnode with Nix](../../installation.md#nix), or using any of the by-Nix pre-compiled installations options like the [standalone](../../installation.md#standalone) or  `.rpm` packages or [Docker images](../../installation.md#container),
 VILLASnode, should be already compiled with the necessary `libOpalOrchestra.so` library and `OrchestraExtCommIP` helper tool.
 :::
 

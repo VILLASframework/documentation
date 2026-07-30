@@ -8,7 +8,7 @@ VILLASnode can be installed in multiple ways:
 
 - [Pre-compiled standalone binaries](#standalone)
 - [Pre-compiled RPM package](#rpm)
-- [Docker image](https://git.rwth-aachen.de/acs/public/villas/node/container_registry)
+- [Container image](https://github.com/VILLASframework/node/pkgs/container/villas%2Fnode)
 - [Kubernetes (Helm chart)](../installation.md)
 - [Nix Flake](#nix)
 - or [from source](#source)
@@ -349,22 +349,22 @@ rpm \
     'https://git.rwth-aachen.de/api/v4/projects/79039/jobs/artifacts/master/raw/artifacts/villas-x86_64-linux.rpm?job=pkg:nix:rpm:%20[x86_64-linux]'
 ```
 
-## Docker Images {#docker}
+## Container Images {#container}
 
-There exists a set of Docker images for running and developing VILLASnode.
-Docker images are available for x86_64/amd64, armhf and arm64 architectures it you can run it also on a Raspberry Pi or other embedded platforms.
+There exists a set of container / Docker images for running and developing VILLASnode.
+Container images are available for x86_64 / amd64, armhf and arm64 architectures it you can run it also on a Raspberry Pi or other embedded platforms.
 We use Alpinelinux-based images to keep the size of the image below 100MB.
 
 With a working Docker daemon, you can run it like this:
 
 ```shell
-docker run --privileged registry.git.rwth-aachen.de/acs/public/villas/node
+docker run --privileged rghcr.io/villasframework/villas/node
 ```
 
 To start the main daemon, you can pass a configuration file via a volume mount:
 
 ```shell
-docker run --volume /path/to/my/local.conf:/config.conf --privileged registry.git.rwth-aachen.de/acs/public/villas/node node /config.conf
+docker run --volume /path/to/my/local.conf:/config.conf --privileged ghcr.io/villasframework/villas/node node /config.conf
 ```
 
 ## Nix {#nix}
