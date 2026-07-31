@@ -1,4 +1,4 @@
-# Contribution guidelines
+# Contribution Guidelines
 
 All contributions to VILLASframework are welcome! We are happy to receive your pull requests.
 
@@ -12,7 +12,19 @@ As the codebase and these guidelines evolve, the codebase may not always be in f
 Existing code should not be taken as and example for new code.
 PRs that update the style of existing code should be made separate from PRs that change or add code.
 
-## VILLASframework Coding Guidelines
+## LLM / AI Usage Guidelines
+
+- AI / LLM usage does not need to be declared in commit messages via `Co-authored-by`.
+- AI / LLM usage must be disclosed in the pull request description.
+- The disclosure must include which tools were used and for which parts of the contribution (for example: drafting text, suggesting code changes, or generating tests).
+- GitHub is where humans collaborate: pull request descriptions, comments, and issues must be written by and addressed to humans.
+- Pull requests must be sized so a human can review them in one sitting.
+- The submitter must understand the change well enough to explain and defend it during review.
+- Review comments must be addressed properly; pull requests that cannot be reviewed by humans, or that ignore reviewer feedback, may be closed or rejected.
+- Keep the DCO in mind: by signing off, you assert that you have the right to submit the contribution, regardless of how it was produced.
+
+
+## Coding Guidelines
 
 1. Automated formatting tools
     1. **clang-format:** The VILLASframework uses clang-format to enforce a consistent code style. Please refer to the [clang-format configuration](https://github.com/VILLASframework/node/blob/master/.clang-format). Please run `clang-format` on your code before making a commit.
