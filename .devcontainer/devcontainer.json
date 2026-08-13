@@ -2,11 +2,7 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
 {
 	"name": "VILLASdocumentation",
-	"build": {
-		"context": "..",
-		"dockerfile": "../Dockerfile",
-		"target": "dev"
-	},
+	"image": "node:23.11-bookworm",
 	"forwardPorts": [
 		3000
 	],
@@ -16,5 +12,5 @@
 			"onAutoForward": "openBrowserOnce"
 		}
 	},
-	"remoteUser": "node"
+	"remoteUser": "node"	
 }
