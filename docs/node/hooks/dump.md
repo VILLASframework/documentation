@@ -15,7 +15,7 @@ https://github.com/VILLASframework/node/blob/master/lib/hooks/dump.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/dump" />
+<ApiSchema id="node" example pointer="#/components/schemas/hook-dump" />
 
 ## Example
 

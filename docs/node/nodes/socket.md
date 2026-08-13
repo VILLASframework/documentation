@@ -34,7 +34,7 @@ For TCP connection, the node can only be either server or client which is specif
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/socket" />
+<ApiSchema id="node" example pointer="#/components/schemas/node-socket" />
 
 ## Example
 

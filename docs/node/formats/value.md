@@ -17,7 +17,7 @@ https://github.com/VILLASframework/node/blob/master/lib/formats/value.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/value" />
+<ApiSchema id="node" example pointer="#/components/schemas/format-value" />
 
 ## Example Configuration {#example}
 

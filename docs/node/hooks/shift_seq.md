@@ -15,7 +15,7 @@ https://github.com/VILLASframework/node/blob/master/lib/hooks/shift_seq.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/shift_seq" />
+<ApiSchema id="node" example pointer="#/components/schemas/hook-shift_seq" />
 
 ## Example
 

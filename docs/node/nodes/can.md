@@ -20,7 +20,7 @@ https://github.com/VILLASframework/node/blob/master/lib/nodes/can.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/can" />
+<ApiSchema id="node" example pointer="#/components/schemas/node-can" />
 
 ## Example
 

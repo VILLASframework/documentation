@@ -19,7 +19,7 @@ https://github.com/VILLASframework/node/blob/master/lib/nodes/shmem.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/shmem" />
+<ApiSchema id="node" example pointer="#/components/schemas/node-shmem" />
 
 ## Example
 

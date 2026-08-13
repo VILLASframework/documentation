@@ -15,7 +15,7 @@ https://github.com/VILLASframework/node/blob/master/lib/formats/column.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/tsv" />
+<ApiSchema id="node" example pointer="#/components/schemas/format-tsv" />
 
 ## Example Configuration {#example}
 

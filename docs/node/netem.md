@@ -48,7 +48,7 @@ Netem supports loading custom delay distributions.
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" pointer="#/components/schemas/netem" />
+<ApiSchema id="node" pointer="#/components/schemas/shared-node-netem" />
 
 # Example
 

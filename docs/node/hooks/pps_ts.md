@@ -29,7 +29,7 @@ https://github.com/VILLASframework/node/blob/master/lib/hooks/pps_ts.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/pps_ts" />
+<ApiSchema id="node" example pointer="#/components/schemas/hook-pps_ts" />
 
 ## Example
 

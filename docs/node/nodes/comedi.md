@@ -17,7 +17,7 @@ https://github.com/VILLASframework/node/blob/master/lib/nodes/comedi.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/comedi" />
+<ApiSchema id="node" example pointer="#/components/schemas/node-comedi" />
 
 ## Example
 

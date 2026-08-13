@@ -23,7 +23,7 @@ https://github.com/VILLASframework/node/blob/master/lib/nodes/influxdb.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/influxdb" />
+<ApiSchema id="node" example pointer="#/components/schemas/node-influxdb" />
 
 ## Example
 

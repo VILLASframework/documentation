@@ -16,7 +16,7 @@ https://github.com/VILLASframework/node/blob/master/lib/hooks/scale.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/scale" />
+<ApiSchema id="node" example pointer="#/components/schemas/hook-scale" />
 
 ## Example
 

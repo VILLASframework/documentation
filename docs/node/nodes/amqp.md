@@ -23,7 +23,7 @@ https://github.com/VILLASframework/node/blob/master/lib/nodes/amqp.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/amqp" />
+<ApiSchema id="node" example pointer="#/components/schemas/node-amqp" />
 
 ## Example
 

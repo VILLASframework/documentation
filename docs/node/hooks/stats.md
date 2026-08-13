@@ -48,7 +48,7 @@ https://github.com/VILLASframework/node/blob/master/lib/hooks/stats.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/stats" />
+<ApiSchema id="node" example pointer="#/components/schemas/hook-stats" />
 
 # Example
 

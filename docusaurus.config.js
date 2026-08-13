@@ -49,6 +49,7 @@ const config = {
         [
             'redocusaurus',
             {
+                config: 'external/node/doc/redocly.yaml',
                 specs: [{
                     id: 'node',
                     route: '/api/node/',

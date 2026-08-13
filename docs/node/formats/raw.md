@@ -17,7 +17,7 @@ https://github.com/VILLASframework/node/blob/master/lib/formats/raw.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/raw" />
+<ApiSchema id="node" example pointer="#/components/schemas/format-raw" />
 
 ## Example Configuration {#example}
 

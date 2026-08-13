@@ -19,7 +19,7 @@ https://github.com/VILLASframework/node/blob/master/lib/nodes/modbus.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/modbus" />
+<ApiSchema id="node" example pointer="#/components/schemas/node-modbus" />
 
 ## Example
 

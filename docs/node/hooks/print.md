@@ -17,7 +17,7 @@ https://github.com/VILLASframework/node/blob/master/lib/hooks/print.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/print" />
+<ApiSchema id="node" example pointer="#/components/schemas/hook-print" />
 
 ## Example
 

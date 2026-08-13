@@ -26,7 +26,7 @@ https://github.com/VILLASframework/node/blob/master/lib/nodes/test_rtt.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/test_rtt" />
+<ApiSchema id="node" example pointer="#/components/schemas/node-test_rtt" />
 
 ## Example
 

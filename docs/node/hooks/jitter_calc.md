@@ -16,7 +16,7 @@ https://github.com/VILLASframework/node/blob/master/lib/hooks/jitter_calc.cpp
 
 import ApiSchema from '@theme/ApiSchema';
 
-<ApiSchema id="node" example pointer="#/components/schemas/jitter_calc" />
+<ApiSchema id="node" example pointer="#/components/schemas/hook-jitter_calc" />
 
 ## Example
 
